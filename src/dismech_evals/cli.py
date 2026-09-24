@@ -10,6 +10,9 @@ from pathlib import Path
 import click
 import yaml
 
+from dismech_evals.products import build_products, history_rows, jsonl, metadata
+from dismech_evals.site import build_site
+
 ROOT = Path(__file__).resolve().parents[2]
 CACHE_PATH = Path("analysis/classification/jev")
 OUTCOMES = ROOT / CACHE_PATH
@@ -228,7 +231,7 @@ def cache(sources):
 )
 def report(output, shards):
     """Combine compatible shard results; incomplete runs still write reports."""
-    module(
+    result = module(
         "audit_report",
         [
             output.resolve(),
@@ -237,7 +240,78 @@ def report(output, shards):
             "--expected-shards",
             config()["shards"],
         ],
+        check=False,
     )
+    if (output / "results.jsonl").exists() and (output / "manifest.json").exists():
+        generate_products(output, output / "recuration")
+    if result.returncode:
+        raise click.ClickException("Partial reports and recuration queues retained")
+
+
+def generate_products(report_path, output, top_n=None, max_findings=None, run_id=None):
+    cfg = config()
+    manifest = json.loads((report_path / "manifest.json").read_text())
+    if not run_id and os.environ.get("GITHUB_RUN_ID"):
+        run_id = os.environ["GITHUB_RUN_ID"]
+        run_id += "-" + os.environ.get("GITHUB_RUN_ATTEMPT", "1")
+    return build_products(
+        lambda: jsonl(report_path / "results.jsonl"),
+        metadata(manifest, run_id=run_id),
+        output,
+        top_n or cfg.get("top_n", 25),
+        max_findings or cfg.get("max_findings", 10),
+    )
+
+
+@main.command()
+@click.option(
+    "--report", "report_path", type=click.Path(path_type=Path), default="build/combined"
+)
+@click.option("--output", type=click.Path(path_type=Path), default="build/products")
+@click.option(
+    "--history",
+    is_flag=True,
+    help="Use recorded active cache inputs; coverage remains unknown.",
+)
+@click.option("--top-n", type=click.IntRange(min=1))
+@click.option("--max-findings", type=click.IntRange(min=1))
+def products(report_path, output, history, top_n, max_findings):
+    """Make agent queues and dashboard data from saved results; never call a model."""
+    cfg = config()
+    if history:
+        meta = metadata(
+            {
+                "model": cfg["model"],
+                "evaluation": {
+                    "evaluation_revision": git("rev-parse", "HEAD", capture=True),
+                },
+            },
+            mode="saved_history",
+        )
+        build_products(
+            lambda: history_rows(OUTCOMES, cfg["model"]),
+            meta,
+            output,
+            top_n or cfg.get("top_n", 25),
+            max_findings or cfg.get("max_findings", 10),
+        )
+    else:
+        generate_products(report_path, output, top_n, max_findings)
+    click.echo(f"Recuration products: {output}")
+
+
+@main.command()
+@click.option(
+    "--products",
+    "product_path",
+    type=click.Path(exists=True, file_okay=False, path_type=Path),
+    default="reports/latest/recuration",
+)
+@click.option("--output", type=click.Path(path_type=Path), default="build/site")
+def site(product_path, output):
+    """Build the static site and its downloadable agent queues; no API key needed."""
+    build_site(product_path, output)
+    click.echo(f"Static site: {output / 'index.html'}")
 
 
 @main.command()
@@ -315,6 +389,8 @@ def collect(shards, report_path, run_id):
     latest.mkdir(parents=True, exist_ok=True)
     if (report_path / "manifest.json").exists():
         report_manifest = json.loads((report_path / "manifest.json").read_text())
+        if report_manifest.get("source_revision") != expected["source_revision"]:
+            raise click.ClickException("Combined report has the wrong source revision")
         run_record["complete"] = report_manifest["complete"]
         run_record["pairs"] = report_manifest["pairs"]
         for name in ("entries.csv", "summary.md", "manifest.json"):
@@ -327,6 +403,35 @@ def collect(shards, report_path, run_id):
             f"# Incomplete corpus evaluation\n\nRun `{run_id}` has no combined report. "
             "Successful checkpoints are retained; this is not a full-corpus result.\n"
         )
+    product_path = latest / "recuration"
+    if (report_path / "results.jsonl").exists() and (
+        report_path / "manifest.json"
+    ).exists():
+        generate_products(report_path, product_path, run_id=run_id)
+    else:
+        # Preserve only available results when report assembly failed; never show
+        # a previous successful queue as the current week's work.
+        def rows():
+            for path in sorted(shards.glob("*/results.jsonl")):
+                yield from jsonl(path)
+
+        cfg = config()
+        build_products(
+            rows,
+            metadata(
+                {
+                    **expected,
+                    "model": cfg["model"],
+                    "complete": False,
+                    "shards": manifests,
+                },
+                run_id=run_id,
+            ),
+            product_path,
+            cfg.get("top_n", 25),
+            cfg.get("max_findings", 10),
+        )
+    run_record["recuration_manifest"] = "reports/latest/recuration/manifest.json"
     (ROOT / "runs").mkdir(exist_ok=True)
     (ROOT / "runs" / f"{run_id}.json").write_text(
         json.dumps(run_record, indent=2) + "\n"
@@ -344,6 +449,22 @@ def generated_path(path):
         or (
             path.parent == Path("reports/latest")
             and path.name in {"summary.md", "manifest.json", "entries.csv"}
+        )
+        or (
+            path.parent == Path("reports/latest/recuration")
+            and path.name
+            in {
+                "dashboard.json",
+                "rankings.csv",
+                "manifest.json",
+                "top.jsonl",
+                "schema.json",
+            }
+        )
+        or (
+            path.parent == Path("reports/latest/recuration/categories")
+            and path.suffix == ".jsonl"
+            and path.stem.replace("_", "").isalnum()
         )
     )
 

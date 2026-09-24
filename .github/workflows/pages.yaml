@@ -1,0 +1,53 @@
+name: Publish evaluation dashboard
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/**', 'reports/latest/recuration/**', 'pyproject.toml', 'uv.lock', '.github/workflows/pages.yaml']
+  workflow_dispatch:
+  # GITHUB_TOKEN data pushes do not trigger push workflows. Rebuild from main
+  # after the weekly workflow completes, including partial runs with saved data.
+  workflow_run:
+    workflows: ['Weekly corpus evaluation']
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+          sparse-checkout: |
+            src
+            schemas
+            reports/latest/recuration
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --frozen
+      - run: uv run dismech-evals site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

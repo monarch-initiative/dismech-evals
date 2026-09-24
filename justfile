@@ -23,3 +23,25 @@ report *args:
 check:
     uv run ruff check .
     uv run pytest -q
+
+# Build deterministic agent work queues from saved predictions.
+[positional-arguments]
+products *args:
+    uv run dismech-evals products "$@"
+
+# Render the static dashboard and downloadable work queues.
+[positional-arguments]
+site *args:
+    uv run dismech-evals site "$@"
+
+# Preview the generated site locally.
+serve port="8000": site
+    uv run python -m http.server {{port}} --directory build/site --bind 127.0.0.1
+
+# One-time browser setup, then test the rendered site.
+setup-browser:
+    uv sync --group browser
+    uv run --group browser playwright install chromium
+
+test-browser: site
+    uv run --group browser pytest tests/test_browser.py -q

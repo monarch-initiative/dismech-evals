@@ -1,7 +1,7 @@
 name: Check evaluation tooling
 on:
   push:
-    paths: ['src/**', 'tests/**', 'pyproject.toml', 'uv.lock', 'config/**', '.github/workflows/**']
+    paths: ['src/**', 'tests/**', 'pyproject.toml', 'uv.lock', 'config/**', 'schemas/**', 'reports/latest/recuration/**', '.github/workflows/**']
   pull_request:
 permissions:
   contents: read
@@ -16,4 +16,7 @@ jobs:
       - run: uv sync --frozen
       - run: uv run ruff check .
       - run: uv run pytest -q
-      - run: uvx --from actionlint-py actionlint .github/workflows/weekly.yaml .github/workflows/ci.yaml
+      - run: uvx --from actionlint-py actionlint .github/workflows/*.yaml
+      - run: uv run dismech-evals site
+      - run: uv run --group browser playwright install --with-deps chromium
+      - run: uv run --group browser pytest tests/test_browser.py -q

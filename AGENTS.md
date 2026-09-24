@@ -21,3 +21,10 @@ automatically. Do not grant it write access to the source or benchmark repositor
 
 Stage explicit paths. Keep code/configuration changes separate from automated data
 updates. Do not force-push or rewrite published history.
+
+Dashboard assets live in `src/dismech_evals/web/`; use `just site` to render them.
+Do not generate a dashboard into README.md or introduce MkDocs. Agent work queues
+live under `reports/latest/recuration/` and must be derived without inference.
+Keep scope and missing-assessment statuses explicit; model signals are not curator
+verdicts or accuracy. Preserve exact claim/snippet snapshots and source pointers.
+Run `just test-browser` for changes to navigation, downloads or rendering.

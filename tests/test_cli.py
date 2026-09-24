@@ -50,6 +50,9 @@ def test_publication_writes_only_generated_data_and_noop_is_stable(repo):
     remote = git_repo(repo)
     before = command("git", "rev-parse", "HEAD", cwd=repo)
     target = history(repo)
+    queue = repo / "reports/latest/recuration/categories/phenotypes.jsonl"
+    queue.parent.mkdir(parents=True)
+    queue.write_text("{}\n")
     (repo / "code.txt").write_text("uncommitted code edit\n")
     result = CliRunner().invoke(cli.main, ["publish"])
     assert result.exit_code == 0, result.output
@@ -58,10 +61,9 @@ def test_publication_writes_only_generated_data_and_noop_is_stable(repo):
     assert (
         command("git", "--git-dir", str(remote), "rev-parse", "main", cwd=repo) == head
     )
-    assert (
-        command("git", "diff", "--name-only", before, head, cwd=repo)
-        == target.relative_to(repo).as_posix()
-    )
+    assert set(
+        command("git", "diff", "--name-only", before, head, cwd=repo).splitlines()
+    ) == {target.relative_to(repo).as_posix(), queue.relative_to(repo).as_posix()}
     assert command("git", "show", "HEAD:code.txt", cwd=repo) == "code"
     assert CliRunner().invoke(cli.main, ["publish"]).exit_code == 0
     assert command("git", "rev-parse", "HEAD", cwd=repo) == head
@@ -165,6 +167,7 @@ def test_collect_retains_partial_results_and_does_not_show_stale_report(
     latest.mkdir(parents=True)
     (latest / "entries.csv").write_text("old report\n")
     monkeypatch.setattr(cli, "pins", lambda: expected)
+    monkeypatch.setattr(cli, "config", lambda: {"model": "jev-test"})
     calls = []
     monkeypatch.setattr(cli, "module", lambda *a, **k: calls.append(a))
     result = CliRunner().invoke(
@@ -177,6 +180,10 @@ def test_collect_retains_partial_results_and_does_not_show_stale_report(
     assert record["evaluation_revision"] == "eval-original"
     assert not (latest / "entries.csv").exists()
     assert "Incomplete" in (latest / "summary.md").read_text()
+    product = json.loads((latest / "recuration/manifest.json").read_text())
+    assert not product["provenance"]["complete"]
+    assert product["provenance"]["run_id"] == "123-1"
+    assert product["queues"]["overall"]["entries"] == 0
 
 
 @pytest.mark.parametrize("revision", ["main", "abc", "../other", "a" * 41])

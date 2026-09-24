@@ -1,6 +1,7 @@
 """Real browser checks for navigation, exact evidence, downloads and mobile layout."""
 
 import json
+from copy import deepcopy
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -8,20 +9,53 @@ from threading import Thread
 
 import pytest
 
-from dismech_evals.products import build_products, history_rows, metadata
+from dismech_evals.products import build_products, metadata
 from dismech_evals.site import build_site
 
 playwright = pytest.importorskip("playwright.sync_api")
-ROOT = Path(__file__).resolve().parents[1]
 
 
 @pytest.fixture(scope="module")
 def site(tmp_path_factory):
     root = tmp_path_factory.mktemp("browser")
     products = root / "products"
+    # Deliberately synthetic renderer fixtures, independent of live corpus size.
+    records = []
+    for name in ("Asthma", "Example B"):
+        answer = {
+            "label": "PARTIAL",
+            "confidence": 0.8,
+            "probabilities": {"PARTIAL": 0.8, "MATCH": 0.1, "MISMATCH": 0.1},
+        }
+        records.append(
+            {
+                "file": f"kb/disorders/{name}.yaml",
+                "disease": name,
+                "section": "phenotypes",
+                "assertion_path": "/phenotypes/0",
+                "evidence_path": "/phenotypes/0/evidence/0",
+                "status": "assessed",
+                "claim": {
+                    "about": {"disease": {"name": name}},
+                    "assertion_type": "Phenotype",
+                    "assertion": {"name": "Test assertion"},
+                    "selected_evidence": {
+                        "snippet": "Synthetic browser-test excerpt.",
+                        "supports": "SUPPORT",
+                    },
+                },
+                "result": {
+                    "model": "fixture",
+                    "answers": {
+                        "/": deepcopy(answer),
+                        "/about/disease": deepcopy(answer),
+                    },
+                },
+            }
+        )
     build_products(
-        lambda: history_rows(ROOT / "analysis/classification/jev", "jev-1.13.0"),
-        metadata({"model": "jev-1.13.0"}, mode="saved_history"),
+        lambda: iter(records),
+        metadata({"model": "fixture"}, mode="saved_history"),
         products,
     )
     output = root / "site"

@@ -120,6 +120,7 @@ def metadata(manifest, *, run_id=None, mode="run"):
         "classifier_revision": evaluation.get("classifier_revision"),
         "evaluation_revision": evaluation.get("evaluation_revision"),
         "model": manifest.get("model"),
+        "supplemental_results": manifest.get("supplemental_results"),
         "complete": complete,
         "corpus_complete": complete
         and not limited

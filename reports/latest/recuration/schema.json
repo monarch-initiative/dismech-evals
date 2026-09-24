@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://monarch-initiative.github.io/dismech-evals/downloads/schema.json",
+  "title": "DisMech recuration work item",
+  "description": "One JSONL line: a disease scoped to an overall or section-specific recuration queue. These are model signals, not curator verdicts.",
+  "type": "object",
+  "required": ["schema_version", "task", "queue", "rank", "file", "disease", "metrics", "provenance", "findings", "findings_total", "findings_truncated", "instructions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "task": {"const": "review_claim_evidence_match"},
+    "queue": {"type": "string", "pattern": "^[a-zA-Z0-9_]+$"},
+    "rank": {"type": "integer", "minimum": 1},
+    "file": {"type": "string"},
+    "disease": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "history_url": {"type": "string", "format": "uri"},
+    "metrics": {"type": "object", "required": ["assessed_assertions", "mismatch_assertions", "partial_assertions", "flagged_pairs"]},
+    "provenance": {
+      "type": "object",
+      "required": ["mode", "complete", "corpus_complete", "dry_run", "model", "source_revision", "classifier_revision"],
+      "properties": {
+        "mode": {"enum": ["run", "saved_history"]},
+        "complete": {"type": "boolean"},
+        "corpus_complete": {"type": "boolean"},
+        "dry_run": {"type": "boolean"},
+        "source_revision": {"type": ["string", "null"]},
+        "classifier_revision": {"type": ["string", "null"]}
+      }
+    },
+    "findings_total": {"type": "integer", "minimum": 0},
+    "findings_truncated": {"type": "boolean"},
+    "instructions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["section", "assertion_path", "evidence_path", "claim", "answers", "assessment_key", "assessed_at", "source_revision"],
+        "properties": {
+          "section": {"type": "string"},
+          "assertion_path": {"type": "string", "pattern": "^/"},
+          "evidence_path": {"type": "string", "pattern": "^/"},
+          "claim": {
+            "type": "object", "required": ["about", "assertion_type", "assertion", "selected_evidence"],
+            "properties": {
+              "about": {"type": "object"}, "assertion_type": {"type": "string"}, "assertion": {"type": "object"},
+              "selected_evidence": {"type": "object", "required": ["snippet"], "properties": {"snippet": {"type": "string"}}}
+            }
+          },
+          "answers": {
+            "type": "object", "minProperties": 1,
+            "additionalProperties": {
+              "type": "object", "required": ["label", "probabilities", "confidence"],
+              "properties": {
+                "label": {"enum": ["MATCH", "MISMATCH", "PARTIAL"]},
+                "probabilities": {
+                  "type": "object", "required": ["MATCH", "MISMATCH", "PARTIAL"],
+                  "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+                },
+                "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

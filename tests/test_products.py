@@ -170,3 +170,16 @@ def test_site_escapes_embedded_data_and_serves_relative_downloads(tmp_path):
     assert (output / "downloads/top.jsonl").read_bytes() == (
         product / "top.jsonl"
     ).read_bytes()
+
+
+def test_handoff_does_not_present_citation_explanation_as_model_context(tmp_path):
+    item = row("A", "phenotypes", 0, ("PARTIAL",))
+    item["claim"]["selected_evidence"]["explanation"] = "Curator's own interpretation"
+    _, queues = build_products(lambda: iter([item]), meta(), tmp_path)
+    evidence = queues["overall"][0]["findings"][0]["claim"]["selected_evidence"]
+    assert "explanation" not in evidence
+    assert evidence["snippet"] == item["claim"]["selected_evidence"]["snippet"]
+    assert (
+        item["claim"]["selected_evidence"]["explanation"]
+        == "Curator's own interpretation"
+    )

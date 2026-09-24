@@ -232,6 +232,14 @@ def finding(row, meta):
         k: claim[k]
         for k in ("about", "assertion_type", "assertion", "selected_evidence")
     }
+    # Audit rows retain citation annotations alongside the extracted assertion;
+    # the classifier's state includes only these evidence fields. Do not present
+    # a curator's explanation as context the model received.
+    state["selected_evidence"] = {
+        k: claim["selected_evidence"][k]
+        for k in ("snippet", "supports", "directness")
+        if k in claim["selected_evidence"]
+    }
     source_revision = row.get("source_revision") or meta["source_revision"]
     # Cache keys refer to saved assessments; the snapshot is copied, never reinterpreted.
     return {

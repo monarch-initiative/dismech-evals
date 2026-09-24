@@ -128,3 +128,16 @@ def test_direct_entry_link_loads_packet_from_file(page, site):
     page.reload()
     page.wait_for_selector("#findings table")
     assert "/about/disease" in page.locator("#findings").inner_text()
+
+
+def test_ties_use_the_same_filename_order_as_exported_queues(page, site):
+    page.goto(site[0] + "entries.html")
+    order = page.evaluate("""() => {
+        const original = D.entries;
+        const template = original[0];
+        D.entries = ['A_B.yaml', 'Aa.yaml', 'AB.yaml'].map(file => ({...template, file}));
+        const result = ordered().map(e => e.file);
+        D.entries = original;
+        return result;
+    }""")
+    assert order == sorted(order)

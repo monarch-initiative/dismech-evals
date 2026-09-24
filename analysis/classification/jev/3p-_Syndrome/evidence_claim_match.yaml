@@ -7396,6 +7396,60 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/0
       evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
       reference: PMID:33519384
+  8c42d9bebea6b8528e5dc45026751b7842192972de32b6b32c2aee50885ca73c:
+    claim:
+      about:
+        disease:
+          name: 3p- Syndrome
+          disease_term:
+            preferred_term: 3p- syndrome
+            term:
+              id: MONDO:0013424
+              label: 3p- syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Disrupted Cardiac Development
+        description: Deletion mapping suggests a cardiac susceptibility interval in 3p25.3. The reported
+          approximately 200 kb refinement explicitly assumed complete penetrance; it is a conditional
+          candidate interval, not a proven causal gene or obligatory phenotype. CAV3 is outside that refined
+          interval. A 2025 infant with hypoplastic left heart syndrome had only a low-resolution 3p26
+          karyotype, which did not demonstrate CAV3 deletion.
+        role: mechanism
+        biological_scale: TISSUE
+        biological_processes:
+        - preferred_term: heart development
+          term:
+            id: GO:0007507
+            label: heart development
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: On the other hand, some known candidate genes, such as CAV3 and SEC13R, were shown to
+          be outside the target interval.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/11
+      evidence_path: /pathophysiology/11/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33643973
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The full-text literature discussion explicitly places CAV3 and SEC13R outside the refined
+        target interval.
+      reference_title: 'Case Report: A Case Report and Literature Review of 3p Deletion Syndrome.'
+    first_seen_at: '2026-09-24T05:55:09.544879+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:47.390946+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:47.390946+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/11
+      evidence_path: /pathophysiology/11/evidence/1
+      reference: PMID:33643973
 assessments:
   aa611c71c0e646b758530e68e6a0bb4b0240b84dbe7cfc2e10b435b6f5d60512:
     input_sha256: 393ffd5193dd9c36b71996f0fec4747fae598d03ae54eb6376c0ee92b7c9b17b
@@ -16572,3 +16626,81 @@ assessments:
         output_tokens: 412
       elapsed_seconds: 1.1874
       request_sha256: 18313e726c4b007e929cad45929f959f2a929e62fa6dd7ecd7558baa6e45009d
+  ece3efa1449a1a97f1a4768b07595defccba9c72b6dad4b90507b1e9f7ff83ae:
+    input_sha256: 8c42d9bebea6b8528e5dc45026751b7842192972de32b6b32c2aee50885ca73c
+    configuration_sha256: 11ec1c641ba2ec9d65f31c8f37030a4eaa297a64e7d9d7f1d7fc5e306e88e454
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:09.544879+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            PARTIAL: 0.53
+            MATCH: 0.17
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.51
+            MATCH: 0.38
+          confidence: 0.26
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            PARTIAL: 0.36
+            MATCH: 0.14
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.47
+            MATCH: 0.36
+          confidence: 0.2
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.42
+            MATCH: 0.21
+          confidence: 0.13
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.4
+            PARTIAL: 0.3
+            MATCH: 0.3
+          confidence: 0.11
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            PARTIAL: 0.43
+            MATCH: 0.12
+          confidence: 0.17
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.4
+            MATCH: 0.11
+          confidence: 0.24
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            PARTIAL: 0.37
+            MATCH: 0.05
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9918
+        output_tokens: 447
+      elapsed_seconds: 0.3865
+      request_sha256: 8449523ce1538204828336f1aabdd37d8dc9b4364280e8f7c26214fa9cafee18

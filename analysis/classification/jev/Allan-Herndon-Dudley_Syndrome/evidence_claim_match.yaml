@@ -6777,6 +6777,195 @@ inputs:
     - assertion_path: /diagnosis/2
       evidence_path: /diagnosis/2/evidence/0
       reference: PMID:39132310
+  1b04b1ec4c256f7d125abf6b53e97d7bb5b56c0b173e5ad31cf6b8c68afbc279:
+    claim:
+      about:
+        disease:
+          name: Allan-Herndon-Dudley Syndrome
+          disease_term:
+            preferred_term: Allan-Herndon-Dudley syndrome
+            term:
+              id: MONDO:0010354
+              label: Allan-Herndon-Dudley syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum total triiodothyronine (T3)
+        notes: Serum T3 is elevated in essentially all affected males and is the entry point to the diagnosis.
+          In the Triac Trial cohort, mean baseline T3 was 4.97 nmol/L against a normal target range of
+          1.4-2.5 nmol/L, roughly double the upper limit of normal.
+        presence: INCREASED
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:14930-2
+            label: Triiodothyronine (T3) [Moles/volume] in Serum or Plasma
+          lower_bound: 1.4
+          upper_bound: 2.5
+          unit: nmol/L
+          population: Reference target range used in the international Triac Trial for paediatric and
+            adult males with MCT8 deficiency.
+          notes: 'The trial reports values in nmol/L, so the molar LOINC code is used. Age-specific paediatric
+            intervals differ; the cohort study assessed T3 against age-specific upper limits rather than
+            a single adult cut-off. ANALYTE MISMATCH FLAG: this marker is TOTAL T3 (LOINC:14930-2), but
+            the abnormal interpretation band below is bound to HP:0011788 "Increased circulating free
+            T3" because HPO has no "increased circulating total T3" term (the HP:0031508 subtree was enumerated
+            and contains no total-T3 equivalent). HP:0011788 is used as the closest available term; a
+            new-term request to HPO for an increased-total-T3 class would resolve this.'
+          interpretation_bands:
+          - name: Normal
+            lower_bound: 1.4
+            upper_bound: 2.5
+            unit: nmol/L
+            abnormal_flag: NORMAL
+            interpretation: Within the target range used in the Triac trials. Untreated AHDS essentially
+              never falls here; a normal T3 on treatment is the therapeutic goal.
+          - name: Elevated T3 typical of untreated MCT8 deficiency
+            lower_bound: 2.5
+            unit: nmol/L
+            abnormal_flag: HIGH
+            phenotype_term:
+              preferred_term: Elevated serum T3
+              term:
+                id: HP:0011788
+                label: Increased circulating free T3
+            interpretation: An elevated T3 in a boy with severe developmental delay and hypotonia should
+              prompt free T4, TSH, and SLC16A2 sequencing. Untreated AHDS averages about 4.97 nmol/L,
+              roughly twice the upper limit of normal.
+      selected_evidence:
+        snippet: Tri-iodothyronine concentrations were above the age-specific upper limit in 96 (95%)
+          of 101 patients
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32559475
+      reference_title: 'Disease characteristics of MCT8 deficiency: an international, retrospective, multicentre
+        cohort study.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes near-universal T3 elevation in genetically confirmed patients.
+    first_seen_at: '2026-09-24T05:55:00.753400+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:26.453594+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:26.453594+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:32559475
+  b5610b07f0fede2f786b45815928b8135d459216283db19302da63a16d39ac57:
+    claim:
+      about:
+        disease:
+          name: Allan-Herndon-Dudley Syndrome
+          disease_term:
+            preferred_term: Allan-Herndon-Dudley syndrome
+            term:
+              id: MONDO:0010354
+              label: Allan-Herndon-Dudley syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Diiodothyropropionic acid (DITPA)
+        description: DITPA is a second MCT8-independent thyroid hormone analogue. In four children treated
+          on compassionate grounds for 26-40 months, DITPA normalized elevated serum T3 and TSH, raised
+          T4 and reverse T3 into the low normal range, and reduced SHBG and heart rate without adverse
+          effects. Evidence is far more limited than for Triac and DITPA is not in routine use, but it
+          establishes that the MCT8-bypass strategy generalizes beyond a single compound.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: diiodothyropropionic acid
+            term:
+              id: CHEBI:134267
+              label: 3,5-diiodothyropropionic acid
+      selected_evidence:
+        snippet: In Mct8-deficient mice, the thyroid hormone analog, diiodothyropropionic acid (DITPA),
+          does not require MCT8 to enter tissues and could be an effective alternative to thyroid hormone
+          treatment in humans.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22993035
+      reference_title: Diiodothyropropionic acid (DITPA) in the treatment of MCT8 deficiency.
+      evidence_source: MODEL_ORGANISM
+      explanation: States the preclinical MCT8-independence rationale established in Mct8-deficient mice.
+    first_seen_at: '2026-09-24T05:55:01.566638+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:26.453594+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:26.453594+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/1
+      reference: PMID:22993035
+  0e912b476b4f1b936edaa47b96bedbc07bcf93457772409635142c21c3610417:
+    claim:
+      about:
+        disease:
+          name: Allan-Herndon-Dudley Syndrome
+          disease_term:
+            preferred_term: Allan-Herndon-Dudley syndrome
+            term:
+              id: MONDO:0010354
+              label: Allan-Herndon-Dudley syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Serum thyroid function testing (T3, free T4, TSH)
+        description: 'The diagnostic entry point is a serum thyroid panel that INCLUDES T3. After about
+          four months of age the profile is a characteristic fingerprint: elevated free or total T3, low
+          or low-normal free T4, and a normal or only slightly elevated TSH. Because T3 is not part of
+          routine paediatric thyroid testing, the single most common obstacle to diagnosis outside the
+          newborn period is simply that serum T3 is never measured. Only resistance to thyroid hormone
+          alpha produces a similar pattern, so the biochemistry narrows the differential to two disorders
+          before any sequencing is done.'
+        diagnosis_term:
+          preferred_term: thyroid function testing
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        results: Elevated T3 with low or low-normal free T4 and a normal or mildly elevated TSH, giving
+          an increased T3/T4 ratio. An elevated T3 in a boy with unexplained developmental delay should
+          trigger confirmatory SLC16A2 sequencing.
+        markers: T3, free T4, TSH, T3/T4 ratio, reverse T3, SHBG
+      selected_evidence:
+        snippet: Outside of the newborn period, the most common obstacle to diagnosis is the infrequent
+          assessment of serum T3
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39132310
+      reference_title: 'Unmet patient needs in monocarboxylate transporter 8 (MCT8) deficiency: a review.'
+      evidence_source: OTHER
+      explanation: Identifies failure to measure serum T3 as the dominant cause of diagnostic delay, which
+        is why this test is listed first.
+    first_seen_at: '2026-09-24T05:55:02.163367+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:26.453594+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:26.453594+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:39132310
 assessments:
   7937ff712ffea74a1acdd03362805e7af5f286f40b6016bfbcb82a622b1e80bf:
     input_sha256: d1f11d668a9814b85996461fa98bd474496d13791319252006c319211fb9d2de
@@ -16775,3 +16964,342 @@ assessments:
         output_tokens: 322
       elapsed_seconds: 0.6436
       request_sha256: a70863497de2b15f3fafde478961ec2f8050ffbb10d6d8904535fd96ee134637
+  196fd8a2d3ab5d0703e438d5fedad485c7bcf3df6d2344237861025f79dc28a1:
+    input_sha256: 1b04b1ec4c256f7d125abf6b53e97d7bb5b56c0b173e5ad31cf6b8c68afbc279
+    configuration_sha256: f8a4a0b398e352e1abc4e12fc74a80a6ff0c8c10df3a9025c5db0ec1999efc43
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:00.753400+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.04
+            MATCH: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.06
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.04
+            MATCH: 0.79
+          confidence: 0.67
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.03
+            MATCH: 0.4
+          confidence: 0.35
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.0
+            MATCH: 0.88
+          confidence: 0.81
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.5700000000000001
+            MATCH: 0.12
+          confidence: 0.34
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.33999999999999997
+            MATCH: 0.35
+          confidence: 0.02
+        /assertion/reference_ranges/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.59
+            MATCH: 0.02
+          confidence: 0.38
+        /assertion/reference_ranges/0/upper_bound:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.37
+            MATCH: 0.1
+          confidence: 0.28
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.48
+            MATCH: 0.1
+          confidence: 0.23
+        /assertion/reference_ranges/0/population:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.18
+            MATCH: 0.2
+          confidence: 0.43
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.28
+            MATCH: 0.17
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.24
+            MATCH: 0.32
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.61
+            MATCH: 0.03
+          confidence: 0.42
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.45
+            MATCH: 0.07
+          confidence: 0.21
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.49
+            MATCH: 0.06
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.32
+            MATCH: 0.37
+          confidence: 0.07
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.13
+            MATCH: 0.32
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.03
+            MATCH: 0.75
+          confidence: 0.63
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.28
+            MATCH: 0.24
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.44
+            MATCH: 0.12
+          confidence: 0.17
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.04
+            MATCH: 0.85
+          confidence: 0.77
+        /assertion/reference_ranges/0/interpretation_bands/1/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.17
+            MATCH: 0.44
+          confidence: 0.15
+        /assertion/reference_ranges/0/interpretation_bands/1/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.35
+            MATCH: 0.25
+          confidence: 0.1
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.1
+            MATCH: 0.45
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 25089
+        output_tokens: 1337
+      elapsed_seconds: 1.1726
+      request_sha256: ca20e8664fe3b85b8994d6fe44cf27818f9ef5a001192c59b405057b773f2c51
+  fe2a7f8063edcbe942656157d124b6c27151af4e5430e412814e457c029db647:
+    input_sha256: b5610b07f0fede2f786b45815928b8135d459216283db19302da63a16d39ac57
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:01.566638+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.74
+            MATCH: 0.05
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.08
+            MATCH: 0.66
+          confidence: 0.5
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.2
+            MATCH: 0.74
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.36
+            MATCH: 0.05
+          confidence: 0.38
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.02
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.17
+            MATCH: 0.45
+          confidence: 0.17
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.25
+            MATCH: 0.32
+          confidence: 0.14
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+            MATCH: 0.87
+          confidence: 0.81
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.06
+            MATCH: 0.78
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9807
+        output_tokens: 439
+      elapsed_seconds: 0.7987
+      request_sha256: fb014f38fb78cc853f824519e643fca32920eaa643cf60f52de629ec6c745a3b
+  621095b65a38d2d5a068cc97aba22770796df4c90d7926d0419afc4664548c0d:
+    input_sha256: 0e912b476b4f1b936edaa47b96bedbc07bcf93457772409635142c21c3610417
+    configuration_sha256: bc3c778b8d055bd246b1369cf7747f60cbe431c50980a73c354caa9d02efd46a
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:02.163367+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.47
+            MATCH: 0.44
+          confidence: 0.2
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.39
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.36
+            MATCH: 0.44
+          confidence: 0.17
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.39
+            MATCH: 0.54
+          confidence: 0.32
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.34
+            MATCH: 0.45
+          confidence: 0.16
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.35
+            MATCH: 0.41
+          confidence: 0.11
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.44
+            MATCH: 0.23
+          confidence: 0.16
+        /assertion/markers:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+            MATCH: 0.05
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8314
+        output_tokens: 368
+      elapsed_seconds: 0.5815
+      request_sha256: 5cf43c25c6e1e2ca3621923227a15285713043ca0c339563357ebf26cac4c4a3

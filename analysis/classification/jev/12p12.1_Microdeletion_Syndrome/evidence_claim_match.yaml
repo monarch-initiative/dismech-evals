@@ -2611,6 +2611,69 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:31578471
+  06f072282b3f78ba645fef144411c858469573107f74e64d2b1741aadf96e8c6:
+    claim:
+      about:
+        disease:
+          name: 12p12.1 Microdeletion Syndrome
+          disease_term:
+            preferred_term: 12p12.1 microdeletion syndrome
+            term:
+              id: MONDO:0017781
+              label: 12p12.1 microdeletion syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Disrupted Neurodevelopmental Transcriptional Program
+        biological_scale: TISSUE
+        mechanism_confidence: PROVISIONAL
+        description: 'The downstream transcriptional consequence in the developing nervous system. Mouse
+          genetics gives this node real content rather than leaving it a placeholder: losing SOX5 causes
+          the three principal sequentially born corticofugal neuron subtypes to overlap in identity, because
+          SOX5 normally prevents later-born subtypes from appearing early. So the program SOX5 controls
+          is a temporal one, and the defect is mistiming of subtype generation rather than failure of
+          neurogenesis as such.
+
+          The node is PROVISIONAL rather than ESTABLISHED for a specific reason, not as a hedge. The mouse
+          result comes from a homozygous null, and the human lesion is a heterozygous dosage reduction;
+          whether halving SOX5 mistimes the same programme is not shown. Nor has the transcriptional programme
+          been characterised in any patient-derived neural material. Those are two different gaps and
+          the second is recorded separately.'
+        biological_processes:
+        - preferred_term: central nervous system development
+          modifier: DECREASED
+          term:
+            id: GO:0007417
+            label: central nervous system development
+      selected_evidence:
+        snippet: We report that the transcription factor SOX5 controls the sequential generation of distinct
+          corticofugal neuron subtypes by preventing premature emergence of normally later-born corticofugal
+          neurons.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18215621
+      reference_title: SOX5 controls the sequential generation of distinct corticofugal neuron subtypes.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Identifies what the disrupted programme actually is: temporal control of corticofugal
+        subtype generation. INDIRECT because the experiment is a mouse homozygous null and the human disease
+        is a heterozygous dosage lesion, so the step to this node in humans is an inference across both
+        species and zygosity.'
+    first_seen_at: '2026-09-24T05:55:08.564877+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:36.022256+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:36.022256+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:18215621
 assessments:
   9f5146916fbf353940710f795996898d07f0783e356543840fae59466abc4efa:
     input_sha256: 04c099bac3f6487ea157a4864614bf432eb4354c3ff3d2fd43f8b921cb1906c5
@@ -6018,3 +6081,81 @@ assessments:
         output_tokens: 334
       elapsed_seconds: 0.567
       request_sha256: 9321eff6184f3e5c40abb0a370d1a65b8af1bc4846ebc4f3aadcdd23dffd2864
+  374fc9a03b8047b38db3ef14fb614245a3912439b000dadc7843ff9c7704f855:
+    input_sha256: 06f072282b3f78ba645fef144411c858469573107f74e64d2b1741aadf96e8c6
+    configuration_sha256: b640e11ce75e78b2774ce5da01d2b09d1f402d6c2b16a56be7b3d224daff1633
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:08.564877+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.23
+            PARTIAL: 0.73
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.46
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.06
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.29
+            PARTIAL: 0.34
+          confidence: 0.05
+        /assertion/mechanism_confidence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.06
+            PARTIAL: 0.45
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.04
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.19
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.23
+            PARTIAL: 0.66
+          confidence: 0.5
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.24
+            PARTIAL: 0.6
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10043
+        output_tokens: 439
+      elapsed_seconds: 0.6896
+      request_sha256: 1fe64d85e3ed71f7401254d05f61b9ad666899ee08f550a0ee9ef60dfdf027f9

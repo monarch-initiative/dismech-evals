@@ -6371,6 +6371,74 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/1
       evidence_path: /animal_models/1/modeled_mechanisms/1/evidence/0
       reference: url:https://www.ncbi.nlm.nih.gov/pmc/articles/35456
+  ee2a176494dabae515ca47e1a37a1eb64ff15aaed99588cd97ed7df245f4e196:
+    claim:
+      about:
+        disease:
+          name: Acromesomelic Dysplasia Demirhan Type
+          disease_term:
+            preferred_term: acromesomelic dysplasia, Demirhan type
+            term:
+              id: MONDO:0012274
+              label: acromesomelic dysplasia 3
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Acromesomelic Appendicular Malformation
+            role: consequence
+            biological_scale: TISSUE
+            conforms_to: limb_digit_patterning_serial_homology#Serially Homologous Autopod Malformation
+            description: Middle and distal appendicular segments are disproportionately short and malformed.
+              Severe brachydactyly, absent or shortened phalanges, fibular aplasia and carpal fusion occur
+              in reported BMPR1B-related Grebe families. Tarsal fusion was present in the founder but
+              absent from the three new patients tabulated in the C53R/W219* report.
+            cell_types:
+            - preferred_term: Chondrocyte
+              term:
+                id: CL:0000138
+                label: chondrocyte
+            biological_processes:
+            - preferred_term: limb development
+              term:
+                id: GO:0060173
+                label: limb development
+              modifier: ABNORMAL
+            - preferred_term: bone morphogenesis
+              term:
+                id: GO:0060349
+                label: bone morphogenesis
+              modifier: ABNORMAL
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Short Ulna
+        causal_link_type: DIRECT
+        description: This finding is an observed component of the appendicular malformation pattern; the
+          gene-to-specific-anatomy intermediate steps are not separately established.
+      selected_evidence:
+        snippet: The ulna was short and the radius appeared broad with an expanded distal epiphysis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/8
+      evidence_path: /pathophysiology/5/downstream/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: url:https://avesis.cu.edu.tr/yayin/034022d6-aced-4a93-8ed2-163cb56fae78/a-homozygous-bmpr1b-mutation-causes-a-new-subtype-of-acromesomelic-chondrodysplasia-with-genital-anomalies/document.pdf
+      reference_title: https://avesis.cu.edu.tr/yayin/034022d6-aced-4a93-8ed2-163cb56fae78/a-homozygous-bmpr1b-mutation-causes-a-new-subtype-of-acromesomelic-chondrodysplasia-with-genital-anomalies/document.pdf
+      evidence_source: HUMAN_CLINICAL
+      explanation: The founder’s ulna was short, with a broad radius and expanded distal radial epiphysis.
+    first_seen_at: '2026-09-24T05:55:13.776347+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:20.739284+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:20.739284+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/8
+      evidence_path: /pathophysiology/5/downstream/8/evidence/0
+      reference: url:https://avesis.cu.edu.tr/yayin/034022d6-aced-4a93-8ed2-163cb56fae78/a-homozygous-bmpr1b-mutation-causes-a-new-subtype-of-acromesomelic-chondrodysplasia-with-genital-anomalies/document.pdf
 assessments:
   2aa9703631eb70a2fcddcb2189dc72cd728b2de2c2450b9d06956ccab6b2aab1:
     input_sha256: b8e3b918cdeed473f2a4236451b54df6dcd41461befa5df066bc9b23e5052e56
@@ -14820,3 +14888,60 @@ assessments:
         output_tokens: 573
       elapsed_seconds: 0.8898
       request_sha256: 874a9b73ad93ab22d3cb2496339eb161cb193d8ea8f8a6cf1423c0367d463055
+  286aca933a5138c4c8c13b2afb544cdbe5b253b30b4e2bf57cce23802ddf9899:
+    input_sha256: ee2a176494dabae515ca47e1a37a1eb64ff15aaed99588cd97ed7df245f4e196
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:13.776347+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.36
+            PARTIAL: 0.31
+          confidence: 0.04
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            PARTIAL: 0.37
+            MATCH: 0.18
+          confidence: 0.18
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.86
+            PARTIAL: 0.07
+          confidence: 0.78
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            MATCH: 0.1
+            PARTIAL: 0.39
+          confidence: 0.27
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.65
+            PARTIAL: 0.24
+          confidence: 0.47
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.28
+            MATCH: 0.31
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6648
+        output_tokens: 277
+      elapsed_seconds: 0.3129
+      request_sha256: da8de62a24b3e80c55dd52138f326a7ff2bc51f3cd82ccb6d2dbcf627a81d962

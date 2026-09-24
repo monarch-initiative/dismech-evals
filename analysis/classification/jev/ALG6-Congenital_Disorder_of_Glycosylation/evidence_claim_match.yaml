@@ -3639,6 +3639,52 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/0/readouts/0
       evidence_path: /experimental_models/0/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:10359825
+  8c10186ed1438a5b417e1d46163cc75959bfa8747b348c0c595ec97567b0c7ee:
+    claim:
+      about:
+        disease:
+          name: ALG6-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: ALG6-congenital disorder of glycosylation
+            term:
+              id: MONDO:0011291
+              label: ALG6-congenital disorder of glycosylation 1C
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Global published literature
+        measure_type: CASES_IN_LITERATURE
+        prevalence_class: ULTRA_RARE
+        notes: A time-bounded diagnosed-case count from the literature as of 2011, not a population prevalence
+          estimate. Despite the small absolute number, ALG6-CDG has been described as the second most
+          common CDG after PMM2-CDG, which reflects how rare the non-PMM2 disorders are rather than any
+          large ALG6-CDG cohort.
+      selected_evidence:
+        snippet: ALG6-CDG has been now described in 89 patients, making it the second most common type
+          of CDG.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27287710
+      reference_title: 'ALG6-CDG: a recognizable phenotype with epilepsy, proximal muscle weakness, ataxia
+        and behavioral and limb anomalies.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: A later and larger published patient count (89 as of 2016), and independent confirmation
+        of the second-most-common ranking.
+    first_seen_at: '2026-09-24T05:51:18.849384+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:12.185539+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:12.185539+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/2
+      reference: PMID:27287710
 assessments:
   8fea6823739876148c503c2974ff93f030c81bc3bdd901a41ef2b8be44c1efff:
     input_sha256: 89c177c7e947af81a0d770b9752ea5f9b01ce2bfbbeae4eaff14f49256e64367
@@ -8303,3 +8349,60 @@ assessments:
         output_tokens: 355
       elapsed_seconds: 1.0432
       request_sha256: 0e9bd54bb5a0dcb9f22158af666afc690cabdcff2a89a221c2a4b036d05c5d2c
+  180f38f2dff40884a35f94787b1eea6b3f665e0bbac060742f3fea279cf50a1b:
+    input_sha256: 8c10186ed1438a5b417e1d46163cc75959bfa8747b348c0c595ec97567b0c7ee
+    configuration_sha256: 82319757bb2863ae84296998d903dcf77c6d2727d646496ac91965bebecbff3b
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:18.849384+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.37
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/population:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.43
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/measure_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.49
+            PARTIAL: 0.35
+          confidence: 0.24
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.39
+            PARTIAL: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7154
+        output_tokens: 272
+      elapsed_seconds: 0.6849
+      request_sha256: 2e03f353273950559c2b8e29f80d54059f80bd987addff0a40bca4a473904269

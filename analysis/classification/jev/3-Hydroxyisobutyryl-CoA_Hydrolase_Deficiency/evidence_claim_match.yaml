@@ -4577,6 +4577,69 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:33762937
+  ed777c7dd75fc7f2bbdcea6773208398cf2a0d09e2d508d11d173568596aee11:
+    claim:
+      about:
+        disease:
+          name: 3-hydroxyisobutyryl-CoA hydrolase deficiency
+          disease_term:
+            preferred_term: 3-hydroxyisobutyryl-CoA hydrolase deficiency
+            term:
+              id: MONDO:0009603
+              label: 3-hydroxyisobutyryl-CoA hydrolase deficiency
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: HIBCH catalytic loss
+            description: Biallelic pathogenic HIBCH variants reduce mitochondrial 3-hydroxyisobutyryl-CoA
+              hydrolase activity, establishing the initiating enzymatic lesion.
+            gene:
+              preferred_term: HIBCH
+              term:
+                id: hgnc:4908
+                label: HIBCH
+            molecular_functions:
+            - preferred_term: 3-hydroxyisobutyryl-CoA hydrolase activity
+              term:
+                id: GO:0003860
+                label: 3-hydroxyisobutyryl-CoA hydrolase activity
+              modifier: DECREASED
+            locations:
+            - preferred_term: mitochondrial matrix
+              term:
+                id: GO:0005759
+                label: mitochondrial matrix
+            mechanism_confidence: ESTABLISHED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Impaired 3-hydroxyisobutyryl-CoA hydrolysis
+        description: Loss of the enzyme directly blocks its mitochondrial valine-catabolism reaction.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: conversion of 3-hydroxyisobutyryl-CoA to free 3-hydroxyisobutyrate
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:26163321
+      reference_title: 'Metabolite studies in HIBCH and ECHS1 defects: Implications for screening.'
+      evidence_source: OTHER
+      explanation: The paper states the reaction directly.
+    first_seen_at: '2026-09-24T05:54:53.994619+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:40.981724+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:40.981724+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:26163321
 assessments:
   261b457ffdde3d0a63a4338d6d3a35c54a84b4aa761dcb4f0a6e5b3d503573b4:
     input_sha256: 55d41fbd8ec1a846f7ca68b274486edeffb393eb14caa3d19c182c86920c7c7e
@@ -11222,3 +11285,60 @@ assessments:
         output_tokens: 368
       elapsed_seconds: 1.5987
       request_sha256: 6e79c24c127a15bb89660dc44a4645f021ad4cfffef43e8a21f583368bfd78b7
+  a0665fc5ba342e942191c3c161f86002381656083318aad2e13554344a6b0ea9:
+    input_sha256: ed777c7dd75fc7f2bbdcea6773208398cf2a0d09e2d508d11d173568596aee11
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:54:53.994619+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.19
+            PARTIAL: 0.3
+          confidence: 0.26
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.08
+            PARTIAL: 0.44
+          confidence: 0.22
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.04
+            PARTIAL: 0.18
+          confidence: 0.68
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.15
+            PARTIAL: 0.31
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6588
+        output_tokens: 268
+      elapsed_seconds: 0.3805
+      request_sha256: 94a66b714fa506894524e4f3a80536ed9ae70ff44b3570ea5487a2640518af1b

@@ -9597,6 +9597,101 @@ inputs:
     - assertion_path: /experimental_models/4/modeled_mechanisms/0/readouts/0
       evidence_path: /experimental_models/4/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:16737350
+  76978dde5085cb5195da7e8ca2ca98eb5d4c835c3eef02bab3b1ebdea9db50c6:
+    claim:
+      about:
+        disease:
+          name: AA Amyloidosis
+          disease_term:
+            preferred_term: AA amyloidosis
+            term:
+              id: MONDO:0019439
+              label: AA amyloidosis
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Progressive renal decline to end-stage kidney disease
+        notes: Renal decline varies with underlying disease, baseline injury and treatment. In the initial
+          eprodisate trial, the placebo group lost a mean 15.6 mL/min/1.73 m2 of creatinine clearance
+          per year while receiving physician-managed treatment of underlying inflammation; this is a selected
+          trial comparator, not untreated natural history. A separate 374-patient cohort reported median
+          survival of 133 months after diagnosis.
+      selected_evidence:
+        snippet: Median survival after diagnosis was 133 months
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /progression/3
+      evidence_path: /progression/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17554117
+      reference_title: Natural history and outcome in systemic AA amyloidosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Provides the median survival benchmark for the progressive phase.
+      quote_role: PRIMARY_RESULT
+    first_seen_at: '2026-09-24T05:51:17.748032+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:59.535982+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:59.535982+00:00'
+    occurrences:
+    - assertion_path: /progression/3
+      evidence_path: /progression/3/evidence/1
+      reference: PMID:17554117
+  2edbb57dfec063223b34fd38bc54fe2f9172d6d75bdb0d6a3e73ff4929a93fa9:
+    claim:
+      about:
+        disease:
+          name: AA Amyloidosis
+          disease_term:
+            preferred_term: AA amyloidosis
+            term:
+              id: MONDO:0019439
+              label: AA amyloidosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Miridesap followed by dezamizumab (Investigational)
+        description: SAP depletion followed by anti-SAP antibody was tested in mixed systemic amyloidosis.
+          The 23-person phase 1 extension included two AA participants, each receiving only one dose;
+          one had lower renal amyloid burden on scintigraphy, without demonstrated renal-function or proteinuria
+          improvement through day 42. Neither AA participant had liver deposits. Later cardiac studies
+          enrolled no AA participants and were stopped for lack of efficacy and a serious vasculitis event.
+          These data do not establish routine AA use or an AA-specific contraindication.
+      selected_evidence:
+        snippet: The decision for an early termination of the study was based on the lack of evidence
+          of cardiac amyloid removal or functional benefit, and the reporting of a SAE of vasculitis in
+          a subject in the Phase 2 study.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /treatments/12
+      evidence_path: /treatments/12/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35152886
+      reference_title: 'Pharmacodynamic evaluation and safety assessment of treatment with antibodies
+        to serum amyloid P component in patients with cardiac amyloidosis: an open-label Phase 2 study
+        and an adjunctive immuno-PET imaging study.'
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: The later cardiac trial enrolled ATTR and AL, not AA. A suspected large-vessel vasculitis
+        event in the AL participant and absent cardiac benefit prompted termination; neither later study
+        had a death.
+    first_seen_at: '2026-09-24T05:51:18.149532+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:59.535982+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:59.535982+00:00'
+    occurrences:
+    - assertion_path: /treatments/12
+      evidence_path: /treatments/12/evidence/2
+      reference: PMID:35152886
 assessments:
   b63f691e3589e38ce77e9266acf6db3c398c1f16bc28d95deb0cb65d0f9b7ea3:
     input_sha256: f766ebfbeb81fe5e6b3f8d381470196352a753c0eb545e3b3e21fdce0e289e9b
@@ -21738,3 +21833,89 @@ assessments:
         output_tokens: 360
       elapsed_seconds: 0.7349
       request_sha256: 58411b05dc14e8617957b632a4c051a35883dfe611767622b4b5527a5701bcae
+  dea50b2859b19e7ff06ef7c9f6efcd0ba5a187fc5bd1d8e7d4e1aefe8824a65d:
+    input_sha256: 76978dde5085cb5195da7e8ca2ca98eb5d4c835c3eef02bab3b1ebdea9db50c6
+    configuration_sha256: f96784d87f8ca05ad10a679b94eb789dd9a9c307a2309f99e9472865f6cabccd
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:17.748032+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.08
+            PARTIAL: 0.75
+          confidence: 0.63
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.44
+            PARTIAL: 0.5
+          confidence: 0.26
+        /assertion/phase:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.26
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.23
+            PARTIAL: 0.56
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4326
+        output_tokens: 179
+      elapsed_seconds: 0.4302
+      request_sha256: 0737bf452c9dea88d937ad04795e37d0fb18a4fb11fb0c69ddfd0465e66dcb60
+  d32331dfbd4dc01075df09e65fc981abee1620b19193b509afd32a3b20ef5020:
+    input_sha256: 2edbb57dfec063223b34fd38bc54fe2f9172d6d75bdb0d6a3e73ff4929a93fa9
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:18.149532+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.4
+            MATCH: 0.07
+          confidence: 0.29
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.45
+            MATCH: 0.07
+          confidence: 0.23
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.34
+            MATCH: 0.09
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.45999999999999996
+            MATCH: 0.17
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4382
+        output_tokens: 185
+      elapsed_seconds: 0.3846
+      request_sha256: 736b4ec60784483ae4d8a497112171cad35efbd6036aebb3910495fb79f8d05d

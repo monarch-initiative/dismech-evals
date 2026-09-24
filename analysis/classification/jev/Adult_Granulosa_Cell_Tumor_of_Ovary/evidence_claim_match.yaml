@@ -2834,6 +2834,55 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: PMID:41518037
+  836eeb0214f26c4fe0bd8cd0fafef120fdd2582eff6090fd91f3f7c330de527a:
+    claim:
+      about:
+        disease:
+          name: Adult Granulosa Cell Tumor of Ovary
+          disease_term:
+            preferred_term: adult-type granulosa cell tumor of the ovary
+            term:
+              id: MONDO:0020541
+              label: maligant granulosa cell tumor of ovary
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Granulosa Cell Proliferation and Survival
+        biological_scale: CELLULAR
+        description: Downstream of the rewired FOXL2 program, granulosa cells acquire increased proliferation
+          and increased survival, progressing in the knock-in mouse through aberrant granulosa cells and
+          stromal hyperplasia with atypia to frank tumor. Mouse transcriptomic analysis found no evidence
+          of additional driver mutations beyond FOXL2 C134W, consistent with a single-hit tumor.
+        cell_types:
+        - preferred_term: granulosa cell
+          term:
+            id: CL:0000501
+            label: granulosa cell
+      selected_evidence:
+        snippet: The FOXL2 402C->G mutation leads to increased proliferation and survival of granulosa
+          cells, and promotes hormonal changes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28276867
+      reference_title: Pathogenesis and treatment of adult-type granulosa cell tumor of the ovary.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the proliferation/survival consequence and the hormonal arm that this node and
+        its sibling steroidogenesis node model.
+    first_seen_at: '2026-09-24T05:55:15.971549+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:24.559991+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:24.559991+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:28276867
 assessments:
   dcba4ad540386895c37aeef6b06143b87d383593c9d032c00d8f32cbff5306c9:
     input_sha256: d100a7af2fc2da0386877c942dde62c9c28cb54feea847f263ef7d62de9815d6
@@ -6446,3 +6495,67 @@ assessments:
         output_tokens: 378
       elapsed_seconds: 0.6042
       request_sha256: d789064fe7b147c14e85527a2e6755d52cafe6749746977a9713098a0c24bd90
+  e38e926404c131f656ad72a5f93728f979a15928b955041a6188e0109e806840:
+    input_sha256: 836eeb0214f26c4fe0bd8cd0fafef120fdd2582eff6090fd91f3f7c330de527a
+    configuration_sha256: e67b491ae62c484505988bad99f46ce8bf6266dc969655b7643de26bca2f4512
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:15.971549+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.72
+            MATCH: 0.2
+          confidence: 0.59
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.53
+            PARTIAL: 0.42
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.66
+            MATCH: 0.26
+          confidence: 0.49
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+            MATCH: 0.86
+          confidence: 0.8
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.84
+            PARTIAL: 0.13
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7632
+        output_tokens: 324
+      elapsed_seconds: 0.3022
+      request_sha256: 1b11ce6635dc3dd81e05d937f4532462917537307a430bee7aacdf6b9e144a01

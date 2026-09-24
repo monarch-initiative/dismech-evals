@@ -3233,6 +3233,66 @@ inputs:
     - assertion_path: /differential_diagnoses/2
       evidence_path: /differential_diagnoses/2/evidence/0
       reference: PMID:16763460
+  bb852de1298d0acb382bb5a834f426709b82f42b9a633af728dcd7e65350fe18:
+    claim:
+      about:
+        disease:
+          name: Acquired Immunodeficiency Syndrome
+          disease_term:
+            preferred_term: AIDS
+            term:
+              id: MONDO:0012268
+              label: AIDS
+        context:
+        - path: /biochemical/0
+          value:
+            name: CD4 T-Cell Count
+            biomarker_term:
+              preferred_term: CD4 Expressing T Cell Count
+              term:
+                id: NCIT:C74608
+                label: CD4 Expressing T Cell Count
+            presence: Decreased
+            context: Absolute count and percentage are U.S. CDC surveillance-stage measures with age-specific
+              thresholds. The count takes precedence, and percentage is used only when the count is missing.
+              Stage 0 and a qualifying opportunistic illness can take precedence over the CD4 table. Values
+              can rise after ART and must be interpreted with clinical history.
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Severe Cell-Mediated Immunodeficiency
+        relationship: READOUT_OF
+        direction: THRESHOLD_DEPENDENT
+        endpoint_context: DIAGNOSTIC
+        interpretation: For a person aged 6 years or older who does not meet stage-0 criteria, a CD4 count
+          below 200 cells per microliter indicates U.S. CDC surveillance stage 3; a CD4 percentage below
+          14 percent is used only when the count is missing. Children younger than 6 years have age-specific
+          stage-3 cutoffs.
+      selected_evidence:
+        snippet: if the criteria for stage 0 are met, the stage is 0 regardless of criteria for other
+          stages (CD4 T-lymphocyte test results and opportunistic illness diagnoses)
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: url:https://www.cdc.gov/mmwr/pdf/rr/rr6303.pdf
+      reference_title: https://www.cdc.gov/mmwr/pdf/rr/rr6303.pdf
+      evidence_source: OTHER
+      explanation: This establishes stage-0 precedence over CD4 results and stage-3-defining illnesses.
+    first_seen_at: '2026-09-24T05:54:59.564632+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:20.130946+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:20.130946+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/2
+      reference: url:https://www.cdc.gov/mmwr/pdf/rr/rr6303.pdf
 assessments:
   e289767a7f39ca5e2f714cf8b0dba6417e7f588161366fdac7c791d57f96905b:
     input_sha256: 4a3f2200c180a3a68ba7b44057f5d3d28946b364004a66597153cb75ca5ac29d
@@ -7140,3 +7200,74 @@ assessments:
         output_tokens: 230
       elapsed_seconds: 1.02
       request_sha256: e11708ee9a104961084359a505a3db7efdd65b67286ef0706dc31e5222dee7c4
+  47d25cb406a99604c1d4458e6984f0ffedef80fd0cefe182400c55127f661377:
+    input_sha256: bb852de1298d0acb382bb5a834f426709b82f42b9a633af728dcd7e65350fe18
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:54:59.564632+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.44
+            MATCH: 0.13
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.43
+            MATCH: 0.35
+          confidence: 0.15
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.39
+            MATCH: 0.12
+          confidence: 0.24
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.42
+            MATCH: 0.21
+          confidence: 0.13
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.47
+            MATCH: 0.34
+          confidence: 0.2
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.34
+            MATCH: 0.52
+          confidence: 0.27
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            PARTIAL: 0.49
+            MATCH: 0.06
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.46
+            MATCH: 0.32
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8642
+        output_tokens: 369
+      elapsed_seconds: 0.4326
+      request_sha256: 8f7d7478945edad76d155e9ec1e9c36a8a90085d3fcf146b0109a23a692f2052

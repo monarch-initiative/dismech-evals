@@ -4112,6 +4112,57 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/0
       reference: PMID:25298885
+  3f619955afc03d6bdb9ada8238294d16ea9ce81c454366cba442ff7ec5f76ac5:
+    claim:
+      about:
+        disease:
+          name: 46,XY disorder of sex development due to 17-beta-hydroxysteroid dehydrogenase 3 deficiency
+          disease_term:
+            preferred_term: 46,XY disorder of sex development due to 17-beta-hydroxysteroid dehydrogenase
+              3 deficiency
+            term:
+              id: MONDO:0009916
+              label: 46,XY disorder of sex development due to 17-beta-hydroxysteroid dehydrogenase 3 deficiency
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: 46XY Undervirilization Phenotype
+            biological_scale: ORGANISM
+            description: The clinical phenotype includes 46,XY undervirilization with ambiguous or female-appearing
+              external genitalia, hypospadias, bifid scrotum, cryptorchidism, inguinal testes or hernias,
+              and infertility. Pubertal virilization can occur when androstenedione secretion increases.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hypospadias
+        causal_link_type: UNKNOWN
+        description: Hypospadias is a common specific manifestation within the aggregate undervirilization
+          phenotype.
+      selected_evidence:
+        snippet: HP:0000047 | Hypospadias | Very frequent (99-80%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/3
+      evidence_path: /pathophysiology/3/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: ORPHA:752
+      reference_title: 46,XY difference of sex development due to 17-beta-hydroxysteroid dehydrogenase
+        3 deficiency
+      evidence_source: OTHER
+      explanation: Orphanet records hypospadias as very frequent in this disorder.
+    first_seen_at: '2026-09-24T05:51:17.292974+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:51.085229+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:51.085229+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/3
+      evidence_path: /pathophysiology/3/downstream/3/evidence/0
+      reference: ORPHA:752
 assessments:
   3afbd328823bae22babe97f2bc286a97d3b97674034ac7b06b7d0d7eebc104de:
     input_sha256: 97b9854de06ae0bbd212773cec6023bc3db40b0a96bf22dfac44b8a3058fa431
@@ -9337,3 +9388,60 @@ assessments:
         output_tokens: 440
       elapsed_seconds: 1.0889
       request_sha256: d475258a1d5faa9cc29db415015a35c73ae14a14a6ea756974c542f819d894f1
+  6e60b5972fb76b6ee9cb1ce92ea8e69d17bdcb3d42a04aae6031315fbd934432:
+    input_sha256: 3f619955afc03d6bdb9ada8238294d16ea9ce81c454366cba442ff7ec5f76ac5
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:17.292974+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.41
+            MATCH: 0.39
+          confidence: 0.11
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.39
+            MATCH: 0.13
+          confidence: 0.21
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.18
+            MATCH: 0.73
+          confidence: 0.59
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            PARTIAL: 0.45
+            MATCH: 0.13
+          confidence: 0.17
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.29
+            MATCH: 0.62
+          confidence: 0.42
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.26
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6457
+        output_tokens: 273
+      elapsed_seconds: 0.5441
+      request_sha256: 7bddca393dea9afac326511ab1bf51f1e375d875ca41f2f9dbb52c4f0cb190ff

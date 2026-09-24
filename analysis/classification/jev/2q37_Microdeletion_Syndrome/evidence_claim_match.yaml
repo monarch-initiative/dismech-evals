@@ -2339,6 +2339,59 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:31990478
+  8c700e1bbef26be3c3b20a0a482407cea35adb07eeb1b3f8dd32e6b3a0343893:
+    claim:
+      about:
+        disease:
+          name: 2q37 Microdeletion Syndrome
+          disease_term:
+            preferred_term: 2q37 microdeletion syndrome
+            term:
+              id: MONDO:0010886
+              label: 2q37 microdeletion syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_2q37_hdac4_phenotype_attribution
+        prompt: Which components of the constitutional 2q37 deletion phenotype are caused specifically
+          by HDAC4 haploinsufficiency, which require other deleted genes or breakpoint effects, and which
+          associations remain insufficiently resolved for a gene-specific causal edge?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Partial contribution of HDAC4 haploinsufficiency
+        - genetic#HDAC4
+        rationale: Early reports concluded that HDAC4 haploinsufficiency was sufficient for the brachydactyly-intellectual
+          disability phenotype, but later individuals with HDAC4 haploinsufficiency had normal intelligence,
+          and some 2q37 deletions lacking HDAC4 had intellectual or skeletal findings. Current ontology
+          separately identifies HDAC4-related haploinsufficiency syndrome, so this record already treats
+          deletion-negative disease as a differential. Expert resolution is still needed to determine
+          how much gene-specific causal detail belongs in this multigene deletion record.
+      selected_evidence:
+        snippet: This is in contradistinction to previous reports that haploinsufficiency of HDAC4 is
+          sufficient to cause BDMR.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24715439
+      reference_title: Haploinsufficiency of HDAC4 does not cause intellectual disability in all affected
+        individuals.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly identifies the disputed sufficiency claim.
+    first_seen_at: '2026-09-24T05:49:40.095983+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:39.161585+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:39.161585+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:24715439
 assessments:
   ce12312c85b0e6c92ed48402167f9fd64767db236f9855be0e8a7da2cf5d9d63:
     input_sha256: ef3f04b303a8ab4f9322776ea53b923c7d6188e9526ff192f269a552088aad7b
@@ -5183,3 +5236,74 @@ assessments:
         output_tokens: 368
       elapsed_seconds: 1.0557
       request_sha256: a27569136b46f004a89b5c5678aea2a77106449ce4b2b073e4a26f15077c5a3c
+  5adc53df2c0bccd1e6fdd0205eaca1e139e718ec534495710efd5e4de0ad1931:
+    input_sha256: 8c700e1bbef26be3c3b20a0a482407cea35adb07eeb1b3f8dd32e6b3a0343893
+    configuration_sha256: 790c315aa71a7af449126bba4c0441520643c67e542693c58b87f5b69bbbcdc1
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:49:40.095983+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.47
+            MATCH: 0.36
+          confidence: 0.21
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.31
+            MATCH: 0.43
+          confidence: 0.15
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.24
+            MATCH: 0.19
+          confidence: 0.36
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.59
+            MATCH: 0.32
+          confidence: 0.39
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            PARTIAL: 0.21
+            MATCH: 0.15
+          confidence: 0.46
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+            MATCH: 0.03
+          confidence: 0.69
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.39
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.47
+            MATCH: 0.33
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8447
+        output_tokens: 368
+      elapsed_seconds: 0.8341
+      request_sha256: 8a36d1644fe847c69345c01290bf53e3d267ccef194397f0411e221b90d7abb4

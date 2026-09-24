@@ -12237,6 +12237,67 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:33627800
+  9b196ba7de474834cac6bd9089bd5bb899544e31c0f04f3dc9e4f5914bc11a41:
+    claim:
+      about:
+        disease:
+          name: 46,XY partial gonadal dysgenesis
+          disease_term:
+            preferred_term: 46,XY partial gonadal dysgenesis
+            term:
+              id: MONDO:0016674
+              label: 46,XY partial gonadal dysgenesis
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: MAP3K1 sequence alteration
+            role: trigger
+            biological_scale: MOLECULAR
+            description: Heterozygous MAP3K1 variants are associated with partial and complete gonadal
+              dysgenesis. Functional consequences below are allele- and assay-specific. The p.Arg186Gly
+              family had severe 46,XY DSD with streak gonads or tumors; its cellular results inform a
+              broader gene mechanism rather than prove the mechanism of every partial presentation.
+            genes:
+            - preferred_term: MAP3K1
+              term:
+                id: hgnc:6848
+                label: MAP3K1
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Reduced MAP3K1 ubiquitination
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: The p.Arg186Gly construct shows reduced ubiquitination in HEK293T cells; mediation
+          by increased RHOA binding remains an interpretation.
+      selected_evidence:
+        snippet: Our Co-IP assay confirmed that the binding capacity of MAP3K1R186G to RhoA was 2.57 times
+          that of the wild-type protein (Figures 5A,A'), and the ubiquitination degree of the wild-type
+          MAP3K1 protein was 3.6-fold that of the MAP3K1R186G variant (Figures 5B,B').
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/1
+      evidence_path: /pathophysiology/2/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:35309143
+      reference_title: MAP3K1 Variant Causes Hyperactivation of Wnt4/β-Catenin/FOXL2 Signaling Contributing
+        to 46,XY Disorders/Differences of Sex Development.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Selected p.Arg186Gly variant in HEK293T cells; binding and ubiquitination measurements,
+        not gonadal epistasis.
+    first_seen_at: '2026-09-24T05:55:14.204657+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:52.638937+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:52.638937+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/1
+      evidence_path: /pathophysiology/2/downstream/1/evidence/0
+      reference: PMID:35309143
 assessments:
   b9896a383a72d9675564329ae99d2e7f80f9f06281efd2d0c6db35aae2adf3db:
     input_sha256: ab3c561cf927e81bdf0b5f57d4e38921f1452d41894cb975f0fd25452562d7b9
@@ -27529,3 +27590,60 @@ assessments:
         output_tokens: 321
       elapsed_seconds: 0.881
       request_sha256: 04e7db49423dba59b1a6679d943d5a1a21f3f1f11ecf5fb545fcaee42c028230
+  396a7ba6b5ebcd97fec5cd8e17909bf8ddab17e86b7fc0eb22687f521925261f:
+    input_sha256: 9b196ba7de474834cac6bd9089bd5bb899544e31c0f04f3dc9e4f5914bc11a41
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:14.204657+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.53
+            MISMATCH: 0.05
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.5
+            MISMATCH: 0.3
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.63
+            MISMATCH: 0.05
+          confidence: 0.45
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.27
+            MISMATCH: 0.01
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.43
+            MISMATCH: 0.08
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6558
+        output_tokens: 271
+      elapsed_seconds: 0.4147
+      request_sha256: f2fa65f72b07877d3ccac5a83a0c85a6f35f8350dfb4d13a677860db77386608

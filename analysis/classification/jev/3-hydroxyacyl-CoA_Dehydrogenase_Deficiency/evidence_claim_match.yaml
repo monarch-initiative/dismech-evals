@@ -2383,6 +2383,60 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/1
       reference: PMID:26953163
+  a76f0099b882932e8beb99f58b444f606acf5f18b596fe831f6a6cf9fa1266ca:
+    claim:
+      about:
+        disease:
+          name: 3-Hydroxyacyl-CoA Dehydrogenase Deficiency
+          disease_term:
+            preferred_term: 3-hydroxyacyl-CoA dehydrogenase deficiency
+            term:
+              id: MONDO:0017715
+              label: 3-hydroxyacyl-CoA dehydrogenase deficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Blood glucose
+        presence: DECREASED
+        context: Profoundly decreased venous or capillary blood glucose during fasting or protein-rich
+          feeds.
+        biomarker_term:
+          preferred_term: glucose
+          term:
+            id: CHEBI:17234
+            label: glucose
+        readouts:
+        - target: Profound Hypoketotic Hypoglycemia and Neuroglycopenia
+          relationship: READOUT_OF
+          direction: NEGATIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Systemic hypoglycemia driven by excessive peripheral glucose uptake and suppressed
+            production.
+      selected_evidence:
+        snippet: 'While she was taking diazoxide 2 mg/kg/day, a non-ketotic hypoglycemic attack (blood
+          glucose: 46 mg/dL) was detected with a very high insulin level (46.8 µIU/mL).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/3
+      evidence_path: /biochemical/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26316438
+      reference_title: 'A Deep Intronic HADH Splicing Mutation (c.636+471G>T) in a Congenital Hyperinsulinemic
+        Hypoglycemia Case: Long Term Clinical Course.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Measures severe hypoglycemia (blood glucose 46 mg/dL) coincident with elevated insulin.
+    first_seen_at: '2026-09-24T05:55:02.609015+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:44.746460+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:44.746460+00:00'
+    occurrences:
+    - assertion_path: /biochemical/3
+      evidence_path: /biochemical/3/evidence/0
+      reference: PMID:26316438
 assessments:
   0c011ed5b2eb2241a3e1ec1f6d8c233a568d7278799abb0e291ccdbd9a4fec37:
     input_sha256: 4d9db8fb97c2b6815fe77c94ea0c1789faf95c11b8103918bb5e5c5130fdcae1
@@ -5908,3 +5962,102 @@ assessments:
         output_tokens: 366
       elapsed_seconds: 0.8133
       request_sha256: 4a648e335157bc4f1014191c27876e67cad225651bac99a5250d5e81ec6bf9f6
+  87ab80724e00fea0a2fd1eae023edd7be0cc39da8a9ad783c38193333a001df0:
+    input_sha256: a76f0099b882932e8beb99f58b444f606acf5f18b596fe831f6a6cf9fa1266ca
+    configuration_sha256: 4557549b024ea7c08da03b101840159aa0e5dbda8ab62bac317e1a3854e77faa
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:02.609015+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.5
+            MATCH: 0.18
+          confidence: 0.26
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.6
+            MATCH: 0.05
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.1
+            MATCH: 0.81
+          confidence: 0.71
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.13
+            MATCH: 0.67
+          confidence: 0.51
+        /assertion/context:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.51
+            MATCH: 0.14
+          confidence: 0.27
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.1
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.12
+            MATCH: 0.77
+          confidence: 0.65
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.26
+            MATCH: 0.3
+          confidence: 0.16
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.16
+            MATCH: 0.67
+          confidence: 0.49
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.67
+            MATCH: 0.21
+          confidence: 0.5
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.26
+            MATCH: 0.37
+          confidence: 0.06
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.74
+            MATCH: 0.02
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12352
+        output_tokens: 590
+      elapsed_seconds: 0.4182
+      request_sha256: d0208325b56b0ad6ba919c1f3cd585b8727dfe223c985510e6bdf926c4b5ad25

@@ -4164,6 +4164,59 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/0
       reference: PMID:42420940
+  799c2b2e25f91f3250d91f9828c790a72714fee6db8ea516d28bae9f4598a813:
+    claim:
+      about:
+        disease:
+          name: 22q11.2 Deletion Syndrome
+          disease_term:
+            preferred_term: 22q11.2 deletion syndrome
+            term:
+              id: MONDO:0018923
+              label: 22q11.2 deletion syndrome
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT01220531
+        phase: NOT_APPLICABLE
+        status: COMPLETED
+        description: Completed expanded-access study of cultured thymus tissue implantation for complete
+          DiGeorge anomaly/congenital athymia. It is relevant only to the rare absent-thymus-function
+          subgroup, not to routine 22q11.2 deletion care.
+        target_phenotypes:
+        - preferred_term: Cellular immunodeficiency
+          term:
+            id: HP:0005374
+            label: Cellular immunodeficiency
+        - preferred_term: Aplasia of the thymus
+          term:
+            id: HP:0005359
+            label: Aplasia of the thymus
+      selected_evidence:
+        snippet: This expanded access study continues cultured thymus tissue safety and efficacy research
+          for the treatment of complete DiGeorge anomaly.
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT01220531
+      reference_title: Safety and Efficacy of Thymus Transplantation in Complete DiGeorge Anomaly, IND#9836
+      evidence_source: HUMAN_CLINICAL
+      explanation: The registry documents the completed cultured-thymus study in the congenital-athymia
+        subgroup.
+    first_seen_at: '2026-09-24T05:55:09.143460+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:38.298474+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:38.298474+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      reference: clinicaltrials:NCT01220531
 assessments:
   dae654d7be7199e8178e44b38043b40cbaca4a669adaa1debf60d618cc623759:
     input_sha256: 396abbe0efc94fc3ee115017f5c4bb24162785437468e459e514b27d17a8645d
@@ -9436,3 +9489,88 @@ assessments:
         output_tokens: 180
       elapsed_seconds: 1.0925
       request_sha256: 57265a7eb8826683adcd3be7c749c233862f6773193163daa21da3f4ed318743
+  938b18d7876ae522543b3fb7a69f2d20b50058d690d486a8bb0b31675ad77a63:
+    input_sha256: 799c2b2e25f91f3250d91f9828c790a72714fee6db8ea516d28bae9f4598a813
+    configuration_sha256: dca57f8f0165fa1e13957c514900bac62785034c44a5bc2eb6ca533b4ff39214
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:09.143460+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.28
+            MATCH: 0.23
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.34
+            PARTIAL: 0.28
+            MATCH: 0.38
+          confidence: 0.07
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.24
+            MATCH: 0.07
+          confidence: 0.54
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+            MATCH: 0.07
+          confidence: 0.41
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            PARTIAL: 0.34
+            MATCH: 0.03
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            PARTIAL: 0.38
+            MATCH: 0.32
+          confidence: 0.07
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.4
+            MATCH: 0.31
+          confidence: 0.09
+        /assertion/target_phenotypes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.41
+            MATCH: 0.16
+          confidence: 0.13
+        /assertion/target_phenotypes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.17
+            MATCH: 0.68
+          confidence: 0.52
+        /assertion/target_phenotypes/1/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.19
+            MATCH: 0.63
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10192
+        output_tokens: 491
+      elapsed_seconds: 0.563
+      request_sha256: 00878734dfa6d87d42fe83da826fd365977c0575cdf1be1d7769ed6f4658442f

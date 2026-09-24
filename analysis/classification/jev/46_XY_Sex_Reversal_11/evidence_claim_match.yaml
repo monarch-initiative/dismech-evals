@@ -9544,6 +9544,53 @@ inputs:
     - assertion_path: /progression/2
       evidence_path: /progression/2/evidence/1
       reference: url:https://mdpi-res.com/d_attachment/life/life-13-01093/article_deploy/life-13-01093.pdf?version=1682573867
+  300af386f0d725a24a0c82420dbb8c6e012a25e8d1c610c42292efd5b4e4e6b4:
+    claim:
+      about:
+        disease:
+          name: 46,XY Sex Reversal 11
+          disease_term:
+            preferred_term: 46,XY sex reversal 11
+            term:
+              id: MONDO:8000015
+              label: 46,XY sex reversal 11
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Altered RNA Splicing
+        description: Dhx37 depletion in mouse TM4 Sertoli cells alters exon usage and intron retention.
+          This provides an experimental RNA-processing branch distinct from ribosome assembly. The affected
+          transcripts include cell-cycle and stress-associated genes, but the causal contribution of these
+          changes to human DSD variants is unresolved.
+        biological_scale: MOLECULAR
+        mechanism_confidence: PROVISIONAL
+      selected_evidence:
+        snippet: Dhx37 KD triggered 949 significant AS events
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41535247
+      reference_title: Multi-omics analysis the effects of Dhx37 deficiency on testis development and
+        nucleolar homeostasis.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: RNA-seq after Dhx37 knockdown in mouse TM4 cells identifies alternative-splicing changes;
+        their contribution to human variant-associated gonadal disease remains untested.
+    first_seen_at: '2026-09-24T05:55:03.119550+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:54.187769+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:54.187769+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      reference: PMID:41535247
 assessments:
   34c55c1b7791f374cfb8385003d74900803a1dd8ba4f35aa9a37b5ffb9cd914a:
     input_sha256: ceb444c9e61ebfc77e73bb2fde84179ff7ea0df3441770d87b5cc6e1933d905f
@@ -21356,3 +21403,60 @@ assessments:
         output_tokens: 225
       elapsed_seconds: 0.9393
       request_sha256: 86bf8cd92794c2cfa69bbfc786ab20cb6360915c8f6debb2db98033f8db87e98
+  9b8bd8ee21cdfd3f143c0cd68bd48b3cfb8c8a5c9f672f0a13fbb586897b660b:
+    input_sha256: 300af386f0d725a24a0c82420dbb8c6e012a25e8d1c610c42292efd5b4e4e6b4
+    configuration_sha256: 90ca87efd6a310cae6b164aadf5895b6efa076f7c82bbb6d9dbe90e75c71c1e6
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:03.119550+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.33
+            MATCH: 0.04
+          confidence: 0.45
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.52
+            MATCH: 0.03
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.06
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.1
+            MATCH: 0.24
+          confidence: 0.49
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/mechanism_confidence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.06
+            MATCH: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6640
+        output_tokens: 275
+      elapsed_seconds: 0.481
+      request_sha256: 3fb8f1abb3a12876e9ce806ae165c318025c82fc72af42145bad8dbc527b4850

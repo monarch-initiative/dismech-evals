@@ -5657,6 +5657,73 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/0
       reference: PMID:34513772
+  2f45ce2685dea2a9a749757242712f1d048df931f0b7788da831c59cdc6401f9:
+    claim:
+      about:
+        disease:
+          name: ADGRG1-related Bilateral Frontoparietal Polymicrogyria
+          disease_term:
+            preferred_term: bilateral frontoparietal polymicrogyria
+            term:
+              id: MONDO:0011738
+              label: bilateral frontoparietal polymicrogyria
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Loss of GPR56 Adhesion GPCR Function
+            description: Recessive loss-of-function mutations in ADGRG1/GPR56, an adhesion-family G protein-coupled
+              receptor expressed in cortical radial glial progenitors and their basal endfeet, impair
+              receptor function. Missense variants analyzed in PMID:21349848 were located in the extracellular
+              region (ectodomain, GPS autoproteolysis site and extracellular loops) and affected different
+              combinations of surface expression, proteolysis, shedding, ligand interaction and membrane
+              distribution. These heterogeneous defects converge on reduced GPR56 function as the initiating
+              molecular lesion of BFPP.
+            genes:
+            - preferred_term: ADGRG1
+              term:
+                id: hgnc:4512
+                label: ADGRG1
+            biological_processes:
+            - preferred_term: G protein-coupled receptor signaling pathway
+              term:
+                id: GO:0007186
+                label: G protein-coupled receptor signaling pathway
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Impaired Oligodendrocyte Precursor Proliferation and Maturation
+        description: Loss of GPR56 in oligodendrocyte-lineage cells reduces active RhoA and OPC proliferation,
+          creating a parallel white-matter disease branch.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Gpr56-knockout mice manifest with decreased oligodendrocyte precursor cell (OPC) proliferation
+          and diminished levels of active RhoA, leading to fewer mature oligodendrocytes and a reduced
+          number of myelinated axons in the corpus callosum and optic nerves.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:25607655
+      reference_title: The adhesion G protein-coupled receptor GPR56 is a cell-autonomous regulator of
+        oligodendrocyte development.
+      evidence_source: MODEL_ORGANISM
+      explanation: Constitutive and conditional mouse experiments establish a cell-autonomous oligodendrocyte-lineage
+        branch downstream of GPR56 loss.
+    first_seen_at: '2026-09-24T05:55:06.222838+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:03.786172+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:03.786172+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      reference: PMID:25607655
 assessments:
   c8782d440aa620bc395efdaaf2e4fbf9e0b4ad520e4701b599bc92aa5e5a34fd:
     input_sha256: 1e4c14785cfc1cf40aaac3e3567515e8c02447d86e2aabf0693611a24a142326
@@ -12991,3 +13058,60 @@ assessments:
         output_tokens: 475
       elapsed_seconds: 0.6374
       request_sha256: 760109c7e14fddc35289b5cbb399f60b785587d9bf69ef7456e9c3e0137b8076
+  996438278e643c97441af55b2b8554e6c8b02b0f6f8d9ba907a81d874c1f7a0e:
+    input_sha256: 2f45ce2685dea2a9a749757242712f1d048df931f0b7788da831c59cdc6401f9
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:06.222838+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.22
+            MATCH: 0.39
+          confidence: 0.09
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.21
+            MATCH: 0.29
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.03
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.09
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.08
+            MATCH: 0.72
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.36
+            MATCH: 0.44
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6664
+        output_tokens: 269
+      elapsed_seconds: 0.7395
+      request_sha256: 92e2d05b9841addc4cce1f93b1fbd911e6bb2002251461722f8e2acb232c89f3

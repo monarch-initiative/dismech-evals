@@ -3396,6 +3396,57 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/1
       reference: PMID:31178538
+  7923a9de56c18d525a74012a90de3950ae3ea8c1af0a23a24f94be3f3d45e710:
+    claim:
+      about:
+        disease:
+          name: 46,XY disorder of sex development due to 5-alpha-reductase 2 deficiency
+          disease_term:
+            preferred_term: 46,XY disorder of sex development due to 5-alpha-reductase 2 deficiency
+            term:
+              id: MONDO:0009923
+              label: 46,XY disorder of sex development due to 5-alpha-reductase 2 deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Pubertal Testosterone Exposure
+        biological_scale: ORGANISM
+        description: During and after puberty, increased 5-alpha-reductase type 1 activity can convert
+          testosterone to DHT despite the persistent type 2 defect. This alternative route can increase
+          peripheral androgen-receptor signaling and contribute to pubertal virilization.
+        biological_processes:
+        - preferred_term: androgen receptor signaling pathway
+          term:
+            id: GO:0030521
+            label: androgen receptor signaling pathway
+          modifier: INCREASED
+      selected_evidence:
+        snippet: During and after puberty, T replacement therapy promoted penile enlargement possibly
+          because of increased conversion of T to DHT via increased 5α-reductase type 1 activity even
+          in patients in whom it was ineffective during infancy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36216557
+      reference_title: Longitudinal clinical course in patients with 5α-reductase type 2 deficiency treated
+        with testosterone and dihydrotestosterone during infancy and puberty.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The longitudinal series directly supports increased type 1 conversion as an alternative
+        route for testosterone effects during and after puberty.
+    first_seen_at: '2026-09-24T05:55:11.890242+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:51.624262+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:51.624262+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:36216557
 assessments:
   dc52c4526f15f983ae906065b83921820cd59fb6b00dc768a9bd203a392ef429:
     input_sha256: 64c37b8eb60dce627b9bc381b31e5c795f37cdba1272d41971157d5e4b73028f
@@ -7938,3 +7989,74 @@ assessments:
         output_tokens: 659
       elapsed_seconds: 2.3634
       request_sha256: 525376509057f147fc18248d6f5b383fed099c952874f798118afa54e8cd3e39
+  dd2e4eac1d1a1758cae2a420b2b144cc5c56c54510a4ddf9e584caa31672a096:
+    input_sha256: 7923a9de56c18d525a74012a90de3950ae3ea8c1af0a23a24f94be3f3d45e710
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:11.890242+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.52
+            MATCH: 0.47
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.33
+            MATCH: 0.66
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.31
+            MATCH: 0.65
+          confidence: 0.47
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.2
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.48
+            MATCH: 0.51
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.4
+            MATCH: 0.56
+          confidence: 0.35
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.53
+            MATCH: 0.41
+          confidence: 0.3
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.41
+            MATCH: 0.57
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8890
+        output_tokens: 386
+      elapsed_seconds: 0.7244
+      request_sha256: 42ae15c01d290fe9c764b88072b351acf7889f7e531fc7d7a6a6d56907483af2

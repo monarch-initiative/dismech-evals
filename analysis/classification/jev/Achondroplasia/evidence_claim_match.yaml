@@ -5175,6 +5175,144 @@ inputs:
     - assertion_path: /phenotypes/7
       evidence_path: /phenotypes/7/evidence/0
       reference: ORPHA:15
+  b42b4040c34bdb12a36756c7c5a8ff8c8bb5e0e506fed9faca60e3feb669516e:
+    claim:
+      about:
+        disease:
+          name: Achondroplasia
+          disease_term:
+            preferred_term: achondroplasia
+            term:
+              id: MONDO:0007037
+              label: achondroplasia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: FGFR3 p.Gly380Arg gain-of-function with impaired receptor down-regulation
+        role: trigger
+        conforms_to: fgfr_gain_of_function_skeletal_dysplasia#Constitutive FGFR Activation
+        description: Nearly all individuals have one of two substitutions producing p.Gly380Arg. The receptor
+          is gain of function, but experiments show predominantly ligand-dependent activation with delayed
+          down-regulation and resistance to ligand-mediated internalization.
+        gene:
+          preferred_term: FGFR3
+          term:
+            id: hgnc:3690
+            label: FGFR3
+        molecular_functions:
+        - preferred_term: transmembrane receptor protein tyrosine kinase activity
+          term:
+            id: GO:0004714
+            label: transmembrane receptor protein tyrosine kinase activity
+          modifier: INCREASED
+        biological_processes:
+        - preferred_term: fibroblast growth factor receptor signaling pathway
+          term:
+            id: GO:0008543
+            label: fibroblast growth factor receptor signaling pathway
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Moreover, this receptor was now resistant to ligand-mediated internalization, even at
+          saturating ligand concentrations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:10611230
+      reference_title: The transmembrane mutation G380R in fibroblast growth factor receptor 3 uncouples
+        ligand-mediated receptor activation from down-regulation.
+      evidence_source: IN_VITRO
+      explanation: Directly supports impaired internalization.
+    first_seen_at: '2026-09-24T05:51:19.378681+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:18.509329+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:18.509329+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:10611230
+  8be837967868c833a154a876e0ceff2850e24d71d04cf5db161d30b6a3956ac2:
+    claim:
+      about:
+        disease:
+          name: Achondroplasia
+          disease_term:
+            preferred_term: achondroplasia
+            term:
+              id: MONDO:0007037
+              label: achondroplasia
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Impaired endochondral ossification and chondrodysplasia
+            conforms_to: fgfr_gain_of_function_skeletal_dysplasia#Impaired Endochondral Ossification and
+              Chondrodysplasia
+            role: consequence
+            description: Altered growth-plate maturation reduces the hypertrophic zone and impairs endochondral
+              ossification. Anatomical consequences are represented through calibrated branches rather
+              than an unsupported all-phenotype fan-out.
+            cell_types:
+            - preferred_term: hypertrophic chondrocyte
+              term:
+                id: CL:0000743
+                label: hypertrophic chondrocyte
+            - preferred_term: columnar chondrocyte
+              term:
+                id: CL:0000744
+                label: columnar chondrocyte
+            biological_processes:
+            - preferred_term: endochondral ossification
+              term:
+                id: GO:0001958
+                label: endochondral ossification
+              modifier: DECREASED
+            - preferred_term: growth plate cartilage development
+              term:
+                id: GO:0003417
+                label: growth plate cartilage development
+              modifier: DYSREGULATED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Limited elbow extension
+        hypothesis_groups:
+        - canonical_fgfr3_gain_of_function_chondrocyte_model
+        causal_link_type: UNKNOWN
+        description: Limitation of elbow extension is part of the characteristic skeletal pattern of the
+          chondrodysplasia; the specific articular mechanism is not established by the cited source.
+      selected_evidence:
+        snippet: Individuals with achondroplasia have short stature with rhizomelic shortening of the
+          limbs, macrocephaly, characteristic facies with frontal bossing and midface retrusion, exaggerated
+          lumbar lordosis, limitation of elbow extension and rotation, genu varum, brachydactyly, and
+          trident appearance of the hands.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/5
+      evidence_path: /pathophysiology/4/downstream/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: url:https://www.ncbi.nlm.nih.gov/books/NBK1152/
+      reference_title: Achondroplasia - GeneReviews® - NCBI Bookshelf
+      evidence_source: OTHER
+      explanation: The clinical review places limited elbow extension within the characteristic chondrodysplasia
+        pattern.
+    first_seen_at: '2026-09-24T05:51:19.915687+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:18.509329+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:18.509329+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/5
+      evidence_path: /pathophysiology/4/downstream/5/evidence/0
+      reference: url:https://www.ncbi.nlm.nih.gov/books/NBK1152/
 assessments:
   d9d19c970d13476a05cdf83c9f0fa236be2120969e5c3db09f6b5eec2eaf3f87:
     input_sha256: 43c2a7858e3352f9db25446165184a9fa8f814ede5bc0773bcd98744891b3b06
@@ -11736,3 +11874,180 @@ assessments:
         output_tokens: 320
       elapsed_seconds: 1.0568
       request_sha256: 44498dc9e3263338b1936e0ae15b222e2d5392ca94396905c25f113b23d6613c
+  47db72aceac2fa33c13b15084a3c03f71963579bb6c5d38d7d851dcec51a1874:
+    input_sha256: b42b4040c34bdb12a36756c7c5a8ff8c8bb5e0e506fed9faca60e3feb669516e
+    configuration_sha256: ad7a1c37ae6bb96815f31261956d408e1817a006c58bdb061ca08c3bc892ba26
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:19.378681+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.64
+            MATCH: 0.3
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+            MATCH: 0.27
+          confidence: 0.29
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.59
+            MATCH: 0.24
+          confidence: 0.38
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.51
+            MATCH: 0.3
+          confidence: 0.27
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.53
+            MATCH: 0.04
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.52
+            MATCH: 0.42
+          confidence: 0.27
+        /assertion/gene/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.36
+            MATCH: 0.21
+          confidence: 0.14
+        /assertion/gene/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.44
+            MATCH: 0.23
+          confidence: 0.16
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.38
+            MATCH: 0.05
+          confidence: 0.35
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+            MATCH: 0.06
+          confidence: 0.41
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            PARTIAL: 0.47
+            MATCH: 0.08
+          confidence: 0.2
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.6
+            MATCH: 0.07
+          confidence: 0.41
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            PARTIAL: 0.56
+            MATCH: 0.09
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            PARTIAL: 0.54
+            MATCH: 0.11
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14852
+        output_tokens: 693
+      elapsed_seconds: 0.5106
+      request_sha256: aa4addf0da83f52e47d759c370443d912c005ae5fbc714571baeb1191f32e408
+  a692d2e88369fd5eb191bcb12e86d61934d7bd0b5d086dbb7463f37c2438e490:
+    input_sha256: 8be837967868c833a154a876e0ceff2850e24d71d04cf5db161d30b6a3956ac2
+    configuration_sha256: 832cf98b5ed6bc953612ccd53c5e5f92dfc7bde821ad5e4671fb1de9e184ce32
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:51:19.915687+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.43
+            PARTIAL: 0.53
+          confidence: 0.29
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.09
+            PARTIAL: 0.47000000000000003
+          confidence: 0.2
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.43
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.6
+            PARTIAL: 0.36
+          confidence: 0.39
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.33
+            PARTIAL: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7699
+        output_tokens: 319
+      elapsed_seconds: 0.5086
+      request_sha256: 363d0223b494b055cb8d6b64f733fafaf50d0ce385808826fa60bef5759b769e

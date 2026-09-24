@@ -5831,6 +5831,71 @@ inputs:
     - assertion_path: /datasets/0
       evidence_path: /datasets/0/evidence/0
       reference: PMID:34360601
+  5532aaf5f3a1da6edffafd115525d03a423895198aa4fc203201a74e32676ae0:
+    claim:
+      about:
+        disease:
+          name: AFG2A-Related Encephalopathy
+          disease_term:
+            preferred_term: AFG2A-related encephalopathy
+            term:
+              id: MONDO:0014698
+              label: microcephaly-intellectual disability-sensorineural hearing loss-epilepsy-abnormal
+                muscle tone syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Early hearing habilitation
+        description: Sensorineural deafness is congenital and detectable on newborn or neonatal brainstem
+          audiometry, so amplification or implantation can be started in the first months. One genotyped
+          child received a hearing device before the age of two months after postnatal brainstem audiometry
+          showed sensorineural deafness. No systematic outcome data for cochlear implantation in this
+          disorder exist, and profound intellectual disability with cerebral visual impairment complicates
+          candidacy assessment, so this is curated as supportive habilitation rather than as an intervention
+          with demonstrated efficacy in this genotype.
+        action_category: THERAPEUTIC
+        therapeutic_modality: DEVICE
+        treatment_term:
+          preferred_term: hearing habilitation
+          term:
+            id: NCIT:C15315
+            label: Rehabilitation
+        notes: The treatment term is deliberately the generic Rehabilitation action. NCIT:C157820 `Cochlear
+          Implant` exists but denotes the device, not a clinical action, and is not reachable from NCIT:C25218,
+          so it fails the TreatmentActionTerm dynamic enum. No NCIT clinical-action term for cochlear
+          implantation or hearing-aid fitting was found by `runoak` search, so the nearest honest action
+          term is used and the specificity is carried by `preferred_term`.
+        target_phenotypes:
+        - preferred_term: Sensorineural hearing impairment
+          term:
+            id: HP:0000407
+            label: Sensorineural hearing impairment
+      selected_evidence:
+        snippet: Postnatal brainstem audiometry showed sensorineural deafness, for which she received
+          a hearing device before the age of two months.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34360601
+      reference_title: Muscular and Molecular Pathology Associated with SPATA5 Deficiency in a Child with
+        EHLMRS.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Single genotyped patient documenting that hearing habilitation is feasible within the
+        first two months of life; no outcome is reported, hence PARTIAL.
+    first_seen_at: '2026-09-24T05:55:12.931948+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:06.502465+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:06.502465+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:34360601
 assessments:
   7c16623bb7ffffc102488d4527ca1aed8a1c142241a624adf1af714fee3cce6e:
     input_sha256: 16ae9f04f49a57c8ded9f3f8c5a8309161c98e33007737aa62fc5cb3877289c0
@@ -13704,3 +13769,95 @@ assessments:
         output_tokens: 457
       elapsed_seconds: 1.5261
       request_sha256: da863574f74c559630bfd08e65ea2f5f44bf128c4f8cad4e9dd2d949b4406cda
+  8cb80b19e78f4b9aaa0f69c8555a1d96411adcb190871bf4093873eb26ea205f:
+    input_sha256: 5532aaf5f3a1da6edffafd115525d03a423895198aa4fc203201a74e32676ae0
+    configuration_sha256: 66f7bc2b41181095602fbb4696f12ce17f88c6ae1c82b500aa44a20f33247951
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:12.931948+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.08
+            PARTIAL: 0.64
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.03
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.08
+            PARTIAL: 0.64
+          confidence: 0.47
+        /assertion/action_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+          confidence: 0.81
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.87
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.19
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.56
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.95
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12081
+        output_tokens: 523
+      elapsed_seconds: 0.5537
+      request_sha256: a88b7141511b36815b2e40840c09a0d2c875543cb6bc5f79299437ec686a19b0

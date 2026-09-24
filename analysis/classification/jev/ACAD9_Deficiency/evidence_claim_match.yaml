@@ -3942,6 +3942,64 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/3
       reference: PMID:42046426
+  46851a60cedae7544242ef8c81196f9bedfd69c1e9b32339dc7664a6fc82676a:
+    claim:
+      about:
+        disease:
+          name: ACAD9 Deficiency
+          disease_term:
+            preferred_term: acyl-CoA dehydrogenase 9 deficiency
+            term:
+              id: MONDO:0012624
+              label: acyl-CoA dehydrogenase 9 deficiency
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Riboflavin (Vitamin B2) Supplementation
+        description: 'Riboflavin is a commonly attempted empiric treatment. Complex I activity improved
+          in 9/15 patient fibroblast lines, whereas 6/15 did not respond. Physicians reported clinical
+          benefit in 20/31 retrospectively described patients and no effect in 11/31; a 2026 systematic
+          review classified 22/29 reported patients as responsive. These overlapping, nonrandomized reports
+          support a possible benefit but do not establish a causal survival effect, optimal regimen, or
+          reliable response predictor.
+
+          '
+        action_category: THERAPEUTIC
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: B vitamin supplementation
+          term:
+            id: NCIT:C15425
+            label: Nutritional Supplementation
+          therapeutic_agent:
+          - preferred_term: riboflavin
+            term:
+              id: CHEBI:17015
+              label: riboflavin
+      selected_evidence:
+        snippet: ACAD 9 (n = 29, 75.9% responsive)
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42046426
+      reference_title: 'Effectiveness of Riboflavin in Inherited Metabolic Diseases: A Systematic Review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The 2026 systematic review summarizes reported response, but the ACAD9 evidence derives
+        from small, nonrandomized and partly overlapping reports.
+    first_seen_at: '2026-09-24T05:54:56.584864+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:01.615054+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:01.615054+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      reference: PMID:42046426
 assessments:
   a618d4c07a14b16776c03f84129caa8b213a527398980e8819f5c3a5d580fd91:
     input_sha256: 876de2b1cc88edce8a10cfa7e7edb3687745d6ca3f89d334cb3e44ff2e1e67e0
@@ -8792,3 +8850,88 @@ assessments:
         output_tokens: 371
       elapsed_seconds: 0.849
       request_sha256: 5fe4adace6eb2bc59845132e29ccc25c916360c58091a12511d34a2499121740
+  ac9ff68a4182a05b7eb9400eeb7833bfd0fee6cbae143bcc41a87d430161a35d:
+    input_sha256: 46851a60cedae7544242ef8c81196f9bedfd69c1e9b32339dc7664a6fc82676a
+    configuration_sha256: d15bb30d6b720cd0e15d4b206168ec92f0584dd937cd79747f4d785dc8063a49
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:54:56.584864+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.02
+            MATCH: 0.34
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.08
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.05
+            MATCH: 0.31
+          confidence: 0.46
+        /assertion/action_category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.16
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.47
+            MATCH: 0.32
+          confidence: 0.22
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.39
+            MATCH: 0.19
+          confidence: 0.13
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.34
+            MATCH: 0.22
+          confidence: 0.15
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.13
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.2
+            MATCH: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11012
+        output_tokens: 487
+      elapsed_seconds: 0.5549
+      request_sha256: 09000a7c003b5569767bf85e7963224dadba452c51164f57ab51b1303729296c

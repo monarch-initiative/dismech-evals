@@ -6111,6 +6111,90 @@ inputs:
     - assertion_path: /animal_models/1
       evidence_path: /animal_models/1/evidence/1
       reference: PMID:36497109
+  d0b7e7c004c772fac763c66cfb278ca39d05f1e9f8c94353372664dbebc98bba:
+    claim:
+      about:
+        disease:
+          name: ADPRS-Related Stress-Induced Neurodegeneration
+          disease_term:
+            preferred_term: neurodegeneration, childhood-onset, stress-induced, with variable ataxia and
+              seizures
+            term:
+              id: MONDO:0100095
+              label: neurodegeneration, childhood-onset, stress-induced, with variable ataxia and seizures
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of Poly(ADP-Ribose) Turnover under Stress
+        biological_scale: MOLECULAR
+        description: 'The acute arm. Oxidative and genotoxic stress activates PARP1, which accounts for
+          the great majority of cellular ADP-ribosylation after DNA damage and builds long poly(ADP-ribose)
+          chains within seconds. In a normal cell PARG and ARH3 together dismantle those chains on a timescale
+          of minutes. An ARH3-deficient cell has only PARG, and the result is a larger and longer-lasting
+          PAR burst in both the nucleus and the cytoplasm. This is the step at which the disorder becomes
+          stress-conditional: basal ADP-ribosylation in ARH3-deficient cells can be close to normal, and
+          the abnormality appears when the system is loaded. Patient fibroblasts show reduced viability
+          on hydrogen peroxide challenge, and Arh3-knockout cells show PARP1 activation with increased
+          nuclear and then cytoplasmic PAR.'
+        biological_processes:
+        - preferred_term: protein poly-ADP-ribosylation
+          modifier: INCREASED
+          term:
+            id: GO:0070212
+            label: protein poly-ADP-ribosylation
+        - preferred_term: cellular response to oxidative stress
+          modifier: ABNORMAL
+          term:
+            id: GO:0034599
+            label: cellular response to oxidative stress
+        - preferred_term: DNA damage response
+          modifier: ABNORMAL
+          term:
+            id: GO:0006974
+            label: DNA damage response
+        molecular_functions:
+        - preferred_term: NAD+ poly-ADP-ribosyltransferase activity
+          modifier: INCREASED
+          term:
+            id: GO:0003950
+            label: NAD+ poly-ADP-ribosyltransferase activity
+        chemical_entities:
+        - preferred_term: hydrogen peroxide (experimental stressor)
+          term:
+            id: CHEBI:16240
+            label: hydrogen peroxide
+        cell_types:
+        - preferred_term: patient-derived dermal fibroblast
+          term:
+            id: CL:0000057
+            label: fibroblast
+      selected_evidence:
+        snippet: This leads to defective ARH3-dependent removal of ADP-ribosylation, both under basal
+          conditions and following oxidative stress.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42015965
+      reference_title: Novel ADPRS Missense Variant (p.Leu162Pro) Causes Stress-Induced Childhood-Onset
+        Neurodegeneration With Ataxia and Seizures.
+      evidence_source: IN_VITRO
+      explanation: Contemporary patient-fibroblast replication of the removal defect. Note that this compound-heterozygous
+        genotype shows the defect at baseline as well as under stress, which qualifies the "stress-conditional"
+        framing and suggests the basal/stress split is allele-dependent.
+    first_seen_at: '2026-09-24T05:55:07.859792+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:05.648277+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:05.648277+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/3
+      reference: PMID:42015965
 assessments:
   0bc28b18b2e34829e1233e5072bc938375c06b4dfad629fdd486b030cde52815:
     input_sha256: 170dc93ff83a1ce7d5d1bdc4f63ed8fc85412f904b869f551008f3bde8a8277f
@@ -14337,3 +14421,165 @@ assessments:
         output_tokens: 317
       elapsed_seconds: 1.1134
       request_sha256: 9e6c001e932043cac697512835c82ee5cc0caa2c10e00c35ee9abe9251c20094
+  1908c5a3fbbce5481e2d5e7a407ecc5570ddb042af24ec043384dc48ba55892a:
+    input_sha256: d0b7e7c004c772fac763c66cfb278ca39d05f1e9f8c94353372664dbebc98bba
+    configuration_sha256: ded78734bf9bb0ba6e658a03c3715b69468f8102fb47c34d6b6584326e791b7d
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:07.859792+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.33
+            PARTIAL: 0.49
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.5
+            PARTIAL: 0.42
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.58
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.89
+            PARTIAL: 0.07
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.35
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.49
+            PARTIAL: 0.27
+          confidence: 0.23
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.45
+            PARTIAL: 0.25
+          confidence: 0.17
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.55
+            PARTIAL: 0.28
+          confidence: 0.32
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.61
+            PARTIAL: 0.34
+          confidence: 0.42
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.42
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.44
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/biological_processes/2/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.61
+            PARTIAL: 0.35
+          confidence: 0.41
+        /assertion/biological_processes/2/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.47
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/biological_processes/2/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.5
+            PARTIAL: 0.46
+          confidence: 0.24
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.16
+            PARTIAL: 0.4
+          confidence: 0.17
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.19
+            PARTIAL: 0.31
+          confidence: 0.24
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.17
+            PARTIAL: 0.41
+          confidence: 0.14
+        /assertion/chemical_entities/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.25
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/chemical_entities/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.23
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.18
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.12
+            PARTIAL: 0.46
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 22711
+        output_tokens: 1081
+      elapsed_seconds: 0.4682
+      request_sha256: c0f3a27053a49fd9e38234815f021f26b715dc97fb4971ed44dd8785177b4459

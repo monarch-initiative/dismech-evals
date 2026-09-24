@@ -1660,6 +1660,65 @@ inputs:
     - assertion_path: /progression/0
       evidence_path: /progression/0/evidence/0
       reference: PMID:38983024
+  efd807cccbfd7c2c559923f568ecad0876bcabf3b999142fe89a5f054fe62ab8:
+    claim:
+      about:
+        disease:
+          name: Adult-Onset Foveomacular Vitelliform Dystrophy
+          disease_term:
+            preferred_term: adult-onset foveomacular vitelliform dystrophy
+            term:
+              id: MONDO:0011979
+              label: adult-onset foveomacular vitelliform dystrophy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Subfoveal Lipofuscin (Vitelliform) Deposit Accumulation
+        description: Excess photoreceptor outer-segment production and/or impaired RPE uptake of shed
+          outer segments (impaired phagocytosis) leads to accumulation of lipofuscin-rich material in
+          the subretinal space beneath the fovea, forming the characteristic dome-shaped, hyperautofluorescent
+          yellow vitelliform lesion.
+        locations:
+        - preferred_term: fovea centralis
+          term:
+            id: UBERON:0001786
+            label: fovea centralis
+        cell_types:
+        - preferred_term: retinal pigment epithelial cell
+          term:
+            id: CL:0002586
+            label: retinal pigment epithelial cell
+        biological_processes:
+        - preferred_term: phagocytosis of shed photoreceptor outer segments
+          term:
+            id: GO:0006909
+            label: phagocytosis
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Vitelliform lesions are hyperautofluorescent and initially have a dome-shaped appearance
+          on optical coherence tomography.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25681578
+      reference_title: 'Adult-onset foveomacular vitelliform dystrophy: A fresh perspective.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the lipofuscin-rich (hyperautofluorescent), dome-shaped character of the vitelliform
+        deposit.
+    first_seen_at: '2026-09-24T05:55:16.396209+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:01:24.875654+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:01:24.875654+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:25681578
 assessments:
   51a1cbf01a650d726b1e6c41c1055bc541da8efc027a121c55b831b769386877:
     input_sha256: 1e2b69623345500b66837da970f05a84d91e0d837878fb5f506d7190ea174f66
@@ -3868,3 +3927,95 @@ assessments:
         output_tokens: 179
       elapsed_seconds: 0.5795
       request_sha256: c4952ecd144f99eccab41fe419c5029a6c3f86157f17e9a7b2bbc8f93cfed818
+  f9335d0f8e807dd103288ed74a4ac1d8ee2af14a04bbb1b9258e7f9b138e807f:
+    input_sha256: efd807cccbfd7c2c559923f568ecad0876bcabf3b999142fe89a5f054fe62ab8
+    configuration_sha256: de807a5eb31592be4206d0263c4dab9ca8e98915c384413a649238b1a2132689
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:16.396209+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.87
+            MATCH: 0.05
+          confidence: 0.8
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.62
+            MATCH: 0.3
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.42
+            MATCH: 0.53
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.82
+            MATCH: 0.04
+          confidence: 0.73
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.44
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.6
+            MATCH: 0.3
+          confidence: 0.41
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+            MATCH: 0.04
+          confidence: 0.35
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            PARTIAL: 0.37
+            MATCH: 0.02
+          confidence: 0.4
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            MATCH: 0.01
+            PARTIAL: 0.27
+          confidence: 0.58
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            PARTIAL: 0.25
+            MATCH: 0.01
+          confidence: 0.61
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.3
+            MATCH: 0.01
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11581
+        output_tokens: 556
+      elapsed_seconds: 0.4021
+      request_sha256: 5627000e3738da4af7b94f39448a3a8c814c34eecef736f811a8854dfad10415

@@ -5854,6 +5854,54 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/0
       reference: PMID:31058389
+  064121564aff6bc0064fa086dfc34c6a0f388b6ab1021338fa98a79108a63cc4:
+    claim:
+      about:
+        disease:
+          name: 46,XY Sex Reversal 5
+          disease_term:
+            preferred_term: 46,XY sex reversal 5
+            term:
+              id: MONDO:0013120
+              label: 46,XY sex reversal 5
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: cbx2_sry_transactivation_model
+        hypothesis_label: CBX2 as a transactivator upstream of SRY
+        status: CANONICAL
+        description: 'The model the disorder was originally built on. CBX2 acts, unusually for a Polycomb
+          protein, as a positive regulator: PRC1 containing CBX2/M33 binds the NR5A1/SF1 locus directly,
+          CBX2-null mouse gonads have reduced Sry and Sox9, forced Sry or Sox9 expression rescues the
+          sex reversal, and the human index patient''s mutant CBX2.1 fails to transactivate NR5A1/SF1
+          in vitro. On this account the lesion is a failure to switch the male programme on.'
+        notes: 'Retained as CANONICAL because it is what the human functional diagnosis rests on: pathogenicity
+          of the index patient''s CBX2.1 variants was established by an NR5A1 transactivation assay, not
+          by a repression assay.'
+      selected_evidence:
+        snippet: revealed loss-of-function mutations that allowed us, by placing CBX2 upstream of SRY
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19361780
+      reference_title: Ovaries and female phenotype in a girl with 46,XY karyotype and mutations in the
+        CBX2 gene.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The original report's own framing of the mechanism as CBX2 acting upstream of SRY.
+    first_seen_at: '2026-09-24T05:55:15.654366+00:00'
+    first_seen_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    last_seen_at: '2026-09-24T06:00:55.196004+00:00'
+    active: true
+    active_as_of: '2026-09-24T06:00:55.196004+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      reference: PMID:19361780
 assessments:
   2b1a304df4f9ba14fd9642b9aba8815e4fe83f96315a5057ac91fda5e70dcd52:
     input_sha256: 700101b1fd4f3546fbd4e5410a6b59f16681924214c0cb0a89a2d37178e77efa
@@ -13428,3 +13476,67 @@ assessments:
         output_tokens: 231
       elapsed_seconds: 0.6587
       request_sha256: b9fd96f7955d8510c25261a61ebc22badbebaeab526c1c69f8f87f98e5aa1b84
+  2eacc9e884ff8d969bc99ea61159e8c47140fa59f818b74d495bed016d6445c6:
+    input_sha256: 064121564aff6bc0064fa086dfc34c6a0f388b6ab1021338fa98a79108a63cc4
+    configuration_sha256: 3a91dfd9792f6fec3648799c6c7977767c0b78f90a9945408d827f2e4b0f9317
+    model: jev-1.13.0
+    assessment_source_revision: 32ba2e89340a3b864777490643edadee5b2ccb70
+    status: assessed
+    assessed_at: '2026-09-24T05:55:15.654366+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.08
+            PARTIAL: 0.47
+          confidence: 0.21
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.07
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.19
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/hypothesis_label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.06
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.54
+            PARTIAL: 0.38
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7284
+        output_tokens: 324
+      elapsed_seconds: 0.3118
+      request_sha256: 35be60a2118b9264184af0c893466571dd95d730cadf2a9837a729feb20f2a3c

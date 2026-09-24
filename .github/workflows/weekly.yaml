@@ -1,0 +1,168 @@
+name: Weekly corpus evaluation
+
+on:
+  schedule:
+    - cron: '17 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Inventory only (no API calls or data publication)
+        type: boolean
+        default: true
+      limit:
+        description: Maximum pairs per shard (0 = all)
+        type: string
+        default: '0'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: corpus-evaluation
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      source_revision: ${{ steps.resolve.outputs.source_revision }}
+      classifier_revision: ${{ steps.resolve.outputs.classifier_revision }}
+      shards: ${{ steps.resolve.outputs.shards }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --frozen
+      - id: resolve
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run dismech-evals resolve --github-output "$GITHUB_OUTPUT"
+
+  audit:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: ${{ fromJSON(needs.prepare.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --frozen
+      - name: Prepare pinned source and classifier
+        env:
+          SOURCE_REVISION: ${{ needs.prepare.outputs.source_revision }}
+          CLASSIFIER_REVISION: ${{ needs.prepare.outputs.classifier_revision }}
+        run: uv run dismech-evals setup --source-revision "$SOURCE_REVISION" --classifier-revision "$CLASSIFIER_REVISION"
+      - name: Evaluate assertion snippets
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+          AUDIT_DRY_RUN: ${{ inputs.dry_run || false }}
+          AUDIT_LIMIT: ${{ inputs.limit || '0' }}
+          AUDIT_SHARD: ${{ matrix.shard }}
+          AUDIT_SHARDS: ${{ strategy.job-total }}
+        shell: bash
+        run: |
+          args=(--shard-count "$AUDIT_SHARDS" --shard-index "$AUDIT_SHARD" --limit "$AUDIT_LIMIT")
+          if [[ "$AUDIT_DRY_RUN" == true ]]; then
+            args+=(--dry-run)
+          elif [[ -z "$TYPESAFE_API_KEY" ]]; then
+            echo '::error::Configure TYPESAFE_API_KEY in dismech-evals before live inference.'
+            exit 1
+          fi
+          uv run dismech-evals audit "${args[@]}"
+      - name: Save successful checkpoints after partial failure
+        if: always() && inputs.dry_run != true
+        run: uv run dismech-evals checkpoints
+      - name: Upload shard results and checkpoints
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: jev-shard-${{ matrix.shard }}
+          path: |
+            build/reports/results.jsonl
+            build/reports/manifest.json
+            build/reports/cache/
+          if-no-files-found: warn
+          retention-days: 90
+
+  report:
+    needs: [prepare, audit]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --frozen
+      - name: Prepare pinned source and classifier
+        env:
+          SOURCE_REVISION: ${{ needs.prepare.outputs.source_revision }}
+          CLASSIFIER_REVISION: ${{ needs.prepare.outputs.classifier_revision }}
+        run: uv run dismech-evals setup --source-revision "$SOURCE_REVISION" --classifier-revision "$CLASSIFIER_REVISION"
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: jev-shard-*
+          path: build/shards
+      - name: Combine results and rank entries
+        run: uv run dismech-evals report --shards build/shards
+      - name: Show run summary
+        if: always()
+        shell: bash
+        run: |
+          if [[ -f build/combined/summary.md ]]; then
+            cat build/combined/summary.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload combined report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: recuration-report
+          path: build/combined/
+          retention-days: 90
+
+  publish:
+    needs: [prepare, audit, report]
+    if: always() && needs.prepare.result == 'success' && inputs.dry_run != true && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v7
+      - run: uv sync --frozen
+      - name: Prepare the exact revisions evaluated by the shards
+        env:
+          SOURCE_REVISION: ${{ needs.prepare.outputs.source_revision }}
+          CLASSIFIER_REVISION: ${{ needs.prepare.outputs.classifier_revision }}
+        run: uv run dismech-evals setup --source-revision "$SOURCE_REVISION" --classifier-revision "$CLASSIFIER_REVISION"
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: jev-shard-*
+          path: build/shards
+      - name: Download recuration report if available
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: recuration-report
+          path: build/combined
+      - name: Union successful history, including from incomplete runs
+        run: uv run dismech-evals collect --shards build/shards --run-id "$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+      - name: Commit generated data to dismech-evals
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh auth setup-git
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          uv run dismech-evals publish

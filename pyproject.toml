@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dismech-evals"
+version = "0.1.0"
+description = "Corpus evaluation history and execution for DisMech"
+requires-python = ">=3.12"
+dependencies = ["click>=8.1", "pyyaml>=6"]
+
+[project.scripts]
+dismech-evals = "dismech_evals.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff==0.16.8"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]

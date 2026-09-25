@@ -1,0 +1,3157 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/CHIME_syndrome.yaml
+disease: CHIME_syndrome
+inventory:
+  source_sha256: 38bdf6227c87e790be49c4cb1470bcbcf8a97344284deaa6896084bff74ecb74
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:22:10.270980+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  4e5bfabf0a848440a95d9bfc197cff32e042a39a07f95d890bf21fca17375ae5:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: PIGL Gene Mutations
+        description: Mutations in PIGL gene disrupt glycosylphosphatidylinositol (GPI) anchor biosynthesis.
+          PIGL encodes a de-N-acetylase required for GPI anchor formation, essential for anchoring various
+          cell surface proteins including receptors, enzymes, and adhesion molecules.
+        biological_processes:
+        - preferred_term: glycosylphosphatidylinositol biosynthetic process
+          term:
+            id: GO:0006506
+            label: GPI anchor biosynthetic process
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies, including conductive hearing
+          loss. Whole-exome sequencing on five previously reported cases identified PIGL, the de-N-acetylase
+          required for glycosylphosphatidylinositol (GPI) anchor formation, as a strong candidate.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Establishes PIGL mutations as the cause of CHIME syndrome and describes the gene's
+        role in GPI anchor biosynthesis.
+    first_seen_at: '2026-09-25T15:14:17.105514+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:22444671
+  3b35d6a89b7c5ef3287deaac849bebca87ffffd40f0a05e3102da0a3642692a7:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: PIGL Gene Mutations
+            description: Mutations in PIGL gene disrupt glycosylphosphatidylinositol (GPI) anchor biosynthesis.
+              PIGL encodes a de-N-acetylase required for GPI anchor formation, essential for anchoring
+              various cell surface proteins including receptors, enzymes, and adhesion molecules.
+            biological_processes:
+            - preferred_term: glycosylphosphatidylinositol biosynthetic process
+              term:
+                id: GO:0006506
+                label: GPI anchor biosynthetic process
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: GPI Anchor Deficiency
+        description: PIGL loss impairs GPI anchor formation and reduces cell-surface GPI anchor markers.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Furthermore, cell lines derived from these cases had significantly reduced levels of
+          the two GPI anchor markers, CD59 and a GPI-binding toxin, aerolysin (FLAER), confirming the
+          pathogenicity of the mutations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: IN_VITRO
+      explanation: Patient-derived cell lines demonstrate reduced GPI-anchor markers downstream of PIGL
+        mutations.
+    first_seen_at: '2026-09-25T15:14:17.189375+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:22444671
+  f47462467b6c8d832f7f73c93418c70fb20c7da579542c728d3b6161b14b85c9:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: GPI Anchor Deficiency
+        description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+          affecting normal cellular functions and signaling pathways. This leads to the multisystem phenotype
+          characteristic of CHIME syndrome.
+        biological_processes:
+        - preferred_term: cell adhesion
+          term:
+            id: GO:0007155
+            label: cell adhesion
+        - preferred_term: signal transduction
+          term:
+            id: GO:0007165
+            label: signal transduction
+        - preferred_term: immune response
+          term:
+            id: GO:0006955
+            label: immune response
+      selected_evidence:
+        snippet: Furthermore, cell lines derived from these cases had significantly reduced levels of
+          the two GPI anchor markers, CD59 and a GPI-binding toxin, aerolysin (FLAER), confirming the
+          pathogenicity of the mutations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Demonstrates functional consequences of PIGL mutations showing reduced GPI anchor markers
+        in patient cells.
+    first_seen_at: '2026-09-25T15:14:17.380148+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:22444671
+  82595c59c6e5964d94b1eaf68e0cd45616843ada84c26b41850bc10be9a12c8c:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Chorioretinal Coloboma
+        description: Developmental GPI-anchor deficiency is associated with the cardinal ocular coloboma
+          phenotype.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The PIGL discovery cohort lists colobomas among the cardinal clinical features.
+    first_seen_at: '2026-09-25T15:14:17.495427+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:22444671
+  a857a1e9bf66cfc863d18f1942355149859f5fa45e7f26f65bb670ab6d8be7c0:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Congenital Heart Defects
+        description: Developmental GPI-anchor deficiency is associated with congenital heart defects.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The PIGL discovery cohort lists heart defects among the cardinal clinical features.
+    first_seen_at: '2026-09-25T15:14:17.562724+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/0
+      reference: PMID:22444671
+  cf8c1d8d4610c9fdd64744d50fe29c43e8bb1bd4e72964aab435fa35e199224d:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Ichthyosiform Dermatosis
+        description: GPI-anchor deficiency in ectodermal tissues is associated with ichthyosiform dermatosis.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/2
+      evidence_path: /pathophysiology/1/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The PIGL discovery cohort lists ichthyosiform dermatosis among the cardinal clinical
+        features.
+    first_seen_at: '2026-09-25T15:14:17.642462+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/2
+      evidence_path: /pathophysiology/1/downstream/2/evidence/0
+      reference: PMID:22444671
+  85d13d662799ca7905269e1f4e431022d3d183123c27918479c384c9e5f6aaaf:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Conductive Hearing Loss
+        description: Ear involvement in CHIME includes conductive hearing loss.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies, including conductive hearing
+          loss
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/4
+      evidence_path: /pathophysiology/1/downstream/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The PIGL discovery cohort directly names conductive hearing loss as part of ear involvement.
+    first_seen_at: '2026-09-25T15:14:17.964332+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/4
+      evidence_path: /pathophysiology/1/downstream/4/evidence/0
+      reference: PMID:22444671
+  7ac1db1133bd30b60ce2af0d22478e410959ab297e3eb2150f19d19bb146e945:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Intellectual Disability
+        description: Neurodevelopmental effects of GPI-anchor deficiency are associated with intellectual
+          disability.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The PIGL discovery cohort lists intellectual disability among the cardinal clinical
+        features.
+    first_seen_at: '2026-09-25T15:14:17.939520+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      reference: PMID:22444671
+  4d3bad5dc3034b01d37922258e5e1de963df8285c05daac64b3bba435b92a516:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Seizure Disorder
+        description: Neurologic involvement in CHIME includes seizures.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: The main features include ocular colobomas, congenital heart disease, early onset migratory
+          ichthyosiform dermatosis, mental retardation, conductive hearing loss, seizures, and typical
+          facial features.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/5
+      evidence_path: /pathophysiology/1/downstream/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:7666399
+      reference_title: 'Neuroectodermal (CHIME) syndrome: an additional case with long term follow up
+        of all reported cases.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Long-term case review lists seizures among the main CHIME features.
+    first_seen_at: '2026-09-25T15:14:18.015140+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/5
+      evidence_path: /pathophysiology/1/downstream/5/evidence/0
+      reference: PMID:7666399
+  e8522e8506d54d9913066aca7e683c121ca0bbdde6636596800343c93f3c5537:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Dysmorphic Facial Features
+        description: Developmental involvement in CHIME includes typical facial features.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: The main features include ocular colobomas, congenital heart disease, early onset migratory
+          ichthyosiform dermatosis, mental retardation, conductive hearing loss, seizures, and typical
+          facial features.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/6
+      evidence_path: /pathophysiology/1/downstream/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:7666399
+      reference_title: 'Neuroectodermal (CHIME) syndrome: an additional case with long term follow up
+        of all reported cases.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Long-term case review lists typical facial features among the main CHIME features.
+    first_seen_at: '2026-09-25T15:14:18.098334+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/6
+      evidence_path: /pathophysiology/1/downstream/6/evidence/0
+      reference: PMID:7666399
+  5d2ce50b8a2a06278ad6b08ff917d595308b57d09ac0eaa86eae9b15f54657ae:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Genitourinary Abnormalities
+        description: Multisystem developmental involvement can include renal collecting-system anomalies.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: Her major problems included a migratory ichthyosiform dermatosis, multiple skin infections
+          and infestations, bilateral retinal coloboma, developmental delay, seizures, infantile macrosomia,
+          facial anomalies, a duplicated renal collecting system, and conductive hearing loss.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/7
+      evidence_path: /pathophysiology/1/downstream/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:9295069
+      reference_title: Acute lymphoblastic leukemia in a child with the CHIME neuroectodermal dysplasia
+        syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Case evidence supports a renal collecting-system anomaly within the genitourinary phenotype
+        group.
+    first_seen_at: '2026-09-25T15:14:18.388924+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/7
+      evidence_path: /pathophysiology/1/downstream/7/evidence/0
+      reference: PMID:9295069
+  1b2c7acef1977ed82cca2bd6327b69d36f819921ae4d4725e2736947a50d5d15:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: GPI Anchor Deficiency
+            description: Reduced levels of GPI-anchored proteins on cell surface due to impaired biosynthesis,
+              affecting normal cellular functions and signaling pathways. This leads to the multisystem
+              phenotype characteristic of CHIME syndrome.
+            biological_processes:
+            - preferred_term: cell adhesion
+              term:
+                id: GO:0007155
+                label: cell adhesion
+            - preferred_term: signal transduction
+              term:
+                id: GO:0007165
+                label: signal transduction
+            - preferred_term: immune response
+              term:
+                id: GO:0006955
+                label: immune response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Large Birth Size
+        description: Growth involvement in CHIME can include infantile macrosomia.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: Her major problems included a migratory ichthyosiform dermatosis, multiple skin infections
+          and infestations, bilateral retinal coloboma, developmental delay, seizures, infantile macrosomia,
+          facial anomalies, a duplicated renal collecting system, and conductive hearing loss.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/8
+      evidence_path: /pathophysiology/1/downstream/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:9295069
+      reference_title: Acute lymphoblastic leukemia in a child with the CHIME neuroectodermal dysplasia
+        syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Case evidence supports infantile macrosomia as the growth phenotype.
+    first_seen_at: '2026-09-25T15:14:18.429937+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/8
+      evidence_path: /pathophysiology/1/downstream/8/evidence/0
+      reference: PMID:9295069
+  cf32342cff7db09527e1476ce857be362c9740e809de9497c9609539cf8723d3:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Ophthalmic
+        name: Chorioretinal Coloboma
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        notes: Chorioretinal colobomas are a defining feature of CHIME syndrome, characterized by absence
+          of regions of the retina, retinal pigment epithelium, and choroid. These reflect disrupted morphogen
+          signaling and cell adhesion during optic fissure closure.
+        phenotype_term:
+          preferred_term: Chorioretinal coloboma
+          term:
+            id: HP:0000567
+            label: Chorioretinal coloboma
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Landmark PIGL mutation study identifying coloboma as a cardinal diagnostic feature
+        of CHIME syndrome.
+    first_seen_at: '2026-09-25T15:14:18.475287+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:22444671
+  63b37c1dd61973f6933db85717a31e48742955b7393ad8b5a4392786edd282a8:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiac
+        name: Congenital Heart Defects
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        phenotype_term:
+          preferred_term: Congenital heart defect
+          term:
+            id: HP:0001627
+            label: Abnormal heart morphology
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: PIGL mutations cause cardiac defects as a cardinal feature of CHIME syndrome, requiring
+        cardiac surveillance in affected individuals.
+    first_seen_at: '2026-09-25T15:14:18.571560+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:22444671
+  54cc735c2a1ccca6e1dec55b0694df06b6ce8021cb6e545ed2f4ffa56ab3bfd8:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Intellectual Disability
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        notes: Moderate to severe intellectual disability is a core feature. Present in approximately
+          90% of individuals with inherited glycosylphosphatidylinositol deficiency.
+        phenotype_term:
+          preferred_term: Intellectual disability
+          term:
+            id: HP:0001249
+            label: Intellectual disability
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Landmark study establishing intellectual disability as a defining feature of CHIME
+        syndrome caused by PIGL mutations.
+    first_seen_at: '2026-09-25T15:14:18.939061+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:22444671
+  e20e6a11ee9d94c7e430e052861841e3054639bb03fa43e757fcbcd10d859b75:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Dermatologic
+        name: Ichthyosiform Dermatosis
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        notes: Migratory ichthyosiform dermatosis present at or within weeks of birth, reflecting defects
+          in keratinocyte membrane protein anchoring due to GPI biosynthesis failure.
+        phenotype_term:
+          preferred_term: Ichthyosis
+          term:
+            id: HP:0008064
+            label: Ichthyosis
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Landmark study identifying migratory ichthyosiform dermatosis as a defining feature
+        of PIGL-related CHIME syndrome.
+    first_seen_at: '2026-09-25T15:14:18.870679+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:22444671
+  5e14f034183d0a99500a925958206854906166db5bb05cddb061ade512a66fd6:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Auditory
+        name: Conductive Hearing Loss
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        notes: Ear anomalies and conductive hearing loss due to increased desquamation in auditory canal
+          and structural ear abnormalities related to GPI-AP deficiency during development.
+        phenotype_term:
+          preferred_term: Conductive hearing impairment
+          term:
+            id: HP:0000405
+            label: Conductive hearing impairment
+      selected_evidence:
+        snippet: CHIME syndrome is characterized by colobomas, heart defects, ichthyosiform dermatosis,
+          mental retardation (intellectual disability), and ear anomalies, including conductive hearing
+          loss
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Landmark PIGL mutation study documenting conductive hearing loss and ear anomalies
+        as defining features of CHIME syndrome.
+    first_seen_at: '2026-09-25T15:14:19.029965+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:22444671
+  b9087466156a3f9ea4295734d67b678702ce5d871c04303ac1ae5f4dc6deb9f2:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Seizure Disorder
+        frequency: FREQUENT
+        notes: Seizures present in approximately 83% of individuals with inherited glycosylphosphatidylinositol
+          deficiency, with median age of onset around 6 months. Often exacerbated by high environmental
+          temperatures and fever. Synthesis-stage gene variants show earlier seizure onset than transamidase/remodeling
+          stage variants.
+        phenotype_term:
+          preferred_term: Seizure
+          term:
+            id: HP:0001250
+            label: Seizure
+      selected_evidence:
+        snippet: The main features include ocular colobomas, congenital heart disease, early onset migratory
+          ichthyosiform dermatosis, mental retardation, conductive hearing loss, seizures, and typical
+          facial features.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7666399
+      reference_title: 'Neuroectodermal (CHIME) syndrome: an additional case with long term follow up
+        of all reported cases.'
+      explanation: Early case series documenting seizures as a defining feature of CHIME syndrome alongside
+        cardinal features.
+    first_seen_at: '2026-09-25T15:14:19.092841+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: PMID:7666399
+  bb2454a892af846d811381f22594a8928d08aa4d3e1871e44310df6f60b3b3cd:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Craniofacial
+        name: Dysmorphic Facial Features
+        frequency: FREQUENT
+        notes: Includes brachycephaly, hypertelorism, broad flat nasal root, short philtrum, and full
+          lips.
+        phenotype_term:
+          preferred_term: Dysmorphic facial features
+          term:
+            id: HP:0001999
+            label: Abnormal facial shape
+      selected_evidence:
+        snippet: The main features include ocular colobomas, congenital heart disease, early onset migratory
+          ichthyosiform dermatosis, mental retardation, conductive hearing loss, seizures, and typical
+          facial features.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7666399
+      reference_title: 'Neuroectodermal (CHIME) syndrome: an additional case with long term follow up
+        of all reported cases.'
+      explanation: Early case series identifying typical facial features as a consistent manifestation
+        of CHIME syndrome.
+    first_seen_at: '2026-09-25T15:14:19.574435+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:7666399
+  0f23f66536e029dded43480e1ed8bc6302e983f31a27289d575d6afeafde34f3:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Seizure Disorder
+        frequency: FREQUENT
+        notes: Seizures present in approximately 83% of individuals with inherited glycosylphosphatidylinositol
+          deficiency, with median age of onset around 6 months. Often exacerbated by high environmental
+          temperatures and fever. Synthesis-stage gene variants show earlier seizure onset than transamidase/remodeling
+          stage variants.
+        phenotype_term:
+          preferred_term: Seizure
+          term:
+            id: HP:0001250
+            label: Seizure
+      selected_evidence:
+        snippet: Long term follow up information on this patient, as well as the previously described
+          cases, provides information regarding the outcome for these patients, which includes general
+          good health, severe mental retardation, seizures that worsen after puberty, conductive hearing
+          loss, and chronic migratory ichthyosiform skin rash without scarring.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7666399
+      reference_title: 'Neuroectodermal (CHIME) syndrome: an additional case with long term follow up
+        of all reported cases.'
+      explanation: Long-term follow-up data documenting that seizures are a persistent feature that may
+        worsen after puberty in CHIME syndrome.
+    first_seen_at: '2026-09-25T15:14:19.503595+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/1
+      reference: PMID:7666399
+  2b4bfe3ce7b77c4180c01b1a1cfa7e7199f43cb08ee8bf9cc5c794e438c321f2:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Growth
+        name: Large Birth Size
+        frequency: FREQUENT
+        phenotype_term:
+          preferred_term: Large for gestational age
+          term:
+            id: HP:0001520
+            label: Large for gestational age
+      selected_evidence:
+        snippet: Her major problems included a migratory ichthyosiform dermatosis, multiple skin infections
+          and infestations, bilateral retinal coloboma, developmental delay, seizures, infantile macrosomia,
+          facial anomalies, a duplicated renal collecting system, and conductive hearing loss.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9295069
+      reference_title: Acute lymphoblastic leukemia in a child with the CHIME neuroectodermal dysplasia
+        syndrome.
+      explanation: Schnur et al. 1997 documents infantile macrosomia as a clinical feature in a CHIME
+        syndrome patient, expanding the growth-related phenotype spectrum.
+    first_seen_at: '2026-09-25T15:14:19.655553+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      reference: PMID:9295069
+  1e3b7f9c48073120d2cee567c65ffe1094221b274e29300021f920126d2f402e:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PIGL
+        gene_term:
+          preferred_term: PIGL
+          term:
+            id: hgnc:8966
+            label: PIGL
+        association: Causal
+        notes: Autosomal recessive mutations in PIGL gene cause CHIME syndrome. Most cases show compound
+          heterozygous mutations with c.500T>C (p.Leu167Pro) being frequently observed. Mutations include
+          point mutations, insertions, deletions, and Alu-mediated intragenic deletions.
+      selected_evidence:
+        snippet: Whole-exome sequencing on five previously reported cases identified PIGL, the de-N-acetylase
+          required for glycosylphosphatidylinositol (GPI) anchor formation, as a strong candidate.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22444671
+      reference_title: Mutations in the glycosylphosphatidylinositol gene PIGL cause CHIME syndrome.
+      explanation: Identifies PIGL as the causal gene for CHIME syndrome through whole-exome sequencing.
+    first_seen_at: '2026-09-25T15:14:19.737004+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:22444671
+  ac904b1b22ffc5f62e69b600e39864d15954975847f8c65481b695ccc1e07c9e:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PIGL
+        gene_term:
+          preferred_term: PIGL
+          term:
+            id: hgnc:8966
+            label: PIGL
+        association: Causal
+        notes: Autosomal recessive mutations in PIGL gene cause CHIME syndrome. Most cases show compound
+          heterozygous mutations with c.500T>C (p.Leu167Pro) being frequently observed. Mutations include
+          point mutations, insertions, deletions, and Alu-mediated intragenic deletions.
+      selected_evidence:
+        snippet: CHIME syndrome is a rare autosomal recessive neuroectodermal disorder associated with
+          biallelic mutations in PIGL. To date, six molecularly confirmed cases of CHIME syndrome have
+          been reported. Here, we report the seventh patient with biallelic PIGL mutations associated
+          with CHIME syndrome and describe the first characterization of an intragenic deletion in PIGL.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28371479
+      reference_title: Alu-mediated deletion of PIGL in a Patient with CHIME syndrome.
+      explanation: Knight Johnson et al. 2017 documents the first Alu-mediated intragenic deletion in
+        PIGL as a disease-causing mechanism in CHIME syndrome, expanding the mutation spectrum beyond
+        point mutations.
+    first_seen_at: '2026-09-25T15:14:20.094662+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:28371479
+  899dbfb6070fd0ff5523f0ff5a8a0e3d0f9af5e7162395fb2093b970f582ef16:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PIGL
+        gene_term:
+          preferred_term: PIGL
+          term:
+            id: hgnc:8966
+            label: PIGL
+        association: Causal
+        notes: Autosomal recessive mutations in PIGL gene cause CHIME syndrome. Most cases show compound
+          heterozygous mutations with c.500T>C (p.Leu167Pro) being frequently observed. Mutations include
+          point mutations, insertions, deletions, and Alu-mediated intragenic deletions.
+      selected_evidence:
+        snippet: In CHIME syndrome, a recurrent missense mutation c.500T > C (p.Leu167Pro) is found in
+          the majority of patients, associated with a null mutation in the other allele, including an
+          overrepresentation of large deletions. The latter are not detected by the standard analysis
+          in sequencing techniques, including next-generation sequencing. Thus, in individuals with a
+          clinical diagnosis of CHIME syndrome in which only one mutation is found, an active search for
+          a large deletion should be sought.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29473937
+      reference_title: 'Large deletion in PIGL: a common mutational mechanism in CHIME syndrome?'
+      explanation: Ceroni et al. 2018 establishes that large deletions are a common mutational mechanism
+        in CHIME syndrome, often missed by standard sequencing, and recommends active screening for deletions
+        in diagnostic workup.
+    first_seen_at: '2026-09-25T15:14:20.183923+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      reference: PMID:29473937
+  ea6ad2ae91249d04fd4c696d3ad67569cdde0fa731c50883fe94639d6888a5af:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PIGL
+        gene_term:
+          preferred_term: PIGL
+          term:
+            id: hgnc:8966
+            label: PIGL
+        association: Causal
+        notes: Autosomal recessive mutations in PIGL gene cause CHIME syndrome. Most cases show compound
+          heterozygous mutations with c.500T>C (p.Leu167Pro) being frequently observed. Mutations include
+          point mutations, insertions, deletions, and Alu-mediated intragenic deletions.
+      selected_evidence:
+        snippet: A novel 'likely pathogenic' PIGL missense variant (c.154G>A, p.(Asp52Asn)) was detected
+          on the maternal allele. This case provides new insights into the clinical spectrum of CHIME
+          syndrome and highlights the potential for phenotypic/genotypic variations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35258128
+      reference_title: 'Child with a mild CHIME syndrome phenotype and carrying a novel p.(Asp52Asn) PIGL
+        pathogenic variant in association with the previously reported p.(Leu167Pro) variant: A case report.'
+      explanation: Rolland et al. 2022 documents a novel p.(Asp52Asn) PIGL variant and demonstrates phenotypic
+        heterogeneity in CHIME syndrome, including mild phenotypes with atypical features, emphasizing
+        genotype-phenotype variation.
+    first_seen_at: '2026-09-25T15:14:20.271913+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/3
+      reference: PMID:35258128
+  756129e2527e22c70f4a0b049d60d2e91bbf614b77001f88c05ad8c92d40dba1:
+    claim:
+      about:
+        disease:
+          name: CHIME_syndrome
+          disease_term:
+            preferred_term: CHIME syndrome
+            term:
+              id: MONDO:0010221
+              label: CHIME syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Dermatologic Care
+        description: Topical and systemic treatments for ichthyosiform dermatosis management, including
+          topical therapies and IL-17 antagonists for severe cases.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: Here, we report a case of severe ichthyosiform dermatosis in a child with CHIME syndrome
+          who was recalcitrant to multiple topical medications and dupilumab. This is the first reported
+          case of successful treatment of congenital ichthyosiform dermatosis in a CHIME syndrome patient
+          with ixekizumab, an IL-17A antagonist.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38773877
+      reference_title: Severe congenital ichthyosiform dermatosis in CHIME syndrome successfully treated
+        with ixekizumab.
+      explanation: Flowers et al. 2024 documents the first successful treatment of severe ichthyosiform
+        dermatosis in CHIME syndrome using ixekizumab (IL-17A antagonist), providing a therapeutic option
+        for treatment-resistant cases.
+    first_seen_at: '2026-09-25T15:14:20.406451+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:10.270980+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:10.270980+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      reference: PMID:38773877
+assessments:
+  dcb41fd4374ee04e6e3db64f9fe1d6dc9710ac0f962091b9af967abe92215bf8:
+    input_sha256: 4e5bfabf0a848440a95d9bfc197cff32e042a39a07f95d890bf21fca17375ae5
+    configuration_sha256: f746e69b4fcbfb710d79d8fcc0d236b0a65fd37df2a99aef4051c11cbbebed0d
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.105514+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.56
+            PARTIAL: 0.41
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.81
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.53
+            PARTIAL: 0.43
+          confidence: 0.3
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.75
+            PARTIAL: 0.19
+          confidence: 0.63
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6368
+        output_tokens: 283
+      elapsed_seconds: 0.4502
+      request_sha256: 19eac7ac48d2b2b8f8c539b685eef740e78decdbf1dbb1fb00a023f60be23822
+      request_sha256s:
+      - 19eac7ac48d2b2b8f8c539b685eef740e78decdbf1dbb1fb00a023f60be23822
+  d16921dabd4f8e989ad0dbd8a3d8461a7faf0f001e86794b2b9b5a2aaeda3034:
+    input_sha256: 3b35d6a89b7c5ef3287deaac849bebca87ffffd40f0a05e3102da0a3642692a7
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.189375+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            PARTIAL: 0.21
+            MISMATCH: 0.06
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.53
+            MISMATCH: 0.11
+          confidence: 0.3
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+          confidence: 0.9
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+          confidence: 0.84
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.12
+            PARTIAL: 0.28
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6458
+        output_tokens: 269
+      elapsed_seconds: 0.441
+      request_sha256: 123f59268c575611c75a46d53541e40b6d92de7bcc46a0e7b38f78d3fc41cabc
+      request_sha256s:
+      - 123f59268c575611c75a46d53541e40b6d92de7bcc46a0e7b38f78d3fc41cabc
+  1c4ff23ac5e1bc85db58aa4e88890c9f1bfa724638d96a7fe1cd15270279701c:
+    input_sha256: f47462467b6c8d832f7f73c93418c70fb20c7da579542c728d3b6161b14b85c9
+    configuration_sha256: de1e11430e735f1ff6a3985bab96f1b36a1d71e4691e00d2d196481bf37c8488
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.380148+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.03
+            MATCH: 0.46
+          confidence: 0.26
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+          confidence: 0.39
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.84
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5700000000000001
+            MISMATCH: 0.02
+            PARTIAL: 0.41
+          confidence: 0.35
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.62
+            MATCH: 0.03
+          confidence: 0.43
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.67
+            MATCH: 0.02
+          confidence: 0.5
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.37
+            MATCH: 0.22
+          confidence: 0.11
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.36
+        /assertion/biological_processes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.33
+            MATCH: 0.09
+          confidence: 0.37
+        /assertion/biological_processes/2/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.54
+            MATCH: 0.06
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10269
+        output_tokens: 515
+      elapsed_seconds: 0.5416
+      request_sha256: 736a09465500a4189031ae4bfb373e919e2e3c065c6bea4cf94f276ea4ac1e4a
+      request_sha256s:
+      - 736a09465500a4189031ae4bfb373e919e2e3c065c6bea4cf94f276ea4ac1e4a
+  e8d9573548c71c8c1bb27565f06c8263aebd57acde134570521d12eaa2ea9383:
+    input_sha256: 82595c59c6e5964d94b1eaf68e0cd45616843ada84c26b41850bc10be9a12c8c
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.495427+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.31
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.31
+            PARTIAL: 0.63
+          confidence: 0.43
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.07
+            PARTIAL: 0.72
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.52
+            PARTIAL: 0.34
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6511
+        output_tokens: 271
+      elapsed_seconds: 0.4414
+      request_sha256: 66437d73dadb2624109419e361a1ec3c136a6de5da9b0ab107bb5c1a80c5ac7d
+      request_sha256s:
+      - 66437d73dadb2624109419e361a1ec3c136a6de5da9b0ab107bb5c1a80c5ac7d
+  455cf435f445eddac75bc37a73bb6c6f29ed0791af67f93289cf9f264a666238:
+    input_sha256: a857a1e9bf66cfc863d18f1942355149859f5fa45e7f26f65bb670ab6d8be7c0
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.562724+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.52
+            MISMATCH: 0.08
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.01
+            MISMATCH: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.17
+            MISMATCH: 0.03
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.5700000000000001
+            MISMATCH: 0.07
+          confidence: 0.35
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.68
+            MISMATCH: 0.26
+          confidence: 0.53
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.32
+            MISMATCH: 0.22
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6507
+        output_tokens: 271
+      elapsed_seconds: 0.4287
+      request_sha256: 1f89c36ee6047c7365e5f9f0fc6ad50e4945b16538511f12177f57a77e197f62
+      request_sha256s:
+      - 1f89c36ee6047c7365e5f9f0fc6ad50e4945b16538511f12177f57a77e197f62
+  8b51d161031973aee0a4da85aac00e954a06f88402295bfdbf15851dc8544d19:
+    input_sha256: cf8c1d8d4610c9fdd64744d50fe29c43e8bb1bd4e72964aab435fa35e199224d
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.642462+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.22
+            MATCH: 0.11
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.02
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.07
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.3
+            MATCH: 0.07
+          confidence: 0.44
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MISMATCH: 0.26
+            MATCH: 0.05
+          confidence: 0.53
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.17
+            MATCH: 0.42
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6514
+        output_tokens: 271
+      elapsed_seconds: 0.4278
+      request_sha256: 0cbe47db4905cf4d8a4b7403ecc39bce1b7cca4f7f1ecbfbb2b6519d9b2467c5
+      request_sha256s:
+      - 0cbe47db4905cf4d8a4b7403ecc39bce1b7cca4f7f1ecbfbb2b6519d9b2467c5
+  f382e4f43994df4fb31beaff42f85413fa9b2f170c8160069c8e289dec45021d:
+    input_sha256: 85d13d662799ca7905269e1f4e431022d3d183123c27918479c384c9e5f6aaaf
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.964332+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.66
+            PARTIAL: 0.25
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.92
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.09
+            PARTIAL: 0.56
+          confidence: 0.33
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.32
+            PARTIAL: 0.25
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6507
+        output_tokens: 272
+      elapsed_seconds: 0.3927
+      request_sha256: f1837b93a2395cc46276fd88cd283e755fc18c1e18facbebcbb1e1e6c08924da
+      request_sha256s:
+      - f1837b93a2395cc46276fd88cd283e755fc18c1e18facbebcbb1e1e6c08924da
+  d91b46e43d08b215804653e0951b8d7cb72f86484c6befb52b868e96fb503c48:
+    input_sha256: 7ac1db1133bd30b60ce2af0d22478e410959ab297e3eb2150f19d19bb146e945
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:17.939520+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.5
+            MATCH: 0.43
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+            MATCH: 0.83
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.58
+            MATCH: 0.3
+          confidence: 0.38
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.72
+            MATCH: 0.08
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.32
+            MATCH: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6507
+        output_tokens: 271
+      elapsed_seconds: 0.4486
+      request_sha256: 6d0cdf9ab2efeb985c57590b9e9185d14c7945dbe6f1d914365618154f49c50e
+      request_sha256s:
+      - 6d0cdf9ab2efeb985c57590b9e9185d14c7945dbe6f1d914365618154f49c50e
+  d79605b99c24ecdab4b8e412452219767d41be97ac37f169a7a4009697f8a127:
+    input_sha256: 4d3bad5dc3034b01d37922258e5e1de963df8285c05daac64b3bba435b92a516
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.015140+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.05
+            MATCH: 0.73
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.03
+            MATCH: 0.91
+          confidence: 0.86
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.02
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.89
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.38
+            MATCH: 0.07
+          confidence: 0.32
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.39999999999999997
+            MATCH: 0.33
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6510
+        output_tokens: 272
+      elapsed_seconds: 0.4133
+      request_sha256: b147cb0ad9337f567a1b1591190e225656d99762d7e0068715f9c66c7869cd2a
+      request_sha256s:
+      - b147cb0ad9337f567a1b1591190e225656d99762d7e0068715f9c66c7869cd2a
+  c3da4cfc23e860b30dce5e0121e827e194e3c1c5805c46e402ecb3aead651e3d:
+    input_sha256: e8522e8506d54d9913066aca7e683c121ca0bbdde6636596800343c93f3c5537
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.098334+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.35
+            MATCH: 0.53
+          confidence: 0.29
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.16
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.15
+            MATCH: 0.78
+          confidence: 0.68
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+            MATCH: 0.85
+          confidence: 0.78
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.06
+            MISMATCH: 0.37
+          confidence: 0.36
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.27
+            MATCH: 0.25
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6515
+        output_tokens: 272
+      elapsed_seconds: 0.4296
+      request_sha256: 469275bd0df8dcbc49392cd502872db27749880226029bd8026e6b59bb2c3c9d
+      request_sha256s:
+      - 469275bd0df8dcbc49392cd502872db27749880226029bd8026e6b59bb2c3c9d
+  8b460ad855fbd18940939316adff859871e44605ef911f8b45d08881c58134e2:
+    input_sha256: 5d2ce50b8a2a06278ad6b08ff917d595308b57d09ac0eaa86eae9b15f54657ae
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.388924+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.3
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.84
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.14
+            PARTIAL: 0.71
+          confidence: 0.57
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.23
+            PARTIAL: 0.35
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6527
+        output_tokens: 273
+      elapsed_seconds: 0.435
+      request_sha256: c0f1813a0b40c5e4fc700ff9de097ecb6a20b865fa62311744d6bb0fa9eb668e
+      request_sha256s:
+      - c0f1813a0b40c5e4fc700ff9de097ecb6a20b865fa62311744d6bb0fa9eb668e
+  35dba738309cfb9e24e0fd8b2bd998d6dc4c0ed54da26b961295ef6330bb7376:
+    input_sha256: 1b2c7acef1977ed82cca2bd6327b69d36f819921ae4d4725e2736947a50d5d15
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.429937+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.8
+            MISMATCH: 0.03
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.49
+            MISMATCH: 0.11
+          confidence: 0.23
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.92
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.09
+            MISMATCH: 0.23
+          confidence: 0.52
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.27
+            MISMATCH: 0.41
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6525
+        output_tokens: 272
+      elapsed_seconds: 0.4572
+      request_sha256: 97449d211b55f56fd4d1cc39ec376c29bb7d53b6b49101762bf7d2da34ee36be
+      request_sha256s:
+      - 97449d211b55f56fd4d1cc39ec376c29bb7d53b6b49101762bf7d2da34ee36be
+  eb0b6f28774e0da268352ce8605af1fd2f726092c1bebba77dd6d188ae98d368:
+    input_sha256: cf32342cff7db09527e1476ce857be362c9740e809de9497c9609539cf8723d3
+    configuration_sha256: 807c21e1fefccbe2778f2fd8664d446c9180823dbeaf970658a841cecabbe0e2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.475287+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.54
+            MISMATCH: 0.04
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.64
+            MISMATCH: 0.12
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.8099999999999999
+            MISMATCH: 0.02
+          confidence: 0.73
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.16
+            MISMATCH: 0.07
+          confidence: 0.66
+        /assertion/diagnostic:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.5
+            MISMATCH: 0.06
+          confidence: 0.25
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.05
+            MISMATCH: 0.41
+          confidence: 0.32
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.73
+            MISMATCH: 0.03
+          confidence: 0.6
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.82
+            MISMATCH: 0.04
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9196
+        output_tokens: 408
+      elapsed_seconds: 0.4971
+      request_sha256: b4e999e17325b0e13a8331459b82136e86475110b8baff54981fb8ca3f0618a8
+      request_sha256s:
+      - b4e999e17325b0e13a8331459b82136e86475110b8baff54981fb8ca3f0618a8
+  219f833878b3136a136a8a4a3d2cfcc84292c5ba2ec77e70f6dd606a0118dffa:
+    input_sha256: 63b37c1dd61973f6933db85717a31e48742955b7393ad8b5a4392786edd282a8
+    configuration_sha256: 4528854a02d3da89538296c4cce12554781441fcd9e67ed37508f442792c6051
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.571560+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.26
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.07
+            PARTIAL: 0.84
+          confidence: 0.75
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.26
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.75
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.72
+            PARTIAL: 0.21
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8195
+        output_tokens: 365
+      elapsed_seconds: 0.456
+      request_sha256: b7404ab64eb65e75c075452bc5ea2289b1a64f92cba62cdf490dbff726fc85e9
+      request_sha256s:
+      - b7404ab64eb65e75c075452bc5ea2289b1a64f92cba62cdf490dbff726fc85e9
+  6c9398eeb2df0ac5d3077c82b6d37587de3105d0b7b3ce872c0e93a6edc7f8f3:
+    input_sha256: 54cc735c2a1ccca6e1dec55b0694df06b6ce8021cb6e545ed2f4ffa56ab3bfd8
+    configuration_sha256: 807c21e1fefccbe2778f2fd8664d446c9180823dbeaf970658a841cecabbe0e2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.939061+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.58
+            MISMATCH: 0.09
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.98
+            MISMATCH: 0.01
+          confidence: 0.97
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.63
+            MISMATCH: 0.2
+          confidence: 0.44
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8099999999999999
+            MATCH: 0.05
+            MISMATCH: 0.14
+          confidence: 0.73
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.23
+            MISMATCH: 0.18
+          confidence: 0.39
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.02
+            MISMATCH: 0.74
+          confidence: 0.62
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+          confidence: 0.85
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.9
+            MISMATCH: 0.01
+          confidence: 0.84
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9167
+        output_tokens: 412
+      elapsed_seconds: 0.5011
+      request_sha256: dced29da3353fedc9eea57b4a71c8f55fde766f8592e290aa2538442bc84593b
+      request_sha256s:
+      - dced29da3353fedc9eea57b4a71c8f55fde766f8592e290aa2538442bc84593b
+  46a6ee2966f553ee1a0caf8934313ca1d3da137228bf53a4a4be17f7af51970b:
+    input_sha256: e20e6a11ee9d94c7e430e052861841e3054639bb03fa43e757fcbcd10d859b75
+    configuration_sha256: 807c21e1fefccbe2778f2fd8664d446c9180823dbeaf970658a841cecabbe0e2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:18.870679+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.55
+            MISMATCH: 0.03
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.13
+            MISMATCH: 0.1
+          confidence: 0.65
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.79
+            MISMATCH: 0.11
+          confidence: 0.7
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+            MATCH: 0.34
+          confidence: 0.27
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.29
+            MISMATCH: 0.69
+          confidence: 0.54
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+            MATCH: 0.84
+          confidence: 0.76
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.12
+            MISMATCH: 0.02
+          confidence: 0.79
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9176
+        output_tokens: 412
+      elapsed_seconds: 0.6023
+      request_sha256: fab058ab445df400b930322054b5d7f3ff28bcf95dea484c12de0d111692ca58
+      request_sha256s:
+      - fab058ab445df400b930322054b5d7f3ff28bcf95dea484c12de0d111692ca58
+  913ea2c1ee97eaba00d21f33c3431527a2f0f6af7f67ccb5bafaeff9d528249b:
+    input_sha256: 5e14f034183d0a99500a925958206854906166db5bb05cddb061ade512a66fd6
+    configuration_sha256: 807c21e1fefccbe2778f2fd8664d446c9180823dbeaf970658a841cecabbe0e2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.029965+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.43
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.93
+            PARTIAL: 0.04
+          confidence: 0.89
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.86
+            MATCH: 0.05
+          confidence: 0.79
+        /assertion/diagnostic:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.45
+            PARTIAL: 0.43
+          confidence: 0.17
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.03
+            PARTIAL: 0.31
+          confidence: 0.5
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9170
+        output_tokens: 411
+      elapsed_seconds: 0.5301
+      request_sha256: 434f1e786e62779dc010152ec92c07b017cd34bba5370f64d4934e029546413e
+      request_sha256s:
+      - 434f1e786e62779dc010152ec92c07b017cd34bba5370f64d4934e029546413e
+  9aa7465f29fd112d4707fd119367f6fae58a9aebf65c68ec7e1404e657babc2e:
+    input_sha256: b9087466156a3f9ea4295734d67b678702ce5d871c04303ac1ae5f4dc6deb9f2
+    configuration_sha256: 95ff39865452bc107d365c50352d240814c9e02c60f0073fc7659941c6c56fab
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.092841+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.19
+            PARTIAL: 0.45
+          confidence: 0.17
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.56
+            PARTIAL: 0.17
+          confidence: 0.33
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.82
+            PARTIAL: 0.11
+          confidence: 0.73
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.84
+            PARTIAL: 0.06
+          confidence: 0.75
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.04
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.87
+            MATCH: 0.01
+            PARTIAL: 0.12
+          confidence: 0.81
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.81
+            PARTIAL: 0.09
+          confidence: 0.7
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.78
+            PARTIAL: 0.09
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8266
+        output_tokens: 365
+      elapsed_seconds: 0.5593
+      request_sha256: 07a5737b0cf5d50f67a0e2e454d32eb2d925bd424b188b421fe9575d0dfe347b
+      request_sha256s:
+      - 07a5737b0cf5d50f67a0e2e454d32eb2d925bd424b188b421fe9575d0dfe347b
+  0eaacc952eaf5e298e01ae0c97a0667dc1d64cf2a9158db54e0a2d492081ced7:
+    input_sha256: bb2454a892af846d811381f22594a8928d08aa4d3e1871e44310df6f60b3b3cd
+    configuration_sha256: 95ff39865452bc107d365c50352d240814c9e02c60f0073fc7659941c6c56fab
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.574435+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.36
+            PARTIAL: 0.62
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.6
+            PARTIAL: 0.37
+          confidence: 0.41
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.15
+            PARTIAL: 0.76
+          confidence: 0.63
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.03
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.47
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.58
+            PARTIAL: 0.37
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8233
+        output_tokens: 363
+      elapsed_seconds: 0.4402
+      request_sha256: a2a3e8be21736851304f64cc7f1f882064fffce24536bb4411a489a95850d9ce
+      request_sha256s:
+      - a2a3e8be21736851304f64cc7f1f882064fffce24536bb4411a489a95850d9ce
+  4e9a21ce737045754e0d3d54bc0d250fed7236e908a5e12dc7154535dfbd6afb:
+    input_sha256: 0f23f66536e029dded43480e1ed8bc6302e983f31a27289d575d6afeafde34f3
+    configuration_sha256: 95ff39865452bc107d365c50352d240814c9e02c60f0073fc7659941c6c56fab
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.503595+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            PARTIAL: 0.41
+            MATCH: 0.15
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.38
+            MATCH: 0.25
+          confidence: 0.06
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.13
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.78
+            PARTIAL: 0.11
+          confidence: 0.67
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            PARTIAL: 0.55
+            MATCH: 0.05
+          confidence: 0.33
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.88
+            PARTIAL: 0.11
+            MATCH: 0.01
+          confidence: 0.82
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.17
+            MATCH: 0.72
+          confidence: 0.58
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.16
+            MATCH: 0.6900000000000001
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8286
+        output_tokens: 368
+      elapsed_seconds: 0.5882
+      request_sha256: aa576986a45efabe146eeb39d3cd643765bbe191c1b48dbf0e6d78cb07ca1f5f
+      request_sha256s:
+      - aa576986a45efabe146eeb39d3cd643765bbe191c1b48dbf0e6d78cb07ca1f5f
+  08ca0d4ef595aec84dcb072a80bded38b7f33c682b6700215320730c6f694c68:
+    input_sha256: 2b4bfe3ce7b77c4180c01b1a1cfa7e7199f43cb08ee8bf9cc5c794e438c321f2
+    configuration_sha256: ac04d751fd7a27c6eb40a6cb37addcc115e03090f9ada4b2ddf1429dd615e943
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.655553+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.19
+            MISMATCH: 0.07
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.39
+            MISMATCH: 0.16
+          confidence: 0.17
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.06
+            MISMATCH: 0.05
+          confidence: 0.83
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.84
+            MISMATCH: 0.13
+          confidence: 0.75
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9299999999999999
+            PARTIAL: 0.05
+            MISMATCH: 0.02
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7276
+        output_tokens: 317
+      elapsed_seconds: 0.4755
+      request_sha256: 6928b96fffa989c0f3db47b73d5231d9279714ae4b29b17cfef1370171d7a103
+      request_sha256s:
+      - 6928b96fffa989c0f3db47b73d5231d9279714ae4b29b17cfef1370171d7a103
+  783aa1cdd327eb208a45d8bd0f452511dfb747477c1f7a3e9913f053208465a5:
+    input_sha256: 1e3b7f9c48073120d2cee567c65ffe1094221b274e29300021f920126d2f402e
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:19.737004+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.85
+            MATCH: 0.11
+          confidence: 0.76
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.64
+            MATCH: 0.25
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.35
+            MATCH: 0.62
+          confidence: 0.43
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+            MATCH: 0.67
+          confidence: 0.52
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.73
+            MATCH: 0.25
+          confidence: 0.6
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.46
+            PARTIAL: 0.53
+            MATCH: 0.01
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7258
+        output_tokens: 320
+      elapsed_seconds: 0.5034
+      request_sha256: 28de007900cc2d6e8199e011748f80ac11f6b3c29743b7f4226d927df4eb8bbf
+      request_sha256s:
+      - 28de007900cc2d6e8199e011748f80ac11f6b3c29743b7f4226d927df4eb8bbf
+  513a46d25e00dec08a2c1b7671bb696f89fe0eeec587c4ab3fae7e813898d22b:
+    input_sha256: ac904b1b22ffc5f62e69b600e39864d15954975847f8c65481b695ccc1e07c9e
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:20.094662+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.39
+            MATCH: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+            MATCH: 0.9
+          confidence: 0.84
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+            MATCH: 0.93
+          confidence: 0.9
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.84
+            MATCH: 0.11
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7297
+        output_tokens: 317
+      elapsed_seconds: 0.5072
+      request_sha256: 9691deb05fe9c4812b767ae33ec4455337f21892146999ec34c1ec4df2d98673
+      request_sha256s:
+      - 9691deb05fe9c4812b767ae33ec4455337f21892146999ec34c1ec4df2d98673
+  360cdfe6d13703520b86d6e550c8ae61ffaf2e3feabd900b141c6cb174f5acd9:
+    input_sha256: 899dbfb6070fd0ff5523f0ff5a8a0e3d0f9af5e7162395fb2093b970f582ef16
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:20.183923+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.52
+            PARTIAL: 0.46
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.38
+            PARTIAL: 0.35
+          confidence: 0.07
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.54
+            PARTIAL: 0.29
+          confidence: 0.3
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.17
+            PARTIAL: 0.39
+          confidence: 0.15
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.29
+            PARTIAL: 0.69
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7321
+        output_tokens: 317
+      elapsed_seconds: 0.5134
+      request_sha256: 047bfbe16ed47a906dad57b684d4600821db9a4694eedd6b702d1a93c1cc713d
+      request_sha256s:
+      - 047bfbe16ed47a906dad57b684d4600821db9a4694eedd6b702d1a93c1cc713d
+  287eb88420c3d4a9f212d4798118acaf1da25353c0db972f9085d262c179e1a3:
+    input_sha256: ea6ad2ae91249d04fd4c696d3ad67569cdde0fa731c50883fe94639d6888a5af
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:20.271913+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.23
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.79
+            PARTIAL: 0.17
+          confidence: 0.69
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.47
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.02
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7278
+        output_tokens: 319
+      elapsed_seconds: 0.475
+      request_sha256: d32f1121108ca8e248b331b51adf9694a6049eade14103cc3932c76d37f42677
+      request_sha256s:
+      - d32f1121108ca8e248b331b51adf9694a6049eade14103cc3932c76d37f42677
+  f923ecc0665511d7dbcaa2722a84cb9168004e4d60479fe5ba5b469ea3d050f8:
+    input_sha256: 756129e2527e22c70f4a0b049d60d2e91bbf614b77001f88c05ad8c92d40dba1
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:14:20.406451+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.56
+            PARTIAL: 0.43
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.2
+            PARTIAL: 0.34
+          confidence: 0.18
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.51
+            PARTIAL: 0.46
+          confidence: 0.28
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6297
+        output_tokens: 273
+      elapsed_seconds: 0.5178
+      request_sha256: d50952bc874bf7001f8daa47101d2f8418c925ac8d44e4117c86bb6cfbcce66a
+      request_sha256s:
+      - d50952bc874bf7001f8daa47101d2f8418c925ac8d44e4117c86bb6cfbcce66a

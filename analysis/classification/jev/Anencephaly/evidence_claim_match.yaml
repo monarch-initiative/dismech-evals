@@ -1,0 +1,5320 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Anencephaly.yaml
+disease: Anencephaly
+inventory:
+  source_sha256: 346eed4bba12d1c2e307990e5cfc0ac19aaa2a16df9aebf7c06945f9e761faf1
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:18:57.063674+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  f183588936cb47b8c1da6449223a5117596ab9d82bb733a4ff937e99b512ffc8:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Disrupted Folate One-Carbon Metabolism
+        biological_scale: MOLECULAR
+        description: Periconceptional folate status is the strongest modifiable determinant of successful
+          neural tube closure. Folate one-carbon metabolism supplies the methyl groups and nucleotide
+          precursors required by the rapidly proliferating cranial neuroepithelium; reduced 5,10-methylenetetrahydrofolate
+          reductase (MTHFR) activity and inadequate folate availability compromise this supply and increase
+          the risk that the cranial neuropore fails to close.
+        genes:
+        - preferred_term: MTHFR
+          term:
+            id: hgnc:7436
+            label: MTHFR
+        biological_processes:
+        - preferred_term: tetrahydrofolate interconversion
+          term:
+            id: GO:0035999
+            label: tetrahydrofolate interconversion
+          modifier: DECREASED
+      selected_evidence:
+        snippet: a significant correlation between MTHFR C677T polymorphism and NTD risk was found in
+          NTD patients and in their mother
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25808073
+      reference_title: 'Association between MTHFR C677T polymorphism and neural tube defect risks: A comprehensive
+        evaluation in three groups of NTD patients, mothers, and fathers.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Meta-analysis links reduced MTHFR-dependent folate one-carbon metabolism to increased
+        neural tube defect risk in affected individuals and their mothers.
+    first_seen_at: '2026-09-25T15:09:56.815202+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:25808073
+  3ffb9dd80f23585a9ab01e51153a5b234e2dfca49ef2a2c92ea2869763a65ec6:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Multifactorial / polygenic with oligogenic contributions
+        inheritance_term:
+          preferred_term: Polygenic inheritance
+          term:
+            id: HP:0010982
+            label: Polygenic inheritance
+        description: Most nonsyndromic anencephaly is sporadic and multifactorial, arising from polygenic
+          susceptibility (folate one-carbon metabolism and planar cell polarity pathway variants) combined
+          with environmental exposures; targeted sequencing supports an additional oligogenic contribution
+          in some cases.
+      selected_evidence:
+        snippet: Together with evidence for oligogenic inheritance, this study provides new information
+          on the possible genetic causation of anencephaly
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29205322
+      reference_title: A targeted sequencing panel identifies rare damaging variants in multiple genes
+        in the cranial neural tube defect, anencephaly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Rare damaging variants across multiple candidate genes support an oligogenic/polygenic
+        model of anencephaly causation.
+    first_seen_at: '2026-09-25T15:09:56.814083+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      reference: PMID:29205322
+  526321ff56855a96e622c6e966f1d865e740330a128148cfda68c1e90ea1ca87:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Failure of Cranial Neuropore Closure
+            biological_scale: TISSUE
+            description: Primary neurulation requires the flat neural plate to bend, elevate its neural
+              folds, and fuse dorsally to form the closed neural tube, a process that proceeds by multiple
+              closure initiation sites and zips both rostrally and caudally. Anencephaly arises specifically
+              from failure of closure of the rostral (anterior/cranial) neuropore, which normally seals
+              by approximately embryonic day 24-26. When the cranial neural folds fail to appose and fuse,
+              the forebrain neuroepithelium remains open and the future cranial vault does not form over
+              it.
+            genes:
+            - preferred_term: PAX3
+              term:
+                id: hgnc:8617
+                label: PAX3
+            - preferred_term: PDGFRA
+              term:
+                id: hgnc:8803
+                label: PDGFRA
+            cell_types:
+            - preferred_term: neuroepithelial cell
+              term:
+                id: CL:0000710
+                label: neurecto-epithelial cell
+            locations:
+            - preferred_term: brain
+              term:
+                id: UBERON:0000955
+                label: brain
+            biological_processes:
+            - preferred_term: neural tube closure
+              term:
+                id: GO:0001843
+                label: neural tube closure
+              modifier: DECREASED
+            - preferred_term: apical constriction driving neural fold bending
+              term:
+                id: GO:0003383
+                label: apical constriction
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Exencephaly
+        causal_link_type: DIRECT
+        description: The unclosed cranial neural tube remains open, producing exencephaly — the exposed,
+          disorganized brain precursor lesion.
+      selected_evidence:
+        snippet: presenting NTDs as separate open lesions of the cranial neural tube (exencephaly, progressing
+          to anencephaly)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Failure of cranial neural tube closure leaves the cranial neural tube open as exencephaly.
+    first_seen_at: '2026-09-25T15:09:57.916593+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:23790957
+  69df84aa082e4f38f33e15f61edcf4650af34a5ad8fdc7c3795a60cb03670890:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of Cranial Neuropore Closure
+        biological_scale: TISSUE
+        description: Primary neurulation requires the flat neural plate to bend, elevate its neural folds,
+          and fuse dorsally to form the closed neural tube, a process that proceeds by multiple closure
+          initiation sites and zips both rostrally and caudally. Anencephaly arises specifically from
+          failure of closure of the rostral (anterior/cranial) neuropore, which normally seals by approximately
+          embryonic day 24-26. When the cranial neural folds fail to appose and fuse, the forebrain neuroepithelium
+          remains open and the future cranial vault does not form over it.
+        genes:
+        - preferred_term: PAX3
+          term:
+            id: hgnc:8617
+            label: PAX3
+        - preferred_term: PDGFRA
+          term:
+            id: hgnc:8803
+            label: PDGFRA
+        cell_types:
+        - preferred_term: neuroepithelial cell
+          term:
+            id: CL:0000710
+            label: neurecto-epithelial cell
+        locations:
+        - preferred_term: brain
+          term:
+            id: UBERON:0000955
+            label: brain
+        biological_processes:
+        - preferred_term: neural tube closure
+          term:
+            id: GO:0001843
+            label: neural tube closure
+          modifier: DECREASED
+        - preferred_term: apical constriction driving neural fold bending
+          term:
+            id: GO:0003383
+            label: apical constriction
+      selected_evidence:
+        snippet: human brain formation is achieved by neurulation progressing directly between Closures
+          1 and 3, with completion of a single cranial (rostral) neuropore
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Human cranial neurulation completes at a single rostral neuropore; failure of its closure
+        produces anencephaly.
+    first_seen_at: '2026-09-25T15:09:57.915260+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:23790957
+  b6ebcd998c4ca47462aaa51575cd16b6977563512cd1926d080797522225ba07:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Convergent Extension and Neural Plate Morphogenesis Defect
+        biological_scale: CELLULAR
+        description: Convergent extension movements, governed by the non-canonical Wnt/planar cell polarity
+          (PCP) pathway, narrow and lengthen the neural plate and are required to bring the neural folds
+          close enough to fuse. Disruption of PCP signaling (e.g. VANGL1/VANGL2, CELSR1, SCRIB) broadens
+          the neural plate and prevents fold apposition, producing severe open neural tube defects including
+          anencephaly and craniorachischisis in model organisms and humans.
+        genes:
+        - preferred_term: VANGL1
+          term:
+            id: hgnc:15512
+            label: VANGL1
+        - preferred_term: VANGL2
+          term:
+            id: hgnc:15511
+            label: VANGL2
+        biological_processes:
+        - preferred_term: convergent extension in neural plate elongation
+          term:
+            id: GO:0022007
+            label: convergent extension involved in neural plate elongation
+          modifier: DECREASED
+      selected_evidence:
+        snippet: 'convergent extension cell movements are dependent on non-canonical Wnt signalling: the
+          planar cell polarity (PCP) pathway'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Neural plate narrowing/elongation (convergent extension) is driven by PCP signaling;
+        its disruption prevents neural fold apposition and closure.
+    first_seen_at: '2026-09-25T15:09:57.943371+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:23790957
+  9c8ffe8f87894d0d272a8dab675c0e6c6ed4e146cf579b2b87a6757172d12973:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Exposure and Degeneration of Exposed Neural Tissue
+        biological_scale: TISSUE
+        description: Following failed closure, the exposed forebrain (initially exencephaly) undergoes
+          progressive mechanical and chemical degeneration on contact with amniotic fluid, leaving a hemorrhagic,
+          poorly differentiated vascular mass (area cerebrovasculosa) in place of the cerebral hemispheres.
+          The absence of a normal brain also disrupts induction of the overlying skull and scalp.
+        locations:
+        - preferred_term: brain
+          term:
+            id: UBERON:0000955
+            label: brain
+        - preferred_term: cranium
+          term:
+            id: UBERON:0003128
+            label: cranium
+        - preferred_term: scalp
+          term:
+            id: UBERON:0000403
+            label: scalp
+        biological_processes:
+        - preferred_term: forebrain development
+          term:
+            id: GO:0030900
+            label: forebrain development
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: presenting NTDs as separate open lesions of the cranial neural tube (exencephaly, progressing
+          to anencephaly)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Anencephaly develops when the open cranial neural tube (exencephaly) degenerates, confirming
+        the exencephaly-to-anencephaly progression.
+    first_seen_at: '2026-09-25T15:09:57.944146+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:23790957
+  27849f1ec478d2ef78e01bfdcd4447eff361eefbf6865467df6ae2986d0b2948:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Exposure and Degeneration of Exposed Neural Tissue
+            biological_scale: TISSUE
+            description: Following failed closure, the exposed forebrain (initially exencephaly) undergoes
+              progressive mechanical and chemical degeneration on contact with amniotic fluid, leaving
+              a hemorrhagic, poorly differentiated vascular mass (area cerebrovasculosa) in place of the
+              cerebral hemispheres. The absence of a normal brain also disrupts induction of the overlying
+              skull and scalp.
+            locations:
+            - preferred_term: brain
+              term:
+                id: UBERON:0000955
+                label: brain
+            - preferred_term: cranium
+              term:
+                id: UBERON:0003128
+                label: cranium
+            - preferred_term: scalp
+              term:
+                id: UBERON:0000403
+                label: scalp
+            biological_processes:
+            - preferred_term: forebrain development
+              term:
+                id: GO:0030900
+                label: forebrain development
+              modifier: ABNORMAL
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Anencephaly
+        causal_link_type: DIRECT
+        description: Progressive destruction of the exposed forebrain leaves the area cerebrovasculosa
+          in place of the cerebral hemispheres — anencephaly.
+      selected_evidence:
+        snippet: presenting NTDs as separate open lesions of the cranial neural tube (exencephaly, progressing
+          to anencephaly)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: The exposed cranial neural tube (exencephaly) degenerates to produce anencephaly.
+    first_seen_at: '2026-09-25T15:09:58.393842+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:23790957
+  1d0fad325b811b1de5e17ba9c14838b9ac48a52f9b1b7fce45f1e7ac4ef70d76:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Anencephaly
+        category: Phenotypic abnormality
+        description: Absence of the major portion of the brain, skull, and scalp, the defining feature
+          of the disorder.
+        phenotype_term:
+          preferred_term: Anencephaly
+          term:
+            id: HP:0002323
+            label: Anencephaly
+        frequency: OBLIGATE
+      selected_evidence:
+        snippet: Neural-tube defects such as anencephaly and spina bifida constitute a group of common
+          congenital malformations caused by complex genetic and environmental factors.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17409324
+      reference_title: Mutations in VANGL1 associated with neural-tube defects.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes anencephaly as a common open neural tube defect of multifactorial (genetic
+        and environmental) origin.
+    first_seen_at: '2026-09-25T15:09:58.492289+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:17409324
+  a837de55e72bd8a94d2020945beec3077ad6bf740a0ec84a5c21548268e2ef80:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Exencephaly
+        category: Phenotypic abnormality
+        description: The earlier developmental precursor lesion, in which the disorganized brain is exposed
+          but not yet destroyed; it degenerates into anencephaly.
+        phenotype_term:
+          preferred_term: Exencephaly
+          term:
+            id: HP:0030769
+            label: Exencephaly
+      selected_evidence:
+        snippet: embryos complete Closure 1 but fail in later neurulation, presenting NTDs as separate
+          open lesions of the cranial neural tube (exencephaly, progressing to anencephaly)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Exencephaly is the open cranial-neural-tube precursor lesion that progresses to anencephaly.
+    first_seen_at: '2026-09-25T15:09:58.530009+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:23790957
+  c117d11738e178bff712370dcd03f11f3c22d1b1ae668b1d664f52ee1121798f:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Absent Calvaria
+        category: Phenotypic abnormality
+        description: Absence of the cranial vault (acrania), leaving the brain uncovered.
+        phenotype_term:
+          preferred_term: Acrania (absent calvaria)
+          term:
+            id: HP:0030716
+            label: Acrania
+        frequency: OBLIGATE
+      selected_evidence:
+        snippet: In diagnosing fetal anencephaly using POCUS, a very important finding is absence of the
+          fetal calvarium
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27429697
+      reference_title: 'Check the Head: Emergency Ultrasound Diagnosis of Fetal Anencephaly.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Absence of the fetal calvarium (acrania) is a defining sonographic feature of anencephaly.
+    first_seen_at: '2026-09-25T15:09:58.566122+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:27429697
+  e61d30ef079547e591f2d3c08d0b5985e508a275f2cdc088f02a7290685f57f9:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Polyhydramnios
+        category: Phenotypic abnormality
+        description: Excess amniotic fluid, attributed to impaired fetal swallowing, frequently complicates
+          anencephalic pregnancies.
+        phenotype_term:
+          preferred_term: Polyhydramnios
+          term:
+            id: HP:0001561
+            label: Polyhydramnios
+        frequency: OCCASIONAL
+        notes: Frequency band derived from PMID:16827827 (56/211, 26%). That cohort is self-selected —
+          parents who declined termination, recruited via a parent website — so 26% is a lower bound for
+          continued/liveborn pregnancies rather than a population estimate, and it sits at the upper edge
+          of the OCCASIONAL band.
+      selected_evidence:
+        snippet: polyhydramnios was a feature in 56 (26%) pregnancies
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16827827
+      reference_title: Spontaneous pregnancy outcome after prenatal diagnosis of anencephaly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: In a cohort of 211 continued anencephalic pregnancies, polyhydramnios complicated 26%
+        — quantifying the frequently reported association.
+    first_seen_at: '2026-09-25T15:09:58.853553+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:16827827
+  7e0a6b0f04983dc31f22059b4aaeb69a244daded4ef310374dedeb787ac06df0:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: MTHFR
+        notes: The MTHFR c.677C>T (p.Ala222Val) thermolabile polymorphism reduces 5,10-methylenetetrahydrofolate
+          reductase activity and is a folate-dependent maternal/fetal risk factor for neural tube defects
+          including anencephaly.
+        gene_term:
+          preferred_term: MTHFR
+          term:
+            id: hgnc:7436
+            label: MTHFR
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: a significant correlation between MTHFR C677T polymorphism and NTD risk was found in
+          NTD patients and in their mother
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25808073
+      reference_title: 'Association between MTHFR C677T polymorphism and neural tube defect risks: A comprehensive
+        evaluation in three groups of NTD patients, mothers, and fathers.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Meta-analysis showing the MTHFR C677T polymorphism is associated with NTD risk in affected
+        individuals and their mothers.
+    first_seen_at: '2026-09-25T15:09:59.019235+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:25808073
+  76696efc375b3f52bcdd9e8ab331900a47738ca5542c9dadd30218a09d75f3b6:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Adrenal Hypoplasia
+        category: Phenotypic abnormality
+        description: Fetal adrenal hypoplasia occurs secondary to absent hypothalamic-pituitary drive
+          (absent forebrain/pituitary axis).
+        phenotype_term:
+          preferred_term: Adrenal hypoplasia
+          term:
+            id: HP:0000835
+            label: Adrenal hypoplasia
+      selected_evidence:
+        snippet: decreased cortical thickness in the anencephalic group represented cellular hypoplasia
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:2625322
+      reference_title: Relationship between fetal adrenal morphology and anterior pituitary function.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Anencephalic fetal adrenals show cellular hypoplasia and fail to gain weight, consistent
+        with loss of ACTH-dependent adrenal development.
+    first_seen_at: '2026-09-25T15:09:58.970865+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:2625322
+  6f8d4d529cd0e025aafb8130ff7284f32bc49354865494966804f6367fa04881:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: VANGL1
+        notes: VANGL1 encodes a core planar cell polarity protein; rare missense variants have been identified
+          in patients with neural tube defects, implicating the PCP/convergent-extension pathway in human
+          anencephaly.
+        gene_term:
+          preferred_term: VANGL1
+          term:
+            id: hgnc:15512
+            label: VANGL1
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: These findings implicate VANGL1 as a risk factor in human neural-tube defects.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17409324
+      reference_title: Mutations in VANGL1 associated with neural-tube defects.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies VANGL1 (a PCP-pathway gene) missense mutations in patients with familial
+        and sporadic neural tube defects.
+    first_seen_at: '2026-09-25T15:09:59.070482+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      reference: PMID:17409324
+  66db99db2a0180ed61f1e2be67c60c046012d37660f37ba79e3d2bf7c0cb3bf7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: VANGL2
+        notes: VANGL2, another core PCP gene, causes severe neural tube defects including craniorachischisis
+          and exencephaly/anencephaly in mutant mice. Its role in human anencephaly is inferred from this
+          model-organism evidence and the established human relevance of the PCP pathway (e.g. VANGL1);
+          direct human genetic evidence for VANGL2 is not yet established here.
+        gene_term:
+          preferred_term: VANGL2
+          term:
+            id: hgnc:15511
+            label: VANGL2
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: Analysis of the mouse mutant loop-tail (Vangl2 gene) has shown that craniorachischisis,
+          the most severe NTD, results from failure of Closure 1
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: MODEL_ORGANISM
+      explanation: The Vangl2 loop-tail mouse links PCP-gene disruption to failure of neural tube closure
+        and the most severe NTDs.
+    first_seen_at: '2026-09-25T15:09:59.437268+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      reference: PMID:23790957
+  e40587e5e4acdfdba21f74d290c197de37651c49df97ec26c86c94161d28888e:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PAX3
+        notes: PAX3 is required for neural tube and neural crest development; Pax3 mutant (Splotch) mice
+          develop cranial NTDs, especially under folate deficiency. The link to human anencephaly rests
+          on this model-organism evidence; direct human genetic evidence for PAX3 in anencephaly is not
+          yet established here.
+        gene_term:
+          preferred_term: PAX3
+          term:
+            id: hgnc:8617
+            label: PAX3
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: The frequency of cranial NTDs is exacerbated by maternal folate deficiency in mutant
+          splotch (Pax3) embryos, whereas wild-type littermates are never affected by NTDs
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: MODEL_ORGANISM
+      explanation: Splotch (Pax3) mutant embryos develop folate-sensitive cranial NTDs, implicating PAX3
+        in cranial neural tube closure.
+    first_seen_at: '2026-09-25T15:09:59.557312+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/0
+      reference: PMID:23790957
+  3504c562b4107a21643784da01244af8942b007010bbf984630004a29a5a9da7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Maternal Folate Deficiency
+        exposure_term:
+          preferred_term: low maternal folic acid exposure
+          modifier: DECREASED
+          term:
+            id: ECTO:9000123
+            label: exposure to folic acid
+        description: Inadequate periconceptional folate is the strongest modifiable risk factor for neural
+          tube defects; folic acid supplementation and food fortification substantially reduce anencephaly
+          incidence.
+      selected_evidence:
+        snippet: supplementation with folic acid (one of the vitamins in the B group) or a mixture of
+          seven other vitamins (A,D,B1,B2,B6,C and nicotinamide) around the time of conception can prevent
+          neural tube defects (anencephaly, spina bifida, encephalocele)
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1677062
+      reference_title: 'Prevention of neural tube defects: results of the Medical Research Council Vitamin
+        Study. MRC Vitamin Study Research Group.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The randomized MRC Vitamin Study established that periconceptional folic acid prevents
+        NTDs, implicating folate status as the key modifiable determinant.
+    first_seen_at: '2026-09-25T15:09:59.625097+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:1677062
+  1102c8ffd0861f3e48c316a22189a61235d46c5a4421f7def72689b6d8ec765e:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PDGFRA
+        notes: Targeted exome sequencing of cranial NTD (predominantly anencephaly) cohorts has identified
+          rare damaging variants, including a PDGFRA frameshift, supporting an oligogenic contribution
+          to anencephaly.
+        gene_term:
+          preferred_term: PDGFRA
+          term:
+            id: hgnc:8803
+            label: PDGFRA
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: This included 1 frameshift (PDGFRA)
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/4
+      evidence_path: /genetic/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29205322
+      reference_title: A targeted sequencing panel identifies rare damaging variants in multiple genes
+        in the cranial neural tube defect, anencephaly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: A 191-gene panel in 90 cranial NTD (85 anencephaly) patients identified a rare damaging
+        PDGFRA frameshift variant among candidate anencephaly genes.
+    first_seen_at: '2026-09-25T15:09:59.558510+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /genetic/4
+      evidence_path: /genetic/4/evidence/0
+      reference: PMID:29205322
+  63d2e8cd128682ab1d158f2f3526227572f93f95b4a61d28e11351b53fa197dc:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /environmental/0
+          value:
+            name: Maternal Folate Deficiency
+            exposure_term:
+              preferred_term: low maternal folic acid exposure
+              modifier: DECREASED
+              term:
+                id: ECTO:9000123
+                label: exposure to folic acid
+            description: Inadequate periconceptional folate is the strongest modifiable risk factor for
+              neural tube defects; folic acid supplementation and food fortification substantially reduce
+              anencephaly incidence.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Disrupted Folate One-Carbon Metabolism
+        environmental_effect: TRIGGERS
+        causal_link_type: DIRECT
+        description: Inadequate maternal folate directly limits the one-carbon pool this node depends
+          on. The link is direct because the exposure and the metabolic deficit are the same thing viewed
+          from outside and inside the mother.
+      selected_evidence:
+        snippet: supplementation with folic acid (one of the vitamins in the B group) or a mixture of
+          seven other vitamins (A,D,B1,B2,B6,C and nicotinamide) around the time of conception can prevent
+          neural tube defects (anencephaly, spina bifida, encephalocele)
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:1677062
+      reference_title: 'Prevention of neural tube defects: results of the Medical Research Council Vitamin
+        Study. MRC Vitamin Study Research Group.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Periconceptional folic acid supplementation reduced neural tube defect recurrence,
+        establishing maternal folate status as causally relevant to the defect rather than merely correlated
+        with it.
+    first_seen_at: '2026-09-25T15:09:59.927560+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:1677062
+  762a01c36ac5c53b26b05c7a2628355e012239d9827c9c40b3b59de20d54bef8:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Maternal Valproate Exposure
+        exposure_term:
+          preferred_term: gestational maternal valproate exposure
+          term:
+            id: XCO:0001598
+            label: gestational maternal exposure to valproate
+        description: Periconceptional exposure to the antiepileptic valproic acid interferes with folate
+          metabolism and histone deacetylation and increases the risk of neural tube defects.
+      selected_evidence:
+        snippet: It has now become evident that valproic acid might cause more than just neural tube defects
+          (NTDs).
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16639967
+      reference_title: Major malformations with valproic acid.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Systematic review of cohort studies confirms valproic acid is a teratogen causing neural
+        tube defects and other major malformations.
+    first_seen_at: '2026-09-25T15:10:00.080046+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:16639967
+  fee55d51ba46e7679acf99ffa0c4920f6251d4bb81d3b2777b28f037e8dc92f8:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /environmental/1
+          value:
+            name: Maternal Valproate Exposure
+            exposure_term:
+              preferred_term: gestational maternal valproate exposure
+              term:
+                id: XCO:0001598
+                label: gestational maternal exposure to valproate
+            description: Periconceptional exposure to the antiepileptic valproic acid interferes with
+              folate metabolism and histone deacetylation and increases the risk of neural tube defects.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Failure of Cranial Neuropore Closure
+        environmental_effect: TRIGGERS
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Valproate is an established human teratogen for neural tube defects, so it initiates
+          rather than merely raises the risk of failed closure. It is marked indirect because the responsible
+          step is unsettled between folate antagonism and histone deacetylase inhibition.
+      selected_evidence:
+        snippet: It has now become evident that valproic acid might cause more than just neural tube defects
+          (NTDs).
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/1
+    evidence_metadata:
+      reference: PMID:16639967
+      reference_title: Major malformations with valproic acid.
+      evidence_source: OTHER
+      explanation: Identifies valproic acid as a cause of neural tube defects. Support is PARTIAL and
+        the source is OTHER because this is a hedged statement in a clinical question-and-answer column
+        rather than a primary study, and the defect it names is the neural tube generally rather than
+        the cranial neuropore specifically.
+    first_seen_at: '2026-09-25T15:10:00.236902+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      reference: PMID:16639967
+  f13bb355f1ed60fb7a00da3cd87f11beb2fc8e1d68c8c459ae5bc5cb48bca1fe:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Maternal Pregestational Diabetes
+        description: Poorly controlled maternal diabetes mellitus is an established risk factor for neural
+          tube defects including anencephaly.
+      selected_evidence:
+        snippet: factors implicated in the aetiology of NTDs include maternal diabetes
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Maternal diabetes is an established environmental risk factor for neural tube defects.
+    first_seen_at: '2026-09-25T15:10:00.237435+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/0
+      reference: PMID:23790957
+  68d802b4618b3930d5d69126de154c3435c39b692204e1cc2eb2832174a1d5b0:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /environmental/2
+          value:
+            name: Maternal Pregestational Diabetes
+            description: Poorly controlled maternal diabetes mellitus is an established risk factor for
+              neural tube defects including anencephaly.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Failure of Cranial Neuropore Closure
+        environmental_effect: PREDISPOSES
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Maternal diabetes raises the probability of failed closure without being sufficient
+          to cause it, and the intervening steps between maternal hyperglycaemia and the neuroepithelium
+          are not established here.
+      selected_evidence:
+        snippet: factors implicated in the aetiology of NTDs include maternal diabetes
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/2/influences_mechanisms/0
+      evidence_path: /environmental/2/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/2
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Lists maternal diabetes among the factors implicated in the aetiology of neural tube
+        defects, a risk-factor attribution rather than a demonstrated mechanism.
+    first_seen_at: '2026-09-25T15:10:00.475729+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/2/influences_mechanisms/0
+      evidence_path: /environmental/2/influences_mechanisms/0/evidence/0
+      reference: PMID:23790957
+  6bf816b5816b5e3541163f79dbefdfa84806a581d537914a41d2da9fe6b28ad7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Maternal Obesity
+        description: Maternal obesity is a reported risk factor for anencephaly and other neural tube
+          defects. Its contribution is recorded as an association rather than a sufficient cause in this
+          multifactorial disorder.
+      selected_evidence:
+        snippet: various maternal-related environmental and genetic risk factors have been reported, which
+          include diabetes, obesity, exposure to different drugs or toxins
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/3
+      evidence_path: /environmental/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33544785
+      reference_title: 'The etiopathogenic and morphological spectrum of anencephaly: a comprehensive
+        review of literature.'
+      evidence_source: OTHER
+      explanation: The disease-specific review lists maternal obesity among reported environmental risk
+        factors for anencephaly.
+    first_seen_at: '2026-09-25T15:10:00.644743+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/3
+      evidence_path: /environmental/3/evidence/0
+      reference: PMID:33544785
+  bdc042ed07f4ac89bed5384a3b12ef75f4b81f854dc3f60d776e506724e922a8:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /environmental/3
+          value:
+            name: Maternal Obesity
+            description: Maternal obesity is a reported risk factor for anencephaly and other neural tube
+              defects. Its contribution is recorded as an association rather than a sufficient cause in
+              this multifactorial disorder.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Failure of Cranial Neuropore Closure
+        environmental_effect: PREDISPOSES
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Obesity appears alongside diabetes as a maternal metabolic risk factor. Whether it
+          acts through the same hyperglycaemic route or independently is not resolved by the cited source.
+      selected_evidence:
+        snippet: various maternal-related environmental and genetic risk factors have been reported, which
+          include diabetes, obesity, exposure to different drugs or toxins
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/3/influences_mechanisms/0
+      evidence_path: /environmental/3/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/3
+    evidence_metadata:
+      reference: PMID:33544785
+      reference_title: 'The etiopathogenic and morphological spectrum of anencephaly: a comprehensive
+        review of literature.'
+      evidence_source: OTHER
+      explanation: Lists obesity among the reported maternal risk factors for the malformation, without
+        identifying a mediating step.
+    first_seen_at: '2026-09-25T15:10:00.779201+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/3/influences_mechanisms/0
+      evidence_path: /environmental/3/influences_mechanisms/0/evidence/0
+      reference: PMID:33544785
+  1633f1806eb64a414e5ac2a1b869f233beccc1572a92a0a3a631cbde26b5049d:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Maternal Hyperthermia
+        exposure_term:
+          preferred_term: maternal exposure to increased temperature
+          term:
+            id: ECTO:4000001
+            label: exposure to increased temperature
+        description: First-trimester maternal hyperthermia (febrile illness, hot tub/sauna) is associated
+          with an increased risk of neural tube defects.
+      selected_evidence:
+        snippet: Maternal hyperthermia in early pregnancy is associated with increased risk for neural
+          tube defects and may be a human teratogen.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/4
+      evidence_path: /environmental/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15703536
+      reference_title: 'Maternal hyperthermia and the risk for neural tube defects in offspring: systematic
+        review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Meta-analysis reporting an ~1.9-fold increased NTD risk with maternal hyperthermia
+        in early pregnancy.
+    first_seen_at: '2026-09-25T15:10:00.874150+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/4
+      evidence_path: /environmental/4/evidence/0
+      reference: PMID:15703536
+  7dc57e0b607d6f43d13e3806e1978b22687f69da6fd1039261ef6c76e0dfbfc7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context:
+        - path: /environmental/4
+          value:
+            name: Maternal Hyperthermia
+            exposure_term:
+              preferred_term: maternal exposure to increased temperature
+              term:
+                id: ECTO:4000001
+                label: exposure to increased temperature
+            description: First-trimester maternal hyperthermia (febrile illness, hot tub/sauna) is associated
+              with an increased risk of neural tube defects.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Failure of Cranial Neuropore Closure
+        environmental_effect: PREDISPOSES
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Elevated core temperature in early pregnancy raises neural tube defect risk. Recorded
+          as predisposing rather than triggering because the cited source states the association firmly
+          but stops short of calling hyperthermia an established human teratogen.
+      selected_evidence:
+        snippet: Maternal hyperthermia in early pregnancy is associated with increased risk for neural
+          tube defects and may be a human teratogen.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/4/influences_mechanisms/0
+      evidence_path: /environmental/4/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/4
+    evidence_metadata:
+      reference: PMID:15703536
+      reference_title: 'Maternal hyperthermia and the risk for neural tube defects in offspring: systematic
+        review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports early-pregnancy maternal hyperthermia as associated with increased neural tube
+        defect risk and only possibly a human teratogen, which is why this is graded as predisposing.
+    first_seen_at: '2026-09-25T15:10:01.001147+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /environmental/4/influences_mechanisms/0
+      evidence_path: /environmental/4/influences_mechanisms/0/evidence/0
+      reference: PMID:15703536
+  b6014aab200cf6ca717d1e8a4f7d25bd679577d3bdb61c18b0363ad62d75b05c:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Periconceptional Folic Acid Supplementation
+        description: 'Primary prevention: daily periconceptional folic acid (typically 0.4 mg for average
+          risk, up to 4 mg for high-risk/prior-NTD pregnancies) markedly reduces the occurrence and recurrence
+          of neural tube defects. This is preventive, not curative — anencephaly itself has no treatment.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: folic acid
+            term:
+              id: CHEBI:27470
+              label: folic acid
+      selected_evidence:
+        snippet: Periconceptional vitamin use decreases the incidence of a first occurrence of neural-tube
+          defects.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1307234
+      reference_title: Prevention of the first occurrence of neural-tube defects by periconceptional vitamin
+        supplementation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Randomized trial demonstrating periconceptional folic-acid-containing supplementation
+        prevents first-occurrence NTDs.
+    first_seen_at: '2026-09-25T15:10:01.235132+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:1307234
+  f003c88220312fdedab00c978d6d441d91b63fe812132205b2ba48b2d8e71861:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Periconceptional Folic Acid Supplementation
+        description: 'Primary prevention: daily periconceptional folic acid (typically 0.4 mg for average
+          risk, up to 4 mg for high-risk/prior-NTD pregnancies) markedly reduces the occurrence and recurrence
+          of neural tube defects. This is preventive, not curative — anencephaly itself has no treatment.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: folic acid
+            term:
+              id: CHEBI:27470
+              label: folic acid
+      selected_evidence:
+        snippet: Folic acid supplementation starting before pregnancy can now be firmly recommended for
+          all women who have had an affected pregnancy
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1677062
+      reference_title: 'Prevention of neural tube defects: results of the Medical Research Council Vitamin
+        Study. MRC Vitamin Study Research Group.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The MRC Vitamin Study established a 72% reduction in NTD recurrence with periconceptional
+        folic acid.
+    first_seen_at: '2026-09-25T15:10:01.369854+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:1677062
+  0183a3e3be40f3d77a581984e988103d697765b2bdc0b1b54903858159be1981:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Palliative and Supportive Care
+        description: Anencephaly is uniformly lethal and has no curative therapy; management is comfort/palliative
+          care for liveborn neonates and supportive counseling for families, including reproductive counseling.
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: Supportive Care
+          term:
+            id: NCIT:C15747
+            label: Supportive Care
+      selected_evidence:
+        snippet: Neural tube defects (NTDs) affecting the brain (anencephaly) are lethal before or at
+          birth
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29205322
+      reference_title: A targeted sequencing panel identifies rare damaging variants in multiple genes
+        in the cranial neural tube defect, anencephaly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Anencephaly is uniformly lethal before or at birth, so management is limited to palliative
+        and supportive care rather than curative therapy.
+    first_seen_at: '2026-09-25T15:10:01.483968+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:29205322
+  b75f62261a96229af8a82bbe27d8add60b5bfb8c1a46b87c7fb917c2da13165a:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Worldwide
+        measure_type: BIRTH_PREVALENCE
+        prevalence_class: BAND_1_5_PER_10000
+        rate_per_100000: 51.0
+        rate_low: 47.0
+        rate_high: 55.0
+        notes: Global meta-analysis estimate of 5.1 per 10,000 births (95% CI 4.7-5.5), normalized to
+          cases per 100,000. This pooled estimate is higher than the 3.7 per 10,000 live-birth prevalence
+          reported by Metropolitan Atlanta population surveillance. The sources use different geography,
+          eras, and pregnancy-outcome ascertainment, so the pooled figure should not be interpreted as
+          a uniform country-specific live-birth rate.
+      selected_evidence:
+        snippet: Overall estimate of the prevalence, incidence and attenuation of anencephaly worldwide
+          were 5.1 per ten thousand births (95% confidence interval 4.7-5.5 per ten thousand births)
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36253858
+      reference_title: 'Global prevalence of congenital anencephaly: a comprehensive systematic review
+        and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly supports the disease-specific worldwide rate and interval, replacing an inference
+        from a combined neural-tube-defect prevalence.
+    first_seen_at: '2026-09-25T15:10:01.639257+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      reference: PMID:36253858
+  3749924c28604d7bdb64e75930eb63855c16cdb46a50ef39410a5a3004687bae:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Metropolitan Atlanta, United States
+        measure_type: BIRTH_PREVALENCE
+        prevalence_class: BAND_1_5_PER_10000
+        rate_per_100000: 37.0
+        notes: Population-based surveillance estimate of 3.7 per 10,000 live births for 1968-2002. This
+          outcome-restricted estimate is presented alongside the higher global pooled estimate because
+          national US surveillance found that live births represented only 34% of ascertained anencephaly
+          cases and warned that live-birth-only surveillance severely underestimates cases.
+      selected_evidence:
+        snippet: Prevalence rates of encephalocele (n = 167), spina bifida (n = 650), and anencephaly
+          (n = 431) were 1.4, 5.5, and 3.7 per 10 000 live births, respectively.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16950981
+      reference_title: Are encephaloceles neural tube defects?
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly supports the anencephaly live-birth surveillance rate used for comparison
+        with the global pooled estimate.
+    first_seen_at: '2026-09-25T15:10:01.948216+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      reference: PMID:16950981
+  b2393dbcce5ab12189384621cd9de0dfdb3b5e61b20e338ff1e1ce22c84865df:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Metropolitan Atlanta, United States
+        measure_type: BIRTH_PREVALENCE
+        prevalence_class: BAND_1_5_PER_10000
+        rate_per_100000: 37.0
+        notes: Population-based surveillance estimate of 3.7 per 10,000 live births for 1968-2002. This
+          outcome-restricted estimate is presented alongside the higher global pooled estimate because
+          national US surveillance found that live births represented only 34% of ascertained anencephaly
+          cases and warned that live-birth-only surveillance severely underestimates cases.
+      selected_evidence:
+        snippet: Live birth cases contributed to only 34% of the anencephaly cases
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31580536
+      reference_title: National population-based estimates for major birth defects, 2010-2014.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the explicit caveat that live-birth prevalence omits most anencephaly cases
+        captured through broader pregnancy-outcome surveillance.
+    first_seen_at: '2026-09-25T15:10:02.077337+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/1
+      reference: PMID:31580536
+  6ef0e56f629ff102859de3e4e550556cad9f3af9af38fe15a0cc4ea2bdf4949c:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Prenatal Screening and Imaging
+        description: Anencephaly is detected by elevated maternal serum alpha-fetoprotein, elevated amniotic
+          fluid AFP and acetylcholinesterase, and prenatal ultrasound demonstrating absence of the cranial
+          vault and cerebral hemispheres (often from the late first trimester onward).
+      selected_evidence:
+        snippet: diagnosis was based on measurement of alphafetoprotein (AFP) concentration in the amniotic
+          fluid and maternal blood 8,9, but later technological improvements enabled ultrasound to replace
+          AFP measurement as the mainstay of prenatal diagnosis
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23790957
+      reference_title: 'Neural tube defects: recent advances, unsolved questions, and controversies.'
+      evidence_source: OTHER
+      explanation: Prenatal diagnosis of open neural tube defects historically relied on amniotic-fluid
+        and maternal-serum AFP and is now performed principally by ultrasound.
+    first_seen_at: '2026-09-25T15:10:02.345523+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:23790957
+  f3ced188d5d5c470cd2f16eaf634491525da8bb33a69ec667889f5a528773783:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: ImagingFinding
+      assertion:
+        name: Acrania-exencephaly-anencephaly sequence on prenatal ultrasound
+        modality: ULTRASOUND
+        imaging_finding_term:
+          preferred_term: Absent cranial vault with abnormal or absent cerebral tissue
+        located_in:
+          preferred_term: brain
+          term:
+            id: UBERON:0000955
+            label: brain
+        phenotype_term:
+          preferred_term: Anencephaly
+          term:
+            id: HP:0002323
+            label: Anencephaly
+        diagnostic: true
+        description: Prenatal ultrasound demonstrates the acrania-exencephaly-anencephaly sequence through
+          loss of the normal cranial contour and progressive abnormality or absence of cranial tissue.
+          Quantitative cranial ratios can support recognition before 11 weeks, but very early findings
+          require confirmation after 11 weeks.
+      selected_evidence:
+        snippet: The crown-rump length (CRL), occipitofrontal diameter (OFD), and anteroposterior abdominal
+          diameter (AAD) were measured in the median sagittal view. The ratios of AAD/OFD and CRL/OFD
+          were computed. ... The CRL/OFD is a reliable indicator for predicting the acrania-exencephaly-anencephaly
+          sequence. When combined with cranial ultrasound morphological changes, it can accurately diagnose
+          the acrania-exencephaly-anencephaly sequence before 11 weeks of gestation. However, diagnosis
+          at this stage still requires reconfirmation after 11 weeks
+        supports: SUPPORT
+    origin:
+      assertion_path: /imaging_findings/0
+      evidence_path: /imaging_findings/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41267385
+      reference_title: 'Study of Ultrasound Diagnosis of Acrania-Exencephaly-Anencephaly Sequence in Middle
+        First Trimester: A Multicenter Center, Retrospective Analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Restores the measured cranial ratios and the antecedent of the combined ultrasound
+        diagnostic statement, preserving the need for confirmation after 11 weeks.
+    first_seen_at: '2026-09-25T15:10:02.208331+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /imaging_findings/0
+      evidence_path: /imaging_findings/0/evidence/0
+      reference: PMID:41267385
+  5a85ab92f8f65e5910e82bb2849811c8f70aaa65f9882609112ff1352169ea41:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Prenatal Screening and Imaging
+        description: Anencephaly is detected by elevated maternal serum alpha-fetoprotein, elevated amniotic
+          fluid AFP and acetylcholinesterase, and prenatal ultrasound demonstrating absence of the cranial
+          vault and cerebral hemispheres (often from the late first trimester onward).
+      selected_evidence:
+        snippet: Screening tests include maternal serum alpha-fetoprotein level and ultrasound (US) examination.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33544785
+      reference_title: 'The etiopathogenic and morphological spectrum of anencephaly: a comprehensive
+        review of literature.'
+      evidence_source: OTHER
+      explanation: Disease-specific review confirms the principal biochemical screening and imaging modalities
+        for anencephaly.
+    first_seen_at: '2026-09-25T15:10:02.585566+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:33544785
+  2b397e0fecb7ed743094dfb218a07bcbab7a692ea2a5e41fcc485bc49ec0f093:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Encephalocele
+        description: Herniation of meninges, with or without brain tissue, through a skull opening rather
+          than a persistently open cranial neural tube.
+        distinguishing_features:
+        - Focal herniation through a pathological skull opening
+        - Brain or meningeal tissue is exteriorized rather than broadly exposed
+        disease_term:
+          preferred_term: isolated encephalocele
+          term:
+            id: MONDO:0016057
+            label: isolated encephalocele
+      selected_evidence:
+        snippet: '''Herniation'' NTDs are those in which meninges, with or without brain or spinal cord
+          tissue, become exteriorized through a pathological opening in the skull or vertebral column
+          (e.g., encephalocele and meningocele).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24009034
+      reference_title: Neural tube defects--disorders of neurulation and related embryonic processes.
+      evidence_source: OTHER
+      explanation: Defines the focal herniation morphology that distinguishes encephalocele from an open
+        cranial neural-tube defect.
+    first_seen_at: '2026-09-25T15:10:02.766189+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      reference: PMID:24009034
+  e50973f652326cac13e987ebf33e714d6c5250e6e115fa83b6ac47f28a9147d7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Iniencephaly
+        description: Lethal neural-tube defect dominated by an occipital/cervical defect and extreme fixed
+          retroflexion rather than absence of the calvarium and brain.
+        distinguishing_features:
+        - Extreme retroflexion of the head and short malformed spine
+        - Occipital and cervical vertebral defect rather than isolated cranial-vault absence
+        disease_term:
+          preferred_term: iniencephaly
+          term:
+            id: MONDO:0018968
+            label: iniencephaly
+      selected_evidence:
+        snippet: Iniencephaly is a rare congenital anomaly characterized by spina bifida of the cervical
+          vertebrae, fixed retroflexion of the head on the cervical spine, and occipital bone defect.
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/1
+      evidence_path: /differential_diagnoses/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9688130
+      reference_title: 'Iniencephaly: neuroradiological and surgical features. Case report and review
+        of the literature.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly supports the occipital, cervical, and fixed-retroflexion features that distinguish
+        iniencephaly.
+    first_seen_at: '2026-09-25T15:10:02.945122+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/1
+      evidence_path: /differential_diagnoses/1/evidence/0
+      reference: PMID:9688130
+  b4d5908618f2b8a85bb9e518bfff69f80470b66cda24b69f4b046ae82e09f031:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Craniorachischisis
+        description: Continuous failure of closure involving both the cranial and spinal neural tube,
+          distinguished from anencephaly without a contiguous open spinal defect.
+        distinguishing_features:
+        - Cranial defect continues caudally as rachischisis/open spine
+        - Involves failure of multiple closure sites rather than the cranial site alone
+        disease_term:
+          preferred_term: craniorachischisis
+          term:
+            id: MONDO:0018969
+            label: craniorachischisis
+      selected_evidence:
+        snippet: Craniorachischisis is characterized by anencephaly and an open defect extending from
+          the brain to the spine and is the most severe and fatal type of neural tube defect.
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/2
+      evidence_path: /differential_diagnoses/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38846167
+      reference_title: 'Craniorachischisis in a 33-week-old Female Fetus: A Case Report.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly distinguishes the contiguous craniospinal open defect from an isolated cranial
+        defect.
+    first_seen_at: '2026-09-25T15:10:03.092801+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/2
+      evidence_path: /differential_diagnoses/2/evidence/0
+      reference: PMID:38846167
+  711e533cdbb3ebf681aa79f062f4acbbd8d7bd6a0e1a7b39e824ac9ab592b07b:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: Human SOSRS brain organoid model of NTD-like apical-constriction failure
+        description: Self-organizing single-rosette spheroids provide a human in-vitro system in which
+          valproate exposure or SHROOM3 knockout enlarges the apical lumen and cell surface through reduced
+          apical constriction. The model captures a closure-relevant cellular readout, but it lacks developmental-axis
+          context and does not establish an anencephaly-specific phenotype.
+        publication: PMID:37443734
+      selected_evidence:
+        snippet: The increased lumen sizes were caused by reduced cell apical constriction suggesting
+          that impingement of this process is a shared mechanism for VPA treatment and SHROOM3-KO, two
+          well-known causes of NTDs.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37443734
+      reference_title: A Shared Pathogenic Mechanism for Valproic Acid and SHROOM3 Knockout in a Brain
+        Organoid Model of Neural Tube Defects.
+      evidence_source: IN_VITRO
+      explanation: Demonstrates a convergent cellular mechanism for a teratogenic exposure and genetic
+        perturbation in a human organoid system.
+    first_seen_at: '2026-09-25T15:10:03.277404+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/0
+      reference: PMID:37443734
+  b7e669d885ff2bc04e25878b246f6c77a9a4775c0617b68c5585a64e8f55d61b:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: Human SOSRS brain organoid model of NTD-like apical-constriction failure
+        description: Self-organizing single-rosette spheroids provide a human in-vitro system in which
+          valproate exposure or SHROOM3 knockout enlarges the apical lumen and cell surface through reduced
+          apical constriction. The model captures a closure-relevant cellular readout, but it lacks developmental-axis
+          context and does not establish an anencephaly-specific phenotype.
+        publication: PMID:37443734
+      selected_evidence:
+        snippet: our current SOSRS methodology has no developmental axis patterning such as dorsal-ventral
+          or rostral-caudal.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37090564
+      reference_title: A Shared Pathogenic Mechanism for Valproic Acid and SHROOM3 Knockout in a Brain
+        Organoid Model of Neural Tube Defects.
+      evidence_source: IN_VITRO
+      explanation: This is the preprint version of PMID:37443734, not an independent study; it is cited
+        only because its accessible full text directly documents the published model's missing developmental-axis
+        context.
+    first_seen_at: '2026-09-25T15:10:03.432029+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/1
+      reference: PMID:37090564
+  639ea74cbe84167643363a9d9e41aea8ae6cae0035ee49b121152a12cb3f7292:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: Surface-ectoderm Rac1 conditional-knockout mouse
+        description: Conditional Rac1 loss in mouse surface ectoderm yields a spectrum including open
+          spina bifida, exencephaly/anencephaly, and localized encephalocele. It is useful for separating
+          failed-closure phenotypes from post-neurulation herniation, but it is not a model of common
+          nonsyndromic human anencephaly.
+        publication: PMID:31628096
+      selected_evidence:
+        snippet: Most mutant fetuses have open spina bifida, and some also exhibit exencephaly/anencephaly.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1
+      evidence_path: /experimental_models/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31628096
+      reference_title: 'Novel mouse model of encephalocele: post-neurulation origin and relationship to
+        open neural tube defects.'
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports the model's open-NTD phenotype spectrum; classified PARTIAL because the experiment
+        was designed primarily as an encephalocele model.
+    first_seen_at: '2026-09-25T15:10:03.594235+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1
+      evidence_path: /experimental_models/1/evidence/0
+      reference: PMID:31628096
+  3cfd12d56fc7e7485ca7703a52ed4a0b5f84d64a6c77ae7f44df8b17bbd7baa0:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: anencephaly_human_model_specificity_gap
+        prompt: Which human in-vitro neurulation readouts predict anencephaly specifically, rather than
+          neural-tube defects collectively?
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Failure of Cranial Neuropore Closure
+        rationale: Current human brain-organoid systems reproduce lumen expansion and apical-constriction
+          defects after genetic or teratogenic perturbation, but the reported SOSRS system lacks developmental-axis
+          context and reports an NTD-like rather than an anencephaly-specific phenotype. Translational
+          specificity to human anencephaly therefore remains unresolved.
+      selected_evidence:
+        snippet: Our system allows the rapid identification of NTD-like phenotypes for both compounds
+          and genetic variants
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37443734
+      reference_title: A Shared Pathogenic Mechanism for Valproic Acid and SHROOM3 Knockout in a Brain
+        Organoid Model of Neural Tube Defects.
+      evidence_source: IN_VITRO
+      explanation: The authors explicitly describe the readout as NTD-like, supporting the open question
+        of whether it is specific to anencephaly.
+    first_seen_at: '2026-09-25T15:10:03.755923+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:37443734
+  9e73d34472bbcb8f9979f752af718c14e869f64f0c3d4e8575843005a394b8e7:
+    claim:
+      about:
+        disease:
+          name: Anencephaly
+          disease_term:
+            preferred_term: anencephaly
+            term:
+              id: MONDO:0000819
+              label: anencephaly
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: anencephaly_residual_folate_resistant_risk_gap
+        prompt: Which genetic and exposure combinations explain anencephaly that occurs despite adequate
+          periconceptional folic acid?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Disrupted Folate One-Carbon Metabolism
+        - pathophysiology#Convergent Extension and Neural Plate Morphogenesis Defect
+        rationale: Folic acid prevents many but not all neural-tube defects, while sequencing implicates
+          heterogeneous and often oligogenic closure pathways. The relative contribution and interaction
+          of folate-resistant mechanisms remain poorly quantified in human anencephaly cohorts.
+      selected_evidence:
+        snippet: 27 of these had a known neural tube defect, 6 in the folic acid groups and 21 in the
+          two other groups, a 72% protective effect (relative risk 0.28, 95% confidence interval 0.12-0.71).
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1677062
+      reference_title: 'Prevention of neural tube defects: results of the Medical Research Council Vitamin
+        Study. MRC Vitamin Study Research Group.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The randomized recurrence trial demonstrates substantial but incomplete prevention
+        across neural-tube defects; PARTIAL because it was not powered for anencephaly-specific residual
+        mechanisms.
+    first_seen_at: '2026-09-25T15:10:03.930481+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:18:57.063674+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:18:57.063674+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      reference: PMID:1677062
+assessments:
+  babec554bd7a6b7b51042625b0018ec0b57a09e7f1d4791dfddcbcc03b296a66:
+    input_sha256: f183588936cb47b8c1da6449223a5117596ab9d82bb733a4ff937e99b512ffc8
+    configuration_sha256: 1fd1b3128198805e1a0d607432b0f9d2741f39d9832f70c3134059fa99c023c1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:56.815202+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.19
+            PARTIAL: 0.78
+          confidence: 0.68
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.46
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.47
+            PARTIAL: 0.5
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.79
+            PARTIAL: 0.14
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.09
+            PARTIAL: 0.85
+          confidence: 0.78
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.83
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.69
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.1
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.11
+            PARTIAL: 0.74
+          confidence: 0.6
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.18
+            PARTIAL: 0.77
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10876
+        output_tokens: 489
+      elapsed_seconds: 0.5945
+      request_sha256: e45fdb5c12382100aff46e5a51d644084a966e9a54b9b1ff6cfb9bba6c59d27b
+      request_sha256s:
+      - e45fdb5c12382100aff46e5a51d644084a966e9a54b9b1ff6cfb9bba6c59d27b
+  91b21abd003173443f0526fd67655e0c35399d2148f3bd080a9b7b5930b41a68:
+    input_sha256: 3ffb9dd80f23585a9ab01e51153a5b234e2dfca49ef2a2c92ea2869763a65ec6
+    configuration_sha256: 5d7c76ef19e36af422cc1406292fc9f32966f1319cc72d7d30dfed7698ed6bdd
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:56.814083+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.18
+            PARTIAL: 0.78
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.21
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/inheritance_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.13
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/inheritance_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.15
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.1
+            PARTIAL: 0.77
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6284
+        output_tokens: 280
+      elapsed_seconds: 0.5136
+      request_sha256: daa65ef841c1e66ff270f8093cde7432f6d730130068c249587f5beea4714194
+      request_sha256s:
+      - daa65ef841c1e66ff270f8093cde7432f6d730130068c249587f5beea4714194
+  9f42645414fea76d392851ddbafcb7d02b4a6bfcf8d7c6825de72575c134a57f:
+    input_sha256: 526321ff56855a96e622c6e966f1d865e740330a128148cfda68c1e90ea1ca87
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:57.916593+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.45
+            MISMATCH: 0.19
+          confidence: 0.18
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.67
+            MISMATCH: 0.11
+          confidence: 0.51
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.79
+            MISMATCH: 0.09
+          confidence: 0.68
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.58
+            MISMATCH: 0.08
+          confidence: 0.38
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.62
+            MISMATCH: 0.07
+          confidence: 0.43
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.39
+            MISMATCH: 0.28
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6787
+        output_tokens: 268
+      elapsed_seconds: 0.4588
+      request_sha256: 805b4d742a94c6506983fca3e57f8c7a810d54ba949057d2afe2f757dc695362
+      request_sha256s:
+      - 805b4d742a94c6506983fca3e57f8c7a810d54ba949057d2afe2f757dc695362
+  60826f5722aa94bed9ccca98dd8cf743f36cdc4996fb3d556c5f5328549e85f4:
+    input_sha256: 69df84aa082e4f38f33e15f61edcf4650af34a5ad8fdc7c3795a60cb03670890
+    configuration_sha256: ad21efb0c97ce7d577cd85a7bdf8c5041e8e0f5b1c1900a2798a4522cda0c3d2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:57.915260+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.69
+            MATCH: 0.18
+          confidence: 0.54
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.52
+            MATCH: 0.39
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.45
+            MATCH: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.24
+            MATCH: 0.61
+          confidence: 0.42
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.67
+            MATCH: 0.23
+          confidence: 0.51
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.8
+            PARTIAL: 0.19
+            MATCH: 0.01
+          confidence: 0.69
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.83
+            PARTIAL: 0.16
+            MATCH: 0.01
+          confidence: 0.75
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.85
+            PARTIAL: 0.14
+            MATCH: 0.01
+          confidence: 0.78
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+            MATCH: 0.01
+          confidence: 0.79
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.54
+            MATCH: 0.17
+          confidence: 0.31
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            PARTIAL: 0.47
+            MATCH: 0.11
+          confidence: 0.21
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.39
+            MATCH: 0.52
+          confidence: 0.28
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.44
+            MATCH: 0.47
+          confidence: 0.2
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.54
+            MATCH: 0.28
+          confidence: 0.31
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.5
+            MATCH: 0.4
+          confidence: 0.24
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.46
+            MATCH: 0.36
+          confidence: 0.18
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            PARTIAL: 0.35
+            MATCH: 0.06
+          confidence: 0.39
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.35
+            MATCH: 0.08
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18849
+        output_tokens: 914
+      elapsed_seconds: 0.5489
+      request_sha256: 4f619d2890cc0d3497d5bfae011955432b48e1c3fc68472820cd8665923f5698
+      request_sha256s:
+      - 4f619d2890cc0d3497d5bfae011955432b48e1c3fc68472820cd8665923f5698
+  16aa8692fa64d790228153f398b82763831e7b630c2fb64c5188ad971c48bbc5:
+    input_sha256: b6ebcd998c4ca47462aaa51575cd16b6977563512cd1926d080797522225ba07
+    configuration_sha256: 61f32a1ae34accda6eaa877bd1d0e4f0179e2fbebbb3968cb0c29609a7bcc3bc
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:57.943371+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MISMATCH: 0.18
+            MATCH: 0.07
+          confidence: 0.64
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.07
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.08
+            MATCH: 0.34
+          confidence: 0.37
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.75
+            PARTIAL: 0.19
+          confidence: 0.63
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.2
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.47
+            MATCH: 0.14
+          confidence: 0.2
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.4
+            MISMATCH: 0.53
+          confidence: 0.3
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.13
+            PARTIAL: 0.34
+          confidence: 0.29
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.41
+            MISMATCH: 0.49
+          confidence: 0.23
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.22
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.37
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.05
+            PARTIAL: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12862
+        output_tokens: 599
+      elapsed_seconds: 0.5484
+      request_sha256: 171b02a17c28a7143aaee7dc375cd371ba27814a6efe3760c475f34ffa83fdfc
+      request_sha256s:
+      - 171b02a17c28a7143aaee7dc375cd371ba27814a6efe3760c475f34ffa83fdfc
+  1a0643b98ea8aa57e79b159321df11ca9127ae7fc38c1f3c8e0e535c3e96d2ba:
+    input_sha256: 9c8ffe8f87894d0d272a8dab675c0e6c6ed4e146cf579b2b87a6757172d12973
+    configuration_sha256: 1775e8f870041895bb498ab6441afcdc69bb5447f9c8ce5e8cf4e8aa5974af70
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:57.944146+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.76
+            MISMATCH: 0.06
+          confidence: 0.65
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            PARTIAL: 0.06
+            MISMATCH: 0.0
+          confidence: 0.91
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.54
+            MISMATCH: 0.08
+          confidence: 0.32
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.35
+            MISMATCH: 0.11
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MATCH: 0.07
+            MISMATCH: 0.14
+          confidence: 0.69
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.55
+            MISMATCH: 0.08
+          confidence: 0.33
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.35
+            MISMATCH: 0.08
+          confidence: 0.35
+        /assertion/locations/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.48
+            MISMATCH: 0.16
+          confidence: 0.22
+        /assertion/locations/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.49
+            MISMATCH: 0.12
+          confidence: 0.23
+        /assertion/locations/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.14
+            MISMATCH: 0.42
+          confidence: 0.16
+        /assertion/locations/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.43
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.52
+            MISMATCH: 0.05
+          confidence: 0.27
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.59
+            MISMATCH: 0.07
+          confidence: 0.39
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.53
+            MISMATCH: 0.05
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14808
+        output_tokens: 695
+      elapsed_seconds: 0.5611
+      request_sha256: 9945eab698f0deb7221a1ec46f4a80495e2f782c3836126427342d0724b24792
+      request_sha256s:
+      - 9945eab698f0deb7221a1ec46f4a80495e2f782c3836126427342d0724b24792
+  a5850c45877783a16a714cff9327afb4a796da2b8ddb1a7fd1e23f42b1d6971a:
+    input_sha256: 27849f1ec478d2ef78e01bfdcd4447eff361eefbf6865467df6ae2986d0b2948
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.393842+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.4
+            MISMATCH: 0.06
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.41
+            MISMATCH: 0.08
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.09
+            MATCH: 0.3
+          confidence: 0.42
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.51
+            MISMATCH: 0.08
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6630
+        output_tokens: 271
+      elapsed_seconds: 0.4205
+      request_sha256: 0121cb5851a2b74abe54f6dca2c247bc5314348e805e06a63f4c88d6c0d0bf7f
+      request_sha256s:
+      - 0121cb5851a2b74abe54f6dca2c247bc5314348e805e06a63f4c88d6c0d0bf7f
+  ade5d7fce729c51305d34ca883461fbbf2d0cd423cd7e9a04607c6ac02805f50:
+    input_sha256: 1d0fad325b811b1de5e17ba9c14838b9ac48a52f9b1b7fce45f1e7ac4ef70d76
+    configuration_sha256: aa9f0b3e78d6ae0ca923fd4640dd92a62bdc3c81d5486693407bbeeb16d9ba77
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.492289+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.51
+            MISMATCH: 0.14
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+          confidence: 0.88
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.32
+            MISMATCH: 0.23
+          confidence: 0.17
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.41
+            MISMATCH: 0.53
+          confidence: 0.31
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            PARTIAL: 0.12
+            MISMATCH: 0.03
+          confidence: 0.78
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.18
+            MISMATCH: 0.06
+          confidence: 0.64
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.45
+            MISMATCH: 0.48
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8217
+        output_tokens: 368
+      elapsed_seconds: 0.4329
+      request_sha256: 60555ef8d558a099b1c3d8437a198846dc5cd9979d14f3bbe01f26863f2ee332
+      request_sha256s:
+      - 60555ef8d558a099b1c3d8437a198846dc5cd9979d14f3bbe01f26863f2ee332
+  7164003710bb7d3e03793c3a7179d13195dadae601ad5f26c14492542a126fca:
+    input_sha256: a837de55e72bd8a94d2020945beec3077ad6bf740a0ec84a5c21548268e2ef80
+    configuration_sha256: 95b7176d6de9a970a0af95e939106436877f1b62b6ff4eb6771c81c376118e34
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.530009+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.9
+            MISMATCH: 0.03
+          confidence: 0.84
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.96
+            MISMATCH: 0.02
+          confidence: 0.93
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.51
+            MISMATCH: 0.23
+          confidence: 0.26
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.85
+            MISMATCH: 0.03
+          confidence: 0.78
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.94
+            MISMATCH: 0.03
+          confidence: 0.91
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.9
+            MISMATCH: 0.05
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7205
+        output_tokens: 316
+      elapsed_seconds: 0.4294
+      request_sha256: 8413837c42f2a8857c43e0262bac6fecdc3598a4bb492431b23f34df86bdbf2f
+      request_sha256s:
+      - 8413837c42f2a8857c43e0262bac6fecdc3598a4bb492431b23f34df86bdbf2f
+  fa2cb5057255abaf303cca2f96e75c83add3273ca329f2d1e357da8e6834188b:
+    input_sha256: c117d11738e178bff712370dcd03f11f3c22d1b1ae668b1d664f52ee1121798f
+    configuration_sha256: aa9f0b3e78d6ae0ca923fd4640dd92a62bdc3c81d5486693407bbeeb16d9ba77
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.566122+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.84
+            PARTIAL: 0.13
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.54
+            PARTIAL: 0.21
+          confidence: 0.31
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.13
+            PARTIAL: 0.72
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8210
+        output_tokens: 362
+      elapsed_seconds: 0.4406
+      request_sha256: 9e02d5b7597236caaa8ec982138afaf4dfef941120057839d8f624b58d7e440d
+      request_sha256s:
+      - 9e02d5b7597236caaa8ec982138afaf4dfef941120057839d8f624b58d7e440d
+  4542381e11bc14f979b6e9abe21bb360dc717ba2d48609443c86262b9e6ce17d:
+    input_sha256: e61d30ef079547e591f2d3c08d0b5985e508a275f2cdc088f02a7290685f57f9
+    configuration_sha256: 259d18b615d15a6aa2fa4b892f5e7876d3b87ec9d1a84973334169d04e54e940
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.853553+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.32
+            MISMATCH: 0.05
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.28
+            MISMATCH: 0.11
+          confidence: 0.41
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.79
+            MISMATCH: 0.07
+          confidence: 0.68
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.48
+            MISMATCH: 0.22
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.08
+            MISMATCH: 0.34
+          confidence: 0.36
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.89
+            MISMATCH: 0.02
+          confidence: 0.83
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.81
+            MISMATCH: 0.05
+          confidence: 0.71
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.77
+            MISMATCH: 0.01
+          confidence: 0.66
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.24
+            MISMATCH: 0.14
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9217
+        output_tokens: 409
+      elapsed_seconds: 0.4951
+      request_sha256: 2077e48b2c7d782642528d91d53f2350e0b07836b69dc221bf56cb16c90b6dab
+      request_sha256s:
+      - 2077e48b2c7d782642528d91d53f2350e0b07836b69dc221bf56cb16c90b6dab
+  a1adb45b8d5387231b3f1e843854759e8650005583f5fcd27f340b04561b0c08:
+    input_sha256: 7e0a6b0f04983dc31f22059b4aaeb69a244daded4ef310374dedeb787ac06df0
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.019235+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.23
+            MISMATCH: 0.02
+          confidence: 0.62
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.42
+            MISMATCH: 0.02
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.79
+            MISMATCH: 0.03
+          confidence: 0.69
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MATCH: 0.23
+            MISMATCH: 0.03
+          confidence: 0.61
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.8
+            MISMATCH: 0.03
+          confidence: 0.7
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.79
+            MISMATCH: 0.03
+          confidence: 0.68
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.72
+            MISMATCH: 0.01
+          confidence: 0.57
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7582
+        output_tokens: 320
+      elapsed_seconds: 0.4155
+      request_sha256: 2c3ae8919f3a430173c0c8abe0d8cd67c3d914cf1e67a388edefab0bacb8dc24
+      request_sha256s:
+      - 2c3ae8919f3a430173c0c8abe0d8cd67c3d914cf1e67a388edefab0bacb8dc24
+  a62ff83d7b1bf3538dedb1691e092eb90e685def268c22bc12c0040fc80425f9:
+    input_sha256: 76696efc375b3f52bcdd9e8ab331900a47738ca5542c9dadd30218a09d75f3b6
+    configuration_sha256: 95b7176d6de9a970a0af95e939106436877f1b62b6ff4eb6771c81c376118e34
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:58.970865+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.49
+            MATCH: 0.37
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.31
+            MATCH: 0.53
+          confidence: 0.31
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.26
+            MATCH: 0.48
+          confidence: 0.21
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+            MATCH: 0.04
+          confidence: 0.36
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.29
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.3
+            MATCH: 0.5
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7187
+        output_tokens: 320
+      elapsed_seconds: 0.4553
+      request_sha256: 8b8e8122e7e2f4fc119bda327cf54612893f02258884976f2d95d3154e2e19cc
+      request_sha256s:
+      - 8b8e8122e7e2f4fc119bda327cf54612893f02258884976f2d95d3154e2e19cc
+  58161bcadb8d5b1621c256f05ebe6c73ca996cbf2c436456cf16a6325a79e9b3:
+    input_sha256: 6f8d4d529cd0e025aafb8130ff7284f32bc49354865494966804f6367fa04881
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.070482+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.58
+            MISMATCH: 0.03
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.53
+            MISMATCH: 0.03
+          confidence: 0.29
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            PARTIAL: 0.13
+            MISMATCH: 0.05
+          confidence: 0.72
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.66
+            MISMATCH: 0.15
+          confidence: 0.49
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8099999999999999
+            PARTIAL: 0.15
+            MISMATCH: 0.04
+          confidence: 0.73
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.19
+            MISMATCH: 0.05
+          confidence: 0.64
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            PARTIAL: 0.16
+            MISMATCH: 0.01
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7554
+        output_tokens: 320
+      elapsed_seconds: 0.4846
+      request_sha256: f6728dcde01f709082f1976caa0e6198f219555d6b72a574b41aa3397c093bde
+      request_sha256s:
+      - f6728dcde01f709082f1976caa0e6198f219555d6b72a574b41aa3397c093bde
+  3c194d97683b90d7df896d8d2d3bec779bc70829c58f972a58f37cb61acd5db6:
+    input_sha256: 66db99db2a0180ed61f1e2be67c60c046012d37660f37ba79e3d2bf7c0cb3bf7
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.437268+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.79
+            MATCH: 0.09
+          confidence: 0.69
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.51
+            MATCH: 0.28
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+            MATCH: 0.5
+          confidence: 0.24
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.57
+            MATCH: 0.36
+          confidence: 0.36
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.43
+            MATCH: 0.51
+          confidence: 0.26
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.41
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            PARTIAL: 0.5
+            MATCH: 0.05
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7611
+        output_tokens: 321
+      elapsed_seconds: 0.4216
+      request_sha256: daa6c04ddd21ae8923d866470f09d69768e9987f827a889b3c89a92cbc8def16
+      request_sha256s:
+      - daa6c04ddd21ae8923d866470f09d69768e9987f827a889b3c89a92cbc8def16
+  fd0735025e8b03616662fba54257f49ac669d64b651bee04070de79607fbdb72:
+    input_sha256: e40587e5e4acdfdba21f74d290c197de37651c49df97ec26c86c94161d28888e
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.557312+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.78
+            MISMATCH: 0.17
+          confidence: 0.67
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.5
+            MISMATCH: 0.28
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.32
+            MISMATCH: 0.07
+          confidence: 0.41
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.47
+            MISMATCH: 0.07
+          confidence: 0.2
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.39
+            MISMATCH: 0.07
+          confidence: 0.32
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.42
+            MISMATCH: 0.07
+          confidence: 0.27
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.65
+            MISMATCH: 0.03
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7602
+        output_tokens: 321
+      elapsed_seconds: 0.4464
+      request_sha256: daa615a33000c47e916801909fac7473d99b8d9e5b859087fe394a0526e2ea09
+      request_sha256s:
+      - daa615a33000c47e916801909fac7473d99b8d9e5b859087fe394a0526e2ea09
+  dbbbc0d4c2eadf98e3f54246025cc757f2d19736c4c127de2164d42b1a36ce63:
+    input_sha256: 3504c562b4107a21643784da01244af8942b007010bbf984630004a29a5a9da7
+    configuration_sha256: 2efaf31a314afe0c5c5bbcf8191bbee2e0b932c7894755f86a8969fa97ed81b1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.625097+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            PARTIAL: 0.25
+            MISMATCH: 0.02
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.3
+            MISMATCH: 0.07
+          confidence: 0.45
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.34
+            MISMATCH: 0.07
+          confidence: 0.38
+        /assertion/exposure_term/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.33
+            MISMATCH: 0.08
+          confidence: 0.38
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.34
+            MISMATCH: 0.07
+          confidence: 0.39
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            PARTIAL: 0.41
+            MISMATCH: 0.06
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7529
+        output_tokens: 322
+      elapsed_seconds: 0.4302
+      request_sha256: 59a833cf8b441b5702752de13c6820184b8f2dcb8d6efd63982ce2bf6b3abdc4
+      request_sha256s:
+      - 59a833cf8b441b5702752de13c6820184b8f2dcb8d6efd63982ce2bf6b3abdc4
+  bf1dbc298b039f159cca1bc20bb9e59a288ca17f2e8fc342be285875d67e779e:
+    input_sha256: 1102c8ffd0861f3e48c316a22189a61235d46c5a4421f7def72689b6d8ec765e
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.558510+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.26
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.25
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.59
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.29
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.63
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.35
+            PARTIAL: 0.6
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7548
+        output_tokens: 321
+      elapsed_seconds: 0.48
+      request_sha256: 80c7711eda4d8be146ffee49c58d25bdf5bd872f0d04dd743bd2b45608787753
+      request_sha256s:
+      - 80c7711eda4d8be146ffee49c58d25bdf5bd872f0d04dd743bd2b45608787753
+  8bb408e5277454a881324118bcfd93ac8b8c3ac2cf05a614f266f884dd1a4d71:
+    input_sha256: 63d2e8cd128682ab1d158f2f3526227572f93f95b4a61d28e11351b53fa197dc
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:09:59.927560+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.19
+            MISMATCH: 0.06
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.1
+            MISMATCH: 0.24
+          confidence: 0.5
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.33
+            MISMATCH: 0.1
+          confidence: 0.35
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.13
+            MISMATCH: 0.23
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.06
+            MISMATCH: 0.26
+          confidence: 0.52
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.73
+            MISMATCH: 0.03
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7623
+        output_tokens: 321
+      elapsed_seconds: 0.4624
+      request_sha256: cff89a7ed878f37c24f171b4d4ad76aaff12c8d8136cbaab48d4fc2bdd26e5c9
+      request_sha256s:
+      - cff89a7ed878f37c24f171b4d4ad76aaff12c8d8136cbaab48d4fc2bdd26e5c9
+  0d140083b1da59f1644574b2d9250f964c3355379b505dff532654075a75485b:
+    input_sha256: 762a01c36ac5c53b26b05c7a2628355e012239d9827c9c40b3b59de20d54bef8
+    configuration_sha256: 02eb8fbd956c0cc6957126fe8d42d61629eb9dd9c5c0eebb36ceeb8d4fc79521
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.080046+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.11
+            MATCH: 0.16
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.08
+            MATCH: 0.35
+          confidence: 0.35
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45999999999999996
+            MISMATCH: 0.25
+            MATCH: 0.29
+          confidence: 0.2
+        /assertion/exposure_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.14
+            MATCH: 0.37
+          confidence: 0.24
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.14
+            MATCH: 0.45
+          confidence: 0.17
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.49
+            PARTIAL: 0.48
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6259
+        output_tokens: 280
+      elapsed_seconds: 0.4766
+      request_sha256: 6efa68819c6bbd8910babfe8c603f2743bc9a88259250652b2d270d7469c153d
+      request_sha256s:
+      - 6efa68819c6bbd8910babfe8c603f2743bc9a88259250652b2d270d7469c153d
+  339d12730c8adf73ffef228af79e43f6880d05c376e76ff25d42724b6bfc4fa5:
+    input_sha256: fee55d51ba46e7679acf99ffa0c4920f6251d4bb81d3b2777b28f037e8dc92f8
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.236902+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.02
+            PARTIAL: 0.48
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.22
+            PARTIAL: 0.64
+          confidence: 0.45
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.54
+            MATCH: 0.04
+            PARTIAL: 0.42
+          confidence: 0.32
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.02
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            MATCH: 0.02
+            PARTIAL: 0.41
+          confidence: 0.35
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.01
+            PARTIAL: 0.33
+          confidence: 0.5
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            MATCH: 0.12
+            PARTIAL: 0.48
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7589
+        output_tokens: 331
+      elapsed_seconds: 0.4472
+      request_sha256: ef1abab4900aa191a58038d2e0eb79ec5b7370486114d85d7ac7693cd5f838f7
+      request_sha256s:
+      - ef1abab4900aa191a58038d2e0eb79ec5b7370486114d85d7ac7693cd5f838f7
+  6988f26546ebe619d73d184cf4f92bcb06f3fa8c39527d97a778f0b25a415a67:
+    input_sha256: f13bb355f1ed60fb7a00da3cd87f11beb2fc8e1d68c8c459ae5bc5cb48bca1fe
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.237435+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.02
+            MATCH: 0.31
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.02
+            MATCH: 0.63
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.45999999999999996
+            MISMATCH: 0.14
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MISMATCH: 0.02
+            MATCH: 0.23
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4240
+        output_tokens: 177
+      elapsed_seconds: 0.5166
+      request_sha256: 2d488ff57d729bdc665ef1ef65be3290fe82455bee159fe93ba160ffd1cbde52
+      request_sha256s:
+      - 2d488ff57d729bdc665ef1ef65be3290fe82455bee159fe93ba160ffd1cbde52
+  f88e28af917e1a483fd58322b80bd4d344e41f18adfb1303a670f76939be5350:
+    input_sha256: 68d802b4618b3930d5d69126de154c3435c39b692204e1cc2eb2832174a1d5b0
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.475729+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.85
+            MISMATCH: 0.04
+          confidence: 0.78
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            PARTIAL: 0.42
+            MISMATCH: 0.02
+          confidence: 0.34
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.58
+            MISMATCH: 0.37
+          confidence: 0.36
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.66
+            MISMATCH: 0.03
+          confidence: 0.48
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.8
+            MISMATCH: 0.1
+          confidence: 0.71
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.81
+            MISMATCH: 0.12
+          confidence: 0.71
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.4
+            MISMATCH: 0.04
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7489
+        output_tokens: 321
+      elapsed_seconds: 0.4243
+      request_sha256: b367f34793e5513fdead0b1f68640fed8633e521664f540b383a8a70582b2599
+      request_sha256s:
+      - b367f34793e5513fdead0b1f68640fed8633e521664f540b383a8a70582b2599
+  5bdd1e500ed41bdb621ab73d1cf649e5b8d86cd6a708d307737f30a2adbc189d:
+    input_sha256: 6bf816b5816b5e3541163f79dbefdfa84806a581d537914a41d2da9fe6b28ad7
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.644743+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.33
+            MISMATCH: 0.03
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.4
+            MISMATCH: 0.09
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.74
+            MISMATCH: 0.05
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.24
+            MISMATCH: 0.1
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4264
+        output_tokens: 178
+      elapsed_seconds: 0.4846
+      request_sha256: 7d6c75995a941798a128090141875d6bbc4e6e4d5896c1d0acb358240c681baa
+      request_sha256s:
+      - 7d6c75995a941798a128090141875d6bbc4e6e4d5896c1d0acb358240c681baa
+  fd1f3920f01f0bc3051c05ace060e3f167f0e40e959a6988c839e606cf909c65:
+    input_sha256: bdc042ed07f4ac89bed5384a3b12ef75f4b81f854dc3f60d776e506724e922a8
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.779201+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.05
+            PARTIAL: 0.88
+          confidence: 0.82
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.27
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            MATCH: 0.03
+            PARTIAL: 0.42
+          confidence: 0.33
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.33
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.15
+            PARTIAL: 0.79
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.2
+            PARTIAL: 0.72
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.57
+            PARTIAL: 0.4
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7507
+        output_tokens: 324
+      elapsed_seconds: 0.4766
+      request_sha256: 77ede7b94864cfd43f73a4edf4e88bb7caf9ce8f196cf9993d4736f57a3c4e29
+      request_sha256s:
+      - 77ede7b94864cfd43f73a4edf4e88bb7caf9ce8f196cf9993d4736f57a3c4e29
+  4d06b3393aec435720c7c4d2595b05fc1dc1c23069172e7abfac8db4b9fc2cc5:
+    input_sha256: 1633f1806eb64a414e5ac2a1b869f233beccc1572a92a0a3a631cbde26b5049d
+    configuration_sha256: 02eb8fbd956c0cc6957126fe8d42d61629eb9dd9c5c0eebb36ceeb8d4fc79521
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:00.874150+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.49
+            PARTIAL: 0.47
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.55
+            PARTIAL: 0.41
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.84
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.58
+            PARTIAL: 0.4
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6252
+        output_tokens: 273
+      elapsed_seconds: 0.4514
+      request_sha256: 942c20255014b0fb0bc8f6d13964085bab9b6be5b3c117bd6014e9108945698b
+      request_sha256s:
+      - 942c20255014b0fb0bc8f6d13964085bab9b6be5b3c117bd6014e9108945698b
+  effc5c942c1e3b43eb6ed425af7bc35cceeea1e6504426e17dab4f25814068e8:
+    input_sha256: 7dc57e0b607d6f43d13e3806e1978b22687f69da6fd1039261ef6c76e0dfbfc7
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.001147+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.21
+            MISMATCH: 0.06
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.42
+            MISMATCH: 0.04
+          confidence: 0.3
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.08
+            MISMATCH: 0.38
+          confidence: 0.31
+        /assertion/environmental_effect:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.51
+            MISMATCH: 0.01
+          confidence: 0.26
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MATCH: 0.13
+            MISMATCH: 0.08
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.27
+            MISMATCH: 0.14
+          confidence: 0.38
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.78
+            MISMATCH: 0.03
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7573
+        output_tokens: 321
+      elapsed_seconds: 0.4803
+      request_sha256: 6b2e1ef49cee8adfde175cf18f41906f059c79017fa0c7b3068e3b7c37a60388
+      request_sha256s:
+      - 6b2e1ef49cee8adfde175cf18f41906f059c79017fa0c7b3068e3b7c37a60388
+  78e502e887737db3e8d27fe62eef462ea97f27f16f5a6773257f6ef233c0396e:
+    input_sha256: b6014aab200cf6ca717d1e8a4f7d25bd679577d3bdb61c18b0363ad62d75b05c
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.235132+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.35
+            PARTIAL: 0.6
+          confidence: 0.39
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.58
+            PARTIAL: 0.36
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.51
+            PARTIAL: 0.42
+          confidence: 0.27
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.27
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.24
+            PARTIAL: 0.35
+          confidence: 0.12
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.23
+            PARTIAL: 0.38
+          confidence: 0.08
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.22
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.33
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.36
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9706
+        output_tokens: 448
+      elapsed_seconds: 0.5925
+      request_sha256: eb2c5e239344af81004f46d0dfaf9b90382100411ac33ab494882d388169f48b
+      request_sha256s:
+      - eb2c5e239344af81004f46d0dfaf9b90382100411ac33ab494882d388169f48b
+  418687de3fd86ff85baec78f9301c46ff55bd47decf237c0639cff66d6e4a695:
+    input_sha256: f003c88220312fdedab00c978d6d441d91b63fe812132205b2ba48b2d8e71861
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.369854+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.65
+            MISMATCH: 0.09
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            PARTIAL: 0.34
+            MISMATCH: 0.06
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.3
+            MISMATCH: 0.07
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.67
+            MISMATCH: 0.15
+          confidence: 0.52
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.31
+            MISMATCH: 0.39
+          confidence: 0.09
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.35
+            MISMATCH: 0.45
+          confidence: 0.18
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.34
+            MISMATCH: 0.49
+          confidence: 0.23
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+          confidence: 0.81
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.16
+            MISMATCH: 0.04
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9708
+        output_tokens: 447
+      elapsed_seconds: 0.5369
+      request_sha256: 0ad7969ad0edc93d6d87b390e6c4e1c4b750c040884dcca736d823b580d3903c
+      request_sha256s:
+      - 0ad7969ad0edc93d6d87b390e6c4e1c4b750c040884dcca736d823b580d3903c
+  f9d398fe973ab2af301fa108d577c0c6c5b5dde37194287f4e57dea8ecff38c1:
+    input_sha256: 0183a3e3be40f3d77a581984e988103d697765b2bdc0b1b54903858159be1981
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.483968+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MATCH: 0.09
+            MISMATCH: 0.13
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.09
+            MISMATCH: 0.46
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MATCH: 0.1
+            MISMATCH: 0.1
+          confidence: 0.7
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.03
+            MISMATCH: 0.81
+          confidence: 0.71
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.09
+            MISMATCH: 0.41
+          confidence: 0.24
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.64
+            MATCH: 0.06
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7672
+        output_tokens: 334
+      elapsed_seconds: 0.5935
+      request_sha256: 3b3f9f011a10ef44252318eaab5e69879bb273f23c5aac78173d309e533ca20f
+      request_sha256s:
+      - 3b3f9f011a10ef44252318eaab5e69879bb273f23c5aac78173d309e533ca20f
+  185cc48b0000e17ccf86e72d0f183120eeed0075fcdc222d9426542a761f38c5:
+    input_sha256: b75f62261a96229af8a82bbe27d8add60b5bfb8c1a46b87c7fb917c2da13165a
+    configuration_sha256: 2b49849cb0cb2581dff37caee0bd190557400610ae17e531fa0492fb5adf590f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.639257+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.93
+        /assertion/measure_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.0
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.87
+        /assertion/rate_low:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+          confidence: 0.81
+        /assertion/rate_high:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.03
+            PARTIAL: 0.12
+          confidence: 0.78
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.46
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10162
+        output_tokens: 412
+      elapsed_seconds: 0.5608
+      request_sha256: e88c3c64eca7929a7d063fb31418a385e8fdb26dc4583a9c41da008d52a03e33
+      request_sha256s:
+      - e88c3c64eca7929a7d063fb31418a385e8fdb26dc4583a9c41da008d52a03e33
+  87a0afb291629da5a9191c4489753b93657da11cf006ea3aa1359cc99037fadc:
+    input_sha256: 3749924c28604d7bdb64e75930eb63855c16cdb46a50ef39410a5a3004687bae
+    configuration_sha256: 709b9eb83847ff1685c421a144d9bf66bbec2d559c44a569e37e32d5af44afbe
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:01.948216+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.53
+            MISMATCH: 0.08
+          confidence: 0.29
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/population:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.15
+            MISMATCH: 0.45
+          confidence: 0.18
+        /assertion/measure_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.86
+            MISMATCH: 0.04
+          confidence: 0.79
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.04
+            MISMATCH: 0.64
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8234
+        output_tokens: 327
+      elapsed_seconds: 0.5021
+      request_sha256: a043b76e0317345d40aeb33e9161981112255f417ec1ea153d04b639aea355a9
+      request_sha256s:
+      - a043b76e0317345d40aeb33e9161981112255f417ec1ea153d04b639aea355a9
+  018fa1bbd799f9cb501cb783ff128932ea4a71c7ac3915a5b1b34d2b2f2a7a91:
+    input_sha256: b2393dbcce5ab12189384621cd9de0dfdb3b5e61b20e338ff1e1ce22c84865df
+    configuration_sha256: 709b9eb83847ff1685c421a144d9bf66bbec2d559c44a569e37e32d5af44afbe
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.077337+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.28
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.22
+            MISMATCH: 0.76
+          confidence: 0.65
+        /assertion/measure_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.3
+            MISMATCH: 0.16
+          confidence: 0.32
+        /assertion/prevalence_class:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.32
+            MISMATCH: 0.45999999999999996
+          confidence: 0.2
+        /assertion/rate_per_100000:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.59
+            MATCH: 0.13
+          confidence: 0.38
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.34
+            MISMATCH: 0.05
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8180
+        output_tokens: 331
+      elapsed_seconds: 0.5483
+      request_sha256: 30195865f58d296e66e8e5608afe9ea41cb4c8b3b7c231e4107ab4a2fa8cdcd6
+      request_sha256s:
+      - 30195865f58d296e66e8e5608afe9ea41cb4c8b3b7c231e4107ab4a2fa8cdcd6
+  555fa28d48587efdd332f907d40bd373a552c7cd2c79f5578001531768781359:
+    input_sha256: 6ef0e56f629ff102859de3e4e550556cad9f3af9af38fe15a0cc4ea2bdf4949c
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.345523+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.13
+            PARTIAL: 0.84
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.5
+            PARTIAL: 0.45
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.66
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.1
+            PARTIAL: 0.87
+          confidence: 0.81
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4306
+        output_tokens: 177
+      elapsed_seconds: 0.4563
+      request_sha256: b7b32dac4a554fe5014d7d20de4b4261d51998c737b3ee1b1f2e6e85bfc1e87e
+      request_sha256s:
+      - b7b32dac4a554fe5014d7d20de4b4261d51998c737b3ee1b1f2e6e85bfc1e87e
+  cfe27e1fba394f0f86376b6bb746572febf90484742a536b12cc2b61db459fb9:
+    input_sha256: f3ced188d5d5c470cd2f16eaf634491525da8bb33a69ec667889f5a528773783
+    configuration_sha256: dfba40773380645dda19a3b08fb4c9fa5536900823f164637cfd11feac30c85f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.208331+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.78
+            MISMATCH: 0.01
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.01
+          confidence: 0.9
+        /assertion/modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/imaging_finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.67
+            MISMATCH: 0.04
+          confidence: 0.51
+        /assertion/located_in/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.72
+            MISMATCH: 0.07
+          confidence: 0.58
+        /assertion/located_in/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.6
+            MISMATCH: 0.1
+          confidence: 0.41
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/diagnostic:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.87
+            MISMATCH: 0.01
+          confidence: 0.81
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.78
+            MISMATCH: 0.01
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11534
+        output_tokens: 514
+      elapsed_seconds: 0.7332
+      request_sha256: 927a8e2fc0061fe3d568742aea5d6a3d4148be266cb9f4456d8fb9754e1a302a
+      request_sha256s:
+      - 927a8e2fc0061fe3d568742aea5d6a3d4148be266cb9f4456d8fb9754e1a302a
+  3be7e20b38ffd1d1aac4925042c5225504c43f1b7612730b492e8807dfbf321f:
+    input_sha256: 5a85ab92f8f65e5910e82bb2849811c8f70aaa65f9882609112ff1352169ea41
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.585566+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.9
+            MATCH: 0.09
+          confidence: 0.85
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.5700000000000001
+            MATCH: 0.36
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+            MATCH: 0.73
+          confidence: 0.59
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.93
+            MATCH: 0.06
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4278
+        output_tokens: 178
+      elapsed_seconds: 0.4558
+      request_sha256: c760838b6f65256b3d50fcdf2b31c45960872c7f0148edc0de182a39cc259c1b
+      request_sha256s:
+      - c760838b6f65256b3d50fcdf2b31c45960872c7f0148edc0de182a39cc259c1b
+  850aac6a75d1a917b11d621ab96b3e4a50316a7c4cf8ae32757d78ec7553579e:
+    input_sha256: 2b397e0fecb7ed743094dfb218a07bcbab7a692ea2a5e41fcc485bc49ec0f093
+    configuration_sha256: 7cab90b99ff3d59574a9272ec345fa8af4fe36826dbc60978272fc1573deac3d
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.766189+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.41
+            MATCH: 0.38
+          confidence: 0.12
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.03
+            MISMATCH: 0.9
+          confidence: 0.85
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.29
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.89
+            MISMATCH: 0.06
+          confidence: 0.83
+        /assertion/distinguishing_features:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.8
+            MISMATCH: 0.05
+          confidence: 0.7
+        /assertion/disease_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.3
+            MATCH: 0.6
+          confidence: 0.4
+        /assertion/disease_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.41
+            MATCH: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7281
+        output_tokens: 327
+      elapsed_seconds: 0.4853
+      request_sha256: ef21c51af681fcfbac10aac04aef2bdbb2eda563bafd54ac8ce1aaabe131469b
+      request_sha256s:
+      - ef21c51af681fcfbac10aac04aef2bdbb2eda563bafd54ac8ce1aaabe131469b
+  05c48b656dae72de87582ed63752687b6b4bbfebbe5276cadca5eb8f261cbdf3:
+    input_sha256: e50973f652326cac13e987ebf33e714d6c5250e6e115fa83b6ac47f28a9147d7
+    configuration_sha256: 7cab90b99ff3d59574a9272ec345fa8af4fe36826dbc60978272fc1573deac3d
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:02.945122+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.15
+            MISMATCH: 0.56
+          confidence: 0.35
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.01
+            MISMATCH: 0.98
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.04
+            MISMATCH: 0.25
+          confidence: 0.56
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.36
+            MISMATCH: 0.18
+          confidence: 0.19
+        /assertion/distinguishing_features:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            PARTIAL: 0.12
+            MISMATCH: 0.07
+          confidence: 0.72
+        /assertion/disease_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.04
+            MISMATCH: 0.28
+          confidence: 0.52
+        /assertion/disease_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5599999999999999
+            PARTIAL: 0.05
+            MISMATCH: 0.39
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7279
+        output_tokens: 327
+      elapsed_seconds: 0.4442
+      request_sha256: 51dfad4dc0d61e31951880338116f829532688dbb7ef5d510dd5f616c811cd38
+      request_sha256s:
+      - 51dfad4dc0d61e31951880338116f829532688dbb7ef5d510dd5f616c811cd38
+  d42fdf935bafa80a1e63e6527501013e0e3685c2123d2c891656673e5b528057:
+    input_sha256: b4d5908618f2b8a85bb9e518bfff69f80470b66cda24b69f4b046ae82e09f031
+    configuration_sha256: 7cab90b99ff3d59574a9272ec345fa8af4fe36826dbc60978272fc1573deac3d
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.092801+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.07
+            PARTIAL: 0.1
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8099999999999999
+            MISMATCH: 0.12
+            PARTIAL: 0.07
+          confidence: 0.72
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.08
+            PARTIAL: 0.04
+          confidence: 0.82
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.84
+        /assertion/distinguishing_features:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+            MATCH: 0.94
+          confidence: 0.91
+        /assertion/disease_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.09
+            PARTIAL: 0.04
+          confidence: 0.8
+        /assertion/disease_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.13
+            PARTIAL: 0.07
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7268
+        output_tokens: 321
+      elapsed_seconds: 0.492
+      request_sha256: e791880591ea15c0fab7d53566f055b076c2c4e509a88a9c7d2c7fdf9d19c04c
+      request_sha256s:
+      - e791880591ea15c0fab7d53566f055b076c2c4e509a88a9c7d2c7fdf9d19c04c
+  d062cc48a79301457f010f4b5639b07913cf686a57846e20e9a5da3658113967:
+    input_sha256: 711e533cdbb3ebf681aa79f062f4acbbd8d7bd6a0e1a7b39e824ac9ab592b07b
+    configuration_sha256: 5924dbe21034a1c40bc0a34b68119949f2d1014ae84c15eec2a93cd2443e1de2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.277404+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.13
+            PARTIAL: 0.76
+          confidence: 0.63
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.06
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+          confidence: 0.29
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.1
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.48
+            PARTIAL: 0.29
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5302
+        output_tokens: 230
+      elapsed_seconds: 0.486
+      request_sha256: 4d3180b159c44eee716b858a2452783475ebff795b276ca9230ae886af761bcd
+      request_sha256s:
+      - 4d3180b159c44eee716b858a2452783475ebff795b276ca9230ae886af761bcd
+  d5ca45375a168e2ea4ad4a5981194340ef5c886fe9c7c99c4e6c3dd082da474d:
+    input_sha256: b7e669d885ff2bc04e25878b246f6c77a9a4775c0617b68c5585a64e8f55d61b
+    configuration_sha256: 5924dbe21034a1c40bc0a34b68119949f2d1014ae84c15eec2a93cd2443e1de2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.432029+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.22
+            MISMATCH: 0.36
+          confidence: 0.14
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.06
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.09
+            PARTIAL: 0.27
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.59
+            MISMATCH: 0.16
+          confidence: 0.39
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.04
+            MISMATCH: 0.83
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5279
+        output_tokens: 231
+      elapsed_seconds: 0.4522
+      request_sha256: a03e1e6c77f8a394200a121aab50a5685cf98ceccb24eb8b02911d08fda47dd1
+      request_sha256s:
+      - a03e1e6c77f8a394200a121aab50a5685cf98ceccb24eb8b02911d08fda47dd1
+  4b1aca1a6bf676b702224e653ad73eab06b11b7b5afc70345154fbe40985dd11:
+    input_sha256: 639ea74cbe84167643363a9d9e41aea8ae6cae0035ee49b121152a12cb3f7292
+    configuration_sha256: 5924dbe21034a1c40bc0a34b68119949f2d1014ae84c15eec2a93cd2443e1de2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.594235+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.32
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.1
+            PARTIAL: 0.34
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.25
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            MATCH: 0.13
+            PARTIAL: 0.35
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5266
+        output_tokens: 229
+      elapsed_seconds: 0.5014
+      request_sha256: 549b690605a1ef729e39e90f31e56ca3cf4139bb1eb09f138f72f5bead7306d2
+      request_sha256s:
+      - 549b690605a1ef729e39e90f31e56ca3cf4139bb1eb09f138f72f5bead7306d2
+  747dcb6e229b425e1671993c3a0153b52521eb704fdc50165b44f27e9ab966fb:
+    input_sha256: 3cfd12d56fc7e7485ca7703a52ed4a0b5f84d64a6c77ae7f44df8b17bbd7baa0
+    configuration_sha256: 790c315aa71a7af449126bba4c0441520643c67e542693c58b87f5b69bbbcdc1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.755923+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.32
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.67
+            PARTIAL: 0.23
+          confidence: 0.52
+        /assertion/prompt:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.63
+            PARTIAL: 0.23
+          confidence: 0.45
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.13
+            PARTIAL: 0.39
+          confidence: 0.22
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.45
+            PARTIAL: 0.44
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8338
+        output_tokens: 378
+      elapsed_seconds: 0.5237
+      request_sha256: 474d22ffd0a99eb78c81a013b6c3f44cdcb05724f8e49dfeb5ffc7acb3f184e8
+      request_sha256s:
+      - 474d22ffd0a99eb78c81a013b6c3f44cdcb05724f8e49dfeb5ffc7acb3f184e8
+  6385ec765addd7f260b14c0a6365d6dd9aea3247c6515803f3896653604a0ed0:
+    input_sha256: 9e73d34472bbcb8f9979f752af718c14e869f64f0c3d4e8575843005a394b8e7
+    configuration_sha256: 790c315aa71a7af449126bba4c0441520643c67e542693c58b87f5b69bbbcdc1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:10:03.930481+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.06
+            PARTIAL: 0.59
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.23
+            PARTIAL: 0.69
+          confidence: 0.54
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.14
+            PARTIAL: 0.26
+          confidence: 0.4
+        /assertion/prompt:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.02
+            PARTIAL: 0.42
+          confidence: 0.34
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.18
+            PARTIAL: 0.22
+          confidence: 0.4
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.88
+            MATCH: 0.01
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.17
+            PARTIAL: 0.39
+          confidence: 0.15
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.13
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8378
+        output_tokens: 374
+      elapsed_seconds: 0.5137
+      request_sha256: afc068bcca1da8e63010aa8164fb2dbc17e98f03b339c79346250a4739847d7b
+      request_sha256s:
+      - afc068bcca1da8e63010aa8164fb2dbc17e98f03b339c79346250a4739847d7b

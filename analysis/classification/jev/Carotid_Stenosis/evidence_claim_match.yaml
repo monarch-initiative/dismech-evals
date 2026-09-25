@@ -1,0 +1,5348 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Carotid_Stenosis.yaml
+disease: Carotid Stenosis
+inventory:
+  source_sha256: 14b9986a7af45fcc4ad2fdd7550e52ab1601902bc5f91cf505cb429f4d13ca3e
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:22:41.525597+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  ee1e710f040862695d16599f06fc55bacb68a35cbf276ffd1708356f5092c269:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carotid Intimal ApoB Lipoprotein Retention
+        role: trigger
+        conforms_to: atherogenesis#Endothelial Dysfunction and Subendothelial LDL Retention
+        description: Endothelial dysfunction in the carotid arterial wall permits infiltration and retention
+          of apoB-containing lipoproteins in the intima. Retained LDL is modified locally and initiates
+          the inflammatory plaque-forming branch of atherosclerotic carotid stenosis.
+        cell_types:
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: cholesterol homeostasis
+          term:
+            id: GO:0042632
+            label: cholesterol homeostasis
+          modifier: DYSREGULATED
+      selected_evidence:
+        snippet: infiltration and retention of apoB containing lipoproteins in the artery wall is a critical
+          initiating event that sparks an inflammatory response and promotes the development of atherosclerosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26844337
+      reference_title: The Role of Lipids and Lipoproteins in Atherosclerosis.
+      evidence_source: OTHER
+      explanation: Establishes arterial-wall apoB-lipoprotein retention as the conserved initiating event;
+        the internal carotid artery is the disease-specific site.
+    first_seen_at: '2026-09-25T14:52:00.150198+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:26844337
+  7309e6dd585ef732bcbd95be1cd4bd65e372939be27d74b7dc1a5dac21b09e10:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Adults aged 45-80 years in the REACH-derived validation cohort without prior carotid
+          procedures
+        percentage: 6.3% severe baseline asymptomatic carotid artery stenosis
+        notes: This estimate applies to a high vascular-risk registry population, not to unselected population
+          screening.
+      selected_evidence:
+        snippet: 1662 (6.3%) had severe baseline ACAS.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39319460
+      reference_title: Prediction of Severe Baseline Asymptomatic Carotid Stenosis and Subsequent Risk
+        of Stroke and Cardiovascular Disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This registry-derived cohort directly reports severe asymptomatic carotid stenosis
+        prevalence in the studied population.
+    first_seen_at: '2026-09-25T14:52:00.148257+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      reference: PMID:39319460
+  0a6c5a952c62ef516005fcd76ba750746306df77432e7b36054d77b1da6b4e7b:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Carotid Monocyte Recruitment and Macrophage Foam Cell Formation
+            role: amplifier
+            conforms_to: atherogenesis#Monocyte Recruitment and Macrophage Foam Cell Formation
+            description: Recruited carotid-intimal monocytes become macrophages, internalize modified
+              apoB lipoproteins, and form lipid-laden foam cells. Macrophage inflammation amplifies LDL
+              oxidation, endothelial activation, and additional monocyte recruitment in the plaque-forming
+              branch.
+            cell_types:
+            - preferred_term: macrophage
+              term:
+                id: CL:0000235
+                label: macrophage
+            - preferred_term: foam cell
+              term:
+                id: CL:0000891
+                label: foam cell
+            locations:
+            - preferred_term: internal carotid artery
+              term:
+                id: UBERON:0001532
+                label: internal carotid artery
+            biological_processes:
+            - preferred_term: foam cell differentiation
+              term:
+                id: GO:0090077
+                label: foam cell differentiation
+              modifier: INCREASED
+            - preferred_term: inflammatory response
+              term:
+                id: GO:0006954
+                label: inflammatory response
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Atherosclerotic carotid plaque formation
+        description: Foam-cell inflammatory mediators recruit and stimulate vascular smooth muscle cells,
+          which switch phenotype and assemble the plaque matrix.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - macrophage chemoattractant and cytokine signaling
+        - vascular smooth muscle cell recruitment and phenotypic switching
+      selected_evidence:
+        snippet: Macrophage inflammatory chemoattractants stimulate infiltration and proliferation of
+          smooth muscle cells. Smooth muscle cells produce the extracellular matrix providing a stable
+          fibrous barrier between plaque prothrombotic factors and platelets.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:26844337
+      reference_title: The Role of Lipids and Lipoproteins in Atherosclerosis.
+      evidence_source: OTHER
+      explanation: Connects macrophage inflammation to smooth-muscle-cell proliferation and extracellular-matrix
+        production in the conserved central effector.
+    first_seen_at: '2026-09-25T14:52:01.096719+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:26844337
+  b53deac1be9bda114736b94863894b8d349c2c6f2722cd50572b36d08c673a64:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Carotid Intimal ApoB Lipoprotein Retention
+            role: trigger
+            conforms_to: atherogenesis#Endothelial Dysfunction and Subendothelial LDL Retention
+            description: Endothelial dysfunction in the carotid arterial wall permits infiltration and
+              retention of apoB-containing lipoproteins in the intima. Retained LDL is modified locally
+              and initiates the inflammatory plaque-forming branch of atherosclerotic carotid stenosis.
+            cell_types:
+            - preferred_term: endothelial cell
+              term:
+                id: CL:0000115
+                label: endothelial cell
+            locations:
+            - preferred_term: internal carotid artery
+              term:
+                id: UBERON:0001532
+                label: internal carotid artery
+            biological_processes:
+            - preferred_term: cholesterol homeostasis
+              term:
+                id: GO:0042632
+                label: cholesterol homeostasis
+              modifier: DYSREGULATED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Carotid Monocyte Recruitment and Macrophage Foam Cell Formation
+        description: Modified retained lipoproteins activate endothelium, recruit monocytes, and supply
+          the substrate internalized by intimal macrophages.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - oxidative or enzymatic modification of retained apoB lipoproteins
+        - endothelial activation and monocyte recruitment into the carotid intima
+      selected_evidence:
+        snippet: Internalization of the apoB containing lipoproteins by macrophages promotes foam cell
+          formation, which is the hallmark of the fatty streak phase of atherosclerosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:26844337
+      reference_title: The Role of Lipids and Lipoproteins in Atherosclerosis.
+      evidence_source: OTHER
+      explanation: Supports macrophage uptake of retained apoB lipoproteins and subsequent foam-cell formation
+        across the explicit recruitment intermediate.
+    first_seen_at: '2026-09-25T14:52:01.062615+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:26844337
+  ee76ac21fc9601895d7bd3892d3d8ae912594288467d751c505afe8ec64ed6be:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carotid Monocyte Recruitment and Macrophage Foam Cell Formation
+        role: amplifier
+        conforms_to: atherogenesis#Monocyte Recruitment and Macrophage Foam Cell Formation
+        description: Recruited carotid-intimal monocytes become macrophages, internalize modified apoB
+          lipoproteins, and form lipid-laden foam cells. Macrophage inflammation amplifies LDL oxidation,
+          endothelial activation, and additional monocyte recruitment in the plaque-forming branch.
+        cell_types:
+        - preferred_term: macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        - preferred_term: foam cell
+          term:
+            id: CL:0000891
+            label: foam cell
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: foam cell differentiation
+          term:
+            id: GO:0090077
+            label: foam cell differentiation
+          modifier: INCREASED
+        - preferred_term: inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Macrophage inflammation results in enhanced oxidative stress and cytokine/chemokine secretion,
+          causing more LDL/remnant oxidation, endothelial cell activation, monocyte recruitment, and foam
+          cell formation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26844337
+      reference_title: The Role of Lipids and Lipoproteins in Atherosclerosis.
+      evidence_source: OTHER
+      explanation: Documents the feed-forward inflammatory loop that amplifies foam-cell formation.
+    first_seen_at: '2026-09-25T14:52:01.095345+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:26844337
+  e70484e9cc00459c622bfb8beb8d109183d5ae44b83d3793c66c8821341605c8:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carotid Monocyte Recruitment and Macrophage Foam Cell Formation
+        role: amplifier
+        conforms_to: atherogenesis#Monocyte Recruitment and Macrophage Foam Cell Formation
+        description: Recruited carotid-intimal monocytes become macrophages, internalize modified apoB
+          lipoproteins, and form lipid-laden foam cells. Macrophage inflammation amplifies LDL oxidation,
+          endothelial activation, and additional monocyte recruitment in the plaque-forming branch.
+        cell_types:
+        - preferred_term: macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        - preferred_term: foam cell
+          term:
+            id: CL:0000891
+            label: foam cell
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: foam cell differentiation
+          term:
+            id: GO:0090077
+            label: foam cell differentiation
+          modifier: INCREASED
+        - preferred_term: inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Internalization of the apoB containing lipoproteins by macrophages promotes foam cell
+          formation, which is the hallmark of the fatty streak phase of atherosclerosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26844337
+      reference_title: The Role of Lipids and Lipoproteins in Atherosclerosis.
+      evidence_source: OTHER
+      explanation: Directly supports macrophage apoB-lipoprotein uptake and foam-cell differentiation
+        in the conserved amplifier.
+    first_seen_at: '2026-09-25T14:52:01.064207+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:26844337
+  6f35bf04308adb2827f4b484305676caab5353c03f75f6d7ffa8ad1f914b132e:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Atherosclerotic carotid plaque formation
+        role: central_effector
+        conforms_to: atherogenesis#Smooth Muscle Cell Switching and Fibrofatty Plaque Formation
+        description: Vascular smooth-muscle-cell phenotypic switching, proliferation, and extracellular-matrix
+          secretion assemble a fibrofatty plaque with a fibrous cap in the carotid arterial wall. Continued
+          plaque growth progressively narrows the lumen.
+        cell_types:
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: smooth muscle cell proliferation
+          term:
+            id: GO:0048661
+            label: positive regulation of smooth muscle cell proliferation
+          modifier: INCREASED
+        - preferred_term: extracellular matrix organization
+          term:
+            id: GO:0030198
+            label: extracellular matrix organization
+          modifier: INCREASED
+      selected_evidence:
+        snippet: CS is seen undergoing almost the same pathogenesis of any atherosclerotic plaque formation,
+          from endothelial damage of the artery lumen to the formation of a fibrous cap with a foam cell,
+          lipid-filled core.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This abstract supports fibrous-cap formation as part of the carotid atherosclerotic
+        plaque branch.
+    first_seen_at: '2026-09-25T14:52:01.457495+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:37303351
+  a5399e768b47e8894d83ababfd1ad10d384f4635a382e4e3becabe9466191e3b:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: Atherosclerotic carotid plaque formation
+            role: central_effector
+            conforms_to: atherogenesis#Smooth Muscle Cell Switching and Fibrofatty Plaque Formation
+            description: Vascular smooth-muscle-cell phenotypic switching, proliferation, and extracellular-matrix
+              secretion assemble a fibrofatty plaque with a fibrous cap in the carotid arterial wall.
+              Continued plaque growth progressively narrows the lumen.
+            cell_types:
+            - preferred_term: vascular smooth muscle cell
+              term:
+                id: CL:0000359
+                label: vascular associated smooth muscle cell
+            biological_processes:
+            - preferred_term: smooth muscle cell proliferation
+              term:
+                id: GO:0048661
+                label: positive regulation of smooth muscle cell proliferation
+              modifier: INCREASED
+            - preferred_term: extracellular matrix organization
+              term:
+                id: GO:0030198
+                label: extracellular matrix organization
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Vulnerable plaque instability
+        description: Continued lipid accumulation and remodeling can advance a formed carotid plaque to
+          the unstable cap-and-core morphology, independently of whether lumen narrowing is the clinically
+          dominant feature.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Continued lipid accumulation, foam-cell death, and matrix remodeling.
+      selected_evidence:
+        snippet: the local arterial microenvironment of a stable atheroma promotes destabilizing conditions
+          that result in the transition to an unstable atheroma.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/1
+      evidence_path: /pathophysiology/2/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:37595697
+      reference_title: The microenvironment of the atheroma expresses phenotypes of plaque instability.
+      evidence_source: OTHER
+      explanation: Supports transition from a formed stable atheroma to an unstable atheroma, justifying
+        the indirect shortcut around the disease-specific lumen-narrowing branch.
+    first_seen_at: '2026-09-25T14:52:01.548205+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/1
+      evidence_path: /pathophysiology/2/downstream/1/evidence/0
+      reference: PMID:37595697
+  a2cbb42e022622b86ad917218f184ef0d2b213863ac3ad5f32f18f2e1c3aa38f:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Atherosclerotic carotid plaque formation
+        role: central_effector
+        conforms_to: atherogenesis#Smooth Muscle Cell Switching and Fibrofatty Plaque Formation
+        description: Vascular smooth-muscle-cell phenotypic switching, proliferation, and extracellular-matrix
+          secretion assemble a fibrofatty plaque with a fibrous cap in the carotid arterial wall. Continued
+          plaque growth progressively narrows the lumen.
+        cell_types:
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: smooth muscle cell proliferation
+          term:
+            id: GO:0048661
+            label: positive regulation of smooth muscle cell proliferation
+          modifier: INCREASED
+        - preferred_term: extracellular matrix organization
+          term:
+            id: GO:0030198
+            label: extracellular matrix organization
+          modifier: INCREASED
+      selected_evidence:
+        snippet: vascular smooth muscle cell phenotypic switching through transdifferentiation and stem/progenitor
+          cell activation resulting in the promotion of inflammation, calcification, and secretion of
+          extracellular matrix, altering fibrous cap structure, and necrotic core growth.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37595697
+      reference_title: The microenvironment of the atheroma expresses phenotypes of plaque instability.
+      evidence_source: OTHER
+      explanation: This histopathology review supports the conserved smooth-muscle-cell switching and
+        matrix-secretion program that builds the fibrous cap and enlarges the necrotic core of the carotid
+        plaque.
+    first_seen_at: '2026-09-25T14:52:01.479665+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:37595697
+  eba62d10584977194426c80b128cf84fc44cd8ef6c85f9bbf2df529ccd88cb2f:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Flow-limiting carotid lumen narrowing
+        description: Plaque burden at the carotid bifurcation or internal carotid artery narrows the arterial
+          lumen and creates a graded stenotic lesion assessed by vascular imaging.
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: blood vessel remodeling
+          term:
+            id: GO:0001974
+            label: blood vessel remodeling
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: Carotid artery stenosis is a leading cause of ischemic stroke.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1136/jnis-2022-018732
+      reference_title: 'Asymptomatic carotid artery stenosis: a summary of current state of evidence for
+        revascularization and emerging high-risk features'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review supports carotid artery stenosis as the disease-defining vascular lesion
+        and clinically important stroke-risk condition.
+    first_seen_at: '2026-09-25T14:52:01.581682+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: DOI:10.1136/jnis-2022-018732
+  aa92e0bc1f42b132a0523b04880b74d8b9aea12ba0fed77018030675101996f6:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Vulnerable plaque instability
+            role: effector
+            conforms_to: atherogenesis#Advanced Atheroma with Necrotic Core and Fibrous Cap
+            description: Vulnerable carotid plaques contain lipid-rich necrotic cores, thin fibrous caps,
+              intraplaque hemorrhage, ulceration, neovascularization, inflammatory mediators, oxidized
+              LDL, and proteolytic enzymes that weaken the fibrous cap and increase rupture or embolization
+              risk, including in some non-severe stenoses.
+            cell_types:
+            - preferred_term: macrophage
+              term:
+                id: CL:0000235
+                label: macrophage
+            - preferred_term: endothelial cell
+              term:
+                id: CL:0000115
+                label: endothelial cell
+            - preferred_term: vascular smooth muscle cell
+              term:
+                id: CL:0000359
+                label: vascular associated smooth muscle cell
+            locations:
+            - preferred_term: internal carotid artery
+              term:
+                id: UBERON:0001532
+                label: internal carotid artery
+            biological_processes:
+            - preferred_term: extracellular matrix organization
+              term:
+                id: GO:0030198
+                label: extracellular matrix organization
+              modifier: INCREASED
+            - preferred_term: leukocyte migration
+              term:
+                id: GO:0050900
+                label: leukocyte migration
+              modifier: INCREASED
+            - preferred_term: extracellular matrix disassembly
+              term:
+                id: GO:0022617
+                label: extracellular matrix disassembly
+              modifier: INCREASED
+            - preferred_term: response to oxidative stress
+              term:
+                id: GO:0006979
+                label: response to oxidative stress
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Thromboembolic cerebral and retinal ischemia
+        description: Plaque rupture, ulceration, and thrombogenicity can generate emboli or local thrombosis.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Destabilization is characterized by several different plaque phenotypes that cause major
+          clinical events such as acute coronary syndrome and cerebrovascular strokes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:37595697
+      reference_title: The microenvironment of the atheroma expresses phenotypes of plaque instability.
+      evidence_source: OTHER
+      explanation: This review directly links plaque destabilization to cerebrovascular events, supporting
+        the conserved advanced-atheroma-to-ischemia edge.
+    first_seen_at: '2026-09-25T14:52:02.037794+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      reference: PMID:37595697
+  c0e49de6bf4c3080582848fb3dbb14a10a024845e0773c5bc06ec783d2eeefba:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Vulnerable plaque instability
+        role: effector
+        conforms_to: atherogenesis#Advanced Atheroma with Necrotic Core and Fibrous Cap
+        description: Vulnerable carotid plaques contain lipid-rich necrotic cores, thin fibrous caps,
+          intraplaque hemorrhage, ulceration, neovascularization, inflammatory mediators, oxidized LDL,
+          and proteolytic enzymes that weaken the fibrous cap and increase rupture or embolization risk,
+          including in some non-severe stenoses.
+        cell_types:
+        - preferred_term: macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: extracellular matrix organization
+          term:
+            id: GO:0030198
+            label: extracellular matrix organization
+          modifier: INCREASED
+        - preferred_term: leukocyte migration
+          term:
+            id: GO:0050900
+            label: leukocyte migration
+          modifier: INCREASED
+        - preferred_term: extracellular matrix disassembly
+          term:
+            id: GO:0022617
+            label: extracellular matrix disassembly
+          modifier: INCREASED
+        - preferred_term: response to oxidative stress
+          term:
+            id: GO:0006979
+            label: response to oxidative stress
+          modifier: INCREASED
+      selected_evidence:
+        snippet: 'In macroscopic evaluation, vulnerable plaques are characterized by one or more of the
+          following features: microcalcification; neovascularization; lipid-rich necrotic cores (LRNCs);
+          intraplaque hemorrhage (IPH); thin fibrous caps; plaque surface ulceration; huge dimensions,
+          suggesting stenosis; and plaque rupture.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/ijms25084351
+      reference_title: 'Molecular Pathways of Vulnerable Carotid Plaques at Risk of Ischemic Stroke: A
+        Narrative Review'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports vulnerable plaque structural features relevant to carotid stenosis
+        risk stratification.
+    first_seen_at: '2026-09-25T14:52:01.910926+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: DOI:10.3390/ijms25084351
+  ebdb9af66d9bec173b163135feb01a278c98f446e6d250c4dd7553a996d37e6d:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Vulnerable plaque instability
+        role: effector
+        conforms_to: atherogenesis#Advanced Atheroma with Necrotic Core and Fibrous Cap
+        description: Vulnerable carotid plaques contain lipid-rich necrotic cores, thin fibrous caps,
+          intraplaque hemorrhage, ulceration, neovascularization, inflammatory mediators, oxidized LDL,
+          and proteolytic enzymes that weaken the fibrous cap and increase rupture or embolization risk,
+          including in some non-severe stenoses.
+        cell_types:
+        - preferred_term: macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        locations:
+        - preferred_term: internal carotid artery
+          term:
+            id: UBERON:0001532
+            label: internal carotid artery
+        biological_processes:
+        - preferred_term: extracellular matrix organization
+          term:
+            id: GO:0030198
+            label: extracellular matrix organization
+          modifier: INCREASED
+        - preferred_term: leukocyte migration
+          term:
+            id: GO:0050900
+            label: leukocyte migration
+          modifier: INCREASED
+        - preferred_term: extracellular matrix disassembly
+          term:
+            id: GO:0022617
+            label: extracellular matrix disassembly
+          modifier: INCREASED
+        - preferred_term: response to oxidative stress
+          term:
+            id: GO:0006979
+            label: response to oxidative stress
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Inflammatory biomarkers, such as cytokines and adhesion molecules, lipid-related markers
+          like oxidized low-density lipoprotein (LDL), and proteolytic enzymes capable of degrading extracellular
+          matrix components are among the key molecules that are scrutinized for their associative roles
+          in plaque instability.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/ijms25084351
+      reference_title: 'Molecular Pathways of Vulnerable Carotid Plaques at Risk of Ischemic Stroke: A
+        Narrative Review'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports inflammatory, oxidized-lipid, and extracellular-matrix degradation mechanisms
+        in vulnerable plaques.
+    first_seen_at: '2026-09-25T14:52:01.974306+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      reference: DOI:10.3390/ijms25084351
+  dcac18a10327ce6f7681678f24315221f76be73c38bfdcf5e8e9129b6804fd61:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Thromboembolic cerebral and retinal ischemia
+        role: consequence
+        conforms_to: atherogenesis#Plaque Rupture, Thrombosis, and Ischemic Events
+        description: Fibrous-cap rupture, plaque-surface ulceration, or erosion exposes thrombogenic material
+          in an unstable carotid atheroma, provoking platelet activation, superimposed thrombosis, and
+          embolization that can cause transient or permanent ischemia in ipsilateral retinal and cerebral
+          territories.
+        cell_types:
+        - preferred_term: platelet
+          term:
+            id: CL:0000233
+            label: platelet
+        biological_processes:
+        - preferred_term: blood coagulation
+          term:
+            id: GO:0007596
+            label: blood coagulation
+          modifier: INCREASED
+        - preferred_term: platelet activation
+          term:
+            id: GO:0030168
+            label: platelet activation
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The current evidence demonstrates that plaque vulnerability phenotypes are multiple and
+          heterogeneous and are associated with many highly complex molecular pathways that determine
+          the activation of an immune-mediated cascade that culminates in thromboinflammation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/ijms25084351
+      reference_title: 'Molecular Pathways of Vulnerable Carotid Plaques at Risk of Ischemic Stroke: A
+        Narrative Review'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports thromboinflammatory plaque biology as the bridge from vulnerable plaque
+        to embolic ischemic events.
+    first_seen_at: '2026-09-25T14:52:02.192311+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: DOI:10.3390/ijms25084351
+  14cca84ccab77873b28a95ed96196dbc2f9c0fb1b5c7c1565f2e8f2a930ea251:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hemodynamic cerebral perfusion impairment
+        description: Some high-grade carotid stenoses cause ipsilateral perfusion delay or flow failure,
+          which can contribute to cognitive impairment and may be targeted in hemodynamic substudies of
+          revascularization trials.
+        biological_processes:
+        - preferred_term: response to hypoxia
+          term:
+            id: GO:0001666
+            label: response to hypoxia
+          modifier: INCREASED
+      selected_evidence:
+        snippet: We aim to determine whether cognitive impairment attributable to cerebral hemodynamic
+          impairment in patients with high-grade asymptomatic carotid artery stenosis is reversible with
+          restoration of flow.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT03121209
+      reference_title: Carotid Revascularization and Medical Management for Asymptomatic Carotid Stenosis
+        Trial - Hemodynamics
+      evidence_source: HUMAN_CLINICAL
+      explanation: This trial summary directly links high-grade asymptomatic carotid stenosis, cerebral
+        hemodynamic impairment, cognitive impairment, restoration of flow, and the hypoxia response expected
+        from impaired cerebral perfusion.
+    first_seen_at: '2026-09-25T14:52:02.525698+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: clinicaltrials:NCT03121209
+  420aca32eb1359bba7f0b317dfd59c486ee0f705052c8f1fca8b88e5d9afcfea:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Thromboembolic cerebral and retinal ischemia
+        role: consequence
+        conforms_to: atherogenesis#Plaque Rupture, Thrombosis, and Ischemic Events
+        description: Fibrous-cap rupture, plaque-surface ulceration, or erosion exposes thrombogenic material
+          in an unstable carotid atheroma, provoking platelet activation, superimposed thrombosis, and
+          embolization that can cause transient or permanent ischemia in ipsilateral retinal and cerebral
+          territories.
+        cell_types:
+        - preferred_term: platelet
+          term:
+            id: CL:0000233
+            label: platelet
+        biological_processes:
+        - preferred_term: blood coagulation
+          term:
+            id: GO:0007596
+            label: blood coagulation
+          modifier: INCREASED
+        - preferred_term: platelet activation
+          term:
+            id: GO:0030168
+            label: platelet activation
+          modifier: INCREASED
+      selected_evidence:
+        snippet: There are several rupture-associated phenotypes causing thrombotic vascular occlusion
+          including simple fibrous cap rupture of an atheroma, fibrous cap rupture at site of previous
+          rupture-and-repair of an atheroma, and nodular calcification with rupture. Endothelial erosion
+          without rupture has more recently been shown to be a common phenotype to promote thrombosis
+          as well.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37595697
+      reference_title: The microenvironment of the atheroma expresses phenotypes of plaque instability.
+      evidence_source: OTHER
+      explanation: Establishes both atheroma rupture and endothelial erosion as causes of thrombosis,
+        anchoring this carotid thromboembolic consequence to the conserved atherogenesis end state.
+    first_seen_at: '2026-09-25T14:52:02.450609+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      reference: PMID:37595697
+  5ec38416888dd66afaf75037031f4ae6e943c1c6de2a32f43e1959129313fe28:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Vulnerable carotid atherosclerotic plaque
+        description: Vulnerable carotid plaque morphology includes lipid-rich necrotic core, intraplaque
+          hemorrhage, thin fibrous cap, surface ulceration, neovascularization, microcalcification, large
+          plaque dimensions, and plaque rupture.
+      selected_evidence:
+        snippet: 'In macroscopic evaluation, vulnerable plaques are characterized by one or more of the
+          following features: microcalcification; neovascularization; lipid-rich necrotic cores (LRNCs);
+          intraplaque hemorrhage (IPH); thin fibrous caps; plaque surface ulceration; huge dimensions,
+          suggesting stenosis; and plaque rupture.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/ijms25084351
+      reference_title: 'Molecular Pathways of Vulnerable Carotid Plaques at Risk of Ischemic Stroke: A
+        Narrative Review'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This abstract directly supports the histopathologic and macroscopic plaque features
+        included in vulnerable carotid plaque morphology.
+    first_seen_at: '2026-09-25T14:52:02.596855+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: DOI:10.3390/ijms25084351
+  1b88660ff140c8b8a702f944a212094c4801070a35526379ec631f349d9834ee:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Carotid artery stenosis
+        diagnostic: true
+        description: Narrowing of the carotid artery is the defining vascular lesion and is usually assessed
+          by duplex ultrasonography, CT angiography, MR angiography, or catheter angiography.
+        phenotype_term:
+          preferred_term: Carotid artery stenosis
+          term:
+            id: HP:0100546
+            label: Carotid artery stenosis
+      selected_evidence:
+        snippet: Carotid stenosis (CS) is a buildup of atherosclerotic plaque within the artery leading
+          to a wide range of symptoms, from mild symptoms, including blurred vision and confusion, to
+          much more life-threatening presentations, including paralysis due to stroke.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports carotid stenosis as an atherosclerotic arterial lesion and links it to
+        the symptom spectrum.
+    first_seen_at: '2026-09-25T14:52:02.789387+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:37303351
+  92de16893cb43936d7ed356e8f851c308090a23336cbbeb31b05e35c77a004f6:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurological
+        name: Ischemic stroke
+        description: Symptomatic carotid stenosis may cause ipsilateral ischemic stroke through artery-to-artery
+          embolism, local thrombosis, or impaired cerebral perfusion.
+        phenotype_term:
+          preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: Internal carotid artery (ICA) stenosis causes about 15% of ischemic strokes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38896635
+      reference_title: Accuracy of duplex ultrasonography versus angiotomography for the diagnosis of
+        extracranial internal carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This diagnostic cohort abstract directly supports ischemic stroke as a major clinical
+        consequence of ICA stenosis.
+    first_seen_at: '2026-09-25T14:52:02.948784+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:38896635
+  8708fe5aa61394dd4e040274d3d4761078f3e556776de79489542de3f733cb57:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurological
+        name: Transient ischemic attack
+        description: Transient focal neurologic symptoms can occur when carotid plaque emboli or flow
+          limitation cause short-lived cerebral or retinal ischemia.
+        phenotype_term:
+          preferred_term: Transient ischemic attack
+          term:
+            id: HP:0002326
+            label: Transient ischemic attack
+      selected_evidence:
+        snippet: hemispheric or retinal transient ischemic attack or a nondisabling stroke within the
+          120 days before entry and had stenosis of 70 to 99 percent in the symptomatic carotid artery.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1852179
+      reference_title: Beneficial effect of carotid endarterectomy in symptomatic patients with high-grade
+        carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The NASCET abstract directly documents hemispheric and retinal TIA presentations in
+        symptomatic high-grade carotid stenosis.
+    first_seen_at: '2026-09-25T14:52:03.118602+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:1852179
+  6ea6abc1021248e0032ef9466ba228c3a49f3eb71c291f0134ae6f949f9cc63f:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Ophthalmological
+        name: Amaurosis fugax
+        description: Transient monocular visual loss can occur when embolic or hemodynamic compromise
+          affects the ipsilateral retinal circulation.
+        phenotype_term:
+          preferred_term: Amaurosis fugax
+          term:
+            id: HP:0100576
+            label: Amaurosis fugax
+      selected_evidence:
+        snippet: hemispheric or retinal transient ischemic attack or a nondisabling stroke within the
+          120 days before entry and had stenosis of 70 to 99 percent in the symptomatic carotid artery.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1852179
+      reference_title: Beneficial effect of carotid endarterectomy in symptomatic patients with high-grade
+        carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Retinal TIA is the carotid-territory event underlying amaurosis fugax, although the
+        abstract does not use the term amaurosis fugax.
+    first_seen_at: '2026-09-25T14:52:03.118958+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:1852179
+  a1b34ead4e996e9367fb28b2df7efd74b5d74cf478044ae4a5b024e533df4b69:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurological
+        name: Cognitive impairment from hemodynamic compromise
+        description: A subset of high-grade asymptomatic carotid stenosis patients may have cognitive
+          impairment attributable to ipsilateral cerebral hemodynamic impairment.
+        phenotype_term:
+          preferred_term: Cognitive impairment
+          term:
+            id: HP:0100543
+            label: Cognitive impairment
+      selected_evidence:
+        snippet: CREST-H addresses the intriguing question of whether cognitive impairment can be reversed
+          when it arises from abnormal cerebral hemodynamic perfusion in a hemodynamically impaired subset
+          of the CREST-2 -randomized patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT03121209
+      reference_title: Carotid Revascularization and Medical Management for Asymptomatic Carotid Stenosis
+        Trial - Hemodynamics
+      evidence_source: HUMAN_CLINICAL
+      explanation: The trial summary supports cognitive impairment as an investigated hemodynamic consequence
+        in a subset of high-grade asymptomatic carotid stenosis patients.
+    first_seen_at: '2026-09-25T14:52:03.235003+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: clinicaltrials:NCT03121209
+  a4214a98487d45c02554aa89d40287c9ae196bb7b00cbd981d3640b395279911:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Asymptomatic high-grade stenosis
+        age_range: Adult to older adult
+        notes: High-grade asymptomatic stenosis may be found through targeted vascular assessment in high-risk
+          patients and carries future stroke and cardiovascular event risk.
+      selected_evidence:
+        snippet: Significantly higher incidence rates of stroke (Ptrend<0.011) and CVD (Ptrend<0.0001)
+          during follow-up were found with increasing PACAS risk groups.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39319460
+      reference_title: Prediction of Severe Baseline Asymptomatic Carotid Stenosis and Subsequent Risk
+        of Stroke and Cardiovascular Disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports future stroke and cardiovascular event risk in higher predicted-risk
+        asymptomatic carotid stenosis groups.
+    first_seen_at: '2026-09-25T14:52:03.397466+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      reference: PMID:39319460
+  8353998fe1cbdb2cd12e5caa5b1128148c13c94a3c1b3c3281eb52dc50b60db2:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Symptomatic carotid-territory ischemia
+        age_range: Adult to older adult
+        notes: Symptomatic disease includes recent hemispheric or retinal TIA and nondisabling stroke
+          in the territory of the stenotic carotid artery.
+      selected_evidence:
+        snippet: recent hemispheric and retinal transient ischemic attacks or nondisabling strokes and
+          ipsilateral high-grade stenosis (70 to 99 percent) of the internal carotid artery.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1852179
+      reference_title: Beneficial effect of carotid endarterectomy in symptomatic patients with high-grade
+        carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly defines symptomatic high-grade carotid stenosis in the NASCET population.
+    first_seen_at: '2026-09-25T14:52:03.549554+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      reference: PMID:1852179
+  8a2d2acf65ed31d73e590bc366209376ddb5000a6382a5779ff866ce6fa40c37:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Cardiometabolic comorbidities
+        presence: Positive
+        description: Hypertension, diabetes, and chronic kidney disease contribute to carotid plaque development
+          and overlap with broader atherosclerotic cardiovascular risk.
+      selected_evidence:
+        snippet: comorbid hypertension, diabetes, and chronic kidney disease (CKD), and lifestyle aspects,
+          including smoking and diet, played the most salient role in plaque development.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review abstract identifies these comorbidities as salient contributors to plaque
+        development.
+    first_seen_at: '2026-09-25T14:52:03.656722+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:37303351
+  7071ff1d6988a66873c0b7440394862fbc01e1371f1ec947cf26330a0772139d:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Smoking and diet
+        presence: Positive
+        description: Smoking and diet are modifiable lifestyle risk factors that contribute to carotid
+          plaque development and are targets of medical prevention.
+      selected_evidence:
+        snippet: lifestyle aspects, including smoking and diet, played the most salient role in plaque
+          development.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports smoking and diet as lifestyle contributors to plaque development.
+    first_seen_at: '2026-09-25T14:52:03.761877+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:37303351
+  e4a7e3b4683fd4a809b146616107257b73876783d2940b6cd109db61c72a09e2:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context:
+        - path: /environmental/1
+          value:
+            name: Smoking and diet
+            presence: Positive
+            description: Smoking and diet are modifiable lifestyle risk factors that contribute to carotid
+              plaque development and are targets of medical prevention.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Atherosclerotic carotid plaque formation
+        environmental_effect: PREDISPOSES
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        description: Smoking and diet are named as the lifestyle factors playing the largest role in carotid
+          plaque development, which is the node this exposure acts on.
+      selected_evidence:
+        snippet: lifestyle aspects, including smoking and diet, played the most salient role in plaque
+          development.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/1
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names plaque development specifically, rather than carotid stenosis as a whole, as
+        what these lifestyle factors drive. The edge jumps the ApoB-retention and monocyte-recruitment
+        nodes that sit between exposure and plaque in this file, and the study measures a combined lifestyle
+        contribution without isolating the diet component.
+    first_seen_at: '2026-09-25T14:52:03.870980+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      reference: PMID:37303351
+  cc7cf79bf342711a950349fdf51366b06cbc552fbf29062fb490fe0b8cf856d2:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Duplex ultrasound with confirmatory CT angiography
+        description: Duplex ultrasonography is commonly used as first-line assessment of ICA stenosis.
+          Significant stenosis is often confirmed or further characterized with CT angiography or another
+          cross-sectional vascular imaging modality.
+        diagnosis_term:
+          preferred_term: Diagnostic Imaging Testing
+          term:
+            id: NCIT:C16502
+            label: Diagnostic Imaging Testing
+        results: Estimates stenosis severity and informs medical versus revascularization management.
+      selected_evidence:
+        snippet: Duplex ultrasonography (DUS) is the first line of investigation of ICA stenosis, but
+          its accuracy varies in the literature and it is usual to complement the study with another more
+          accurate exam when faced with significant stenosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38896635
+      reference_title: Accuracy of duplex ultrasonography versus angiotomography for the diagnosis of
+        extracranial internal carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports DUS as first-line imaging and confirmatory imaging for significant
+        stenosis.
+    first_seen_at: '2026-09-25T14:52:04.039571+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:38896635
+  ae748824a0d42908c2e8389938bd39218ecfcb18356e17485eda83ea253cd01c:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: CT angiography for severe ICA stenosis
+        description: CT angiography can accurately diagnose severe internal carotid stenosis and is used
+          to characterize anatomy for procedural planning.
+        diagnosis_term:
+          preferred_term: computed tomography angiography
+          term:
+            id: NCIT:C202408
+            label: Computed Tomography Angiography
+        results: High sensitivity and specificity for severe ICA stenosis in meta-analysis.
+      selected_evidence:
+        snippet: CTA demonstrated high sensitivity and specificity for diagnosing severe ICA stenosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39143526
+      reference_title: Systematic review and meta-analysis of the diagnostic value of computed tomography
+        angiography for severe internal carotid artery stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This meta-analysis conclusion directly supports CTA for severe ICA stenosis diagnosis.
+    first_seen_at: '2026-09-25T14:52:04.150443+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:39143526
+  d3e8a43130a65aa8c9f31448cf0c388ace54578ce93e01201e2db4cd86b990dc:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Vulnerable plaque risk stratification
+        description: Imaging and biomarker assessment increasingly distinguish plaque vulnerability from
+          stenosis percentage alone, including high-risk features such as intraplaque hemorrhage, ulceration,
+          lipid-rich necrotic core, and thin fibrous cap.
+        diagnosis_term:
+          preferred_term: vascular imaging
+        results: Identifies high-risk plaque composition and may refine stroke-risk stratification.
+      selected_evidence:
+        snippet: Recognizing these macroscopic characteristics is crucial for estimating the risk of cerebrovascular
+          events, also in the case of non-significant (less than 50%) stenosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/ijms25084351
+      reference_title: 'Molecular Pathways of Vulnerable Carotid Plaques at Risk of Ischemic Stroke: A
+        Narrative Review'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports using plaque characteristics, not stenosis percentage alone, for cerebrovascular
+        risk stratification.
+    first_seen_at: '2026-09-25T14:52:04.280973+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      reference: DOI:10.3390/ijms25084351
+  340a515983a477783c55a7bb05df9c931bffde48e66e8a5d6199cea031e3610a:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Optimal medical therapy and risk-factor modification
+        description: Intensive medical management includes antithrombotic and lipid-lowering strategies,
+          treatment of hypertension, diabetes and other vascular risk factors, smoking cessation, diet
+          and exercise changes, and shared decision-making about revascularization.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: Both surgical and medical regimens are beneficial in treating patients, but it is still
+          an ongoing debate as to which is predominantly superior.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37303351
+      reference_title: 'Carotid Artery Stenosis: A Look Into the Diagnostic and Management Strategies,
+        and Related Complications.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports medical therapy as beneficial while preserving uncertainty about treatment
+        selection.
+    first_seen_at: '2026-09-25T14:52:04.520900+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:37303351
+  9a8f6570336dd70e0447b59842d55fef96341214e0485b21d0b221b3ba97aab0:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Carotid endarterectomy
+        description: Carotid endarterectomy surgically removes plaque from the carotid artery and is a
+          major evidence-backed revascularization option for selected symptomatic high-grade stenosis
+          and selected asymptomatic stenosis patients at acceptable perioperative risk.
+        treatment_term:
+          preferred_term: Carotid Endarterectomy
+          term:
+            id: NCIT:C157807
+            label: Carotid Endarterectomy
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+        - preferred_term: Transient ischemic attack
+          term:
+            id: HP:0002326
+            label: Transient ischemic attack
+      selected_evidence:
+        snippet: Carotid endarterectomy is highly beneficial to patients with recent hemispheric and retinal
+          transient ischemic attacks or nondisabling strokes and ipsilateral high-grade stenosis (70 to
+          99 percent) of the internal carotid artery.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:1852179
+      reference_title: Beneficial effect of carotid endarterectomy in symptomatic patients with high-grade
+        carotid stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This randomized trial abstract directly supports carotid endarterectomy for symptomatic
+        high-grade carotid stenosis.
+    first_seen_at: '2026-09-25T14:52:04.649103+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:1852179
+  37eece86e5af6e21374a2e7e0a21bc7650785b1f364d9ac82ae75f6ec8c609af:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Carotid artery stenting
+        description: Carotid artery stenting is an endovascular revascularization option for selected
+          internal carotid stenosis patients, with patient selection, embolic-protection strategy, age,
+          and periprocedural stroke versus myocardial-infarction tradeoffs influencing choice relative
+          to endarterectomy.
+        treatment_term:
+          preferred_term: angioplasty
+          term:
+            id: NCIT:C51999
+            label: Angioplasty
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: Carotid artery stenting has an established role in the management of internal carotid
+          artery stenosis; this Standards of Practice document provides up-to-date recommendations for
+          its safe performance.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38683353
+      reference_title: CIRSE Standards of Practice on Carotid Artery Stenting.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This standards abstract supports carotid artery stenting as an established management
+        option for selected internal carotid artery stenosis.
+    first_seen_at: '2026-09-25T14:52:04.897279+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:38683353
+  3aeb2a7e975ccb0101f683e5f58d315c3af80d4d90e82be29127500590a8e428:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Carotid artery stenting
+        description: Carotid artery stenting is an endovascular revascularization option for selected
+          internal carotid stenosis patients, with patient selection, embolic-protection strategy, age,
+          and periprocedural stroke versus myocardial-infarction tradeoffs influencing choice relative
+          to endarterectomy.
+        treatment_term:
+          preferred_term: angioplasty
+          term:
+            id: NCIT:C51999
+            label: Angioplasty
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: Carotid-artery stenting and carotid endarterectomy are both options for treating carotid-artery
+          stenosis, an important cause of stroke.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20505173
+      reference_title: Stenting versus endarterectomy for treatment of carotid-artery stenosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The CREST abstract supports stenting and endarterectomy as comparative carotid stenosis
+        treatment options.
+    first_seen_at: '2026-09-25T14:52:05.037557+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      reference: PMID:20505173
+  56c7ffa01fd389c5be64f24cb2a1161fb308b6db3a2739b9564524abdf7b7740:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Carotid endarterectomy
+        description: Carotid endarterectomy surgically removes plaque from the carotid artery and is a
+          major evidence-backed revascularization option for selected symptomatic high-grade stenosis
+          and selected asymptomatic stenosis patients at acceptable perioperative risk.
+        treatment_term:
+          preferred_term: Carotid Endarterectomy
+          term:
+            id: NCIT:C157807
+            label: Carotid Endarterectomy
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+        - preferred_term: Transient ischemic attack
+          term:
+            id: HP:0002326
+            label: Transient ischemic attack
+      selected_evidence:
+        snippet: Patients with asymptomatic carotid artery stenosis of 60% or greater reduction in diameter
+          and whose general health makes them good candidates for elective surgery will have a reduced
+          5-year risk of ipsilateral stroke if carotid endarterectomy performed with less than 3% perioperative
+          morbidity and mortality is added to aggressive management of modifiable risk factors.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7723155
+      reference_title: Endarterectomy for asymptomatic carotid artery stenosis. Executive Committee for
+        the Asymptomatic Carotid Atherosclerosis Study.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports selected use of carotid endarterectomy in asymptomatic stenosis under
+        low perioperative risk conditions.
+    first_seen_at: '2026-09-25T14:52:04.896664+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      reference: PMID:7723155
+  fd7c6d9a1d80da319548e7542633ced973b783ff80a1de350cfd2fc8220b5c6f:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT00004732
+        phase: NOT_APPLICABLE
+        status: COMPLETED
+        description: CREST compared stent-assisted carotid angioplasty with carotid endarterectomy for
+          symptomatic and asymptomatic carotid artery stenosis.
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: The purpose of the Carotid Revascularization Endarterectomy versus Stenting Trial (CREST)
+          is to compare the relatively new procedure of stent-assisted carotid angioplasty (CAS) to the
+          traditional and accepted surgical approach of carotid endarterectomy (CEA) for the treatment
+          of carotid artery stenosis to prevent recurrent strokes in those patients who have had a TIA
+          (transient ischemic attack) or a mild stroke within the past 6 months (symptomatic) and in those
+          patients who have not had any symptoms within the past 6 months (asymptomatic).
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT00004732
+      reference_title: Carotid Revascularization Endarterectomy Versus Stenting Trial (CREST)
+      evidence_source: HUMAN_CLINICAL
+      explanation: The trial summary directly supports CREST as a comparative stenting-versus-endarterectomy
+        trial for symptomatic and asymptomatic carotid stenosis.
+    first_seen_at: '2026-09-25T14:52:05.226335+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      reference: clinicaltrials:NCT00004732
+  75e7e202ec6313de1a88ab2d7434cb25598e1522a1183bddc5d26b4d61dffe88:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT02089217
+        phase: NOT_APPLICABLE
+        status: COMPLETED
+        description: CREST-2 compared carotid endarterectomy plus intensive medical management and carotid
+          stenting plus intensive medical management against intensive medical management alone in asymptomatic
+          high-grade carotid stenosis.
+        target_phenotypes:
+        - preferred_term: Ischemic stroke
+          term:
+            id: HP:0002140
+            label: Ischemic stroke
+      selected_evidence:
+        snippet: Carotid revascularization for primary prevention of stroke (CREST-2) is two independent
+          multicenter, randomized controlled trials of carotid revascularization and intensive medical
+          management versus medical management alone in patients with asymptomatic high-grade carotid
+          stenosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT02089217
+      reference_title: Carotid Revascularization and Medical Management for Asymptomatic Carotid Stenosis
+        Trial
+      evidence_source: HUMAN_CLINICAL
+      explanation: The trial summary directly supports CREST-2 as a randomized comparison of revascularization
+        plus intensive medical management versus medical management alone.
+    first_seen_at: '2026-09-25T14:52:05.450986+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      reference: clinicaltrials:NCT02089217
+  d9291666f5366aeb8cd12742fca2f17cf5c19ca232f57cbd998b33392baa591f:
+    claim:
+      about:
+        disease:
+          name: Carotid Stenosis
+          disease_term:
+            preferred_term: carotid stenosis
+            term:
+              id: MONDO:0001612
+              label: carotid stenosis
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT03121209
+        phase: PHASE_III
+        status: ACTIVE_NOT_RECRUITING
+        description: CREST-H is a CREST-2 ancillary study testing whether hemodynamic impairment and cognitive
+          impairment in high-grade asymptomatic carotid stenosis improve after restoration of flow.
+        target_phenotypes:
+        - preferred_term: Cognitive impairment
+          term:
+            id: HP:0100543
+            label: Cognitive impairment
+      selected_evidence:
+        snippet: CREST-H addresses the intriguing question of whether cognitive impairment can be reversed
+          when it arises from abnormal cerebral hemodynamic perfusion in a hemodynamically impaired subset
+          of the CREST-2 -randomized patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/2
+      evidence_path: /clinical_trials/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT03121209
+      reference_title: Carotid Revascularization and Medical Management for Asymptomatic Carotid Stenosis
+        Trial - Hemodynamics
+      evidence_source: HUMAN_CLINICAL
+      explanation: The trial summary supports CREST-H as a hemodynamic cognitive-outcomes study nested
+        in CREST-2.
+    first_seen_at: '2026-09-25T14:52:05.739176+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:22:41.525597+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:22:41.525597+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/2
+      evidence_path: /clinical_trials/2/evidence/0
+      reference: clinicaltrials:NCT03121209
+assessments:
+  ca5519f39ece714c6c9a09ca7c727244edf7513a214b8f7573a994d9d13a726c:
+    input_sha256: ee1e710f040862695d16599f06fc55bacb68a35cbf276ffd1708356f5092c269
+    configuration_sha256: a189e0a553b607a410a2b022c9608f9feab76388e8de26e94b29aa765de96783
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:00.150198+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.03
+            MATCH: 0.33
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.05
+            MATCH: 0.58
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.06
+            MATCH: 0.65
+          confidence: 0.49
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.01
+            MATCH: 0.87
+          confidence: 0.82
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.17
+            MATCH: 0.23
+          confidence: 0.41
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.03
+            MATCH: 0.39
+          confidence: 0.38
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.14
+            MATCH: 0.34
+          confidence: 0.27
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.28
+            MATCH: 0.17
+          confidence: 0.32
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.25
+            MATCH: 0.04
+          confidence: 0.56
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.28
+            MATCH: 0.05
+          confidence: 0.51
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.12
+            MATCH: 0.3
+          confidence: 0.37
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.17
+            MATCH: 0.23
+          confidence: 0.39
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.15
+            MATCH: 0.19
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13636
+        output_tokens: 636
+      elapsed_seconds: 0.5506
+      request_sha256: a1719cc1153043472daf3120a9794281b720c4bc23c349f398b4e47b17f0c785
+      request_sha256s:
+      - a1719cc1153043472daf3120a9794281b720c4bc23c349f398b4e47b17f0c785
+  6ce4329949e0939a10c0869cc2b10e506814997c869ea5df73e838c4a4f0efd3:
+    input_sha256: 7309e6dd585ef732bcbd95be1cd4bd65e372939be27d74b7dc1a5dac21b09e10
+    configuration_sha256: ab04779ee67df9a33bf9ac79d6f94634484e0d03375f297dacb2f6bc0f430157
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:00.148257+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.61
+            MISMATCH: 0.05
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            PARTIAL: 0.06
+            MISMATCH: 0.0
+          confidence: 0.9
+        /assertion/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.72
+            MISMATCH: 0.23
+          confidence: 0.58
+        /assertion/percentage:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.2
+            MISMATCH: 0.02
+          confidence: 0.66
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.4
+            MISMATCH: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5230
+        output_tokens: 228
+      elapsed_seconds: 0.4856
+      request_sha256: 68399816c9493d2d6596406e8138dab647969badf333eab958208e5d27b40f9f
+      request_sha256s:
+      - 68399816c9493d2d6596406e8138dab647969badf333eab958208e5d27b40f9f
+  261cf2f3464862dfd60c1df84264f8bf3e5695dd997f65e70699d77d29a823bd:
+    input_sha256: 0a6c5a952c62ef516005fcd76ba750746306df77432e7b36054d77b1da6b4e7b
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.096719+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.81
+            MISMATCH: 0.03
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.72
+            MISMATCH: 0.08
+          confidence: 0.57
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.82
+            MISMATCH: 0.05
+          confidence: 0.74
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.9
+            MISMATCH: 0.01
+          confidence: 0.85
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.92
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/intermediate_mechanisms:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.86
+            MISMATCH: 0.02
+          confidence: 0.8
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.4
+            MISMATCH: 0.37
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7716
+        output_tokens: 317
+      elapsed_seconds: 0.3421
+      request_sha256: d1e8810da8965ebf98d7e34958be8d25456dfa714ea137d2ea5988aed8915ebf
+      request_sha256s:
+      - d1e8810da8965ebf98d7e34958be8d25456dfa714ea137d2ea5988aed8915ebf
+  534af66d08fb5ab9168221412f8a223c5797fccd0d29915a506e2c00b5b9b3ee:
+    input_sha256: b53deac1be9bda114736b94863894b8d349c2c6f2722cd50572b36d08c673a64
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.062615+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.71
+            MISMATCH: 0.07
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.4
+            MISMATCH: 0.1
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.39
+            MISMATCH: 0.07
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.8
+            MISMATCH: 0.07
+          confidence: 0.71
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.44
+            MISMATCH: 0.1
+          confidence: 0.2
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.59
+            MISMATCH: 0.34
+          confidence: 0.39
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.37
+            MISMATCH: 0.28
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7633
+        output_tokens: 321
+      elapsed_seconds: 0.3961
+      request_sha256: 2408386445ac33fc17167fa84e6ea9c16c21169c7cbbf2d7ef84924abd0208db
+      request_sha256s:
+      - 2408386445ac33fc17167fa84e6ea9c16c21169c7cbbf2d7ef84924abd0208db
+  c2fa4c4735137ca5d77a25dbea71b1b611e7173de3f1726e190fa4b468ad0409:
+    input_sha256: ee76ac21fc9601895d7bd3892d3d8ae912594288467d751c505afe8ec64ed6be
+    configuration_sha256: 0649594d25e84ccc93582988ba6dd654d1c5a2acc995def9e8ccf443ec75a0ec
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.095345+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.58
+            MISMATCH: 0.03
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.39
+            MISMATCH: 0.08
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.78
+            MISMATCH: 0.03
+          confidence: 0.68
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.86
+            MISMATCH: 0.01
+          confidence: 0.79
+        /assertion/conforms_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.53
+            MISMATCH: 0.07
+          confidence: 0.3
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.86
+            MISMATCH: 0.01
+          confidence: 0.79
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.89
+            MISMATCH: 0.03
+          confidence: 0.84
+        /assertion/cell_types/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.89
+            MISMATCH: 0.02
+          confidence: 0.84
+        /assertion/cell_types/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.83
+            MISMATCH: 0.03
+          confidence: 0.76
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.07
+            MISMATCH: 0.3
+          confidence: 0.45
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.13
+            MISMATCH: 0.21
+          confidence: 0.48
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.84
+            MISMATCH: 0.01
+          confidence: 0.76
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.78
+            MISMATCH: 0.02
+          confidence: 0.67
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.84
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18839
+        output_tokens: 891
+      elapsed_seconds: 0.4217
+      request_sha256: 05fadc2c1fc85351a55832485f797d55e359675df804f2ee50157c6d2f228fb9
+      request_sha256s:
+      - 05fadc2c1fc85351a55832485f797d55e359675df804f2ee50157c6d2f228fb9
+  749ff11b9ffe034e1584d4047c101965742fcdc4acf74ed38a6a2002c282ac5d:
+    input_sha256: e70484e9cc00459c622bfb8beb8d109183d5ae44b83d3793c66c8821341605c8
+    configuration_sha256: 0649594d25e84ccc93582988ba6dd654d1c5a2acc995def9e8ccf443ec75a0ec
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.064207+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.81
+            MATCH: 0.14
+          confidence: 0.71
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.13
+            MATCH: 0.23
+          confidence: 0.45
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.57
+            MATCH: 0.36
+          confidence: 0.36
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.22
+            MATCH: 0.11
+          confidence: 0.51
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.62
+            MATCH: 0.28
+          confidence: 0.43
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.86
+            MATCH: 0.08
+          confidence: 0.79
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+            MATCH: 0.91
+          confidence: 0.87
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.03
+            MATCH: 0.87
+          confidence: 0.81
+        /assertion/cell_types/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+            MATCH: 0.93
+          confidence: 0.9
+        /assertion/cell_types/1/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            PARTIAL: 0.6
+            MATCH: 0.1
+          confidence: 0.41
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.58
+            MATCH: 0.2
+          confidence: 0.38
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.33
+            MATCH: 0.63
+          confidence: 0.45
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.24
+            MATCH: 0.73
+          confidence: 0.59
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.63
+            MATCH: 0.25
+          confidence: 0.43
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.54
+            MATCH: 0.05
+          confidence: 0.31
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            PARTIAL: 0.6
+            MATCH: 0.09
+          confidence: 0.4
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.46
+            PARTIAL: 0.52
+            MATCH: 0.02
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18834
+        output_tokens: 900
+      elapsed_seconds: 0.4721
+      request_sha256: 48d9c26cad04c68ee7770c730a2b12342f565ea86386ae131ebbeb71b27634b6
+      request_sha256s:
+      - 48d9c26cad04c68ee7770c730a2b12342f565ea86386ae131ebbeb71b27634b6
+  11979c653898172b481cb89ed6001f07defc98b1b55698605bb7f74424bbd386:
+    input_sha256: 6f35bf04308adb2827f4b484305676caab5353c03f75f6d7ffa8ad1f914b132e
+    configuration_sha256: 796019b59754693a8573e5f49b77aac09cc0d2794ad5b456c20603f5866e6700
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.457495+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.01
+            MATCH: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.01
+            MATCH: 0.82
+          confidence: 0.74
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.04
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.13
+            MATCH: 0.23
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.02
+            MATCH: 0.31
+          confidence: 0.5
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.22
+            MATCH: 0.24
+          confidence: 0.32
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.44
+            MATCH: 0.09
+          confidence: 0.21
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.08
+            MATCH: 0.27
+          confidence: 0.47
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.15
+            MATCH: 0.12
+          confidence: 0.59
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MISMATCH: 0.08
+            MATCH: 0.2
+          confidence: 0.58
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.09
+            MATCH: 0.35
+          confidence: 0.35
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.12
+            MATCH: 0.22
+          confidence: 0.48
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.08
+            MATCH: 0.33
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14872
+        output_tokens: 699
+      elapsed_seconds: 0.4111
+      request_sha256: 567ef7ab809321a082a6cf32a94adfe851d9d3f9a49574748dbd116d93093221
+      request_sha256s:
+      - 567ef7ab809321a082a6cf32a94adfe851d9d3f9a49574748dbd116d93093221
+  195f25acf4dc337cc5d598051150b6b2d77de7ab78b0b81353ef7a5f69b95a30:
+    input_sha256: a5399e768b47e8894d83ababfd1ad10d384f4635a382e4e3becabe9466191e3b
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.548205+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.49
+            PARTIAL: 0.46
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.69
+            PARTIAL: 0.24
+          confidence: 0.53
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.45
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.44
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.08
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.37
+            PARTIAL: 0.3
+          confidence: 0.05
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7597
+        output_tokens: 320
+      elapsed_seconds: 0.3828
+      request_sha256: 344fed895e8ee47e222bc3e8969bd2f1c0646398e72329f1ea1be096eb368974
+      request_sha256s:
+      - 344fed895e8ee47e222bc3e8969bd2f1c0646398e72329f1ea1be096eb368974
+  f485abae4902500dc7e16f236d8ec0666d8678ea7712272f007cad0a0623c12b:
+    input_sha256: a2cbb42e022622b86ad917218f184ef0d2b213863ac3ad5f32f18f2e1c3aa38f
+    configuration_sha256: 796019b59754693a8573e5f49b77aac09cc0d2794ad5b456c20603f5866e6700
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.479665+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.02
+            MATCH: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.06
+            MATCH: 0.59
+          confidence: 0.39
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.02
+            MATCH: 0.78
+          confidence: 0.66
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.03
+            MATCH: 0.57
+          confidence: 0.35
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.04
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.36
+            MISMATCH: 0.02
+          confidence: 0.42
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.89
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.49
+            MISMATCH: 0.06
+          confidence: 0.23
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.27
+            MISMATCH: 0.1
+          confidence: 0.44
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.06
+            MATCH: 0.44
+          confidence: 0.24
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.02
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.76
+            MISMATCH: 0.03
+          confidence: 0.63
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.01
+            MATCH: 0.8
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14878
+        output_tokens: 692
+      elapsed_seconds: 0.5096
+      request_sha256: e185a026d80665ad6a11ce084c81e34e497c99fa8d853607447203fd4a44e1ef
+      request_sha256s:
+      - e185a026d80665ad6a11ce084c81e34e497c99fa8d853607447203fd4a44e1ef
+  7c55640d4b062619d01714e36b5a93886de3c09ecea3f2b1aa044f9d4ad1f83b:
+    input_sha256: eba62d10584977194426c80b128cf84fc44cd8ef6c85f9bbf2df529ccd88cb2f
+    configuration_sha256: dc9986899f30e823f1288a077b8ab03e5781373c62f5e9bf019cb2e6b3c5a536
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.581682+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.57
+            MISMATCH: 0.4
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.62
+            MISMATCH: 0.26
+          confidence: 0.44
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.35
+            MISMATCH: 0.64
+          confidence: 0.45
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.59
+            MISMATCH: 0.2
+          confidence: 0.38
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.59
+            MISMATCH: 0.19
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.4
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.34
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.36
+            MISMATCH: 0.61
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9488
+        output_tokens: 453
+      elapsed_seconds: 0.5285
+      request_sha256: 8090d68cc1b905391c7727c55cb1adb29b03aa57ee601fa83d879849b0229b07
+      request_sha256s:
+      - 8090d68cc1b905391c7727c55cb1adb29b03aa57ee601fa83d879849b0229b07
+  47f0b883b46f436f25f4dfa5c1ef49968f302368d1c0909cc1d13c239ce17ac2:
+    input_sha256: aa92e0bc1f42b132a0523b04880b74d8b9aea12ba0fed77018030675101996f6
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.037794+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MISMATCH: 0.13
+            MATCH: 0.18
+          confidence: 0.53
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.23
+            MATCH: 0.15
+          confidence: 0.44
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.09
+            MATCH: 0.27
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MISMATCH: 0.11
+            MATCH: 0.15
+          confidence: 0.61
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.07
+            MATCH: 0.34
+          confidence: 0.39
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.16
+            MATCH: 0.36
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6902
+        output_tokens: 274
+      elapsed_seconds: 0.3517
+      request_sha256: 786d41f2fd53e2b0f63f2ccfd65eff8e56fef477fd0290e84b3b279ce309cb5f
+      request_sha256s:
+      - 786d41f2fd53e2b0f63f2ccfd65eff8e56fef477fd0290e84b3b279ce309cb5f
+  bc3926765150fae0049e05f8efe5a654c0576efdd941d92b7a73f94e8878cfb9:
+    input_sha256: c0e49de6bf4c3080582848fb3dbb14a10a024845e0773c5bc06ec783d2eeefba
+    configuration_sha256: e013c7cdae2820e6cb3c213a7a70d55059396539f48f833838235b131fd6eef1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.910926+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.26
+            PARTIAL: 0.72
+          confidence: 0.59
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.14
+            PARTIAL: 0.66
+          confidence: 0.5
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.27
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.23
+            PARTIAL: 0.5599999999999999
+          confidence: 0.35
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.22
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.12
+            PARTIAL: 0.4
+          confidence: 0.22
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.45
+            MATCH: 0.17
+          confidence: 0.19
+        /assertion/cell_types/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.13
+            PARTIAL: 0.44
+          confidence: 0.17
+        /assertion/cell_types/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.44
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.2
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.15
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.1
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.36
+            MATCH: 0.07
+          confidence: 0.35
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.08
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.46
+            MATCH: 0.09
+          confidence: 0.19
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.07
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.09
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/biological_processes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.08
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/2/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.23
+        /assertion/biological_processes/2/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.67
+            MISMATCH: 0.25
+          confidence: 0.51
+        /assertion/biological_processes/3/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.03
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/biological_processes/3/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.03
+            PARTIAL: 0.44
+          confidence: 0.29
+        /assertion/biological_processes/3/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.07
+            PARTIAL: 0.62
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 27333
+        output_tokens: 1349
+      elapsed_seconds: 0.5072
+      request_sha256: 9d24a12f4f7c56630ee8eda194e248797685c291552ba9b5aac72a7465238739
+      request_sha256s:
+      - 9d24a12f4f7c56630ee8eda194e248797685c291552ba9b5aac72a7465238739
+  338be3139e50252b47019045a1180b1fff7c118d41b905c93ec3bd4309f70b99:
+    input_sha256: ebdb9af66d9bec173b163135feb01a278c98f446e6d250c4dd7553a996d37e6d
+    configuration_sha256: e013c7cdae2820e6cb3c213a7a70d55059396539f48f833838235b131fd6eef1
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:01.974306+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.02
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.06
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.03
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.05
+            PARTIAL: 0.34
+          confidence: 0.42
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.25
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.01
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.2
+            PARTIAL: 0.66
+          confidence: 0.48
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.32
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.5
+            PARTIAL: 0.43
+          confidence: 0.24
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.45
+            PARTIAL: 0.44
+          confidence: 0.19
+        /assertion/cell_types/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.44
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/cell_types/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.52
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.33
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.31
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.21
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.26
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.2
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.06
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.19
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.09
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/biological_processes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.05
+            PARTIAL: 0.5599999999999999
+          confidence: 0.35
+        /assertion/biological_processes/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.11
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/2/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.06
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/3/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.18
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/biological_processes/3/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.19
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/biological_processes/3/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.14
+            PARTIAL: 0.66
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 27324
+        output_tokens: 1342
+      elapsed_seconds: 0.5459
+      request_sha256: 2d0d097919d1d3efeb1823fe416cc55ce290d2ead6b82a129c3aa5ac2d6b8722
+      request_sha256s:
+      - 2d0d097919d1d3efeb1823fe416cc55ce290d2ead6b82a129c3aa5ac2d6b8722
+  cea474c128d769ce51b6020748a8c1ff009084dd4123624990a14d1c99ac9e8e:
+    input_sha256: dcac18a10327ce6f7681678f24315221f76be73c38bfdcf5e8e9129b6804fd61
+    configuration_sha256: 796019b59754693a8573e5f49b77aac09cc0d2794ad5b456c20603f5866e6700
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.192311+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.85
+            MATCH: 0.07
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.44
+            MATCH: 0.52
+          confidence: 0.28
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.76
+            MATCH: 0.05
+          confidence: 0.64
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.51
+            MATCH: 0.39
+          confidence: 0.27
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            PARTIAL: 0.65
+            MATCH: 0.07
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.86
+            MATCH: 0.03
+          confidence: 0.79
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.64
+            MATCH: 0.18
+          confidence: 0.45
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            PARTIAL: 0.54
+            MATCH: 0.15
+          confidence: 0.31
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.72
+            MATCH: 0.22
+          confidence: 0.58
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.71
+            MATCH: 0.22
+          confidence: 0.57
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.74
+            MATCH: 0.18
+          confidence: 0.62
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.71
+            MATCH: 0.18
+          confidence: 0.56
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.68
+            MATCH: 0.2
+          confidence: 0.53
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.73
+            MATCH: 0.12
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14869
+        output_tokens: 701
+      elapsed_seconds: 0.5189
+      request_sha256: d96cddbe4d2a5fe909b45e1bdbad01d132773ee18714ac62d8591c3bd470a7bd
+      request_sha256s:
+      - d96cddbe4d2a5fe909b45e1bdbad01d132773ee18714ac62d8591c3bd470a7bd
+  b1cc5239515903f0f5372d4fb37c886add07eb659b3e2c699ad79170120683f4:
+    input_sha256: 14cca84ccab77873b28a95ed96196dbc2f9c0fb1b5c7c1565f2e8f2a930ea251
+    configuration_sha256: e601bfc075801aae3629aeb678e06d6e66218bf6ea4d7ee28178f68041cba960
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.525698+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.02
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.02
+            PARTIAL: 0.4
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.02
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.1
+            PARTIAL: 0.6799999999999999
+          confidence: 0.53
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.07
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.14
+            PARTIAL: 0.73
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7530
+        output_tokens: 342
+      elapsed_seconds: 0.3404
+      request_sha256: fadc9111c98f9d6a85ad2561342888c535879520969ce6ac06155660c827a4bb
+      request_sha256s:
+      - fadc9111c98f9d6a85ad2561342888c535879520969ce6ac06155660c827a4bb
+  54bebdf42166767a49d52d7ffcdb31caade4d2a27acb24131ce7727f90137eed:
+    input_sha256: 420aca32eb1359bba7f0b317dfd59c486ee0f705052c8f1fca8b88e5d9afcfea
+    configuration_sha256: 796019b59754693a8573e5f49b77aac09cc0d2794ad5b456c20603f5866e6700
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.450609+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.32
+            PARTIAL: 0.64
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.43
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.21
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.41
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.34
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.54
+            PARTIAL: 0.38
+          confidence: 0.31
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.55
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.65
+            PARTIAL: 0.31
+          confidence: 0.48
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.65
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.49
+            PARTIAL: 0.44
+          confidence: 0.23
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.45
+            PARTIAL: 0.5
+          confidence: 0.24
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14906
+        output_tokens: 693
+      elapsed_seconds: 0.434
+      request_sha256: bbe98685bb41c758b516234f95349062d2550fe51370f63d2c1700e7cf9dd4f3
+      request_sha256s:
+      - bbe98685bb41c758b516234f95349062d2550fe51370f63d2c1700e7cf9dd4f3
+  7502b45102d177f619a655957c21629f59be78aebd716a8fc67d563e60300729:
+    input_sha256: 5ec38416888dd66afaf75037031f4ae6e943c1c6de2a32f43e1959129313fe28
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.596855+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+          confidence: 0.95
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4350
+        output_tokens: 175
+      elapsed_seconds: 0.3114
+      request_sha256: 62f92a7b2c95496013e94bae22d6115dbc44d8365d530fa32bce2689c6f468c9
+      request_sha256s:
+      - 62f92a7b2c95496013e94bae22d6115dbc44d8365d530fa32bce2689c6f468c9
+  342ad49487ea17b2411b438cdf974f125954c1934fa7f4658e294e27ae008cd1:
+    input_sha256: 1b88660ff140c8b8a702f944a212094c4801070a35526379ec631f349d9834ee
+    configuration_sha256: 048ea02a8ae6c43b5302f8ee07a5485970878a192df74d966778faa136a5ac5b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.789387+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.48
+            MISMATCH: 0.06
+          confidence: 0.21
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.54
+            MISMATCH: 0.13
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.9
+            MISMATCH: 0.03
+          confidence: 0.86
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.19
+            MISMATCH: 0.39
+          confidence: 0.12
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.11
+            MISMATCH: 0.4
+          confidence: 0.23
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.86
+            MISMATCH: 0.03
+          confidence: 0.8
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.83
+            MISMATCH: 0.04
+          confidence: 0.74
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8178
+        output_tokens: 364
+      elapsed_seconds: 0.3459
+      request_sha256: 2d1b819025b78e00f1ddafcfe0e30394049d82bb151c93cc97b363fe54562559
+      request_sha256s:
+      - 2d1b819025b78e00f1ddafcfe0e30394049d82bb151c93cc97b363fe54562559
+  33905b0524c41b3225a7c434a459e02e20e35029f281bc55611c9220fa0b3022:
+    input_sha256: 92de16893cb43936d7ed356e8f851c308090a23336cbbeb31b05e35c77a004f6
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:02.948784+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.43
+            MISMATCH: 0.02
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+          confidence: 0.96
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.25
+            MISMATCH: 0.2
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.21
+            MISMATCH: 0.03
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.71
+            MISMATCH: 0.18
+          confidence: 0.57
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.18
+            MISMATCH: 0.02
+          confidence: 0.7
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.22
+            MISMATCH: 0.02
+          confidence: 0.63
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7192
+        output_tokens: 317
+      elapsed_seconds: 0.3531
+      request_sha256: ebfcaaeb42775b4cb229317ce24f35c9975d920bf99f1841c081c787b855add7
+      request_sha256s:
+      - ebfcaaeb42775b4cb229317ce24f35c9975d920bf99f1841c081c787b855add7
+  86a1a3369c8bdf4a8c6e0731d505ef06780a8287971bad1f54004461a45c43b6:
+    input_sha256: 8708fe5aa61394dd4e040274d3d4761078f3e556776de79489542de3f733cb57
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.118602+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.75
+            MISMATCH: 0.03
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.71
+            PARTIAL: 0.17
+          confidence: 0.57
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.37
+            MISMATCH: 0.2
+          confidence: 0.15
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.93
+            MISMATCH: 0.01
+          confidence: 0.89
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.93
+            MISMATCH: 0.01
+          confidence: 0.89
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7217
+        output_tokens: 317
+      elapsed_seconds: 0.3321
+      request_sha256: 7a84475779be40ed4a813190c19af2d0181a9382981f5654787cfa29b034b38b
+      request_sha256s:
+      - 7a84475779be40ed4a813190c19af2d0181a9382981f5654787cfa29b034b38b
+  4391d98915c27cdc76cbe784c8f91625437751f5ae39c3465d42f67055a7dc27:
+    input_sha256: 6ea6abc1021248e0032ef9466ba228c3a49f3eb71c291f0134ae6f949f9cc63f
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.118958+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.04
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.14
+            MATCH: 0.52
+          confidence: 0.29
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.13
+            MATCH: 0.27
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.13
+            MATCH: 0.26
+          confidence: 0.41
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.06
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.05
+            MATCH: 0.4
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7216
+        output_tokens: 321
+      elapsed_seconds: 0.3592
+      request_sha256: bced46129d40c10f0fe4cfa131684d82d3b005dca411b75a94858aa9e729fa52
+      request_sha256s:
+      - bced46129d40c10f0fe4cfa131684d82d3b005dca411b75a94858aa9e729fa52
+  598275c62871d1ad22a918fd9cfc188e54b24f5e2f4e8bdc6c3a8027b3d0a2ed:
+    input_sha256: a1b34ead4e996e9367fb28b2df7efd74b5d74cf478044ae4a5b024e533df4b69
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.235003+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.04
+            MATCH: 0.17
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.7
+            MISMATCH: 0.02
+          confidence: 0.55
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.44
+            MISMATCH: 0.13
+          confidence: 0.17
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.4
+            MISMATCH: 0.03
+          confidence: 0.36
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MATCH: 0.18
+            MISMATCH: 0.04
+          confidence: 0.68
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.44
+            MISMATCH: 0.03
+          confidence: 0.3
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.47
+            MISMATCH: 0.03
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7216
+        output_tokens: 321
+      elapsed_seconds: 0.3496
+      request_sha256: 4fbba650ed189a813d5d49195e3d642d7c9e31c92dab23bf7d47560b9f7fd80d
+      request_sha256s:
+      - 4fbba650ed189a813d5d49195e3d642d7c9e31c92dab23bf7d47560b9f7fd80d
+  8cb3f63c1d1be1dd8d64f3784d866ba9ead1a78c55b59ae9c18afd3cf5bc8db1:
+    input_sha256: a4214a98487d45c02554aa89d40287c9ae196bb7b00cbd981d3640b395279911
+    configuration_sha256: 9d58a32199d8ec9edc223b8ae74001cb1564183aa58644112faa2718a571d647
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.397466+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            PARTIAL: 0.34
+            MATCH: 0.02
+          confidence: 0.46
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.45
+            MATCH: 0.13
+          confidence: 0.18
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            PARTIAL: 0.27
+            MATCH: 0.01
+          confidence: 0.57
+        /assertion/age_range:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.77
+            PARTIAL: 0.23
+            MATCH: 0.0
+          confidence: 0.65
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            PARTIAL: 0.36
+            MATCH: 0.03
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5235
+        output_tokens: 235
+      elapsed_seconds: 0.3438
+      request_sha256: d1509839bbaee7f2ece5a8c0a43e192525b5326d638f61ddd05dd3cd0daf9e0e
+      request_sha256s:
+      - d1509839bbaee7f2ece5a8c0a43e192525b5326d638f61ddd05dd3cd0daf9e0e
+  a774a646ba50fb57111e0c8baf5188e6d33908b849ead5aa28755f6ef2ae6757:
+    input_sha256: 8353998fe1cbdb2cd12e5caa5b1128148c13c94a3c1b3c3281eb52dc50b60db2
+    configuration_sha256: 9d58a32199d8ec9edc223b8ae74001cb1564183aa58644112faa2718a571d647
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.549554+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.35
+            MISMATCH: 0.02
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.94
+            PARTIAL: 0.06
+          confidence: 0.91
+        /assertion/age_range:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.01
+            MISMATCH: 0.52
+          confidence: 0.28
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.92
+            MISMATCH: 0.0
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5243
+        output_tokens: 224
+      elapsed_seconds: 0.3457
+      request_sha256: 2c21d6d951f73bbc94f109c3b440b5d0e03a0e459ceca139dc8f4d27be72c001
+      request_sha256s:
+      - 2c21d6d951f73bbc94f109c3b440b5d0e03a0e459ceca139dc8f4d27be72c001
+  578cb7494c8170eee79463d4e0869ad42f0711272d8fb5c3052874a1f77974f5:
+    input_sha256: 8a2d2acf65ed31d73e590bc366209376ddb5000a6382a5779ff866ce6fa40c37
+    configuration_sha256: bf309af0f7b63e568d60d38eb15d02213fbff55c2cd506d83042224350f54b4e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.656722+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.62
+            MISMATCH: 0.03
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.57
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.94
+            MISMATCH: 0.0
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.58
+            MISMATCH: 0.03
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5212
+        output_tokens: 220
+      elapsed_seconds: 0.3746
+      request_sha256: 0fd126c1a7b6f94640d47a4e956247a7543fe975763d09a464933040070b2a72
+      request_sha256s:
+      - 0fd126c1a7b6f94640d47a4e956247a7543fe975763d09a464933040070b2a72
+  20a6b61cf29df57e63feb98aea0ef91bf84a119ff762a7b2571bea3b6cc6cbbb:
+    input_sha256: 7071ff1d6988a66873c0b7440394862fbc01e1371f1ec947cf26330a0772139d
+    configuration_sha256: bf309af0f7b63e568d60d38eb15d02213fbff55c2cd506d83042224350f54b4e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.761877+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.55
+            PARTIAL: 0.42
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.47
+            PARTIAL: 0.5
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.89
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.78
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.49
+            PARTIAL: 0.47
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5189
+        output_tokens: 221
+      elapsed_seconds: 0.3952
+      request_sha256: 3e7e0d840c45e07a58dd6f88e96a82a3833e91afbc6a4e134c4c563741a992e3
+      request_sha256s:
+      - 3e7e0d840c45e07a58dd6f88e96a82a3833e91afbc6a4e134c4c563741a992e3
+  062d53e465a21901d26d51ce18a85053adf3169700cea247161d5432b9a9ea2f:
+    input_sha256: e4a7e3b4683fd4a809b146616107257b73876783d2940b6cd109db61c72a09e2
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:03.870980+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.73
+            PARTIAL: 0.24
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.43
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/environmental_effect:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.58
+            PARTIAL: 0.4
+          confidence: 0.38
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.33
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7510
+        output_tokens: 317
+      elapsed_seconds: 0.3604
+      request_sha256: 189165c94e30df7ec8f63d266d8933b4fb0c0cb3e7d562bcf11b6fa868b3abfc
+      request_sha256s:
+      - 189165c94e30df7ec8f63d266d8933b4fb0c0cb3e7d562bcf11b6fa868b3abfc
+  5daf8b097bc7ab7f401bfd5c1d82463808dc7f03a00923347b37a57685866950:
+    input_sha256: cc7cf79bf342711a950349fdf51366b06cbc552fbf29062fb490fe0b8cf856d2
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.039571+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.62
+            MISMATCH: 0.03
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.66
+            MISMATCH: 0.03
+          confidence: 0.49
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.84
+            MISMATCH: 0.01
+          confidence: 0.76
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.69
+            MISMATCH: 0.09
+          confidence: 0.54
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.67
+            MISMATCH: 0.1
+          confidence: 0.51
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.2
+            MISMATCH: 0.21
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7244
+        output_tokens: 319
+      elapsed_seconds: 0.3572
+      request_sha256: 22b96e8bff627f3ca52721ca8a7b742bd0e870859e46af67245805cb99f2574c
+      request_sha256s:
+      - 22b96e8bff627f3ca52721ca8a7b742bd0e870859e46af67245805cb99f2574c
+  c2bbb61adf07a974dd4e8e72c4985a687589f4bdb9b714c4106c648940104676:
+    input_sha256: ae748824a0d42908c2e8389938bd39218ecfcb18356e17485eda83ea253cd01c
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.150443+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.57
+            MISMATCH: 0.02
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.23
+            MISMATCH: 0.06
+          confidence: 0.57
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.67
+            MISMATCH: 0.05
+          confidence: 0.52
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            PARTIAL: 0.11
+            MISMATCH: 0.07
+          confidence: 0.74
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.12
+            MISMATCH: 0.12
+          confidence: 0.64
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.12
+            MISMATCH: 0.01
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7201
+        output_tokens: 320
+      elapsed_seconds: 0.3731
+      request_sha256: 6927236a163c5f717f9bab4c9c5af037173b73a10b4fbd0fb4a71131ec005760
+      request_sha256s:
+      - 6927236a163c5f717f9bab4c9c5af037173b73a10b4fbd0fb4a71131ec005760
+  cc6b294a325b0ee89fdc90e1e84c93c2097b5837f5f140207078fa9a9d3acdc4:
+    input_sha256: d3e8a43130a65aa8c9f31448cf0c388ace54578ce93e01201e2db4cd86b990dc
+    configuration_sha256: d33953ff38907470f29c5f6aa095a7e451cb8c581ea71fd16618668b411d0ee6
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.280973+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.34
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.49
+            PARTIAL: 0.39
+          confidence: 0.23
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.34
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.21
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.44
+            PARTIAL: 0.51
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6267
+        output_tokens: 273
+      elapsed_seconds: 0.4843
+      request_sha256: ecadb7626f15f4942f89d559aa169df6d679c46de3b853bb3c194f46a0459ca7
+      request_sha256s:
+      - ecadb7626f15f4942f89d559aa169df6d679c46de3b853bb3c194f46a0459ca7
+  80017c3233eb57d3defa5fc684e586f1ed204eb0f1e242aa7e3f518753cdce67:
+    input_sha256: 340a515983a477783c55a7bb05df9c931bffde48e66e8a5d6199cea031e3610a
+    configuration_sha256: d83074d15ccb245cd420c875cb951218b01b0abc3f80ddd6cb7d4108fcca6889
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.520900+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.84
+            MATCH: 0.06
+          confidence: 0.76
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.65
+            MATCH: 0.31
+          confidence: 0.48
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.76
+            MATCH: 0.18
+          confidence: 0.63
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MISMATCH: 0.26
+            MATCH: 0.02
+          confidence: 0.58
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.66
+            MATCH: 0.29
+          confidence: 0.48
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.7
+            MATCH: 0.23
+          confidence: 0.55
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.31
+            MATCH: 0.02
+          confidence: 0.51
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.55
+            MATCH: 0.02
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8266
+        output_tokens: 387
+      elapsed_seconds: 0.382
+      request_sha256: 0f9e9988336d6cf91c063de879c19919900201974190832034b7849699f8b980
+      request_sha256s:
+      - 0f9e9988336d6cf91c063de879c19919900201974190832034b7849699f8b980
+  d76f70c8a9ae740cc3fc3ccd9fa21e1b3a40438e986cfd72a91490e0952b0dda:
+    input_sha256: 9a8f6570336dd70e0447b59842d55fef96341214e0485b21d0b221b3ba97aab0
+    configuration_sha256: a61f6b8dcce34d0939776dffce790c701c208542aa69ae883cffc748299b9c10
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.649103+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.21
+            PARTIAL: 0.77
+          confidence: 0.65
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.15
+            PARTIAL: 0.82
+          confidence: 0.73
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.6
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.6
+            PARTIAL: 0.34
+          confidence: 0.39
+        /assertion/target_phenotypes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/target_phenotypes/1/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.92
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10303
+        output_tokens: 487
+      elapsed_seconds: 0.4043
+      request_sha256: 76ce7788ab56c3226e6dbd046b50313b8a6ff2390278527044d75b83fe0cd101
+      request_sha256s:
+      - 76ce7788ab56c3226e6dbd046b50313b8a6ff2390278527044d75b83fe0cd101
+  ad4712e1d484fb7cd6fdd354fbb458ad7cac3dc0c3f263a52461e00277a004ff:
+    input_sha256: 37eece86e5af6e21374a2e7e0a21bc7650785b1f364d9ac82ae75f6ec8c609af
+    configuration_sha256: d83074d15ccb245cd420c875cb951218b01b0abc3f80ddd6cb7d4108fcca6889
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.897279+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.31
+            MISMATCH: 0.14
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.95
+            MISMATCH: 0.0
+          confidence: 0.93
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.9
+            MISMATCH: 0.05
+          confidence: 0.85
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.06
+            MISMATCH: 0.19
+          confidence: 0.62
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.12
+            MISMATCH: 0.68
+          confidence: 0.52
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.16
+            MISMATCH: 0.55
+          confidence: 0.32
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.06
+            MISMATCH: 0.54
+          confidence: 0.32
+        /assertion/target_phenotypes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.04
+            MISMATCH: 0.52
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8298
+        output_tokens: 393
+      elapsed_seconds: 0.4114
+      request_sha256: c13237241ee93ec16396547035e5b2bb50672230e26978035cc5a7e227a1be28
+      request_sha256s:
+      - c13237241ee93ec16396547035e5b2bb50672230e26978035cc5a7e227a1be28
+  ddd871f1fa4e717cca5b3df2a6deddb4671bcc42aff964d1656e82463e231027:
+    input_sha256: 3aeb2a7e975ccb0101f683e5f58d315c3af80d4d90e82be29127500590a8e428
+    configuration_sha256: d83074d15ccb245cd420c875cb951218b01b0abc3f80ddd6cb7d4108fcca6889
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:05.037557+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.14
+            PARTIAL: 0.75
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.84
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.04
+            PARTIAL: 0.78
+          confidence: 0.67
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            MATCH: 0.09
+            PARTIAL: 0.28
+          confidence: 0.44
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            MATCH: 0.14
+            PARTIAL: 0.35
+          confidence: 0.26
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.32
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.16
+            PARTIAL: 0.58
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8296
+        output_tokens: 389
+      elapsed_seconds: 0.3775
+      request_sha256: d848e4e484ecfdcecea2c907c4a1d669cec35d3a3fcf8bc823a13ce3547bd205
+      request_sha256s:
+      - d848e4e484ecfdcecea2c907c4a1d669cec35d3a3fcf8bc823a13ce3547bd205
+  317aef080ac19e4be5565031d171d164b0aae9b5be4a12f3f3df1c022c6e58af:
+    input_sha256: 56c7ffa01fd389c5be64f24cb2a1161fb308b6db3a2739b9564524abdf7b7740
+    configuration_sha256: a61f6b8dcce34d0939776dffce790c701c208542aa69ae883cffc748299b9c10
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:04.896664+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.71
+            MATCH: 0.26
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+            MATCH: 0.9
+          confidence: 0.86
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.7
+            MATCH: 0.26
+          confidence: 0.55
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+            MATCH: 0.87
+          confidence: 0.8
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+            MATCH: 0.89
+          confidence: 0.84
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.37
+            MATCH: 0.58
+          confidence: 0.36
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+            MATCH: 0.67
+          confidence: 0.51
+        /assertion/target_phenotypes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.4
+            MATCH: 0.07
+          confidence: 0.31
+        /assertion/target_phenotypes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            PARTIAL: 0.44
+            MATCH: 0.17
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10327
+        output_tokens: 491
+      elapsed_seconds: 0.497
+      request_sha256: c14930a79b2f542eb1038e117391856dfa5fa9246434adbc43a03bcbd4831b62
+      request_sha256s:
+      - c14930a79b2f542eb1038e117391856dfa5fa9246434adbc43a03bcbd4831b62
+  5a9b8685c9e6a6b333ddd45cf19ec6747b9311cb9be5b41c7604720adb56e079:
+    input_sha256: fd7c6d9a1d80da319548e7542633ced973b783ff80a1de350cfd2fc8220b5c6f
+    configuration_sha256: adeb1873e164029e2e92149c8265059d568fb9c329399935d2fce2b8da6affae
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:05.226335+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.06
+            PARTIAL: 0.39
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.13
+            PARTIAL: 0.16
+          confidence: 0.56
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.56
+            PARTIAL: 0.33
+          confidence: 0.34
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.66
+            PARTIAL: 0.32
+          confidence: 0.5
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.13
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.16
+            PARTIAL: 0.32
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8275
+        output_tokens: 374
+      elapsed_seconds: 0.3658
+      request_sha256: 16a39f0392e52a409d12711269b09117b111b879c0a092f28b409f99c3b10b16
+      request_sha256s:
+      - 16a39f0392e52a409d12711269b09117b111b879c0a092f28b409f99c3b10b16
+  f1d59d6fb00edcd4adf82c6dce70161db628799f9a9d77ac29c1de6947afec82:
+    input_sha256: 75e7e202ec6313de1a88ab2d7434cb25598e1522a1183bddc5d26b4d61dffe88
+    configuration_sha256: adeb1873e164029e2e92149c8265059d568fb9c329399935d2fce2b8da6affae
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:05.450986+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.4
+            MISMATCH: 0.08
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.37
+            MISMATCH: 0.3
+          confidence: 0.05
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.19
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.01
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.63
+            MISMATCH: 0.04
+          confidence: 0.45
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.64
+            MISMATCH: 0.07
+          confidence: 0.46
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.62
+            MISMATCH: 0.09
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8208
+        output_tokens: 375
+      elapsed_seconds: 0.3892
+      request_sha256: 57fa4158ed001ee808887a98cdae4353c1856b0aa7052bc621db47d70caca279
+      request_sha256s:
+      - 57fa4158ed001ee808887a98cdae4353c1856b0aa7052bc621db47d70caca279
+  f04ea63c1a73d63593c920fb1bc21e4cbf29c10b05a56468b3d8800d8939530c:
+    input_sha256: d9291666f5366aeb8cd12742fca2f17cf5c19ca232f57cbd998b33392baa591f
+    configuration_sha256: adeb1873e164029e2e92149c8265059d568fb9c329399935d2fce2b8da6affae
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:52:05.739176+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.57
+            MISMATCH: 0.08
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.82
+            MISMATCH: 0.03
+          confidence: 0.73
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.31
+            MISMATCH: 0.37
+          confidence: 0.06
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.33
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            PARTIAL: 0.13
+            MISMATCH: 0.87
+          confidence: 0.8
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.32
+            MISMATCH: 0.04
+          confidence: 0.46
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8191
+        output_tokens: 378
+      elapsed_seconds: 0.4429
+      request_sha256: f255d45774c8dee046206727c0ca3ae649d6c1ed572c992c271138bba0cb6f13
+      request_sha256s:
+      - f255d45774c8dee046206727c0ca3ae649d6c1ed572c992c271138bba0cb6f13

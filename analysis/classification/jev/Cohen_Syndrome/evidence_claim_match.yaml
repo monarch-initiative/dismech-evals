@@ -1,0 +1,3212 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Cohen_Syndrome.yaml
+disease: Cohen Syndrome
+inventory:
+  source_sha256: 9cd6377f8412a2db74134b235799f5912c05856e7b5d8a239be394ed7ec58785
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:23:33.473540+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  57c7c5c76ca0c6dd762d50572431d0eb660e237bc7124948e6d8f009e014876f:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: IUISAssignment
+      assertion:
+        classification_value: phagocyte defect
+        notes: 'IUIS 2022 phenotypic classification (Tangye et al., PMID:35748970), Table 5 "Congenital
+          defects of phagocyte number or function", section 1 (Congenital Neutropenias): row "Cohen syndrome
+          VPS13B AR 607817", affected cells N, affected function myeloid differentiation, associated features
+          dysmorphism, mental retardation, obesity, deafness and neutropenia.
+
+          Scope: iuis_category is single-valued, so this tag records that Cohen syndrome occupies a Table
+          5 row, not that it is primarily an inborn error of immunity. The mild-to-moderate neutropenia
+          present in almost all affected individuals — curated here as the Neutropenia phenotype — is
+          what puts it in the phagocyte table; the entry is otherwise curated as a Golgi-membrane intellectual-disability
+          syndrome, and the mechanism linking VPS13B loss to the neutropenia is not established (see that
+          phenotype''s own notes).'
+      selected_evidence:
+        snippet: Cohen syndrome VPS13B AR 607817
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/iuis_category
+      evidence_path: /classifications/iuis_category/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:35748970
+      reference_title: 'Human Inborn Errors of Immunity: 2022 Update on the Classification from the International
+        Union of Immunological Societies Expert Committee.'
+      evidence_source: OTHER
+      explanation: The Cohen syndrome row of IUIS Table 5, quoted verbatim with its gene, inheritance
+        and OMIM number.
+    first_seen_at: '2026-09-25T15:25:17.012649+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /classifications/iuis_category
+      evidence_path: /classifications/iuis_category/evidence/0
+      reference: PMID:35748970
+  3e8db22bf9e176bfef0472ce4b33a873ca5d4085554b97f351ca255a8015346b:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal recessive
+        inheritance_term:
+          preferred_term: Autosomal recessive inheritance
+          term:
+            id: HP:0000007
+            label: Autosomal recessive inheritance
+        description: Biallelic VPS13B variants are required. Heterozygous parents are asymptomatic carriers;
+          sibling recurrence risk is 25%.
+      selected_evidence:
+        snippet: Cohen syndrome is inherited in an autosomal recessive manner. If both parents are known
+          to be heterozygous for a VPS13B pathogenic variant, each sib of an affected individual has at
+          conception a 25% chance of being affected, a 50% chance of being an asymptomatic carrier, and
+          a 25% chance of being unaffected and not a carrier.
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the inheritance pattern and the recurrence figures used in counselling.
+    first_seen_at: '2026-09-25T15:25:17.703761+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      reference: PMID:20301655
+  ddea8e87f0d2fa0617653c29bff78bb6bf9608dc774ac9694dc9c5c6b19405d5:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: VPS13B
+        gene_term:
+          preferred_term: VPS13B
+          term:
+            id: hgnc:2183
+            label: VPS13B
+        relationship_type: CAUSATIVE
+        notes: Biallelic pathogenic VPS13B variants cause Cohen syndrome. The gene encodes a Golgi-localised
+          bulk lipid-transport protein. Hypomorphic alleles, including an in-frame exon-skipping splice
+          variant, produce an attenuated phenotype.
+      selected_evidence:
+        snippet: The diagnosis of Cohen syndrome is established in a proband with suggestive findings
+          and biallelic pathogenic variants in VPS13B identified by molecular genetic testing.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes VPS13B as the causal gene and the biallelic requirement.
+    first_seen_at: '2026-09-25T15:25:17.704479+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:20301655
+  0aec9904bcfdc04429753d1ff59afbda8150b53d36b4bd1f11505a78cdfc74cd:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: VPS13B
+        gene_term:
+          preferred_term: VPS13B
+          term:
+            id: hgnc:2183
+            label: VPS13B
+        relationship_type: CAUSATIVE
+        notes: Biallelic pathogenic VPS13B variants cause Cohen syndrome. The gene encodes a Golgi-localised
+          bulk lipid-transport protein. Hypomorphic alleles, including an in-frame exon-skipping splice
+          variant, produce an attenuated phenotype.
+      selected_evidence:
+        snippet: Genomic analysis identified a homozygous rare splice donor variant in the VPS13B gene
+          (c.5024+2T>C) that was demonstrated to lead to skipping of the in-frame exon 31 (p.Gln1607_Ser1675delinsHis).
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34425733
+      reference_title: A rare canonical splice-site variant in VPS13B causes attenuated Cohen syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the hypomorphic allele underlying the attenuated presentation, supporting
+        an allelic range rather than a single uniform phenotype.
+    first_seen_at: '2026-09-25T15:25:18.101106+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:34425733
+  6dbe654d7fa38775267d5f78c7bf1975c0b0cef47d3494f498937e7b5bd14a12:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: VPS13B Loss of Function
+        description: Biallelic loss-of-function variation abolishes or severely reduces VPS13B, a member
+          of a protein family implicated in bulk lipid transport between adjacent membranes.
+        role: trigger
+        biological_scale: MOLECULAR
+        biological_processes:
+        - preferred_term: lipid transport
+          term:
+            id: GO:0006869
+            label: lipid transport
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Mutations in VPS13B, a member of a protein family implicated in bulk lipid transport
+          between adjacent membranes, cause Cohen syndrome.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38187698
+      reference_title: VPS13B is localized at the cis-trans Golgi complex interface and is a functional
+        partner of FAM177A1.
+      evidence_source: IN_VITRO
+      explanation: Establishes the molecular identity and presumed function of the protein lost at this
+        node.
+    first_seen_at: '2026-09-25T15:25:18.101664+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:38187698
+  20c1b0000159ee396049fe6c2d05bb0e66ac354181ea28db105a6694bd7ffb7c:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Golgi Membrane Expansion and Integrity
+        description: VPS13B is concentrated at the interface between cis and trans Golgi sub-compartments,
+          where its lipid-transport activity is thought to supply membrane for Golgi expansion. In VPS13B-null
+          cells, re-formation of the Golgi complex after Brefeldin A-induced disruption is delayed - a
+          direct functional demonstration that the organelle depends on VPS13B. The same delay follows
+          loss of FAM177A1, a VPS13B interactor whose own mutations also cause a developmental disorder,
+          and the two genes interact genetically in zebrafish.
+        role: central_effector
+        biological_scale: CELLULAR
+        cellular_components:
+        - preferred_term: Golgi apparatus
+          term:
+            id: GO:0005794
+            label: Golgi apparatus
+      selected_evidence:
+        snippet: Here we show that VPS13B is localized at the interface between cis and trans Golgi sub-compartments
+          and that Golgi complex re-formation after Brefeldin A (BFA) induced disruption is delayed in
+          VPS13B KO cells.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38187698
+      reference_title: VPS13B is localized at the cis-trans Golgi complex interface and is a functional
+        partner of FAM177A1.
+      evidence_source: IN_VITRO
+      explanation: 'The core mechanistic observation: precise sub-Golgi localisation plus a functional
+        deficit in Golgi re-formation when VPS13B is absent.'
+    first_seen_at: '2026-09-25T15:25:18.179147+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:38187698
+  1ea1c4daaee3ede6aff9f3e9d736d762da79e92fca2ba55f462175c2393eebed:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Golgi Membrane Expansion and Integrity
+        description: VPS13B is concentrated at the interface between cis and trans Golgi sub-compartments,
+          where its lipid-transport activity is thought to supply membrane for Golgi expansion. In VPS13B-null
+          cells, re-formation of the Golgi complex after Brefeldin A-induced disruption is delayed - a
+          direct functional demonstration that the organelle depends on VPS13B. The same delay follows
+          loss of FAM177A1, a VPS13B interactor whose own mutations also cause a developmental disorder,
+          and the two genes interact genetically in zebrafish.
+        role: central_effector
+        biological_scale: CELLULAR
+        cellular_components:
+        - preferred_term: Golgi apparatus
+          term:
+            id: GO:0005794
+            label: Golgi apparatus
+      selected_evidence:
+        snippet: Collectively, these findings raise the possibility that bulk lipid transport by VPS13B
+          may play a role in expanding Golgi membranes
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38187698
+      reference_title: VPS13B is localized at the cis-trans Golgi complex interface and is a functional
+        partner of FAM177A1.
+      evidence_source: IN_VITRO
+      explanation: States the mechanistic interpretation. Note the authors' own hedging ("raise the possibility",
+        "may") - this node is a well-supported model, not a settled mechanism.
+    first_seen_at: '2026-09-25T15:25:18.200547+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:38187698
+  02ec399990ee6ded94bdeab8b99f401ee09148bbc2b926c3c3d5123219f891fd:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Defective Glycosylation and Secretory Output
+        description: 'Golgi dysfunction impairs the glycosylation and secretory processing that the organelle
+          performs. Because every affected tissue depends on Golgi-dependent processing, this is the step
+          that converts a single lipid-transport defect into a multisystem phenotype spanning brain, retina
+          and marrow. No cell type is bound to this node: the sources cited here establish the glycosylation
+          defect but not the mechanism linking it to any particular lineage, and in particular the route
+          from Golgi dysfunction to the near-universal neutropenia is not established, so neutropenia
+          is curated as a phenotype rather than as a mechanistic claim at this node.'
+        role: effector
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: Cohen Syndrome (CS) is a rare autosomal recessive disorder, with defective glycosylation
+          secondary to mutations in the VPS13B gene, which encodes a protein of the Golgi apparatus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26358774
+      reference_title: Insulin response dysregulation explains abnormal fat storage and increased risk
+        of diabetes mellitus type 2 in Cohen Syndrome.
+      evidence_source: IN_VITRO
+      explanation: States the glycosylation defect and attributes it to the Golgi localisation of VPS13B,
+        which is the edge into this node.
+    first_seen_at: '2026-09-25T15:25:18.520338+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:26358774
+  14328d3e6c8f97743add900eb19719ad8afc4782fb038ff4b31033dac054bbb4:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Adipocyte Insulin-Response Dysregulation
+        description: A tissue-specific branch explaining the syndrome's most counterintuitive feature
+          - truncal obesity appearing in the early teens without any increase in appetite or intake. Loss
+          of VPS13B in pre-adipocytes and in patient fibroblasts accelerates adipogenic differentiation
+          through an increased response to insulin stimulation; the resulting fat cells then show reduced
+          AKT2 phosphorylation after insulin, i.e. insulin resistance. This makes the obesity a cell-intrinsic
+          adipocyte phenotype rather than a hypothalamic appetite phenotype, and grounds the increased
+          type 2 diabetes risk.
+        role: effector
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: In both models, VPS13B invalidation led to accelerated differentiation into fat cells,
+          which was confirmed by the earlier and increased expression of specific adipogenic genes, consequent
+          to the increased response of cells to insulin stimulation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26358774
+      reference_title: Insulin response dysregulation explains abnormal fat storage and increased risk
+        of diabetes mellitus type 2 in Cohen Syndrome.
+      evidence_source: IN_VITRO
+      explanation: Direct experimental support in two independent models for accelerated, insulin-driven
+        adipogenesis on VPS13B loss.
+    first_seen_at: '2026-09-25T15:25:18.643025+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:26358774
+  121c2f4e8c167379809a526e5aa4dd6352a70a992ff610ac1342b9effd13bf60:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Adipocyte Insulin-Response Dysregulation
+        description: A tissue-specific branch explaining the syndrome's most counterintuitive feature
+          - truncal obesity appearing in the early teens without any increase in appetite or intake. Loss
+          of VPS13B in pre-adipocytes and in patient fibroblasts accelerates adipogenic differentiation
+          through an increased response to insulin stimulation; the resulting fat cells then show reduced
+          AKT2 phosphorylation after insulin, i.e. insulin resistance. This makes the obesity a cell-intrinsic
+          adipocyte phenotype rather than a hypothalamic appetite phenotype, and grounds the increased
+          type 2 diabetes risk.
+        role: effector
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: At the end of the differentiation protocol, these fat cells exhibited decreased AKT2
+          phosphorylation after insulin stimulation, which suggests insulin resistance.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26358774
+      reference_title: Insulin response dysregulation explains abnormal fat storage and increased risk
+        of diabetes mellitus type 2 in Cohen Syndrome.
+      evidence_source: IN_VITRO
+      explanation: Supports the insulin-resistance arm of this node. Note the source's own hedge - it
+        reports decreased AKT2 phosphorylation and says this "suggests" insulin resistance; the increased
+        type 2 diabetes risk is the paper's broader argument and is not asserted by this sentence.
+    first_seen_at: '2026-09-25T15:25:18.694815+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:26358774
+  16e5ec7b58dda9caf3c6e305a191e6a7b62b3190fa1a940253e84ff0bcd30407:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Multisystem Developmental and Haematologic Phenotype
+        description: 'The clinical output: hypotonia with developmental delay and moderate-to-profound
+          intellectual disability, the biphasic growth trajectory ending in truncal obesity with short
+          stature, progressive myopia and retinal dystrophy, near-universal neutropenia with its infection
+          risk, and joint laxity leading to kyphosis and scoliosis.'
+        role: consequence
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: Cohen syndrome is characterized by early-onset hypotonia, developmental delay, and moderate-to-profound
+          intellectual disability; at least 20% of individuals are unable to communicate verbally.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the neurodevelopmental output and quantifies the most severe communication outcome.
+    first_seen_at: '2026-09-25T15:25:18.733483+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:20301655
+  73e5d37c2280b4938895a4edc9ac65e66d6ab4eaf5fc8d3216d63b55aa1d0576:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Intellectual disability
+        description: Moderate to profound; at least 20% never communicate verbally.
+        phenotype_term:
+          preferred_term: Intellectual disability
+          term:
+            id: HP:0001249
+            label: Intellectual disability
+          severity: SEVERE
+      selected_evidence:
+        snippet: Cohen syndrome is characterized by early-onset hypotonia, developmental delay, and moderate-to-profound
+          intellectual disability; at least 20% of individuals are unable to communicate verbally.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports both the phenotype and the moderate-to-profound severity qualifier.
+    first_seen_at: '2026-09-25T15:25:19.024118+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:20301655
+  85e083a8a93c59e42f3505019c1e9b585f22698840a73192a2eb22b28aae2ce4:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Early-onset hypotonia
+        phenotype_term:
+          preferred_term: Hypotonia
+          term:
+            id: HP:0001252
+            label: Hypotonia
+      selected_evidence:
+        snippet: Cohen syndrome is characterized by early-onset hypotonia, developmental delay, and moderate-to-profound
+          intellectual disability
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Hypotonia is a defining early feature.
+    first_seen_at: '2026-09-25T15:25:19.082968+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:20301655
+  d29203141ce0d273fdfe6f3a7f02e04a4991a1fdb62b3175cd3163adef398982:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Ophthalmologic
+        name: Progressive high myopia
+        description: Onset in early childhood and progressive.
+        phenotype_term:
+          preferred_term: Myopia
+          term:
+            id: HP:0000545
+            label: Myopia
+          clinical_course: PROGRESSIVE
+      selected_evidence:
+        snippet: Ophthalmologic findings include early childhood onset of progressive high myopia and
+          retinal dystrophy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the phenotype, its early-childhood onset and the PROGRESSIVE clinical course
+        qualifier.
+    first_seen_at: '2026-09-25T15:25:19.231451+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:20301655
+  cc1c28bee0756db05d18b345a95bb34d9037e2ae3bcc88c6ee95a09bba1ab700:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Global developmental delay
+        phenotype_term:
+          preferred_term: Global developmental delay
+          term:
+            id: HP:0001263
+            label: Global developmental delay
+      selected_evidence:
+        snippet: Cohen syndrome is characterized by early-onset hypotonia, developmental delay, and moderate-to-profound
+          intellectual disability
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Developmental delay is a defining feature.
+    first_seen_at: '2026-09-25T15:25:19.180942+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:20301655
+  00728fc9d3dffdcdf84fd399e8b43d47267ab8e04b9197aa08455d1af652f892:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Ophthalmologic
+        name: Retinal dystrophy
+        phenotype_term:
+          preferred_term: Retinal dystrophy
+          term:
+            id: HP:0000556
+            label: Retinal dystrophy
+          clinical_course: PROGRESSIVE
+      selected_evidence:
+        snippet: Ophthalmologic findings include early childhood onset of progressive high myopia and
+          retinal dystrophy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Retinal dystrophy is a core ophthalmic feature.
+    first_seen_at: '2026-09-25T15:25:19.486518+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:20301655
+  8837d7af05d8521bcc27521d2157ce0c023d26d26903be3e37c1ec2d69a5b1df:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Hematologic
+        name: Neutropenia
+        frequency: VERY_FREQUENT
+        description: Mild to moderate, present in almost all affected individuals; may cause recurrent
+          infections and aphthous ulcers.
+        phenotype_term:
+          preferred_term: Decreased total neutrophil count
+          term:
+            id: HP:0001875
+            label: Decreased total neutrophil count
+          severity: MILD
+      selected_evidence:
+        snippet: Mild-to-moderate neutropenia, present in almost all individuals, may be associated with
+          recurrent infections and/or aphthous ulcers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the phenotype, the MILD severity qualifier, and the VERY_FREQUENT band ("almost
+        all individuals" maps to the 99-80% HPO range).
+    first_seen_at: '2026-09-25T15:25:19.542019+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: PMID:20301655
+  0a7ca0b8e3f0195bdead3529aec72546d36d971342f582825892017e23182f92:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Growth
+        name: Truncal obesity
+        description: Develops in the early teen years after a period of poor weight gain, and notably
+          without any change in appetite, food intake or activity - the feature that distinguishes Cohen
+          syndrome from Prader-Willi syndrome.
+        phenotype_term:
+          preferred_term: Truncal obesity
+          term:
+            id: HP:0001956
+            label: Truncal obesity
+      selected_evidence:
+        snippet: However, in the early teen years rapid weight gain (without a change in appetite, food
+          intake, or activity) leads to significant truncal obesity
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the phenotype, its teenage timing and - critically - its non-hyperphagic character.
+    first_seen_at: '2026-09-25T15:25:19.759351+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:20301655
+  c236df9c2b386ebb3ad90003e83edde6cdd0487690c1aa1596926c47d50afb69:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Gastrointestinal
+        name: Feeding difficulties
+        description: In infancy and childhood, causing poor weight gain; the first phase of the biphasic
+          growth trajectory.
+        phenotype_term:
+          preferred_term: Feeding difficulties
+          term:
+            id: HP:0011968
+            label: Feeding difficulties
+      selected_evidence:
+        snippet: In infancy and childhood weight gain is poor due to feeding difficulties.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the phenotype and its causal role in the early poor weight gain.
+    first_seen_at: '2026-09-25T15:25:19.854747+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      reference: PMID:20301655
+  019d158120e2b87bfac76d66dea8a23dcd939172f64efdfc16b50060ab2c287c:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Growth
+        name: Short stature
+        frequency: FREQUENT
+        phenotype_term:
+          preferred_term: Short stature
+          term:
+            id: HP:0004322
+            label: Short stature
+      selected_evidence:
+        snippet: leads to significant truncal obesity; short stature is common.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Qualitative support for the FREQUENT band; the source describes short stature as common.
+        Quoted with the preceding clause so the snippet carries a complete proposition.
+    first_seen_at: '2026-09-25T15:25:19.963230+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      reference: PMID:20301655
+  4da2b1d5294446c4467e40818bada956462479ba895a3cbd561992fa5e12aa19:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Musculoskeletal
+        name: Joint hypermobility
+        phenotype_term:
+          preferred_term: Joint hypermobility
+          term:
+            id: HP:0001382
+            label: Joint hypermobility
+      selected_evidence:
+        snippet: Joint laxity can lead to kyphosis and scoliosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports joint laxity and its skeletal consequences.
+    first_seen_at: '2026-09-25T15:25:20.096919+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      reference: PMID:20301655
+  ed2a495b07ea67c051fc4b97b2fd51233d8d053a275bae41f2672a0daf12e96b:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Musculoskeletal
+        name: Kyphosis
+        phenotype_term:
+          preferred_term: Kyphosis
+          term:
+            id: HP:0002808
+            label: Kyphosis
+      selected_evidence:
+        snippet: Joint laxity can lead to kyphosis and scoliosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/10
+      evidence_path: /phenotypes/10/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Kyphosis is a reported skeletal consequence of joint laxity.
+    first_seen_at: '2026-09-25T15:25:20.265832+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/10
+      evidence_path: /phenotypes/10/evidence/0
+      reference: PMID:20301655
+  4992582eb8cf6ced986000c52a4a613d116d71bc97a5b9fa377f91c31bd2d215:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Musculoskeletal
+        name: Scoliosis
+        phenotype_term:
+          preferred_term: Scoliosis
+          term:
+            id: HP:0002650
+            label: Scoliosis
+      selected_evidence:
+        snippet: Joint laxity can lead to kyphosis and scoliosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/11
+      evidence_path: /phenotypes/11/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Scoliosis is a reported skeletal consequence of joint laxity.
+    first_seen_at: '2026-09-25T15:25:20.431942+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/11
+      evidence_path: /phenotypes/11/evidence/0
+      reference: PMID:20301655
+  4d92b20fa113cfd21a0ac9e2be051b37d4a2d3f2918125d976985eb84ed3fc63:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: VPS13B molecular genetic testing
+        description: Established by identifying biallelic pathogenic VPS13B variants in a proband with
+          suggestive findings.
+      selected_evidence:
+        snippet: The diagnosis of Cohen syndrome is established in a proband with suggestive findings
+          and biallelic pathogenic variants in VPS13B identified by molecular genetic testing.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the diagnostic criterion.
+    first_seen_at: '2026-09-25T15:25:20.509929+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:20301655
+  06015a3153f9d345b7b7882cabe68e3f04d7d8c04ec9ec0f56efd4d862e5e21b:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Developmental and Rehabilitative Therapy
+        description: Early educational intervention plus physical, occupational and speech therapy directed
+          at the developmental delay and hypotonia.
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: Physical Therapy
+          term:
+            id: NCIT:C15302
+            label: Physical Therapy
+      selected_evidence:
+        snippet: Early educational intervention and physical, occupational, and speech therapy to help
+          address developmental delay and hypotonia
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the recommended developmental management.
+    first_seen_at: '2026-09-25T15:25:20.626518+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:20301655
+  0c6ca1ecd3497cdc34c5a16611d34ae236b3c85b57dbf0bcf8ca4da4ed19e0a9:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Refractive Correction and Low Vision Services
+        description: Spectacle correction for refractive error, with low vision services once retinal
+          dystrophy impairs vision.
+        therapeutic_modality: DEVICE
+        treatment_term:
+          preferred_term: Supportive Care
+          term:
+            id: NCIT:C15747
+            label: Supportive Care
+      selected_evidence:
+        snippet: spectacle correction for refractive errors and low vision services for the visually impaired
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the recommended ophthalmic management.
+    first_seen_at: '2026-09-25T15:25:20.791703+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:20301655
+  5532887a070d5431176605256125d5d0127c9ebd5d3420cd7ee193fbe9771cec:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Infection Management with Neutrophil-Sparing Caution
+        description: Recurrent infections are treated per standard care, but with explicit caution about
+          medications that could further lower the neutrophil count - a disorder-specific prescribing
+          constraint rather than generic supportive care.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: treatment of recurrent infections per standard care (with caution regarding medications
+          that could decrease neutrophil count)
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports both the treatment and the neutropenia-specific prescribing caution.
+    first_seen_at: '2026-09-25T15:25:20.941408+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:20301655
+  b666b94672237542ec8b7b50a8d8a35bfc38d07c8edcb19e10c5d8dafc49d984:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Genetic Counseling
+        description: Recessive inheritance, 25% sibling recurrence risk, and the availability of carrier
+          and prenatal/preimplantation testing once the familial variants are known.
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: Genetic Counseling
+          term:
+            id: NCIT:C15240
+            label: Genetic Counseling
+      selected_evidence:
+        snippet: Once the VPS13B pathogenic variants have been identified in an affected family member,
+          carrier testing for at-risk relatives and prenatal/preimplantation genetic testing are possible.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the reproductive-testing content of counselling.
+    first_seen_at: '2026-09-25T15:25:21.032139+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      reference: PMID:20301655
+  963e4afe2eca8c70750128c046501aee59d0d571eafca175c2cd07ced920cbca:
+    claim:
+      about:
+        disease:
+          name: Cohen Syndrome
+          disease_term:
+            preferred_term: Cohen syndrome
+            term:
+              id: MONDO:0008999
+              label: Cohen syndrome
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Prader-Willi syndrome
+        description: 'The principal differential for the combination of infantile hypotonia, poor early
+          feeding, intellectual disability and later truncal obesity. The discriminator is appetite: in
+          Cohen syndrome the teenage weight gain occurs without any change in appetite or food intake,
+          whereas Prader-Willi obesity is driven by hyperphagia. Neutropenia and retinal dystrophy also
+          point to Cohen syndrome.'
+      selected_evidence:
+        snippet: However, in the early teen years rapid weight gain (without a change in appetite, food
+          intake, or activity) leads to significant truncal obesity
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301655
+      reference_title: Cohen Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supplies the discriminating feature - non-hyperphagic weight gain - on which this differential
+        turns.
+    first_seen_at: '2026-09-25T15:25:21.162740+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:23:33.473540+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:23:33.473540+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      reference: PMID:20301655
+assessments:
+  a78635166fe45f0a8a4152a99bef1b55cd7c99cf76cae8b822cf41a80fd0c3b7:
+    input_sha256: 57c7c5c76ca0c6dd762d50572431d0eb660e237bc7124948e6d8f009e014876f
+    configuration_sha256: d4e46c4f319d74cb45d5b4fcc014a2da577117d0bf25f3e88c2cbdf2b65c6fd8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:17.012649+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.72
+            MISMATCH: 0.06
+          confidence: 0.58
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/classification_value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.58
+            MISMATCH: 0.17
+          confidence: 0.36
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.28
+            MISMATCH: 0.27
+          confidence: 0.18
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.26
+            MISMATCH: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5434
+        output_tokens: 226
+      elapsed_seconds: 0.487
+      request_sha256: baa1094a835d87d21f7594221a01e70534940fc4539c555faf0500bc751873dc
+      request_sha256s:
+      - baa1094a835d87d21f7594221a01e70534940fc4539c555faf0500bc751873dc
+  4df14ecf4d1cce1c6d606b358d9100fffb61e3a613f32719ee998e4b4b0c4c5c:
+    input_sha256: 3e8db22bf9e176bfef0472ce4b33a873ca5d4085554b97f351ca255a8015346b
+    configuration_sha256: 5d7c76ef19e36af422cc1406292fc9f32966f1319cc72d7d30dfed7698ed6bdd
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:17.703761+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+            MATCH: 0.97
+          confidence: 0.95
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/inheritance_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/inheritance_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+            MATCH: 0.89
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6316
+        output_tokens: 275
+      elapsed_seconds: 0.4637
+      request_sha256: 56ee0fa40818a8654af095a8799945caf15d6a1a2611827ef54170e482969f35
+      request_sha256s:
+      - 56ee0fa40818a8654af095a8799945caf15d6a1a2611827ef54170e482969f35
+  4acd8c5845db505b0144f133b0515e8758bf82b3a6cac0898c3aeba5130656ec:
+    input_sha256: ddea8e87f0d2fa0617653c29bff78bb6bf9608dc774ac9694dc9c5c6b19405d5
+    configuration_sha256: 629e2e3b4f329d1da32eee4233efb6fc8bb9a13d8aea91f82ff28560b543f1c2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:17.704479+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.54
+            PARTIAL: 0.42
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.86
+            PARTIAL: 0.1
+          confidence: 0.78
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.83
+            PARTIAL: 0.11
+          confidence: 0.74
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.47
+            MATCH: 0.06
+            PARTIAL: 0.47
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7583
+        output_tokens: 318
+      elapsed_seconds: 0.4805
+      request_sha256: 8a8e23243b5e6ab145f1b915aca44aa7e912c9b5a2ae2d449a1dbee3c2ff7461
+      request_sha256s:
+      - 8a8e23243b5e6ab145f1b915aca44aa7e912c9b5a2ae2d449a1dbee3c2ff7461
+  e79bec8081b066d5490e46132f2f9d76714d5d4ea0d1766bdcf3846d921d7551:
+    input_sha256: 0aec9904bcfdc04429753d1ff59afbda8150b53d36b4bd1f11505a78cdfc74cd
+    configuration_sha256: 629e2e3b4f329d1da32eee4233efb6fc8bb9a13d8aea91f82ff28560b543f1c2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.101106+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MISMATCH: 0.04
+            MATCH: 0.2
+          confidence: 0.65
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.17
+            MATCH: 0.23
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.02
+            MATCH: 0.8
+          confidence: 0.69
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.04
+            MATCH: 0.8
+          confidence: 0.71
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.03
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.03
+            MATCH: 0.31
+          confidence: 0.5
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MISMATCH: 0.12
+            MATCH: 0.18
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7610
+        output_tokens: 321
+      elapsed_seconds: 0.4012
+      request_sha256: 14cceca08e4ead302da78e3733639fb7584c323b456985e8012d27f2218ac6f1
+      request_sha256s:
+      - 14cceca08e4ead302da78e3733639fb7584c323b456985e8012d27f2218ac6f1
+  b342ed7851504270eda4c621757bc13a31d6f869eac2e3d352b81dcbfe3c9430:
+    input_sha256: 6dbe654d7fa38775267d5f78c7bf1975c0b0cef47d3494f498937e7b5bd14a12
+    configuration_sha256: 11ec1c641ba2ec9d65f31c8f37030a4eaa297a64e7d9d7f1d7fc5e306e88e454
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.101664+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.42
+            MISMATCH: 0.03
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.69
+            MISMATCH: 0.03
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.21
+            MISMATCH: 0.06
+          confidence: 0.6
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.67
+            MISMATCH: 0.03
+          confidence: 0.49
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.58
+            MISMATCH: 0.09
+          confidence: 0.37
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.52
+            MISMATCH: 0.09
+          confidence: 0.29
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.28
+            MISMATCH: 0.13
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9847
+        output_tokens: 431
+      elapsed_seconds: 0.5186
+      request_sha256: a5a517673d5c8dc31cb722bb31918138ae2c9d99a1acce1291ba7524a26abc52
+      request_sha256s:
+      - a5a517673d5c8dc31cb722bb31918138ae2c9d99a1acce1291ba7524a26abc52
+  fe02e5fac12b3f377e33d67fc051bf5dfca6e20a6167950c3fade98720cc8138:
+    input_sha256: 20c1b0000159ee396049fe6c2d05bb0e66ac354181ea28db105a6694bd7ffb7c
+    configuration_sha256: 84c8abd9961825ecf5dea6ab9d2debf5c077b00aa2cd5d2c7cdf43bd765aa351
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.179147+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.26
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.05
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.03
+            PARTIAL: 0.58
+          confidence: 0.38
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.11
+            MATCH: 0.25
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/cellular_components/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.88
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8720
+        output_tokens: 371
+      elapsed_seconds: 0.4879
+      request_sha256: 17f1b6dce864b36d56fa5900a245651907c0aebf12420a72e61abb6115c14cfb
+      request_sha256s:
+      - 17f1b6dce864b36d56fa5900a245651907c0aebf12420a72e61abb6115c14cfb
+  ff6beb61e4201351b44dc6b4c4ecf229dc2efbe8727de5431580f1c3e7c2e5de:
+    input_sha256: 1ea1c4daaee3ede6aff9f3e9d736d762da79e92fca2ba55f462175c2393eebed
+    configuration_sha256: 84c8abd9961825ecf5dea6ab9d2debf5c077b00aa2cd5d2c7cdf43bd765aa351
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.200547+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.52
+            MISMATCH: 0.14
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.37
+            MISMATCH: 0.3
+          confidence: 0.05
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.48
+            MISMATCH: 0.06
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.6
+            MISMATCH: 0.06
+          confidence: 0.4
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.76
+            MISMATCH: 0.14
+          confidence: 0.64
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.18
+            MISMATCH: 0.04
+          confidence: 0.68
+        /assertion/cellular_components/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.19
+            MISMATCH: 0.05
+          confidence: 0.63
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.2
+            MISMATCH: 0.06
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8694
+        output_tokens: 373
+      elapsed_seconds: 0.4916
+      request_sha256: 2b60f32cff3145571161ccc12cae45007476d020e287c6c155f689378af4cd56
+      request_sha256s:
+      - 2b60f32cff3145571161ccc12cae45007476d020e287c6c155f689378af4cd56
+  93adba46ce2c38a2f159a9da327490b3e756feaa4485f91a6013b83c779088ed:
+    input_sha256: 02ec399990ee6ded94bdeab8b99f401ee09148bbc2b926c3c3d5123219f891fd
+    configuration_sha256: 0e69ec09cdc0c908cddf2cfc4993e92c2651bddd3a91d143594c63b7de0f93b8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.520338+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.29
+            MISMATCH: 0.03
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.82
+            MISMATCH: 0.01
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MATCH: 0.22
+            MISMATCH: 0.06
+          confidence: 0.58
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.35
+            MISMATCH: 0.13
+          confidence: 0.29
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.79
+            MISMATCH: 0.04
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6734
+        output_tokens: 269
+      elapsed_seconds: 0.4705
+      request_sha256: 420c1dd8e49879e483ce92fd54f14fe6340ac471c22e98bbab3e05fad00f1418
+      request_sha256s:
+      - 420c1dd8e49879e483ce92fd54f14fe6340ac471c22e98bbab3e05fad00f1418
+  1fa1cb01578b24010262bb8e03cd7de081e247346d245a86f42d1fd6dcd4b941:
+    input_sha256: 14328d3e6c8f97743add900eb19719ad8afc4782fb038ff4b31033dac054bbb4
+    configuration_sha256: 0e69ec09cdc0c908cddf2cfc4993e92c2651bddd3a91d143594c63b7de0f93b8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.643025+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.87
+            MATCH: 0.11
+          confidence: 0.8
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.49
+            MATCH: 0.43
+          confidence: 0.23
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.5
+            PARTIAL: 0.45
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.79
+            MATCH: 0.19
+          confidence: 0.69
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.44
+            MATCH: 0.47
+          confidence: 0.2
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.99
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6731
+        output_tokens: 269
+      elapsed_seconds: 0.4011
+      request_sha256: 2e5c51d291803307aaa9e5fa77cfeedbe491f41f7b7db700c3cc4eef2f52f99b
+      request_sha256s:
+      - 2e5c51d291803307aaa9e5fa77cfeedbe491f41f7b7db700c3cc4eef2f52f99b
+  7891056f71ede89730420bdaef2fcceed474460e0ffecfb8d1be63afd05a6937:
+    input_sha256: 121c2f4e8c167379809a526e5aa4dd6352a70a992ff610ac1342b9effd13bf60
+    configuration_sha256: 0e69ec09cdc0c908cddf2cfc4993e92c2651bddd3a91d143594c63b7de0f93b8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.694815+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.74
+            MISMATCH: 0.07
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.62
+            MISMATCH: 0.12
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.32
+            MISMATCH: 0.05
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.64
+            MISMATCH: 0.06
+          confidence: 0.46
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.47
+            MISMATCH: 0.13
+          confidence: 0.22
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6713
+        output_tokens: 270
+      elapsed_seconds: 0.4443
+      request_sha256: 5b2591f8aa5e914ea909f4faf43d692b131c77b32b53aa31c3c87e502f064b1d
+      request_sha256s:
+      - 5b2591f8aa5e914ea909f4faf43d692b131c77b32b53aa31c3c87e502f064b1d
+  3984dc8ee3ccfc059c1df8ef4dfb96714d89e115f0484ea8ac9ab8f5e9b9d9d3:
+    input_sha256: 16e5ec7b58dda9caf3c6e305a191e6a7b62b3190fa1a940253e84ff0bcd30407
+    configuration_sha256: 0e69ec09cdc0c908cddf2cfc4993e92c2651bddd3a91d143594c63b7de0f93b8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:18.733483+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.92
+            MISMATCH: 0.05
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            PARTIAL: 0.45
+            MISMATCH: 0.07
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.93
+            MISMATCH: 0.03
+          confidence: 0.89
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.32
+            MISMATCH: 0.09
+          confidence: 0.37
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6671
+        output_tokens: 268
+      elapsed_seconds: 0.4385
+      request_sha256: 4e17a04606ef773355b69a2fcdc17d45a5460d2c025b6547f23075a0aff8baef
+      request_sha256s:
+      - 4e17a04606ef773355b69a2fcdc17d45a5460d2c025b6547f23075a0aff8baef
+  0fb9eb854f31f40b3777157b297a7c161a7fbcb28fe438df1ad3d9bc94093b9f:
+    input_sha256: 73e5d37c2280b4938895a4edc9ac65e66d6ab4eaf5fc8d3216d63b55aa1d0576
+    configuration_sha256: cb9c567227ba2e96aab213c94350000048fc1939d4033fe3f97afbd584b6b659
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.024118+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+            MATCH: 0.92
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.04
+            MATCH: 0.9
+          confidence: 0.84
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.97
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.97
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/phenotype_term/severity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.03
+            MATCH: 0.8
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8150
+        output_tokens: 365
+      elapsed_seconds: 0.4146
+      request_sha256: 0a8c2c8dfd6499171d19b94feca0a2e4b3d42d7fc27ab69378816aab3d0579de
+      request_sha256s:
+      - 0a8c2c8dfd6499171d19b94feca0a2e4b3d42d7fc27ab69378816aab3d0579de
+  ebadb68fb2eeaa0e27262b7da3ccfed78cfcd58cfae059ac37dc47fd83aae933:
+    input_sha256: 85e083a8a93c59e42f3505019c1e9b585f22698840a73192a2eb22b28aae2ce4
+    configuration_sha256: afcc7284d3528939241991831068b248e0f92d1ba41ceaa61578956e6913f7ba
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.082968+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.77
+            MISMATCH: 0.09
+          confidence: 0.65
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.9
+            MISMATCH: 0.02
+          confidence: 0.85
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.8
+            MISMATCH: 0.02
+          confidence: 0.69
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+          confidence: 0.85
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6213
+        output_tokens: 271
+      elapsed_seconds: 0.4058
+      request_sha256: 403f75ac72329b80870a0518799f41f2a56063d286e498f7aec74308e184ba3a
+      request_sha256s:
+      - 403f75ac72329b80870a0518799f41f2a56063d286e498f7aec74308e184ba3a
+  c749fcddf7e3851ba66af0375ce4ae1afe648511d3893617fe3f8a00a5712a6a:
+    input_sha256: d29203141ce0d273fdfe6f3a7f02e04a4991a1fdb62b3175cd3163adef398982
+    configuration_sha256: 0915181aa693d48ac5a451a0e8e56b800e6a307ee09b2f004d8b8087bb579519
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.231451+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.53
+            PARTIAL: 0.42
+          confidence: 0.3
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/phenotype_term/clinical_course:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8139
+        output_tokens: 366
+      elapsed_seconds: 0.4719
+      request_sha256: 146c407dd96745ab9df3a5d9f6e2aecd0b9f807445295283b7e49319e8408991
+      request_sha256s:
+      - 146c407dd96745ab9df3a5d9f6e2aecd0b9f807445295283b7e49319e8408991
+  470e2571bed36b17d08c88b3363e30706d7e302c2db85514805b2b913ca7ae89:
+    input_sha256: cc1c28bee0756db05d18b345a95bb34d9037e2ae3bcc88c6ee95a09bba1ab700
+    configuration_sha256: afcc7284d3528939241991831068b248e0f92d1ba41ceaa61578956e6913f7ba
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.180942+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.16
+            MATCH: 0.8
+          confidence: 0.69
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+            MATCH: 0.96
+          confidence: 0.93
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+            MATCH: 0.97
+          confidence: 0.96
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6210
+        output_tokens: 271
+      elapsed_seconds: 0.6146
+      request_sha256: 46a572a5d71efe255564259514e0dd41e47be727393684d48bd462235d41d15f
+      request_sha256s:
+      - 46a572a5d71efe255564259514e0dd41e47be727393684d48bd462235d41d15f
+  9d173b4dbd5baeb46214539ba0a1f4530cc2a9086617d1bb7bb70e0da574dbb5:
+    input_sha256: 00728fc9d3dffdcdf84fd399e8b43d47267ab8e04b9197aa08455d1af652f892
+    configuration_sha256: 50c51aeed9c34f40f3a11fbb34a85a0d525dcd8007ae5ab61fe9b0ef69260e08
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.486518+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.64
+            MISMATCH: 0.05
+          confidence: 0.45
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/phenotype_term/clinical_course:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7197
+        output_tokens: 321
+      elapsed_seconds: 0.4116
+      request_sha256: 315eb32971186171eea35fce3cd16c79003b8b426be5e645e6c595f29cb0ffb0
+      request_sha256s:
+      - 315eb32971186171eea35fce3cd16c79003b8b426be5e645e6c595f29cb0ffb0
+  95bcc12ca6ff0e11c9c7c005e6a0ec34ba1bcd5ec4cd48c2940b0b253a092023:
+    input_sha256: 8837d7af05d8521bcc27521d2157ce0c023d26d26903be3e37c1ec2d69a5b1df
+    configuration_sha256: 82e0feff8cd594d88693a456f9cdc4d1a04b6039ad206d98a3e4ece717a7bb57
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.542019+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.9
+            MISMATCH: 0.02
+          confidence: 0.85
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.45
+            MISMATCH: 0.08
+          confidence: 0.21
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.82
+            MISMATCH: 0.07
+          confidence: 0.74
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.97
+            MISMATCH: 0.01
+          confidence: 0.96
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.94
+            MISMATCH: 0.0
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.96
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.96
+            MISMATCH: 0.01
+          confidence: 0.95
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.97
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/phenotype_term/severity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.69
+            MISMATCH: 0.01
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9182
+        output_tokens: 411
+      elapsed_seconds: 0.4879
+      request_sha256: 665e76f8c64780205d89a45fedc5e02cf272e2f8aec0f2a4d1e2436b9f7662c8
+      request_sha256s:
+      - 665e76f8c64780205d89a45fedc5e02cf272e2f8aec0f2a4d1e2436b9f7662c8
+  a03981fe16e482817e979fa8eb2802b7ee96dd11967ac72a3c89b0001af2f5c8:
+    input_sha256: 0a7ca0b8e3f0195bdead3529aec72546d36d971342f582825892017e23182f92
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.759351+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.63
+            PARTIAL: 0.31
+          confidence: 0.44
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.9
+            PARTIAL: 0.06
+          confidence: 0.85
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.5
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.98
+            PARTIAL: 0.02
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7201
+        output_tokens: 316
+      elapsed_seconds: 0.4046
+      request_sha256: 30f29a6c1bb403cb3d64c2ada9f96b1fcff67ca936b7e2ae3e8229a094fc0fa9
+      request_sha256s:
+      - 30f29a6c1bb403cb3d64c2ada9f96b1fcff67ca936b7e2ae3e8229a094fc0fa9
+  8f2eaecac616a3b4dfc4813c588b63f725bc5deecb8536bd4fee1d2f7f4b5eec:
+    input_sha256: c236df9c2b386ebb3ad90003e83edde6cdd0487690c1aa1596926c47d50afb69
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.854747+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.29
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.91
+            PARTIAL: 0.06
+          confidence: 0.87
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7160
+        output_tokens: 318
+      elapsed_seconds: 0.5025
+      request_sha256: 8c5d8cad849b5b8f8793c97e192e4a953af283884baefe18f14f111cd9c33bed
+      request_sha256s:
+      - 8c5d8cad849b5b8f8793c97e192e4a953af283884baefe18f14f111cd9c33bed
+  20246fbb87e76717588d36992e22f2bf8bed70a485a77a5d598faced61d787af:
+    input_sha256: 019d158120e2b87bfac76d66dea8a23dcd939172f64efdfc16b50060ab2c287c
+    configuration_sha256: ac04d751fd7a27c6eb40a6cb37addcc115e03090f9ada4b2ddf1429dd615e943
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:19.963230+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.82
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.47
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.79
+            PARTIAL: 0.13
+          confidence: 0.68
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.56
+            PARTIAL: 0.43
+          confidence: 0.33
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.93
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7223
+        output_tokens: 317
+      elapsed_seconds: 0.4631
+      request_sha256: 1f56ca07583d817bd3a321973897fb7c874eb52b5742cd9483cd3cb58b4adecd
+      request_sha256s:
+      - 1f56ca07583d817bd3a321973897fb7c874eb52b5742cd9483cd3cb58b4adecd
+  b39784b93139550ebcd2906f659f1a1497bb9fba5604110e47ca724fbf9ee223:
+    input_sha256: 4da2b1d5294446c4467e40818bada956462479ba895a3cbd561992fa5e12aa19
+    configuration_sha256: afcc7284d3528939241991831068b248e0f92d1ba41ceaa61578956e6913f7ba
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.096919+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.55
+            MATCH: 0.26
+          confidence: 0.32
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.74
+            MATCH: 0.08
+          confidence: 0.6
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.26
+            MATCH: 0.68
+          confidence: 0.52
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.38
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+            MATCH: 0.47000000000000003
+          confidence: 0.2
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.45
+            MATCH: 0.42
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6206
+        output_tokens: 274
+      elapsed_seconds: 0.4482
+      request_sha256: 7da883d52ad6280c3af13b5ff62b48b6882bfe3685c4e588e1569497902c518a
+      request_sha256s:
+      - 7da883d52ad6280c3af13b5ff62b48b6882bfe3685c4e588e1569497902c518a
+  1a700b519266d5052ea3c2d51940788040de92c62cfcf2601c9450b880df6cad:
+    input_sha256: ed2a495b07ea67c051fc4b97b2fd51233d8d053a275bae41f2672a0daf12e96b
+    configuration_sha256: afcc7284d3528939241991831068b248e0f92d1ba41ceaa61578956e6913f7ba
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.265832+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.55
+            MATCH: 0.21
+          confidence: 0.32
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.54
+            MATCH: 0.05
+          confidence: 0.32
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.25
+            MATCH: 0.68
+          confidence: 0.51
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.26
+            MATCH: 0.66
+          confidence: 0.48
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.3
+            MATCH: 0.62
+          confidence: 0.43
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+            MATCH: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6200
+        output_tokens: 273
+      elapsed_seconds: 0.4418
+      request_sha256: 89b6a3133422b60fc194c2fa43896b36e9234590e25b3e19564aaf894e0a01b9
+      request_sha256s:
+      - 89b6a3133422b60fc194c2fa43896b36e9234590e25b3e19564aaf894e0a01b9
+  8112f3609997c7ab46245e1fdb4445fa3d6637921e027dff1c242462c41f694c:
+    input_sha256: 4992582eb8cf6ced986000c52a4a613d116d71bc97a5b9fa377f91c31bd2d215
+    configuration_sha256: afcc7284d3528939241991831068b248e0f92d1ba41ceaa61578956e6913f7ba
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.431942+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.57
+            MISMATCH: 0.21
+          confidence: 0.36
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.62
+            MISMATCH: 0.32
+          confidence: 0.43
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.27
+            MISMATCH: 0.05
+          confidence: 0.52
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            PARTIAL: 0.32
+            MISMATCH: 0.08
+          confidence: 0.4
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.35
+            MISMATCH: 0.07
+          confidence: 0.37
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47000000000000003
+            PARTIAL: 0.44
+            MISMATCH: 0.09
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6200
+        output_tokens: 273
+      elapsed_seconds: 0.4226
+      request_sha256: 58204e5cf157e000317a6eea87823cc3e9c039a4e31536d0ab611b02a8026025
+      request_sha256s:
+      - 58204e5cf157e000317a6eea87823cc3e9c039a4e31536d0ab611b02a8026025
+  476c65c57ff741b929e4dbf93e0522db26927dc286076ff1ae0c2b9ab999a5b5:
+    input_sha256: 4d92b20fa113cfd21a0ac9e2be051b37d4a2d3f2918125d976985eb84ed3fc63
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.509929+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.93
+            MISMATCH: 0.02
+          confidence: 0.9
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4271
+        output_tokens: 175
+      elapsed_seconds: 0.4317
+      request_sha256: 93caacb0e33e5d072d26a8aa9c11b779d73852c5e762cbe13368eb2b700d736d
+      request_sha256s:
+      - 93caacb0e33e5d072d26a8aa9c11b779d73852c5e762cbe13368eb2b700d736d
+  d1bece29242a11e6ef6310fd6c4f0e9821cd7c69d19b1d027a2b1e13c228b39c:
+    input_sha256: 06015a3153f9d345b7b7882cabe68e3f04d7d8c04ec9ec0f56efd4d862e5e21b
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.626518+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.25
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.77
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.97
+            MISMATCH: 0.01
+          confidence: 0.96
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.72
+            PARTIAL: 0.22
+          confidence: 0.58
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.75
+            PARTIAL: 0.18
+          confidence: 0.63
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7652
+        output_tokens: 323
+      elapsed_seconds: 0.4376
+      request_sha256: e7486541e027495bff9a0f0a7be262faf1165c97aa9fefc13a05b19db0bfd651
+      request_sha256s:
+      - e7486541e027495bff9a0f0a7be262faf1165c97aa9fefc13a05b19db0bfd651
+  cb62b6856c98a4b097639d39534d115a38d33ae19b7c0add60e8afe2cf25b747:
+    input_sha256: 0c6ca1ecd3497cdc34c5a16611d34ae236b3c85b57dbf0bcf8ca4da4ed19e0a9
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.791703+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.07
+            PARTIAL: 0.34
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.18
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.05
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.06
+            PARTIAL: 0.43
+          confidence: 0.27
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.84
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.32
+            PARTIAL: 0.43
+          confidence: 0.13
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.27
+            PARTIAL: 0.35
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7649
+        output_tokens: 324
+      elapsed_seconds: 0.4349
+      request_sha256: 49a00e70e3c4a5718b412d12b82c143cf2c12dda3db33d1563ac4fe620cabeb0
+      request_sha256s:
+      - 49a00e70e3c4a5718b412d12b82c143cf2c12dda3db33d1563ac4fe620cabeb0
+  f5a79ec1c1a5779c3055662d2c089dd6202ee37be9ada308e9e85e51104f1269:
+    input_sha256: 5532887a070d5431176605256125d5d0127c9ebd5d3420cd7ee193fbe9771cec
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:20.941408+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.72
+            MISMATCH: 0.07
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.3
+            MISMATCH: 0.09
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.81
+            MISMATCH: 0.04
+          confidence: 0.72
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.68
+            MISMATCH: 0.1
+          confidence: 0.52
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.5
+            PARTIAL: 0.41
+          confidence: 0.25
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.7
+            MISMATCH: 0.09
+          confidence: 0.55
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.75
+            MISMATCH: 0.06
+          confidence: 0.63
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7683
+        output_tokens: 323
+      elapsed_seconds: 0.4351
+      request_sha256: 49a7e86532a64b2ba986c91161d91e45f7600a27e835fd872439591d068569ef
+      request_sha256s:
+      - 49a7e86532a64b2ba986c91161d91e45f7600a27e835fd872439591d068569ef
+  633292156abe10defc3d6219810f000156bd192eb269e934613d149bed11237d:
+    input_sha256: b666b94672237542ec8b7b50a8d8a35bfc38d07c8edcb19e10c5d8dafc49d984
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:21.032139+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.75
+            MATCH: 0.22
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.35
+            MATCH: 0.57
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.75
+            MATCH: 0.12
+          confidence: 0.63
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.26
+            MATCH: 0.41000000000000003
+          confidence: 0.11
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.33
+            MATCH: 0.62
+          confidence: 0.43
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.37
+            MATCH: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7674
+        output_tokens: 324
+      elapsed_seconds: 0.4288
+      request_sha256: 9491629eeb12f68689d17c6db2e959168f6917cc0e3e9a9ee980e0a4091ef093
+      request_sha256s:
+      - 9491629eeb12f68689d17c6db2e959168f6917cc0e3e9a9ee980e0a4091ef093
+  e3f58bcfb10d6ff7258433641af3637a31f753538276d0bd20a2a07e27c84a14:
+    input_sha256: 963e4afe2eca8c70750128c046501aee59d0d571eafca175c2cd07ced920cbca
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:25:21.162740+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.04
+            MATCH: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.02
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.58
+            MATCH: 0.21
+          confidence: 0.38
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.04
+            MATCH: 0.58
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4315
+        output_tokens: 178
+      elapsed_seconds: 0.4384
+      request_sha256: c930dd65d7ed2a3489f417762cafcaf30637a2ec3493b53f0d920556017cc3a5
+      request_sha256s:
+      - c930dd65d7ed2a3489f417762cafcaf30637a2ec3493b53f0d920556017cc3a5

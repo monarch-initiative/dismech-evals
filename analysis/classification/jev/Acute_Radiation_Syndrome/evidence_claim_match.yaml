@@ -1,0 +1,1903 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Acute_Radiation_Syndrome.yaml
+disease: Acute Radiation Syndrome
+inventory:
+  source_sha256: b8d66499c0d182034461b4afba7be16dc98a462bd38fc3d443c1f597a96f0dc9
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:17:48.520022+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  399a085a4b59648d856af4c3068f517b7f17f43d8e82c4e3de2be188c7070bfc:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hematopoietic Progenitor Injury
+        description: Penetrating ionizing radiation delivered to the whole body over a short period kills
+          proliferating haematopoietic stem and progenitor cells in the marrow. The marrow is the first
+          compartment to fail because its progenitors are the most rapidly cycling, which is the same
+          reason it is the dose-limiting tissue for cytotoxic chemotherapy - the insult differs but the
+          vulnerable cell population does not.
+        role: trigger
+        biological_scale: CELLULAR
+        conforms_to: myelosuppression#Cytotoxic Insult to Proliferating Hematopoietic Progenitors
+        cell_types:
+        - preferred_term: hematopoietic stem cell
+          term:
+            id: CL:0000037
+            label: hematopoietic stem cell
+        - preferred_term: hematopoietic progenitor cell
+          term:
+            id: CL:0008001
+            label: hematopoietic precursor cell
+        biological_processes:
+        - preferred_term: cellular response to ionizing radiation
+          term:
+            id: GO:0071479
+            label: cellular response to ionizing radiation
+          modifier: INCREASED
+        locations:
+        - preferred_term: bone marrow
+          term:
+            id: UBERON:0002371
+            label: bone marrow
+      selected_evidence:
+        snippet: These agents are largely recombinant growth factors (e.g. rhuG-CSF/filgrastim, rhuGM-CSF/sargramostim)
+          that target and stimulate myeloid progenitors within bone marrow.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34402734
+      reference_title: 'Radiation countermeasures for hematopoietic acute radiation syndrome: growth factors,
+        cytokines and beyond.'
+      evidence_source: OTHER
+      explanation: 'Identifies myeloid progenitors in bone marrow as the compartment the approved countermeasures
+        act on. This is INDIRECT support for the node: it establishes the target compartment rather than
+        demonstrating that radiation kills progenitors, and is retained for that narrower purpose alongside
+        the direct survival evidence carried on the exposure link.'
+    first_seen_at: '2026-09-25T14:43:56.782907+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:34402734
+  53c30b9a1c474e55e54523c4cacb4138fa705a86d898d3e5b11d462e9f75dda0:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Multilineage Peripheral Cytopenias
+        description: Neutropenia, thrombocytopenia and anaemia appear in sequence set by each lineage's
+          circulating half-life, with lymphocytes falling first and fastest. Duration of neutropenia rather
+          than nadir depth is the parameter the approved countermeasures actually shift.
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: myelosuppression#Multilineage Peripheral Cytopenias
+      selected_evidence:
+        snippet: Filgrastim significantly decreased the duration of neutropenia, but did not affect the
+          absolute neutrophil count nadir.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes that duration of neutropenia, not nadir depth, is the parameter that responds
+        to treatment - which is why this node is framed around duration and infection risk rather than
+        around the nadir alone.
+    first_seen_at: '2026-09-25T14:43:56.784501+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:23210705
+  c55fb48b1278864531d2934ce6f1e8cf666db274dce47ce9577f902e766251a1:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Dicentric chromosome assay biodosimetry
+        description: 'The reference method for reconstructing absorbed dose when no physical dosimeter
+          was worn, which is the usual case in an accident or a release. Scoring dicentric chromosomes
+          in peripheral lymphocytes gives a dose estimate against a calibration curve. Its weakness is
+          throughput: it is slow and needs expert readers, which is the wrong shape for a mass-casualty
+          event and the reason automated scoring is being developed.'
+      selected_evidence:
+        snippet: The dicentric chromosome assay is the "gold standard" in biodosimetry for estimating
+          radiation exposure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36543843
+      reference_title: Dicentric chromosome assay using a deep learning-based automated system.
+      evidence_source: OTHER
+      explanation: Establishes the assay as the reference standard for dose estimation.
+    first_seen_at: '2026-09-25T14:43:58.362243+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:36543843
+  b003be0de905837c4ac9dda1431feb7353552861b263aaeabd1e9a072e5e9535:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Dicentric chromosome assay biodosimetry
+        description: 'The reference method for reconstructing absorbed dose when no physical dosimeter
+          was worn, which is the usual case in an accident or a release. Scoring dicentric chromosomes
+          in peripheral lymphocytes gives a dose estimate against a calibration curve. Its weakness is
+          throughput: it is slow and needs expert readers, which is the wrong shape for a mass-casualty
+          event and the reason automated scoring is being developed.'
+      selected_evidence:
+        snippet: its large-scale deployment is limited owing to its time-consuming nature and requirement
+          for expert reviewers
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36543843
+      reference_title: Dicentric chromosome assay using a deep learning-based automated system.
+      evidence_source: OTHER
+      explanation: Records the throughput limitation, which is what makes the faster clinical triage methods
+        below necessary rather than merely convenient.
+    first_seen_at: '2026-09-25T14:43:58.397193+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:36543843
+  1858ada92ff9b857acf05c330c129ffc895afc31a492ab04a7c435dc0f708719:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cytopenia-Related Clinical Complications
+        description: Neutropenic infection and haemorrhage are the proximate causes of death in the haematopoietic
+          subsyndrome, and they are what supportive care and growth factors are given to prevent. Kept
+          separate from the cytopenias themselves because the countermeasures act on the counts while
+          the mortality is driven by the complications.
+        role: consequence
+        biological_scale: ORGANISM
+        conforms_to: myelosuppression#Cytopenia-Related Clinical Complications
+      selected_evidence:
+        snippet: Filgrastim, administered at this dose and schedule, effectively mitigated the lethality
+          of the hematopoietic subsyndrome of the acute radiation syndrome.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes lethality as the endpoint of this arm and that it is modifiable, which
+        is why the complications are modelled as their own node rather than folded into the cytopenias.
+    first_seen_at: '2026-09-25T14:43:58.359891+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:23210705
+  ff87f66fb2863942d3be9959b3a9c4f449756d18f45307c5f895ba56758a74a2:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Lymphocyte depletion kinetics and time to emesis
+        description: Early clinical triage. The rate at which the lymphocyte count falls, and the interval
+          from exposure to vomiting, both track absorbed dose and are available within hours, before any
+          cytogenetic result. This is the method the entry's lymphopenia phenotype is clinically useful
+          for.
+      selected_evidence:
+        snippet: Lymphocyte depletion kinetics and time to emesis have previously been shown to correlate
+          with radiation dose.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17993851
+      reference_title: Estimating radiation dose from time to emesis and lymphocyte depletion.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes both triage parameters as dose-correlated.
+    first_seen_at: '2026-09-25T14:43:58.397683+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:17993851
+  2dcf2d71b5c073865af4210d6f76b34085f44c87eeb722152cc69f3fb011859e:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Lymphocyte depletion kinetics and time to emesis
+        description: Early clinical triage. The rate at which the lymphocyte count falls, and the interval
+          from exposure to vomiting, both track absorbed dose and are available within hours, before any
+          cytogenetic result. This is the method the entry's lymphopenia phenotype is clinically useful
+          for.
+      selected_evidence:
+        snippet: dose can be estimated by a simple table lookup, given the ratio of two lymphocyte counts
+          and the time between blood samples.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17993851
+      reference_title: Estimating radiation dose from time to emesis and lymphocyte depletion.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the simplified method, derived from radiation-accident case data, that makes
+        lymphocyte kinetics usable at the bedside.
+    first_seen_at: '2026-09-25T14:43:58.786210+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:17993851
+  b4a716112c48b82cadf96c61e128601d604723f7dde58d4a55dea7d1d0ae072f:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context:
+        - path: /animal_models/0
+          value:
+            name: Non-human primate total-body irradiation model
+            species: Macaca mulatta
+            description: Rhesus macaques given a mid-lethal total-body dose with protocol-defined supportive
+              care. This is the model the entire approved-countermeasure evidence base rests on, and under
+              the FDA Animal Rule it is the model that stands in for the human efficacy trial that cannot
+              be run.
+            publication: PMID:23210705
+          role: ancestor
+        - path: /animal_models/0/modeled_mechanisms/0
+          value:
+            target: Bone Marrow Hematopoietic Suppression
+            relationship: RECAPITULATES
+            fidelity: MODERATE
+            description: Reproduces the marrow suppression and its survival consequence at a controlled
+              dose, which is what allows countermeasure efficacy to be measured at all.
+            limitations: Dose is uniform, delivered by linear accelerator, and paired with protocolised
+              supportive care. A human casualty has an unknown, non-uniform dose and variable care, so
+              the dose-equivalence assumption is the part that does not transfer cleanly.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: 60-day overall mortality
+        target: Bone Marrow Hematopoietic Suppression
+        direction: DECREASED
+        interpretation: Filgrastim reduced 60-day mortality from 59.1% to 20.8% at an approximate LD50/60
+          dose.
+      selected_evidence:
+        snippet: Filgrastim significantly (P < 0.004) reduced 60 day overall mortality [20.8% (5/24)]
+          compared to the controls [59.1% (13/22)].
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+      - /animal_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: The survival readout that carries the efficacy claim for this model.
+    first_seen_at: '2026-09-25T14:43:58.859152+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:23210705
+  7a62fd7cb3d9728dde6fb26443a9244d3098a3b1ace5f25a1fcf7a108a6b582b:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context:
+        - path: /animal_models/0
+          value:
+            name: Non-human primate total-body irradiation model
+            species: Macaca mulatta
+            description: Rhesus macaques given a mid-lethal total-body dose with protocol-defined supportive
+              care. This is the model the entire approved-countermeasure evidence base rests on, and under
+              the FDA Animal Rule it is the model that stands in for the human efficacy trial that cannot
+              be run.
+            publication: PMID:23210705
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Bone Marrow Hematopoietic Suppression
+        relationship: RECAPITULATES
+        fidelity: MODERATE
+        description: Reproduces the marrow suppression and its survival consequence at a controlled dose,
+          which is what allows countermeasure efficacy to be measured at all.
+        limitations: Dose is uniform, delivered by linear accelerator, and paired with protocolised supportive
+          care. A human casualty has an unknown, non-uniform dose and variable care, so the dose-equivalence
+          assumption is the part that does not transfer cleanly.
+        readouts:
+        - name: 60-day overall mortality
+          target: Bone Marrow Hematopoietic Suppression
+          direction: DECREASED
+          interpretation: Filgrastim reduced 60-day mortality from 59.1% to 20.8% at an approximate LD50/60
+            dose.
+      selected_evidence:
+        snippet: We evaluated the efficacy of filgrastim to increase survival of nonhuman primates (NHP)
+          exposed to an approximate mid-lethal dose
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes the model, species and dose regimen this entry's efficacy evidence comes
+        from.
+    first_seen_at: '2026-09-25T14:43:58.834422+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:23210705
+  3333d794c96f2e585cc68d3e3533c576bcb8aeedbe1df2b9871174914e94a643:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Acute whole-body ionizing radiation exposure
+        description: A single high-dose exposure from a criticality accident, radiological source mishandling,
+          reactor accident or nuclear detonation. It is distinguished from therapeutic irradiation by
+          being uncontrolled, unfractionated, and usually of initially unknown dose, which is what makes
+          early triage on lymphocyte depletion kinetics necessary.
+        exposure_term:
+          preferred_term: acute whole-body exposure to ionizing radiation
+          term:
+            id: ECTO:7000047
+            label: exposure to ionizing radiation
+        exposure_classifications:
+          hazard_agent_type:
+          - classification_value: PHYSICAL
+          exposure_route:
+          - classification_value: MULTIPLE
+            notes: Whole-body external irradiation is not an absorption route in the chemical sense; MULTIPLE
+              is recorded because the exposure is not confined to one portal of entry.
+          exposure_duration:
+          - classification_value: ACUTE
+        notes: 'Bound to ECTO:7000047 (exposure to ionizing radiation), which resolves in the repository''s
+          ECTO adapter (sqlite:obo:ecto) and is already in the validated cache. An earlier draft of this
+          entry bound ECTO:0000006 (exposure to ultraviolet radiation), which is wrong - ultraviolet is
+          non-ionizing and does not produce this syndrome - together with a note claiming no better term
+          was available. That note was itself wrong: the correct term was in the cache all along and had
+          simply not been searched for. The acute, whole-body and unfractionated character of the exposure
+          is carried in preferred_term and description, since the ECTO class does not distinguish it from
+          chronic or partial-body irradiation.'
+      selected_evidence:
+        snippet: It is critical that additional agents for other major sub-syndromes of ARS (gastrointestinal-ARS)
+          be approved.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34402734
+      reference_title: 'Radiation countermeasures for hematopoietic acute radiation syndrome: growth factors,
+        cytokines and beyond.'
+      evidence_source: OTHER
+      explanation: Records that the syndrome has subsyndromes beyond the haematopoietic one modelled here,
+        and that countermeasure coverage for them remains an acknowledged gap.
+    first_seen_at: '2026-09-25T14:43:58.902111+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:34402734
+  b136f3c0d94fc5eeec989a561f936862d5253fbaeb09586987e93edec5b14687:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context:
+        - path: /environmental/0
+          value:
+            name: Acute whole-body ionizing radiation exposure
+            description: A single high-dose exposure from a criticality accident, radiological source
+              mishandling, reactor accident or nuclear detonation. It is distinguished from therapeutic
+              irradiation by being uncontrolled, unfractionated, and usually of initially unknown dose,
+              which is what makes early triage on lymphocyte depletion kinetics necessary.
+            exposure_term:
+              preferred_term: acute whole-body exposure to ionizing radiation
+              term:
+                id: ECTO:7000047
+                label: exposure to ionizing radiation
+            exposure_classifications:
+              hazard_agent_type:
+              - classification_value: PHYSICAL
+              exposure_route:
+              - classification_value: MULTIPLE
+                notes: Whole-body external irradiation is not an absorption route in the chemical sense;
+                  MULTIPLE is recorded because the exposure is not confined to one portal of entry.
+              exposure_duration:
+              - classification_value: ACUTE
+            notes: 'Bound to ECTO:7000047 (exposure to ionizing radiation), which resolves in the repository''s
+              ECTO adapter (sqlite:obo:ecto) and is already in the validated cache. An earlier draft of
+              this entry bound ECTO:0000006 (exposure to ultraviolet radiation), which is wrong - ultraviolet
+              is non-ionizing and does not produce this syndrome - together with a note claiming no better
+              term was available. That note was itself wrong: the correct term was in the cache all along
+              and had simply not been searched for. The acute, whole-body and unfractionated character
+              of the exposure is carried in preferred_term and description, since the ECTO class does
+              not distinguish it from chronic or partial-body irradiation.'
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Hematopoietic Progenitor Injury
+        environmental_effect: TRIGGERS
+        causal_link_type: DIRECT
+        description: The radiation exposure is the physical insult that initiates progenitor killing.
+      selected_evidence:
+        snippet: Filgrastim, administered at this dose and schedule, effectively mitigated the lethality
+          of the hematopoietic subsyndrome of the acute radiation syndrome.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes the haematopoietic subsyndrome as the consequence of the irradiation exposure
+        modelled at this node, in a controlled total-body irradiation experiment.
+    first_seen_at: '2026-09-25T14:43:59.274181+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:23210705
+  9ea6600909a3096cc29f829eb03533d4812f5aecaa7b9ec333a4a97d17552b08:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Romiplostim
+        description: A thrombopoietin receptor agonist approved for the haematopoietic subsyndrome, addressing
+          the platelet lineage that growth-factor support for granulocytes does not cover.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: Romiplostim, a small molecular agonist that enhances platelet production via stimulation
+          of bone marrow megakaryocytes, has been recently approved and indicated for H-ARS.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34402734
+      reference_title: 'Radiation countermeasures for hematopoietic acute radiation syndrome: growth factors,
+        cytokines and beyond.'
+      evidence_source: OTHER
+      explanation: Establishes the approval and the megakaryocyte mechanism placing it on the marrow-suppression
+        node.
+    first_seen_at: '2026-09-25T14:43:59.457595+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:34402734
+  edc33140da5c6a73a699e5bd4ea1290eefc0728f190128545b80ceb55e05b24d:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Sargramostim
+        description: Recombinant GM-CSF, also FDA-approved for the haematopoietic subsyndrome. It acts
+          on the same surviving-progenitor pool as filgrastim but across a broader myeloid range, and
+          is stockpiled alongside it.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: sargramostim
+            term:
+              id: NCIT:C1492
+              label: Sargramostim
+      selected_evidence:
+        snippet: These agents are largely recombinant growth factors (e.g. rhuG-CSF/filgrastim, rhuGM-CSF/sargramostim)
+          that target and stimulate myeloid progenitors within bone marrow.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34402734
+      reference_title: 'Radiation countermeasures for hematopoietic acute radiation syndrome: growth factors,
+        cytokines and beyond.'
+      evidence_source: OTHER
+      explanation: Names sargramostim among the approved recombinant growth factors and states the myeloid-progenitor
+        target that places it on this node.
+    first_seen_at: '2026-09-25T14:43:59.388293+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:34402734
+  1e0c13e98dcca53c805455182eb5de7a4e2ea999a5c5364e534bffc1ab426e53:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Granulocyte colony-stimulating factor (filgrastim)
+        description: Filgrastim is FDA-approved for the haematopoietic subsyndrome and acts by stimulating
+          surviving myeloid progenitors to accelerate granulocyte recovery. It shortens the duration of
+          neutropenia without altering the nadir, so it rescues marrow output rather than preventing the
+          initial radiation injury.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: filgrastim
+            term:
+              id: NCIT:C1474
+              label: Filgrastim
+      selected_evidence:
+        snippet: Filgrastim significantly (P < 0.004) reduced 60 day overall mortality [20.8% (5/24)]
+          compared to the controls [59.1% (13/22)].
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: Controlled non-human primate survival evidence at a mid-lethal dose. Graded MODEL_ORGANISM,
+        which for this indication is not a weakness of the evidence base but its regulatory design - see
+        the entry's discussion on the FDA Animal Rule.
+    first_seen_at: '2026-09-25T14:43:59.334862+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:23210705
+  acbb7aaafc1cba7829407cebac4961146bf55377b68e80badbde15c64e8d18af:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: ars_animal_rule_evidence_base
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        prompt: How far do non-human primate survival results for the haematopoietic subsyndrome transfer
+          to human radiation casualties, given that human efficacy trials for this indication cannot ethically
+          be run?
+        attaches_to:
+        - pathophysiology#Bone Marrow Hematopoietic Suppression
+        rationale: Every treatment in this entry is graded MODEL_ORGANISM, and that is a feature of the
+          regulatory pathway rather than a gap in curation. Countermeasures for acute radiation syndrome
+          are approved under the FDA Animal Rule, which permits marketing approval on adequate and well-controlled
+          animal efficacy data precisely because deliberately irradiating humans to test a drug is not
+          ethical or feasible. The consequence for this knowledge base is that the efficacy claims here
+          can never be upgraded to HUMAN_CLINICAL by finding a better trial - no such trial will exist.
+          What human data does exist comes from accident case series with uncontrolled dose, heterogeneous
+          supportive care and small numbers. The open question is therefore not whether the animal data
+          are good, but how dose-equivalence and supportive-care differences between a primate protocol
+          and a mass-casualty setting affect the expected benefit.
+      selected_evidence:
+        snippet: The Animal Rule enumerates criteria whereby the FDA would approve a drug or biologic
+          for ARS indication based on animal efficacy data when efficacy studies in humans are unethical
+          or not feasible.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23210705
+      reference_title: Filgrastim improves survival in lethally irradiated nonhuman primates.
+      evidence_source: MODEL_ORGANISM
+      explanation: States the regulatory basis that makes model-organism evidence the ceiling rather than
+        a stepping stone for this indication.
+    first_seen_at: '2026-09-25T14:43:59.761425+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:48.520022+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:48.520022+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:23210705
+assessments:
+  a9e3d59aba35aa98cc7a716545bc51875634c8fcc8b4416a7545dc238219f8b0:
+    input_sha256: 399a085a4b59648d856af4c3068f517b7f17f43d8e82c4e3de2be188c7070bfc
+    configuration_sha256: 123e7dbaaf0eeb1834cd2269f65a33a03ba71d6bd34256153fd4cdc06fbfb426
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:56.782907+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.26
+            MISMATCH: 0.72
+          confidence: 0.59
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.08
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.45999999999999996
+            MISMATCH: 0.45
+          confidence: 0.2
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.01
+            MISMATCH: 0.75
+          confidence: 0.63
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.03
+            MISMATCH: 0.65
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.39
+            MISMATCH: 0.29
+          confidence: 0.09
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.02
+            MISMATCH: 0.72
+          confidence: 0.59
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.09
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.13
+            MISMATCH: 0.44
+          confidence: 0.17
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.28
+            MISMATCH: 0.25
+          confidence: 0.21
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.24
+            MISMATCH: 0.33
+          confidence: 0.15
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.02
+            MISMATCH: 0.75
+          confidence: 0.63
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.01
+            MISMATCH: 0.79
+          confidence: 0.67
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.01
+            MISMATCH: 0.81
+          confidence: 0.71
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.52
+            MISMATCH: 0.15
+          confidence: 0.28
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.53
+            MISMATCH: 0.13
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16974
+        output_tokens: 806
+      elapsed_seconds: 0.6932
+      request_sha256: b7d08cda5cf584728236e8bd5fcf1e8ece5ecd0eaab11030bffd5d7140e4c567
+      request_sha256s:
+      - b7d08cda5cf584728236e8bd5fcf1e8ece5ecd0eaab11030bffd5d7140e4c567
+  c87644c2b707b7a165c3a0c8973e04ec8407871b5c0c0cfca9a9cc32472621d7:
+    input_sha256: 53c30b9a1c474e55e54523c4cacb4138fa705a86d898d3e5b11d462e9f75dda0
+    configuration_sha256: ec842331c9e46b2a1755d876f73a9b8e1446d8319e10dc2b03dcc15c8a4a26dc
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:56.784501+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.14
+            PARTIAL: 0.76
+          confidence: 0.63
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.32
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.2
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.23
+            PARTIAL: 0.69
+          confidence: 0.54
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.3
+            PARTIAL: 0.45
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.62
+            PARTIAL: 0.24
+          confidence: 0.42
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            MATCH: 0.04
+            PARTIAL: 0.39
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7688
+        output_tokens: 319
+      elapsed_seconds: 0.5525
+      request_sha256: 970512bd88bc91c4e1e9239bd6484d8cbe7ef4eadeef8e2d30a3639049266fef
+      request_sha256s:
+      - 970512bd88bc91c4e1e9239bd6484d8cbe7ef4eadeef8e2d30a3639049266fef
+  dc24512b18f282ecf782b6aa917c5f4e3b14c272d44fb8d1aefcea2dc455761c:
+    input_sha256: c55fb48b1278864531d2934ce6f1e8cf666db274dce47ce9577f902e766251a1
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.362243+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.49
+            MISMATCH: 0.3
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.48
+            PARTIAL: 0.41
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            PARTIAL: 0.16
+            MISMATCH: 0.15
+          confidence: 0.54
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.63
+            MISMATCH: 0.24
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4315
+        output_tokens: 180
+      elapsed_seconds: 0.4072
+      request_sha256: be161e50fd4c6889a54201b600e3fec45f5d59cc861749dd222bfff78d0cc636
+      request_sha256s:
+      - be161e50fd4c6889a54201b600e3fec45f5d59cc861749dd222bfff78d0cc636
+  ffd2645acfffdb9e910c50a26e896573023ac5759e9393da74ad6fff94a8bde2:
+    input_sha256: b003be0de905837c4ac9dda1431feb7353552861b263aaeabd1e9a072e5e9535
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.397193+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.41
+            MISMATCH: 0.26
+          confidence: 0.12
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.1
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.28
+            MISMATCH: 0.49
+          confidence: 0.24
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.59
+            MISMATCH: 0.14
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4310
+        output_tokens: 181
+      elapsed_seconds: 0.4161
+      request_sha256: bcedd91c4b80636658f0629dc074c263bd3058c47362c04c610f9c762198b85d
+      request_sha256s:
+      - bcedd91c4b80636658f0629dc074c263bd3058c47362c04c610f9c762198b85d
+  8867c8a180651f7d1ffacefe839ccfa2fa74d0659ddd805d7121f112ae3acd34:
+    input_sha256: 1858ada92ff9b857acf05c330c129ffc895afc31a492ab04a7c435dc0f708719
+    configuration_sha256: ec842331c9e46b2a1755d876f73a9b8e1446d8319e10dc2b03dcc15c8a4a26dc
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.359891+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.1
+            PARTIAL: 0.81
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.26
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.06
+            PARTIAL: 0.79
+          confidence: 0.68
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.45999999999999996
+            PARTIAL: 0.45
+          confidence: 0.2
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.62
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.04
+            PARTIAL: 0.46
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7722
+        output_tokens: 317
+      elapsed_seconds: 0.4711
+      request_sha256: b8b83ad5782af2b3cb981d31200b516710ea091137ef4cd107d3b2e0904c718c
+      request_sha256s:
+      - b8b83ad5782af2b3cb981d31200b516710ea091137ef4cd107d3b2e0904c718c
+  40c97c8aa35fa19c1a193736b7bc9d70d8a1046bebae2312dfadda2a8113983e:
+    input_sha256: ff87f66fb2863942d3be9959b3a9c4f449756d18f45307c5f895ba56758a74a2
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.397683+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.4
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.56
+            PARTIAL: 0.4
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.28
+            PARTIAL: 0.64
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4286
+        output_tokens: 177
+      elapsed_seconds: 0.4722
+      request_sha256: 7dc4fa2c0c6cf79e79fa8704cb94c97d4919fcf40c78962ac69cf9e1645c688b
+      request_sha256s:
+      - 7dc4fa2c0c6cf79e79fa8704cb94c97d4919fcf40c78962ac69cf9e1645c688b
+  53ff6172d3c0a457e11cd59c07e13f954e68c862b4899bf3dd0a7839086ae644:
+    input_sha256: 2dcf2d71b5c073865af4210d6f76b34085f44c87eeb722152cc69f3fb011859e
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.786210+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.16
+            MISMATCH: 0.09
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.38
+            MISMATCH: 0.08
+          confidence: 0.31
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.21
+            MISMATCH: 0.11
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MATCH: 0.1
+            MISMATCH: 0.11
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4292
+        output_tokens: 179
+      elapsed_seconds: 0.4586
+      request_sha256: 68e0f9dd4d0b9364cb19c58ce010987f3c365267497a78c1ebde27338dc04cd7
+      request_sha256s:
+      - 68e0f9dd4d0b9364cb19c58ce010987f3c365267497a78c1ebde27338dc04cd7
+  721ee6dc9b3c90b129e7a66f7e88684e480aa6e1d53c77a8e83ec1c7fa5b29b7:
+    input_sha256: b4a716112c48b82cadf96c61e128601d604723f7dde58d4a55dea7d1d0ae072f
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.859152+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.05
+            MATCH: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.1
+            MATCH: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.98
+            MISMATCH: 0.01
+          confidence: 0.97
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.47
+            MISMATCH: 0.18
+          confidence: 0.21
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.58
+            MISMATCH: 0.26
+          confidence: 0.36
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.11
+            MATCH: 0.66
+          confidence: 0.49
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.56
+            MISMATCH: 0.17
+          confidence: 0.33
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.6
+            MISMATCH: 0.14
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8545
+        output_tokens: 355
+      elapsed_seconds: 0.441
+      request_sha256: edc6f15df995e9e2902ae8e768d96e9079fdc84d2742f30b5d19081aec88b440
+      request_sha256s:
+      - edc6f15df995e9e2902ae8e768d96e9079fdc84d2742f30b5d19081aec88b440
+  84d84334c524044c470120533ba242f44a0dec27c2fdbc4b87d09c677892314b:
+    input_sha256: 7a62fd7cb3d9728dde6fb26443a9244d3098a3b1ace5f25a1fcf7a108a6b582b
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.834422+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.35
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.54
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.27
+            PARTIAL: 0.6
+          confidence: 0.41
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.24
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.42
+            PARTIAL: 0.5
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.24
+            PARTIAL: 0.69
+          confidence: 0.54
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            MATCH: 0.02
+            PARTIAL: 0.31
+          confidence: 0.51
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.3
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.29
+            PARTIAL: 0.5599999999999999
+          confidence: 0.35
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.22
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.31
+            PARTIAL: 0.58
+          confidence: 0.38
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12512
+        output_tokens: 572
+      elapsed_seconds: 0.5072
+      request_sha256: fe95b6e4905e92ea2a3fd15378434afd3ff9ea2d766e71b56cb4a0762692880c
+      request_sha256s:
+      - fe95b6e4905e92ea2a3fd15378434afd3ff9ea2d766e71b56cb4a0762692880c
+  8c50db0ad3ba33ee28f5798a78a330d73c695516c582ab9de45ef1823d73992d:
+    input_sha256: 3333d794c96f2e585cc68d3e3533c576bcb8aeedbe1df2b9871174914e94a643
+    configuration_sha256: 58a3ff04de1894ee4ec193fb464a76882013eef8828c596e7e84d684c18aabd8
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:58.902111+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.25
+            MISMATCH: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.17
+            MISMATCH: 0.06
+          confidence: 0.66
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.17
+            MISMATCH: 0.8
+          confidence: 0.71
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.01
+            MISMATCH: 0.88
+          confidence: 0.83
+        /assertion/exposure_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.15
+            MISMATCH: 0.83
+          confidence: 0.74
+        /assertion/exposure_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.15
+            MISMATCH: 0.81
+          confidence: 0.72
+        /assertion/exposure_classifications/hazard_agent_type/0/classification_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.19
+            MISMATCH: 0.77
+          confidence: 0.66
+        /assertion/exposure_classifications/exposure_route/0/classification_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.1
+            MISMATCH: 0.89
+          confidence: 0.84
+        /assertion/exposure_classifications/exposure_route/0/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.01
+            MISMATCH: 0.94
+          confidence: 0.92
+        /assertion/exposure_classifications/exposure_duration/0/classification_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.26
+            MISMATCH: 0.71
+          confidence: 0.56
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.07
+            MISMATCH: 0.91
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11315
+        output_tokens: 584
+      elapsed_seconds: 0.5077
+      request_sha256: d86bd959ec75c5af5fcfeba35e7717e5e2b3cad40aff8a7c3930846e19a8a3f1
+      request_sha256s:
+      - d86bd959ec75c5af5fcfeba35e7717e5e2b3cad40aff8a7c3930846e19a8a3f1
+  71a426636b7db17f56d846dab9d716bf98f8d172b384adcf39bd76ea10da45df:
+    input_sha256: b136f3c0d94fc5eeec989a561f936862d5253fbaeb09586987e93edec5b14687
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:59.274181+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.38
+            PARTIAL: 0.51
+            MATCH: 0.11
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.47
+            MATCH: 0.34
+          confidence: 0.21
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            PARTIAL: 0.52
+            MATCH: 0.14
+          confidence: 0.28
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.51
+            MATCH: 0.06
+          confidence: 0.27
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            PARTIAL: 0.42
+            MATCH: 0.08
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.4
+            MATCH: 0.33
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7879
+        output_tokens: 324
+      elapsed_seconds: 0.4372
+      request_sha256: 0d0e855cf8d19e5e5301052c10ba7b2f7a370ec1e62982e381acbf257e867f48
+      request_sha256s:
+      - 0d0e855cf8d19e5e5301052c10ba7b2f7a370ec1e62982e381acbf257e867f48
+  35a0f37090174082c4c86d881f884bb079919c3a71fd3f82f54e0d1b022c5eba:
+    input_sha256: 9ea6600909a3096cc29f829eb03533d4812f5aecaa7b9ec333a4a97d17552b08
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:59.457595+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.35
+            MATCH: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.06
+            MATCH: 0.94
+          confidence: 0.9
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.5
+            MATCH: 0.32
+          confidence: 0.24
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.77
+            PARTIAL: 0.08
+            MATCH: 0.15
+          confidence: 0.65
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.24
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.33
+            MATCH: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7683
+        output_tokens: 326
+      elapsed_seconds: 0.4303
+      request_sha256: ee2f85409c719f5b55e5512e73fcd0fb1cce36c559867189404e0b166b83556b
+      request_sha256s:
+      - ee2f85409c719f5b55e5512e73fcd0fb1cce36c559867189404e0b166b83556b
+  cb87877fe2d8376befc9fbe16e4f588ccc648be629ef9f75f262e8b304cd2b09:
+    input_sha256: edc33140da5c6a73a699e5bd4ea1290eefc0728f190128545b80ceb55e05b24d
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:59.388293+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.68
+            MATCH: 0.27
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.62
+            MATCH: 0.22
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.17
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.56
+            MATCH: 0.07
+          confidence: 0.34
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            PARTIAL: 0.12
+            MATCH: 0.16
+          confidence: 0.58
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.2
+            MATCH: 0.71
+          confidence: 0.56
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.33
+            MATCH: 0.51
+          confidence: 0.26
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+            MATCH: 0.84
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9716
+        output_tokens: 442
+      elapsed_seconds: 0.5533
+      request_sha256: bf1464f1bfbb938870aaedf9f210284287d38597c957cda9e648e9a0a9685ec3
+      request_sha256s:
+      - bf1464f1bfbb938870aaedf9f210284287d38597c957cda9e648e9a0a9685ec3
+  0329dfa79151808f9af2596a375bea7faa75ad3a8169e5db7ee44b279eddc36f:
+    input_sha256: 1e0c13e98dcca53c805455182eb5de7a4e2ea999a5c5364e534bffc1ab426e53
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:59.334862+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.67
+            MATCH: 0.25
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.64
+            MATCH: 0.32
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.23
+            MATCH: 0.72
+          confidence: 0.57
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.46
+            PARTIAL: 0.5
+            MATCH: 0.04
+          confidence: 0.25
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+            MATCH: 0.03
+          confidence: 0.67
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.36
+            MATCH: 0.39
+          confidence: 0.1
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            PARTIAL: 0.4
+            MATCH: 0.37
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.17
+            MATCH: 0.79
+          confidence: 0.69
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.2
+            MATCH: 0.76
+          confidence: 0.65
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9739
+        output_tokens: 443
+      elapsed_seconds: 0.5803
+      request_sha256: ef6b4e00a091e2e7f57492ba864ae24930fe0ce93a7dffe9e3f0c6c4321a38db
+      request_sha256s:
+      - ef6b4e00a091e2e7f57492ba864ae24930fe0ce93a7dffe9e3f0c6c4321a38db
+  bff04111877793a9d991c466e2968820d9e39e478c1ec20220c8db3324199df3:
+    input_sha256: acbb7aaafc1cba7829407cebac4961146bf55377b68e80badbde15c64e8d18af
+    configuration_sha256: 0cc1f5b26da05df05194df920c2938c8f8dc5dd8898d2c6724fb4a40acf09259
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T14:43:59.761425+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+            MATCH: 0.57
+          confidence: 0.36
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            PARTIAL: 0.22
+            MATCH: 0.15
+          confidence: 0.44
+        /assertion/kind:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.28
+            PARTIAL: 0.27
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            PARTIAL: 0.33
+            MATCH: 0.12
+          confidence: 0.33
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.57
+            MATCH: 0.27
+          confidence: 0.36
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.26
+            MATCH: 0.26
+          confidence: 0.22
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.32
+            MATCH: 0.61
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8471
+        output_tokens: 366
+      elapsed_seconds: 0.4778
+      request_sha256: d40b66b6f265a35da2c78142ab061681bd48e69d7194288677d12fcf5802e474
+      request_sha256s:
+      - d40b66b6f265a35da2c78142ab061681bd48e69d7194288677d12fcf5802e474

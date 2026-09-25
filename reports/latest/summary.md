@@ -2,7 +2,7 @@
 
 # Jev claim/evidence audit
 
-85 entries; 8000 assertion/evidence pairs; 7112 assessed (1 reused); 84 API/unassessed errors; 0 invalid inputs.
+928 entries; 80000 assertion/evidence pairs; 67355 assessed (7077 reused); 505 API/unassessed errors; 1 invalid inputs.
 
 Model judgments prioritize recuration; they are not curated labels or measures of disease-entry truth.
 PARTIAL means incomplete, weak, mixed or uncertain snippet support. Missing evidence and failed requests have no model label.
@@ -13,23 +13,23 @@ Full reports: `entries.csv`, `aspects.csv`; provenance and exact inputs: `manife
 
 | Entry | Assertions with MISMATCH | Assertions with PARTIAL | Assessed pairs |
 | --- | ---: | ---: | ---: |
+| Autosomal Agammaglobulinemia | 91 | 179 | 260 |
+| Autosomal Dominant Hypercholesterolemia 3 | 87 | 126 | 198 |
+| Androgen Insensitivity Syndrome | 86 | 107 | 240 |
+| Alzheimer Disease | 83 | 121 | 408 |
+| Alcohol Use Disorder | 82 | 166 | 255 |
+| Adult-Onset Myasthenia Gravis | 75 | 146 | 207 |
+| Autoimmune Pancreatitis | 73 | 127 | 223 |
+| Angelman Syndrome | 73 | 133 | 216 |
+| Achondroplasia | 72 | 126 | 219 |
+| Amyotrophic Lateral Sclerosis | 72 | 112 | 223 |
+| Acrofacial Dysostosis Cincinnati Type | 71 | 172 | 205 |
+| Autosomal Dominant Cerebellar Ataxia Type I | 70 | 86 | 155 |
+| Cerebrotendinous xanthomatosis | 69 | 137 | 182 |
+| Aortic Valve Stenosis | 68 | 138 | 219 |
 | 46,XY partial gonadal dysgenesis | 62 | 136 | 228 |
-| 46,XY Sex Reversal 11 | 53 | 98 | 164 |
-| ADNP-Related Syndrome | 52 | 92 | 145 |
-| Acromesomelic Dysplasia Demirhan Type | 49 | 75 | 112 |
-| 46,XX Gonadal Dysgenesis | 42 | 92 | 142 |
-| 3-methylglutaconic_Aciduria_With_Deafness_Encephalopathy_And_Leigh-like_Syndrome | 42 | 99 | 142 |
-| 46,XY complete gonadal dysgenesis | 41 | 113 | 148 |
-| Acetaminophen Hepatotoxicity | 41 | 68 | 115 |
-| 3-M Syndrome | 40 | 112 | 167 |
-| ALDH18A1-Related Spastic Paraplegia and Neurocutaneous Spectrum | 40 | 65 | 121 |
-| Achondroplasia | 39 | 61 | 94 |
-| AFG2A-Related Encephalopathy | 36 | 50 | 103 |
-| AA Amyloidosis | 36 | 109 | 179 |
-| 3p- Syndrome | 35 | 80 | 139 |
-| Adult-Type Hypolactasia | 32 | 69 | 106 |
-| ABCC9-Related Intellectual Disability and Myopathy Syndrome | 31 | 73 | 153 |
-| ADPRS-Related Stress-Induced Neurodegeneration | 31 | 53 | 99 |
-| 3MC Syndrome | 30 | 84 | 139 |
-| 46,XY Sex Reversal 5 | 30 | 58 | 98 |
-| Aicardi-Goutieres Syndrome | 30 | 61 | 113 |
+| Amyotrophic Lateral Sclerosis Type 1 | 62 | 119 | 189 |
+| Alpha-mannosidosis | 61 | 172 | 211 |
+| Autosomal Dominant Non-Syndromic Intellectual Disability | 60 | 76 | 178 |
+| Androgenetic Alopecia | 60 | 124 | 224 |
+| Autosomal dominant Charcot-Marie-Tooth disease type 2K | 60 | 90 | 154 |

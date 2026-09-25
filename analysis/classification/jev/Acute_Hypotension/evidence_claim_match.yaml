@@ -1,0 +1,3890 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Acute_Hypotension.yaml
+disease: Acute Hypotension
+inventory:
+  source_sha256: 86120640f39e9e172e4dd54124b431433bdabf91f3342cd02444ece6dee19814
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+  observed_at: '2026-09-25T16:17:42.177464+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  faeb0a41d3ac5f5f79a0be1b0bb36d030117e8e8e920cfb951d971f6b9d94260:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced Effective Circulating Volume
+        description: Hemorrhage, external fluid loss, or redistribution of intravascular volume can reduce
+          venous return, cardiac preload, and stroke volume. Compensatory vasoconstriction may initially
+          preserve pressure, whereas severe or rapidly progressive volume loss can produce an acute pressure
+          fall.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: At the late stage of severe hemorrhage (equivalent to loss of approximately 30% of blood
+          volume), a paradoxical increase of vagal drive may occur leading to a decrease in heart rate,
+          and systemic vascular resistance resulting in a reduction of arterial blood pressure, and possibly
+          to a circulatory collapse (26, 29, 30).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29732372
+      reference_title: The Role of Failing Autonomic Nervous System on Life-Threatening Idiopathic Systemic
+        Capillary Leak Syndrome.
+      evidence_source: OTHER
+      explanation: This physiologic discussion supports severe volume loss as one route to an acute arterial-pressure
+        fall, while also showing that compensation varies with severity.
+    first_seen_at: '2026-09-25T15:07:14.794493+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:29732372
+  eec37785bc67a7afaeadf1582019fdb5440291881a57449d398597285ce5aa15:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Reduced Effective Circulating Volume
+            description: Hemorrhage, external fluid loss, or redistribution of intravascular volume can
+              reduce venous return, cardiac preload, and stroke volume. Compensatory vasoconstriction
+              may initially preserve pressure, whereas severe or rapidly progressive volume loss can produce
+              an acute pressure fall.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Acute Arterial Pressure Fall
+        description: When loss of effective circulating volume exceeds compensatory capacity, reduced
+          venous return and stroke volume can lower arterial pressure.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Reduced venous return, cardiac preload, and stroke volume
+      selected_evidence:
+        snippet: At the late stage of severe hemorrhage (equivalent to loss of approximately 30% of blood
+          volume), a paradoxical increase of vagal drive may occur leading to a decrease in heart rate,
+          and systemic vascular resistance resulting in a reduction of arterial blood pressure, and possibly
+          to a circulatory collapse (26, 29, 30).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:29732372
+      reference_title: The Role of Failing Autonomic Nervous System on Life-Threatening Idiopathic Systemic
+        Capillary Leak Syndrome.
+      evidence_source: OTHER
+      explanation: The source directly describes a fall in arterial pressure during severe hemorrhage,
+        but it is not evidence that every volume deficit causes hypotension.
+    first_seen_at: '2026-09-25T15:07:18.046197+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:29732372
+  0696d79b3d638061d97980585ee40adc737967002c0cf06e1b24198e82dd3360:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced Cardiac Output
+        description: Acute pump failure can reduce stroke volume and cardiac output. Tachycardia and vascular
+          compensation may preserve pressure in milder states, but a sufficiently large output fall can
+          cause hypotension or cardiogenic shock.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: The initial compensatory mechanism is frequently a tachycardia often resulting in a near
+          normal cardiac output. In more severe forms a fall in cardiac output causes hypotension or cardiogenic
+          shock.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22483252
+      reference_title: A general theory of acute and chronic heart failure.
+      evidence_source: OTHER
+      explanation: The review directly links a severe cardiac-output fall to hypotension while retaining
+        the important role of compensation.
+    first_seen_at: '2026-09-25T15:07:18.047193+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:22483252
+  0f6c14dc4578da368fb270eeebf61ec82fae9811b7112745be2557e9d86b9cb0:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Reduced Cardiac Output
+            description: Acute pump failure can reduce stroke volume and cardiac output. Tachycardia and
+              vascular compensation may preserve pressure in milder states, but a sufficiently large output
+              fall can cause hypotension or cardiogenic shock.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Acute Arterial Pressure Fall
+        description: A severe fall in cardiac output reduces the flow component sustaining arterial pressure.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: In more severe forms a fall in cardiac output causes hypotension or cardiogenic shock.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:22483252
+      reference_title: A general theory of acute and chronic heart failure.
+      evidence_source: OTHER
+      explanation: This statement directly supports the edge from reduced cardiac output to hypotension
+        in severe acute heart-failure states.
+    first_seen_at: '2026-09-25T15:07:18.048059+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:22483252
+  d9cafe4f6bf16f3f3d824ab6d6212a3133b593bd1ada973d2a41a8bb78849585:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced Systemic Vascular Resistance
+        description: Loss of systemic vascular tone lowers the resistance component of arterial pressure.
+          In vasoplegia, systemic vascular resistance remains low despite a normal or high cardiac index,
+          producing profound vasodilation.
+        biological_scale: ORGANISM
+        cell_types:
+        - preferred_term: vascular associated smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: vascular associated smooth muscle contraction
+          modifier: DECREASED
+          term:
+            id: GO:0014829
+            label: vascular associated smooth muscle contraction
+      selected_evidence:
+        snippet: Vasoplegia is a condition characterized by persistent low systemic vascular resistance
+          despite a normal or high cardiac index, resulting in profound and uncontrolled vasodilation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37547893
+      reference_title: 'Vasoplegia: A Review.'
+      evidence_source: OTHER
+      explanation: This defines the low-resistance, vasodilatory mechanism independently of a low cardiac
+        index.
+    first_seen_at: '2026-09-25T15:07:18.057761+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:37547893
+  3033653b167860f926cc5b3205629f1924ae57b3ea15b4da38814e52132a8d88:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: Reduced Systemic Vascular Resistance
+            description: Loss of systemic vascular tone lowers the resistance component of arterial pressure.
+              In vasoplegia, systemic vascular resistance remains low despite a normal or high cardiac
+              index, producing profound vasodilation.
+            biological_scale: ORGANISM
+            cell_types:
+            - preferred_term: vascular associated smooth muscle cell
+              term:
+                id: CL:0000359
+                label: vascular associated smooth muscle cell
+            biological_processes:
+            - preferred_term: vascular associated smooth muscle contraction
+              modifier: DECREASED
+              term:
+                id: GO:0014829
+                label: vascular associated smooth muscle contraction
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Acute Arterial Pressure Fall
+        description: Profound loss of vascular tone can lower arterial pressure even when cardiac index
+          is preserved.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: ACE inhibitors result in vasoplegia due to an increase in bradykinin and a decrease in
+          the concentration of angiotensin II, which results in reduced vascular tone and blood pressure,
+          and hence vasoplegia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:37547893
+      reference_title: 'Vasoplegia: A Review.'
+      evidence_source: OTHER
+      explanation: This specific vasoplegia example directly connects reduced vascular tone with reduced
+        blood pressure.
+    first_seen_at: '2026-09-25T15:07:18.507369+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      reference: PMID:37547893
+  3201c58a245b155e43fe5473c6ba9d92e05b6c43b792d6258caed208e1ac6905:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Obstructed Cardiac Filling or Ejection
+        description: Mechanical obstruction of cardiac filling or ejection is a distinct hemodynamic route
+          to low forward flow. If compensation is insufficient, the resulting output limitation can contribute
+          to an acute pressure fall; when organ perfusion is impaired, the clinical state is obstructive
+          shock.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: Categories include distributive, hypovolemic, obstructive, and cardiogenic, of which
+          distributive (and usually septic distributive) shock is by far the most common.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36871993
+      reference_title: 'Not all Shock States Are Created Equal: A Review of the Diagnosis and Management
+        of Septic, Hypovolemic, Cardiogenic, Obstructive, and Distributive Shock.'
+      evidence_source: OTHER
+      explanation: The review establishes obstructive shock as a distinct category, but its abstract does
+        not resolve every intervening mechanism linking obstruction to a pressure fall.
+    first_seen_at: '2026-09-25T15:07:18.527456+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:36871993
+  037c173bd737c78884058e50477ee5f2ef00ea6863f678408d0b666545865d7b:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Acute Arterial Pressure Fall
+        description: Diverse changes in circulating volume, cardiac output, and systemic vascular resistance
+          converge on an abrupt fall in arterial pressure. No single absolute threshold defines every
+          clinically relevant episode; baseline pressure, magnitude, duration, and care setting affect
+          interpretation.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: Although hypotension is common in acute care, there is a lack of accepted criteria for
+          its definition.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: The review supports modeling the pressure fall as a context-dependent state rather
+        than imposing a universal numerical cutoff.
+    first_seen_at: '2026-09-25T15:07:18.630560+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:34392972
+  6b0a7deb74607458d9a70c03693d683c2da1f4a90605ff68be8bf21211e3a644:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Obstructed Cardiac Filling or Ejection
+            description: Mechanical obstruction of cardiac filling or ejection is a distinct hemodynamic
+              route to low forward flow. If compensation is insufficient, the resulting output limitation
+              can contribute to an acute pressure fall; when organ perfusion is impaired, the clinical
+              state is obstructive shock.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Acute Arterial Pressure Fall
+        description: Obstruction can reduce effective cardiac filling or forward ejection and thereby
+          lower arterial pressure.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Restricted cardiac filling or forward ejection with reduced cardiac output
+      selected_evidence:
+        snippet: Categories include distributive, hypovolemic, obstructive, and cardiogenic, of which
+          distributive (and usually septic distributive) shock is by far the most common.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:36871993
+      reference_title: 'Not all Shock States Are Created Equal: A Review of the Diagnosis and Management
+        of Septic, Hypovolemic, Cardiogenic, Obstructive, and Distributive Shock.'
+      evidence_source: OTHER
+      explanation: The source supports the obstructive category; the stated filling/output intermediates
+        are a conservative mechanistic interpretation.
+    first_seen_at: '2026-09-25T15:07:18.549214+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:36871993
+  e075df9e0ff2629e4c2395f16d37df4bbe81e46d2e4805a827571cc7395f4bd8:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Acute Arterial Pressure Fall
+        description: Diverse changes in circulating volume, cardiac output, and systemic vascular resistance
+          converge on an abrupt fall in arterial pressure. No single absolute threshold defines every
+          clinically relevant episode; baseline pressure, magnitude, duration, and care setting affect
+          interpretation.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: Using a data-driven approach, we identified the best fitting definitions of IOH for 30-day
+          mortality, hLOS, and PACU-LOS. Our results demonstrate the need for careful selection of IOH
+          definitions.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1371/journal.pone.0312966
+      reference_title: 'Definition of clinically relevant intraoperative hypotension: A data-driven approach'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This large perioperative cohort demonstrates that the operational definition depends
+        on the outcome and context being studied.
+    first_seen_at: '2026-09-25T15:07:18.997374+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      reference: DOI:10.1371/journal.pone.0312966
+  bbe19550aaeb8be5bac1430701e5b522140734f82c0bd3df09e0e6cc6c1ec73c:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Acute Arterial Pressure Fall
+            description: Diverse changes in circulating volume, cardiac output, and systemic vascular
+              resistance converge on an abrupt fall in arterial pressure. No single absolute threshold
+              defines every clinically relevant episode; baseline pressure, magnitude, duration, and care
+              setting affect interpretation.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hypotension
+        description: The acute arterial-pressure fall is observed clinically as the defining hypotension
+          phenotype.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: The final cohort consisted of 65,454 patients. In the shaping subset, nearly all tested
+          definitions of IOH showed associations with the three outcomes, where the risk of adverse outcomes
+          often increased continuously with decreasing MAP.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: DOI:10.1371/journal.pone.0312966
+      reference_title: 'Definition of clinically relevant intraoperative hypotension: A data-driven approach'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The study operationalizes intraoperative hypotension through decreasing mean arterial
+        pressure, supporting the phenotype edge without selecting one universal threshold.
+    first_seen_at: '2026-09-25T15:07:19.047948+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      reference: DOI:10.1371/journal.pone.0312966
+  f7118b736c35a4c50e7cd7a7ea23a7501633d6c9dacca4e2d4ed2d8d7e6030bf:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Context-Dependent Organ Hypoperfusion
+        description: Organ blood flow can fall when perfusion pressure decreases beyond the compensatory
+          range set by regional vascular resistance and autoregulation. The same measured blood pressure
+          can therefore have different end-organ effects in different patients and organs.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: We also propose a haemodynamic pyramid and a pressure-output-resistance triangle to facilitate
+          understanding of why hypotension can have different pathophysiological mechanisms and end-organ
+          effects.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: This supports modeling heterogeneous end-organ effects as a distinct conditional mechanism
+        rather than as an inevitable synonym for low pressure.
+    first_seen_at: '2026-09-25T15:07:19.130436+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:34392972
+  06ff26a93112ad16f4de6f84d77754ffa4e759ac3aa5865aa74d59b061c9478c:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Acute Arterial Pressure Fall
+            description: Diverse changes in circulating volume, cardiac output, and systemic vascular
+              resistance converge on an abrupt fall in arterial pressure. No single absolute threshold
+              defines every clinically relevant episode; baseline pressure, magnitude, duration, and care
+              setting affect interpretation.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Context-Dependent Organ Hypoperfusion
+        description: A pressure fall can reduce organ blood flow when regional resistance and autoregulation
+          cannot compensate, but this transition is conditional and does not occur in every hypotensive
+          episode.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Regional vascular resistance and organ-specific autoregulatory reserve
+      selected_evidence:
+        snippet: We emphasise that hypotension does not always lead to organ hypoperfusion; to the contrary,
+          hypotension may preserve or even increase organ perfusion depending on the relative changes
+          in perfusion pressure and regional vascular resistance and the status of blood pressure autoregulation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/1
+      evidence_path: /pathophysiology/4/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: This directly supports a conditional, autoregulation-dependent edge and argues against
+        treating hypotension as deterministic organ hypoperfusion.
+    first_seen_at: '2026-09-25T15:07:19.083697+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/1
+      evidence_path: /pathophysiology/4/downstream/1/evidence/0
+      reference: PMID:34392972
+  5a6d8febe57b0cf329657edaa5fb1dc14c34dd454394c827e41dae4f47492466:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Context-Dependent Organ Hypoperfusion
+            description: Organ blood flow can fall when perfusion pressure decreases beyond the compensatory
+              range set by regional vascular resistance and autoregulation. The same measured blood pressure
+              can therefore have different end-organ effects in different patients and organs.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Cerebral Hypoperfusion
+        description: When cerebral autoregulation cannot maintain blood flow, systemic hypoperfusion can
+          manifest as transient global cerebral hypoperfusion.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Sudden falling with loss of consciousness from syncope and symptoms of orthostatic intolerance
+          are common, dramatic clinical problems of diverse cause, but cerebral hypoperfusion is the ultimate
+          mechanism in most.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: PMID:19272517
+      reference_title: Neurological aspects of syncope and orthostatic intolerance.
+      evidence_source: OTHER
+      explanation: The review supports cerebral hypoperfusion as the convergent mechanism for most syncope,
+        although it does not imply that every hypotensive episode crosses the cerebral autoregulatory
+        limit.
+    first_seen_at: '2026-09-25T15:07:19.499614+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/0
+      reference: PMID:19272517
+  9910934bf6d63639276ba2639cf90f4185d64e6b808dd7569f06071cf927100e:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Context-Dependent Organ Hypoperfusion
+            description: Organ blood flow can fall when perfusion pressure decreases beyond the compensatory
+              range set by regional vascular resistance and autoregulation. The same measured blood pressure
+              can therefore have different end-organ effects in different patients and organs.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Renal Hypoperfusion and Ischemic Stress
+        description: Severe or prolonged pressure reduction can expose susceptible kidneys to reduced
+          perfusion and ischemic stress; observational associations do not establish that this occurs
+          in every episode.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Duration and depth of hypotension, renal autoregulatory reserve, and competing injury pathways
+      selected_evidence:
+        snippet: Furthermore, we found an association between postoperative hypotension with MAP ≤ 55
+          mmHg and acute kidney injury stage II/III
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/1
+      evidence_path: /pathophysiology/5/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: PMID:33287872
+      reference_title: Postoperative hypotension in patients discharged to the intensive care unit after
+        non-cardiac surgery is associated with adverse clinical outcomes.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort supports an association between severe postoperative hypotension and kidney
+        injury, but cannot by itself establish a direct hypoperfusion mechanism.
+    first_seen_at: '2026-09-25T15:07:19.546457+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/1
+      evidence_path: /pathophysiology/5/downstream/1/evidence/0
+      reference: PMID:33287872
+  5d4a26a9b8b80db2f218d892ac534ff8940ee7a57a13641355933708d36ec988:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/6
+          value:
+            name: Cerebral Hypoperfusion
+            description: Transient global reduction in cerebral blood flow is a final common pathway for
+              most syncope, including cardiac, reflex, and orthostatic hypotensive presentations.
+            biological_scale: TISSUE
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Syncope
+        description: Transient global cerebral hypoperfusion can produce sudden loss of consciousness
+          and postural tone.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Sudden falling with loss of consciousness from syncope and symptoms of orthostatic intolerance
+          are common, dramatic clinical problems of diverse cause, but cerebral hypoperfusion is the ultimate
+          mechanism in most.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6/downstream/0
+      evidence_path: /pathophysiology/6/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/6
+    evidence_metadata:
+      reference: PMID:19272517
+      reference_title: Neurological aspects of syncope and orthostatic intolerance.
+      evidence_source: OTHER
+      explanation: The review directly links cerebral hypoperfusion with syncope.
+    first_seen_at: '2026-09-25T15:07:19.654279+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6/downstream/0
+      evidence_path: /pathophysiology/6/downstream/0/evidence/0
+      reference: PMID:19272517
+  e584d3b1b6208a2f9a9186d6c8ee8a743628e4fc9b9acbcf392a03db22ef7a31:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cerebral Hypoperfusion
+        description: Transient global reduction in cerebral blood flow is a final common pathway for most
+          syncope, including cardiac, reflex, and orthostatic hypotensive presentations.
+        biological_scale: TISSUE
+      selected_evidence:
+        snippet: Sudden falling with loss of consciousness from syncope and symptoms of orthostatic intolerance
+          are common, dramatic clinical problems of diverse cause, but cerebral hypoperfusion is the ultimate
+          mechanism in most.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19272517
+      reference_title: Neurological aspects of syncope and orthostatic intolerance.
+      evidence_source: OTHER
+      explanation: This directly identifies cerebral hypoperfusion as the final mechanism in most syncope.
+    first_seen_at: '2026-09-25T15:07:19.653815+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:19272517
+  ff89814fbba251e9c64fe26c4428bc65b3fb9a55069432d98e14e1b80734b633:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Renal Hypoperfusion and Ischemic Stress
+        description: Kidney injury is reported more often with severe or prolonged hypotension, but renal
+          susceptibility, concurrent illness, and other injury mechanisms modify the relationship. The
+          node therefore represents a plausible intermediate rather than a universal consequence.
+        biological_scale: TISSUE
+      selected_evidence:
+        snippet: The majority of articles reported associations in favor of 'no hypotension' for the outcomes
+          mortality and acute kidney injury (AKI), and the strength of the association was related to
+          the severity of hypotension in the majority of studies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38252288
+      reference_title: 'Hypotension during intensive care stay and mortality and morbidity: a systematic
+        review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The systematic review supports severity-related observational associations with AKI,
+        not a deterministic causal claim.
+    first_seen_at: '2026-09-25T15:07:19.998466+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      reference: PMID:38252288
+  08c042d148504451e95339f7e389eb93b420782e1dbbb14648180b52a00f293b:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /pathophysiology/7
+          value:
+            name: Renal Hypoperfusion and Ischemic Stress
+            description: Kidney injury is reported more often with severe or prolonged hypotension, but
+              renal susceptibility, concurrent illness, and other injury mechanisms modify the relationship.
+              The node therefore represents a plausible intermediate rather than a universal consequence.
+            biological_scale: TISSUE
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Acute kidney injury
+        description: Sustained renal hypoperfusion and ischemic stress can contribute to acute kidney
+          injury, but the available clinical evidence is largely associative.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Reduced filtration pressure and incompletely resolved ischemic or inflammatory injury pathways
+      selected_evidence:
+        snippet: 'Using meta-analysis, a significant association was found between hypotension and mortality
+          (odds ratio: 1.45; 95% confidence interval (CI) 1.12-1.88; based on 13 studies and 34,829 patients),
+          but not for AKI.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7/downstream/0
+      evidence_path: /pathophysiology/7/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/7
+    evidence_metadata:
+      reference: PMID:38252288
+      reference_title: 'Hypotension during intensive care stay and mortality and morbidity: a systematic
+        review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The lack of a significant pooled AKI association justifies retaining this edge as partial
+        and mechanistically unresolved rather than established.
+    first_seen_at: '2026-09-25T15:07:20.114438+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7/downstream/0
+      evidence_path: /pathophysiology/7/downstream/0/evidence/0
+      reference: PMID:38252288
+  9e74fa07289537c0890f5f7db7f04a89bbc4401ee21fe469621a5eda3b800a4e:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Hypotension
+        description: An acutely low or falling arterial pressure is the defining phenotype, but the clinically
+          important threshold depends on baseline, duration, setting, and the outcome under consideration.
+        phenotype_term:
+          preferred_term: Hypotension
+          term:
+            id: HP:0002615
+            label: Hypotension
+      selected_evidence:
+        snippet: Although hypotension is common in acute care, there is a lack of accepted criteria for
+          its definition.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: This supports the phenotype while explicitly preserving threshold uncertainty.
+    first_seen_at: '2026-09-25T15:07:20.284290+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:34392972
+  e6702e1af91ca88a7d6077f83c39c79d7343db63681c80ef5f3357197b841497:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurological
+        name: Syncope
+        description: Syncope can occur when the pressure fall is accompanied by transient global cerebral
+          hypoperfusion; it is neither necessary nor specific to acute hypotension.
+        phenotype_term:
+          preferred_term: Syncope
+          term:
+            id: HP:0001279
+            label: Syncope
+      selected_evidence:
+        snippet: Cardiac, reflex, and orthostatic hypotension are important forms to consider.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19272517
+      reference_title: Neurological aspects of syncope and orthostatic intolerance.
+      evidence_source: OTHER
+      explanation: This places hypotensive forms among the important causes considered in syncope while
+        avoiding a claim that all syncope is hypotensive.
+    first_seen_at: '2026-09-25T15:07:20.284914+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:19272517
+  000601ac2c10f4a544b7811cf4591439b905ef7b0e97a3791d830bc8a7c57555:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Renal
+        name: Acute kidney injury
+        description: Acute kidney injury is an associated organ outcome in some severe or prolonged hypotensive
+          exposures, especially in critical-care and perioperative cohorts, but is not an inevitable consequence.
+        phenotype_term:
+          preferred_term: Acute kidney injury
+          term:
+            id: HP:0001919
+            label: Acute kidney injury
+      selected_evidence:
+        snippet: Furthermore, we found an association between postoperative hypotension with MAP ≤ 55
+          mmHg and acute kidney injury stage II/III
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33287872
+      reference_title: Postoperative hypotension in patients discharged to the intensive care unit after
+        non-cardiac surgery is associated with adverse clinical outcomes.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This is a context-specific observational association and is not presented as proof
+        that hypotension alone causes AKI.
+    first_seen_at: '2026-09-25T15:07:20.495700+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:33287872
+  31472502ffa70d025538cc6142c7572156f07cac94579cbde78c2fc360619d19:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Repeated Blood-Pressure Measurement and Trend Assessment
+        description: Recognition requires a reliable arterial-pressure measurement interpreted against
+          prior pressure, magnitude and duration of the change, symptoms, care setting, and measurement
+          method. Absolute systolic or mean-pressure cutoffs are useful operational definitions but are
+          not universal.
+        diagnosis_term:
+          preferred_term: clinical assessment
+          term:
+            id: NCIT:C124351
+            label: Clinical Evaluation
+        results: A reproducible acute fall or low pressure supports acute hypotension; its clinical importance
+          depends on duration, baseline, and organ-perfusion context rather than on one cutoff alone.
+      selected_evidence:
+        snippet: Associations between intraoperative hypotension (IOH) and various postoperative outcomes
+          were shown in retrospective trials using a variety of different definitions of IOH. This complicates
+          the comparability of these trials and makes clinical application difficult.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1371/journal.pone.0312966
+      reference_title: 'Definition of clinically relevant intraoperative hypotension: A data-driven approach'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The study directly supports careful, context-specific selection of an operational hypotension
+        definition.
+    first_seen_at: '2026-09-25T15:07:20.632764+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: DOI:10.1371/journal.pone.0312966
+  86323228e10808a8b3855f308e667b864221b98b4e570a8de126b7acd0e5e82d:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Hemodynamic Etiology and Organ-Perfusion Reassessment
+        description: Clinical history, examination, and hemodynamic measurements are used to distinguish
+          volume loss, pump failure, vasodilation, and obstruction and to determine whether low pressure
+          is accompanied by organ hypoperfusion. Reassessment matters because mixed or evolving states
+          are common.
+        diagnosis_term:
+          preferred_term: clinical assessment
+          term:
+            id: NCIT:C124351
+            label: Clinical Evaluation
+        results: Findings are interpreted as an etiologic and perfusion profile rather than as a diagnosis
+          of shock from blood pressure alone.
+      selected_evidence:
+        snippet: Clinical history, physical examination, and hemodynamic assessments & monitoring help
+          differentiate these states.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36871993
+      reference_title: 'Not all Shock States Are Created Equal: A Review of the Diagnosis and Management
+        of Septic, Hypovolemic, Cardiogenic, Obstructive, and Distributive Shock.'
+      evidence_source: OTHER
+      explanation: This supports multimodal etiologic assessment rather than classification from blood
+        pressure alone.
+    first_seen_at: '2026-09-25T15:07:20.780849+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:36871993
+  efcd084be7018d58782477dcc750dc8ab563a7bcc37150c03c6cc0dd7d51655c:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Hemodynamic Etiology and Organ-Perfusion Reassessment
+        description: Clinical history, examination, and hemodynamic measurements are used to distinguish
+          volume loss, pump failure, vasodilation, and obstruction and to determine whether low pressure
+          is accompanied by organ hypoperfusion. Reassessment matters because mixed or evolving states
+          are common.
+        diagnosis_term:
+          preferred_term: clinical assessment
+          term:
+            id: NCIT:C124351
+            label: Clinical Evaluation
+        results: Findings are interpreted as an etiologic and perfusion profile rather than as a diagnosis
+          of shock from blood pressure alone.
+      selected_evidence:
+        snippet: One shock state may convert to another and may have an undifferentiated presentation;
+          therefore, continual re-assessment is essential.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36871993
+      reference_title: 'Not all Shock States Are Created Equal: A Review of the Diagnosis and Management
+        of Septic, Hypovolemic, Cardiogenic, Obstructive, and Distributive Shock.'
+      evidence_source: OTHER
+      explanation: This directly supports repeated assessment when the hemodynamic cause is mixed, initially
+        unclear, or changing.
+    first_seen_at: '2026-09-25T15:07:20.863511+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:36871993
+  5add724bec5cdcce3d2741c616a2be4a6aaaa0574b3dc22ab892c29b1191210d:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravenous Fluid Resuscitation for Volume-Responsive Hypotension
+        treatment_term:
+          preferred_term: fluid replacement therapy
+          term:
+            id: NCIT:C66896
+            label: Hydration Therapy
+        description: Intravenous fluid can support pressure when reduced effective circulating volume
+          is present. This is an etiology-specific intervention, not a universal treatment for acute hypotension;
+          response and risk of fluid overload must be considered.
+        target_phenotypes:
+        - preferred_term: Hypotension
+          term:
+            id: HP:0002615
+            label: Hypotension
+      selected_evidence:
+        snippet: Group II received resuscitative fluids only. If the resuscitative fluids failed to keep
+          mean arterial pressure (MAP) > 65 mmHg, the patient was progressively administered NE even with
+          high doses (0.05 to more than 0.3 µg/kg/min).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.35975/apic.v28i5.2560
+      reference_title: The effect of using low dose norepinephrine before hypotensive resuscitation in
+        hemorrhagic shock; a randomized controlled trial
+      evidence_source: HUMAN_CLINICAL
+      explanation: This randomized hemorrhagic-shock protocol supports fluid as a component of volume-loss
+        resuscitation, but does not justify generalization to every cause of acute hypotension.
+    first_seen_at: '2026-09-25T15:07:20.999697+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: DOI:10.35975/apic.v28i5.2560
+  052e58742bf3f778f8b96adb665789a9d7d46af79cc3b5050c3ee55cded7c0d2:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravenous Fluid Resuscitation for Volume-Responsive Hypotension
+        treatment_term:
+          preferred_term: fluid replacement therapy
+          term:
+            id: NCIT:C66896
+            label: Hydration Therapy
+        description: Intravenous fluid can support pressure when reduced effective circulating volume
+          is present. This is an etiology-specific intervention, not a universal treatment for acute hypotension;
+          response and risk of fluid overload must be considered.
+        target_phenotypes:
+        - preferred_term: Hypotension
+          term:
+            id: HP:0002615
+            label: Hypotension
+      selected_evidence:
+        snippet: Fluid overload, on the other hand, is associated with edema, ileus, postoperative nausea
+          and vomiting, pulmonary complications, and increased cardiac demands [1].
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24994571
+      reference_title: Goal-directed fluid therapy based on stroke volume variations improves fluid management
+        and gastrointestinal perfusion in patients undergoing major orthopedic surgery.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports the stated limitation that fluid treatment requires individualized assessment
+        and is not risk free.
+    first_seen_at: '2026-09-25T15:07:21.153920+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:24994571
+  3a0b37b7ba603ec02ad5b28ba314daa03903ad0ddabbe5f89af17762ea92d5d6:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /treatments/0
+          value:
+            name: Intravenous Fluid Resuscitation for Volume-Responsive Hypotension
+            treatment_term:
+              preferred_term: fluid replacement therapy
+              term:
+                id: NCIT:C66896
+                label: Hydration Therapy
+            description: Intravenous fluid can support pressure when reduced effective circulating volume
+              is present. This is an etiology-specific intervention, not a universal treatment for acute
+              hypotension; response and risk of fluid overload must be considered.
+            target_phenotypes:
+            - preferred_term: Hypotension
+              term:
+                id: HP:0002615
+                label: Hypotension
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Reduced Effective Circulating Volume
+        treatment_effect: RESTORES
+        description: Targeted volume administration attempts to restore preload and stroke volume in a
+          patient whose hypotension is volume responsive.
+      selected_evidence:
+        snippet: which achieves the maximal cardiac stroke volume via targeted administration of i.v.
+          fluids, blood, and/or vasoactive substances.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:24994571
+      reference_title: Goal-directed fluid therapy based on stroke volume variations improves fluid management
+        and gastrointestinal perfusion in patients undergoing major orthopedic surgery.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports targeting volume to a hemodynamic response rather than treating every
+        low pressure with indiscriminate fluid.
+    first_seen_at: '2026-09-25T15:07:21.315689+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:24994571
+  8ebd25da956fb6b9c46da30df99a77586331609a4d31a05bbe7859b2697df577:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Norepinephrine for Vasodilatory Hypotension
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: norepinephrine
+            term:
+              id: CHEBI:33569
+              label: noradrenaline
+        description: Norepinephrine is a vasopressor used to restore vascular tone and arterial pressure
+          in vasoplegic or other vasodilatory states. This treatment node is deliberately restricted to
+          low-resistance hypotension and is not a claim of benefit for every hemodynamic cause.
+        target_phenotypes:
+        - preferred_term: Hypotension
+          term:
+            id: HP:0002615
+            label: Hypotension
+      selected_evidence:
+        snippet: Early identification and prompt management of vasoplegia is crucial to prevent development
+          of shock. This review expands upon the different vasopressors used in management of vasoplegia,
+          including catecholamines such as norepinephrine, dopamine, epinephrine, phenylephrine, and other
+          agents including vasopressin, methylene blue, angiotensin II, hydroxocobalamin, vitamin C, thiamine,
+          and corticosteroids (ie, hydrocortisone).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37547893
+      reference_title: 'Vasoplegia: A Review.'
+      evidence_source: OTHER
+      explanation: This supports norepinephrine-containing vasopressor therapy specifically in vasoplegia,
+        without extending the claim to hypovolemic, cardiogenic, or obstructive causes.
+    first_seen_at: '2026-09-25T15:07:21.416276+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:37547893
+  7ff8c28dfa53c074fcd38f5e1952b9e8e070ac09f043fa156d54f60667bd79bb:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context:
+        - path: /treatments/1
+          value:
+            name: Norepinephrine for Vasodilatory Hypotension
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: norepinephrine
+                term:
+                  id: CHEBI:33569
+                  label: noradrenaline
+            description: Norepinephrine is a vasopressor used to restore vascular tone and arterial pressure
+              in vasoplegic or other vasodilatory states. This treatment node is deliberately restricted
+              to low-resistance hypotension and is not a claim of benefit for every hemodynamic cause.
+            target_phenotypes:
+            - preferred_term: Hypotension
+              term:
+                id: HP:0002615
+                label: Hypotension
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Reduced Systemic Vascular Resistance
+        treatment_effect: RESTORES
+        description: Adrenergic vasoconstriction counteracts the loss of vascular tone that defines vasoplegia.
+      selected_evidence:
+        snippet: This review expands upon the different vasopressors used in management of vasoplegia,
+          including catecholamines such as norepinephrine, dopamine, epinephrine, phenylephrine, and other
+          agents including vasopressin, methylene blue, angiotensin II, hydroxocobalamin, vitamin C, thiamine,
+          and corticosteroids (ie, hydrocortisone).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:37547893
+      reference_title: 'Vasoplegia: A Review.'
+      evidence_source: OTHER
+      explanation: The review directly places norepinephrine among vasopressors used for the low-systemic-resistance
+        state of vasoplegia.
+    first_seen_at: '2026-09-25T15:07:21.648216+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:37547893
+  f614d47286a2bac378828db9d14790f7348e7173c2f00fa87a79758f8ccd355a:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_context_specific_hypotension_threshold
+        prompt: Which combinations of absolute pressure, change from baseline, exposure duration, organ-specific
+          autoregulatory reserve, and care setting best identify a clinically important acute hypotensive
+          episode?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Acute Arterial Pressure Fall
+        - diagnosis#Repeated Blood-Pressure Measurement and Trend Assessment
+        rationale: Published studies use heterogeneous definitions, and organ perfusion does not map uniformly
+          to one arterial-pressure value. A universal cutoff would obscure this heterogeneity, whereas
+          purely individualized definitions are difficult to compare and validate.
+        proposed_experiments:
+        - experiment_id: exp_multicontext_pressure_perfusion_thresholds
+          name: Multicontext pressure-perfusion threshold study
+          description: Prospectively collect continuous blood pressure, individual baseline pressure,
+            exposure duration, organ-perfusion readouts, and adjudicated outcomes across emergency, perioperative,
+            and critical-care cohorts, then externally validate context-specific threshold models.
+      selected_evidence:
+        snippet: Although hypotension is common in acute care, there is a lack of accepted criteria for
+          its definition.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: The review explicitly identifies the unresolved definition problem.
+    first_seen_at: '2026-09-25T15:07:21.763807+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:34392972
+  dce762cccfed44ab2bfd74c61c14b541acf4173790c287cc4e6c64071c37585b:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_context_specific_hypotension_threshold
+        prompt: Which combinations of absolute pressure, change from baseline, exposure duration, organ-specific
+          autoregulatory reserve, and care setting best identify a clinically important acute hypotensive
+          episode?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Acute Arterial Pressure Fall
+        - diagnosis#Repeated Blood-Pressure Measurement and Trend Assessment
+        rationale: Published studies use heterogeneous definitions, and organ perfusion does not map uniformly
+          to one arterial-pressure value. A universal cutoff would obscure this heterogeneity, whereas
+          purely individualized definitions are difficult to compare and validate.
+        proposed_experiments:
+        - experiment_id: exp_multicontext_pressure_perfusion_thresholds
+          name: Multicontext pressure-perfusion threshold study
+          description: Prospectively collect continuous blood pressure, individual baseline pressure,
+            exposure duration, organ-perfusion readouts, and adjudicated outcomes across emergency, perioperative,
+            and critical-care cohorts, then externally validate context-specific threshold models.
+      selected_evidence:
+        snippet: Evidence from RCTs does not support the notion that a higher arterial blood pressure
+          target always leads to improved outcomes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34392972
+      reference_title: 'Heterogeneous impact of hypotension on organ perfusion and outcomes: a narrative
+        review.'
+      evidence_source: OTHER
+      explanation: This shows why simply choosing a universally higher pressure target does not resolve
+        the threshold question.
+    first_seen_at: '2026-09-25T15:07:21.878619+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      reference: PMID:34392972
+  f5599ffc5bb7050695a58a2b481dbb93e6a6a7b9d0e614920f575919b2171acb:
+    claim:
+      about:
+        disease:
+          name: Acute Hypotension
+          disease_term:
+            preferred_term: acute hypotension
+            term:
+              id: MONDO:0005174
+              label: acute hypotension
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_hypotension_organ_injury_causality
+        prompt: When is hypotension a causal driver of organ injury, and when is it primarily a marker
+          of illness severity or another upstream process?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Context-Dependent Organ Hypoperfusion
+        - pathophysiology#Renal Hypoperfusion and Ischemic Stress
+        - phenotypes#Acute kidney injury
+        rationale: Observational cohorts repeatedly associate deeper hypotension with adverse outcomes,
+          but confounding by illness severity, treatment indication, and concurrent injury pathways limits
+          causal interpretation. Kidney outcomes are especially uncertain because the pooled analysis
+          did not reproduce the descriptive AKI association.
+        proposed_experiments:
+        - experiment_id: exp_etiology_stratified_pressure_target_trial
+          name: Etiology-stratified perfusion-target trial
+          description: Randomize feasible, well-defined hemodynamic subgroups to individualized pressure-target
+            strategies while measuring organ-specific perfusion and injury biomarkers, with prespecified
+            mediation analysis separating pressure effects from the triggering illness and treatment exposures.
+      selected_evidence:
+        snippet: Exposure to hypotension during ICU stay was associated with increased mortality and AKI
+          in the majority of included studies, and associations for both outcomes increased with increasing
+          hypotension severity. The meta-analysis reinforced the descriptive findings regarding mortality
+          but did not yield similar support for AKI.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38252288
+      reference_title: 'Hypotension during intensive care stay and mortality and morbidity: a systematic
+        review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The discordance between descriptive studies and pooled AKI results directly motivates
+        the causal knowledge gap.
+    first_seen_at: '2026-09-25T15:07:22.036158+00:00'
+    first_seen_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    last_seen_at: '2026-09-25T16:17:42.177464+00:00'
+    active: true
+    active_as_of: '2026-09-25T16:17:42.177464+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      reference: PMID:38252288
+assessments:
+  f1023cd17b31a302fc60b9e236b46b6e57b1d516e864e18112cb4b23a34fea37:
+    input_sha256: faeb0a41d3ac5f5f79a0be1b0bb36d030117e8e8e920cfb951d971f6b9d94260
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:14.794493+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+            MATCH: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+            MATCH: 0.91
+          confidence: 0.86
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+            MATCH: 0.59
+          confidence: 0.39
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.55
+            MATCH: 0.43
+          confidence: 0.33
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5648
+        output_tokens: 223
+      elapsed_seconds: 0.5063
+      request_sha256: 1b8a59de46f3c443715f7843de280c9a53bdbbfb54026a9a214c89305236916b
+      request_sha256s:
+      - 1b8a59de46f3c443715f7843de280c9a53bdbbfb54026a9a214c89305236916b
+  c58d187f0f0312be659b3003a4a63e92543dad48f271f1609abb322e82b7f01b:
+    input_sha256: eec37785bc67a7afaeadf1582019fdb5440291881a57449d398597285ce5aa15
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.046197+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.07
+            MATCH: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.03
+            MATCH: 0.88
+          confidence: 0.83
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.04
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.37
+            MISMATCH: 0.04
+          confidence: 0.39
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.04
+            MATCH: 0.71
+          confidence: 0.56
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.21
+            MATCH: 0.22
+          confidence: 0.35
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.51
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7418
+        output_tokens: 318
+      elapsed_seconds: 0.4477
+      request_sha256: 2d84a9307debf35b6a0ea5d7b58e42ef56a3517a5162a77d869ce6e3b11d7804
+      request_sha256s:
+      - 2d84a9307debf35b6a0ea5d7b58e42ef56a3517a5162a77d869ce6e3b11d7804
+  0fe896295e84042fd19c1d06f0e8e08b9e3ba880392c7716d2a434ea9d38e3da:
+    input_sha256: 0696d79b3d638061d97980585ee40adc737967002c0cf06e1b24198e82dd3360
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.047193+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.88
+            PARTIAL: 0.09
+          confidence: 0.82
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.84
+            PARTIAL: 0.08
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5598
+        output_tokens: 222
+      elapsed_seconds: 0.4577
+      request_sha256: 2d3d26bbaad6fd7738a03fc3e3884c2ea2fe71f865f1b61c1c84e1d2e702dd52
+      request_sha256s:
+      - 2d3d26bbaad6fd7738a03fc3e3884c2ea2fe71f865f1b61c1c84e1d2e702dd52
+  34794fd15b8ae986f294b780d961ed6536143d148005d28c7f92ab4cb1bbbaeb:
+    input_sha256: 0f6c14dc4578da368fb270eeebf61ec82fae9811b7112745be2557e9d86b9cb0
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.048059+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.14
+            MATCH: 0.78
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+            MATCH: 0.91
+          confidence: 0.87
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.16
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.12
+            MATCH: 0.85
+          confidence: 0.78
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.13
+            MATCH: 0.81
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6353
+        output_tokens: 268
+      elapsed_seconds: 0.4758
+      request_sha256: 984bf4c00b0511e387df8ff8f4558acd61619f7fc7a40ed9a586cc96eb93a3c8
+      request_sha256s:
+      - 984bf4c00b0511e387df8ff8f4558acd61619f7fc7a40ed9a586cc96eb93a3c8
+  4085953d7e0caabf77ebab4be1237fe09272947ee7b8f3ff3b222b651390cfb6:
+    input_sha256: d9cafe4f6bf16f3f3d824ab6d6212a3133b593bd1ada973d2a41a8bb78849585
+    configuration_sha256: 96cb81067c83edf05bb0d6a00ee8c641757c7014c373813c87a1b986579f7a3e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.057761+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.46
+            PARTIAL: 0.44
+          confidence: 0.18
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.25
+            PARTIAL: 0.6
+          confidence: 0.39
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.17
+            PARTIAL: 0.54
+          confidence: 0.3
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.19
+            PARTIAL: 0.51
+          confidence: 0.28
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.75
+            PARTIAL: 0.2
+          confidence: 0.63
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.88
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.63
+            PARTIAL: 0.31
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10813
+        output_tokens: 487
+      elapsed_seconds: 0.5495
+      request_sha256: 7e8581b94f08f74d7d025ee3b8c60c5c1454bcbea071564125fb58b15694755e
+      request_sha256s:
+      - 7e8581b94f08f74d7d025ee3b8c60c5c1454bcbea071564125fb58b15694755e
+  14a9f59d8e6be10a3c50c468b6c864b8b952c2dc866a73e0220becaa8492db97:
+    input_sha256: 3033653b167860f926cc5b3205629f1924ae57b3ea15b4da38814e52132a8d88
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.507369+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.61
+            PARTIAL: 0.31
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.4
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.72
+            PARTIAL: 0.2
+          confidence: 0.58
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.77
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.54
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.76
+            PARTIAL: 0.18
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6504
+        output_tokens: 268
+      elapsed_seconds: 0.4628
+      request_sha256: 85c96e092a6b60888602b87f001013ad6fb9f9c096c9efbcd9ae05d0b6e93571
+      request_sha256s:
+      - 85c96e092a6b60888602b87f001013ad6fb9f9c096c9efbcd9ae05d0b6e93571
+  3d2e2d0a4a5c96ed4d46302c962e6ec7cb89792b0640b0d31ba2c09ad11cb8ad:
+    input_sha256: 3201c58a245b155e43fe5473c6ba9d92e05b6c43b792d6258caed208e1ac6905
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.527456+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.59
+            MATCH: 0.27
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.46
+            MATCH: 0.37
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.46
+            MATCH: 0.45
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.66
+            MATCH: 0.21
+          confidence: 0.5
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            PARTIAL: 0.35
+            MATCH: 0.35
+          confidence: 0.03
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5623
+        output_tokens: 227
+      elapsed_seconds: 0.4885
+      request_sha256: 6a58aa202008f26ecd5936af1f20bb889cca27b428dd7b8ed84c59c8f5eb7f88
+      request_sha256s:
+      - 6a58aa202008f26ecd5936af1f20bb889cca27b428dd7b8ed84c59c8f5eb7f88
+  6570f379eca92aeb82d634cb22f50fb82755f8e5c237932fb570333b86173cec:
+    input_sha256: 037c173bd737c78884058e50477ee5f2ef00ea6863f678408d0b666545865d7b
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.630560+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MATCH: 0.21
+            MISMATCH: 0.1
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.56
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            MATCH: 0.19
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.16
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.28
+            PARTIAL: 0.41
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5581
+        output_tokens: 226
+      elapsed_seconds: 0.4097
+      request_sha256: 77627fc360445baae389b0475de0a2176bf075164157405956891d37adecac4f
+      request_sha256s:
+      - 77627fc360445baae389b0475de0a2176bf075164157405956891d37adecac4f
+  c0aeba175e37f9d738416a0179f3ab33507623e7664b9fc5839e2f612028b56d:
+    input_sha256: 6b0a7deb74607458d9a70c03693d683c2da1f4a90605ff68be8bf21211e3a644
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.549214+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.56
+            MISMATCH: 0.29
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.52
+            MISMATCH: 0.26
+          confidence: 0.28
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            PARTIAL: 0.48
+            MISMATCH: 0.29
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.57
+            MISMATCH: 0.33
+          confidence: 0.37
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.54
+            MISMATCH: 0.22
+          confidence: 0.3
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.53
+            MISMATCH: 0.3
+          confidence: 0.29
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.54
+            MISMATCH: 0.22
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7389
+        output_tokens: 324
+      elapsed_seconds: 0.5321
+      request_sha256: a3c38b042b4cd73a11386287855c9c4718bd170d2cdc3c0e6d2c05902970a218
+      request_sha256s:
+      - a3c38b042b4cd73a11386287855c9c4718bd170d2cdc3c0e6d2c05902970a218
+  6cf90ea54e808a49a91447c671ed2bcf4e78d80380433ab066e19fdea3c62e1f:
+    input_sha256: e075df9e0ff2629e4c2395f16d37df4bbe81e46d2e4805a827571cc7395f4bd8
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:18.997374+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            MATCH: 0.04
+            PARTIAL: 0.44
+          confidence: 0.29
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.51
+            PARTIAL: 0.41
+          confidence: 0.26
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.21
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.01
+            PARTIAL: 0.35
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.34
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5603
+        output_tokens: 230
+      elapsed_seconds: 0.4608
+      request_sha256: 1b7b4384f4467bf2eb74d09691acedf63a12cd79d1900b91dc706ef1c3ee4b71
+      request_sha256s:
+      - 1b7b4384f4467bf2eb74d09691acedf63a12cd79d1900b91dc706ef1c3ee4b71
+  34757ce4fb957eaf5961955ed747289ae7b408dc3f901dd3dac5338c03551f7c:
+    input_sha256: bbe19550aaeb8be5bac1430701e5b522140734f82c0bd3df09e0e6cc6c1ec73c
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.047948+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.29
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.3
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.25
+            PARTIAL: 0.52
+          confidence: 0.27
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.42
+            PARTIAL: 0.45
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6382
+        output_tokens: 272
+      elapsed_seconds: 0.4462
+      request_sha256: 13aae0771e24f0dfe80fd3f7027f547c1777e4ab59f3876aac327a597174e72e
+      request_sha256s:
+      - 13aae0771e24f0dfe80fd3f7027f547c1777e4ab59f3876aac327a597174e72e
+  46027da8f0ca07d12f7a7041b2c5712cba3f413c2dc45e65af2e1703b8d6e9c1:
+    input_sha256: f7118b736c35a4c50e7cd7a7ea23a7501633d6c9dacca4e2d4ed2d8d7e6030bf
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.130436+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            PARTIAL: 0.38
+            MISMATCH: 0.02
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            PARTIAL: 0.23
+            MISMATCH: 0.02
+          confidence: 0.63
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.31
+            MISMATCH: 0.04
+          confidence: 0.47
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.35
+            MISMATCH: 0.02
+          confidence: 0.45
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.36
+            MISMATCH: 0.26
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5603
+        output_tokens: 222
+      elapsed_seconds: 0.4136
+      request_sha256: 78fd2ff60733c72e5e4d4c750fe17e20b6cdad8a6c61a436262a323d95bcb823
+      request_sha256s:
+      - 78fd2ff60733c72e5e4d4c750fe17e20b6cdad8a6c61a436262a323d95bcb823
+  99c82f11fca01a1fc19e4157c4813c309883c30f65cf27a158b28aff2a4682ae:
+    input_sha256: 06ff26a93112ad16f4de6f84d77754ffa4e759ac3aa5865aa74d59b061c9478c
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.083697+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.75
+            PARTIAL: 0.21
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.89
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.59
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.75
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.78
+        /assertion/intermediate_mechanisms:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.68
+            PARTIAL: 0.23
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7401
+        output_tokens: 317
+      elapsed_seconds: 0.4502
+      request_sha256: 8303ba7bd9043db7be39cd6f1b17c7f244f555ae357e80d7056e007370e4ba02
+      request_sha256s:
+      - 8303ba7bd9043db7be39cd6f1b17c7f244f555ae357e80d7056e007370e4ba02
+  462b509e6ff9fd64159c51e370d01aa95af4d10e9bb5bbdc4f112c64967c80dc:
+    input_sha256: 5a6d8febe57b0cf329657edaa5fb1dc14c34dd454394c827e41dae4f47492466
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.499614+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.1
+            MATCH: 0.29
+          confidence: 0.41
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.14
+            MATCH: 0.24
+          confidence: 0.43
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.81
+            MISMATCH: 0.03
+          confidence: 0.71
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.05
+            MATCH: 0.32
+          confidence: 0.44
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.08
+            MATCH: 0.37
+          confidence: 0.33
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.18
+            MATCH: 0.39
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6390
+        output_tokens: 273
+      elapsed_seconds: 0.4434
+      request_sha256: 814cb669cc4a3abdbc2f2a7e8848ddc18fcf18b11b8f1a43b962c496b695ab8b
+      request_sha256s:
+      - 814cb669cc4a3abdbc2f2a7e8848ddc18fcf18b11b8f1a43b962c496b695ab8b
+  ead486efd5e9af9a6ce40a776aad92964026b07fa1b64024c8e22460ffc942e5:
+    input_sha256: 9910934bf6d63639276ba2639cf90f4185d64e6b808dd7569f06071cf927100e
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.546457+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.37
+            MISMATCH: 0.02
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.67
+            MISMATCH: 0.02
+          confidence: 0.5
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.4
+            MISMATCH: 0.01
+          confidence: 0.38
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.33
+            MISMATCH: 0.07
+          confidence: 0.41
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MATCH: 0.1
+            MISMATCH: 0.18
+          confidence: 0.57
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.38
+            MISMATCH: 0.23
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7379
+        output_tokens: 322
+      elapsed_seconds: 0.5054
+      request_sha256: f8b3d64b89dbdd5389d944ba22abbd23901b5d65b7dc6fd4470fdc5492e44bd8
+      request_sha256s:
+      - f8b3d64b89dbdd5389d944ba22abbd23901b5d65b7dc6fd4470fdc5492e44bd8
+  9803f7a2bb97bf3428c9c81205bf55e0f6f4fdd8ca8e93f53629df426d64d46c:
+    input_sha256: 5d4a26a9b8b80db2f218d892ac534ff8940ee7a57a13641355933708d36ec988
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.654279+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.33
+            MISMATCH: 0.38
+          confidence: 0.07
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.4
+            MISMATCH: 0.51
+          confidence: 0.26
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.06
+            MISMATCH: 0.05
+          confidence: 0.83
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+          confidence: 0.48
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.29
+            MISMATCH: 0.05
+          confidence: 0.5
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.23
+            MISMATCH: 0.13
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6361
+        output_tokens: 274
+      elapsed_seconds: 0.4448
+      request_sha256: 5f2ab36ffd1e1d5fe64bffb071bfa7ce5e9ffcc6d62386f952eeaa213cb41f83
+      request_sha256s:
+      - 5f2ab36ffd1e1d5fe64bffb071bfa7ce5e9ffcc6d62386f952eeaa213cb41f83
+  e6a4c08efb9c92d4d59f1293157a6b5db983c158e5830588f64278cc4ae603ac:
+    input_sha256: e584d3b1b6208a2f9a9186d6c8ee8a743628e4fc9b9acbcf392a03db22ef7a31
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.653815+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.05
+            PARTIAL: 0.34
+          confidence: 0.41
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.06
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.05
+            PARTIAL: 0.09
+          confidence: 0.79
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5585
+        output_tokens: 223
+      elapsed_seconds: 0.4581
+      request_sha256: f64eafcce4762614050904d48ed6c976aa59b5fa44289c7d054deedbe4b11a65
+      request_sha256s:
+      - f64eafcce4762614050904d48ed6c976aa59b5fa44289c7d054deedbe4b11a65
+  5acb64d0522d87ab5dbd4561a633f47f968380734a4225b229a0eed02639d7f3:
+    input_sha256: ff89814fbba251e9c64fe26c4428bc65b3fb9a55069432d98e14e1b80734b633
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:19.998466+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.43
+            PARTIAL: 0.55
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.42
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.79
+            PARTIAL: 0.12
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5611
+        output_tokens: 224
+      elapsed_seconds: 0.4254
+      request_sha256: c565530f821145c604844151a9f0fa6bea93fb3ad5e9d3a0e4d38373fef9823f
+      request_sha256s:
+      - c565530f821145c604844151a9f0fa6bea93fb3ad5e9d3a0e4d38373fef9823f
+  4de6877e826fb1c2ce73415e7840a0e4a92dd3cd18145abf44cd834f22801413:
+    input_sha256: 08c042d148504451e95339f7e389eb93b420782e1dbbb14648180b52a00f293b
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.114438+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            MATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.77
+            PARTIAL: 0.16
+          confidence: 0.65
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.23
+            PARTIAL: 0.35
+          confidence: 0.13
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            MATCH: 0.04
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.1
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/intermediate_mechanisms:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.04
+            PARTIAL: 0.3
+          confidence: 0.48
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.2
+            PARTIAL: 0.47
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7405
+        output_tokens: 331
+      elapsed_seconds: 0.4444
+      request_sha256: 1fe4db5f861fe305904a27395a4e1443a6f54d1efd5e7ab66b1e67d02a031b87
+      request_sha256s:
+      - 1fe4db5f861fe305904a27395a4e1443a6f54d1efd5e7ab66b1e67d02a031b87
+  91f6b3029d1dcf0ddb608d94f99f0e397f1aee1e3438d72ce04e426811cf5e9b:
+    input_sha256: 9e74fa07289537c0890f5f7db7f04a89bbc4401ee21fe469621a5eda3b800a4e
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.284290+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.65
+            MISMATCH: 0.19
+          confidence: 0.48
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.66
+            MISMATCH: 0.09
+          confidence: 0.5
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.45
+            MISMATCH: 0.28
+          confidence: 0.17
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.44
+            MISMATCH: 0.1
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.61
+            MISMATCH: 0.23
+          confidence: 0.42
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.52
+            MISMATCH: 0.12
+          confidence: 0.28
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.53
+            MISMATCH: 0.15
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7186
+        output_tokens: 322
+      elapsed_seconds: 0.4172
+      request_sha256: 94254ec2d58f7360967dbdb72f0ca40e323b4f3145e7279ee2699bfe9a9be62a
+      request_sha256s:
+      - 94254ec2d58f7360967dbdb72f0ca40e323b4f3145e7279ee2699bfe9a9be62a
+  67a8047444a1f2e11d2a04c3e84f6d1f197d3f7d46fc5df8054ce2623026be9a:
+    input_sha256: e6702e1af91ca88a7d6077f83c39c79d7343db63681c80ef5f3357197b841497
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.284914+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.1
+            MISMATCH: 0.59
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.77
+            MISMATCH: 0.03
+          confidence: 0.65
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.02
+            MISMATCH: 0.83
+          confidence: 0.74
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.02
+            MISMATCH: 0.84
+          confidence: 0.76
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.02
+            MISMATCH: 0.86
+          confidence: 0.79
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.03
+            MISMATCH: 0.8
+          confidence: 0.69
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.03
+            MISMATCH: 0.79
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7177
+        output_tokens: 334
+      elapsed_seconds: 0.4638
+      request_sha256: a3c21b580db0469ae67e0f4812b28749f49f73a707b258b93ec741c656e40c33
+      request_sha256s:
+      - a3c21b580db0469ae67e0f4812b28749f49f73a707b258b93ec741c656e40c33
+  15aed3c6f975c2f1ad89729178466a403ef1f9f11b8a3b2e80afd2181a5155ec:
+    input_sha256: 000601ac2c10f4a544b7811cf4591439b905ef7b0e97a3791d830bc8a7c57555
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.495700+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.5
+            PARTIAL: 0.46
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.81
+            PARTIAL: 0.18
+          confidence: 0.71
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.83
+            PARTIAL: 0.11
+          confidence: 0.75
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.78
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.22
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7197
+        output_tokens: 317
+      elapsed_seconds: 0.4182
+      request_sha256: ede8642a50089fb470506d56aaa97b5b42d24e6868bf9344c3c36690c11acfd8
+      request_sha256s:
+      - ede8642a50089fb470506d56aaa97b5b42d24e6868bf9344c3c36690c11acfd8
+  cbb9dd0e36550894775fd344a17a0a313dd8ca2e4d7ea8f846bb4f6af846e02d:
+    input_sha256: 31472502ffa70d025538cc6142c7572156f07cac94579cbde78c2fc360619d19
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.632764+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.1
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.43
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.03
+            PARTIAL: 0.37
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.12
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            MATCH: 0.13
+            PARTIAL: 0.36
+          confidence: 0.27
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.08
+            PARTIAL: 0.39
+          confidence: 0.3
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.08
+            PARTIAL: 0.66
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7271
+        output_tokens: 331
+      elapsed_seconds: 0.4308
+      request_sha256: 94e7e8542c69416a9119a46245dc0490c9b41582998369da4602c3e40030a4b0
+      request_sha256s:
+      - 94e7e8542c69416a9119a46245dc0490c9b41582998369da4602c3e40030a4b0
+  ee04a747adc5bab04a17223793006b90d5566bbc2ff4144990b0a3cef20faa94:
+    input_sha256: 86323228e10808a8b3855f308e667b864221b98b4e570a8de126b7acd0e5e82d
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.780849+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.44
+            PARTIAL: 0.47
+          confidence: 0.21
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.26
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.57
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.52
+            PARTIAL: 0.46
+          confidence: 0.27
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.76
+            PARTIAL: 0.17
+          confidence: 0.64
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.69
+            PARTIAL: 0.2
+          confidence: 0.53
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.33
+            PARTIAL: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7239
+        output_tokens: 321
+      elapsed_seconds: 0.4433
+      request_sha256: 1bbfefd3d4d85902749d9228504967af0e539d1aea1481cde0b831a78f281ffc
+      request_sha256s:
+      - 1bbfefd3d4d85902749d9228504967af0e539d1aea1481cde0b831a78f281ffc
+  68bdf4abccd844e2d10e9104c1a668acd7b2f320890502c8b520f2188cde49c0:
+    input_sha256: efcd084be7018d58782477dcc750dc8ab563a7bcc37150c03c6cc0dd7d51655c
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.863511+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.53
+            MISMATCH: 0.13
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.57
+            MISMATCH: 0.24
+          confidence: 0.36
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.49
+            MISMATCH: 0.14
+          confidence: 0.23
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.59
+            MISMATCH: 0.06
+          confidence: 0.39
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.43
+            MISMATCH: 0.24
+          confidence: 0.15
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.41000000000000003
+            MISMATCH: 0.32
+          confidence: 0.1
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.51
+            MISMATCH: 0.12
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7247
+        output_tokens: 325
+      elapsed_seconds: 0.4563
+      request_sha256: 9e627e855ffbe57c95c9e51dc837a9ee9a29d253aff639806b07173564666213
+      request_sha256s:
+      - 9e627e855ffbe57c95c9e51dc837a9ee9a29d253aff639806b07173564666213
+  88c144b89bc41391a4928fc70479d2d4fdb2cfd9c6dd69f5caceaa8a6130d5f3:
+    input_sha256: 5add724bec5cdcce3d2741c616a2be4a6aaaa0574b3dc22ab892c29b1191210d
+    configuration_sha256: bcf766710f2e44e76eb49a87a4b62bc2826cda2eb89380c3e02b8d044f9ed892
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:20.999697+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.47
+            MISMATCH: 0.03
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.61
+            MISMATCH: 0.02
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.53
+            MISMATCH: 0.06
+          confidence: 0.29
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.7
+            MISMATCH: 0.03
+          confidence: 0.55
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.74
+            MISMATCH: 0.03
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.24
+            MISMATCH: 0.11
+          confidence: 0.46
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.77
+            MISMATCH: 0.02
+          confidence: 0.66
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.76
+            MISMATCH: 0.02
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8303
+        output_tokens: 381
+      elapsed_seconds: 0.5454
+      request_sha256: f34f55649a9f5fbf088b85ef6f7c6f4f3c2063a4d9c9e00501e7f903b2a6933c
+      request_sha256s:
+      - f34f55649a9f5fbf088b85ef6f7c6f4f3c2063a4d9c9e00501e7f903b2a6933c
+  c1d9640991e792aecfb37772755e6239d92859ac2101226419f1f203113fbe45:
+    input_sha256: 052e58742bf3f778f8b96adb665789a9d7d46af79cc3b5050c3ee55cded7c0d2
+    configuration_sha256: bcf766710f2e44e76eb49a87a4b62bc2826cda2eb89380c3e02b8d044f9ed892
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.153920+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+            MATCH: 0.08
+          confidence: 0.31
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.45
+            MATCH: 0.06
+          confidence: 0.24
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.27
+            MATCH: 0.04
+          confidence: 0.53
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+            MATCH: 0.04
+          confidence: 0.6
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+            MATCH: 0.04
+          confidence: 0.5
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.53
+            MATCH: 0.18
+          confidence: 0.29
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+            MATCH: 0.05
+          confidence: 0.42
+        /assertion/target_phenotypes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+            MATCH: 0.03
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8277
+        output_tokens: 401
+      elapsed_seconds: 0.4828
+      request_sha256: 9d27c3d85d9a7420e53c91c41c1105302b825b92e047bcd338b817ddd7bf869e
+      request_sha256s:
+      - 9d27c3d85d9a7420e53c91c41c1105302b825b92e047bcd338b817ddd7bf869e
+  ce57550c14fee87adac15bfe06ba65341ebb8589b5311f4eac2d6ef6d2f30eaa:
+    input_sha256: 3a0b37b7ba603ec02ad5b28ba314daa03903ad0ddabbe5f89af17762ea92d5d6
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.315689+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.54
+            MATCH: 0.39
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.59
+            MATCH: 0.34
+          confidence: 0.38
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.48
+            MATCH: 0.41
+          confidence: 0.23
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.21
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.5
+            MATCH: 0.45
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.45
+            MATCH: 0.42
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6485
+        output_tokens: 272
+      elapsed_seconds: 0.4507
+      request_sha256: bf22819fa2377478dd92147101c69717722e18ac2800f394a38d10675574dbc6
+      request_sha256s:
+      - bf22819fa2377478dd92147101c69717722e18ac2800f394a38d10675574dbc6
+  1bf26741eef87f232da77e90f6393e6688aa45d26fdcb6b45f9ccdbfa6234581:
+    input_sha256: 8ebd25da956fb6b9c46da30df99a77586331609a4d31a05bbe7859b2697df577
+    configuration_sha256: cebde7be42e07a840dfe7ad9721bf72e70b414e5732064f8d260bdde067ddbf5
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.416276+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.56
+            PARTIAL: 0.42
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.44
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.95
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.63
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10370
+        output_tokens: 494
+      elapsed_seconds: 0.5012
+      request_sha256: 1b77ee1365a0003244c1cee8fb0c00c62ea12a73f9d9e0f4b74705d1a018f1a8
+      request_sha256s:
+      - 1b77ee1365a0003244c1cee8fb0c00c62ea12a73f9d9e0f4b74705d1a018f1a8
+  c5284e0a372199408b6115d86a81ac29da27af9af57c09f0b5de59111ef09c3b:
+    input_sha256: 7ff8c28dfa53c074fcd38f5e1952b9e8e070ac09f043fa156d54f60667bd79bb
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.648216+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.66
+            MISMATCH: 0.09
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.65
+            MISMATCH: 0.09
+          confidence: 0.48
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.54
+            MISMATCH: 0.09
+          confidence: 0.31
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.64
+            MISMATCH: 0.09
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.68
+            MISMATCH: 0.17
+          confidence: 0.52
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            PARTIAL: 0.45
+            MISMATCH: 0.08
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6621
+        output_tokens: 272
+      elapsed_seconds: 0.4528
+      request_sha256: d114314e17bfa83b7e81e99ecd0a5b660419df877f98b774412c0a603144de35
+      request_sha256s:
+      - d114314e17bfa83b7e81e99ecd0a5b660419df877f98b774412c0a603144de35
+  064c6e8e223d6162402b86f8aeb62a92685f6fa168aa0280c7c2e9001af6efb4:
+    input_sha256: f614d47286a2bac378828db9d14790f7348e7173c2f00fa87a79758f8ccd355a
+    configuration_sha256: 73fd283d0364d21ed5dba6e8bafe9a45f77559e026fec6cbe747e5026b1e998b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.763807+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+            MATCH: 0.36
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.29
+            MATCH: 0.69
+          confidence: 0.53
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            PARTIAL: 0.24
+            MATCH: 0.16
+          confidence: 0.4
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.64
+            MATCH: 0.33
+          confidence: 0.47
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.46
+            PARTIAL: 0.29
+            MATCH: 0.25
+          confidence: 0.19
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+            MATCH: 0.04
+          confidence: 0.6
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.23
+            PARTIAL: 0.37
+            MATCH: 0.4
+          confidence: 0.09
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.45
+            MATCH: 0.51
+          confidence: 0.28
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.65
+            PARTIAL: 0.25
+            MATCH: 0.1
+          confidence: 0.48
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            PARTIAL: 0.43
+            MATCH: 0.07
+          confidence: 0.26
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.53
+            MATCH: 0.06
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11264
+        output_tokens: 529
+      elapsed_seconds: 0.5459
+      request_sha256: 4bd3de046b78d01e406a321255c39fb1ea29a086a70a1120d82d974fabdb3d01
+      request_sha256s:
+      - 4bd3de046b78d01e406a321255c39fb1ea29a086a70a1120d82d974fabdb3d01
+  37bf94fb3e1a36167177dfe92147305e7f40c63d415f5af1a30efa001ec757d0:
+    input_sha256: dce762cccfed44ab2bfd74c61c14b541acf4173790c287cc4e6c64071c37585b
+    configuration_sha256: 73fd283d0364d21ed5dba6e8bafe9a45f77559e026fec6cbe747e5026b1e998b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:21.878619+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.15
+            MISMATCH: 0.29
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.2
+            MISMATCH: 0.2
+          confidence: 0.41
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.12
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.06
+            MISMATCH: 0.27
+          confidence: 0.51
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.09
+            MISMATCH: 0.76
+          confidence: 0.65
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.01
+            MISMATCH: 0.93
+          confidence: 0.9
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.14
+            MISMATCH: 0.53
+          confidence: 0.29
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.11
+            MISMATCH: 0.29
+          confidence: 0.4
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.08
+            MISMATCH: 0.75
+          confidence: 0.62
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.05
+            MISMATCH: 0.72
+          confidence: 0.57
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.02
+            MISMATCH: 0.74
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11265
+        output_tokens: 536
+      elapsed_seconds: 0.5634
+      request_sha256: 088fc8d25723b54ffc4cb5e7003f3ee690e312440bb0406d93c15a84e5205f6f
+      request_sha256s:
+      - 088fc8d25723b54ffc4cb5e7003f3ee690e312440bb0406d93c15a84e5205f6f
+  7d7122ea937978a0d3c50b2801036892c1d8b4ecb8a99f4ad39d81b002d423d8:
+    input_sha256: f5599ffc5bb7050695a58a2b481dbb93e6a6a7b9d0e614920f575919b2171acb
+    configuration_sha256: 73fd283d0364d21ed5dba6e8bafe9a45f77559e026fec6cbe747e5026b1e998b
+    model: jev-1.13.0
+    assessment_source_revision: fc510ecca031fdabb75960970c310382a89bff8e
+    status: assessed
+    assessed_at: '2026-09-25T15:07:22.036158+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.24
+            MISMATCH: 0.03
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.72
+            MISMATCH: 0.02
+          confidence: 0.58
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.23
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.86
+            MATCH: 0.13
+            MISMATCH: 0.01
+          confidence: 0.79
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.3
+            MISMATCH: 0.42
+          confidence: 0.13
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.02
+            MISMATCH: 0.8
+          confidence: 0.69
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.33
+            MISMATCH: 0.07
+          confidence: 0.39
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.47
+            MISMATCH: 0.03
+          confidence: 0.25
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.07
+            MISMATCH: 0.71
+          confidence: 0.56
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.06
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.03
+            MISMATCH: 0.45
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11326
+        output_tokens: 531
+      elapsed_seconds: 0.5584
+      request_sha256: bfdc7b610397563fb3391f2b75397f5c253e3e28023564b6e5810542ed61c7b1
+      request_sha256s:
+      - bfdc7b610397563fb3391f2b75397f5c253e3e28023564b6e5810542ed61c7b1

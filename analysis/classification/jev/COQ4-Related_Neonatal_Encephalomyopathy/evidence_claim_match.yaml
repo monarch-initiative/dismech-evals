@@ -5839,6 +5839,119 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:26185144
+  dcef8fdf8879685372b7c34fdd5e90fe3253e9d07ef6fcdfabb9d162af95904f:
+    claim:
+      about:
+        disease:
+          name: COQ4-Related Neonatal Encephalomyopathy
+          disease_term:
+            preferred_term: neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome
+            term:
+              id: MONDO:0014562
+              label: neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: COQ4 Loss of Function and CoQ Synthome Destabilization
+        biological_scale: MOLECULAR
+        description: 'Biallelic COQ4 variants reduce or abolish COQ4 protein. COQ4 has no demonstrated
+          catalytic step of its own; the yeast orthologue acts as a structural scaffold stabilizing the
+          multiheteromeric complex that assembles most of the CoQ biosynthetic enzymes, so loss of COQ4
+          destabilizes the whole biosynthetic machine. Missense, nonsense, frameshift and in-frame deletion
+          alleles have all been reported, and patient fibroblasts show markedly reduced COQ4 protein levels.
+          Note that the molecular-function term below is a curator inference: the cited source states
+          that the precise catalytic function of human COQ4 is unknown and describes it as playing a structural,
+          complex-stabilizing role, for which the adaptor-activity term is the closest available GO proxy.
+
+          '
+        genes:
+        - preferred_term: COQ4
+          term:
+            id: hgnc:19693
+            label: COQ4
+        molecular_functions:
+        - preferred_term: protein-macromolecule adaptor activity
+          term:
+            id: GO:0030674
+            label: protein-macromolecule adaptor activity
+          modifier: DECREASED
+      selected_evidence:
+        snippet: a drastic decrease in the amount of COQ4 was detected by immunoblot analysis in S1, S4,
+          and S5 fibroblasts
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25658047
+      reference_title: COQ4 mutations cause a broad spectrum of mitochondrial disorders associated with
+        CoQ10 deficiency.
+      evidence_source: IN_VITRO
+      explanation: Patient-derived fibroblasts show loss of COQ4 protein, confirming the variants are
+        loss-of-function at the protein level.
+    first_seen_at: '2026-09-28T17:45:31.175539+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:31.175539+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:31.175539+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:25658047
+  5cfe88295e9fe9d8fc32d8e5b918b3b59f3e14934702b98c27eb54eed037251f:
+    claim:
+      about:
+        disease:
+          name: COQ4-Related Neonatal Encephalomyopathy
+          disease_term:
+            preferred_term: neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome
+            term:
+              id: MONDO:0014562
+              label: neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: coq4_tissue_selectivity
+        kind: KNOWLEDGE_GAP
+        prompt: What determines whether a given COQ4 genotype produces a heart-dominant, a brain-dominant,
+          or a milder later-onset phenotype?
+        rationale: The same biosynthetic lesion yields strikingly different organ involvement and biochemical
+          severity between patients, and respiratory-chain enzymology ranges from multiple defects to
+          none at all. The proposed exon 1-4 versus exon 5-7 gradient is an observational rule that does
+          not explain tissue selectivity, so the modifiers remain unknown.
+        attaches_to:
+        - pathophysiology#Bioenergetic Failure of High-Energy-Demand Tissues
+      selected_evidence:
+        snippet: This biochemical diversity could be due to differences in individual adaptive responses
+          to reduced CoQ10 availability or could reflect the striking tissue specificity observed in the
+          clinical presentations, but at the moment, a mechanistic explanation for these observations
+          is lacking.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25658047
+      reference_title: COQ4 mutations cause a broad spectrum of mitochondrial disorders associated with
+        CoQ10 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The authors state explicitly that a mechanistic explanation for the tissue selectivity
+        is lacking.
+    first_seen_at: '2026-09-28T17:45:31.269219+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:31.269219+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:31.269219+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      reference: PMID:25658047
 assessments:
   7f463a410129091298ea0b9831ce0970c0df8eb3edb6405d0a2f509c9c90fae8:
     input_sha256: a9dc6316316e8cc3765b85aa9ae6b7ba95aac1d75c3ca5d50b6e4d0edfb305c9
@@ -13447,3 +13560,156 @@ assessments:
       request_sha256: b4919633d35ce4c6c8560a8c83c157706a977af4194ad204dd14d9ea07f84730
       request_sha256s:
       - b4919633d35ce4c6c8560a8c83c157706a977af4194ad204dd14d9ea07f84730
+  7390e58dd6bd9bc53b1540b563d2846c095473935e5cb0164229e57832194610:
+    input_sha256: dcef8fdf8879685372b7c34fdd5e90fe3253e9d07ef6fcdfabb9d162af95904f
+    configuration_sha256: 32fd286c794df53feb666d8c2a2bd6db7dea2a4f257311148b82205f97016ed9
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:31.175539+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.19
+            PARTIAL: 0.74
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.18
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.33
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.89
+            PARTIAL: 0.07
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.19
+            PARTIAL: 0.73
+          confidence: 0.59
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.69
+            PARTIAL: 0.22
+          confidence: 0.53
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.19
+            PARTIAL: 0.31
+          confidence: 0.26
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.48
+            PARTIAL: 0.46
+          confidence: 0.21
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.06
+            PARTIAL: 0.41
+          confidence: 0.3
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10971
+        output_tokens: 483
+      elapsed_seconds: 0.3911
+      request_sha256: 8553afc9d95deaee69ecf1eeb816ac7cf4dd63be2699cac9e709678e49a23d9d
+      request_sha256s:
+      - 8553afc9d95deaee69ecf1eeb816ac7cf4dd63be2699cac9e709678e49a23d9d
+  6adb69f5ff44ea23cdc818aa5ae496d9692d845db5d868edb4745cfe4cc5c6c8:
+    input_sha256: 5cfe88295e9fe9d8fc32d8e5b918b3b59f3e14934702b98c27eb54eed037251f
+    configuration_sha256: 8ca6e005e65ee6cd9081641cdbe51097e1bdb4d37d9b65aab8d311ca36e53ed0
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:31.269219+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.54
+            MISMATCH: 0.04
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.58
+            MISMATCH: 0.05
+          confidence: 0.37
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.24
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/kind:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.51
+            MISMATCH: 0.26
+          confidence: 0.27
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.55
+            MISMATCH: 0.03
+          confidence: 0.33
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.5
+            MISMATCH: 0.11
+          confidence: 0.24
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.62
+            MISMATCH: 0.07
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7453
+        output_tokens: 316
+      elapsed_seconds: 0.3248
+      request_sha256: 81726674e24174dd3204e3dbaf33c9a18acd0f7454866d96f04e06b1e232d09e
+      request_sha256s:
+      - 81726674e24174dd3204e3dbaf33c9a18acd0f7454866d96f04e06b1e232d09e

@@ -900,6 +900,68 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:12634859
+  33a2f79a5608779fe710dc2d6bc018b500200207122aaeeb30cac083cd110830:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Nonsyndromic Hearing Loss 47
+          disease_term:
+            preferred_term: autosomal dominant nonsyndromic hearing loss 47
+            term:
+              id: MONDO:0012090
+              label: autosomal dominant nonsyndromic hearing loss 47
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Hearing Aids and Communication Rehabilitation
+        description: Standard amplification and communication rehabilitation as high-frequency loss becomes
+          functionally significant. This is general progressive-sensorineural-hearing-loss management;
+          no DFNA47-specific outcome data exist.
+        therapeutic_modality: DEVICE
+        treatment_term:
+          preferred_term: hearing rehabilitation
+          term:
+            id: NCIT:C15315
+            label: Rehabilitation
+          qualifiers:
+          - predicate:
+              preferred_term: Medical Device
+              term:
+                id: NCIT:C16830
+                label: Medical Device
+            value:
+              preferred_term: Hearing Aid
+              term:
+                id: NCIT:C183182
+                label: Hearing Aid
+      selected_evidence:
+        snippet: A long audiological follow-up is of paramount importance to identify hearing threshold
+          deteriorations early and ensure prompt treatment with hearing aids or cochlear implants.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37371710
+      reference_title: 'Autosomal Dominant Non-Syndromic Hearing Loss (DFNA): A Comprehensive Narrative
+        Review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: General standard-of-care management for progressive dominant nonsyndromic sensorineural
+        hearing loss, not a DFNA47-specific outcome study, none of which exists.
+      quote_role: REVIEW_SYNTHESIS
+    first_seen_at: '2026-09-28T17:45:56.646966+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:56.646966+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:56.646966+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:37371710
 assessments:
   ec5c77c0ad779c0862d256bfca0e12f260d6ab4163106964812b4309bc622c2c:
     input_sha256: e3ae969d02c497aee13dc60f66e8f7024a70bf47b91dcc36f56505fc9f0e599b
@@ -1908,3 +1970,97 @@ assessments:
       request_sha256: d5d0be46f4e7559979ffb9b4f46e009cd0baae733cc35cd5b65a9026af3c6d47
       request_sha256s:
       - d5d0be46f4e7559979ffb9b4f46e009cd0baae733cc35cd5b65a9026af3c6d47
+  4807b7024201dd5fd9dbe696822ee25610711b53765f38e36742f5d7862e4288:
+    input_sha256: 33a2f79a5608779fe710dc2d6bc018b500200207122aaeeb30cac083cd110830
+    configuration_sha256: 88f68ab8dab9f54595f5bdd9afe1f9f2bf4ca5b60425e164814a3960b9fd483e
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:56.646966+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.2
+            PARTIAL: 0.73
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.03
+            PARTIAL: 0.72
+          confidence: 0.57
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.41
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.31
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.51
+            PARTIAL: 0.45
+          confidence: 0.26
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.49
+            MATCH: 0.46
+          confidence: 0.24
+        /assertion/treatment_term/qualifiers/0/predicate/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.43
+            PARTIAL: 0.38
+          confidence: 0.14
+        /assertion/treatment_term/qualifiers/0/predicate/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.4
+            PARTIAL: 0.35
+          confidence: 0.09
+        /assertion/treatment_term/qualifiers/0/value/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/treatment_term/qualifiers/0/value/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11721
+        output_tokens: 551
+      elapsed_seconds: 0.7766
+      request_sha256: c456168cb9266804975ef29a90f5846c4b4848f761c38b107d74a4013389676a
+      request_sha256s:
+      - c456168cb9266804975ef29a90f5846c4b4848f761c38b107d74a4013389676a

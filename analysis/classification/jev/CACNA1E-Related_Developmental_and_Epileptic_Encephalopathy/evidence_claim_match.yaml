@@ -2024,6 +2024,64 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/2
       reference: PMID:38081835
+  54cb43f44e020f5b6beb575b82e35a9bf3ec5819d56d279eef36db10610b25a9:
+    claim:
+      about:
+        disease:
+          name: CACNA1E-Related Developmental and Epileptic Encephalopathy
+          disease_term:
+            preferred_term: CACNA1E-related developmental and epileptic encephalopathy
+            term:
+              id: MONDO:0032657
+              label: developmental and epileptic encephalopathy, 69
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Increased Neuronal Calcium Influx
+        description: The gain-of-function Cav2.3 channel conducts excess high-voltage-activated R-type
+          calcium current. Because Cav2.3 is expressed at both presynaptic terminals and in the somatodendritic
+          compartment, facilitated activation and slowed inactivation increase depolarization-evoked calcium
+          entry, raising intracellular calcium beyond the physiological range.
+        role: central_effector
+        biological_scale: CELLULAR
+        cell_types:
+        - preferred_term: neuron
+          term:
+            id: CL:0000540
+            label: neuron
+        biological_processes:
+        - preferred_term: calcium ion transmembrane transport
+          modifier: INCREASED
+          term:
+            id: GO:0070588
+            label: calcium ion transmembrane transport
+      selected_evidence:
+        snippet: which conducts high voltage-activated R-type calcium currents that initiate synaptic
+          transmission.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30343943
+      reference_title: De Novo Pathogenic Variants in CACNA1E Cause Developmental and Epileptic Encephalopathy
+        with Contractures, Macrocephaly, and Dyskinesias.
+      evidence_source: OTHER
+      explanation: Background channel physiology establishing the identity of the R-type calcium conductance
+        carried by Cav2.3; it supports which current is amplified, not the magnitude of the increase (documented
+        by the increased current density evidence below).
+    first_seen_at: '2026-09-28T17:48:45.751077+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:48:45.751077+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:48:45.751077+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:30343943
 assessments:
   357896793ad2b0785223aa76c13a74119ccfc2b232bef0d4353fd623f624c441:
     input_sha256: 227aab7c0c998ce39ad2dbbe5147b7b20ad7848fa3feeda760de6c44fdfd7476
@@ -5132,3 +5190,97 @@ assessments:
       request_sha256: ad969f66422ff199778ac23763df36b680b83a89098a4dc429f359f9f1be5cfb
       request_sha256s:
       - ad969f66422ff199778ac23763df36b680b83a89098a4dc429f359f9f1be5cfb
+  7ba16ad9cca0be86d5ae60ddf3a2176c3eb9dc5b4346a19aa91f2a8c1d5cbcd6:
+    input_sha256: 54cb43f44e020f5b6beb575b82e35a9bf3ec5819d56d279eef36db10610b25a9
+    configuration_sha256: 63d6f6de59053d5ec5ac89511b531bfe73353fee7e71ddf924a3ade0a7df186c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:48:45.751077+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MATCH: 0.04
+            MISMATCH: 0.27
+          confidence: 0.54
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.14
+            MISMATCH: 0.28
+          confidence: 0.36
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.07
+            MISMATCH: 0.28
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MATCH: 0.02
+            MISMATCH: 0.29
+          confidence: 0.53
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.08
+            MISMATCH: 0.3
+          confidence: 0.44
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.55
+            MISMATCH: 0.13
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.38
+            MISMATCH: 0.1
+          confidence: 0.29
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.49
+            MISMATCH: 0.08
+          confidence: 0.22
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.15
+            MISMATCH: 0.26
+          confidence: 0.38
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.03
+            MISMATCH: 0.42
+          confidence: 0.32
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.15
+            MISMATCH: 0.24
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11914
+        output_tokens: 537
+      elapsed_seconds: 0.3964
+      request_sha256: 60979ce3ad2ed6a2df1668759b2b0a1082a45cf941da5fe1a93caee32179f2d4
+      request_sha256s:
+      - 60979ce3ad2ed6a2df1668759b2b0a1082a45cf941da5fe1a93caee32179f2d4

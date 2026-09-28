@@ -6723,6 +6723,116 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/4
       reference: PMID:28951247
+  06031a48eab6a03365eeee47230fb661c69032f4307195d9d1c6a29671ef042d:
+    claim:
+      about:
+        disease:
+          name: X-Linked Lissencephaly With Abnormal Genitalia (ARX-Related)
+          disease_term:
+            preferred_term: X-linked lissencephaly with abnormal genitalia (XLAG)
+            term:
+              id: MONDO:0010268
+              label: X-linked lissencephaly with abnormal genitalia
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Abnormal Basal Ganglia Morphology
+        description: Small, indistinct, hypoplastic, or dysplastic basal ganglia are a characteristic
+          associated imaging feature of XLAG.
+        phenotype_term:
+          preferred_term: Abnormal basal ganglia morphology
+          term:
+            id: HP:0002134
+            label: Abnormal basal ganglia morphology
+      selected_evidence:
+        snippet: Brain magnetic resonance imaging shows anterior pachygyria and posterior agyria with
+          a mildly thick cortex, agenesis of the corpus callosum, and dysplastic basal ganglia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15921244
+      reference_title: 'X-linked lissencephaly with abnormal genitalia as a tangential migration disorder
+        causing intractable epilepsy: proposal for a new term, "interneuronopathy".'
+      evidence_source: OTHER
+      explanation: Supports dysplastic basal ganglia as part of the classic pattern.
+    first_seen_at: '2026-09-28T17:43:53.076411+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:43:53.076411+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:43:53.076411+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/1
+      reference: PMID:15921244
+  c9a3246bd1577f23332bc42aeab0de3c90eac3893abafa7b8329e9970bebd000:
+    claim:
+      about:
+        disease:
+          name: X-Linked Lissencephaly With Abnormal Genitalia (ARX-Related)
+          disease_term:
+            preferred_term: X-linked lissencephaly with abnormal genitalia (XLAG)
+            term:
+              id: MONDO:0010268
+              label: X-linked lissencephaly with abnormal genitalia
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: ARX-Dependent Transcriptional Program Disruption
+            description: ARX deficiency perturbs transcriptional programs governing forebrain progenitor
+              proliferation, cortical-interneuron lineage differentiation and guidance, basal-ganglia
+              and thalamocortical development, and testicular differentiation. ARX can regulate targets
+              through context-dependent repression or derepression, so this node does not assume a single
+              direction for every target gene.
+            role: trigger
+            genes:
+            - preferred_term: ARX
+              term:
+                id: hgnc:18060
+                label: ARX
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Candidate Neocortical SVZ Radial-Migration Disruption
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - human_xlag_lissencephaly_route
+        description: Human neuropathology suggests an additional ARX-dependent radial-migration process
+          in the neocortical subventricular zone, but the migrating lineage, molecular intermediates,
+          and relationship to the conserved interneuron branch remain unresolved.
+      selected_evidence:
+        snippet: Our findings suggest that ARX protein controls not only the tangential migration of GABAergic
+          interneurons from the ganglionic eminence, but also may serve to induce radial migration from
+          the neocortical subventricular zone.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/6
+      evidence_path: /pathophysiology/1/downstream/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:18458920
+      reference_title: 'Aristaless-related homeobox gene disruption leads to abnormal distribution of
+        GABAergic interneurons in human neocortex: evidence based on a case of X-linked lissencephaly
+        with abnormal genitalia (XLAG).'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports this as a human-tissue hypothesis rather than a settled dorsal progenitor
+        or lamination mechanism.
+    first_seen_at: '2026-09-28T17:43:52.967213+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:43:52.967213+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:43:52.967213+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/6
+      evidence_path: /pathophysiology/1/downstream/6/evidence/0
+      reference: PMID:18458920
 assessments:
   6211b93e59142a0bb926618d465d6846c43fd1b0f7ce92c35705d646e0f0fbb1:
     input_sha256: 039a83042b8d65689413533d23c78e61be00bdb0e0d502adcab28b8ceb870c9e
@@ -15660,3 +15770,128 @@ assessments:
       request_sha256: 7710e508bef0e71899e3630c2863e32662c75a2468ccc8572e62c08ce9c38a11
       request_sha256s:
       - 7710e508bef0e71899e3630c2863e32662c75a2468ccc8572e62c08ce9c38a11
+  dc1d8993b1f5ecc067b9623fbbac802016003ce76edb5c7e92203ab5f0ea6a34:
+    input_sha256: 06031a48eab6a03365eeee47230fb661c69032f4307195d9d1c6a29671ef042d
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:43:53.076411+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+            MATCH: 0.9
+          confidence: 0.84
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.06
+            MATCH: 0.46
+          confidence: 0.23
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.95
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.03
+            MATCH: 0.76
+          confidence: 0.63
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6304
+        output_tokens: 274
+      elapsed_seconds: 0.2812
+      request_sha256: ce4005e5ba52678ffcfd5b11dcf7566a62bfe4aa00bcc5fbcaf4f213eb351cd1
+      request_sha256s:
+      - ce4005e5ba52678ffcfd5b11dcf7566a62bfe4aa00bcc5fbcaf4f213eb351cd1
+  0d4a15ce9c687dbcf529cb1b752df8ffe1fa2bb34ad11ea6867b371ed226a516:
+    input_sha256: c9a3246bd1577f23332bc42aeab0de3c90eac3893abafa7b8329e9970bebd000
+    configuration_sha256: 8d93dca18137cb624375e85f55d7aa5bdf35ab093970845a1b579d45705d4370
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:43:52.967213+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.6
+            MATCH: 0.38
+          confidence: 0.39
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.4
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.33
+            MATCH: 0.66
+          confidence: 0.49
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.49
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.46
+            MISMATCH: 0.19
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.53
+            MATCH: 0.45
+          confidence: 0.29
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.35
+            MATCH: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7523
+        output_tokens: 318
+      elapsed_seconds: 0.6258
+      request_sha256: 4ba33cb9b1211cc1c7435afdb80eef9978a1d122556399598e94449730563a9e
+      request_sha256s:
+      - 4ba33cb9b1211cc1c7435afdb80eef9978a1d122556399598e94449730563a9e

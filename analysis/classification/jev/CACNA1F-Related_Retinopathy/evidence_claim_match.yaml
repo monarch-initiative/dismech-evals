@@ -1464,6 +1464,56 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:40129245
+  c6e3650a4ad8946342905323d2ed68bbb5659124d9d1c0e322a95eceb6bec6a8:
+    claim:
+      about:
+        disease:
+          name: CACNA1F-Related Retinopathy
+          disease_term:
+            preferred_term: CACNA1F-related retinopathy
+            term:
+              id: MONDO:0700243
+              label: CACNA1F-related retinopathy
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Full-Field Electroretinogram (ERG)
+        description: Characteristic ERG findings are central to diagnosis and distinguish complete from
+          incomplete X-linked CSNB. CACNA1F-related (incomplete) disease shows an electronegative (Schubert-Bornschein)
+          waveform, with a markedly reduced b-wave relative to a relatively preserved a-wave, unlike the
+          "complete" CSNB caused by ON-bipolar-cell signal-transduction defects.
+        diagnosis_term:
+          preferred_term: electroretinogram
+          term:
+            id: NCIT:C101217
+            label: Retinal Examination
+        results: Electronegative (reduced b/a ratio) dark-adapted standard/bright-flash ERG waveform.
+      selected_evidence:
+        snippet: 'The DA standard flash ERG showed an electronegative configuration in 20 of 22 patients
+          (mean (SD) b/a ratio: 0.59 (0.23); range 0.25-1.16)'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33668843
+      reference_title: Optic Atrophy and Inner Retinal Thinning in CACNA1F-related Congenital Stationary
+        Night Blindness.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies the electronegative ERG waveform used diagnostically in a molecularly-confirmed
+        CACNA1F cohort.
+    first_seen_at: '2026-09-28T17:52:57.328787+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:52:57.328787+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:52:57.328787+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:33668843
 assessments:
   add83de998bb3b4565e3a80c29f733bd7841f34593bbdcc5e11f722a14dda945:
     input_sha256: 79b6ba6ea040a2771565d41efb41142b253b4780bac067cd119e109771c72cb3
@@ -3393,3 +3443,69 @@ assessments:
       request_sha256: acffe6fdc5b8f9d5674a1369edd409c9d52c8902d97dbae63522505da4733023
       request_sha256s:
       - acffe6fdc5b8f9d5674a1369edd409c9d52c8902d97dbae63522505da4733023
+  5a35466ea0a633f645ec715b53b97873de4226f9292e9337a608ac134b97fe7a:
+    input_sha256: c6e3650a4ad8946342905323d2ed68bbb5659124d9d1c0e322a95eceb6bec6a8
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:52:57.328787+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.06
+            PARTIAL: 0.32
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.48
+            PARTIAL: 0.47
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.84
+            PARTIAL: 0.1
+          confidence: 0.75
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.08
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.07
+            PARTIAL: 0.14
+          confidence: 0.68
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.22
+            PARTIAL: 0.19
+          confidence: 0.39
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7304
+        output_tokens: 319
+      elapsed_seconds: 0.5106
+      request_sha256: cea2bfc626d98d914134b7d2aec27649cb67e23c9d5f58e2dd766ef4aa7cef4b
+      request_sha256s:
+      - cea2bfc626d98d914134b7d2aec27649cb67e23c9d5f58e2dd766ef4aa7cef4b

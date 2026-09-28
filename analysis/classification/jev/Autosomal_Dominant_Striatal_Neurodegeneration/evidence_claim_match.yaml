@@ -2928,6 +2928,68 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:31726290
+  3d39804eb04a5ad7c85c5ed0d83d11507700c68737c037ab464fff317d19eea4:
+    claim:
+      about:
+        disease:
+          name: Autosomal dominant striatal neurodegeneration
+          disease_term:
+            preferred_term: striatal degeneration, autosomal dominant
+            term:
+              id: MONDO:0000211
+              label: striatal degeneration, autosomal dominant
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Degeneration of the striatum
+            description: ADSN primarily affects the basal ganglia/striatal system, with MRI lesions restricted
+              mainly to the putamen and caudate nucleus or high T2 signal in the striatum. Published evidence
+              localizes the lesion radiographically but does not yet identify a selectively vulnerable
+              striatal cell type.
+            locations:
+            - preferred_term: striatum
+              term:
+                id: UBERON:0002435
+                label: striatum
+            - preferred_term: putamen
+              term:
+                id: UBERON:0001874
+                label: putamen
+            - preferred_term: caudate nucleus
+              term:
+                id: UBERON:0001873
+                label: caudate nucleus
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Dysarthria
+        description: Striatal/basal-ganglia disease contributes to dysarthric speech.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: ADSD is characterized by bradykinesia, dysarthria, and muscle rigidity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:20085714
+      reference_title: Autosomal-dominant striatal degeneration is caused by a mutation in the phosphodiesterase
+        8B gene.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Dysarthria is part of the defining phenotype in the molecular report.
+    first_seen_at: '2026-09-28T17:46:02.782264+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:46:02.782264+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:46:02.782264+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      reference: PMID:20085714
 assessments:
   35fa3fda77eed617c2645e8e51f2e084b813a8a625f3087742dec1a4b7dfafd8:
     input_sha256: d9f02e38c5f3c04fd2842f93b6b15bcc62ba2922ddd4a9c34c282d6bbbe0e8a4
@@ -6849,3 +6911,62 @@ assessments:
       request_sha256: ffbf68deee4d7cc01479368889804be8f6c2bfd04822c72757f3b3aba3124284
       request_sha256s:
       - ffbf68deee4d7cc01479368889804be8f6c2bfd04822c72757f3b3aba3124284
+  01dc29677702efa869aef0f4b90cb66b01b0a160bdb4bbff1955f9f3d1643ba8:
+    input_sha256: 3d39804eb04a5ad7c85c5ed0d83d11507700c68737c037ab464fff317d19eea4
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:46:02.782264+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.41
+            MATCH: 0.48
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.29
+            MATCH: 0.46
+          confidence: 0.18
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.06
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.5
+            MATCH: 0.45
+          confidence: 0.25
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.69
+            MATCH: 0.1
+          confidence: 0.55
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.28
+            MATCH: 0.45
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6529
+        output_tokens: 270
+      elapsed_seconds: 0.5584
+      request_sha256: d0a68fce90f528bc9f680a5bf9865848e656a55366f3b18e1db99b12e9f07cff
+      request_sha256s:
+      - d0a68fce90f528bc9f680a5bf9865848e656a55366f3b18e1db99b12e9f07cff

@@ -5547,6 +5547,89 @@ inputs:
     - assertion_path: /diagnosis/4
       evidence_path: /diagnosis/4/evidence/0
       reference: PMID:37915745
+  97c9ca6ac41f7d1da202481d62c5c56de01b2f28f648362879198e91ac3347d3:
+    claim:
+      about:
+        disease:
+          name: Dilated Cardiomyopathy 1W
+          disease_term:
+            preferred_term: dilated cardiomyopathy 1W
+            term:
+              id: MONDO:0012667
+              label: dilated cardiomyopathy 1W
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Heart Failure Pharmacotherapy
+        description: 'Guideline-directed therapy for heart failure with reduced ejection fraction, applied
+          to the expressed phenotype. There is no VCL-directed treatment. Contemporary HFrEF guidance
+          rests on four pillars: renin-angiotensin system inhibition (an ACE inhibitor, an ARB, or an
+          angiotensin receptor-neprilysin inhibitor), beta-blockade, a mineralocorticoid receptor antagonist,
+          and an SGLT2 inhibitor, with a loop diuretic added for congestion. What the genotype-defined
+          series documents is narrower. Every infant in it received an ACE inhibitor and a beta-blocker,
+          and five of six recovered ventricular function; the series was uncontrolled, so it establishes
+          what was given, not that the drugs caused the recovery. The MRA, SGLT2 inhibitor and ARNI agents
+          curated below are quoted from adult HFrEF guidance and record the standard of care the expressed
+          phenotype is managed under; they are not therapy documented in that infant cohort. Guideline
+          authors are explicit that improved ejection fraction does not license stopping therapy, and
+          the one patient in the series who was weaned off medication relapsed and needed it restarted.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ACE inhibitor
+            term:
+              id: NCIT:C247
+              label: ACE Inhibitor
+          - preferred_term: beta-adrenergic antagonist
+            term:
+              id: NCIT:C29576
+              label: Beta-Adrenergic Antagonist
+          - preferred_term: angiotensin receptor-neprilysin inhibitor
+            term:
+              id: NCIT:C190796
+              label: Angiotensin Receptor-Neprilysin Inhibitor
+          - preferred_term: mineralocorticoid receptor antagonist
+            term:
+              id: NCIT:C101255
+              label: Aldosterone Receptor Antagonist
+          - preferred_term: SGLT2 inhibitor
+            term:
+              id: NCIT:C98083
+              label: SGLT2 Inhibitor
+          - preferred_term: loop diuretic
+            term:
+              id: NCIT:C49184
+              label: Loop Diuretic
+      selected_evidence:
+        snippet: improvement does not necessarily represent normalization of LV function or resolution
+          of the cardiomyopathic process and highlights the importance of continuing treatment as per
+          HFrEF recommendations to prevent deterioration in symptomatic status or LVEF
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37653361
+      reference_title: Summary and Comparison of the 2022 ACC/AHA/HFSA and 2021 ESC Heart Failure Guidelines.
+      evidence_source: OTHER
+      explanation: The basis for continuing therapy after ejection fraction recovers, which is the management
+        question this genotype raises most often.
+    first_seen_at: '2026-09-28T17:50:16.904708+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:50:16.904708+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:50:16.904708+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:37653361
 assessments:
   8d06b83931c45ecf6d0e28d843a932ed876084b19cf0bd7cb99643e9024394d2:
     input_sha256: 97c487d1cb070f574f331b4579b4fc42c5623a88138828965c3895f4225a743f
@@ -13398,3 +13481,153 @@ assessments:
       request_sha256: 837cf5ced9ad0347ab413c89529aeb4e0bbd4e8f73092f4b4dd96abf49c3b16b
       request_sha256s:
       - 837cf5ced9ad0347ab413c89529aeb4e0bbd4e8f73092f4b4dd96abf49c3b16b
+  6330b7a7a282fa6b96b031924e3629e7cc3628289b11f4c0a4cbed6bdc5c449a:
+    input_sha256: 97c9ca6ac41f7d1da202481d62c5c56de01b2f28f648362879198e91ac3347d3
+    configuration_sha256: 162ab1b1253fe7e61be4b3deb3b5b1485074b1954c61b93e760fa7123a7ffac5
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:16.904708+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.55
+            MATCH: 0.34
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.62
+            MATCH: 0.2
+          confidence: 0.42
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.41
+            MATCH: 0.41
+          confidence: 0.12
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.37
+            MATCH: 0.53
+          confidence: 0.3
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.39
+            PARTIAL: 0.29
+            MATCH: 0.32
+          confidence: 0.08
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+            MATCH: 0.49
+          confidence: 0.23
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.43
+            MATCH: 0.4
+          confidence: 0.14
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.39999999999999997
+            MATCH: 0.23
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.5
+            MATCH: 0.29
+          confidence: 0.25
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.42
+            MATCH: 0.32
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.43
+            MATCH: 0.28
+          confidence: 0.15
+        /assertion/treatment_term/therapeutic_agent/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            PARTIAL: 0.41000000000000003
+            MATCH: 0.23
+          confidence: 0.1
+        /assertion/treatment_term/therapeutic_agent/2/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.41
+            MATCH: 0.26
+          confidence: 0.12
+        /assertion/treatment_term/therapeutic_agent/3/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            PARTIAL: 0.45
+            MATCH: 0.21
+          confidence: 0.17
+        /assertion/treatment_term/therapeutic_agent/3/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.5
+            MATCH: 0.23
+          confidence: 0.25
+        /assertion/treatment_term/therapeutic_agent/4/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            PARTIAL: 0.42
+            MATCH: 0.16
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/4/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.45
+            MATCH: 0.22
+          confidence: 0.18
+        /assertion/treatment_term/therapeutic_agent/5/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            PARTIAL: 0.43
+            MATCH: 0.18
+          confidence: 0.15
+        /assertion/treatment_term/therapeutic_agent/5/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            PARTIAL: 0.42
+            MATCH: 0.22
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19932
+        output_tokens: 1025
+      elapsed_seconds: 0.684
+      request_sha256: 53d7cce3aba8f5ec57afa55bcdaf01c5e4a25cdf78230a5a97a7b604bc8f4a69
+      request_sha256s:
+      - 53d7cce3aba8f5ec57afa55bcdaf01c5e4a25cdf78230a5a97a7b604bc8f4a69

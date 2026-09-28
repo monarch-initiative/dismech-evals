@@ -10018,6 +10018,68 @@ inputs:
     - assertion_path: /progression/0
       evidence_path: /progression/0/evidence/1
       reference: PMID:42265995
+  72c4392808ef59104ab216fd65bf534c595e09ea4b318816fe12fbcee4b9c92f:
+    claim:
+      about:
+        disease:
+          name: Amyotrophic Lateral Sclerosis Type 1
+          disease_term:
+            preferred_term: amyotrophic lateral sclerosis type 1
+            term:
+              id: MONDO:0007103
+              label: amyotrophic lateral sclerosis type 1
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Low-copy SOD1 homogenate-seeding recipients
+        species: Mouse
+        genotype: VLE G93A on B6SJL and homozygous G85R:YFP Line 230 on FVB/NJ
+        publication: PMID:41702846
+        description: Adult intrathecal inoculation uses 4 microliters containing 2 microliters of 10%
+          spinal-cord homogenate and lidocaine. Donors, recipient genotypes, ages and passage histories
+          vary across comparisons. Paralysis leading to humane euthanasia is the primary endpoint.
+        modeled_mechanisms:
+        - target: Seeded SOD1 Inclusion Pathology
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          description: Homogenate inoculation accelerates inclusion-associated disease in susceptible
+            hosts.
+          limitations: Inocula are not purified or seed-titer normalized. Age, route, batch and passage
+            vary together; long incubation overlaps spontaneous disease in some older animals. Conditional
+            incubation analyses exclude asymptomatic animals. An internal six-versus-five denominator
+            discrepancy prevents a universal seeding-rate estimate.
+        - target: Motor Neuron Degeneration
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          description: The inoculated mice reach an accelerated motor disease endpoint.
+          limitations: The experiment does not prove necessity of cell-to-cell propagation in human ALS
+            or isolate which aggregate species kills neurons.
+      selected_evidence:
+        snippet: injected intrathecally with seeding homogenates containing misfolded G93A or G85R SOD1
+          developed accelerated motor neuron disease efficiently
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/5
+      evidence_path: /animal_models/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41702846
+      reference_title: Efficient induction of motor neuron disease in transgenic G93A SOD1 mice by prion-like
+        seeding.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: The study tests disease induction in susceptible transgenic recipients.
+    first_seen_at: '2026-09-28T18:18:06.001062+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:18:06.001062+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:18:06.001062+00:00'
+    occurrences:
+    - assertion_path: /animal_models/5
+      evidence_path: /animal_models/5/evidence/0
+      reference: PMID:41702846
 assessments:
   396b1c06cb1e0f9e7be847a0cd5f967abd9d6c910556cd5995a0dd019bd520e7:
     input_sha256: 6566cbb7ef97fbf6ee010447ab2b408a2fa1ec3fc26f02170915ec5091124479
@@ -22941,3 +23003,139 @@ assessments:
       request_sha256: 6a6297f71945ace4b0261fbc6131e608dda4dde3384cb502f64021a60c5036aa
       request_sha256s:
       - 6a6297f71945ace4b0261fbc6131e608dda4dde3384cb502f64021a60c5036aa
+  7cc2a28d24fa806cefbeb3c95587e1fa533375ade4778e39537c0fd786bdf4a1:
+    input_sha256: 72c4392808ef59104ab216fd65bf534c595e09ea4b318816fe12fbcee4b9c92f
+    configuration_sha256: 023c6b6483b4221a8270144bcd26fbaf02e5733faa0755fbb858c8b53766d367
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T18:18:06.001062+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.34
+            MISMATCH: 0.06
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.34
+            MISMATCH: 0.22
+          confidence: 0.17
+        /assertion/species:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.29
+            MISMATCH: 0.25
+          confidence: 0.18
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.04
+            PARTIAL: 0.35
+          confidence: 0.41
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.04
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.2
+            MISMATCH: 0.3
+          confidence: 0.25
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.29
+            MISMATCH: 0.18
+          confidence: 0.29
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.14
+            MISMATCH: 0.55
+          confidence: 0.32
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.39
+            PARTIAL: 0.25
+          confidence: 0.09
+        /assertion/modeled_mechanisms/0/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            MATCH: 0.03
+            PARTIAL: 0.21
+          confidence: 0.63
+        /assertion/modeled_mechanisms/1/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.7
+            MISMATCH: 0.05
+          confidence: 0.56
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.19
+            PARTIAL: 0.32
+          confidence: 0.24
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.83
+            PARTIAL: 0.1
+          confidence: 0.74
+        /assertion/modeled_mechanisms/1/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.03
+            MISMATCH: 0.74
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17926
+        output_tokens: 865
+      elapsed_seconds: 0.444
+      request_sha256: fec9e9045f59b27632753f0dca5fc895ed60465a308884130b1c4b2c21610fa2
+      request_sha256s:
+      - fec9e9045f59b27632753f0dca5fc895ed60465a308884130b1c4b2c21610fa2

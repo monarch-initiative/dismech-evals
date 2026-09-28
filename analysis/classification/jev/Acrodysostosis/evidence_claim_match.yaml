@@ -5697,6 +5697,57 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:36749450
+  f23dd6b60399cf7d800da40c13905f1de676a38772b0639fa134e8d98a380dea:
+    claim:
+      about:
+        disease:
+          name: Acrodysostosis
+          disease_term:
+            preferred_term: acrodysostosis
+            term:
+              id: MONDO:0019797
+              label: acrodysostosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Recombinant Human Growth Hormone Therapy
+        action_category: THERAPEUTIC
+        description: rhGH is used selectively for severe growth impairment or documented growth hormone
+          deficiency. Retrospective cohort data suggest possible improvement in final height, but the
+          small, nonrandomized evidence base does not establish routine efficacy.
+        treatment_term:
+          preferred_term: human growth hormone replacement therapy
+          term:
+            id: NCIT:C15599
+            label: Hormone Replacement Therapy
+        target_phenotypes:
+        - preferred_term: Short Stature
+          term:
+            id: HP:0004322
+            label: Short stature
+      selected_evidence:
+        snippet: Final height may be positively influenced by rhGH in patients with acrodysostosis/iPPSD.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36749450
+      reference_title: Growth patterns and outcomes of growth hormone therapy in patients with acrodysostosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: A small retrospective cohort suggests benefit but uses appropriately cautious language.
+    first_seen_at: '2026-09-28T17:43:54.319125+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:43:54.319125+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:43:54.319125+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:36749450
 assessments:
   f00656fc931a2a2614475aca8cf7e121775e4d7d30e091d0deecdf72907bb29c:
     input_sha256: b5cfc11494ad03cc98a5b5099be235e040bdcf2a651080061acd8bc4ee9c1ab4
@@ -12337,3 +12388,83 @@ assessments:
       request_sha256: b32610a827291e9d3e56cc3b7081f4ed907dc40425757f59c00a0a67cb2576e9
       request_sha256s:
       - b32610a827291e9d3e56cc3b7081f4ed907dc40425757f59c00a0a67cb2576e9
+  2380b2673a283dbfd6fe28a0bbed21111b3341dbe06f33b27991ba0b86925967:
+    input_sha256: f23dd6b60399cf7d800da40c13905f1de676a38772b0639fa134e8d98a380dea
+    configuration_sha256: e297c56cb786a57bcda1967b4ffbde4cacc7d928a5b19c6ca248968936758fb7
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:43:54.319125+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.19
+            PARTIAL: 0.79
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.95
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.57
+        /assertion/action_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.05
+            PARTIAL: 0.09
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.06
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.44
+            PARTIAL: 0.42
+          confidence: 0.16
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.25
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.02
+            PARTIAL: 0.37
+          confidence: 0.42
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.02
+            PARTIAL: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9483
+        output_tokens: 426
+      elapsed_seconds: 0.6833
+      request_sha256: 33218d1e91e198fbe19a630cf9c4cff7ec724ac8d998e76c8d10366411ab2a5f
+      request_sha256s:
+      - 33218d1e91e198fbe19a630cf9c4cff7ec724ac8d998e76c8d10366411ab2a5f

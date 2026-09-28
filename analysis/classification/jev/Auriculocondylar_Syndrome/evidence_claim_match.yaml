@@ -10483,6 +10483,68 @@ inputs:
     - assertion_path: /prevalence/0
       evidence_path: /prevalence/0/evidence/0
       reference: PMID:39014351
+  da24b348fdf3e8fa4f529eebfe4e9206c691080a9ef80e34e7fef8525c3030cd:
+    claim:
+      about:
+        disease:
+          name: Auriculocondylar Syndrome
+          disease_term:
+            preferred_term: auriculocondylar syndrome
+            term:
+              id: MONDO:0000107
+              label: auriculocondylar syndrome
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: PLCB4-variant DAG and transcriptional reporter assays
+        experimental_model_type: CELL_LINE
+        description: HEK293T cells express EDNRA, wild-type or variant PLCB4 and DAG sensors. Arg621His
+          and three other tested ACS substitutions attenuate the stimulated signal; synthetic Pro838Ala
+          in cis with Arg621His reduces interference. A separate HEK293 SRE-luciferase experiment assesses
+          downstream reporter output with constitutively active Gq.
+        notes: DAG-sensor and SRE readouts are not purified-enzyme kinetics, a direct ERK-phosphorylation
+          assay or fetal DLX expression. Proposed PIP2 trapping and altered GAP function were not directly
+          tested. The synthetic interface mutation is not a clinical therapy.
+        publication: PMID:35284927
+        cell_source: Transfected HEK293T cells for DAG assays; HEK293 cells for SRE reporter
+        modeled_mechanisms:
+        - target: Reduced EDNRA-Dependent Phospholipase C Activity
+          relationship: PERTURBS
+          limitations: The mechanism beyond Gq-interface dependence is unresolved.
+          readouts:
+          - name: EDN1-stimulated DAG sensor response
+            description: BRET and membrane translocation responses are attenuated by tested variants.
+            target: Reduced EDNRA-Dependent Phospholipase C Activity
+          description: Patient-associated substitutions attenuate pathway output and interface disruption
+            reduces interference.
+          model_scale: CELLULAR
+      selected_evidence:
+        snippet: indicating that the p.Pro838Ala mutation diminished the dominant-negative effect of PLCB4
+          p.Arg621His.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/2
+      evidence_path: /experimental_models/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35284927
+      reference_title: Auriculocondylar syndrome 2 results from the dominant-negative action of PLCB4
+        variants.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: An additional synthetic interface substitution attenuates the variant-dependent signaling
+        defect.
+    first_seen_at: '2026-09-28T17:45:48.442565+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:48.442565+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:48.442565+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/2
+      evidence_path: /experimental_models/2/evidence/1
+      reference: PMID:35284927
 assessments:
   f2f980e2a4a1b4e6972e3cd65a4006250dc544eb3bee3b5487a7940ad21346ea:
     input_sha256: 3f9fe936245a0adacfb22c8c2cfb2d28c51d03200442da51292a0a2b3090a287
@@ -24066,3 +24128,132 @@ assessments:
       request_sha256: a3f5a09e5dc971b4e46572b217be774fd9c6b3ab4085758f3bf52b67b27c3abc
       request_sha256s:
       - a3f5a09e5dc971b4e46572b217be774fd9c6b3ab4085758f3bf52b67b27c3abc
+  9988f22a4401e9879249c3a7a8c2373275f5e21c5093e936ddee067c2948c9eb:
+    input_sha256: da24b348fdf3e8fa4f529eebfe4e9206c691080a9ef80e34e7fef8525c3030cd
+    configuration_sha256: b61c261284718578bccc954070badaa12b8943e3fa4326fcef757f6006b4c1b0
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:48.442565+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.52
+            PARTIAL: 0.38
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.29
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.42
+            PARTIAL: 0.38
+          confidence: 0.13
+        /assertion/experimental_model_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.51
+            PARTIAL: 0.24
+          confidence: 0.28
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.5
+            PARTIAL: 0.4
+          confidence: 0.25
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.47
+            MATCH: 0.19
+            PARTIAL: 0.34
+          confidence: 0.2
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.54
+            MATCH: 0.17
+            PARTIAL: 0.29
+          confidence: 0.32
+        /assertion/cell_source:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            MATCH: 0.05
+            PARTIAL: 0.2
+          confidence: 0.63
+        /assertion/modeled_mechanisms/0/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.51
+            PARTIAL: 0.42
+          confidence: 0.26
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.42
+            PARTIAL: 0.24
+          confidence: 0.13
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            MATCH: 0.05
+            PARTIAL: 0.28
+          confidence: 0.5
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.28
+            PARTIAL: 0.39
+          confidence: 0.08
+        /assertion/modeled_mechanisms/0/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            MATCH: 0.09
+            PARTIAL: 0.36
+          confidence: 0.32
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.44
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/modeled_mechanisms/0/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.51
+            PARTIAL: 0.45
+          confidence: 0.27
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.7
+            PARTIAL: 0.15
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16581
+        output_tokens: 813
+      elapsed_seconds: 0.3826
+      request_sha256: 07b0cc2baee654feba08119190d6c90891ed80312daf17e391ec4a5f54305367
+      request_sha256s:
+      - 07b0cc2baee654feba08119190d6c90891ed80312daf17e391ec4a5f54305367

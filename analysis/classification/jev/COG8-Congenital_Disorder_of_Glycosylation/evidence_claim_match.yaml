@@ -3927,6 +3927,132 @@ inputs:
     - assertion_path: /experimental_models/1/modeled_mechanisms/0
       evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/0
       reference: PMID:23865579
+  17320f2e6550622ef211f6474eca9cea0e29e2e2ee10c96c2b9816971d1558b1:
+    claim:
+      about:
+        disease:
+          name: COG8-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: COG8-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012635
+              label: COG8-congenital disorder of glycosylation
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: COG Complex Destabilization and Cog1 Loss
+        biological_scale: MOLECULAR
+        description: Loss of the Cog1-Cog8 bridge between lobe A and lobe B leaves only smaller COG subcomplexes.
+          Patient fibroblasts lack COG8 protein entirely and show reduced levels or mislocalisation of
+          several other COG subunits, with Cog1 absent from the Golgi; acute COG8 knockdown in HeLa cells
+          reproduces the loss of Cog1.
+        genes:
+        - preferred_term: COG8
+          term:
+            id: hgnc:18623
+            label: COG8
+        cell_types:
+        - preferred_term: fibroblast
+          term:
+            id: CL:0000057
+            label: fibroblast
+        locations:
+        - preferred_term: Golgi apparatus
+          term:
+            id: GO:0005794
+            label: Golgi apparatus
+      selected_evidence:
+        snippet: As a result, Cog1 deficiency accompanies the Cog8 deficiency, preventing assembly of
+          the intact, stable complex and resulting in the appearance of smaller subcomplexes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17220172
+      reference_title: A new inborn error of glycosylation due to a Cog8 deficiency reveals a critical
+        role for the Cog1-Cog8 interaction in COG complex formation.
+      evidence_source: IN_VITRO
+      explanation: States the specific consequence modelled by this node - secondary Cog1 deficiency and
+        failure of intact complex assembly.
+    first_seen_at: '2026-09-28T17:49:30.421252+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:49:30.421252+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:49:30.421252+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:17220172
+  cf5271f397a36c5e582e8d821e086af97e529e35886836cf30ba8f7774fcd97f:
+    claim:
+      about:
+        disease:
+          name: COG8-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: COG8-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012635
+              label: COG8-congenital disorder of glycosylation
+        context:
+        - path: /experimental_models/0
+          value:
+            name: COG8-deficient CDG patient fibroblasts with lentiviral complementation
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Fibroblasts from the index patient lack COG8 protein, mislocalise other COG subunits,
+              are deficient in N- and O-glycan sialylation and show a slowed brefeldin A response. Re-expression
+              of normal COG8 corrects all three, which is the rescue experiment that establishes COG8
+              loss as sufficient to cause the cellular phenotype.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: COG Complex Destabilization and Cog1 Loss
+        relationship: RECAPITULATES
+        fidelity: HIGH
+        description: Patient-derived cells carrying the causal genotype; the defect is the human lesion
+          itself rather than an engineered surrogate.
+        limitations: Fibroblasts are not an affected tissue in the neurological phenotype, and a single
+          patient's cells cannot represent the allelic spectrum.
+        readouts:
+        - name: Restoration of COG subunit localisation and sialylation by COG8 re-expression
+          target: COG Complex Destabilization and Cog1 Loss
+          direction: RESTORED
+          interpretation: Complementation rescues the trafficking and glycosylation phenotype, establishing
+            COG8 loss as the sufficient cause in these cells.
+      selected_evidence:
+        snippet: Patient fibroblasts completely lacked COG8 protein and had reduced levels and/or mislocalization
+          of several other COG proteins.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0/modeled_mechanisms/0
+      evidence_path: /experimental_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/0
+    evidence_metadata:
+      reference: PMID:17331980
+      reference_title: COG8 deficiency causes new congenital disorder of glycosylation type IIh.
+      evidence_source: IN_VITRO
+      explanation: Establishes the patient fibroblast line as an informative model of the COG-complex
+        destabilisation node.
+    first_seen_at: '2026-09-28T17:49:30.725920+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:49:30.725920+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:49:30.725920+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0/modeled_mechanisms/0
+      evidence_path: /experimental_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:17331980
 assessments:
   da11dbae2b0e5dca35eecb78c30052d42abf7302e0c1b575fe58dc9bbf416774:
     input_sha256: 251ce3bbcebbd1ccaeb0643cbc90e8efc3fdce4721c61d3e0c61a9638bb2f3f0
@@ -9112,3 +9238,198 @@ assessments:
       request_sha256: ca555241b44d05a13dc13148636d4f838d546a6c7972616c138803847e53d2f1
       request_sha256s:
       - ca555241b44d05a13dc13148636d4f838d546a6c7972616c138803847e53d2f1
+  22cc69aa9738ec7705d0d57f2904ac4a3e22862104b725521fef343b1b104ad8:
+    input_sha256: 17320f2e6550622ef211f6474eca9cea0e29e2e2ee10c96c2b9816971d1558b1
+    configuration_sha256: 15e44df44ca6d5fb121f88f5114d0e4a3b72a222a69acc47da82b69f8f12fb28
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:49:30.421252+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.54
+            MATCH: 0.43
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.47
+            MATCH: 0.51
+          confidence: 0.27
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.16
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.3
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            PARTIAL: 0.41
+            MATCH: 0.24
+          confidence: 0.11
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.46
+            MATCH: 0.43
+          confidence: 0.18
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.49
+            MATCH: 0.36
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11613
+        output_tokens: 525
+      elapsed_seconds: 0.5367
+      request_sha256: b5be1a398a0e481db0e8167d97d1d0e01241e84e4d8a5ae50eea344161952a49
+      request_sha256s:
+      - b5be1a398a0e481db0e8167d97d1d0e01241e84e4d8a5ae50eea344161952a49
+  c4a1b56b49ad0be89b35f29685dba13ecb070f28c9f6b6f6fb126ed1f48fcc34:
+    input_sha256: cf5271f397a36c5e582e8d821e086af97e529e35886836cf30ba8f7774fcd97f
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:49:30.725920+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.16
+            MATCH: 0.41
+          confidence: 0.15
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.02
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.19
+            MATCH: 0.52
+          confidence: 0.28
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.26
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.02
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.12
+            MATCH: 0.46
+          confidence: 0.2
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.69
+            MATCH: 0.06
+          confidence: 0.54
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.24
+            MATCH: 0.11
+          confidence: 0.48
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.18
+            MATCH: 0.54
+          confidence: 0.31
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.38
+            MATCH: 0.26
+          confidence: 0.07
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.29
+            MATCH: 0.13
+          confidence: 0.37
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.06
+            MATCH: 0.8
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12574
+        output_tokens: 567
+      elapsed_seconds: 0.3191
+      request_sha256: f52bf66fb001ad754beaea4055c02ff99c046f18e3815b89da43c14e817a5848
+      request_sha256s:
+      - f52bf66fb001ad754beaea4055c02ff99c046f18e3815b89da43c14e817a5848

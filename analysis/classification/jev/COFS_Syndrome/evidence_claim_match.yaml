@@ -3976,6 +3976,57 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/2
       reference: PMID:20301516
+  cd232637a1a6b54169f88308137c9ee4c7da3297d0906db59fd455fcf581cae2:
+    claim:
+      about:
+        disease:
+          name: COFS Syndrome
+          disease_term:
+            preferred_term: COFS syndrome
+            term:
+              id: MONDO:0008926
+              label: COFS syndrome
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Progressive Neurodegeneration
+            description: Transcriptional arrest in post-mitotic neurons drives progressive neurodegeneration
+              of surviving neurons. This degenerative arm contributes to the severe progressive psychomotor
+              decline of COFS, distinct from the developmental neurogenesis deficit.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Brain Atrophy
+        description: Progressive neurodegeneration manifests as brain atrophy.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Cerebro-oculo-facio-skeletal (COFS) syndrome is a recessively inherited rapidly progressive
+          neurologic disorder leading to brain atrophy, with calcifications, cataracts, microcornea, optic
+          atrophy, progressive joint contractures, and growth failure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:11443545
+      reference_title: Cerebro-oculo-facio-skeletal syndrome with a nucleotide excision-repair defect
+        and a mutated XPD gene, with prenatal diagnosis in a triplet pregnancy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: XPD-mutated COFS case series describes progressive neurologic disease leading to brain
+        atrophy.
+    first_seen_at: '2026-09-28T17:45:30.431987+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:30.431987+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:30.431987+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      reference: PMID:11443545
 assessments:
   4d591d1592bccce19b69d8d46705b5e0a9034e8389d0764832142ef42bc69ce4:
     input_sha256: 74f20b5f740adba555404a4c360d6eb64f6eccdbe6382d6e88dbde4f4feeafb2
@@ -9008,3 +9059,62 @@ assessments:
       request_sha256: 354b5786369b7ac5e47110a46eb3864bc3e55a8fa90d5c42d6a89405fe1c62f9
       request_sha256s:
       - 354b5786369b7ac5e47110a46eb3864bc3e55a8fa90d5c42d6a89405fe1c62f9
+  2287816870f214c177ea85722a877cbbc10e0fc4dd911bd0390cca1d6a715534:
+    input_sha256: cd232637a1a6b54169f88308137c9ee4c7da3297d0906db59fd455fcf581cae2
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:30.431987+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.04
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.07
+            PARTIAL: 0.44
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.33
+            PARTIAL: 0.36
+          confidence: 0.03
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6378
+        output_tokens: 269
+      elapsed_seconds: 0.1808
+      request_sha256: 4fdd39941c00f23f7e8e4d96b106523f88cd1bbff5da8fe2bb48b65943c8a50c
+      request_sha256s:
+      - 4fdd39941c00f23f7e8e4d96b106523f88cd1bbff5da8fe2bb48b65943c8a50c

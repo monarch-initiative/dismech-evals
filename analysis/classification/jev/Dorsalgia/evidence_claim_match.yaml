@@ -1,0 +1,201 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Dorsalgia.yaml
+disease: Dorsalgia
+inventory:
+  source_sha256: bab68b734d11fefa6774c537e4e053d989dfa58391d152883131103d4eae5d57
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+  observed_at: '2026-09-28T18:43:23.443405+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  369c610412d10c7f7af2b3aa108f0fb995936f8a0aebbc374be58ff75103173c:
+    claim:
+      about:
+        disease:
+          name: Dorsalgia
+          disease_term:
+            preferred_term: disease
+            term:
+              id: MONDO:0000001
+              label: disease
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Genetic and disc-related factors in back pain
+        description: Genetic variants associated with intervertebral disc disorder implicate cartilage,
+          bone, and inflammatory processes in dorsalgia susceptibility.
+      selected_evidence:
+        snippet: Genes implicated by this study are involved in cartilage and bone biology, as well as
+          neurological and inflammatory processes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35110524
+      reference_title: Rare SLC13A1 variants associate with intervertebral disc disorder highlighting
+        role of sulfate in disc pathology.
+      explanation: The GWAS links dorsalgia-related loci to cartilage, bone, neurologic, and inflammatory
+        pathways.
+    first_seen_at: '2026-09-28T17:47:29.508578+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:23.443405+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:23.443405+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:35110524
+  e425a2d7d9bdd59ca74a3e3c14a1e38d8f19be55a2210b6abcbd5eb9b6b9f11c:
+    claim:
+      about:
+        disease:
+          name: Dorsalgia
+          disease_term:
+            preferred_term: disease
+            term:
+              id: MONDO:0000001
+              label: disease
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Back pain
+        description: Persistent pain localized to the back.
+        phenotype_term:
+          preferred_term: Back pain
+          term:
+            id: HP:0003418
+            label: Back pain
+      selected_evidence:
+        snippet: Back pain is a common and debilitating disorder with largely unknown underlying biology.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35110524
+      reference_title: Rare SLC13A1 variants associate with intervertebral disc disorder highlighting
+        role of sulfate in disc pathology.
+      explanation: The study frames back pain as a common debilitating disorder, consistent with dorsalgia.
+    first_seen_at: '2026-09-28T17:47:29.509723+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:23.443405+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:23.443405+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:35110524
+assessments:
+  457b831aeb008f4e8e2f63998290fdd8557b6e28ac7ade51de295c8a2980ff1b:
+    input_sha256: 369c610412d10c7f7af2b3aa108f0fb995936f8a0aebbc374be58ff75103173c
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:47:29.508578+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.07
+            MATCH: 0.33
+          confidence: 0.41
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.19
+            MATCH: 0.24
+          confidence: 0.36
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.05
+            MATCH: 0.44
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.33
+            MISMATCH: 0.04
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4254
+        output_tokens: 179
+      elapsed_seconds: 0.2058
+      request_sha256: ec58ad78386d7c26e01828b44ac647135ebeec94f891fa7b79844f0618933505
+      request_sha256s:
+      - ec58ad78386d7c26e01828b44ac647135ebeec94f891fa7b79844f0618933505
+  22cb6a836b9da9b9f3fd9c5c07ec9a0e8c526ecbba6e31d3391276ef6373d4c4:
+    input_sha256: e425a2d7d9bdd59ca74a3e3c14a1e38d8f19be55a2210b6abcbd5eb9b6b9f11c
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:47:29.509723+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.23
+            PARTIAL: 0.34
+          confidence: 0.14
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.29
+            PARTIAL: 0.35
+          confidence: 0.04
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.07
+            PARTIAL: 0.1
+          confidence: 0.75
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.34
+            PARTIAL: 0.53
+          confidence: 0.31
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.08
+            PARTIAL: 0.17
+          confidence: 0.62
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.09
+            PARTIAL: 0.17
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6200
+        output_tokens: 274
+      elapsed_seconds: 0.211
+      request_sha256: 804be4c5c398ac7aabf2a9f6f9759bc786791682cad2732bb14a7a91e91685ed
+      request_sha256s:
+      - 804be4c5c398ac7aabf2a9f6f9759bc786791682cad2732bb14a7a91e91685ed

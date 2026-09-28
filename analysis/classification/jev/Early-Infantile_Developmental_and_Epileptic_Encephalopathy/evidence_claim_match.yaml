@@ -5464,6 +5464,74 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:20437616
+  d608af690b735d7b1881641ba4e9e0a3849e11d9e47816e92ac97e66087f522b:
+    claim:
+      about:
+        disease:
+          name: Early-Infantile Developmental and Epileptic Encephalopathy
+          disease_term:
+            preferred_term: early-infantile DEE
+            term:
+              id: MONDO:0800491
+              label: early-infantile DEE
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Excitation-Inhibition Imbalance in Immature Cortical Networks
+        biological_scale: CELLULAR
+        role: amplifier
+        description: 'Whatever the upstream lesion, the convergent consequence is a shift of the balance
+          between glutamatergic excitation and GABAergic inhibition toward net excitation, occurring in
+          cortical networks that are still being assembled. The immature-brain context matters: the same
+          lesion acting later produces a different, usually milder, syndrome, and the age factor is the
+          common denominator that determines whether the resulting electroclinical picture is EIDEE, infantile
+          epileptic spasms syndrome, or Lennox-Gastaut syndrome.'
+        conforms_to: epilepsy_excitation_inhibition_imbalance#Excitation-Inhibition Imbalance
+        cell_types:
+        - preferred_term: GABAergic neuron
+          term:
+            id: CL:0000617
+            label: GABAergic neuron
+        biological_processes:
+        - preferred_term: GABA Signaling Pathway
+          term:
+            id: GO:0007214
+            label: gamma-aminobutyric acid signaling pathway
+          modifier: DECREASED
+        locations:
+        - preferred_term: cerebral cortex
+          term:
+            id: UBERON:0000956
+            label: cerebral cortex
+      selected_evidence:
+        snippet: Mutual transition suggests the same pathophysiology among three syndromes and the age
+          factor should be considered as the common denominator responsible for the manifestation of each
+          of their own specific clinico-electrical features.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11751020
+      reference_title: Early-infantile epileptic encephalopathy with suppression-bursts, Ohtahara syndrome;
+        its overview referring to our 16 cases.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Ohtahara's own case series argues that the same underlying pathophysiology, filtered
+        through developmental age, yields EIDEE, West syndrome or Lennox-Gastaut syndrome - the rationale
+        for the developmental-context half of this node. Marked PARTIAL because it does not address the
+        excitation/inhibition claim itself.
+    first_seen_at: '2026-09-28T17:50:18.174084+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:50:18.174084+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:50:18.174084+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:11751020
 assessments:
   8743079bafa825671f0c8ed4ab98f70b440a239f7c471cab61e8ff69c9553380:
     input_sha256: 77aa97c68282c9a4988e09fb54a51a2d763b3e11f510abbabb108ca5d6cf4972
@@ -13624,3 +13692,118 @@ assessments:
       request_sha256: e2bb0e2d632c5feb62fc67c0474b8c222587c302d7dabfefbafcc0f779d5d5a7
       request_sha256s:
       - e2bb0e2d632c5feb62fc67c0474b8c222587c302d7dabfefbafcc0f779d5d5a7
+  eb3da753f5a84a79d89a56ad0c7a1ce6c36f18a81e5b9254e09f42910d452ab5:
+    input_sha256: d608af690b735d7b1881641ba4e9e0a3849e11d9e47816e92ac97e66087f522b
+    configuration_sha256: c356b3505b8e858f12d662c59f0c9a643215265b3fb6fe658d63503606343359
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:18.174084+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.76
+            MISMATCH: 0.12
+          confidence: 0.63
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.5
+            MISMATCH: 0.04
+          confidence: 0.26
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.61
+            MISMATCH: 0.26
+          confidence: 0.4
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.39
+            MISMATCH: 0.46
+          confidence: 0.18
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.63
+            MATCH: 0.12
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.67
+            MISMATCH: 0.13
+          confidence: 0.49
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.42
+            MISMATCH: 0.49
+          confidence: 0.23
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.49
+            MISMATCH: 0.41
+          confidence: 0.23
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.47
+            MISMATCH: 0.47
+          confidence: 0.21
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.51
+            MISMATCH: 0.41
+          confidence: 0.27
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.49
+            MISMATCH: 0.47
+          confidence: 0.23
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.5
+            MISMATCH: 0.45
+          confidence: 0.26
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+            MATCH: 0.1
+          confidence: 0.22
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.48
+            MISMATCH: 0.47
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15022
+        output_tokens: 691
+      elapsed_seconds: 0.5391
+      request_sha256: ffe53f735b37e89c7443a5b83a8bb4b58860bf969e92bd2efdf1eb1affbec84a
+      request_sha256s:
+      - ffe53f735b37e89c7443a5b83a8bb4b58860bf969e92bd2efdf1eb1affbec84a

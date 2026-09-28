@@ -9469,6 +9469,95 @@ inputs:
     - assertion_path: /clinical_trials/9
       evidence_path: /clinical_trials/9/evidence/0
       reference: clinicaltrials:NCT05797597
+  52df8c36f13ff4f624b4affb853d0a30aa9a00dded41cc8a1cee17fcf06b3dae:
+    claim:
+      about:
+        disease:
+          name: Aspirin-Exacerbated Respiratory Disease
+          disease_term:
+            preferred_term: Aspirin-exacerbated respiratory disease
+            term:
+              id: MONDO:0008834
+              label: asthma, nasal polyps, and aspirin intolerance
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Dust-mite-primed Ptges-null mice with leukotriene and IL-33 perturbations
+        species: Mouse
+        genotype: Ptges−/−, with additional Ltc4s deletion in genetic-dependency experiments
+        background: C57BL/6; 6–8-week-old males
+        publication: PMID:26342029
+        description: Repeated intranasal Dermatophagoides farinae conditioning produces an eosinophilic,
+          PGE2-deficient airway that responds to inhaled lysine aspirin or selected cysteinyl leukotrienes.
+          Global Ltc4s deletion reduces IL-33 and eosinophilic inflammation. Anti-IL-33 antibody or soluble
+          ST2-Fc given before challenge reduces airway-resistance and mediator responses.
+        notes: This induced model does not establish a human PTGES mutation etiology or reproduce the
+          full acquired syndrome. Blocking agents were given 24 hours before challenge, not as treatment
+          of established human disease. Tissue source and mast-cell-specific ST2 necessity were not tested.
+          BAL histamine/mMCP1/PGD2 are activation-associated readouts; figure legends are absent from
+          the generated main-body cache, so unverified figure sample sizes are not supplied.
+        modeled_mechanisms:
+        - target: Reduced Respiratory PGE2 Availability
+          relationship: PERTURBS
+          model_scale: TISSUE
+          fidelity: MODERATE
+          description: Loss of mPGES-1 impairs inducible PGE2 synthesis.
+          limitations: Genetic deletion models one permissive component, not the established etiology
+            of human AERD.
+        - target: Increased Airway IL-33 Availability
+          relationship: MEASURES
+          model_scale: TISSUE
+          fidelity: MODERATE
+          description: Lung IL-33 abundance decreases with additional Ltc4s deletion.
+          limitations: Global deletion can alter upstream inflammatory conditioning; it does not establish
+            a direct epithelial receptor-to-IL33 step.
+        - target: Enhanced IL-33-ST2 Signaling
+          relationship: PERTURBS
+          model_scale: MOLECULAR
+          fidelity: MODERATE
+          description: IL-33 antibody or soluble ST2-Fc blocks signaling before challenge.
+          limitations: The decoy is not an anti-ST2 antibody; no lineage-specific necessity or clinical
+            efficacy is established.
+        - target: Mast Cell Activation
+          relationship: MEASURES
+          model_scale: TISSUE
+          fidelity: MODERATE
+          description: BAL histamine, mMCP1 and PGD2 responses are reduced by IL-33/ST2 blockade.
+          limitations: Mediator readouts do not substitute for mast-cell depletion or a mast-cell-specific
+            conditional knockout.
+        - target: Airway Smooth Muscle Contraction
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          fidelity: MODERATE
+          description: Challenge produces increased airway resistance that is inhibited by upstream blockade.
+          limitations: Airway resistance is an organ-level functional readout, not a direct isolated smooth-muscle
+            assay.
+      selected_evidence:
+        snippet: Challenges of dust mite-primed ptges(-/-) mice with lysine aspirin induce IL-33-dependent
+          MC activation and bronchoconstriction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26342029
+      reference_title: Aspirin-Exacerbated Respiratory Disease Involves a Cysteinyl Leukotriene-Driven
+        IL-33-Mediated Mast Cell Activation Pathway.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: The living model combines genetic PGE2 deficiency, allergen priming and drug challenge.
+    first_seen_at: '2026-09-28T17:45:20.851448+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:20.851448+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:20.851448+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:26342029
 assessments:
   f6b4b8fcc5048793a04fbe740cfe04622836fca1abef3860b9d9322a82e89f89:
     input_sha256: e0f28ac85223f0a4edf392aa88b7cd9127339557ac8b036576b3182cf0b70804
@@ -21889,3 +21978,293 @@ assessments:
       request_sha256: 7de0f0bbebd64339de109cc385296cdaf2ed84e8dc2aed80fada72de042bccd2
       request_sha256s:
       - 7de0f0bbebd64339de109cc385296cdaf2ed84e8dc2aed80fada72de042bccd2
+  ec0921ecfe67a2bb6de94d521a9cbaa3aeb8e35e325ccb1629d7faf634e621c4:
+    input_sha256: 52df8c36f13ff4f624b4affb853d0a30aa9a00dded41cc8a1cee17fcf06b3dae
+    configuration_sha256: 03e06747d5fd35921c7aa2616c05f60defce28c91baaab213cecfd6c73a9e15b
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:20.851448+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.51
+            MATCH: 0.45
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.03
+            MATCH: 0.73
+          confidence: 0.6
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.46
+            MATCH: 0.35
+          confidence: 0.18
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.08
+            MATCH: 0.81
+          confidence: 0.71
+        /assertion/genotype:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.09
+            MATCH: 0.38
+          confidence: 0.29
+        /assertion/background:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+            MATCH: 0.03
+          confidence: 0.56
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.62
+            MATCH: 0.11
+          confidence: 0.43
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.04
+            MATCH: 0.39
+          confidence: 0.35
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            PARTIAL: 0.4
+            MATCH: 0.09
+          confidence: 0.26
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.23
+            MATCH: 0.36
+          confidence: 0.11
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.8
+            MATCH: 0.06
+          confidence: 0.69
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.24
+            MATCH: 0.49
+          confidence: 0.24
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.13
+            MATCH: 0.4
+          confidence: 0.21
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.24
+            MATCH: 0.32
+          confidence: 0.15
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.6
+            MATCH: 0.08
+          confidence: 0.4
+        /assertion/modeled_mechanisms/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.18
+            MATCH: 0.32
+          confidence: 0.26
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.33
+            MATCH: 0.3
+          confidence: 0.06
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.18
+            MATCH: 0.6
+          confidence: 0.4
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.1
+            MATCH: 0.43
+          confidence: 0.21
+        /assertion/modeled_mechanisms/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.28
+            MATCH: 0.34
+          confidence: 0.07
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+            MATCH: 0.08
+          confidence: 0.3
+        /assertion/modeled_mechanisms/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.16
+            MATCH: 0.28
+          confidence: 0.34
+        /assertion/modeled_mechanisms/2/relationship:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.38
+            MATCH: 0.37
+          confidence: 0.07
+        /assertion/modeled_mechanisms/2/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.24
+            MATCH: 0.54
+          confidence: 0.3
+        /assertion/modeled_mechanisms/2/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.12
+            MATCH: 0.37
+          confidence: 0.27
+        /assertion/modeled_mechanisms/2/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.54
+            PARTIAL: 0.36
+            MATCH: 0.1
+          confidence: 0.32
+        /assertion/modeled_mechanisms/2/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.54
+            MATCH: 0.06
+          confidence: 0.3
+        /assertion/modeled_mechanisms/3/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.52
+            MATCH: 0.4
+          confidence: 0.28
+        /assertion/modeled_mechanisms/3/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            PARTIAL: 0.25
+            MATCH: 0.2
+          confidence: 0.33
+        /assertion/modeled_mechanisms/3/model_scale:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.44
+            MATCH: 0.3
+          confidence: 0.16
+        /assertion/modeled_mechanisms/3/fidelity:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.56
+            MATCH: 0.36
+          confidence: 0.34
+        /assertion/modeled_mechanisms/3/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.17
+            MATCH: 0.29
+          confidence: 0.32
+        /assertion/modeled_mechanisms/3/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            PARTIAL: 0.39
+            MATCH: 0.1
+          confidence: 0.27
+        /assertion/modeled_mechanisms/4/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.11
+            MATCH: 0.39
+          confidence: 0.25
+        /assertion/modeled_mechanisms/4/relationship:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.45
+            MATCH: 0.42
+          confidence: 0.18
+        /assertion/modeled_mechanisms/4/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.26
+            MATCH: 0.46
+          confidence: 0.18
+        /assertion/modeled_mechanisms/4/fidelity:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.59
+            MATCH: 0.33
+          confidence: 0.39
+        /assertion/modeled_mechanisms/4/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.16
+            MATCH: 0.26
+          confidence: 0.36
+        /assertion/modeled_mechanisms/4/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+            MATCH: 0.08
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 41368
+        output_tokens: 2051
+      elapsed_seconds: 0.893
+      request_sha256: 8f312ff573071e3d4429b407c905aa2fa77ab737fa0f30d610cfd78e73841c0b
+      request_sha256s:
+      - 8f312ff573071e3d4429b407c905aa2fa77ab737fa0f30d610cfd78e73841c0b

@@ -2452,6 +2452,69 @@ inputs:
     - assertion_path: /differential_diagnoses/2
       evidence_path: /differential_diagnoses/2/evidence/0
       reference: PMID:19918918
+  bd5f1f7fab98493756ddaa8556990e98f28a2a893f69f4789a1d0bfff31f9a13:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Robinow Syndrome 1
+          disease_term:
+            preferred_term: autosomal dominant Robinow syndrome 1
+            term:
+              id: MONDO:0024455
+              label: autosomal dominant Robinow syndrome 1
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of Planar Cell Polarity in Developing Tissues
+        role: central_effector
+        biological_scale: TISSUE
+        mechanism_confidence: PROVISIONAL
+        description: 'Cells that should adopt a coordinated orientation within the plane of a tissue fail
+          to do so. In growth-plate cartilage this is directly observable - chondrocytes that should stack
+          into ordered columns are randomly oriented - and it is the most concrete cellular readout available
+          for this disease.
+
+          PROVISIONAL because the chondrocyte polarity evidence comes from experimental systems expressing
+          a disease variant rather than from patient growth plates, and because the step from disordered
+          chondrocyte columns to the specifically mesomelic pattern of limb shortening is inferred rather
+          than demonstrated.'
+        cell_types:
+        - preferred_term: chondrocyte
+          term:
+            id: CL:0000138
+            label: chondrocyte
+        locations:
+        - preferred_term: cartilage tissue
+          term:
+            id: UBERON:0002418
+            label: cartilage tissue
+      selected_evidence:
+        snippet: A non-canonical, β-catenin independent signal transduction pathway that controls cell
+          polarity or movement has also been identified
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19918918
+      reference_title: WNT5A mutations in patients with autosomal dominant Robinow syndrome.
+      evidence_source: OTHER
+      explanation: Background from the introduction of the WNT5A discovery paper, citing Heisenberg et
+        al. 2000 - a zebrafish study. Graded OTHER because it is a review of prior model-organism work
+        rather than a human observation or a result of the citing paper. It establishes that this pathway
+        controls cell polarity in general, not that the polarity defect was measured in Robinow tissue.
+    first_seen_at: '2026-09-28T17:46:00.097300+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:46:00.097300+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:46:00.097300+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:19918918
 assessments:
   2ff53694e8f2abd9ebe8def2749d86c045c5f077b015ef073de98136324ea476:
     input_sha256: e2673a4a9750de317cde66263d0c68f9dc9e104ac79346eb7ec7a8177a26fae3
@@ -5702,3 +5765,97 @@ assessments:
       request_sha256: 670f5a7c0ef3e4ccf9540f3f506ce255823712c03d79e1d7ac7b02411ce2aaa0
       request_sha256s:
       - 670f5a7c0ef3e4ccf9540f3f506ce255823712c03d79e1d7ac7b02411ce2aaa0
+  bb471c4d629a6c885867d0466a55f7674ad27303227787ebaffb2d6f2f692d85:
+    input_sha256: bd5f1f7fab98493756ddaa8556990e98f28a2a893f69f4789a1d0bfff31f9a13
+    configuration_sha256: f745dc56e365ffb8b44940f319469cd0ab0ace9b436676be01425b48d9bb7e2f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:46:00.097300+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.23
+            PARTIAL: 0.71
+          confidence: 0.57
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.32
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.1
+            PARTIAL: 0.71
+          confidence: 0.57
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.34
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.3
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/mechanism_confidence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.24
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.26
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.53
+            PARTIAL: 0.42
+          confidence: 0.29
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.5
+            PARTIAL: 0.44
+          confidence: 0.25
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.49
+            PARTIAL: 0.44
+          confidence: 0.23
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.5
+            PARTIAL: 0.45
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11727
+        output_tokens: 533
+      elapsed_seconds: 0.5672
+      request_sha256: afeef3e79f20a0953c6bf5d29265a2000bc77314c3036c5515cddd79b58293be
+      request_sha256s:
+      - afeef3e79f20a0953c6bf5d29265a2000bc77314c3036c5515cddd79b58293be

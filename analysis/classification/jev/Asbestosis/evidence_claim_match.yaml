@@ -3559,6 +3559,56 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:3004226
+  fba397b95faad5ce035f68f80d68d6a1df25bf1974c4b41eeb341a36cc9a2ddf:
+    claim:
+      about:
+        disease:
+          name: Asbestosis
+          disease_term:
+            preferred_term: asbestosis
+            term:
+              id: MONDO:0016466
+              label: asbestosis
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_asbestosis_antifibrotic_efficacy
+        prompt: Do pirfenidone or other antifibrotic drugs produce a clinically meaningful benefit in
+          progressive asbestosis?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Excessive extracellular matrix deposition
+        - treatments#Pirfenidone
+        rationale: Available asbestosis-specific studies are small and uncontrolled or real-world before/after
+          analyses; estimates are imprecise, and no adequately powered randomized disease-specific efficacy
+          trial has established benefit.
+      selected_evidence:
+        snippet: Findings based on asbestosis patients treated between 2004 and 2024 reveal a modest reduction
+          in the rate of FVC decline (mean (95% CI) difference 7.0 (-5.8-19.7) mL·month-1, p=0.22) and
+          D LCO decline (0.11% (-0.19-0.41%), p=0.30) after starting pirfenidone
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41438854
+      reference_title: 'The effect of pirfenidone on disease progression in asbestosis patients: a real-world
+        Dutch cohort study.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The latest asbestosis-specific cohort remains statistically inconclusive.
+    first_seen_at: '2026-09-28T17:46:33.851337+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:46:33.851337+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:46:33.851337+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:41438854
 assessments:
   1312c4901b69767ad0433e2fa6cf52f71585313f9cd0168ff9131a7b7d4db8e6:
     input_sha256: 29d64362819c85b9e1c7375976732b6eef9d16953baf61914617adfb855c6e60
@@ -8679,3 +8729,76 @@ assessments:
       request_sha256: 6a2f4e52017b559ca7102eb7716826e110196c5b9d6539b36d7ce498a81f4d9a
       request_sha256s:
       - 6a2f4e52017b559ca7102eb7716826e110196c5b9d6539b36d7ce498a81f4d9a
+  e119673c4912cc52b4e889fe9226508046a5c7fcf944cb8964be5b3fdefbba38:
+    input_sha256: fba397b95faad5ce035f68f80d68d6a1df25bf1974c4b41eeb341a36cc9a2ddf
+    configuration_sha256: 790c315aa71a7af449126bba4c0441520643c67e542693c58b87f5b69bbbcdc1
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:46:33.851337+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MISMATCH: 0.04
+            MATCH: 0.12
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.38
+            MATCH: 0.25
+          confidence: 0.08
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.88
+            MISMATCH: 0.01
+            MATCH: 0.11
+          confidence: 0.82
+        /assertion/kind:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.34
+            MATCH: 0.31
+          confidence: 0.02
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.47
+            MATCH: 0.07
+          confidence: 0.2
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.03
+            MATCH: 0.55
+          confidence: 0.32
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.16
+            MATCH: 0.2
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8396
+        output_tokens: 366
+      elapsed_seconds: 0.3605
+      request_sha256: 586aec985ffc9222eadff2cb17e37f18518ca75db75f4d478a0137dcc1cf68f0
+      request_sha256s:
+      - 586aec985ffc9222eadff2cb17e37f18518ca75db75f4d478a0137dcc1cf68f0

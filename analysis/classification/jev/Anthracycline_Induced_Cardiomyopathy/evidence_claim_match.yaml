@@ -7869,6 +7869,64 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/2
       reference: PMID:37552303
+  b407e69f4de6b3a1a1cfb267df9dbd82f3d23115147cbc5e7839df318d68a246:
+    claim:
+      about:
+        disease:
+          name: Anthracycline-Induced Cardiomyopathy
+          disease_term:
+            preferred_term: anthracycline-induced cardiomyopathy
+            term:
+              id: MONDO:0022653
+              label: cardiomyopathy due to anthracyclines
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Cardiac ABCB8 overexpression
+        species: Mouse
+        genotype: Cardiac ABCB8 transgene on a backcrossed C57BL/6J background
+        publication: PMID:24382354
+        description: Cardiac ABCB8 overexpression lowers mitochondrial iron and attenuates doxorubicin
+          injury in acute and subacute mouse exposure protocols. The study also uses cardiac Abcb8 deletion,
+          whose pre-existing cardiomyopathy complicates interpretation of drug-specific susceptibility.
+        modeled_mechanisms:
+        - target: Mitochondrial Iron Accumulation
+          relationship: PERTURBS
+          model_scale: ORGANISM
+          description: Transgenic expression reduces mitochondrial iron before and after exposure.
+          limitations: One founder line and relatively intensive short-duration doxorubicin protocols
+            differ from repeated human cancer regimens. Prevention before exposure is not reversal of
+            established chronic human cardiomyopathy.
+          readouts:
+          - name: Mitochondrial iron in cardiac ABCB8 transgenic mice
+            target: Mitochondrial Iron Accumulation
+            direction: DECREASED
+            description: Iron is lower in transgenic than nontransgenic hearts, including after drug exposure.
+      selected_evidence:
+        snippet: ABCB8 TG mice displayed significantly lower mitochondrial iron levels than those observed
+          in non-TG (NTG) animals both at baseline and after treatment with DOX
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24382354
+      reference_title: Cardiotoxicity of doxorubicin is mediated through mitochondrial iron accumulation.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: The transgenic comparison directly measures the compartmental iron pool.
+    first_seen_at: '2026-09-28T18:18:10.065286+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:18:10.065286+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:18:10.065286+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      reference: PMID:24382354
 assessments:
   05c406b911c33daed3687efec2217702d28f8c91c9283ccd15996b47941135a9:
     input_sha256: 39db24db518b40d9533dfee7dad449cbc0d74db3b19251f449097b108e297e8b
@@ -17929,3 +17987,132 @@ assessments:
       request_sha256: b1c4ab5873ba95a1da0bf206f7945ac944840ddbc9d6777b109974954458972b
       request_sha256s:
       - b1c4ab5873ba95a1da0bf206f7945ac944840ddbc9d6777b109974954458972b
+  ee92ef0b67639bbf727a1f59a0b382773ff700f7b7fa1d238bea2194f04abcef:
+    input_sha256: b407e69f4de6b3a1a1cfb267df9dbd82f3d23115147cbc5e7839df318d68a246
+    configuration_sha256: 26287c4bdc630773783409c0768e4199969fe4261c09ef7aa48d87ea808bdf42
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T18:18:10.065286+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.23
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.41
+            PARTIAL: 0.45
+          confidence: 0.19
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.45
+            PARTIAL: 0.25
+          confidence: 0.18
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.67
+            PARTIAL: 0.23
+          confidence: 0.52
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            MATCH: 0.08
+            PARTIAL: 0.37
+          confidence: 0.32
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.25
+            PARTIAL: 0.27
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.25
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/modeled_mechanisms/0/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.6
+            PARTIAL: 0.15
+          confidence: 0.41
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.92
+            MATCH: 0.05
+            PARTIAL: 0.03
+          confidence: 0.88
+        /assertion/modeled_mechanisms/0/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.81
+            MATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.71
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.94
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.82
+            PARTIAL: 0.06
+          confidence: 0.73
+        /assertion/modeled_mechanisms/0/readouts/0/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.95
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16507
+        output_tokens: 822
+      elapsed_seconds: 0.3223
+      request_sha256: c943cf8328430b641ed45e684bc10d3995da15cade020e35490db53e5f48cc67
+      request_sha256s:
+      - c943cf8328430b641ed45e684bc10d3995da15cade020e35490db53e5f48cc67

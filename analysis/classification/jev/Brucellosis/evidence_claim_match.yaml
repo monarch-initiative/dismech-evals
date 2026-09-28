@@ -5377,6 +5377,52 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:18045560
+  a6c11c1f3e64f2c1cfcfdd00bc013d2630ac76dc6114d171ac2382ca5e30c2cc:
+    claim:
+      about:
+        disease:
+          name: Brucellosis
+          disease_term:
+            preferred_term: brucellosis
+            term:
+              id: MONDO:0005683
+              label: brucellosis
+        context:
+        - path: /pathophysiology/7
+          value:
+            name: Osteoarticular seeding
+            description: Focal osteoarticular infection affects peripheral joints, sacroiliac joints,
+              or vertebral structures.
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Spondylitis
+        description: Vertebral focal infection manifests as spondylitis.
+      selected_evidence:
+        snippet: Spondylitis 1 18 (1; 28)* 6 12 (7, 19) 9 11 (6; 18) 16 12 (8; 17)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7/downstream/2
+      evidence_path: /pathophysiology/7/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/7
+    evidence_metadata:
+      reference: PMID:23236528
+      reference_title: 'Clinical manifestations of human brucellosis: a systematic review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The systematic review found spondylitis in 12% of cases.
+    first_seen_at: '2026-09-28T17:44:40.300116+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:44:40.300116+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:44:40.300116+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7/downstream/2
+      evidence_path: /pathophysiology/7/downstream/2/evidence/0
+      reference: PMID:23236528
 assessments:
   f056b6094c692133134964823e1b77e56812c7c26c00899027ac1982d2519a94:
     input_sha256: 11f0664b27723be9dababe2af91824afca33be55d88e9a3c1f5d247ccd163522
@@ -12303,3 +12349,55 @@ assessments:
       request_sha256: a5e2fcabe90319e5867aa77d5ee8b76244c6db0e753e2c352459fea3b4f272ba
       request_sha256s:
       - a5e2fcabe90319e5867aa77d5ee8b76244c6db0e753e2c352459fea3b4f272ba
+  25002d5533ade5bb9efe7ccb78e18d7b0ded1e40734c4f916fc3ed3c049e7a75:
+    input_sha256: a6c11c1f3e64f2c1cfcfdd00bc013d2630ac76dc6114d171ac2382ca5e30c2cc
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:44:40.300116+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.17
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.07
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.41
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.19
+            PARTIAL: 0.47
+          confidence: 0.22
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.24
+            PARTIAL: 0.47
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5318
+        output_tokens: 226
+      elapsed_seconds: 0.3342
+      request_sha256: 053322c8734b1794e2507dc2c5a23a03a70bdb48105651aeeeb65d0dd8179044
+      request_sha256s:
+      - 053322c8734b1794e2507dc2c5a23a03a70bdb48105651aeeeb65d0dd8179044

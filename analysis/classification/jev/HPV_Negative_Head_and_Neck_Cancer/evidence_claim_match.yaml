@@ -1,0 +1,529 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/HPV_Negative_Head_and_Neck_Cancer.yaml
+disease: HPV-Negative Head and Neck Cancer
+inventory:
+  source_sha256: 6894ef88907b2e7ae55ae4f642a6257cfa5f2ef385bf5526b17ab045c6c03350
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+  observed_at: '2026-09-28T18:43:52.489713+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  4d7bc2ea24222ea23467d9a7d6bafcbc2e2429cc96ee207aa3873829663d3ac1:
+    claim:
+      about:
+        disease:
+          name: HPV-Negative Head and Neck Cancer
+          disease_term:
+            preferred_term: head and neck squamous cell carcinoma
+            term:
+              id: MONDO:0010150
+              label: head and neck squamous cell carcinoma
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Ethanol Exposure
+        description: Chronic alcohol consumption synergizes with tobacco to increase HNSCC risk multiplicatively.
+          Alcohol acts as a solvent enhancing carcinogen penetration and is metabolized to acetaldehyde,
+          a DNA-damaging agent. Ethanol is classified as a Group 1 carcinogen by IARC.
+        notes: Named and bound for the chemical (ECTO:9000027, which involves CHEBI ethanol) rather than
+          the drinking behaviour (ECTO:0001082) because the mechanism curated here is ethanol acting as
+          a solvent and as an acetaldehyde source. Renamed from "Alcohol Consumption" so the binding is
+          derivable from the entry's own name.
+        exposure_term:
+          preferred_term: exposure to ethanol
+          term:
+            id: ECTO:9000027
+            label: exposure to ethanol
+      selected_evidence:
+        snippet: Smoking and alcohol independently increase the risk of both HPV-positive and HPV-negative
+          HNSCC.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39244563
+      reference_title: 'Smoking and alcohol by HPV status in head and neck cancer: a Mendelian randomization
+        study.'
+      explanation: Abstract reports alcohol increases risk for HPV-negative HNSCC.
+    first_seen_at: '2026-09-28T17:51:11.975171+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.489713+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.489713+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:39244563
+  8832a4a132ce5a2e1c865759c025ca0850d082ed98aa037cddd78a02ae9fb54f:
+    claim:
+      about:
+        disease:
+          name: HPV-Negative Head and Neck Cancer
+          disease_term:
+            preferred_term: head and neck squamous cell carcinoma
+            term:
+              id: MONDO:0010150
+              label: head and neck squamous cell carcinoma
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Tobacco Smoking
+        description: Cigarette smoking is the dominant risk factor for HPV-negative HNSCC, with a dose-response
+          relationship. Tobacco smoke contains numerous carcinogens including polycyclic aromatic hydrocarbons
+          and nitrosamines that cause DNA adducts and mutations, particularly in TP53.
+        exposure_term:
+          preferred_term: exposure to tobacco smoking
+          term:
+            id: ECTO:6000029
+            label: exposure to tobacco smoking
+      selected_evidence:
+        snippet: Besides tobacco and alcohol abuse, human papilloma virus (HPV) infection is an independent
+          risk factor, particularly in oropharyngeal squamous cell carcinomas (OPSCC).
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36414699
+      reference_title: '[The tumor microenvironment-relay station for prognosis and therapy response].'
+      explanation: Identifies tobacco (and alcohol) as major risk factors for HNSCC.
+    first_seen_at: '2026-09-28T17:51:11.895471+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.489713+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.489713+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:36414699
+  f23de05738ed5e37b69d5aec9844e9dbca64dcf0c5c92ce4f88a1a5168dfd3c2:
+    claim:
+      about:
+        disease:
+          name: HPV-Negative Head and Neck Cancer
+          disease_term:
+            preferred_term: head and neck squamous cell carcinoma
+            term:
+              id: MONDO:0010150
+              label: head and neck squamous cell carcinoma
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Squamous Cell Carcinoma
+        finding_term:
+          preferred_term: Squamous Cell Carcinoma
+          term:
+            id: NCIT:C2929
+            label: Squamous Cell Carcinoma
+        frequency: VERY_FREQUENT
+        description: Head and neck squamous cell carcinoma is a squamous carcinoma of the head and neck.
+      selected_evidence:
+        snippet: Head and neck squamous cell carcinoma (HNSCC) is the sixth most common cancer
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36414699
+      reference_title: '[The tumor microenvironment-relay station for prognosis and therapy response].'
+      explanation: Abstract explicitly names head and neck squamous cell carcinoma.
+    first_seen_at: '2026-09-28T17:51:12.359796+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.489713+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.489713+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:36414699
+  d35f3376a1d3dd27fc8e9a17e87291abbc784de032ee243eb7fcec756e713aa7:
+    claim:
+      about:
+        disease:
+          name: HPV-Negative Head and Neck Cancer
+          disease_term:
+            preferred_term: head and neck squamous cell carcinoma
+            term:
+              id: MONDO:0010150
+              label: head and neck squamous cell carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: TP53 Mutation and Inactivation
+        genetic_context:
+          variant_origin: SOMATIC
+        description: TP53 mutations occur in greater than 80% of HPV-negative HNSCC, representing the
+          most common genetic alteration. Mutations are typically missense mutations in the DNA-binding
+          domain caused by tobacco carcinogen-induced DNA adducts. Loss of p53 function eliminates cell
+          cycle checkpoints and DNA damage repair.
+        cell_types:
+        - preferred_term: squamous epithelial cell
+          term:
+            id: CL:0000076
+            label: squamous epithelial cell
+        biological_processes:
+        - preferred_term: cell cycle checkpoint signaling
+          modifier: DECREASED
+          term:
+            id: GO:0000075
+            label: cell cycle checkpoint signaling
+        - preferred_term: apoptotic process
+          modifier: DECREASED
+          term:
+            id: GO:0006915
+            label: apoptotic process
+        genes:
+        - preferred_term: TP53
+          term:
+            id: hgnc:11998
+            label: TP53
+      selected_evidence:
+        snippet: Smoking-related HNSCCs demonstrate near universal loss-of-function TP53 mutations and
+          CDKN2A inactivation
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25631445
+      reference_title: Comprehensive genomic characterization of head and neck squamous cell carcinomas.
+      explanation: TCGA HNSCC abstract reports near-universal TP53 loss and CDKN2A inactivation in smoking-related
+        tumors.
+    first_seen_at: '2026-09-28T17:51:12.254841+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.489713+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.489713+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:25631445
+assessments:
+  b6076fd221cd8273471c9d5c94a218736dcda33d5468c363dd3cfceef9fb1df1:
+    input_sha256: 4d7bc2ea24222ea23467d9a7d6bafcbc2e2429cc96ee207aa3873829663d3ac1
+    configuration_sha256: 5e5dbf5729770d0389edf68099bd7ab22012aff4c14d7c7e3d72e8104f8b9b07
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:11.975171+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.87
+            MISMATCH: 0.07
+            MATCH: 0.06
+          confidence: 0.81
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.0
+            MATCH: 0.85
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.05
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.85
+            MISMATCH: 0.12
+            MATCH: 0.03
+          confidence: 0.77
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.84
+            MATCH: 0.02
+          confidence: 0.77
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.07
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.06
+            MATCH: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7307
+        output_tokens: 322
+      elapsed_seconds: 0.276
+      request_sha256: 5d7f41b2f047772cc3b01277701cbeda65f6b3695ccd770140a0fed8b16a954e
+      request_sha256s:
+      - 5d7f41b2f047772cc3b01277701cbeda65f6b3695ccd770140a0fed8b16a954e
+  780ab50b71ed86ecb691a4f818217fccf3e6232d6a70823a095d36e7bbc7d21e:
+    input_sha256: 8832a4a132ce5a2e1c865759c025ca0850d082ed98aa037cddd78a02ae9fb54f
+    configuration_sha256: 3e8723c847dcdccc399b4fd98ef5ec59588f9bc2b0798c31b8baba30e1140991
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:11.895471+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.46
+            MATCH: 0.05
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.15
+            MATCH: 0.27
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.14
+            MATCH: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.69
+            MATCH: 0.01
+          confidence: 0.54
+        /assertion/exposure_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.17
+            MATCH: 0.36
+          confidence: 0.21
+        /assertion/exposure_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.15
+            MATCH: 0.32
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6302
+        output_tokens: 280
+      elapsed_seconds: 0.2935
+      request_sha256: bf4f5e1bacdbc7302565714081356b92e6fc7b8e835120c748ba766e1d9079f1
+      request_sha256s:
+      - bf4f5e1bacdbc7302565714081356b92e6fc7b8e835120c748ba766e1d9079f1
+  4cd24efd6e05b438b8f32aecd24484f77abcc18e79b06dd46e3bc1951a00fcc6:
+    input_sha256: f23de05738ed5e37b69d5aec9844e9dbca64dcf0c5c92ce4f88a1a5168dfd3c2
+    configuration_sha256: d8fd9e5655656b6be03f4cd749736b3cfca36da48ba55860fa9acbca30ca277d
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:12.359796+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.61
+            MISMATCH: 0.18
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.26
+            MISMATCH: 0.04
+          confidence: 0.54
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.27
+            MISMATCH: 0.08
+          confidence: 0.48
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.27
+            MISMATCH: 0.07
+          confidence: 0.49
+        /assertion/finding_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.3
+            MISMATCH: 0.08
+          confidence: 0.43
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.29
+            MISMATCH: 0.64
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.41
+            MISMATCH: 0.25
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7276
+        output_tokens: 323
+      elapsed_seconds: 0.2842
+      request_sha256: 7d08979669ca1cd6bfc1a1d7b9af8f4f6a0977b367609d010147bbb7b847f529
+      request_sha256s:
+      - 7d08979669ca1cd6bfc1a1d7b9af8f4f6a0977b367609d010147bbb7b847f529
+  ecac757c1d4d6f0c716011d951407c9a663f9547906191020f35c60914d12073:
+    input_sha256: d35f3376a1d3dd27fc8e9a17e87291abbc784de032ee243eb7fcec756e713aa7
+    configuration_sha256: 978d8f9ca87f2ddfa9d32599bf893f9175df5d4f541133a034f0ba6c67c775c9
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:12.254841+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6900000000000001
+            MATCH: 0.29
+            MISMATCH: 0.02
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.75
+            MISMATCH: 0.01
+          confidence: 0.62
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.81
+            MISMATCH: 0.02
+          confidence: 0.72
+        /assertion/genetic_context/variant_origin:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.58
+            MISMATCH: 0.04
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.21
+            MISMATCH: 0.02
+          confidence: 0.67
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47000000000000003
+            MATCH: 0.44
+            MISMATCH: 0.09
+          confidence: 0.19
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.31
+            MISMATCH: 0.14
+          confidence: 0.31
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.36
+            MISMATCH: 0.1
+          confidence: 0.32
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.33
+            MISMATCH: 0.12
+          confidence: 0.32
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.16
+            MISMATCH: 0.2
+          confidence: 0.46
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.13
+            MISMATCH: 0.42
+          confidence: 0.18
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.15
+            MISMATCH: 0.35
+          confidence: 0.25
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.05
+            MISMATCH: 0.51
+          confidence: 0.27
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.86
+            MISMATCH: 0.02
+          confidence: 0.78
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.82
+            MISMATCH: 0.03
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15803
+        output_tokens: 758
+      elapsed_seconds: 0.5641
+      request_sha256: 39c557e452df84a285fffd36a76a5dd6eb7535d3609b09a985632c91fc78527a
+      request_sha256s:
+      - 39c557e452df84a285fffd36a76a5dd6eb7535d3609b09a985632c91fc78527a

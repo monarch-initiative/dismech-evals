@@ -2512,6 +2512,58 @@ inputs:
     - assertion_path: /differential_diagnoses/0
       evidence_path: /differential_diagnoses/0/evidence/2
       reference: PMID:11590545
+  dcf0103e14fe293086c5354675de98ac44345d872148ea0fbb16f004233e2ba2:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Nonsyndromic Hearing Loss 17
+          disease_term:
+            preferred_term: DFNA17
+            term:
+              id: MONDO:0011350
+              label: autosomal dominant nonsyndromic hearing loss 17
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cytokinesis Failure and Altered Cell Morphology
+        biological_scale: CELLULAR
+        description: 'Expressing the mutant allele produces multinucleate cells and excess filopodia.
+          The effect is cell-type-dependent: MDA-MB-231 cells respond, HeLa cells are refractory, and
+          the actin cytoskeleton itself is unaffected. That selectivity is worth preserving, because it
+          is the sort of context dependence that could explain why one variant produces an organ-restricted
+          phenotype.'
+        biological_processes:
+        - preferred_term: cytokinesis
+          modifier: DECREASED
+          term:
+            id: GO:0000910
+            label: cytokinesis
+      selected_evidence:
+        snippet: Actin cytoskeleton configuration within MDA-MB-231 cells was unaffected by expression
+          of MYH9(R702C) or MYH9(R705H).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20416459
+      reference_title: In vitro expression and characterization of MYH9 mutant alleles linked to hereditary
+        hearing loss.
+      evidence_source: IN_VITRO
+      explanation: 'A negative result that narrows the defect: the motor is affected, the actin scaffold
+        is not.'
+    first_seen_at: '2026-09-28T18:18:14.230790+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:18:14.230790+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:18:14.230790+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:20416459
 assessments:
   b97d695bae94588475b04c1289755f5b5c6e65a6f00a9917785eaef210ac0e85:
     input_sha256: 49210befd35d8a73a8bdf5917e2d91d87e036e79d14394839a47377293487125
@@ -5812,3 +5864,76 @@ assessments:
       request_sha256: 487d2eaa217489bf9d80990abe83528a88976427506a23494deb64a820852393
       request_sha256s:
       - 487d2eaa217489bf9d80990abe83528a88976427506a23494deb64a820852393
+  5cf1ade04fa0bb756ad7a0bb83b964e3f1fdf5ee9e3cc1f760380021804a4c4b:
+    input_sha256: dcf0103e14fe293086c5354675de98ac44345d872148ea0fbb16f004233e2ba2
+    configuration_sha256: b89092fe642e58be121bc76d1c656d9fbf473767536033fd69caa3595f1d9884
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T18:18:14.230790+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.37
+            MATCH: 0.26
+          confidence: 0.07
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.28
+            MATCH: 0.29
+          confidence: 0.14
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.67
+            MATCH: 0.09
+          confidence: 0.5
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.11
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.17
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.86
+            MATCH: 0.02
+          confidence: 0.8
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.83
+            MATCH: 0.02
+          confidence: 0.75
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.83
+            MATCH: 0.02
+          confidence: 0.74
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8895
+        output_tokens: 398
+      elapsed_seconds: 0.1837
+      request_sha256: fea9629769761d33cef1f483d0527a3a4832de321ff4826f7b38cc76efdafbdd
+      request_sha256s:
+      - fea9629769761d33cef1f483d0527a3a4832de321ff4826f7b38cc76efdafbdd

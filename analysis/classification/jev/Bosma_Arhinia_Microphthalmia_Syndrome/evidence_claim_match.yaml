@@ -10146,6 +10146,75 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:36944600
+  2bc588b41556a75863eb157c7645e28321eeb06de23d5f650122eb0e242618fd:
+    claim:
+      about:
+        disease:
+          name: Bosma Arhinia Microphthalmia Syndrome
+          disease_term:
+            preferred_term: arhinia, choanal atresia, and microphthalmia
+            term:
+              id: MONDO:0011323
+              label: arhinia, choanal atresia, and microphthalmia
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Ocular developmental disruption
+            conforms_to: ocular_morphogenesis_failure#Disrupted Optic Cup and Globe Morphogenesis
+            description: BAMS includes a variable ocular-developmental spectrum from microphthalmia or
+              anophthalmia to coloboma, cataract, optic atrophy, amblyopia, and visual loss. Xenopus data
+              support altered eye development, but the precise human cellular route from SMCHD1 remains
+              unresolved.
+            biological_scale: TISSUE
+            mechanism_confidence: PROVISIONAL
+            biological_processes:
+            - preferred_term: eye morphogenesis
+              modifier: ABNORMAL
+              term:
+                id: GO:0048592
+                label: eye morphogenesis
+            - preferred_term: camera-type eye morphogenesis
+              modifier: ABNORMAL
+              term:
+                id: GO:0048593
+                label: camera-type eye morphogenesis
+            locations:
+            - preferred_term: eye
+              term:
+                id: UBERON:0000970
+                label: eye
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Blindness
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - severe congenital ocular malformation
+      selected_evidence:
+        snippet: Each patient had impaired visual function with cataracts and colobomata.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/3
+      evidence_path: /pathophysiology/4/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:6802865
+      reference_title: Hypoplasia of the nose and eyes, hyposmia, hypogeusia, and hypogonadotrophic hypogonadism
+        in two males.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The original report directly documents structural eye disease and impaired visual function.
+    first_seen_at: '2026-09-28T17:44:39.613659+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:44:39.613659+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:44:39.613659+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/3
+      evidence_path: /pathophysiology/4/downstream/3/evidence/0
+      reference: PMID:6802865
 assessments:
   8f441cb92deac00dcee175f1e1bebdb7662120287f284287782463e1d36114aa:
     input_sha256: c12eb403213ee10d1ed9208f64f4afa06e31532720a566c213f5081f8925d327
@@ -22224,3 +22293,62 @@ assessments:
       request_sha256: 417e695aaf336660034d9089c913f89d0e6df8a2ea186ebac7673bb33667daff
       request_sha256s:
       - 417e695aaf336660034d9089c913f89d0e6df8a2ea186ebac7673bb33667daff
+  a4a776a1db7b68562e18467069e1f6728139b0a98966413abe752131131d6f22:
+    input_sha256: 2bc588b41556a75863eb157c7645e28321eeb06de23d5f650122eb0e242618fd
+    configuration_sha256: 3e55903ef5f0ae0f5dc17e5eb1a042cb489b97d34b048cae9c09300ff585859a
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:44:39.613659+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.04
+            PARTIAL: 0.48
+          confidence: 0.22
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.08
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.08
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.04
+            PARTIAL: 0.34
+          confidence: 0.42
+        /assertion/intermediate_mechanisms:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+          confidence: 0.6
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.13
+            PARTIAL: 0.42
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6644
+        output_tokens: 275
+      elapsed_seconds: 0.237
+      request_sha256: 92e9c43914d56113b7f3ea20b04d049f980c94123be23c5c39be83c89d5cafdb
+      request_sha256s:
+      - 92e9c43914d56113b7f3ea20b04d049f980c94123be23c5c39be83c89d5cafdb

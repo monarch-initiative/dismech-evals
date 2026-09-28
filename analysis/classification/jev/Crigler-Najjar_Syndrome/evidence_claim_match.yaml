@@ -1422,6 +1422,57 @@ inputs:
     - assertion_path: /treatments/1/target_mechanisms/0
       evidence_path: /treatments/1/target_mechanisms/0/evidence/0
       reference: PMID:39456788
+  a1f717f64c648165dd48a6ea751406446f8c56f23445beec887fada0936611e6:
+    claim:
+      about:
+        disease:
+          name: Crigler-Najjar Syndrome
+          disease_term:
+            preferred_term: Crigler-Najjar syndrome
+            term:
+              id: MONDO:0009044
+              label: Crigler-Najjar syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intensive Phototherapy
+        description: Prolonged daily phototherapy photoisomerises unconjugated bilirubin in the skin into
+          water-soluble products excretable without glucuronidation, bypassing the missing enzyme. In
+          type 1 it is containment rather than cure - 16-20 hours daily may be needed - and its efficacy
+          declines with age as the surface-area-to-mass ratio falls. It does not restore UGT1A1 activity.
+        therapeutic_modality: DEVICE
+        treatment_term:
+          preferred_term: Phototherapy
+          term:
+            id: NCIT:C15301
+            label: Phototherapy
+      selected_evidence:
+        snippet: While phototherapy offers some benefits, liver transplantation remains the only definitive
+          treatment for this condition.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37602038
+      reference_title: 'Liver Transplantation in a Child With Crigler-Najjar Syndrome Type I: A Case Report
+        With Review of the Literature.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Marked PARTIAL because it bounds the claim - phototherapy helps but does not cure,
+        and in this reported patient it failed to control bilirubin. Evidence source is HUMAN_CLINICAL
+        because this is a case report.
+    first_seen_at: '2026-09-28T17:46:09.238801+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:46:09.238801+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:46:09.238801+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:37602038
 assessments:
   67f5b54df429c12160a53d304b3e2fb7abe8c109d4014098c428c987021f72ee:
     input_sha256: 61d36847fa0c5f9ffd41e699c79d3d2e93ed21efd780097442c4075904e0658f
@@ -3343,3 +3394,69 @@ assessments:
       request_sha256: ff05c68f20aaebb097d392793716bce716a3ab8964cf15d9df0176ff84090c08
       request_sha256s:
       - ff05c68f20aaebb097d392793716bce716a3ab8964cf15d9df0176ff84090c08
+  9950421c491c7d3984bb7240f4dcf630454402abf48725aee2bf0adad6389f34:
+    input_sha256: a1f717f64c648165dd48a6ea751406446f8c56f23445beec887fada0936611e6
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:46:09.238801+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.22
+            PARTIAL: 0.59
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.18
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.52
+            PARTIAL: 0.42
+          confidence: 0.28
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.1
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7732
+        output_tokens: 332
+      elapsed_seconds: 0.2428
+      request_sha256: 5a3097aaab77a9ffd8943eaefeb083a4ccd2d1895646800bf98eaad234fabd7d
+      request_sha256s:
+      - 5a3097aaab77a9ffd8943eaefeb083a4ccd2d1895646800bf98eaad234fabd7d

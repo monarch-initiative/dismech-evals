@@ -3052,6 +3052,66 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:42320387
+  f5bbd5fb4014ae833019db484ad7e207ba0440328780b564b8d9fc8a89b22ab6:
+    claim:
+      about:
+        disease:
+          name: Dysostosis Multiplex, Ain-Naz Type
+          disease_term:
+            preferred_term: dysostosis multiplex, Ain-Naz type
+            term:
+              id: MONDO:0859156
+              label: dysostosis multiplex, Ain-Naz type
+        context:
+        - path: /genetic/0
+          value:
+            name: LYSET
+            gene_term:
+              preferred_term: LYSET
+              term:
+                id: hgnc:20218
+                label: TMEM251
+            relationship_type: CAUSATIVE
+            association: Biallelic loss-of-function variants cause the disorder.
+            variant_origin: GERMLINE
+            notes: 'The gene has three names in current use: LYSET (lysosomal enzyme trafficking factor,
+              the approved HGNC symbol), TMEM251 (the previous symbol, used in the founding clinical report),
+              and GCAF (GNPTAB cleavage and activity factor, an alias). All four reported families are
+              homozygous, and three of the four alleles are premature-termination variants. The p.(Arg45Trp)
+              missense allele is expressed but fails to bind GlcNAc-1-phosphotransferase and does not
+              rescue the sorting defect, so it too behaves as loss of function.'
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: LYSET c.112C>T p.(Gln38Ter)
+        description: Homozygous nonsense allele found by whole-genome sequencing in the first reported
+          Western patient, after more than a decade of undiagnosed investigation.
+      selected_evidence:
+        snippet: A whole-genome analysis identified the homozygous nonsense variant NM_001098621.4:c.112C>T
+          (p.Gln38Ter) in the LYSET gene.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/2
+      evidence_path: /genetic/0/variants/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:41858182
+      reference_title: 'The Diagnostic Odyssey of a Biochemically Confirmed Case of ML II: The First Western
+        Patient With LYSET Deficiency.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports the allele and the method by which it was found.
+    first_seen_at: '2026-09-28T17:50:17.218631+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:50:17.218631+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:50:17.218631+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/2
+      evidence_path: /genetic/0/variants/2/evidence/0
+      reference: PMID:41858182
 assessments:
   ec052eaa9d20f729b269ac9638ffa5cd5e1f9964d0ee32a1b608ee4d0b1db95b:
     input_sha256: bfcfec4b3a65e9a5b3dc69218a36bc37bb84f14fdc48b64e40bbe2a3d827f0d6
@@ -7329,3 +7389,55 @@ assessments:
       request_sha256: f96f08d157bf082b0d7f9b8ce860532e6c1995b3d9eaeda7775ff32745b8d13f
       request_sha256s:
       - f96f08d157bf082b0d7f9b8ce860532e6c1995b3d9eaeda7775ff32745b8d13f
+  75e22d5c10ade53b1e84902660fef8931e65b2ec832ad48c02d8a4681bde63a4:
+    input_sha256: f5bbd5fb4014ae833019db484ad7e207ba0440328780b564b8d9fc8a89b22ab6
+    configuration_sha256: cf748c4ed8a1f76220cca975daaeb427444f2444f06f5900c910057f1e3099c0
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:17.218631+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.07
+            MATCH: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.12
+            MATCH: 0.44
+          confidence: 0.17
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.03
+            MATCH: 0.89
+          confidence: 0.84
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.14
+            MATCH: 0.2
+          confidence: 0.48
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.13
+            MATCH: 0.62
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5531
+        output_tokens: 220
+      elapsed_seconds: 0.5022
+      request_sha256: 5446268e7c4d9f8ea163f3c3c3d1a79e7fcae022b155a47edc2b9df7985fbc24
+      request_sha256s:
+      - 5446268e7c4d9f8ea163f3c3c3d1a79e7fcae022b155a47edc2b9df7985fbc24

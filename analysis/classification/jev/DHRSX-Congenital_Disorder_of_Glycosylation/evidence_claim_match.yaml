@@ -2115,6 +2115,59 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:25076851
+  cb60e97648dd49484d855df20417074a94b35aa17b17a0262b91915ea3c7ef9f:
+    claim:
+      about:
+        disease:
+          name: DHRSX-Congenital Disorder of Glycosylation
+          disease_term:
+            preferred_term: congenital disorder of glycosylation, type 1DD
+            term:
+              id: MONDO:0975846
+              label: congenital disorder of glycosylation, type 1DD
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: DHRSX Oxidoreductase Deficiency
+        description: 'The reported variants — p.(Thr49Met), p.(Val181Phe), and p.(Leu215Phe) — cluster
+          around the predicted NAD(P)+ binding site and the substrate access channel. Thr49 is an obligatory
+          residue of the Class IV NAD(P)+ binding motif; Val181 contacts the cofactor directly and sits
+          at the mouth of the substrate channel; Leu215 lies along that channel. All three are therefore
+          expected to impair the enzyme''s oxidoreductase function. They also destabilize the protein:
+          patient cells carry about 4-5% of control DHRSX protein while mRNA remains at 34-68% of control,
+          so the dominant effect is loss of the enzyme rather than a purely catalytic lesion in a normally
+          abundant one.'
+        biological_scale: MOLECULAR
+        molecular_functions:
+        - preferred_term: NAD(P)-dependent oxidoreductase activity of DHRSX
+          term:
+            id: GO:0016616
+            label: oxidoreductase activity, acting on the CH-OH group of donors, NAD or NADP as acceptor
+          modifier: LOSS_OF_FUNCTION
+      selected_evidence:
+        snippet: DHRSX has a unique dual substrate and cofactor specificity, allowing it to act as a NAD+-dependent
+          dehydrogenase and as a NADPH-dependent reductase in two non-consecutive steps.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38821050
+      reference_title: A pseudoautosomal glycosylation disorder prompts the revision of dolichol biosynthesis.
+      evidence_source: IN_VITRO
+      explanation: Characterizes the dual enzymatic activity that the patient variants disrupt.
+    first_seen_at: '2026-09-28T17:50:14.917554+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:50:14.917554+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:50:14.917554+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:38821050
 assessments:
   1902514581f3004d53ab29a047ec979f178fa2f68c41543361bd63515fe898e5:
     input_sha256: 483756bd57ad50dbad101c82c351319abbe1d7c837ac25eeef7c63b0d0fdc82c
@@ -5120,3 +5173,76 @@ assessments:
       request_sha256: 0bf6e053b991d20de6e09fb6ea844794d8dbb3bb9feb90a6304c32863a31b5d6
       request_sha256s:
       - 0bf6e053b991d20de6e09fb6ea844794d8dbb3bb9feb90a6304c32863a31b5d6
+  feabf009b4bb652cb79aa82ab4c15b7ff404c1d6d65ffbb3938c9572c888c80f:
+    input_sha256: cb60e97648dd49484d855df20417074a94b35aa17b17a0262b91915ea3c7ef9f
+    configuration_sha256: 2b61ed2056e23a579696e11b6e36df23c6eed0b19b80e1ef8172c1a330c3435e
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:14.917554+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.09
+            MISMATCH: 0.27
+          confidence: 0.46
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.41
+            MISMATCH: 0.18
+          confidence: 0.12
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.14
+            MISMATCH: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.05
+            MISMATCH: 0.4
+          confidence: 0.32
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.8
+            MISMATCH: 0.08
+          confidence: 0.71
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.39
+            MISMATCH: 0.12
+          confidence: 0.23
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.46
+            MISMATCH: 0.13
+          confidence: 0.2
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.06
+            MISMATCH: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9011
+        output_tokens: 385
+      elapsed_seconds: 0.45
+      request_sha256: 87f692d75b0bae88456efa1a6a615a7610902f65e72d68e59c6756f3e1a1a8b7
+      request_sha256s:
+      - 87f692d75b0bae88456efa1a6a615a7610902f65e72d68e59c6756f3e1a1a8b7

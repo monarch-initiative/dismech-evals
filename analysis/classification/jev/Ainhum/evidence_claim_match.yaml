@@ -2748,6 +2748,88 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:2423578
+  ee209547a27a134641b974364b862b886c4ed54ffea191112ece4cbdf1a9bb89:
+    claim:
+      about:
+        disease:
+          name: Ainhum
+          disease_term:
+            preferred_term: ainhum
+            term:
+              id: MONDO:0007074
+              label: ainhum
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Epidermal and Dermal Wound-Repair Response
+            description: Resected tissue can show epidermal hyperkeratotic change, numerous fibroblasts,
+              wound-repair phenomena, chronic dermatitis, and a T-lymphocyte-predominant infiltrate. The
+              response is modeled as an alternative candidate input because the evidence does not establish
+              whether it precedes or follows mechanical constriction.
+            cell_types:
+            - preferred_term: fibroblast
+              term:
+                id: CL:0000057
+                label: fibroblast
+            - preferred_term: T cell
+              term:
+                id: CL:0000084
+                label: T cell
+            locations:
+            - preferred_term: skin epidermis
+              term:
+                id: UBERON:0001003
+                label: skin epidermis
+            - preferred_term: dermis
+              term:
+                id: UBERON:0002067
+                label: dermis
+            biological_processes:
+            - preferred_term: wound healing
+              modifier: ABNORMAL
+              term:
+                id: GO:0042060
+                label: wound healing
+            - preferred_term: inflammatory response
+              modifier: INCREASED
+              term:
+                id: GO:0006954
+                label: inflammatory response
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Circumferential Fibrotic Constriction
+        causal_link_type: UNKNOWN
+        hypothesis_groups:
+        - mechanical_inflammatory_wound_repair_model
+        description: Mechanical-inflammatory repair may contribute to band formation, but available histology
+          cannot determine directionality or directness.
+      selected_evidence:
+        snippet: Among the usually considered etiopathogenetic hypotheses, our findings are in favor of
+          a mechanical and inflammatory origin.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:3214498
+      reference_title: '[Spontaneous dactylolysis or ainhum. Histopathologic study].'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The seven-case series supports the hypothesis but does not prove a causal direction
+        from inflammation to constriction.
+    first_seen_at: '2026-09-28T18:18:00.188447+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:18:00.188447+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:18:00.188447+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:3214498
 assessments:
   fffa96f6d45991ea90c8567e07e91b85194fb432ab36a0f718d9f8b8f2b12d2c:
     input_sha256: 0bd7b5eb1d24b0b585558334dc9c85fdb30d94c9c8a4298dd8d5c63773c84a20
@@ -6425,3 +6507,69 @@ assessments:
       request_sha256: de9299c56b49dd913561efeee284a64ade319bbdc25df7ab929fde985c5ad286
       request_sha256s:
       - de9299c56b49dd913561efeee284a64ade319bbdc25df7ab929fde985c5ad286
+  a57cbdfa78bd0894b5fe68484eb780b9faa0ebc63d4dd72edb99c4149407bde1:
+    input_sha256: ee209547a27a134641b974364b862b886c4ed54ffea191112ece4cbdf1a9bb89
+    configuration_sha256: 8d93dca18137cb624375e85f55d7aa5bdf35ab093970845a1b579d45705d4370
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T18:18:00.188447+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.59
+            MATCH: 0.38
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.13
+            MATCH: 0.29
+          confidence: 0.38
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.53
+            MATCH: 0.37
+          confidence: 0.29
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.5
+            MATCH: 0.47
+          confidence: 0.25
+        /assertion/hypothesis_groups:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+            MATCH: 0.73
+          confidence: 0.59
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+            MATCH: 0.36
+          confidence: 0.4
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.56
+            MATCH: 0.34
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7679
+        output_tokens: 321
+      elapsed_seconds: 0.2133
+      request_sha256: dd4ebb517764b602c568e0ce31811e23a58dc3297f50710ce4cf5b1c9570fcbc
+      request_sha256s:
+      - dd4ebb517764b602c568e0ce31811e23a58dc3297f50710ce4cf5b1c9570fcbc

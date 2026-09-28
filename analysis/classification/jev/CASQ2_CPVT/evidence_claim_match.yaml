@@ -4226,6 +4226,73 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:32115705
+  484048b5167416696be17f175f8031c77724c2bbf5343fda4800ee09f174941b:
+    claim:
+      about:
+        disease:
+          name: CASQ2 CPVT
+          disease_term:
+            preferred_term: catecholaminergic polymorphic ventricular tachycardia 2
+            term:
+              id: MONDO:0012762
+              label: catecholaminergic polymorphic ventricular tachycardia 2
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_intra_sr_calcium_kinetics_casq2
+        prompt: Does loss of calsequestrin actually accelerate the rise of free intra-SR calcium near
+          RyR2, as the accepted buffering model of CPVT2 predicts?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Reduced Sarcoplasmic Reticulum Calcium Buffering
+        rationale: The buffering model is the standard mechanistic account of CPVT2 and the justification
+          for treating CASQ2 loss as functionally equivalent to a RyR2 gain-of-function lesion, but the
+          key predicted intermediate has never been measured directly. Without it, the alternative account
+          (that calsequestrin loss acts principally by destabilising RyR2 regulation through the triadin/junctin
+          anchor) cannot be excluded, and the two predict different responses to therapies that modulate
+          SR load.
+        proposed_experiments:
+        - experiment_id: exp_casq2_luminal_calcium_kinetics
+          name: Direct luminal calcium kinetics in calsequestrin-deficient cardiomyocytes
+          description: Measure free intra-SR calcium kinetics with a targeted luminal calcium sensor in
+            calsequestrin-deficient versus wild-type cardiomyocytes during beta-adrenergic stimulation,
+            testing whether free luminal calcium near RyR2 rises faster and reaches the spontaneous-release
+            threshold sooner.
+          experiment_type:
+            preferred_term: luminal sarcoplasmic reticulum calcium imaging experiment
+        - experiment_id: exp_casq2_truncating_vs_missense_kinetics
+          name: Truncating versus filament-defective CASQ2 allele comparison
+          description: Compare intra-SR calcium kinetics between truncating CASQ2 alleles (complete protein
+            loss) and missense alleles that retain protein but impair filament assembly, to separate the
+            pure buffering deficit from the RyR2-regulatory deficit.
+          experiment_type:
+            preferred_term: allele-series calcium handling comparison
+      selected_evidence:
+        snippet: Although intra-SR calcium kinetics have not yet been measured experimentally in calsequestrin
+          CPVT models
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32115705
+      reference_title: Molecular and tissue mechanisms of catecholaminergic polymorphic ventricular tachycardia.
+      evidence_source: OTHER
+      explanation: The review states explicitly that the predicted intermediate of the buffering model
+        has not been measured.
+    first_seen_at: '2026-09-28T17:45:28.920502+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:28.920502+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:28.920502+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:32115705
 assessments:
   9168271d80409e59322d53a94c593101c452e45f86704fc19e91f0146541c8a3:
     input_sha256: ea99cf241bc2e35e7f7a7e8a9dc21fc266f27deeb4eb88b0afc0fc0f3551b202
@@ -10507,3 +10574,132 @@ assessments:
       request_sha256: 1272dfef3856f8984519f3ea2a9596bc4fd0a26018f7a4d9730afa7ef2c3d8b4
       request_sha256s:
       - 1272dfef3856f8984519f3ea2a9596bc4fd0a26018f7a4d9730afa7ef2c3d8b4
+  6e1d2dda38b180f4aad62bed96d5d74e3d78c1dc1b215a76b1b0c7eacdc487e4:
+    input_sha256: 484048b5167416696be17f175f8031c77724c2bbf5343fda4800ee09f174941b
+    configuration_sha256: 1e67f2c40b39d0c0ee70474fecf2168c0575a02962ef2e68fe06d2d780d74c9a
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:28.920502+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.15
+            MATCH: 0.44
+          confidence: 0.15
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.8
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.47
+            MATCH: 0.28
+          confidence: 0.2
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.07
+            MATCH: 0.58
+          confidence: 0.38
+        /assertion/kind:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.36
+            MATCH: 0.41
+          confidence: 0.11
+        /assertion/status:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.25
+            MATCH: 0.43
+          confidence: 0.14
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.18
+            MATCH: 0.52
+          confidence: 0.29
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.17
+            MATCH: 0.48
+          confidence: 0.23
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.38
+            MATCH: 0.27
+          confidence: 0.06
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.28
+            MATCH: 0.28
+          confidence: 0.17
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.23
+            MATCH: 0.32
+          confidence: 0.18
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.4
+            MATCH: 0.2
+          confidence: 0.1
+        /assertion/proposed_experiments/1/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.49
+            MATCH: 0.19
+          confidence: 0.23
+        /assertion/proposed_experiments/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.51
+            MATCH: 0.12
+          confidence: 0.26
+        /assertion/proposed_experiments/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.56
+            MATCH: 0.06
+          confidence: 0.34
+        /assertion/proposed_experiments/1/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.57
+            MATCH: 0.1
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16325
+        output_tokens: 803
+      elapsed_seconds: 0.3262
+      request_sha256: 5a306111f058959ffa8500057ae58cd1291339ed1640318b32dd5f734f8b4184
+      request_sha256s:
+      - 5a306111f058959ffa8500057ae58cd1291339ed1640318b32dd5f734f8b4184

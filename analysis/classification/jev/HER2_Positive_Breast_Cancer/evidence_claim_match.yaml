@@ -1,0 +1,3534 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/HER2_Positive_Breast_Cancer.yaml
+disease: HER2-Positive Breast Cancer
+inventory:
+  source_sha256: aaf99e0ed311d37cf180b3bffb0400a0099e37b1c6375d30627f74c968ccd8ea
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+  observed_at: '2026-09-28T18:43:52.330395+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  47b3e76cdfd647506ce7aaab57c0df714fe92bd056240d9986831e60799faadb:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: canonical_grb2_rtk_effector_model
+        hypothesis_label: Canonical HER2-GRB2 RTK Effector Model
+        status: CANONICAL
+        description: Constitutively activated HER2 receptors create phosphotyrosine docking sites that
+          recruit GRB2 adaptor complexes, coupling receptor activation to canonical RAS-MAPK and PI3K-AKT
+          proliferative signaling. This is the textbook HER2+ breast cancer signaling cascade and the
+          explicit disease-level instantiation of the rtk_grb2_signaling_adaptation module's canonical
+          effector hypothesis.
+      selected_evidence:
+        snippet: the activation of ErbB2 by heregulin or by its overexpression requires Grb2 to stimulate
+          the Akt pathway to propagate mitogenic signals
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11175341
+      reference_title: Grb2 downregulation leads to Akt inactivation in heregulin-stimulated and ErbB2-overexpressing
+        breast cancer cells.
+      evidence_source: IN_VITRO
+      explanation: Lim et al. directly demonstrate that GRB2 is required for ErbB2-driven Akt activation
+        in heregulin-stimulated and ErbB2-overexpressing breast cancer cells — the canonical adaptor function
+        in HER2+ disease.
+    first_seen_at: '2026-09-28T17:51:07.384682+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      reference: PMID:11175341
+  c130b0595b30e24c8f6b941dd63faf494a5bd7aab673f86bbaab26c3e8ca5a03:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: ExternalAssertion
+      assertion:
+        name: CIViC ERBB2 amplification trastuzumab sensitivity assertion
+        source: CIViC
+        assertion_type: accepted_assertion
+        external_id: CIVIC_ASSERTION:2
+        url: https://civicdb.org/links/assertions/2
+        description: CIViC accepted assertion that ERBB2 amplification in HER2-receptor positive breast
+          cancer predicts sensitivity/response to trastuzumab.
+        notes: '01-May-2026 CIViC accepted assertion: molecular_profile="ERBB2 Amplification"; disease="Her2-receptor
+          Positive Breast Cancer"; assertion_type=Predictive; significance=Sensitivity/Response; therapy=Trastuzumab;
+          AMP category=Tier I - Level A.'
+      selected_evidence:
+        snippet: HER2 amplification predicts sensitivity to Trastuzumab
+        supports: SUPPORT
+    origin:
+      assertion_path: /external_assertions/0
+      evidence_path: /external_assertions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: CIVIC_ASSERTION:2
+      reference_title: ERBB2 Amplification / Her2-receptor Positive Breast Cancer (Predictive Sensitivity/Response)
+      evidence_source: OTHER
+      explanation: CIViC records an accepted predictive sensitivity assertion for ERBB2 amplification
+        and trastuzumab in HER2-positive breast cancer.
+    first_seen_at: '2026-09-28T17:51:07.175786+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /external_assertions/0
+      evidence_path: /external_assertions/0/evidence/0
+      reference: CIVIC_ASSERTION:2
+  45381422605cfd4e27e66b4683f06317d8bef48e4df2e279e881d14e8a907c73:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: cmtm6_her2_stabilization_resistance_model
+        hypothesis_label: CMTM6 HER2 Stabilization Resistance Model
+        status: EMERGING
+        description: Trastuzumab resistance is sustained in part by post-translational stabilization of
+          the HER2 receptor protein at the cell surface. CMTM6 (CKLF-like MARVEL transmembrane domain-containing
+          6) directly interacts with HER2 and inhibits HER2 ubiquitination, preserving the GRB2-adaptor
+          output even under trastuzumab pressure. Under the interactome-rebalancing framing, CMTM6 acts
+          as a separate post-translational pivot point in parallel to GRB2 conformational state, and degrading
+          or inhibiting CMTM6 may resensitize tumors to HER2-targeted therapy. This hypothesis is independent
+          of (and complementary to) GRB2-level conformational control.
+      selected_evidence:
+        snippet: these findings highlight that CMTM6 stabilizes HER2 protein, contributing to trastuzumab
+          resistance and implicate CMTM6 as a potential prognostic marker and therapeutic target for overcoming
+          trastuzumab resistance in HER2+ breast cancer
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/1
+      evidence_path: /mechanistic_hypotheses/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36627608
+      reference_title: CMTM6 overexpression confers trastuzumab resistance in HER2-positive breast cancer.
+      evidence_source: IN_VITRO
+      explanation: Xu et al. directly establish CMTM6-mediated post-translational HER2 stabilization as
+        a trastuzumab-resistance mechanism.
+    first_seen_at: '2026-09-28T17:51:07.621145+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/1
+      evidence_path: /mechanistic_hypotheses/1/evidence/0
+      reference: PMID:36627608
+  51876272c0aa124f37172476a7b1924b00c3f78331426d9be306ace91ca11463:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: canonical_grb2_rtk_effector_model
+        hypothesis_label: Canonical HER2-GRB2 RTK Effector Model
+        status: CANONICAL
+        description: Constitutively activated HER2 receptors create phosphotyrosine docking sites that
+          recruit GRB2 adaptor complexes, coupling receptor activation to canonical RAS-MAPK and PI3K-AKT
+          proliferative signaling. This is the textbook HER2+ breast cancer signaling cascade and the
+          explicit disease-level instantiation of the rtk_grb2_signaling_adaptation module's canonical
+          effector hypothesis.
+      selected_evidence:
+        snippet: GRB2 enhances proliferation, migration, and invasion while suppressing apoptosis in HER2-positive
+          breast cancer cells in vitro, primarily by regulating phosphorylation and alternative splicing
+          of key proteins within the Ras/MAPK pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40289214
+      reference_title: GRB2 promotes brain metastasis in HER2-positive breast cancer by regulating the
+        Ras/MAPK pathway.
+      evidence_source: IN_VITRO
+      explanation: Wang et al. confirm GRB2's canonical proliferative/MAPK-coupling role in HER2+ breast
+        cancer with phenotypic readouts directly attributable to GRB2 perturbation.
+    first_seen_at: '2026-09-28T17:51:07.522538+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/1
+      reference: PMID:40289214
+  3634c722719b90c0f59a25031a92dfd7f50fdcd57387bd820dee22165b682fe5:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: cmtm6_her2_stabilization_resistance_model
+        hypothesis_label: CMTM6 HER2 Stabilization Resistance Model
+        status: EMERGING
+        description: Trastuzumab resistance is sustained in part by post-translational stabilization of
+          the HER2 receptor protein at the cell surface. CMTM6 (CKLF-like MARVEL transmembrane domain-containing
+          6) directly interacts with HER2 and inhibits HER2 ubiquitination, preserving the GRB2-adaptor
+          output even under trastuzumab pressure. Under the interactome-rebalancing framing, CMTM6 acts
+          as a separate post-translational pivot point in parallel to GRB2 conformational state, and degrading
+          or inhibiting CMTM6 may resensitize tumors to HER2-targeted therapy. This hypothesis is independent
+          of (and complementary to) GRB2-level conformational control.
+      selected_evidence:
+        snippet: CMTM6 expression was upregulated in trastuzumab-resistant HER2+ breast cancer cell
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/1
+      evidence_path: /mechanistic_hypotheses/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36627608
+      reference_title: CMTM6 overexpression confers trastuzumab resistance in HER2-positive breast cancer.
+      evidence_source: IN_VITRO
+      explanation: Co-localization, co-immunoprecipitation, and ubiquitination data link CMTM6 expression
+        to the trastuzumab-resistant state.
+    first_seen_at: '2026-09-28T17:51:07.710249+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/1
+      evidence_path: /mechanistic_hypotheses/1/evidence/1
+      reference: PMID:36627608
+  7307f8db5de7494e94db23d0955177d518fd586d6a53f39746d117497d35657f:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: grb2_conformational_pivot_resistance_model
+        hypothesis_label: GRB2 Conformational Pivot Resistance Model
+        status: EMERGING
+        description: GRB2 is a thermodynamic pivot point whose conformational state determines whether
+          HER2-driven tumors funnel into cytoplasmic effector dominance, nuclear RAD51-dependent replication-fork
+          protection, or PARPi-STING innate-immune activation. Allosteric stabilization or PROTAC degradation
+          of GRB2 would select between these interactome states and modulate trastuzumab/TKI resistance.
+          This hypothesis is distinguishable from the canonical effector model by predicting that GRB2
+          perturbation produces different phenotypes depending on which conformational state is locked,
+          not simply graded loss of adaptor function.
+      selected_evidence:
+        snippet: Growth factor receptor-bound protein 2 (GRB2) is a cytoplasmic adapter for tyrosine kinase
+          signaling and a nuclear adapter for homology-directed-DNA repair.
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/2
+      evidence_path: /mechanistic_hypotheses/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38459011
+      reference_title: GRB2 stabilizes RAD51 at reversed replication forks suppressing genomic instability
+        and innate immunity against cancer.
+      evidence_source: IN_VITRO
+      explanation: Dual cytoplasmic/nuclear GRB2 framing motivates the conformational-pivot hypothesis
+        as distinct from the canonical effector model.
+    first_seen_at: '2026-09-28T17:51:07.750334+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/2
+      evidence_path: /mechanistic_hypotheses/2/evidence/0
+      reference: PMID:38459011
+  299bec154ba3682f2c95490c2f4d37b72d737254f520eb879560d22290f636b7:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: ERBB2 Gene Amplification
+        genetic_context:
+          variant_origin: SOMATIC
+        description: HER2-positive breast cancer is driven by amplification of the ERBB2 gene on chromosome
+          17q12, resulting in overexpression of the HER2 receptor tyrosine kinase. Gene amplification
+          typically results in 25-50 copies per cell, leading to massive receptor overexpression on the
+          cell surface.
+        cell_types:
+        - preferred_term: luminal epithelial cell of mammary gland
+          term:
+            id: CL:0002326
+            label: luminal epithelial cell of mammary gland
+        biological_processes:
+        - preferred_term: ERBB2 signaling pathway
+          modifier: INCREASED
+          term:
+            id: GO:0038128
+            label: ERBB2 signaling pathway
+      selected_evidence:
+        snippet: HER2-positive breast cancer, which accounts for approximately 15-20% of all breast cancers,
+          is characterized by its aggressive recurrence, metastasis and reduced survival.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40303293
+      reference_title: PPARG Activation of Fatty Acid Metabolism Drives Resistance to Anti-HER2 Therapies
+        in HER2-Positive Breast Cancer.
+      explanation: This abstract identifies HER2-positive breast cancer as a distinct, aggressive subtype,
+        supporting the disease definition used here.
+    first_seen_at: '2026-09-28T17:51:07.865265+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:40303293
+  fe70368fd965d938b541bb9794adf96c230c7b19650e24ba388d94de05ac171b:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: grb2_conformational_pivot_resistance_model
+        hypothesis_label: GRB2 Conformational Pivot Resistance Model
+        status: EMERGING
+        description: GRB2 is a thermodynamic pivot point whose conformational state determines whether
+          HER2-driven tumors funnel into cytoplasmic effector dominance, nuclear RAD51-dependent replication-fork
+          protection, or PARPi-STING innate-immune activation. Allosteric stabilization or PROTAC degradation
+          of GRB2 would select between these interactome states and modulate trastuzumab/TKI resistance.
+          This hypothesis is distinguishable from the canonical effector model by predicting that GRB2
+          perturbation produces different phenotypes depending on which conformational state is locked,
+          not simply graded loss of adaptor function.
+      selected_evidence:
+        snippet: In GRB2-depleted cells, PARP inhibitor (PARPi) treatment releases DNA fragments from
+          stalled forks into the cytoplasm that activate the cGAS-STING pathway to trigger pro-inflammatory
+          cytokine production.
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/2
+      evidence_path: /mechanistic_hypotheses/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38459011
+      reference_title: GRB2 stabilizes RAD51 at reversed replication forks suppressing genomic instability
+        and innate immunity against cancer.
+      evidence_source: IN_VITRO
+      explanation: Experimental demonstration that loss of GRB2 fork-protection function produces a distinct
+        PARPi-STING vulnerability supports the pivot framing.
+    first_seen_at: '2026-09-28T17:51:07.834447+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/2
+      evidence_path: /mechanistic_hypotheses/2/evidence/1
+      reference: PMID:38459011
+  d62ca2c49df1ced69cd537a89b2201d272654fbdd2622777c7ef2afbab3261cc:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: ERBB2 Gene Amplification
+        genetic_context:
+          variant_origin: SOMATIC
+        description: HER2-positive breast cancer is driven by amplification of the ERBB2 gene on chromosome
+          17q12, resulting in overexpression of the HER2 receptor tyrosine kinase. Gene amplification
+          typically results in 25-50 copies per cell, leading to massive receptor overexpression on the
+          cell surface.
+        cell_types:
+        - preferred_term: luminal epithelial cell of mammary gland
+          term:
+            id: CL:0002326
+            label: luminal epithelial cell of mammary gland
+        biological_processes:
+        - preferred_term: ERBB2 signaling pathway
+          modifier: INCREASED
+          term:
+            id: GO:0038128
+            label: ERBB2 signaling pathway
+      selected_evidence:
+        snippet: HER2 amplification defines a clinically relevant subtype of breast cancer.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: CIVIC_ASSERTION:2
+      reference_title: ERBB2 Amplification / Her2-receptor Positive Breast Cancer (Predictive Sensitivity/Response)
+      evidence_source: OTHER
+      explanation: CIViC's accepted assertion supports ERBB2/HER2 amplification as the defining molecular
+        feature of HER2-positive breast cancer.
+    first_seen_at: '2026-09-28T17:51:08.115579+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: CIVIC_ASSERTION:2
+  86dafc8789dc5afc7494a6b3190143176f2ba789c5917dbc1e5279f55e76b1a2:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: GRB2 Adaptor Hub
+        conforms_to: rtk_grb2_signaling_adaptation#GRB2 Adaptor Hub
+        description: GRB2 is the adaptor control point that couples HER2 phosphotyrosine docking to downstream
+          effector complexes. In HER2-amplified breast tumors, the GRB2 adaptor function is constitutively
+          engaged through ERBB2 homo- and heterodimers, driving sustained RAS-MAPK and PI3K-AKT signaling.
+          The HER2 amplicon at 17q12 frequently co-amplifies GRB7, an SH2 adaptor whose expression correlates
+          with GRB2-pathway output and adverse outcome. A second, nuclear GRB2 function in RAD51-dependent
+          replication-fork protection may rebalance the tumor's interactome toward DNA-damage tolerance
+          under HER2-targeted or chemotherapy-induced replication stress.
+        genes:
+        - preferred_term: GRB2
+          term:
+            id: hgnc:4566
+            label: GRB2
+        - preferred_term: GRB7
+          term:
+            id: hgnc:4567
+            label: GRB7
+        molecular_functions:
+        - preferred_term: growth factor receptor binding
+          term:
+            id: GO:0070851
+            label: growth factor receptor binding
+      selected_evidence:
+        snippet: the growth factor receptor bound protein-2 (Grb2) is required for the proliferation of
+          ErbB2-overexpressing breast cancer cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11175341
+      reference_title: Grb2 downregulation leads to Akt inactivation in heregulin-stimulated and ErbB2-overexpressing
+        breast cancer cells.
+      evidence_source: IN_VITRO
+      explanation: Lim et al. directly establish GRB2 as a required adaptor for ErbB2-driven proliferation
+        in HER2+ breast cancer cells, instantiating the module's GRB2 Adaptor Hub node in this disease.
+    first_seen_at: '2026-09-28T17:51:08.209523+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:11175341
+  012c358c9d32acd9a28a5a374759c6073db18343459e61a6bff09619b4471b47:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Constitutive Receptor Activation
+            conforms_to: rtk_grb2_signaling_adaptation#Activated RTK Phosphotyrosine Docking
+            description: Massive HER2 overexpression promotes spontaneous receptor homodimerization and
+              heterodimerization with other ERBB family members (EGFR, HER3, HER4) without ligand binding.
+              The phosphorylated receptor tail creates docking sites for SH2-domain-containing adaptors
+              including GRB2, instantiating the RTK-phosphotyrosine docking trigger of the GRB2 signaling
+              adaptation module.
+            biological_processes:
+            - preferred_term: transmembrane receptor protein tyrosine kinase signaling pathway
+              modifier: INCREASED
+              term:
+                id: GO:0007169
+                label: cell surface receptor protein tyrosine kinase signaling pathway
+            - preferred_term: protein autophosphorylation
+              modifier: INCREASED
+              term:
+                id: GO:0046777
+                label: protein autophosphorylation
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: GRB2 Adaptor Hub
+        description: Phosphorylated HER2 recruits GRB2-containing adaptor complexes at pY docking sites.
+      selected_evidence:
+        snippet: the growth factor receptor bound protein-2 (Grb2) is required for the proliferation of
+          ErbB2-overexpressing breast cancer cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:11175341
+      reference_title: Grb2 downregulation leads to Akt inactivation in heregulin-stimulated and ErbB2-overexpressing
+        breast cancer cells.
+      evidence_source: IN_VITRO
+      explanation: Supports the causal link from activated ErbB2/HER2 to engagement of the GRB2 adaptor
+        required for ErbB2-driven proliferation.
+    first_seen_at: '2026-09-28T17:51:08.158143+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:11175341
+  8861f34ae681f79de0a8ad2a1aec63ebd7aabb6a3ded12dfeaf822110b58fb32:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: GRB2 Adaptor Hub
+        conforms_to: rtk_grb2_signaling_adaptation#GRB2 Adaptor Hub
+        description: GRB2 is the adaptor control point that couples HER2 phosphotyrosine docking to downstream
+          effector complexes. In HER2-amplified breast tumors, the GRB2 adaptor function is constitutively
+          engaged through ERBB2 homo- and heterodimers, driving sustained RAS-MAPK and PI3K-AKT signaling.
+          The HER2 amplicon at 17q12 frequently co-amplifies GRB7, an SH2 adaptor whose expression correlates
+          with GRB2-pathway output and adverse outcome. A second, nuclear GRB2 function in RAD51-dependent
+          replication-fork protection may rebalance the tumor's interactome toward DNA-damage tolerance
+          under HER2-targeted or chemotherapy-induced replication stress.
+        genes:
+        - preferred_term: GRB2
+          term:
+            id: hgnc:4566
+            label: GRB2
+        - preferred_term: GRB7
+          term:
+            id: hgnc:4567
+            label: GRB7
+        molecular_functions:
+        - preferred_term: growth factor receptor binding
+          term:
+            id: GO:0070851
+            label: growth factor receptor binding
+      selected_evidence:
+        snippet: Growth factor receptor-bound protein 2 (GRB2) is a cytoplasmic adapter for tyrosine kinase
+          signaling and a nuclear adapter for homology-directed-DNA repair.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38459011
+      reference_title: GRB2 stabilizes RAD51 at reversed replication forks suppressing genomic instability
+        and innate immunity against cancer.
+      evidence_source: IN_VITRO
+      explanation: Establishes the dual cytoplasmic/nuclear GRB2 framing relevant to HER2+ tumors under
+        replication stress.
+    first_seen_at: '2026-09-28T17:51:08.421161+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:38459011
+  bd6da7a579d49ece4ca68429f062e6ab2addaf17cb82c20bc41d5c2c8b03d8af:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: GRB2 Adaptor Hub
+            conforms_to: rtk_grb2_signaling_adaptation#GRB2 Adaptor Hub
+            description: GRB2 is the adaptor control point that couples HER2 phosphotyrosine docking to
+              downstream effector complexes. In HER2-amplified breast tumors, the GRB2 adaptor function
+              is constitutively engaged through ERBB2 homo- and heterodimers, driving sustained RAS-MAPK
+              and PI3K-AKT signaling. The HER2 amplicon at 17q12 frequently co-amplifies GRB7, an SH2
+              adaptor whose expression correlates with GRB2-pathway output and adverse outcome. A second,
+              nuclear GRB2 function in RAD51-dependent replication-fork protection may rebalance the tumor's
+              interactome toward DNA-damage tolerance under HER2-targeted or chemotherapy-induced replication
+              stress.
+            genes:
+            - preferred_term: GRB2
+              term:
+                id: hgnc:4566
+                label: GRB2
+            - preferred_term: GRB7
+              term:
+                id: hgnc:4567
+                label: GRB7
+            molecular_functions:
+            - preferred_term: growth factor receptor binding
+              term:
+                id: GO:0070851
+                label: growth factor receptor binding
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Downstream Oncogenic Signaling
+        description: Cytoplasmic GRB2 adaptor complexes activate RAS-MAPK and PI3K-AKT.
+      selected_evidence:
+        snippet: the activation of ErbB2 by heregulin or by its overexpression requires Grb2 to stimulate
+          the Akt pathway to propagate mitogenic signals
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:11175341
+      reference_title: Grb2 downregulation leads to Akt inactivation in heregulin-stimulated and ErbB2-overexpressing
+        breast cancer cells.
+      evidence_source: IN_VITRO
+      explanation: Supports the causal link from the GRB2 adaptor hub to activation of the downstream
+        Akt (PI3K) mitogenic signaling output.
+    first_seen_at: '2026-09-28T17:51:08.554417+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      reference: PMID:11175341
+  fc7e92b1866c3c566d7558054d83e697f87ef2e8a66d481b1e1bb9c83f08bf33:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Downstream Oncogenic Signaling
+        conforms_to: rtk_grb2_signaling_adaptation#RAS-MAPK and PI3K-AKT Proliferation Output
+        description: Activated HER2 signals through PI3K-AKT-mTOR and RAS-RAF-MEK-ERK pathways, promoting
+          cell proliferation, survival, and resistance to apoptosis. HER2-HER3 heterodimers are particularly
+          potent activators of the PI3K pathway. Adaptive rewiring of these outputs (rather than HER2
+          loss) is the dominant resistance pattern under trastuzumab and tyrosine kinase inhibition.
+        biological_processes:
+        - preferred_term: phosphatidylinositol 3-kinase signaling
+          modifier: INCREASED
+          term:
+            id: GO:0043491
+            label: phosphatidylinositol 3-kinase/protein kinase B signal transduction
+        - preferred_term: MAPK cascade
+          modifier: INCREASED
+          term:
+            id: GO:0000165
+            label: MAPK cascade
+      selected_evidence:
+        snippet: GRB2 enhances proliferation, migration, and invasion while suppressing apoptosis in HER2-positive
+          breast cancer cells in vitro, primarily by regulating phosphorylation and alternative splicing
+          of key proteins within the Ras/MAPK pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40289214
+      reference_title: GRB2 promotes brain metastasis in HER2-positive breast cancer by regulating the
+        Ras/MAPK pathway.
+      evidence_source: IN_VITRO
+      explanation: Documents the Ras/MAPK proliferative and pro-survival output downstream of GRB2 in
+        HER2-positive breast cancer cells.
+    first_seen_at: '2026-09-28T17:51:08.598498+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:40289214
+  806e1d41e0317f93127f89ae99d44a58020eae2a24da58ccea0cbbadacf0fd56:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: GRB2 Adaptor Hub
+        conforms_to: rtk_grb2_signaling_adaptation#GRB2 Adaptor Hub
+        description: GRB2 is the adaptor control point that couples HER2 phosphotyrosine docking to downstream
+          effector complexes. In HER2-amplified breast tumors, the GRB2 adaptor function is constitutively
+          engaged through ERBB2 homo- and heterodimers, driving sustained RAS-MAPK and PI3K-AKT signaling.
+          The HER2 amplicon at 17q12 frequently co-amplifies GRB7, an SH2 adaptor whose expression correlates
+          with GRB2-pathway output and adverse outcome. A second, nuclear GRB2 function in RAD51-dependent
+          replication-fork protection may rebalance the tumor's interactome toward DNA-damage tolerance
+          under HER2-targeted or chemotherapy-induced replication stress.
+        genes:
+        - preferred_term: GRB2
+          term:
+            id: hgnc:4566
+            label: GRB2
+        - preferred_term: GRB7
+          term:
+            id: hgnc:4567
+            label: GRB7
+        molecular_functions:
+        - preferred_term: growth factor receptor binding
+          term:
+            id: GO:0070851
+            label: growth factor receptor binding
+      selected_evidence:
+        snippet: HER2 gene amplification is observed in about 15% of breast cancers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23628726
+      reference_title: 'The HER2 amplicon in breast cancer: Topoisomerase IIA and beyond.'
+      explanation: The HER2 amplicon frequently extends to include GRB7, providing a structural basis
+        for amplified GRB2-pathway adaptor output in this subtype.
+    first_seen_at: '2026-09-28T17:51:08.469682+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      reference: PMID:23628726
+  671429250edb0b189a9012adc495417527cd6ba7a2b64c70b64c235cde53ac83:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Downstream Oncogenic Signaling
+            conforms_to: rtk_grb2_signaling_adaptation#RAS-MAPK and PI3K-AKT Proliferation Output
+            description: Activated HER2 signals through PI3K-AKT-mTOR and RAS-RAF-MEK-ERK pathways, promoting
+              cell proliferation, survival, and resistance to apoptosis. HER2-HER3 heterodimers are particularly
+              potent activators of the PI3K pathway. Adaptive rewiring of these outputs (rather than HER2
+              loss) is the dominant resistance pattern under trastuzumab and tyrosine kinase inhibition.
+            biological_processes:
+            - preferred_term: phosphatidylinositol 3-kinase signaling
+              modifier: INCREASED
+              term:
+                id: GO:0043491
+                label: phosphatidylinositol 3-kinase/protein kinase B signal transduction
+            - preferred_term: MAPK cascade
+              modifier: INCREASED
+              term:
+                id: GO:0000165
+                label: MAPK cascade
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Uncontrolled Proliferation
+        description: Sustained signaling drives tumor growth
+      selected_evidence:
+        snippet: GRB2 enhances proliferation, migration, and invasion while suppressing apoptosis in HER2-positive
+          breast cancer cells in vitro, primarily by regulating phosphorylation and alternative splicing
+          of key proteins within the Ras/MAPK pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:40289214
+      reference_title: GRB2 promotes brain metastasis in HER2-positive breast cancer by regulating the
+        Ras/MAPK pathway.
+      evidence_source: IN_VITRO
+      explanation: Supports the causal link from sustained RAS-MAPK/PI3K signaling to enhanced proliferation
+        and suppressed apoptosis.
+    first_seen_at: '2026-09-28T17:51:08.828084+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:40289214
+  805fbe7868a36ee0493dc3e04fd18dd8bc7e57090e5a61b3885a423f4f318e1d:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Uncontrolled Proliferation
+        description: Constitutive HER2 signaling drives continuous cell cycle progression and resistance
+          to apoptotic signals. HER2+ tumors are typically high grade with high proliferation indices
+          (high Ki-67).
+        biological_processes:
+        - preferred_term: cell population proliferation
+          modifier: INCREASED
+          term:
+            id: GO:0008283
+            label: cell population proliferation
+      selected_evidence:
+        snippet: GRB2 enhances proliferation, migration, and invasion while suppressing apoptosis in HER2-positive
+          breast cancer cells in vitro, primarily by regulating phosphorylation and alternative splicing
+          of key proteins within the Ras/MAPK pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40289214
+      reference_title: GRB2 promotes brain metastasis in HER2-positive breast cancer by regulating the
+        Ras/MAPK pathway.
+      evidence_source: IN_VITRO
+      explanation: Documents enhanced proliferation and suppressed apoptosis in HER2-positive breast cancer
+        cells driven by sustained Ras/MAPK signaling.
+    first_seen_at: '2026-09-28T17:51:08.887655+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:40289214
+  2e3f3de0037e71c061a8176e33debc4c07aadc8e13cacf21709c029f16031aa5:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Invasive Ductal Carcinoma
+        finding_term:
+          preferred_term: Invasive Breast Carcinoma of No Special Type
+          term:
+            id: NCIT:C4194
+            label: Invasive Breast Carcinoma of No Special Type
+        frequency: VERY_FREQUENT
+        description: Invasive ductal carcinoma is the most common type of breast cancer.
+      selected_evidence:
+        snippet: Invasive ductal carcinoma (IDC) is the most common type of breast cancer,
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39806949
+      reference_title: An Overview of Invasive Ductal Carcinoma (IDC) in Women's Breast Cancer.
+      explanation: Abstract states that invasive ductal carcinoma is the most common breast cancer type.
+    first_seen_at: '2026-09-28T17:51:08.983989+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:39806949
+  5cfaec505704241dc7f13747bdb2877a01d0d9308bce13f61a099417366316f3:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neoplastic
+        name: Breast Carcinoma
+        frequency: OBLIGATE
+        diagnostic: true
+        description: HER2-positive breast cancers are typically invasive ductal carcinomas of high histologic
+          grade. They often present as palpable masses or are detected on screening mammography.
+        phenotype_term:
+          preferred_term: Breast carcinoma
+          term:
+            id: HP:0003002
+            label: Breast carcinoma
+      selected_evidence:
+        snippet: Invasive ductal carcinoma (IDC) is the most common type of breast cancer,
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39806949
+      reference_title: An Overview of Invasive Ductal Carcinoma (IDC) in Women's Breast Cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: HER2-positive tumors are typically invasive ductal (breast) carcinomas, supporting
+        breast carcinoma as the defining neoplastic phenotype.
+    first_seen_at: '2026-09-28T17:51:09.047570+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:39806949
+  3e1bf38e7f32e15596fc3d520cefbcb257266b00ced92362f52c5fa8cca63a69:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: ERBB2
+        gene_term:
+          preferred_term: ERBB2
+          term:
+            id: hgnc:3430
+            label: ERBB2
+        association: Somatic Amplification
+        inheritance:
+        - name: Somatic
+        notes: ERBB2 (17q12) encodes the HER2 receptor tyrosine kinase. Amplification occurs somatically
+          and is not inherited. The amplicon often includes neighboring genes including GRB7 and TOP2A.
+          Amplification level correlates with HER2 protein expression and response to HER2-targeted therapy.
+      selected_evidence:
+        snippet: HER2 gene amplification is observed in about 15% of breast cancers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23628726
+      reference_title: 'The HER2 amplicon in breast cancer: Topoisomerase IIA and beyond.'
+      explanation: Abstract reports HER2 amplification frequency in breast cancer.
+    first_seen_at: '2026-09-28T17:51:09.177643+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:23628726
+  ead8aa5760d9f340230c9d40d6efc012aff7873bac82fad49863fb7faf7f715b:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: ERBB2
+        gene_term:
+          preferred_term: ERBB2
+          term:
+            id: hgnc:3430
+            label: ERBB2
+        association: Somatic Amplification
+        inheritance:
+        - name: Somatic
+        notes: ERBB2 (17q12) encodes the HER2 receptor tyrosine kinase. Amplification occurs somatically
+          and is not inherited. The amplicon often includes neighboring genes including GRB7 and TOP2A.
+          Amplification level correlates with HER2 protein expression and response to HER2-targeted therapy.
+      selected_evidence:
+        snippet: HER2 amplification predicts sensitivity to Trastuzumab
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: CIVIC_ASSERTION:2
+      reference_title: ERBB2 Amplification / Her2-receptor Positive Breast Cancer (Predictive Sensitivity/Response)
+      evidence_source: OTHER
+      explanation: CIViC's accepted assertion supports ERBB2 amplification as the treatment-predictive
+        genetic alteration for trastuzumab response.
+    first_seen_at: '2026-09-28T17:51:09.271088+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: CIVIC_ASSERTION:2
+  c95e9aa29479b64b8d8e6b22e073a252d73c51822af0b9b7e1a28909958de9ab:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Trastuzumab
+        description: Humanized monoclonal antibody targeting the extracellular domain of HER2. First-line
+          treatment in combination with chemotherapy. Revolutionized HER2+ breast cancer treatment, converting
+          a poor-prognosis subtype into one with excellent outcomes.
+        treatment_term:
+          preferred_term: immunotherapy
+          term:
+            id: NCIT:C15262
+            label: Immunotherapy
+          therapeutic_agent:
+          - preferred_term: trastuzumab
+            term:
+              id: CHEBI:231601
+              label: trastuzumab
+      selected_evidence:
+        snippet: HER2 amplification predicts sensitivity to Trastuzumab
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: CIVIC_ASSERTION:2
+      reference_title: ERBB2 Amplification / Her2-receptor Positive Breast Cancer (Predictive Sensitivity/Response)
+      evidence_source: OTHER
+      explanation: CIViC's accepted assertion directly supports trastuzumab sensitivity in ERBB2-amplified
+        HER2-positive breast cancer.
+    first_seen_at: '2026-09-28T17:51:09.462942+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: CIVIC_ASSERTION:2
+  0bd81a19e07559257b212e02e39ac7d05bafee97435db0b8ab989ecc97ae1dec:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Neratinib
+        description: Irreversible pan-HER tyrosine kinase inhibitor. Approved for extended adjuvant therapy
+          after trastuzumab-based treatment and for metastatic disease in combination with capecitabine.
+        treatment_term:
+          preferred_term: targeted therapy
+          term:
+            id: NCIT:C93352
+            label: Targeted Therapy
+          therapeutic_agent:
+          - preferred_term: neratinib
+            term:
+              id: CHEBI:61397
+              label: neratinib
+      selected_evidence:
+        snippet: Neratinib | Accepted_Therapeutic_Use_For | - | - | early stage HER2-overexpressed/amplified
+          breast cancer
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: NCIT:C49094
+      reference_title: Neratinib (NCIT)
+      evidence_source: OTHER
+      explanation: NCI Thesaurus asserts accepted therapeutic use of neratinib for early-stage HER2-overexpressed/amplified
+        breast cancer.
+    first_seen_at: '2026-09-28T17:51:09.539982+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: NCIT:C49094
+  25949c21f85f5ad50ffb3722e055f4bf2588d3b03445a5059d31d3b80929c1f1:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: ICDOMorphologyAssignment
+      assertion:
+        classification_value: Adenocarcinoma
+      selected_evidence:
+        snippet: Invasive ductal carcinoma (IDC) is the most common type of breast cancer,
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/icdo_morphology
+      evidence_path: /classifications/icdo_morphology/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:39806949
+      reference_title: An Overview of Invasive Ductal Carcinoma (IDC) in Women's Breast Cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: HER2-positive breast cancers are predominantly invasive ductal (adeno)carcinomas, supporting
+        the ICD-O adenocarcinoma morphology assignment.
+    first_seen_at: '2026-09-28T17:51:09.770224+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /classifications/icdo_morphology
+      evidence_path: /classifications/icdo_morphology/evidence/0
+      reference: PMID:39806949
+  e23eccf1f3759a22d3613fd3cd8b96907f32b5581ce8f10fc3832410b1af9c07:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /discussions/0
+          value:
+            discussion_id: gap_her2_grb2_adaptor_pivot
+            prompt: Is the GRB2 adaptor hub a tractable allosteric pivot point for rebalancing the HER2+
+              breast cancer interactome under HER2-targeted therapy resistance, and does conformational
+              control of GRB2 (versus its degradation) change which adaptive bypass routes the tumor recruits?
+            kind: KNOWLEDGE_GAP
+            status: OPEN
+            attaches_to:
+            - pathophysiology#GRB2 Adaptor Hub
+            - pathophysiology#Downstream Oncogenic Signaling
+            rationale: 'HER2-targeted antibodies and TKIs do not eliminate downstream GRB2 adaptor output:
+              resistant tumors typically rewire RAS-MAPK and PI3K-AKT signaling rather than lose HER2.
+              GRB2 also has a documented nuclear RAD51 fork-protection role under replication stress.
+              Treating GRB2 as a thermodynamic pivot — stabilizing distinct SH2/SH3 conformational states
+              with allosteric binders, or degrading the protein with PROTAC warheads — would let us test
+              whether different perturbations funnel the interactome into distinct pathological survival
+              states (cytoplasmic effector dominance vs. nuclear fork-protection dominance vs. innate-immune
+              activation through PARPi-induced cytosolic DNA).'
+          role: ancestor
+      assertion_type: Experiment
+      assertion:
+        experiment_id: exp_her2_grb2_conformational_pivot
+        name: Allosteric GRB2 stabilization versus PROTAC degradation in HER2+ organoids
+        description: Treat HER2-amplified patient-derived breast cancer organoids and isogenic cell-line
+          panels (HER2-amplified, HER2-amplified plus PIK3CA-mutant, trastuzumab-resistant derivatives)
+          with (a) allosteric GRB2 SH2/SH3 binders tuned to stabilize discrete conformational states,
+          (b) a GRB2-directed PROTAC warhead that physically degrades the adaptor, and (c) paired HER2
+          inhibition (trastuzumab, tucatinib, T-DXd). Read out RAS-MAPK and PI3K-AKT effector signaling,
+          nuclear GRB2 localization, RAD51 fork-protection at stalled replication forks, cytosolic DNA
+          release, cGAS-STING activation, and immune-cell killing in autologous co-culture. Compare to
+          PARP-inhibitor co-treatment arms to test whether GRB2 pivot state predicts PARPi-STING vulnerability.
+        experiment_type:
+          preferred_term: controlled perturbation experiment
+        model_systems:
+        - name: HER2-amplified patient-derived breast cancer organoid panel
+          description: Matched patient-derived organoids spanning trastuzumab-naive, trastuzumab-resistant,
+            and PIK3CA-co-mutant HER2+ disease, paired with autologous immune cells for co-culture readouts.
+          experimental_model_type: ORGANOID
+          organism:
+            preferred_term: human
+            term:
+              id: NCBITaxon:9606
+              label: Homo sapiens
+          tissue_term:
+            preferred_term: mammary gland
+            term:
+              id: UBERON:0001911
+              label: mammary gland
+          cell_types:
+          - preferred_term: luminal epithelial cell of mammary gland
+            term:
+              id: CL:0002326
+              label: luminal epithelial cell of mammary gland
+        perturbations:
+        - name: Allosteric GRB2 conformational stabilization
+          target: pathophysiology#GRB2 Adaptor Hub
+          description: Small-molecule allosteric binders tuned to stabilize distinct SH2/SH3 conformational
+            states of GRB2 to test conformation-specific output.
+          genes:
+          - preferred_term: GRB2
+            term:
+              id: hgnc:4566
+              label: GRB2
+        - name: GRB2 PROTAC degradation
+          target: pathophysiology#GRB2 Adaptor Hub
+          description: Targeted GRB2 degradation via PROTAC warhead to compare adaptor loss with adaptor
+            conformational locking.
+          genes:
+          - preferred_term: GRB2
+            term:
+              id: hgnc:4566
+              label: GRB2
+          effect: DECREASED
+        - name: PARP inhibitor replication-stress challenge
+          target: pathophysiology#GRB2 Adaptor Hub
+          description: Co-administer PARP inhibitor to test whether GRB2 conformational state gates PARPi-induced
+            cytosolic DNA and cGAS-STING activation.
+        readouts:
+        - name: RAS-MAPK and PI3K-AKT effector output
+          target: pathophysiology#Downstream Oncogenic Signaling
+          biological_processes:
+          - preferred_term: MAPK cascade
+            term:
+              id: GO:0000165
+              label: MAPK cascade
+          direction: POSITIVE
+        - name: Nuclear GRB2 / RAD51 fork-protection and innate-immune activation
+          target: pathophysiology#GRB2 Adaptor Hub
+          biological_processes:
+          - preferred_term: DNA damage response
+            term:
+              id: GO:0006974
+              label: DNA damage response
+          - preferred_term: innate immune response
+            term:
+              id: GO:0045087
+              label: innate immune response
+          direction: NEGATIVE
+          interpretation: Loss of nuclear GRB2 / RAD51 fork-protection together with increased innate-immune
+            activation under PARP inhibition would support a conformation-gated state switch.
+        decision_criterion: The conformational pivot model is supported if allosteric stabilization and
+          PROTAC degradation produce distinct effector versus DDR phenotypes in matched HER2+ models,
+          and if at least one perturbation sensitizes trastuzumab-resistant lines to PARP-inhibitor-driven
+          cytosolic DNA and cGAS-STING activation.
+        would_support:
+        - pathophysiology#GRB2 Adaptor Hub
+        - pathophysiology#Downstream Oncogenic Signaling
+      selected_evidence:
+        snippet: In GRB2-depleted cells, PARP inhibitor (PARPi) treatment releases DNA fragments from
+          stalled forks into the cytoplasm that activate the cGAS-STING pathway to trigger pro-inflammatory
+          cytokine production.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0/proposed_experiments/0
+      evidence_path: /discussions/0/proposed_experiments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /discussions/0
+    evidence_metadata:
+      reference: PMID:38459011
+      reference_title: GRB2 stabilizes RAD51 at reversed replication forks suppressing genomic instability
+        and innate immunity against cancer.
+      evidence_source: IN_VITRO
+      explanation: Provides the experimental precedent for GRB2 perturbation plus PARP inhibition producing
+        cytosolic DNA and innate immune activation, which the HER2+ experiment generalizes to a conformational-pivot
+        framing.
+    first_seen_at: '2026-09-28T17:51:09.625291+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /discussions/0/proposed_experiments/0
+      evidence_path: /discussions/0/proposed_experiments/0/evidence/0
+      reference: PMID:38459011
+  835bde8e0bd0daba80ccb39567d3ea51ef8605957de875e46a2a24de23fe3f8a:
+    claim:
+      about:
+        disease:
+          name: HER2-Positive Breast Cancer
+          disease_term:
+            preferred_term: HER2 positive breast carcinoma
+            term:
+              id: MONDO:0006244
+              label: HER2 positive breast carcinoma
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: HarrisonsChapterAssignment
+      assertion:
+        classification_value: ONCOLOGY_HEMATOLOGY
+      selected_evidence:
+        snippet: Invasive ductal carcinoma (IDC) is the most common type of breast cancer,
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:39806949
+      reference_title: An Overview of Invasive Ductal Carcinoma (IDC) in Women's Breast Cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Breast carcinoma is an oncologic malignancy, supporting the Harrison's Oncology and
+        Hematology classification.
+    first_seen_at: '2026-09-28T17:51:09.977600+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:43:52.330395+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:43:52.330395+00:00'
+    occurrences:
+    - assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      reference: PMID:39806949
+assessments:
+  1c17006e5dadc0b6ca714c9d2625dc16d8bfefd1408dad9438e9ff3e4af438ba:
+    input_sha256: 47b3e76cdfd647506ce7aaab57c0df714fe92bd056240d9986831e60799faadb
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.384682+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.39
+            MISMATCH: 0.03
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.6
+            MISMATCH: 0.06
+          confidence: 0.4
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.41
+            MISMATCH: 0.17
+          confidence: 0.13
+        /assertion/hypothesis_label:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.54
+            MISMATCH: 0.18
+          confidence: 0.31
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.02
+            MISMATCH: 0.85
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MATCH: 0.28
+            MISMATCH: 0.03
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6261
+        output_tokens: 276
+      elapsed_seconds: 0.3192
+      request_sha256: e5fdc6893d48c52a1fe0e6f50a7f4cc55af2d260e17c67ba297d06944e0da24f
+      request_sha256s:
+      - e5fdc6893d48c52a1fe0e6f50a7f4cc55af2d260e17c67ba297d06944e0da24f
+  77363e23e9538010e95b9216ed46b1b6a44ab33e74febd639cbc89e0506145b2:
+    input_sha256: c130b0595b30e24c8f6b941dd63faf494a5bd7aab673f86bbaab26c3e8ca5a03
+    configuration_sha256: 5343391a3d62f0a7e05a0aff0aacbb0fa2e0234f97e6f7e147b1284cf6b9fd6b
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.175786+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            PARTIAL: 0.17
+            MISMATCH: 0.02
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.33
+            MISMATCH: 0.16
+          confidence: 0.26
+        /assertion/source:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.19
+            MISMATCH: 0.69
+          confidence: 0.54
+        /assertion/assertion_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.25
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/external_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.22
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/url:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.14
+            MISMATCH: 0.79
+          confidence: 0.68
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.22
+            MISMATCH: 0.02
+          confidence: 0.63
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.45
+            MISMATCH: 0.21
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9107
+        output_tokens: 410
+      elapsed_seconds: 0.5611
+      request_sha256: 291864d47de398f16d855bbfedbc4c6bc5c5caa4415e421f1bc24f7aafeee565
+      request_sha256s:
+      - 291864d47de398f16d855bbfedbc4c6bc5c5caa4415e421f1bc24f7aafeee565
+  255f2d11e1d93c991d3ec12b103dbe862c45bb0677c7719179e4f8fc9b2f44e0:
+    input_sha256: 45381422605cfd4e27e66b4683f06317d8bef48e4df2e279e881d14e8a907c73
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.621145+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.66
+            MISMATCH: 0.01
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/hypothesis_group_id:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.31
+            MISMATCH: 0.15
+          confidence: 0.31
+        /assertion/hypothesis_label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.18
+            MISMATCH: 0.11
+          confidence: 0.56
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.02
+            MISMATCH: 0.69
+          confidence: 0.53
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.67
+            MISMATCH: 0.02
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6366
+        output_tokens: 275
+      elapsed_seconds: 0.1954
+      request_sha256: 5d19aee36931f39101fe1752a3c9e41bf59d189adef92bfb105fd7e23312be44
+      request_sha256s:
+      - 5d19aee36931f39101fe1752a3c9e41bf59d189adef92bfb105fd7e23312be44
+  95f46341b315b90191f73a7c1c94283830279bfe74aaadeb005e50d9b90b4c12:
+    input_sha256: 51876272c0aa124f37172476a7b1924b00c3f78331426d9be306ace91ca11463
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.522538+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.24
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.39
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/hypothesis_label:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.54
+            PARTIAL: 0.3
+          confidence: 0.31
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.8
+            MATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.71
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.11
+            PARTIAL: 0.85
+          confidence: 0.78
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6276
+        output_tokens: 276
+      elapsed_seconds: 0.3093
+      request_sha256: 5f3df8a55bd5596f0e253a4475c9db780ffd1b4e5e0d7921c485b024740e12cd
+      request_sha256s:
+      - 5f3df8a55bd5596f0e253a4475c9db780ffd1b4e5e0d7921c485b024740e12cd
+  80d5fe18e39a6620e41f415a642f8b8f6b79cfa53549b14d7021d5b9b64262bd:
+    input_sha256: 3634c722719b90c0f59a25031a92dfd7f50fdcd57387bd820dee22165b682fe5
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.710249+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.92
+            MATCH: 0.06
+            MISMATCH: 0.02
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.34
+            MISMATCH: 0.28
+          confidence: 0.08
+        /assertion/hypothesis_label:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.46
+            MISMATCH: 0.25
+          confidence: 0.19
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.01
+            MISMATCH: 0.84
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.93
+            MATCH: 0.04
+            MISMATCH: 0.03
+          confidence: 0.89
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6336
+        output_tokens: 276
+      elapsed_seconds: 0.3831
+      request_sha256: 0fb44a3172161eb9f382309c3baf2a629669496418309dbb9490a66e7f23be0c
+      request_sha256s:
+      - 0fb44a3172161eb9f382309c3baf2a629669496418309dbb9490a66e7f23be0c
+  956da5194f84b586df94fcfc5a33dd85d026af0e1fb41a845090da786b23c993:
+    input_sha256: 7307f8db5de7494e94db23d0955177d518fd586d6a53f39746d117497d35657f
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.750334+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.77
+            MISMATCH: 0.19
+          confidence: 0.65
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.05
+            MISMATCH: 0.52
+          confidence: 0.28
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.44
+            MISMATCH: 0.43
+          confidence: 0.15
+        /assertion/hypothesis_label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.36
+            MISMATCH: 0.34
+          confidence: 0.04
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.06
+            MISMATCH: 0.93
+          confidence: 0.9
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.82
+            MATCH: 0.04
+            MISMATCH: 0.14
+          confidence: 0.74
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6317
+        output_tokens: 280
+      elapsed_seconds: 0.3838
+      request_sha256: f393ec1eb352ab29766f988e2d2d12605be7c324c719441290a7d630928d90fe
+      request_sha256s:
+      - f393ec1eb352ab29766f988e2d2d12605be7c324c719441290a7d630928d90fe
+  63e1faeab628a8a7199aaa7da2b1b156e15270e04c33a07ccac1cbc8d7661a94:
+    input_sha256: 299bec154ba3682f2c95490c2f4d37b72d737254f520eb879560d22290f636b7
+    configuration_sha256: 4bc4ba13b2cbcef84d734bf6e605c3343e1e4efb8b1a7bff6d36e145e18bff43
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.865265+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.02
+            MISMATCH: 0.6
+          confidence: 0.39
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.04
+            MISMATCH: 0.71
+          confidence: 0.55
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.02
+            MISMATCH: 0.61
+          confidence: 0.42
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.01
+            MISMATCH: 0.88
+          confidence: 0.82
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.01
+            MISMATCH: 0.74
+          confidence: 0.6
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.3
+            MISMATCH: 0.6799999999999999
+          confidence: 0.53
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.04
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.37
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.02
+            MISMATCH: 0.67
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10612
+        output_tokens: 513
+      elapsed_seconds: 0.3149
+      request_sha256: 33a6989aed02a9afb067fff80b93d35034ede37d39669c1b0403faf5a9957358
+      request_sha256s:
+      - 33a6989aed02a9afb067fff80b93d35034ede37d39669c1b0403faf5a9957358
+  bcf69a0fbc01001022fa88d97e4ea81a5446f099d61547ddd512e06fc576cdaa:
+    input_sha256: fe70368fd965d938b541bb9794adf96c230c7b19650e24ba388d94de05ac171b
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:07.834447+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MATCH: 0.09
+            MISMATCH: 0.11
+          confidence: 0.71
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.07
+            MISMATCH: 0.2
+          confidence: 0.6
+        /assertion/hypothesis_group_id:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.24
+            MISMATCH: 0.25
+          confidence: 0.27
+        /assertion/hypothesis_label:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.24
+            MISMATCH: 0.39
+          confidence: 0.09
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.01
+            MISMATCH: 0.85
+          confidence: 0.78
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MATCH: 0.09
+            MISMATCH: 0.07
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6325
+        output_tokens: 280
+      elapsed_seconds: 0.553
+      request_sha256: 4985f82575de9cd48bd6d6245a9a822ccd13fc0c8e834e2bafd038aaeddb9ce7
+      request_sha256s:
+      - 4985f82575de9cd48bd6d6245a9a822ccd13fc0c8e834e2bafd038aaeddb9ce7
+  b1770e07e944b5748d0f2f83050fec797ca50e063edc17064c35844291d7388f:
+    input_sha256: d62ca2c49df1ced69cd537a89b2201d272654fbdd2622777c7ef2afbab3261cc
+    configuration_sha256: 4bc4ba13b2cbcef84d734bf6e605c3343e1e4efb8b1a7bff6d36e145e18bff43
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.115579+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MISMATCH: 0.07
+            MATCH: 0.09
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.0
+            MATCH: 0.95
+          confidence: 0.93
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.24
+            MATCH: 0.13
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MISMATCH: 0.18
+            MATCH: 0.06
+          confidence: 0.65
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.52
+            MATCH: 0.03
+          confidence: 0.28
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.59
+            MATCH: 0.02
+          confidence: 0.38
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.12
+            MATCH: 0.27
+          confidence: 0.42
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.12
+            MATCH: 0.23
+          confidence: 0.46
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.22
+            MATCH: 0.13
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10590
+        output_tokens: 498
+      elapsed_seconds: 0.306
+      request_sha256: e36616001d27e8473945050567209006f286a8e53e3aec047018431f23954244
+      request_sha256s:
+      - e36616001d27e8473945050567209006f286a8e53e3aec047018431f23954244
+  c42680aebc287df26afb37190acd484ea5e26d4e76f9972bd5f3743dfbbacf8b:
+    input_sha256: 86dafc8789dc5afc7494a6b3190143176f2ba789c5917dbc1e5279f55e76b1a2
+    configuration_sha256: 796e69820196d239eb03479a993b4ef7263aa7e0522671b9a38bacf38d7da856
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.209523+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.92
+            MISMATCH: 0.02
+          confidence: 0.87
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.33
+            MISMATCH: 0.1
+          confidence: 0.36
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.6
+            MISMATCH: 0.29
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.91
+            MISMATCH: 0.02
+          confidence: 0.86
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            PARTIAL: 0.24
+            MISMATCH: 0.07
+          confidence: 0.54
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.26
+            MISMATCH: 0.11
+          confidence: 0.44
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.18
+            MISMATCH: 0.77
+          confidence: 0.67
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.17
+            MISMATCH: 0.8099999999999999
+          confidence: 0.72
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.44
+            MISMATCH: 0.22
+          confidence: 0.16
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.44
+            MISMATCH: 0.18
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11412
+        output_tokens: 529
+      elapsed_seconds: 0.2995
+      request_sha256: d441160608ed72fc8f1efff5408bf9c8fc41a9d307371a5d5deb49aad52ee749
+      request_sha256s:
+      - d441160608ed72fc8f1efff5408bf9c8fc41a9d307371a5d5deb49aad52ee749
+  af594a3214cc7685912229352dddf0dcd2456055940492ea125cc90ab1bbf1eb:
+    input_sha256: 012c358c9d32acd9a28a5a374759c6073db18343459e61a6bff09619b4471b47
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.158143+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.2
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.71
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.27
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.1
+            PARTIAL: 0.71
+          confidence: 0.57
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.45
+            PARTIAL: 0.42
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5542
+        output_tokens: 223
+      elapsed_seconds: 0.3933
+      request_sha256: 1973f05a1ba5cd99109e7271f42122222811072d98455a82b246e24266ba323d
+      request_sha256s:
+      - 1973f05a1ba5cd99109e7271f42122222811072d98455a82b246e24266ba323d
+  b167e964a2340386f9bd872d2c748c9c87adfd8e217c07e995f9b5c8e10698b1:
+    input_sha256: 8861f34ae681f79de0a8ad2a1aec63ebd7aabb6a3ded12dfeaf822110b58fb32
+    configuration_sha256: 796e69820196d239eb03479a993b4ef7263aa7e0522671b9a38bacf38d7da856
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.421161+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.19
+            PARTIAL: 0.78
+          confidence: 0.67
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.57
+            PARTIAL: 0.41
+          confidence: 0.36
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.11
+            PARTIAL: 0.29
+          confidence: 0.4
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.33
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.13
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.08
+            PARTIAL: 0.13
+          confidence: 0.69
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.1
+            PARTIAL: 0.22
+          confidence: 0.52
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.81
+            PARTIAL: 0.14
+          confidence: 0.72
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.08
+            PARTIAL: 0.34
+          confidence: 0.36
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.1
+            PARTIAL: 0.33
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11419
+        output_tokens: 530
+      elapsed_seconds: 0.3544
+      request_sha256: 781a1afd513470a6a7b01f82551e482376a07c5362e3a632db9eb30b75cf39a7
+      request_sha256s:
+      - 781a1afd513470a6a7b01f82551e482376a07c5362e3a632db9eb30b75cf39a7
+  a220deae683c8465f9a21d949e25c39998cf770a527aa4a9a3545e2f5a19e0a1:
+    input_sha256: bd6da7a579d49ece4ca68429f062e6ab2addaf17cb82c20bc41d5c2c8b03d8af
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.554417+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.44
+            MISMATCH: 0.05
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.52
+            MISMATCH: 0.1
+          confidence: 0.28
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.59
+            MISMATCH: 0.06
+          confidence: 0.38
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.49
+            MISMATCH: 0.02
+          confidence: 0.24
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.67
+            MISMATCH: 0.09
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5618
+        output_tokens: 222
+      elapsed_seconds: 0.2489
+      request_sha256: 0d8cc15ca276bdb33c0a14bf8d10b25e1b62f3ca3a69cc9f9c789911cea3843b
+      request_sha256s:
+      - 0d8cc15ca276bdb33c0a14bf8d10b25e1b62f3ca3a69cc9f9c789911cea3843b
+  9947a6779b4694fa6e311b32e7c2c145169c34ddfc7471367d24b07d121bd3ac:
+    input_sha256: fc7e92b1866c3c566d7558054d83e697f87ef2e8a66d481b1e1bb9c83f08bf33
+    configuration_sha256: a666b6dada1eee8108e10e74bca5928b35dba8750219c002b8e6f8bd7a02d5b1
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.598498+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.88
+            MISMATCH: 0.07
+          confidence: 0.82
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.38
+            MISMATCH: 0.05
+          confidence: 0.35
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.69
+            MISMATCH: 0.22
+          confidence: 0.54
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.02
+            MISMATCH: 0.21
+          confidence: 0.64
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.03
+            MISMATCH: 0.79
+          confidence: 0.68
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.38
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.38
+            MISMATCH: 0.55
+          confidence: 0.33
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.27
+            MISMATCH: 0.03
+          confidence: 0.54
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            PARTIAL: 0.42
+            MISMATCH: 0.02
+          confidence: 0.33
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.28
+            MISMATCH: 0.04
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11891
+        output_tokens: 556
+      elapsed_seconds: 0.3245
+      request_sha256: 6567939bc181a66e0d9214a64fbe3f9164405de57798398dcf72b3b9e979f538
+      request_sha256s:
+      - 6567939bc181a66e0d9214a64fbe3f9164405de57798398dcf72b3b9e979f538
+  3420390d403e9bcad3e89172f178b429d48c62cabc0f0dcd54c247681ed70b40:
+    input_sha256: 806e1d41e0317f93127f89ae99d44a58020eae2a24da58ccea0cbbadacf0fd56
+    configuration_sha256: 796e69820196d239eb03479a993b4ef7263aa7e0522671b9a38bacf38d7da856
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.469682+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            MATCH: 0.02
+            PARTIAL: 0.39
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.75
+            PARTIAL: 0.23
+          confidence: 0.63
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.81
+            MATCH: 0.04
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.81
+            MATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.71
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            MATCH: 0.01
+            PARTIAL: 0.24
+          confidence: 0.63
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.07
+            PARTIAL: 0.15
+          confidence: 0.67
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            MATCH: 0.09
+            PARTIAL: 0.16
+          confidence: 0.62
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.06
+            PARTIAL: 0.16
+          confidence: 0.67
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            MATCH: 0.04
+            PARTIAL: 0.2
+          confidence: 0.65
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.82
+            MATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.84
+            MATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11399
+        output_tokens: 548
+      elapsed_seconds: 0.4979
+      request_sha256: 7f8b572791ea3b408c1f74543d1230e487eedf818ce623dec97caba49b1608a5
+      request_sha256s:
+      - 7f8b572791ea3b408c1f74543d1230e487eedf818ce623dec97caba49b1608a5
+  30c18b3af515a5d16315bcac4812cb0dea9193563fdbf7d1e5458ab59e489e00:
+    input_sha256: 671429250edb0b189a9012adc495417527cd6ba7a2b64c70b64c235cde53ac83
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.828084+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.03
+            PARTIAL: 0.41
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.01
+            PARTIAL: 0.2
+          confidence: 0.68
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.02
+            PARTIAL: 0.38
+          confidence: 0.4
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.1
+            PARTIAL: 0.42
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5551
+        output_tokens: 221
+      elapsed_seconds: 0.2845
+      request_sha256: cbb19f8037b997ec00106d0176796babefb1bc030457c43d346998011ca1c03b
+      request_sha256s:
+      - cbb19f8037b997ec00106d0176796babefb1bc030457c43d346998011ca1c03b
+  35a59ce385d81650131a4ca6918502da23840ea0ac3e67df5f835641c5c60fd7:
+    input_sha256: 805fbe7868a36ee0493dc3e04fd18dd8bc7e57090e5a61b3885a423f4f318e1d
+    configuration_sha256: 6c4e60a1062661b256c0ffb2590d19ef9b379f42b71fa0abb597a52237295242
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.887655+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MISMATCH: 0.02
+            MATCH: 0.18
+          confidence: 0.71
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.01
+            MATCH: 0.72
+          confidence: 0.57
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.81
+            MISMATCH: 0.02
+            MATCH: 0.17
+          confidence: 0.71
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.01
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.01
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.01
+            MATCH: 0.85
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7530
+        output_tokens: 339
+      elapsed_seconds: 0.3154
+      request_sha256: 0b2d7fc2623fc40189df60bfeb6d0c741ee6f29f1674d09ea716ba964c67f571
+      request_sha256s:
+      - 0b2d7fc2623fc40189df60bfeb6d0c741ee6f29f1674d09ea716ba964c67f571
+  92f76ec1d0d9bf656326cad89b758c7da7d1a8e14bf9bb1f78b94685893e822c:
+    input_sha256: 2e3f3de0037e71c061a8176e33debc4c07aadc8e13cacf21709c029f16031aa5
+    configuration_sha256: d8fd9e5655656b6be03f4cd749736b3cfca36da48ba55860fa9acbca30ca277d
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:08.983989+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.11
+            MISMATCH: 0.28
+          confidence: 0.42
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.03
+            MISMATCH: 0.37
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.71
+            MISMATCH: 0.11
+          confidence: 0.55
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.59
+            MISMATCH: 0.14
+          confidence: 0.39
+        /assertion/finding_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.62
+            MISMATCH: 0.12
+          confidence: 0.42
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.08
+            MISMATCH: 0.33
+          confidence: 0.38
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.94
+            MISMATCH: 0.02
+          confidence: 0.92
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7274
+        output_tokens: 321
+      elapsed_seconds: 0.4056
+      request_sha256: 39d2813ba0b2dfe0fbc057db00568f4e3fd616e2aedf1578126a631f6ffa268d
+      request_sha256s:
+      - 39d2813ba0b2dfe0fbc057db00568f4e3fd616e2aedf1578126a631f6ffa268d
+  ac79fd8b4cd19a3bfc8e3c70355ebae09a43240b886f9eb539897dba59a75785:
+    input_sha256: 5cfaec505704241dc7f13747bdb2877a01d0d9308bce13f61a099417366316f3
+    configuration_sha256: b25667e0c8fe11c2c6e44ee4c031827c5341ce40e7b408c6f1fad31bef6663c7
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.047570+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MATCH: 0.06
+            MISMATCH: 0.23
+          confidence: 0.57
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.69
+            MISMATCH: 0.18
+          confidence: 0.53
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.71
+            MISMATCH: 0.08
+          confidence: 0.57
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.45
+            MISMATCH: 0.07
+          confidence: 0.22
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.04
+            MISMATCH: 0.63
+          confidence: 0.44
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.06
+            MISMATCH: 0.46
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.02
+            MISMATCH: 0.41
+          confidence: 0.35
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.48
+            MISMATCH: 0.07
+          confidence: 0.23
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.46
+            MISMATCH: 0.06
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9158
+        output_tokens: 416
+      elapsed_seconds: 0.4134
+      request_sha256: 7e89f41fc22470c5b2ff7e6ab00f2517484f9287851f86ad47b02ae5b6ec4db2
+      request_sha256s:
+      - 7e89f41fc22470c5b2ff7e6ab00f2517484f9287851f86ad47b02ae5b6ec4db2
+  41d6ef9c9c5c8ddb041b5e9f66a33e64594b3e929465329641b6bada30fd93f3:
+    input_sha256: 3e1bf38e7f32e15596fc3d520cefbcb257266b00ced92362f52c5fa8cca63a69
+    configuration_sha256: d9488d54084bc7c2d40eda202c3304c75660ad476641258d9c9ffa35cd2d546d
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.177643+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.74
+            MISMATCH: 0.08
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.41
+            MISMATCH: 0.04
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.37
+            MISMATCH: 0.19
+          confidence: 0.16
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.43
+            MISMATCH: 0.22
+          confidence: 0.15
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.37
+            MISMATCH: 0.17
+          confidence: 0.19
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.25
+            MISMATCH: 0.03
+          confidence: 0.58
+        /assertion/inheritance/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.47000000000000003
+            MISMATCH: 0.43
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.48
+            MISMATCH: 0.49
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8202
+        output_tokens: 370
+      elapsed_seconds: 0.3423
+      request_sha256: 2ab0f18c9e6458c0cf9668503b1fca9aae2d448d9db98e96c4cdbab44cbad513
+      request_sha256s:
+      - 2ab0f18c9e6458c0cf9668503b1fca9aae2d448d9db98e96c4cdbab44cbad513
+  3254361315c1089b59cde883877ab8765c1f87d1bb8f0af063186e088a9c35fe:
+    input_sha256: ead8aa5760d9f340230c9d40d6efc012aff7873bac82fad49863fb7faf7f715b
+    configuration_sha256: d9488d54084bc7c2d40eda202c3304c75660ad476641258d9c9ffa35cd2d546d
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.271088+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            MATCH: 0.11
+            PARTIAL: 0.64
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.28
+            PARTIAL: 0.44
+          confidence: 0.15
+        /assertion/gene_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.36
+            PARTIAL: 0.36
+          confidence: 0.05
+        /assertion/gene_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            MATCH: 0.31
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.28
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/inheritance/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            MATCH: 0.05
+            PARTIAL: 0.23
+          confidence: 0.57
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            MATCH: 0.04
+            PARTIAL: 0.33
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8196
+        output_tokens: 376
+      elapsed_seconds: 0.3756
+      request_sha256: 93dfdec67d53562eeb33df818121f3261b210b8a869a5514ca8c309dde6f7f9f
+      request_sha256s:
+      - 93dfdec67d53562eeb33df818121f3261b210b8a869a5514ca8c309dde6f7f9f
+  0eca54c3869a0d2b0c400907d85d02d653308215e26ba49ec33505601a495b2f:
+    input_sha256: c95e9aa29479b64b8d8e6b22e073a252d73c51822af0b9b7e1a28909958de9ab
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.462942+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.08
+            PARTIAL: 0.76
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.08
+            PARTIAL: 0.27
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.46
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.5
+            PARTIAL: 0.36
+          confidence: 0.25
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.49
+            PARTIAL: 0.37
+          confidence: 0.23
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.75
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.09
+            PARTIAL: 0.2
+          confidence: 0.57
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8256
+        output_tokens: 395
+      elapsed_seconds: 0.4275
+      request_sha256: 7978a6392de8f96c48ad1528e718c7f90cfb1ba77513d76a81883f601496f9e7
+      request_sha256s:
+      - 7978a6392de8f96c48ad1528e718c7f90cfb1ba77513d76a81883f601496f9e7
+  2c8c1450ba061460ed7afde2fab9ee6a679e8a247cdaa5897c9354b265f10bc7:
+    input_sha256: 0bd81a19e07559257b212e02e39ac7d05bafee97435db0b8ab989ecc97ae1dec
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.539982+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.37
+            MISMATCH: 0.02
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.96
+            MISMATCH: 0.01
+          confidence: 0.95
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.02
+            MISMATCH: 0.42
+          confidence: 0.34
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.52
+            MISMATCH: 0.14
+          confidence: 0.29
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.58
+            MISMATCH: 0.09
+          confidence: 0.36
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8265
+        output_tokens: 389
+      elapsed_seconds: 0.358
+      request_sha256: e19eda3c445e86b5c449fd14021323c35f738475edaf0fda6ed6cd7d01a7cb34
+      request_sha256s:
+      - e19eda3c445e86b5c449fd14021323c35f738475edaf0fda6ed6cd7d01a7cb34
+  45173e7dbddaaf7958af8c5a884329cf09748be088556f3b724a424357e95092:
+    input_sha256: 25949c21f85f5ad50ffb3722e055f4bf2588d3b03445a5059d31d3b80929c1f1
+    configuration_sha256: 48d3dedba739a104812910d60f7155bad4e512b0c4499626ca9df986a5068b46
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.770224+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            PARTIAL: 0.62
+            MATCH: 0.1
+          confidence: 0.43
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.68
+            MATCH: 0.15
+          confidence: 0.52
+        /assertion/classification_value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.65
+            MATCH: 0.17
+          confidence: 0.49
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.52
+            MATCH: 0.21
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4278
+        output_tokens: 182
+      elapsed_seconds: 0.3687
+      request_sha256: d33b47a393661f3233d7699591241314a3a63ef98b0cc0ddec7bc8eb7859c732
+      request_sha256s:
+      - d33b47a393661f3233d7699591241314a3a63ef98b0cc0ddec7bc8eb7859c732
+  fea7ec323480109fcc04572ce2c63330f405ab7a7c1ad106cb9af1c2580bc32c:
+    input_sha256: e23eccf1f3759a22d3613fd3cd8b96907f32b5581ce8f10fc3832410b1af9c07
+    configuration_sha256: 66a112b36f62a1ea7a9b806602f0c4ae375311ed2b622cdd6ae02a2b8d401176
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.625291+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.11
+            MISMATCH: 0.14
+          confidence: 0.63
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.06
+            MISMATCH: 0.31
+          confidence: 0.45
+        /assertion/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.25
+            MISMATCH: 0.43
+          confidence: 0.15
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.19
+            MISMATCH: 0.47
+          confidence: 0.21
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.77
+            MISMATCH: 0.1
+          confidence: 0.67
+        /assertion/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.31
+            MISMATCH: 0.54
+          confidence: 0.31
+        /assertion/model_systems/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.39
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.07
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.24
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/model_systems/0/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.09
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/model_systems/0/organism/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.37
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/model_systems/0/tissue_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.32
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/model_systems/0/tissue_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.29
+            MISMATCH: 0.62
+          confidence: 0.42
+        /assertion/model_systems/0/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.04
+            MISMATCH: 0.59
+          confidence: 0.37
+        /assertion/model_systems/0/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.34
+            MISMATCH: 0.62
+          confidence: 0.42
+        /assertion/perturbations/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.35
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/perturbations/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.52
+            MISMATCH: 0.22
+          confidence: 0.29
+        /assertion/perturbations/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.33
+            MISMATCH: 0.63
+          confidence: 0.44
+        /assertion/perturbations/0/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.27
+            MISMATCH: 0.17
+          confidence: 0.33
+        /assertion/perturbations/0/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.32
+            MISMATCH: 0.13
+          confidence: 0.32
+        /assertion/perturbations/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.51
+            MISMATCH: 0.23
+          confidence: 0.26
+        /assertion/perturbations/1/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.34
+            MISMATCH: 0.09
+          confidence: 0.35
+        /assertion/perturbations/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.52
+            MISMATCH: 0.21
+          confidence: 0.27
+        /assertion/perturbations/1/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.27
+            MISMATCH: 0.14
+          confidence: 0.38
+        /assertion/perturbations/1/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.24
+            MISMATCH: 0.11
+          confidence: 0.47
+        /assertion/perturbations/1/effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.23
+            MISMATCH: 0.11
+          confidence: 0.49
+        /assertion/perturbations/2/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.56
+            MISMATCH: 0.06
+          confidence: 0.33
+        /assertion/perturbations/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.41
+            MISMATCH: 0.11
+          confidence: 0.22
+        /assertion/perturbations/2/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.55
+            MISMATCH: 0.05
+          confidence: 0.33
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.2
+            MISMATCH: 0.77
+          confidence: 0.65
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.36
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.23
+            MISMATCH: 0.74
+          confidence: 0.62
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.31
+            MISMATCH: 0.63
+          confidence: 0.44
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.4
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.42
+            MISMATCH: 0.06
+          confidence: 0.28
+        /assertion/readouts/1/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.54
+            MISMATCH: 0.05
+          confidence: 0.3
+        /assertion/readouts/1/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.35
+            MISMATCH: 0.04
+          confidence: 0.41
+        /assertion/readouts/1/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.31
+            MISMATCH: 0.03
+          confidence: 0.49
+        /assertion/readouts/1/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.65
+            MISMATCH: 0.05
+          confidence: 0.49
+        /assertion/readouts/1/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.68
+            MISMATCH: 0.04
+          confidence: 0.52
+        /assertion/readouts/1/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.28
+            MISMATCH: 0.18
+          confidence: 0.32
+        /assertion/readouts/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.54
+            MISMATCH: 0.06
+          confidence: 0.31
+        /assertion/decision_criterion:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.86
+            MATCH: 0.07
+            MISMATCH: 0.07
+          confidence: 0.78
+        /assertion/would_support:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.3
+            MISMATCH: 0.1
+          confidence: 0.4
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.65
+            MISMATCH: 0.08
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 45489
+        output_tokens: 2381
+      elapsed_seconds: 0.6217
+      request_sha256: 5b40ff717e0fbc924497d63d060d6d2cef9c14d88dc0b4dfc6ccd3768ba75a5d
+      request_sha256s:
+      - 5b40ff717e0fbc924497d63d060d6d2cef9c14d88dc0b4dfc6ccd3768ba75a5d
+  6be562d92cd9e6ae32beb1ab90c81981bda2e4e011cc1dfc80c6ef4cd42e797e:
+    input_sha256: 835bde8e0bd0daba80ccb39567d3ea51ef8605957de875e46a2a24de23fe3f8a
+    configuration_sha256: 48d3dedba739a104812910d60f7155bad4e512b0c4499626ca9df986a5068b46
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:51:09.977600+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.52
+            PARTIAL: 0.4
+          confidence: 0.27
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.34
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/classification_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.52
+            PARTIAL: 0.3
+          confidence: 0.27
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.39
+            PARTIAL: 0.46
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4281
+        output_tokens: 186
+      elapsed_seconds: 0.2809
+      request_sha256: c9ceb6d1831225804fb1c16e2951871a99ae1007187ca7f5c30f33c3785f285a
+      request_sha256s:
+      - c9ceb6d1831225804fb1c16e2951871a99ae1007187ca7f5c30f33c3785f285a

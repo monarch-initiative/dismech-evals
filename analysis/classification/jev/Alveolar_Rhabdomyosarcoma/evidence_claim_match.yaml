@@ -8476,6 +8476,170 @@ inputs:
     - assertion_path: /datasets/4
       evidence_path: /datasets/4/evidence/0
       reference: PMID:24436047
+  66af6a79c55da8c2d14515f69a4be088336738647c791880ea24f637b590e915:
+    claim:
+      about:
+        disease:
+          name: Alveolar Rhabdomyosarcoma
+          disease_term:
+            preferred_term: alveolar rhabdomyosarcoma
+            term:
+              id: MONDO:0009994
+              label: alveolar rhabdomyosarcoma
+        context:
+        - path: /discussions/1
+          value:
+            discussion_id: gap_arms_fgfr_response_biomarkers
+            prompt: Which fusion-positive ARMS tumors have disease-specific open chromatin at FGF8 regulatory
+              elements that correspond to previously reported PAX3-FOXO1/ETS1/KDM3A-bound enhancers of
+              FGF8, and also show high FGF8 RNA, high FGFR4 RNA, and FGFR4 phosphorylation, such that
+              the tumor is clinically responsive to FGFR inhibition? Conversely, which tumors express
+              some of the FGF8/FGFR4/FGFR4_pY signature but are not FGFR-dependent because downstream
+              RAS/PI3K activation, relapse-associated adaptation, or other resistance circuitry bypasses
+              FGFR signaling?
+            kind: KNOWLEDGE_GAP
+            status: OPEN
+            attaches_to:
+            - pathophysiology#PAX-FOXO1 Fusion Oncogene
+            - pathophysiology#PAX-FOXO1 Disease Enhancer Reprogramming
+            - pathophysiology#ETS1-KDM3A PAX-FOXO1 Chromatin Cofactor Module
+            - pathophysiology#FGFR-Driven RTK Signaling
+            - pathophysiology#RAS/PI3K Effector Pathway Activation
+            - treatments#FGFR Inhibitor Therapy
+            rationale: 'Recent 2026 multiplatform profiling provides the strongest forward evidence that
+              FGFR4/FGF8 coexpression with FGFR4 phosphorylation can identify FGFR-inhibitor-sensitive
+              FP-RMS. The same paper frames the broader unresolved question: RNA overexpression alone
+              is common, but it is not always clear when receptor expression marks kinase activation,
+              signaling dependence, and drug response. Because the pathograph now connects FGF8 to the
+              ETS1/KDM3A/PAX-FOXO1 chromatin cofactor module, the open curation problem is whether disease-specific
+              open chromatin at FGF8 regulatory elements that correspond to PAX3-FOXO1/ETS1/KDM3A-bound
+              enhancers of FGF8, direct factor-occupancy evidence where available, FGF8/FGFR4 transcript
+              abundance, FGFR4 phosphorylation, and drug response form one coherent dependency signature
+              or split into bypass states.'
+          role: ancestor
+      assertion_type: Experiment
+      assertion:
+        experiment_id: exp_arms_fgfr_functional_biomarker_response_panel
+        name: Functional FGFR biomarker-response panel in FP-RMS
+        description: Assemble FP-RMS patient samples, cell lines, organoids, and PDX-derived cultures
+          stratified by ATAC-seq accessibility at FGF8 regulatory elements that correspond to PAX3-FOXO1/ETS1/KDM3A-bound
+          enhancers of FGF8, by direct PAX3-FOXO1/ETS1/KDM3A occupancy where factor-binding data are available,
+          by FGFR4 RNA, FGF8 RNA, FGFR4 phosphorylation, and RTK/RAS/PI3K alterations. Test FGFR4-selective
+          and multikinase FGFR inhibitors alone and with downstream pathway blockade to determine which
+          biomarker combinations predict response or bypass.
+        experiment_type:
+          preferred_term: functional precision-oncology biomarker experiment
+        model_systems:
+        - name: FP-RMS phosphoproteomic response panel
+          description: Human fusion-positive rhabdomyosarcoma samples and derived models with matched
+            transcriptomic, phosphoproteomic, genomic, and drug-response measurements.
+          experimental_model_type: OTHER
+          organism:
+            preferred_term: human
+            term:
+              id: NCBITaxon:9606
+              label: Homo sapiens
+          publication: PMID:42041178
+          modeled_mechanisms:
+          - target: PAX-FOXO1 Disease Enhancer Reprogramming
+            description: Tests whether FGFR response tracks an upstream disease-enhancer state.
+          - target: ETS1-KDM3A PAX-FOXO1 Chromatin Cofactor Module
+            description: Tests whether FGF8/FGFR4 dependence is coupled to the modeled cofactor-occupancy
+              branch.
+          - target: FGFR-Driven RTK Signaling
+            description: Tests whether FGFR4/FGF8 expression and FGFR4_pY mark active signaling dependence.
+          - target: RAS/PI3K Effector Pathway Activation
+            description: Tests downstream bypass when FGFR is inhibited.
+        perturbations:
+        - name: FGFR inhibitor challenge
+          target: treatments#FGFR Inhibitor Therapy
+          description: Treat models with FGFR4-selective and multikinase FGFR inhibitors to compare response
+            across FGFR4 RNA, FGF8 RNA, and FGFR4_pY strata.
+        - name: Downstream bypass testing
+          target: pathophysiology#RAS/PI3K Effector Pathway Activation
+          description: Add RAS-MAPK or PI3K-AKT pathway blockade, or analyze models with existing RTK/RAS/PI3K
+            alterations, to identify FGFR-independent resistance states.
+        readouts:
+        - name: FGF8 fusion/cofactor regulatory state and FGFR response
+          target: pathophysiology#ETS1-KDM3A PAX-FOXO1 Chromatin Cofactor Module
+          description: Quantify disease-specific open chromatin at FGF8 regulatory elements that correspond
+            to PAX3-FOXO1/ETS1/KDM3A-bound enhancers of FGF8, and, where possible, separately quantify
+            PAX3-FOXO1, ETS1, and KDM3A occupancy. Relate those chromatin-accessibility and factor-occupancy
+            features to FGF8 RNA, FGFR4 RNA, and FGFR4 phosphorylation.
+          biological_processes:
+          - preferred_term: chromatin remodeling
+            term:
+              id: GO:0006338
+              label: chromatin remodeling
+          assays:
+          - preferred_term: ATAC-seq
+          - preferred_term: CUT&Tag
+          - preferred_term: RNA sequencing
+          direction: NEGATIVE
+        - name: FGFR activation and signaling dependence
+          target: pathophysiology#FGFR-Driven RTK Signaling
+          description: Quantify FGFR4 phosphorylation, FGF8/FGFR4 RNA, downstream ERK/AKT signaling, and
+            suppression of pathway output after FGFR inhibition.
+          biological_processes:
+          - preferred_term: fibroblast growth factor receptor signaling pathway
+            term:
+              id: GO:0008543
+              label: fibroblast growth factor receptor signaling pathway
+          assays:
+          - preferred_term: phosphoproteomics
+          - preferred_term: RNA sequencing
+          direction: NEGATIVE
+        - name: Drug response and bypass
+          target: treatments#FGFR Inhibitor Therapy
+          description: Measure tumor growth, viability, apoptosis, and pathway reactivation after FGFR
+            inhibition alone or with downstream blockade.
+          assays:
+          - preferred_term: cell viability assay
+          - preferred_term: tumor growth assay
+          direction: NEGATIVE
+        controls:
+        - name: FGFR4-low FP-RMS controls
+          description: Models lacking the candidate FGFR4/FGF8/FGFR4_pY response signature.
+        - name: RAS/PI3K-altered comparator models
+          description: Models expected to bypass upstream FGFR dependence.
+        decision_criterion: The biomarker model is supported if disease-specific open chromatin at FGF8
+          regulatory elements corresponding to PAX3-FOXO1/ETS1/KDM3A-bound enhancers of FGF8, direct PAX3-FOXO1/ETS1/KDM3A
+          occupancy where measured, high FGF8/FGFR4 RNA, and FGFR4 phosphorylation jointly predict FGFR-inhibitor
+          response and pathway suppression, while discordant, RAS/PI3K-altered, or relapse/resistance-enriched
+          models show bypass or require combination downstream blockade.
+        would_support:
+        - pathophysiology#ETS1-KDM3A PAX-FOXO1 Chromatin Cofactor Module
+        - pathophysiology#FGFR-Driven RTK Signaling
+        - treatments#FGFR Inhibitor Therapy
+        would_refute:
+        - pathophysiology#FGFR-Driven RTK Signaling
+      selected_evidence:
+        snippet: We demonstrate marked tumor growth inhibition in all FP-RMS PDXs treated with single-agent
+          FGF401 (FGFR4-specific inhibitor) and single-agent lenvatinib (multikinase FGFR inhibitor)
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1/proposed_experiments/0
+      evidence_path: /discussions/1/proposed_experiments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /discussions/1
+    evidence_metadata:
+      reference: PMID:42041178
+      reference_title: Comprehensive Multiplatform Tyrosine Kinase Profiling Reveals Novel Actionable
+        FGFR Aberrations across Sarcomas Affecting the Young.
+      evidence_source: MODEL_ORGANISM
+      explanation: Provides the functional precedent for testing FGFR response biomarkers across a broader
+        FP-RMS model panel.
+    first_seen_at: '2026-09-28T17:44:02.568636+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:44:02.568636+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:44:02.568636+00:00'
+    occurrences:
+    - assertion_path: /discussions/1/proposed_experiments/0
+      evidence_path: /discussions/1/proposed_experiments/0/evidence/0
+      reference: PMID:42041178
 assessments:
   8d845f4bd01a7fe2fa3c87b33b9d1fa04e995507c47573b90b6359d406a399e2:
     input_sha256: f448ae4ed2b77bb348e490c9de3b65ff81ce2d4439b5ae5104ad73fded74e1ad
@@ -23394,3 +23558,419 @@ assessments:
       request_sha256: 88d5c7686a055efa0d2aaefb6751353bbe6968bd39f511639687850d35dfc793
       request_sha256s:
       - 88d5c7686a055efa0d2aaefb6751353bbe6968bd39f511639687850d35dfc793
+  7629ebb10de23589942c6a8e4881c8b29bf80a089b8611571476184d0c62aa85:
+    input_sha256: 66af6a79c55da8c2d14515f69a4be088336738647c791880ea24f637b590e915
+    configuration_sha256: 1524c60312dbf4d5d1437bcb91fb318c5bd948bc782ca78261011b8d0d09c84f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:44:02.568636+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.23
+            MISMATCH: 0.17
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.82
+            MISMATCH: 0.02
+          confidence: 0.73
+        /assertion/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.21
+            MISMATCH: 0.5
+          confidence: 0.26
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.35
+            MISMATCH: 0.26
+          confidence: 0.1
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6799999999999999
+            MATCH: 0.1
+            MISMATCH: 0.22
+          confidence: 0.53
+        /assertion/experiment_type/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.19
+            MISMATCH: 0.37
+          confidence: 0.17
+        /assertion/model_systems/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.2
+            MISMATCH: 0.2
+          confidence: 0.41
+        /assertion/model_systems/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.1
+            MISMATCH: 0.32
+          confidence: 0.37
+        /assertion/model_systems/0/experimental_model_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.27
+            MISMATCH: 0.35
+          confidence: 0.07
+        /assertion/model_systems/0/organism/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.4
+            MISMATCH: 0.19
+          confidence: 0.11
+        /assertion/model_systems/0/organism/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.47
+            MISMATCH: 0.15
+          confidence: 0.2
+        /assertion/model_systems/0/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.13
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/model_systems/0/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.02
+            MISMATCH: 0.66
+          confidence: 0.48
+        /assertion/model_systems/0/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.03
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/model_systems/0/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.02
+            MISMATCH: 0.68
+          confidence: 0.51
+        /assertion/model_systems/0/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.02
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/model_systems/0/modeled_mechanisms/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.69
+            MATCH: 0.2
+            MISMATCH: 0.11
+          confidence: 0.54
+        /assertion/model_systems/0/modeled_mechanisms/2/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MATCH: 0.11
+            MISMATCH: 0.18
+          confidence: 0.56
+        /assertion/model_systems/0/modeled_mechanisms/3/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.02
+            MISMATCH: 0.68
+          confidence: 0.52
+        /assertion/model_systems/0/modeled_mechanisms/3/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.02
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/perturbations/0/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.82
+            MISMATCH: 0.02
+          confidence: 0.73
+        /assertion/perturbations/0/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.81
+            MISMATCH: 0.02
+          confidence: 0.72
+        /assertion/perturbations/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.46
+            MISMATCH: 0.06
+          confidence: 0.21
+        /assertion/perturbations/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.25
+            MISMATCH: 0.53
+          confidence: 0.3
+        /assertion/perturbations/1/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.58
+            MISMATCH: 0.16
+          confidence: 0.36
+        /assertion/perturbations/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.33
+            MISMATCH: 0.19
+          confidence: 0.22
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.02
+            MISMATCH: 0.78
+          confidence: 0.67
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.04
+            MISMATCH: 0.62
+          confidence: 0.44
+        /assertion/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.01
+            MISMATCH: 0.74
+          confidence: 0.6
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.02
+            MISMATCH: 0.89
+          confidence: 0.84
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.04
+            MISMATCH: 0.8
+          confidence: 0.7
+        /assertion/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.02
+            MISMATCH: 0.84
+          confidence: 0.76
+        /assertion/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.03
+            MISMATCH: 0.76
+          confidence: 0.64
+        /assertion/readouts/0/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.08
+            MISMATCH: 0.69
+          confidence: 0.54
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.01
+            MISMATCH: 0.84
+          confidence: 0.75
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.06
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.15
+            MISMATCH: 0.39
+          confidence: 0.2
+        /assertion/readouts/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.07
+            MISMATCH: 0.46
+          confidence: 0.21
+        /assertion/readouts/1/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.04
+            MISMATCH: 0.86
+          confidence: 0.78
+        /assertion/readouts/1/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.06
+            MISMATCH: 0.79
+          confidence: 0.68
+        /assertion/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.04
+            MISMATCH: 0.81
+          confidence: 0.71
+        /assertion/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.07
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.02
+            MISMATCH: 0.83
+          confidence: 0.74
+        /assertion/readouts/2/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.11
+            MISMATCH: 0.28
+          confidence: 0.41
+        /assertion/readouts/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.2
+            MISMATCH: 0.13
+          confidence: 0.51
+        /assertion/readouts/2/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.09
+            MISMATCH: 0.26
+          confidence: 0.48
+        /assertion/readouts/2/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.08
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/readouts/2/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.09
+            MISMATCH: 0.63
+          confidence: 0.46
+        /assertion/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.02
+            MISMATCH: 0.84
+          confidence: 0.75
+        /assertion/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.04
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/controls/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.02
+            MISMATCH: 0.75
+          confidence: 0.62
+        /assertion/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.07
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.03
+            MISMATCH: 0.73
+          confidence: 0.59
+        /assertion/decision_criterion:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.02
+            MISMATCH: 0.3
+          confidence: 0.53
+        /assertion/would_support:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.24
+            MISMATCH: 0.15
+          confidence: 0.43
+        /assertion/would_refute:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.21
+            MISMATCH: 0.42
+          confidence: 0.13
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.27
+            MISMATCH: 0.12
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 57535
+        output_tokens: 3070
+      elapsed_seconds: 0.5565
+      request_sha256: ce29bc3b8bf82679674e142039d9f6c0c5daca1aa1364040cd0ba61f6aeeb20c
+      request_sha256s:
+      - ce29bc3b8bf82679674e142039d9f6c0c5daca1aa1364040cd0ba61f6aeeb20c

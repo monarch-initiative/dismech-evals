@@ -7834,6 +7834,112 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:29483297
+  028251c36cf11b08b754b9acdad3358b61ed36184292ae572a6d11311bb29895:
+    claim:
+      about:
+        disease:
+          name: Acute Ackee Fruit Intoxication
+          disease_term:
+            preferred_term: acute ackee fruit intoxication
+            term:
+              id: MONDO:0019140
+              label: acute ackee fruit intoxication
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: MCPA-CoA Formation
+            description: Oxidative decarboxylation of the keto-acid intermediate generates methylenecyclopropylacetyl-CoA.
+              Its conjugated excretion products support bioactivation in humans; direct hepatic CoA-ester
+              identification comes from experimental rats.
+            role: intermediate
+            biological_scale: MOLECULAR
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Selective Acyl-CoA Dehydrogenase Inactivation
+        description: The activated toxin interacts with susceptible enzyme active sites and can covalently
+          modify FAD.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: During inactivation, about 80% of the enzyme FAD is covalently and irreversibly modified
+          with the residual inhibition possibly resulting from modification of the protein.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:7275979
+      reference_title: Inactivation of general acyl-CoA dehydrogenase from pig kidney by a metabolite
+        of hypoglycin A.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Purified pig-kidney enzyme establishes covalent FAD modification; the percentage is
+        assay-specific.
+    first_seen_at: '2026-09-28T17:43:57.655557+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:43:57.655557+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:43:57.655557+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      reference: PMID:7275979
+  9f6687213081a77f3357940146bb5fc2fa6a2c47f74467697e18e543136e1c0a:
+    claim:
+      about:
+        disease:
+          name: Acute Ackee Fruit Intoxication
+          disease_term:
+            preferred_term: acute ackee fruit intoxication
+            term:
+              id: MONDO:0019140
+              label: acute ackee fruit intoxication
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Urinary dicarboxylic acids
+        presence: INCREASED
+        context: In two original human cases, several dicarboxylic acids were 70–1000 times the reported
+          normal values. This supports an oxidation defect but is neither a validated severity scale nor
+          a specific diagnostic signature by itself.
+        readouts:
+        - target: Impaired Fatty Acid Beta-Oxidation
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Elevated organic acids are compatible with impaired oxidation; urinary concentration
+            does not directly quantify hepatic flux.
+      selected_evidence:
+        snippet: Excretion of unusual dicarboxylic acids such as 2-ethylmalonic, 2-methylsuccinic, glutaric,
+          adipic and dicarboxylic acids with eight and 10 carbon chains were also detected in both patients.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:940578
+      reference_title: Jamaican vomiting sickness. Biochemical investigation of two cases.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: Direct biochemical observations in two patients.
+    first_seen_at: '2026-09-28T17:43:57.704673+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:43:57.704673+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:43:57.704673+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:940578
 assessments:
   fc795d7bb2633ee75740fbcc32c32d497eef573c818e599e628a76bbbed50b4b:
     input_sha256: bd125800ddafca9b5e3804c9ffa790db58bbdd86d47160b989c4a9dc2e7e0d3d
@@ -17862,3 +17968,149 @@ assessments:
       request_sha256: 7fc0079575687f156ed17cd757b0fbf9bb5b39f1bd786682b20619128ec62aa8
       request_sha256s:
       - 7fc0079575687f156ed17cd757b0fbf9bb5b39f1bd786682b20619128ec62aa8
+  c7c3fa4d232ebc8d093501014ee197b9b3f6c25592ebfe96034c9bc42b7c68cf:
+    input_sha256: 028251c36cf11b08b754b9acdad3358b61ed36184292ae572a6d11311bb29895
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:43:57.655557+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.3
+            MISMATCH: 0.12
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.42
+            MISMATCH: 0.4
+          confidence: 0.13
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.16
+            MISMATCH: 0.07
+          confidence: 0.66
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            PARTIAL: 0.26
+            MISMATCH: 0.05
+          confidence: 0.53
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            PARTIAL: 0.15
+            MISMATCH: 0.03
+          confidence: 0.73
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.35
+            MISMATCH: 0.34
+          confidence: 0.02
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6423
+        output_tokens: 270
+      elapsed_seconds: 0.3479
+      request_sha256: d5ffa57ce3c85e706af94ad5c647b1dcb6af8300c995021b7dc9790c505e8995
+      request_sha256s:
+      - d5ffa57ce3c85e706af94ad5c647b1dcb6af8300c995021b7dc9790c505e8995
+  e8fd3ae23ef8a32961905f83259a6278d1a9c6459c4897125fee667c82a0869b:
+    input_sha256: 9f6687213081a77f3357940146bb5fc2fa6a2c47f74467697e18e543136e1c0a
+    configuration_sha256: 2ac3aa8f53067b7d50ceb4582943c42c5e1d57e0c2b4b127a3d8653ae2fc28cc
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:43:57.704673+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.6
+            MISMATCH: 0.03
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.5
+            MISMATCH: 0.06
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.9
+            MISMATCH: 0.02
+          confidence: 0.86
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.77
+            MISMATCH: 0.02
+          confidence: 0.66
+        /assertion/context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.37
+            PARTIAL: 0.31
+          confidence: 0.06
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.46
+            MISMATCH: 0.04
+          confidence: 0.25
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.54
+            MISMATCH: 0.01
+          confidence: 0.3
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.01
+            PARTIAL: 0.27
+          confidence: 0.57
+        /assertion/readouts/0/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.03
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.29
+            MISMATCH: 0.17
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10388
+        output_tokens: 478
+      elapsed_seconds: 0.6297
+      request_sha256: a25f8656210abf67da1cd4644d900193289f78f193941ba3804c011acf82dfe5
+      request_sha256s:
+      - a25f8656210abf67da1cd4644d900193289f78f193941ba3804c011acf82dfe5

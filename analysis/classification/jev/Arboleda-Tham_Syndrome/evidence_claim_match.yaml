@@ -7352,6 +7352,61 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/1
       reference: PMID:37861717
+  6a8478e20faad8b81fedbebe658449d2be1a0707f02ca7a9269d207fb37f2ed7:
+    claim:
+      about:
+        disease:
+          name: Arboleda-Tham Syndrome
+          disease_term:
+            preferred_term: KAT6A syndrome
+            term:
+              id: MONDO:0014558
+              label: autosomal dominant intellectual disability-craniofacial anomalies-cardiac defects
+                syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: NMD-Mediated KAT6A Haploinsufficiency
+            conforms_to: epigenetic_machinery_neurodevelopmental_dysregulation#Epigenetic Machinery Component
+              Haploinsufficiency
+            description: Early-truncating variants (exons 1-15) are predicted to trigger nonsense-mediated
+              decay of the mutant transcript, reducing functional KAT6A dosage (haploinsufficiency). This
+              is the canonical route and is associated with milder disease.
+            biological_scale: MOLECULAR
+            mechanism_confidence: PROVISIONAL
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Dysregulated Histone H3 Acetylation
+        causal_link_type: DIRECT
+        hypothesis_groups:
+        - early_truncating_nmd_haploinsufficiency
+      selected_evidence:
+        snippet: We further demonstrate that KAT6A mutations result in dysregulation of H3K9 and H3K18
+          acetylation and altered P53 signaling.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:25728775
+      reference_title: De novo nonsense mutations in KAT6A, a lysine acetyl-transferase gene, cause a
+        syndrome including microcephaly and global developmental delay.
+      evidence_source: IN_VITRO
+      explanation: Reduced KAT6A dosage converges on dysregulated histone H3 acetylation.
+    first_seen_at: '2026-09-28T17:45:17.460278+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:17.460278+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:17.460278+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:25728775
 assessments:
   1e703f0e35b4e1cb61d7fdfcd2c093a72e85e6827c9d41232b68a1eb8c19f85b:
     input_sha256: ab4dab999b2f85492002d40684ceda64ed03de2ecbf1f8ead011c70cc48355c7
@@ -16255,3 +16310,62 @@ assessments:
       request_sha256: ab4caa6f505f498a07a1e9fd9e6ab693dda5ebdd5563bb2291539887601e6799
       request_sha256s:
       - ab4caa6f505f498a07a1e9fd9e6ab693dda5ebdd5563bb2291539887601e6799
+  4418123518ceba507126c2a9d3dbba6cec86b0a92d8f26244ea21356c78e6185:
+    input_sha256: 6a8478e20faad8b81fedbebe658449d2be1a0707f02ca7a9269d207fb37f2ed7
+    configuration_sha256: c22e1649b9ced4edc00cbeb4a24edcb08c2d007fb931bfd552aa6573aadc4e9f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:17.460278+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.52
+            MISMATCH: 0.07
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.25
+            MISMATCH: 0.04
+          confidence: 0.56
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.47
+            MISMATCH: 0.08
+          confidence: 0.2
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.52
+            MISMATCH: 0.19
+          confidence: 0.27
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.39
+            MISMATCH: 0.13
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6476
+        output_tokens: 273
+      elapsed_seconds: 0.692
+      request_sha256: 1c07e13242cd82b40f997dec91f05773ab9c01aaf37bf3414b1772cc702053c2
+      request_sha256s:
+      - 1c07e13242cd82b40f997dec91f05773ab9c01aaf37bf3414b1772cc702053c2

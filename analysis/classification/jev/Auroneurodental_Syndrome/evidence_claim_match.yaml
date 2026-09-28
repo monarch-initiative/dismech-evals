@@ -8769,6 +8769,57 @@ inputs:
     - assertion_path: /diagnosis/2
       evidence_path: /diagnosis/2/evidence/0
       reference: PMID:34805998
+  f216dc4c402f0b774bf62140129fb934e64e8ad7921be3449fb5155e3cbe8e76:
+    claim:
+      about:
+        disease:
+          name: Auroneurodental Syndrome
+          disease_term:
+            preferred_term: auroneurodental syndrome
+            term:
+              id: MONDO:0970998
+              label: auroneurodental syndrome
+        context:
+        - path: /pathophysiology/10
+          value:
+            name: Reduced Otolith Size
+            biological_scale: TISSUE
+            description: Transient F0 naa80 CRISPR larvae have smaller otoliths. Otolith anatomy is a
+              zebrafish model finding, without evidence that the human syndrome has the same lesion.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: High-frequency sensorineural hearing impairment
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Reduced otolith size accompanies the larval acoustic-response defect. Whether it
+          mediates that response or informs the specific human cochlear lesion is unresolved.
+      selected_evidence:
+        snippet: Moreover, the KOs demonstrated a reduced acoustic startle response compared with controls
+          (Fig 6I), suggesting a hearing impairment.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/10/downstream/0
+      evidence_path: /pathophysiology/10/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/10
+    evidence_metadata:
+      reference: PMID:39384430
+      reference_title: Naa80 is required for actin N-terminal acetylation and normal hearing in zebrafish.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: The coincident larval findings support a hypothesis rather than a resolved human mechanism.
+    first_seen_at: '2026-09-28T17:45:48.921778+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:48.921778+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:48.921778+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/10/downstream/0
+      evidence_path: /pathophysiology/10/downstream/0/evidence/0
+      reference: PMID:39384430
 assessments:
   1dc37955bd0786e2997657d2b6a7028e3f8ae3748e2e58cd27b2343c7ab86b33:
     input_sha256: c7ce0ceec6dc4e4405da293258b2ffa04254483ed695c2a5ae9e1f3c2c715a14
@@ -18663,3 +18714,62 @@ assessments:
       request_sha256: b044baad9851b9e9cdaa3157dadb456b111d5f8bae7e490d346772271614ed3f
       request_sha256s:
       - b044baad9851b9e9cdaa3157dadb456b111d5f8bae7e490d346772271614ed3f
+  d80c2475b5ebe69459b4ae41d2ec627f704135618aaacfdda14c66d9a714aa9b:
+    input_sha256: f216dc4c402f0b774bf62140129fb934e64e8ad7921be3449fb5155e3cbe8e76
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:48.921778+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.04
+            PARTIAL: 0.48
+          confidence: 0.23
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.05
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.02
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.05
+            PARTIAL: 0.56
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.21
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.49
+            PARTIAL: 0.36
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6392
+        output_tokens: 280
+      elapsed_seconds: 0.5853
+      request_sha256: 23f02391ada511e9f087dd1bc5c5ca91d9ec035b24e41bcb4e4b415f9b3eab76
+      request_sha256s:
+      - 23f02391ada511e9f087dd1bc5c5ca91d9ec035b24e41bcb4e4b415f9b3eab76

@@ -5186,6 +5186,118 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/4
       reference: PMID:42419530
+  f26eeb0786ff940596c058361e409e6a2aab47f5e7e8c28ec992c8467ffec9ae:
+    claim:
+      about:
+        disease:
+          name: Central Nervous System Germ Cell Tumor
+          disease_term:
+            preferred_term: central nervous system germ cell tumor
+            term:
+              id: MONDO:0003000
+              label: central nervous system germ cell tumor
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: controversy_localized_nggct_radiation_field
+        prompt: For localized CNS NGGCT that responds to induction therapy, what radiation field preserves
+          disease control, especially in the spine, while reducing neurocognitive, endocrine, vascular,
+          and second-neoplasm risk when the protocol-defined dose schedule is held constant?
+        kind: CONTROVERSY
+        status: OPEN
+        attaches_to:
+        - has_subtypes#Central Nervous System Nongerminomatous Germ Cell Tumor
+        rationale: ACNS1123 gave 30.6 Gy whole-ventricular irradiation with a boost bringing the tumor-bed
+          total to 54 Gy in 66 response-qualified patients. Eight relapsed and every failure involved
+          the spine; central dosimetry review found protocol-conforming targets and dose in 62 of 66 patients,
+          and none of the four patients with deviations progressed. A separate pooled analysis of four
+          prospective trials and two national protocol cohorts found no association between focal or whole-ventricular
+          radiation and metastatic rather than local relapse among patients who had already failed treatment.
+          Conditioning on failure and omitting field-specific denominators for all treated patients means
+          that result cannot estimate field-specific failure incidence or rebut the ACNS1123 pattern.
+          The seed review describes optimal field and dose as controversial and minimizing long-term sequelae
+          while preserving control as an unresolved challenge. Comparative disease-control and late-effect
+          evidence is missing; no universal conclusion that either craniospinal or reduced-field radiation
+          is optimal is warranted. This question is intentionally limited to response-qualified localized
+          NGGCT and field selection at a fixed protocol-defined dose; dose optimization and germinoma
+          protocols require separate evaluation.
+        proposed_experiments:
+        - experiment_id: exp_localized_nggct_risk_adapted_radiation_trial
+          name: Risk-adapted radiation field trial with molecular residual-disease surveillance
+          description: In a prospective international trial, centrally confirm localized NGGCT, induction
+            response, histologic composition, serum and CSF markers, and second-look pathology. Compare
+            protocol-defined radiation fields under contemporary protocol consensus and ethical oversight
+            while embedding serial CSF molecular residual-disease testing and lifelong late-effect follow-up.
+          experiment_type:
+            preferred_term: randomized risk-adapted radiation field trial
+          model_systems:
+          - name: Response-qualified localized CNS NGGCT cohort
+            description: Stratify by complete versus partial response, pure versus mixed histology, residual
+              teratoma, marker status, age, sex, location, and protocol-defined molecular residual disease.
+          perturbations:
+          - name: Protocol-defined radiation-field assignment
+            target: has_subtypes#Central Nervous System Nongerminomatous Germ Cell Tumor
+            description: Compare reduced ventricular or ventricular-plus-spinal strategies with a consensus
+              broader-field control, holding the prescribed dose schedule and systemic therapy constant
+              and using centrally reviewed dose-volume constraints.
+          readouts:
+          - name: Disease-control and failure geography
+            target: has_subtypes#Central Nervous System Nongerminomatous Germ Cell Tumor
+            description: Measure event-free and overall survival, local, ventricular, spinal, and disseminated
+              relapse, salvage success, serial tumor markers, and CSF molecular residual disease.
+            assays:
+            - preferred_term: magnetic resonance surveillance
+            - preferred_term: cerebrospinal-fluid molecular residual-disease assay
+            direction: THRESHOLD_DEPENDENT
+          - name: Long-term treatment burden
+            target: has_subtypes#Central Nervous System Nongerminomatous Germ Cell Tumor
+            description: Prospectively assess neurocognition, school and employment function, endocrine
+              replacement, growth, hearing, vascular events, and secondary neoplasms for at least ten
+              years.
+            assays:
+            - preferred_term: longitudinal late-effect assessment
+            direction: NEGATIVE
+          controls:
+          - name: Central treatment-quality control
+            description: Review pathology, response, second-look surgery, imaging, target contours, dosimetry,
+              and protocol adherence before or during treatment.
+          - name: Prespecified competing-risk analysis
+            description: Lock noninferiority and late-effect estimands, account for salvage and competing
+              mortality, and report every failure location rather than only aggregate progression-free
+              survival.
+          decision_criterion: A reduced field is acceptable only if it meets a prespecified noninferiority
+            margin for disease control without an excess of spinal or disseminated relapse and produces
+            a clinically meaningful late-effect benefit. If baseline or on-treatment CSF molecular residual
+            disease reproducibly identifies spinal risk, test a biomarker-adapted field strategy prospectively
+            rather than assigning a field from association alone. Similar disease control without measurable
+            long-term benefit does not justify field reduction.
+      selected_evidence:
+        snippet: In our analysis, focal or whole-ventricular radiation therapy was not associated with
+          an increased risk of metastatic relapses.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35218656
+      reference_title: 'Pattern of treatment failures in patients with central nervous system non-germinomatous
+        germ cell tumors (CNS-NGGCT): A pooled analysis of clinical trials.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This case-only failure cohort describes metastatic versus local relapse patterns among
+        patients who failed. Without field-specific denominators among all treated patients, it cannot
+        estimate comparative failure incidence or establish that reduced fields are noninferior.
+    first_seen_at: '2026-09-28T17:48:59.289662+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:48:59.289662+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:48:59.289662+00:00'
+    occurrences:
+    - assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/2
+      reference: PMID:35218656
 assessments:
   4a7a5458c968285b4a29358c23e64693e7ef01452eb70bd00b3e891669c6815a:
     input_sha256: e56683f939f7f764e9c0722eac7f83c079e0e45845c058454bfcdbbb136b318e
@@ -12900,3 +13012,251 @@ assessments:
       request_sha256: c4862c69282ab115a35a997c4e726dd1ac2536b37a26257cf2399aec3ac2b9ab
       request_sha256s:
       - c4862c69282ab115a35a997c4e726dd1ac2536b37a26257cf2399aec3ac2b9ab
+  1ff20dece7bae93b5ce7768e5b3523115c521d22e15adbb958a7fb29a92c625f:
+    input_sha256: f26eeb0786ff940596c058361e409e6a2aab47f5e7e8c28ec992c8467ffec9ae
+    configuration_sha256: a986e2165e3fcc83b2e78c4e8ddd0da7e7b556ac7fb77fc8d8da051e1e8d5543
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:48:59.289662+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.41
+            MATCH: 0.09
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.03
+            MATCH: 0.82
+          confidence: 0.72
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.66
+            MATCH: 0.19
+          confidence: 0.49
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.39
+            MATCH: 0.05
+          confidence: 0.34
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.7
+            MATCH: 0.15
+          confidence: 0.55
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.9
+            MATCH: 0.01
+          confidence: 0.85
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.16
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.42
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.8
+            MATCH: 0.07
+          confidence: 0.71
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.75
+            MATCH: 0.02
+          confidence: 0.63
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.76
+            MATCH: 0.02
+          confidence: 0.64
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/proposed_experiments/0/model_systems/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.44
+            MATCH: 0.15
+          confidence: 0.16
+        /assertion/proposed_experiments/0/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.72
+            MATCH: 0.02
+          confidence: 0.58
+        /assertion/proposed_experiments/0/perturbations/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.35
+            MATCH: 0.1
+          confidence: 0.33
+        /assertion/proposed_experiments/0/perturbations/0/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.14
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/proposed_experiments/0/perturbations/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.44
+            MATCH: 0.05
+          confidence: 0.27
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.36
+            MATCH: 0.08
+          confidence: 0.34
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.15
+            MATCH: 0.4
+          confidence: 0.17
+        /assertion/proposed_experiments/0/readouts/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.44
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/proposed_experiments/0/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.81
+            MATCH: 0.04
+          confidence: 0.71
+        /assertion/proposed_experiments/0/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.87
+            MATCH: 0.02
+          confidence: 0.81
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.88
+            MATCH: 0.01
+          confidence: 0.83
+        /assertion/proposed_experiments/0/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.87
+        /assertion/proposed_experiments/0/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.87
+            MATCH: 0.06
+          confidence: 0.8
+        /assertion/proposed_experiments/0/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/proposed_experiments/0/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.92
+            MATCH: 0.01
+          confidence: 0.88
+        /assertion/proposed_experiments/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.9
+            MATCH: 0.01
+          confidence: 0.85
+        /assertion/proposed_experiments/0/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/proposed_experiments/0/controls/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.94
+            MATCH: 0.01
+          confidence: 0.91
+        /assertion/proposed_experiments/0/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.88
+            MATCH: 0.02
+          confidence: 0.83
+        /assertion/proposed_experiments/0/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.86
+            MATCH: 0.01
+          confidence: 0.79
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.75
+            MATCH: 0.01
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 33466
+        output_tokens: 1853
+      elapsed_seconds: 0.4715
+      request_sha256: ade5088c89750b172a682f225b9214e9f0726e59f770a5c484c098cfa6078ca2
+      request_sha256s:
+      - ade5088c89750b172a682f225b9214e9f0726e59f770a5c484c098cfa6078ca2

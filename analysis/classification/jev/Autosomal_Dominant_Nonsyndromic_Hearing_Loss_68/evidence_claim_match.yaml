@@ -6125,6 +6125,62 @@ inputs:
     - assertion_path: /external_assertions/0
       evidence_path: /external_assertions/0/evidence/0
       reference: PMID:41351289
+  6d1dcbc21aaca113e9bbab83a4c41d199271b59386291a9fcdb31d2a2d151d21:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Nonsyndromic Hearing Loss 68
+          disease_term:
+            preferred_term: autosomal dominant nonsyndromic hearing loss 68
+            term:
+              id: MONDO:0014740
+              label: autosomal dominant nonsyndromic hearing loss 68
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Progressive Sensorineural Hearing Loss
+        biological_scale: ORGANISM
+        conforms_to: sensorineural_hair_cell_loss#Progressive Sensorineural Hearing Loss
+        description: 'The clinical endpoint: bilateral sensorineural hearing loss that begins after speech
+          is acquired and worsens for the rest of life. In the founding family the rate was measured by
+          regressing threshold on age and came to 1.2 to 1.6 dB per year at every frequency, which is
+          the one quantitative statement of pace the disease has.
+
+          The mouse null reaches the same endpoint far faster - early onset, starting high and rapidly
+          involving everything - which is what a complete absence of the protein does rather than what
+          a heterozygous interfering allele does.'
+        biological_processes:
+        - preferred_term: sensory perception of sound
+          modifier: DECREASED
+          term:
+            id: GO:0007605
+            label: sensory perception of sound
+      selected_evidence:
+        snippet: Its complete absence in mice leads to early onset progressive hearing loss starting at
+          the high frequencies and rapidly involving all frequencies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/8
+      evidence_path: /pathophysiology/8/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25816005
+      reference_title: HOMER2, a stereociliary scaffolding protein, is essential for normal hearing in
+        humans and mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: The mouse endpoint, cited to show that the same audiometric shape emerges from total
+        loss of the protein, at a very different pace.
+    first_seen_at: '2026-09-28T17:45:59.969054+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:59.969054+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:59.969054+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/8
+      evidence_path: /pathophysiology/8/evidence/2
+      reference: PMID:25816005
 assessments:
   1fd298acf48038cb19cdfc88496513e91d01dea417051ca0f9eca58c27273d45:
     input_sha256: a1ebc43f99f54711a65e0f3710b0533864199b5c26e9bb2be1fc769540d40df3
@@ -14231,3 +14287,83 @@ assessments:
       request_sha256: ee9792b5671bb6f994f3995c8818fad0da7f3da4cc1b335fc9ce007088ce6804
       request_sha256s:
       - ee9792b5671bb6f994f3995c8818fad0da7f3da4cc1b335fc9ce007088ce6804
+  ae836b542f6077b1d8bd6ebe1203509dd1d50da6ff2e886d0f655b95f5dce466:
+    input_sha256: 6d1dcbc21aaca113e9bbab83a4c41d199271b59386291a9fcdb31d2a2d151d21
+    configuration_sha256: 744e455f4f59b878cf61c6ce35011718f2cddd014aa53e16d49fdb1beda64ae0
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:59.969054+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.6
+            MATCH: 0.06
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.37
+            MATCH: 0.18
+          confidence: 0.17
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.33
+            MATCH: 0.28
+          confidence: 0.08
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.12
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.36
+            MATCH: 0.07
+          confidence: 0.35
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.67
+            MATCH: 0.05
+          confidence: 0.51
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.24
+            MATCH: 0.44
+          confidence: 0.16
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.12
+            MATCH: 0.7
+          confidence: 0.56
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.25
+            MATCH: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9971
+        output_tokens: 438
+      elapsed_seconds: 0.557
+      request_sha256: 83376f6d3845e6bb2a44bedaea30e1c089973ed7f5b920a9625c60ffacfbae3a
+      request_sha256s:
+      - 83376f6d3845e6bb2a44bedaea30e1c089973ed7f5b920a9625c60ffacfbae3a

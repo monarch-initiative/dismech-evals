@@ -1,0 +1,1850 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Coronary_Arterial_Fistulas.yaml
+disease: Coronary Arterial Fistulas
+inventory:
+  source_sha256: e75b6756097ff6ef6b7c84e6ce3bc3dcb3ad3e3cbce3e72163fb04450854b58a
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+  observed_at: '2026-09-28T18:42:54.078357+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  3a21276150acbf0b92cf0bae38e60d223056ad200910fbbd3372c2063985b3d0:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Coronary runoff and hemodynamic complications
+        description: Medium or large fistulas can enlarge and produce coronary steal, distal myocardial
+          ischemia, chamber enlargement, arrhythmia, myocardial infarction, or congestive heart failure.
+      selected_evidence:
+        snippet: Small CAFs are generally asymptomatic and can close over time, while some untreated medium
+          or large CAFs can enlarge, leading to clinical sequelae such as cardiac chamber enlargement
+          or myocardial ischemia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34238550
+      reference_title: 'Coronary Artery Fistulas: Indications, Techniques, Outcomes, and Complications
+        of Transcatheter Fistula Closure.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports the size-dependent progression from CAF anatomy to chamber enlargement
+        and myocardial ischemia.
+    first_seen_at: '2026-09-28T17:50:49.702796+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:34238550
+  8487fc5341f8e9c8e1b79508b82107bb48ef2fd7a52fbd185cfe585ea117d063:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Abnormal coronary artery-to-chamber or vessel shunt
+        description: Developmental or acquired disruption of coronary vascular anatomy creates a persistent
+          communication from a coronary artery to a cardiac chamber, great vessel, or other structure,
+          bypassing the myocardial capillary bed.
+        cell_types:
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: vasculature development
+          modifier: ABNORMAL
+          term:
+            id: GO:0001944
+            label: vasculature development
+      selected_evidence:
+        snippet: These fistulas are congenital or acquired coronary artery abnormalities in which blood
+          is shunted into a cardiac chamber, great vessel, or other structure, bypassing the myocardial
+          capillary network.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This clinical review defines the core abnormal coronary shunt and its bypass of the
+        myocardial capillary bed.
+    first_seen_at: '2026-09-28T17:50:49.463807+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:16125261
+  663ae88ceb2ee29f91ba1a2ef9fd4a704b9250d27c6a141882c5acc71b702f01:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Coronary runoff and hemodynamic complications
+            description: Medium or large fistulas can enlarge and produce coronary steal, distal myocardial
+              ischemia, chamber enlargement, arrhythmia, myocardial infarction, or congestive heart failure.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Myocardial ischemia
+        causal_link_type: DIRECT
+        description: Preferential runoff into the low-resistance fistula steals flow from the distal coronary
+          bed, so perfusion of myocardium supplied beyond the fistula origin falls.
+      selected_evidence:
+        snippet: Small CAFs are generally asymptomatic and can close over time, while some untreated medium
+          or large CAFs can enlarge, leading to clinical sequelae such as cardiac chamber enlargement
+          or myocardial ischemia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:34238550
+      reference_title: 'Coronary Artery Fistulas: Indications, Techniques, Outcomes, and Complications
+        of Transcatheter Fistula Closure.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports myocardial ischemia as a sequela of untreated medium or large
+        CAFs.
+    first_seen_at: '2026-09-28T17:50:50.114195+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:34238550
+  24a625cdd20a02272baadc8c28cd30b85e8c467ecea70e1bc626df01f74ff5e6:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Coronary artery fistula
+        diagnostic: true
+        description: Abnormal communication involving a coronary artery is the defining lesion.
+        phenotype_term:
+          preferred_term: Coronary artery fistula
+          term:
+            id: HP:0011641
+            label: Coronary artery fistula
+      selected_evidence:
+        snippet: Coronary artery fistulas vary widely in their morphological appearance and presentation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This establishes coronary artery fistula as the defining morphologic abnormality.
+    first_seen_at: '2026-09-28T17:50:50.114981+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:16125261
+  e0c24a96724b11cf379675f4bae60f0823ac82133138a6bd0a21699ebfb3cae7:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Congestive heart failure
+        description: Significant shunting can produce volume overload and heart-failure symptoms.
+        phenotype_term:
+          preferred_term: Congestive heart failure
+          term:
+            id: HP:0001635
+            label: Congestive heart failure
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists congestive heart failure among CAF presentations.
+    first_seen_at: '2026-09-28T17:50:50.133084+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:16125261
+  9b5c19a9f3a79748aad7def29320c4f9f5ab723feada93891d7de899ce767750:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Myocardial ischemia
+        description: Coronary steal from a medium or large fistula can reduce myocardial perfusion.
+        phenotype_term:
+          preferred_term: Myocardial ischemia
+      selected_evidence:
+        snippet: Small CAFs are generally asymptomatic and can close over time, while some untreated medium
+          or large CAFs can enlarge, leading to clinical sequelae such as cardiac chamber enlargement
+          or myocardial ischemia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34238550
+      reference_title: 'Coronary Artery Fistulas: Indications, Techniques, Outcomes, and Complications
+        of Transcatheter Fistula Closure.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports myocardial ischemia as a clinical sequela of untreated medium
+        or large CAFs.
+    first_seen_at: '2026-09-28T17:50:50.132099+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:34238550
+  5b707d07670bb33c41b2fb048b22f79e2b04ec61793a99131d3edf4c97a976c1:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Myocardial infarction
+        description: Coronary fistulas can present with myocardial infarction.
+        phenotype_term:
+          preferred_term: Myocardial infarction
+          term:
+            id: HP:0001658
+            label: Myocardial infarction
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists myocardial infarction among CAF presentations.
+    first_seen_at: '2026-09-28T17:50:50.363650+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:16125261
+  6b683b3655ef98eec787c25c19027aad886d43010a1da222574ee3f05b6b179c:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Arrhythmia
+        description: Coronary fistulas can present with arrhythmias.
+        phenotype_term:
+          preferred_term: Arrhythmia
+          term:
+            id: HP:0011675
+            label: Arrhythmia
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists arrhythmias among CAF presentations.
+    first_seen_at: '2026-09-28T17:50:50.398536+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:16125261
+  dfd25a113aaaa182d0341a71420067da6819615cc30df643677c664a8c927855:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Angina
+        description: Coronary fistulas can present with angina.
+        phenotype_term:
+          preferred_term: Chest pain
+          term:
+            id: HP:0100749
+            label: Chest pain
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists angina among CAF presentations; chest pain is the locally valid HPO
+        mapping.
+    first_seen_at: '2026-09-28T17:50:50.440503+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:16125261
+  8d75692cf839b8c112caa6557ed8532259778084eddff39a332ea10cc5332292:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Dyspnea
+        description: Coronary fistulas can present with dyspnea.
+        phenotype_term:
+          preferred_term: Dyspnea
+          term:
+            id: HP:0002094
+            label: Dyspnea
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists dyspnea among CAF presentations.
+    first_seen_at: '2026-09-28T17:50:50.440085+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: PMID:16125261
+  c95a939e614370d8aba2d151305d67037cf85a6601268541359a7872b773f230:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Endocarditis
+        description: Coronary fistulas can present with endocarditis.
+        phenotype_term:
+          preferred_term: Endocarditis
+          term:
+            id: HP:0100584
+            label: Endocarditis
+      selected_evidence:
+        snippet: The patients with coronary fistulas may present with dyspnea, congestive heart failure,
+          angina, endocarditis, arrhythmias, or myocardial infarction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review lists endocarditis among CAF presentations.
+    first_seen_at: '2026-09-28T17:50:50.644154+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      reference: PMID:16125261
+  a7d19dcd09695170bd44d2bba9a285255c03c0f649a9ccd191a3078ebd47738e:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Continuous murmur
+        diagnostic: true
+        description: A continuous murmur is a highly suggestive physical finding for coronary artery fistula.
+        phenotype_term:
+          preferred_term: Continuous murmur
+          term:
+            id: HP:0031670
+            label: Continuous heart murmur
+        reports_on:
+        - target: Abnormal coronary artery-to-chamber or vessel shunt
+          relationship: READOUT_OF
+          endpoint_context: DIAGNOSTIC
+          description: Flow across the fistula continues through both systole and diastole because the
+            pressure gradient never reverses, so the continuous murmur heard at the chest wall is an auscultatory
+            readout of the shunt itself rather than a consequence of it.
+      selected_evidence:
+        snippet: A continuous murmur is often present and is highly suggestive of a coronary artery fistula.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review supports continuous murmur as a suggestive clinical finding.
+    first_seen_at: '2026-09-28T17:50:50.675362+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      reference: PMID:16125261
+  747c7dc4a5d96ccc3426fb2782a9ac2563786766c11f24980a6c04ff51c4479f:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Transcatheter fistula closure
+        description: Percutaneous transcatheter closure is used increasingly for suitable CAF anatomy,
+          while balancing risks such as myocardial infarction, device embolization, and recanalization.
+        treatment_term:
+          preferred_term: Embolization Therapy
+          term:
+            id: NCIT:C15230
+            label: Embolization Therapy
+      selected_evidence:
+        snippet: With the advancement of transcatheter equipment and techniques, CAFs have been increasingly
+          closed using a percutaneous approach.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34238550
+      reference_title: 'Coronary Artery Fistulas: Indications, Techniques, Outcomes, and Complications
+        of Transcatheter Fistula Closure.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports transcatheter closure as a contemporary CAF intervention.
+    first_seen_at: '2026-09-28T17:50:50.737893+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:34238550
+  3cf2d349808cb8399ba0bf4b1d9d12b8923c4d0c04a2e5fef416d742cb8726e6:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context:
+        - path: /treatments/0
+          value:
+            name: Transcatheter fistula closure
+            description: Percutaneous transcatheter closure is used increasingly for suitable CAF anatomy,
+              while balancing risks such as myocardial infarction, device embolization, and recanalization.
+            treatment_term:
+              preferred_term: Embolization Therapy
+              term:
+                id: NCIT:C15230
+                label: Embolization Therapy
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Abnormal coronary artery-to-chamber or vessel shunt
+        treatment_effect: INHIBITS
+        description: Coils or an occluder deployed in the fistulous track abolish the abnormal communication,
+          ending the runoff and returning coronary flow to the myocardial capillary bed.
+      selected_evidence:
+        snippet: With the advancement of transcatheter equipment and techniques, CAFs have been increasingly
+          closed using a percutaneous approach.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:34238550
+      reference_title: 'Coronary Artery Fistulas: Indications, Techniques, Outcomes, and Complications
+        of Transcatheter Fistula Closure.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports transcatheter closure as a contemporary CAF intervention.
+    first_seen_at: '2026-09-28T17:50:50.764901+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:34238550
+  1993c5a7b0d2bdc7aa716bf98f1a350787177c6e83e743cd4f276675b733eff9:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Surgical correction for at-risk fistulas
+        description: Symptomatic patients and selected asymptomatic patients at risk for future complications
+          may undergo closure by surgical correction when anatomy is better suited to an operative approach.
+        therapeutic_modality: SURGERY
+        treatment_term:
+          preferred_term: surgical procedure
+          term:
+            id: NCIT:C15329
+            label: Surgical Procedure
+      selected_evidence:
+        snippet: Treatment is advocated for symptomatic patients and for those asymptomatic patients who
+          are at risk for future complications.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports intervention in symptomatic or high-risk asymptomatic patients.
+    first_seen_at: '2026-09-28T17:50:50.876202+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:16125261
+  fae5b60e71ecb92b5dc781347eec719ea7fb3017786757faa7d3677939f3f895:
+    claim:
+      about:
+        disease:
+          name: Coronary Arterial Fistulas
+          disease_term:
+            preferred_term: coronary arterial fistulas
+            term:
+              id: MONDO:0016081
+              label: coronary arterial fistulas
+        context:
+        - path: /treatments/1
+          value:
+            name: Surgical correction for at-risk fistulas
+            description: Symptomatic patients and selected asymptomatic patients at risk for future complications
+              may undergo closure by surgical correction when anatomy is better suited to an operative
+              approach.
+            therapeutic_modality: SURGERY
+            treatment_term:
+              preferred_term: surgical procedure
+              term:
+                id: NCIT:C15329
+                label: Surgical Procedure
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Abnormal coronary artery-to-chamber or vessel shunt
+        treatment_effect: INHIBITS
+        description: Surgical ligation or patch closure of the fistulous connection removes the abnormal
+          shunt directly, and is chosen over the percutaneous route when the anatomy is unsuitable for
+          a catheter-delivered device.
+      selected_evidence:
+        snippet: Treatment is advocated for symptomatic patients and for those asymptomatic patients who
+          are at risk for future complications.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:16125261
+      reference_title: 'Coronary artery fistulas: clinical and therapeutic considerations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports intervention in symptomatic or high-risk asymptomatic patients.
+    first_seen_at: '2026-09-28T17:50:50.999670+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T18:42:54.078357+00:00'
+    active: true
+    active_as_of: '2026-09-28T18:42:54.078357+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:16125261
+assessments:
+  e6b6e5667e6d0fd393773331e5ed7801d3bd8204d07c7a79af6c29c05ac4ff20:
+    input_sha256: 3a21276150acbf0b92cf0bae38e60d223056ad200910fbbd3372c2063985b3d0
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:49.702796+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.88
+            MATCH: 0.12
+          confidence: 0.81
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.52
+            MATCH: 0.44
+          confidence: 0.29
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.93
+            MATCH: 0.07
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4306
+        output_tokens: 178
+      elapsed_seconds: 0.2946
+      request_sha256: 1d790abc9fdc19bb6f3831b51e44a4ad1ce0697b39cecbaa7ee81fd6f471dcca
+      request_sha256s:
+      - 1d790abc9fdc19bb6f3831b51e44a4ad1ce0697b39cecbaa7ee81fd6f471dcca
+  91ca30470a29386c4fc5c262d410278d5c395f26a6250b499c1756e7ffdf111e:
+    input_sha256: 8487fc5341f8e9c8e1b79508b82107bb48ef2fd7a52fbd185cfe585ea117d063
+    configuration_sha256: 4edccc3918204edb4facb535a42ddcf78fcb401403a32583e5a5a3c60d273f4f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:49.463807+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+            MATCH: 0.82
+          confidence: 0.73
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+            MATCH: 0.98
+          confidence: 0.97
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            MATCH: 0.12
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            PARTIAL: 0.49
+            MATCH: 0.16
+          confidence: 0.24
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            MATCH: 0.1
+            PARTIAL: 0.38
+          confidence: 0.29
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            PARTIAL: 0.46
+            MATCH: 0.12
+          confidence: 0.19
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.6799999999999999
+            PARTIAL: 0.26
+          confidence: 0.53
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+            MATCH: 0.9
+          confidence: 0.86
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.42
+            MATCH: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11514
+        output_tokens: 543
+      elapsed_seconds: 0.3606
+      request_sha256: 3553206166eeb2a00a5394426935d3e45753161143c3f1fbf5cf2b7a7b42cc98
+      request_sha256s:
+      - 3553206166eeb2a00a5394426935d3e45753161143c3f1fbf5cf2b7a7b42cc98
+  74885a0b1176c4ba299f11cb862348a8408b0e73b5f2206acc2d49303d05e8e5:
+    input_sha256: 663ae88ceb2ee29f91ba1a2ef9fd4a704b9250d27c6a141882c5acc71b702f01
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.114195+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.3
+            PARTIAL: 0.64
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.87
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.3
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.1
+            PARTIAL: 0.72
+          confidence: 0.57
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.69
+            PARTIAL: 0.27
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6397
+        output_tokens: 271
+      elapsed_seconds: 0.2376
+      request_sha256: 7f5b16e96516bfc8b390023599a846a28cf8c63c06e0fb3b95507ab1cbdc29da
+      request_sha256s:
+      - 7f5b16e96516bfc8b390023599a846a28cf8c63c06e0fb3b95507ab1cbdc29da
+  837f912698b0ab85d14aa99cd3ddfc086d47c8f5b6dd26dfe231fd5a0907f3c0:
+    input_sha256: 24a625cdd20a02272baadc8c28cd30b85e8c467ecea70e1bc626df01f74ff5e6
+    configuration_sha256: 048ea02a8ae6c43b5302f8ee07a5485970878a192df74d966778faa136a5ac5b
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.114981+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.55
+            MISMATCH: 0.24
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.37
+            MISMATCH: 0.24
+          confidence: 0.09
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            PARTIAL: 0.32
+            MISMATCH: 0.12
+          confidence: 0.34
+        /assertion/diagnostic:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.44
+            MISMATCH: 0.47
+          confidence: 0.21
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.38
+            MISMATCH: 0.56
+          confidence: 0.35
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.38
+            MISMATCH: 0.12
+          confidence: 0.25
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.44
+            MISMATCH: 0.13
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8115
+        output_tokens: 371
+      elapsed_seconds: 0.2674
+      request_sha256: 79d4aa35f86a60daf2a5c497d89fab1beb4363401a944c477611a278224b1d3d
+      request_sha256s:
+      - 79d4aa35f86a60daf2a5c497d89fab1beb4363401a944c477611a278224b1d3d
+  217fb9db0790af643acda0e6a59a53497d45405bff39f018e61c6198c3255a21:
+    input_sha256: e0c24a96724b11cf379675f4bae60f0823ac82133138a6bd0a21699ebfb3cae7
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.133084+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.96
+            PARTIAL: 0.04
+          confidence: 0.94
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.85
+            PARTIAL: 0.08
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.38
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.98
+            PARTIAL: 0.02
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7197
+        output_tokens: 317
+      elapsed_seconds: 0.2632
+      request_sha256: 316401a508a1988e1398332930d33f97fcb9b63b9b3b47134389f36bdf37d590
+      request_sha256s:
+      - 316401a508a1988e1398332930d33f97fcb9b63b9b3b47134389f36bdf37d590
+  5e0b845454a9c467c6998da8af26f21db015dbeea06049f47f7113d5a4a0d1bd:
+    input_sha256: 9b5c19a9f3a79748aad7def29320c4f9f5ab723feada93891d7de899ce767750
+    configuration_sha256: b48e73c5b45467e94c6a15c6aa24f2f61330dde260083854b2ad09cfd0a2fb1c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.132099+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.82
+            PARTIAL: 0.12
+          confidence: 0.73
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.45
+            PARTIAL: 0.39
+          confidence: 0.16
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6234
+        output_tokens: 268
+      elapsed_seconds: 0.2642
+      request_sha256: a6cab9c289c58a7433c65bfeb337ba83823b31b10234c213224e92c4f8981d61
+      request_sha256s:
+      - a6cab9c289c58a7433c65bfeb337ba83823b31b10234c213224e92c4f8981d61
+  929fa92a4b049ab1296c353a07d35e9ff45117e52ce82a0a93f70f498e7a08b3:
+    input_sha256: 5b707d07670bb33c41b2fb048b22f79e2b04ec61793a99131d3edf4c97a976c1
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.363650+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.82
+            MISMATCH: 0.07
+          confidence: 0.73
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7202
+        output_tokens: 316
+      elapsed_seconds: 0.2583
+      request_sha256: f2b3c2b18cbc4a14481b0ecdebf4982714a9d6a8fdb281f6dd95f69ba01c316f
+      request_sha256s:
+      - f2b3c2b18cbc4a14481b0ecdebf4982714a9d6a8fdb281f6dd95f69ba01c316f
+  91a1c4fa3366096551822e48f51fdafc575509aed784e9f8e799607103c90730:
+    input_sha256: 6b683b3655ef98eec787c25c19027aad886d43010a1da222574ee3f05b6b179c
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.398536+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.1
+            MATCH: 0.8
+          confidence: 0.71
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.01
+            MATCH: 0.98
+          confidence: 0.98
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7190
+        output_tokens: 316
+      elapsed_seconds: 0.2432
+      request_sha256: b47c3e79e65be529fcd655a0235dbd75aa7b881618f471627988f6f7bfff1373
+      request_sha256s:
+      - b47c3e79e65be529fcd655a0235dbd75aa7b881618f471627988f6f7bfff1373
+  b01037385b102eed534c900238246c42d88978eba714e035efd73812ae27d2f5:
+    input_sha256: dfd25a113aaaa182d0341a71420067da6819615cc30df643677c664a8c927855
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.440503+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+            MATCH: 0.95
+          confidence: 0.92
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.12
+            MATCH: 0.81
+          confidence: 0.71
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.13
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.2
+            MATCH: 0.74
+          confidence: 0.62
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+            MATCH: 0.86
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7184
+        output_tokens: 316
+      elapsed_seconds: 0.2704
+      request_sha256: 8ee675a3c3cdf9c5e5339ff6aac7d3a4adf8b72901d98611e95c6ed0342620e9
+      request_sha256s:
+      - 8ee675a3c3cdf9c5e5339ff6aac7d3a4adf8b72901d98611e95c6ed0342620e9
+  e8a1e6310e6daa935bd6f8e02d5d1cea8bdd069adeaabd44ca2586115f6429d9:
+    input_sha256: 8d75692cf839b8c112caa6557ed8532259778084eddff39a332ea10cc5332292
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.440085+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.03
+            MATCH: 0.92
+          confidence: 0.88
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45999999999999996
+            PARTIAL: 0.2
+            MATCH: 0.34
+          confidence: 0.2
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.01
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+            MATCH: 0.98
+          confidence: 0.98
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.01
+            MATCH: 0.97
+          confidence: 0.95
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7185
+        output_tokens: 319
+      elapsed_seconds: 0.2953
+      request_sha256: 168557ea48c9d60319552bf6b5a9d8e58a419f516b741a873b9949da8c99b1ba
+      request_sha256s:
+      - 168557ea48c9d60319552bf6b5a9d8e58a419f516b741a873b9949da8c99b1ba
+  ea67426f88f140631182bf22fd4af26d9a83955af9fd0842d80996061e7399b4:
+    input_sha256: c95a939e614370d8aba2d151305d67037cf85a6601268541359a7872b773f230
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.644154+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.72
+            MISMATCH: 0.13
+          confidence: 0.57
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.98
+            MISMATCH: 0.01
+          confidence: 0.97
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.01
+            MISMATCH: 0.01
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7186
+        output_tokens: 316
+      elapsed_seconds: 0.2026
+      request_sha256: 3d1bef26b16206e18720a7cabf842a0a69246f4503cad65f2a89e142cabbc2c4
+      request_sha256s:
+      - 3d1bef26b16206e18720a7cabf842a0a69246f4503cad65f2a89e142cabbc2c4
+  7c0709cef4b6acbd9f1fd5e89d2f0915347471922ec4996523e56411905c8aff:
+    input_sha256: a7d19dcd09695170bd44d2bba9a285255c03c0f649a9ccd191a3078ebd47738e
+    configuration_sha256: 500560b3fbe50038a4aa435ceb0bad20dd14c3b7e8c9bc955df41c9e3b71a8b9
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.675362+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.64
+            PARTIAL: 0.24
+          confidence: 0.47
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.95
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/diagnostic:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.84
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.84
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.92
+            PARTIAL: 0.05
+          confidence: 0.88
+        /assertion/reports_on/0/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.48
+            PARTIAL: 0.35
+          confidence: 0.21
+        /assertion/reports_on/0/relationship:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.39
+        /assertion/reports_on/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/reports_on/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.06
+            PARTIAL: 0.46
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12181
+        output_tokens: 567
+      elapsed_seconds: 0.2886
+      request_sha256: 56995ab6b45f2940182a7c9f0db72908effebe665ab8eef491eab79ca0503ba4
+      request_sha256s:
+      - 56995ab6b45f2940182a7c9f0db72908effebe665ab8eef491eab79ca0503ba4
+  fc399c81dfef23ead883dda6015e3579894ca5c25f5b403580d33bf2720987c6:
+    input_sha256: 747c7dc4a5d96ccc3426fb2782a9ac2563786766c11f24980a6c04ff51c4479f
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.737893+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.76
+            MATCH: 0.23
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+            MATCH: 0.79
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.83
+            MATCH: 0.11
+          confidence: 0.74
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.47
+            MATCH: 0.41
+          confidence: 0.22
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.49
+            MATCH: 0.44
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6267
+        output_tokens: 277
+      elapsed_seconds: 0.2591
+      request_sha256: 879934328121b1005bd6c2a47b2812c759656b6393078e49d37e5a0238fccbf2
+      request_sha256s:
+      - 879934328121b1005bd6c2a47b2812c759656b6393078e49d37e5a0238fccbf2
+  4c2864725296e580dc047f3d99e90d1769227bc1084fd2d2244ee5e8c2d18ed3:
+    input_sha256: 3cf2d349808cb8399ba0bf4b1d9d12b8923c4d0c04a2e5fef416d742cb8726e6
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.764901+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.23
+            PARTIAL: 0.69
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.47
+            PARTIAL: 0.42
+          confidence: 0.2
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.24
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.03
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.48
+            PARTIAL: 0.43
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6446
+        output_tokens: 270
+      elapsed_seconds: 0.269
+      request_sha256: 14b45744a5e7ae07be532740ff8174c91ba658b17459d34fca8def4ff91234b9
+      request_sha256s:
+      - 14b45744a5e7ae07be532740ff8174c91ba658b17459d34fca8def4ff91234b9
+  fac77a52c6bd72a975af39293c7dc468846f8a8a1f197ecd946c6ac18b9944ca:
+    input_sha256: 1993c5a7b0d2bdc7aa716bf98f1a350787177c6e83e743cd4f276675b733eff9
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.876202+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.8
+            MATCH: 0.16
+          confidence: 0.7
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.56
+            MATCH: 0.37
+          confidence: 0.35
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.67
+            MATCH: 0.26
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.7
+            MATCH: 0.27
+          confidence: 0.54
+        /assertion/therapeutic_modality:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.44
+            MATCH: 0.32
+          confidence: 0.17
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.65
+            MATCH: 0.21
+          confidence: 0.48
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.59
+            MATCH: 0.32
+          confidence: 0.39
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7678
+        output_tokens: 329
+      elapsed_seconds: 0.2459
+      request_sha256: 55a92a04a2ba87c2688ac31a953218e0d3f8ebcf7cd8c6810638d5816b376a8d
+      request_sha256s:
+      - 55a92a04a2ba87c2688ac31a953218e0d3f8ebcf7cd8c6810638d5816b376a8d
+  7322217008a3f1660b2ba9fe912faa2c93d44fe6264accfd59cd2ec1cba27cef:
+    input_sha256: fae5b60e71ecb92b5dc781347eec719ea7fb3017786757faa7d3677939f3f895
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:50.999670+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.08
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.52
+            PARTIAL: 0.41
+          confidence: 0.29
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.14
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/treatment_effect:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.56
+            MATCH: 0.06
+          confidence: 0.34
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            MATCH: 0.02
+            PARTIAL: 0.29
+          confidence: 0.55
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.51
+            MISMATCH: 0.12
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6458
+        output_tokens: 276
+      elapsed_seconds: 0.2344
+      request_sha256: 9d82d0953a2d521b3f22377f8aa24102fbd30696903708670a621804e3fd858b
+      request_sha256s:
+      - 9d82d0953a2d521b3f22377f8aa24102fbd30696903708670a621804e3fd858b

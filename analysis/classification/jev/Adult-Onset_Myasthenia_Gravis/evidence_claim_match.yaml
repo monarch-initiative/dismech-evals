@@ -11868,6 +11868,58 @@ inputs:
     - assertion_path: /datasets/0
       evidence_path: /datasets/0/evidence/0
       reference: GEO:GSE233180
+  b4511762106740e449d78c502dfe444cbd2b6c40a467e948210085ad49028bba:
+    claim:
+      about:
+        disease:
+          name: Adult-Onset Myasthenia Gravis
+          disease_term:
+            preferred_term: adult-onset myasthenia gravis
+            term:
+              id: MONDO:0018324
+              label: adult-onset myasthenia gravis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: AChR Autoantibody Production
+        description: Autoreactive B-lineage cells produce AChR-directed antibodies in the thymus and peripheral
+          compartments. Antibody titer alone does not determine pathogenic activity or clinical severity.
+        biological_scale: CELLULAR
+        biological_processes:
+        - preferred_term: immunoglobulin production
+          term:
+            id: GO:0002377
+            label: immunoglobulin production
+        cell_types:
+        - preferred_term: plasma cell
+          term:
+            id: CL:0000786
+            label: plasma cell
+      selected_evidence:
+        snippet: Thymocytes produce AChR antibodies, as do circulating plasma cells
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39105625
+      reference_title: 'Myasthenia gravis: the future is here.'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Review identifies intrathymic and circulating sources.
+    first_seen_at: '2026-09-28T17:45:13.958995+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:45:13.958995+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:45:13.958995+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:39105625
 assessments:
   d152362b444d2b1f94a028b97ae8f7eed375ce7e3a6b2440cdc06730b23a77af:
     input_sha256: c3eee62e2852cd1e637c9cb04462c1d2b6910e10aa14771567287d93dbb091aa
@@ -26504,3 +26556,83 @@ assessments:
       request_sha256: 1f780e98e3fe55eda2d3a74660005fa1fe39593ee97b791977f0564df910f3e5
       request_sha256s:
       - 1f780e98e3fe55eda2d3a74660005fa1fe39593ee97b791977f0564df910f3e5
+  9f520c64630dcf69ab8e614823eb007826a38da2d619564888c3d4139a54126f:
+    input_sha256: b4511762106740e449d78c502dfe444cbd2b6c40a467e948210085ad49028bba
+    configuration_sha256: 4becd32f62258fc3b17abed3467efd412287a4655d8972eeaea1bc3b6a745bef
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:45:13.958995+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MATCH: 0.19
+            MISMATCH: 0.07
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.04
+            MATCH: 0.53
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.88
+            MISMATCH: 0.02
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.17
+            MISMATCH: 0.08
+          confidence: 0.61
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.93
+            MISMATCH: 0.02
+          confidence: 0.89
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.74
+            MISMATCH: 0.05
+          confidence: 0.61
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.75
+            MISMATCH: 0.05
+          confidence: 0.62
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.86
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.87
+            MISMATCH: 0.02
+          confidence: 0.81
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9581
+        output_tokens: 432
+      elapsed_seconds: 0.4939
+      request_sha256: 3fc2d4c2fbc2e6c8e178c733092f3e21d134a55ec7fccd820ea58cfb54174767
+      request_sha256s:
+      - 3fc2d4c2fbc2e6c8e178c733092f3e21d134a55ec7fccd820ea58cfb54174767

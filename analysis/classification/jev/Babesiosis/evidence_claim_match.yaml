@@ -7936,6 +7936,193 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: ORPHA:108
+  460aab568153686a4987a7b8d9a010d063061f5d7b874b6b4135bef777b096e8:
+    claim:
+      about:
+        disease:
+          name: Babesiosis
+          disease_term:
+            preferred_term: babesiosis
+            term:
+              id: MONDO:0005661
+              label: babesiosis
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Intraerythrocytic invasion and asexual replication
+            role: CENTRAL_EFFECTOR
+            biological_scale: CELLULAR
+            mechanism_confidence: ESTABLISHED
+            description: Babesia invades human erythrocytes and replicates asexually, generating intraerythrocytic
+              parasites and measurable parasitemia.
+            cell_types:
+            - preferred_term: erythrocyte
+              term:
+                id: CL:0000232
+                label: erythrocyte
+            biological_processes:
+            - preferred_term: symbiont entry into host cell
+              term:
+                id: GO:0046718
+                label: symbiont entry into host cell
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Impaired host clearance and persistent parasitemia
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - host_clearance_severity_modifier
+        intermediate_mechanisms:
+        - Reduced splenic filtration
+        - Impaired humoral or cell-mediated immunity
+        description: In vulnerable hosts, blood-stage parasites persist when splenic or immune clearance
+          is inadequate.
+      selected_evidence:
+        snippet: follows a persistent, relapsing, and/or life threatening course with multi-organ failure,
+          mainly in the splenectomized or immunosuppressed patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/2
+      evidence_path: /pathophysiology/1/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:28202022
+      reference_title: Hematologic manifestations of babesiosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Human clinical evidence directly associates impaired host-defense contexts with persistence
+        and relapse.
+    first_seen_at: '2026-09-28T17:49:01.777329+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:49:01.777329+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:49:01.777329+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/2
+      evidence_path: /pathophysiology/1/downstream/2/evidence/0
+      reference: PMID:28202022
+  adbbc0522180e77d9362904a3328eb75c89db5c02be03531bda33e9fc55b5f88:
+    claim:
+      about:
+        disease:
+          name: Babesiosis
+          disease_term:
+            preferred_term: babesiosis
+            term:
+              id: MONDO:0005661
+              label: babesiosis
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Systemic inflammation and cytopenias
+            role: CONSEQUENCE
+            biological_scale: ORGANISM
+            mechanism_confidence: PROVISIONAL
+            description: Blood-stage infection and erythrocyte destruction are accompanied by cytokine
+              activation and hematologic abnormalities, producing the febrile, flu-like syndrome and cytopenias.
+              Cytokine-pathway detail is largely model-derived.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Myalgia
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: The inflammatory flu-like syndrome commonly includes muscle pain.
+      selected_evidence:
+        snippet: HP:0003326 | Myalgia | Frequent (79-30%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/8
+      evidence_path: /pathophysiology/5/downstream/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: ORPHA:108
+      reference_title: Babesiosis
+      evidence_source: OTHER
+      explanation: Orphanet establishes myalgia frequency; the specific mediator is not resolved.
+    first_seen_at: '2026-09-28T17:49:04.782444+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:49:04.782444+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:49:04.782444+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/8
+      evidence_path: /pathophysiology/5/downstream/8/evidence/0
+      reference: ORPHA:108
+  72ab84b1c5c336d695c42c187be2b78750f1be7a2dc60004491a56bd7bc8466d:
+    claim:
+      about:
+        disease:
+          name: Babesiosis
+          disease_term:
+            preferred_term: babesiosis
+            term:
+              id: MONDO:0005661
+              label: babesiosis
+        context: []
+      assertion_type: Dataset
+      assertion:
+        accession: sra:SRP058536
+        title: Whole-genome capture sequences from 25 Babesia microti isolates
+        description: Multiplex hybrid-capture sequence data from 25 B. microti isolates obtained from
+          Ixodes scapularis and human blood across U.S. sampling sites, used to characterize genome-wide
+          diversity and northeastern population structure.
+        organism:
+          preferred_term: Babesia microti
+          term:
+            id: NCBITaxon:5868
+            label: Babesia microti
+        data_type: WGS
+        sample_types:
+        - preferred_term: Ixodes scapularis-derived Babesia microti isolate
+          term:
+            id: NCBITaxon:6945
+            label: Ixodes scapularis
+        - preferred_term: human-blood-derived Babesia microti isolate
+          term:
+            id: UBERON:0000178
+            label: blood
+          tissue_term:
+            preferred_term: blood
+            term:
+              id: UBERON:0000178
+              label: blood
+        sample_count: 25
+        conditions:
+        - Tick-derived Babesia microti
+        - Human-infecting Babesia microti
+        platform: Multiplexed hybrid capture and genome sequencing
+        publication: PMID:27821055
+      selected_evidence:
+        snippet: we used multiplexed hybrid capture of 25 B. microti isolates obtained from I. scapularis
+          and human blood.
+        supports: SUPPORT
+    origin:
+      assertion_path: /datasets/0
+      evidence_path: /datasets/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27821055
+      reference_title: Babesia microti from humans and ticks hold a genomic signature of strong population
+        structure in the United States.
+      evidence_source: OTHER
+      explanation: The publication directly states the dataset design, isolate count, and sources.
+    first_seen_at: '2026-09-28T17:49:11.495074+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:49:11.495074+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:49:11.495074+00:00'
+    occurrences:
+    - assertion_path: /datasets/0
+      evidence_path: /datasets/0/evidence/0
+      reference: PMID:27821055
 assessments:
   cf426e82b46f7ebd4560529cff205a4a1afb9ee2db79f88c65316b3edfe0ba8b:
     input_sha256: 71325525facb272150f600981849d037906dc065664edfd056fdda6dd16e3459
@@ -18935,3 +19122,278 @@ assessments:
       request_sha256: 4491222f2ddb52ddc628d0a86adbfcf1070de54a552c248fae94f9567452f64e
       request_sha256s:
       - 4491222f2ddb52ddc628d0a86adbfcf1070de54a552c248fae94f9567452f64e
+  8e453acff7469fe3c0bc25936c5a2267f5985bccd8687a5800777cc2c9107d9a:
+    input_sha256: 460aab568153686a4987a7b8d9a010d063061f5d7b874b6b4135bef777b096e8
+    configuration_sha256: 0f370790f4df37ad0067acddeb8910167c027cd1e94ef3ebaf6efbf0e77a28bd
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:49:01.777329+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.69
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.55
+            PARTIAL: 0.41
+          confidence: 0.33
+        /assertion/hypothesis_groups:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.59
+            PARTIAL: 0.3
+          confidence: 0.39
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.45
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.72
+            PARTIAL: 0.27
+          confidence: 0.58
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.4
+            PARTIAL: 0.26
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8481
+        output_tokens: 365
+      elapsed_seconds: 0.4618
+      request_sha256: 8062c5d0e4514dd06a504b8a11886dbacd555351ab5de55c36cab92eef5c447a
+      request_sha256s:
+      - 8062c5d0e4514dd06a504b8a11886dbacd555351ab5de55c36cab92eef5c447a
+  ba44fbb50246ba93353feb5a99c1bf62cc762282140bd3bebfc9443b8604d97d:
+    input_sha256: adbbc0522180e77d9362904a3328eb75c89db5c02be03531bda33e9fc55b5f88
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:49:04.782444+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.35
+            PARTIAL: 0.5
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.23
+            PARTIAL: 0.32
+          confidence: 0.18
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.81
+            PARTIAL: 0.13
+          confidence: 0.72
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.1
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.43
+            PARTIAL: 0.43
+          confidence: 0.15
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.28
+            PARTIAL: 0.42
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6384
+        output_tokens: 274
+      elapsed_seconds: 0.6754
+      request_sha256: a8a77420ef12ce9330267bdfd374c60f0db16ae8679470bfed8e9822df56181b
+      request_sha256s:
+      - a8a77420ef12ce9330267bdfd374c60f0db16ae8679470bfed8e9822df56181b
+  1f2d6767bcde66824bda9970a73870cc6e9cd8695c773e0b5dc448eff88394d6:
+    input_sha256: 72ab84b1c5c336d695c42c187be2b78750f1be7a2dc60004491a56bd7bc8466d
+    configuration_sha256: 9af01b4c44ced4391a32cb20ad14f8212206321fcd7d46b49f66124910dc4f3f
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:49:11.495074+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.05
+            MATCH: 0.59
+          confidence: 0.39
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.04
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/accession:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.6799999999999999
+            MATCH: 0.1
+          confidence: 0.53
+        /assertion/title:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.15
+            MATCH: 0.51
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.04
+            MATCH: 0.45
+          confidence: 0.26
+        /assertion/organism/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/organism/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.01
+            MATCH: 0.98
+          confidence: 0.98
+        /assertion/data_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.04
+            MATCH: 0.9
+          confidence: 0.86
+        /assertion/sample_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.05
+            MATCH: 0.89
+          confidence: 0.85
+        /assertion/sample_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.19
+            MATCH: 0.75
+          confidence: 0.62
+        /assertion/sample_types/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+            MATCH: 0.94
+          confidence: 0.91
+        /assertion/sample_types/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.08
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/sample_types/1/tissue_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.02
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/sample_types/1/tissue_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.04
+            MATCH: 0.87
+          confidence: 0.8
+        /assertion/sample_count:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/conditions:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.01
+            MATCH: 0.85
+          confidence: 0.78
+        /assertion/platform:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+            MATCH: 0.95
+          confidence: 0.93
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.65
+            MATCH: 0.05
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18293
+        output_tokens: 848
+      elapsed_seconds: 0.4539
+      request_sha256: bad16b2154072e23586716049c1f33afcc52422900800d687d7a8d1188aca765
+      request_sha256s:
+      - bad16b2154072e23586716049c1f33afcc52422900800d687d7a8d1188aca765

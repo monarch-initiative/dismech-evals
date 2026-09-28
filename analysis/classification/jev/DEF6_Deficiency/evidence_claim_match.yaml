@@ -1836,6 +1836,54 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:31308374
+  2c0f237eb4d88da522ce0238930260c09e1cc71563e6dea0e92c49bab041084f:
+    claim:
+      about:
+        disease:
+          name: DEF6 Deficiency
+          disease_term:
+            preferred_term: DEF6 deficiency
+            term:
+              id: MONDO:0030457
+              label: immunodeficiency 87 and autoimmunity
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Systemic Autoimmunity
+        biological_scale: ORGANISM
+        description: 'The dominant clinical arm: early-onset multi-organ autoimmunity, prominently autoimmune
+          cytopenias. Autoantibodies were detectable in three of four siblings in the second family, and
+          the youngest developed severe autoimmune haemolytic anaemia and thrombocytopenia in the first
+          year of life.'
+        cell_types:
+        - preferred_term: T cell
+          term:
+            id: CL:0000084
+            label: T cell
+      selected_evidence:
+        snippet: as the molecular cause of an inborn error of immunity with systemic autoimmunity
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31308374
+      reference_title: Human DEF6 deficiency underlies an immunodeficiency syndrome with systemic autoimmunity
+        and aberrant CTLA-4 homeostasis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Systemic autoimmunity is the defining clinical consequence in the index cohort.
+    first_seen_at: '2026-09-28T17:50:14.835193+00:00'
+    first_seen_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    last_seen_at: '2026-09-28T17:50:14.835193+00:00'
+    active: true
+    active_as_of: '2026-09-28T17:50:14.835193+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:31308374
 assessments:
   9d8dc0e4268a1e93f1941fba0839205211edbfc6cf7fe7afb4ec8fac2c42c9ed:
     input_sha256: f8669158f26274f0e12470ec2dc06ac90e4b9956492525f16720c245097dbb4a
@@ -4357,3 +4405,69 @@ assessments:
       request_sha256: 75d8f7ef91e4a2fdebddfb6a71205a0bb7a87aad9eb676fd12ba5922b1b30124
       request_sha256s:
       - 75d8f7ef91e4a2fdebddfb6a71205a0bb7a87aad9eb676fd12ba5922b1b30124
+  5627b0a9f1a240900ba27fc57521ba124c589e2c2a9b30a0a88ca0e7d0e43323:
+    input_sha256: 2c0f237eb4d88da522ce0238930260c09e1cc71563e6dea0e92c49bab041084f
+    configuration_sha256: e67b491ae62c484505988bad99f46ce8bf6266dc969655b7643de26bca2f4512
+    model: jev-1.13.0
+    assessment_source_revision: e7b43a48d2cc80e0aaa5d89095676dbdb6866a7e
+    status: assessed
+    assessed_at: '2026-09-28T17:50:14.835193+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.56
+            MISMATCH: 0.03
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.46
+            MISMATCH: 0.07
+          confidence: 0.21
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.12
+            MISMATCH: 0.01
+          confidence: 0.8
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.84
+            MISMATCH: 0.03
+          confidence: 0.75
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MATCH: 0.16
+            MISMATCH: 0.1
+          confidence: 0.61
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.05
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.04
+            MISMATCH: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7586
+        output_tokens: 331
+      elapsed_seconds: 0.3984
+      request_sha256: d0c5ae44f9dc24463ac7a087e5b46675ee219878a82c394c1f248d1ec5714636
+      request_sha256s:
+      - d0c5ae44f9dc24463ac7a087e5b46675ee219878a82c394c1f248d1ec5714636

@@ -8891,6 +8891,66 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT01797055
+  6f072673f2829617c776fbde6303c1d68be0476201f4c18923f6a60b62102148:
+    claim:
+      about:
+        disease:
+          name: Atransferrinemia
+          disease_term:
+            preferred_term: congenital atransferrinemia
+            term:
+              id: MONDO:0008846
+              label: atransferrinemia
+        context:
+        - path: /pathophysiology/10
+          value:
+            name: Parenchymal Iron Accumulation
+            biological_scale: TISSUE
+            description: Nonerythroid organs take up iron despite iron-restricted erythropoiesis. Hepatic
+              and myocardial iron can be measured directly; the responsible uptake routes differ by tissue.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Diabetes Mellitus
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Organ iron injury can contribute to this complication, but the cited clinical sources
+          do not resolve a patient-specific causal sequence.
+      selected_evidence:
+        snippet: A 13-year-old girl born of second-degree consanguinity presented with heart failure,
+          severe anemia, and diabetes mellitus. Her clinical course included heart failure at six months,
+          diabetes at age seven, and progressive LV systolic dysfunction. Iron studies revealed low TIBC,
+          elevated ferritin, low transferrin saturation, and undetectable transferrin levels (<75 mg/dL).
+          Echocardiography showed severe biventricular systolic dysfunction. There was an incidentally
+          detected 4 mm PDA (Fig. 4). As the age advanced, heart failure worsened disproportionately.
+          Cardiac MRI confirmed myocardial iron overload, and genetic testing identified a novel mutation,
+          confirming the diagnosis. This highlights the importance of early recognition and genetic analysis
+          in hereditary atransferrinemia.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/10/downstream/3
+      evidence_path: /pathophysiology/10/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/10
+    evidence_metadata:
+      reference: PMID:41220266
+      reference_title: 'Revisiting Congenital Atransferrinemia: A Rare but Treatable Cause of Pediatric
+        Heart Failure.'
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: Primary clinical case embedded in a review. Its intronic TF variant is later classified
+        as a VUS, so the phenotype is clinically consistent but the allele is not functionally confirmed.
+    first_seen_at: '2026-10-03T22:32:03.788519+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:03.788519+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:03.788519+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/10/downstream/3
+      evidence_path: /pathophysiology/10/downstream/3/evidence/0
+      reference: PMID:41220266
 assessments:
   ad230b1366cf1cacf60f392c177d685e728e5cba708c4a51036a8357c7bbae15:
     input_sha256: 7a2251aec2ecc16eaaa0ef3825b320d13e8303d71021a0608ddc1058dd33d6a6
@@ -20657,3 +20717,62 @@ assessments:
       request_sha256: 1b22e6f08badf04da7945632d26afd479bccfe2807cdb6e6a2ee17b995484605
       request_sha256s:
       - 1b22e6f08badf04da7945632d26afd479bccfe2807cdb6e6a2ee17b995484605
+  d990aa8d624811fd2431859cde4f3f94d9ed2d7e61f1f482b8e2206f9184128c:
+    input_sha256: 6f072673f2829617c776fbde6303c1d68be0476201f4c18923f6a60b62102148
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:03.788519+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.01
+            MATCH: 0.43
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.01
+            MATCH: 0.83
+          confidence: 0.74
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.15
+            MATCH: 0.3
+          confidence: 0.32
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.03
+            MATCH: 0.36
+          confidence: 0.42
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.07
+            MATCH: 0.7
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6534
+        output_tokens: 271
+      elapsed_seconds: 0.3987
+      request_sha256: 78229da186c669811efc7f417c490760b621f3f9c6cec32f9237b3f3e2b7b95c
+      request_sha256s:
+      - 78229da186c669811efc7f417c490760b621f3f9c6cec32f9237b3f3e2b7b95c

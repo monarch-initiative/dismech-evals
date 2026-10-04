@@ -2528,6 +2528,55 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT00188019
+  6d45cf1ea610fc18371dd59e1f574887c492e1cf375706cfeb51020c2d09b90c:
+    claim:
+      about:
+        disease:
+          name: Hereditary Pheochromocytoma-Paraganglioma Syndrome
+          disease_term:
+            preferred_term: hereditary pheochromocytoma-paraganglioma
+            term:
+              id: MONDO:0017366
+              label: hereditary pheochromocytoma-paraganglioma
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neoplastic
+        name: Head and Neck Paraganglioma
+        description: Carotid body, jugulotympanic and vagal paragangliomas — the characteristic presentation
+          of SDHD-related disease, typically non-secretory and presenting as a painless neck mass or with
+          cranial nerve compression.
+        phenotype_term:
+          preferred_term: Paraganglioma of head and neck
+          term:
+            id: HP:0002864
+            label: Paraganglioma of head and neck
+      selected_evidence:
+        snippet: and sometimes in the upper mediastinum; approximately 95% of such tumors are nonsecretory
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301715
+      reference_title: Hereditary Paraganglioma-Pheochromocytoma Syndromes.
+      evidence_source: OTHER
+      explanation: GeneReviews Clinical Characteristics section, quantifying that around 95% of head and
+        neck paragangliomas are nonsecretory — which is why they present as painless masses rather than
+        with catecholamine symptoms. The quote starts mid-sentence to avoid the bracketed abbreviation
+        span "[HNPGLs]", which the reference validator strips before matching.
+    first_seen_at: '2026-10-03T21:09:14.197961+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:14.197961+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:14.197961+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/1
+      reference: PMID:20301715
 assessments:
   8177b153b26c844076551c5e6f679ec7d6ad302b4f39c798932b04ee5c863e65:
     input_sha256: 5717ca4e0aec8f8e9cdccfd2c96d8c05045e37c4d47fecb2f3f0c632299bf9a6
@@ -6331,3 +6380,69 @@ assessments:
       request_sha256: cd800bd010d6f052e966b21f14cd9c8e21f20798a55c598fa3b4b9c094205297
       request_sha256s:
       - cd800bd010d6f052e966b21f14cd9c8e21f20798a55c598fa3b4b9c094205297
+  99bd6e9f181232592d8137956533bfd977aaea178937d8cd1cf863cb9307145e:
+    input_sha256: 6d45cf1ea610fc18371dd59e1f574887c492e1cf375706cfeb51020c2d09b90c
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:14.197961+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.64
+            MATCH: 0.21
+          confidence: 0.46
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.54
+            MATCH: 0.34
+          confidence: 0.31
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.23
+            PARTIAL: 0.36
+            MATCH: 0.41000000000000003
+          confidence: 0.11
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.56
+            MATCH: 0.18
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.61
+            MATCH: 0.2
+          confidence: 0.41
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.5
+            MATCH: 0.29
+          confidence: 0.26
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.56
+            MATCH: 0.24
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7237
+        output_tokens: 322
+      elapsed_seconds: 0.2471
+      request_sha256: 27fe9fbd39ab6d3af898e63a358d31067227bd48672eb0d69176d854bfa327a7
+      request_sha256s:
+      - 27fe9fbd39ab6d3af898e63a358d31067227bd48672eb0d69176d854bfa327a7

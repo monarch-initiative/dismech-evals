@@ -1,0 +1,3241 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Klebsiella_Pneumonia.yaml
+disease: Klebsiella Pneumonia
+inventory:
+  source_sha256: b611bea2a06b8fadf02f60059f7b9141b4a4d58470c912fa11f102bcf2a81f0e
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:01:44.132476+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  3f7d3f5ff33b52765a9a09071934df4c3248a2c0b4f8db49e4c2b9ebf6172c02:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: InfectiousAgent
+      assertion:
+        name: Klebsiella pneumoniae
+        description: Encapsulated Gram-negative bacterium that can colonize mucosal reservoirs, cause
+          human neonatal sepsis and hospital-acquired pneumonia, and acquire carbapenemase or hypervirulence
+          plasmids that intensify invasive disease.
+        infectious_agent_term:
+          preferred_term: Klebsiella pneumoniae
+          term:
+            id: NCBITaxon:573
+            label: Klebsiella pneumoniae
+      selected_evidence:
+        snippet: Klebsiella pneumoniae is the leading cause of sepsis among neonates in low- and middle-income
+          countries (LMICs) in Africa and Asia, contributing substantially to the overall burden of antimicrobial-resistant
+          infections and mortality among neonates globally.
+        supports: SUPPORT
+    origin:
+      assertion_path: /infectious_agent/0
+      evidence_path: /infectious_agent/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42127138
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes K. pneumoniae as a human invasive pathogen in a genomics-supported neonatal-sepsis
+        cohort.
+    first_seen_at: '2026-10-03T22:44:34.508152+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /infectious_agent/0
+      evidence_path: /infectious_agent/0/evidence/0
+      reference: PMID:42127138
+  ab33f623e976af9c3201e84f4ec038242020ee6383f994b13b2f2ad8d75f3803:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: HarrisonsChapterAssignment
+      assertion:
+        classification_value: INFECTIOUS_DISEASES
+      selected_evidence:
+        snippet: Among the most-concerning multidrug-resistant (MDR) pathogens are the ESKAPE organisms
+          (Enterococcus faecium, Staphylococcus aureus, Klebsiella pneumoniae, Acinetobacter baumannii,
+          Pseudomonas aeruginosa, and Enterobacter spp.)
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:42178970
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Frames K. pneumoniae as a clinically important bacterial infectious pathogen rather
+        than a model-only inoculum.
+    first_seen_at: '2026-10-03T22:44:34.509245+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      reference: PMID:42178970
+  a7956dbb1c2fdd47c4886d50d3354782f2d55cec2fa7f0324749d4fb5faa7162:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context:
+        - path: /environmental/0
+          value:
+            name: Prior broad-spectrum antibiotic and carbapenem exposure
+            description: Antibiotic selection pressure, especially prior carbapenem, quinolone, glycopeptide,
+              or beta-lactam/beta-lactamase-inhibitor exposure, is the dominant modifiable risk context
+              for carbapenem-resistant K. pneumoniae infection.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Carbapenemase-Mediated Antibiotic Resistance
+        environmental_effect: PREDISPOSES
+        causal_link_type: DIRECT
+        description: Antibiotic exposure selects carbapenemase-carrying lineages in colonized patients
+          and thereby predisposes to infection that resists empiric carbapenem therapy.
+      selected_evidence:
+        snippet: carbapenem exposure, 3.99 (2.86-5.56); quinolone exposure, 1.75 (1.38-2.22); glycopeptide
+          exposure, 3.08 (1.93-4.91)
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:31525540
+      evidence_source: HUMAN_CLINICAL
+      explanation: A 30-study meta-analysis quantified prior antibiotic classes as risk factors for CRKP
+        infection.
+    first_seen_at: '2026-10-03T22:44:35.559962+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:31525540
+  d70f680b21de3f20dcbd158ff7a76e0091b46fd38b78139db4477887f31c5885:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Prior broad-spectrum antibiotic and carbapenem exposure
+        description: Antibiotic selection pressure, especially prior carbapenem, quinolone, glycopeptide,
+          or beta-lactam/beta-lactamase-inhibitor exposure, is the dominant modifiable risk context for
+          carbapenem-resistant K. pneumoniae infection.
+      selected_evidence:
+        snippet: Immunosuppression, ICU admission, antibiotic exposure (including carbapenems, quinolones,
+          glycopeptides and BL/BLIs), surgery, mechanical ventilation, central venous catheterisation,
+          indwelling catheter and nasogastric intubation were identified as risk factors for CRKP infection
+          and should to be considered in clinical practice.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31525540
+      evidence_source: HUMAN_CLINICAL
+      explanation: Summarizes the meta-analysis evidence that healthcare antibiotic exposure and device-intensive
+        care predispose to CRKP infection.
+    first_seen_at: '2026-10-03T22:44:35.558918+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:31525540
+  07cf5a5d81db5ecda08c2b9875c92a0f85e0deffec04e2f9105211593daaa799:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Neonatal-unit nosocomial transmission
+        description: K. pneumoniae sepsis in African and South Asian neonatal units is frequently transmitted
+          in nosocomial clusters, linking hospital contact networks to the mucosal reservoirs that seed
+          invasive neonatal infection.
+      selected_evidence:
+        snippet: Nosocomial transmission contributes to a substantial proportion of K. pneumoniae sepsis
+          in neonatal care units in Africa and South Asia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42127138
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort conclusion supports neonatal-unit transmission as a documented context for
+        invasive K. pneumoniae disease.
+    first_seen_at: '2026-10-03T22:44:35.581993+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:42127138
+  b390163f33fb5ad320df4058ef49b08fbfd7b904a307fd2e03f665c683e089ee:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context:
+        - path: /environmental/1
+          value:
+            name: Neonatal-unit nosocomial transmission
+            description: K. pneumoniae sepsis in African and South Asian neonatal units is frequently
+              transmitted in nosocomial clusters, linking hospital contact networks to the mucosal reservoirs
+              that seed invasive neonatal infection.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Mucosal Reservoir and Sterile-Site Invasion
+        environmental_effect: TRIGGERS
+        causal_link_type: DIRECT
+        description: Transmission in neonatal units introduces resistant K. pneumoniae clones into vulnerable
+          hosts, after which colonization can progress to invasive sepsis.
+      selected_evidence:
+        snippet: Overall, we estimated that 1,035 neonatal infections (68.0%) were part of nosocomial
+          transmission clusters.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/1
+    evidence_metadata:
+      reference: PMID:42127138
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies hospital-linked neonatal infections as part of nosocomial clusters inferred
+        from pathogen genomes and timing.
+    first_seen_at: '2026-10-03T22:44:35.582549+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /environmental/1/influences_mechanisms/0
+      evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
+      reference: PMID:42127138
+  d8a488b55e0cc566eb7fa061e4558a4087ec43a591540b44d87be3393d0ea659:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Mucosal Reservoir and Sterile-Site Invasion
+        role: trigger
+        description: K. pneumoniae establishes mucosal or device-associated reservoirs in healthcare settings,
+          and transmitted or selected clones can breach barriers into sterile compartments such as the
+          lower respiratory tract and blood.
+        biological_scale: ORGANISM
+        locations:
+        - preferred_term: lung
+          term:
+            id: UBERON:0002048
+            label: lung
+        - preferred_term: blood
+          term:
+            id: UBERON:0000178
+            label: blood
+      selected_evidence:
+        snippet: we estimate at least 879 (57.7%) infections were acquired via nosocomial transmission.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42127138
+      evidence_source: HUMAN_CLINICAL
+      explanation: Genomic clustering in neonatal units supports hospital transmission of K. pneumoniae
+        that progresses to invasive sterile-site disease.
+    first_seen_at: '2026-10-03T22:44:35.777763+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:42127138
+  6444a8f5e4bdd6f9dd627f7ad21818f643445867962d9aab70de9be281df44e1:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Capsule and Siderophore Immune Evasion
+            role: amplifier
+            description: Hypervirulent K. pneumoniae can acquire plasmid-encoded regulators of mucoid
+              phenotype and siderophore loci that increase capsule production, hypermucoviscosity, iron
+              acquisition, and resistance to early innate clearance.
+            biological_scale: CELLULAR
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hypervirulent Liver Abscess and Metastatic Infection
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Hypervirulent plasmids carrying capsule and siderophore functions enable invasive
+          clones to cause pyogenic liver abscess and metastatic spread.
+      selected_evidence:
+        snippet: Genomic analysis identified a 181 kb IncHI1B/IncFIB virulence plasmid encoding rmpADC
+          and the salmochelin cluster (iroBCDN), but lacking iuc and rmpA2.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:42021129
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies the virulence plasmid carried by a human hvKp liver-abscess isolate.
+    first_seen_at: '2026-10-03T22:44:35.854162+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/0
+      reference: PMID:42021129
+  f1467753509bc1991eb98ffca6467ddb0266208d2f4b80b1c60561698ea1c9ab:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Capsule and Siderophore Immune Evasion
+        role: amplifier
+        description: Hypervirulent K. pneumoniae can acquire plasmid-encoded regulators of mucoid phenotype
+          and siderophore loci that increase capsule production, hypermucoviscosity, iron acquisition,
+          and resistance to early innate clearance.
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: completely attenuated virulence in murine models, confirming the plasmid as the principal
+          driver of hypervirulence
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42021129
+      evidence_source: MODEL_ORGANISM
+      explanation: Mouse infection experiments showed that the cured derivative lost the virulence phenotype,
+        complementing the in-vitro capsule and viscosity assays.
+    first_seen_at: '2026-10-03T22:44:35.825270+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:42021129
+  7f898ad01efe2249b511875d8bf717795c1ec541dc694b6c6577497833752ad9:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Capsule and Siderophore Immune Evasion
+        role: amplifier
+        description: Hypervirulent K. pneumoniae can acquire plasmid-encoded regulators of mucoid phenotype
+          and siderophore loci that increase capsule production, hypermucoviscosity, iron acquisition,
+          and resistance to early innate clearance.
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: Functional assays demonstrated that plasmid curing abolished the hypermucoviscous phenotype,
+          reduced capsule production
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42021129
+      evidence_source: IN_VITRO
+      explanation: CRISPR plasmid curing in the human isolate functionally links the plasmid to hypermucoviscosity
+        and capsule abundance.
+    first_seen_at: '2026-10-03T22:44:35.802291+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:42021129
+  f61db65ffb37f929f4a16f4d26a03608156c48cc5e152062cf73f4dc662a6125:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carbapenemase-Mediated Antibiotic Resistance
+        role: amplifier
+        description: Carbapenem-resistant K. pneumoniae bloodstream isolates frequently encode KPC, NDM,
+          or OXA-48 carbapenemases, making invasive infection harder to eradicate and shifting therapy
+          away from ordinary carbapenems.
+        biological_scale: MOLECULAR
+      selected_evidence:
+        snippet: In total, 88.9% (48/54) isolates were detected with KPC carbapenemase, followed by NDM
+          carbapenemase at 7.4% (4/54).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42734011
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies KPC and NDM carbapenemases in a CRKP bloodstream-infection cohort.
+    first_seen_at: '2026-10-03T22:44:36.038973+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:42734011
+  8489b89aa6a66b727f999ba372c42cc2fc5ab495a04fb8d992e6ccb98b3fa8e3:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: NLRC4-Dependent IL-1beta Production
+        role: amplifier
+        description: The pulmonary response to K. pneumoniae requires the NLRC4 inflammasome for IL-1beta
+          production, neutrophil chemoattractant expression, and survival after lung infection.
+        biological_scale: CELLULAR
+        biological_processes:
+        - preferred_term: interleukin-1 production
+          term:
+            id: GO:0032612
+            label: interleukin-1 production
+        cell_types:
+        - preferred_term: neutrophil
+          term:
+            id: CL:0000775
+            label: neutrophil
+      selected_evidence:
+        snippet: NLRC4 is essential for K. pneumoniae-induced production of IL-1β, IL-17A, and neutrophil
+          chemoattractants (keratinocyte cell-derived chemokines, MIP-2, and LPS-induced CXC chemokines)
+          in the lungs.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22547706
+      evidence_source: MODEL_ORGANISM
+      explanation: Shows that NLRC4 controls IL-1beta and chemoattractant production after K. pneumoniae
+        lung infection.
+    first_seen_at: '2026-10-03T22:44:36.154135+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:22547706
+  0e424b472b98c6d52bfc0f86a4c767900d7e36f3e80362f377fea8e1df0cfd12:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carbapenemase-Mediated Antibiotic Resistance
+        role: amplifier
+        description: Carbapenem-resistant K. pneumoniae bloodstream isolates frequently encode KPC, NDM,
+          or OXA-48 carbapenemases, making invasive infection harder to eradicate and shifting therapy
+          away from ordinary carbapenems.
+        biological_scale: MOLECULAR
+      selected_evidence:
+        snippet: OXA-48 was identified as the predominant carbapenemase, occurring in 50.4% of cases,
+          followed by combinations involving New Delhi metallo-beta-lactamase (NDM) and Klebsiella pneumoniae
+          carbapenemase (KPC).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42439974
+      evidence_source: HUMAN_CLINICAL
+      explanation: Shows that OXA-48 and NDM/KPC combinations also contribute to CRE epidemiology in K.
+        pneumoniae-dominated cohorts.
+    first_seen_at: '2026-10-03T22:44:36.151944+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:42439974
+  99d01d01a3516efd04f955d155dd218aa2bcb1b128193722305a38677329df64:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Pulmonary Klebsiella Bacterial Burden
+        role: trigger
+        description: Klebsiella pneumoniae reaches the lower respiratory tract, grows as a bacterial burden
+          in lung tissue, and initiates Gram-negative pneumonia.
+        biological_scale: TISSUE
+        locations:
+        - preferred_term: lung
+          term:
+            id: UBERON:0002048
+            label: lung
+      selected_evidence:
+        snippet: The majority of the infections were hospital-acquired, with ventilator-associated pneumonia
+          (31.7%) and bloodstream infections (27.8%) being the most prevalent.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42439974
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents K. pneumoniae-dominated CRE infections that commonly presented as ventilator-associated
+        pneumonia.
+    first_seen_at: '2026-10-03T22:44:36.153364+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:42439974
+  0453bc2cbc655ba02260787258b1f6ac37c5c8a07d6d8d9e18a6db634dba8057:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: NLRC4-Dependent IL-1beta Production
+            role: amplifier
+            description: The pulmonary response to K. pneumoniae requires the NLRC4 inflammasome for IL-1beta
+              production, neutrophil chemoattractant expression, and survival after lung infection.
+            biological_scale: CELLULAR
+            biological_processes:
+            - preferred_term: interleukin-1 production
+              term:
+                id: GO:0032612
+                label: interleukin-1 production
+            cell_types:
+            - preferred_term: neutrophil
+              term:
+                id: CL:0000775
+                label: neutrophil
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Neutrophil-Mediated Lung Inflammation
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: NLRC4 is essential for K. pneumoniae-induced production of IL-1β, IL-17A, and neutrophil
+          chemoattractants (keratinocyte cell-derived chemokines, MIP-2, and LPS-induced CXC chemokines)
+          in the lungs.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:22547706
+      evidence_source: MODEL_ORGANISM
+      explanation: Directly connects K. pneumoniae-induced NLRC4 signaling to IL-1beta and neutrophil-chemoattractant
+        production in infected lungs.
+    first_seen_at: '2026-10-03T22:44:36.310245+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      reference: PMID:22547706
+  4fbb21c73dd1eda8ff47be4c2ecd5f161d933ed1b6e29eaf4e6211f1dcf4148e:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Neutrophil-Mediated Lung Inflammation
+        role: effector
+        description: K. pneumoniae infection elicits innate phagocyte recruitment and neutrophil-mediated
+          inflammatory pneumonia in lung tissue.
+        biological_scale: TISSUE
+        cell_types:
+        - preferred_term: neutrophil
+          term:
+            id: CL:0000775
+            label: neutrophil
+        - preferred_term: macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        biological_processes:
+        - preferred_term: inflammatory response
+          modifier: INCREASED
+          term:
+            id: GO:0006954
+            label: inflammatory response
+        - preferred_term: phagocytosis
+          term:
+            id: GO:0006909
+            label: phagocytosis
+        locations:
+        - preferred_term: lung
+          term:
+            id: UBERON:0002048
+            label: lung
+      selected_evidence:
+        snippet: In this article, we report that NLRC4 is important for host survival and bacterial clearance,
+          as well as neutrophil-mediated inflammation in the lungs following Klebsiella pneumoniae infection.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22547706
+      evidence_source: MODEL_ORGANISM
+      explanation: Identifies neutrophil-mediated lung inflammation as a response to K. pneumoniae infection
+        in the pulmonary model.
+    first_seen_at: '2026-10-03T22:44:36.392662+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:22547706
+  1b8423761ffb29743ffc65af373934f5aca7ce1613dfdc996b0ac56aa5c50ddc:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hypervirulent Liver Abscess and Metastatic Infection
+        role: outcome
+        description: Hypervirulent K. pneumoniae causes pyogenic liver abscess and can disseminate to
+          eye, lung, and central nervous system sites, producing a metastatic invasive syndrome distinct
+          from ordinary nosocomial pneumonia.
+        biological_scale: ORGANISM
+        locations:
+        - preferred_term: liver
+          term:
+            id: UBERON:0002107
+            label: liver
+      selected_evidence:
+        snippet: Metastatic infection occurred in 36% of cases, most commonly endophthalmitis (36%), followed
+          by pulmonary (19%) and central nervous system involvement (15%).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41356976
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: A systematic review of hvKp liver abscess cases documents frequent metastatic spread
+        beyond the liver.
+    first_seen_at: '2026-10-03T22:44:36.502762+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      reference: PMID:41356976
+  e59e309efaae6fecfbface7b5b2c1c88ecc63a9e007dd395f95dda533aaf1ac6:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Bacteremia and Sepsis
+        role: outcome
+        description: Invasive K. pneumoniae infection can enter the bloodstream, where resistant strains
+          and delayed active therapy are associated with septic physiology, coagulopathy, and high in-hospital
+          mortality.
+        biological_scale: ORGANISM
+        locations:
+        - preferred_term: blood
+          term:
+            id: UBERON:0000178
+            label: blood
+      selected_evidence:
+        snippet: A total of 222 patients (156 male, 70.3%; mean age 66.4 ± 13.6 years) were enrolled.
+          Among them, 106 (47.7%) died during hospitalization.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42518856
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies mortality in a human K. pneumoniae bloodstream-infection cohort.
+    first_seen_at: '2026-10-03T22:44:36.446472+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:42518856
+  fad7b59bde9291ac9d6b03775e299c1f8cea3594ed651dc2adeda9219e2509d0:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Pneumonia
+        description: Hospital-acquired or ventilator-associated bacterial pneumonia can be caused by K.
+          pneumoniae, including carbapenem-resistant isolates.
+        phenotype_term:
+          preferred_term: Pneumonia
+          term:
+            id: HP:0002090
+            label: Pneumonia
+      selected_evidence:
+        snippet: The majority of the infections were hospital-acquired, with ventilator-associated pneumonia
+          (31.7%) and bloodstream infections (27.8%) being the most prevalent.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42439974
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports ventilator-associated pneumonia as the most prevalent CRE infection syndrome
+        in a cohort where K. pneumoniae caused almost all infections.
+    first_seen_at: '2026-10-03T22:44:36.578958+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:42439974
+  2b10621c96420ac6f89cbc8ff667aa3e6f041021d752837ecf7a3736e3135575:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Sepsis
+        description: K. pneumoniae causes neonatal and adult bloodstream infection that can progress to
+          life-threatening sepsis and in-hospital mortality.
+        phenotype_term:
+          preferred_term: Sepsis
+          term:
+            id: HP:0100806
+            label: Sepsis
+      selected_evidence:
+        snippet: Klebsiella pneumoniae is the leading cause of sepsis among neonates in low- and middle-income
+          countries (LMICs) in Africa and Asia, contributing substantially to the overall burden of antimicrobial-resistant
+          infections and mortality among neonates globally.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42127138
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes sepsis as a major human manifestation of invasive neonatal K. pneumoniae
+        infection.
+    first_seen_at: '2026-10-03T22:44:36.718662+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:42127138
+  340038a0aecd2885ba2595eb06064acee0a519a74b77cdb2916311c778c33be7:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Liver abscess
+        description: Hypervirulent K. pneumoniae can cause pyogenic liver abscess with disabling metastatic
+          complications such as endophthalmitis.
+        phenotype_term:
+          preferred_term: Liver abscess
+          term:
+            id: HP:0100523
+            label: Liver abscess
+      selected_evidence:
+        snippet: Hypervirulent Klebsiella pneumoniae (hvKp) is an emerging cause of pyogenic liver abscess
+          (PLA), characterized by virulence genes, such as rmpA and rmpA2, as well as capsular types K1/K2
+          that enhance mucoviscosity and invasiveness.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41356976
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The hvKp systematic review identifies pyogenic liver abscess as a characteristic human
+        syndrome of hypervirulent K. pneumoniae.
+    first_seen_at: '2026-10-03T22:44:36.798592+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:41356976
+  675e7e63c305873cf6dc54bd9a484eefbb3dc84a3b55a1684ceabaecd80ada26:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Susceptibility-Guided Antibiotic Therapy
+        description: Directed antibacterial treatment is selected after species identification and susceptibility
+          or resistance testing, especially for extended-spectrum beta-lactamase-producing or carbapenem-resistant
+          Enterobacterales.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Antibiotic Therapy
+          term:
+            id: NCIT:C15620
+            label: Antibiotic Therapy
+      selected_evidence:
+        snippet: Preferred and alternative treatment recommendations are provided with accompanying rationales,
+          assuming the causative organism has been identified and antibiotic susceptibility results are
+          known.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35439291
+      quote_role: REVIEW_SYNTHESIS
+      evidence_source: OTHER
+      explanation: IDSA guidance frames therapy for resistant Enterobacterales around organism identification
+        and antibiotic-susceptibility results, which is the core treatment decision for resistant K. pneumoniae
+        pneumonia.
+    first_seen_at: '2026-10-03T22:44:36.951313+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:35439291
+  3edee19e50f75a983903848b49af38e9cd9676dc215e7d6a3cc08dcb4f480398:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Ceftazidime-avibactam for carbapenem-resistant Enterobacterales bacteremia
+        description: Ceftazidime-avibactam is an active beta-lactam/beta-lactamase-inhibitor option for
+          susceptible CRE bloodstream infection, particularly KPC-producing isolates.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ceftazidime
+            term:
+              id: CHEBI:3508
+              label: ceftazidime
+          - preferred_term: avibactam
+            term:
+              id: CHEBI:85984
+              label: avibactam
+      selected_evidence:
+        snippet: CAZ-AVI showed higher rapid negative conversion for CRE bacteremia in patients with hematologic
+          malignancy, compared to the alternative antibiotics.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42708480
+      evidence_source: HUMAN_CLINICAL
+      explanation: A retrospective hematologic-malignancy cohort found faster negative blood culture conversion
+        with ceftazidime-avibactam than with alternative antibiotics.
+    first_seen_at: '2026-10-03T22:44:36.951849+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:42708480
+  652639e8dcf2c405fae9fe1b54f77799e2893016a37a7b0445dd09e56e116bfb:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravenous fosfomycin-containing combination regimens
+        description: Intravenous fosfomycin is used as part of combination therapy for severe carbapenem-resistant
+          Gram-negative infections, including K. pneumoniae hospital-acquired pneumonia, bacteremia, sepsis,
+          and complicated urinary tract infection.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: fosfomycin
+            term:
+              id: CHEBI:28915
+              label: fosfomycin
+      selected_evidence:
+        snippet: Overall, clinical success was achieved in 79.4% of patients, while the successful clinical
+          response and microbiological cure rates were 87.5% and 81.3% at the end of FOS treatment, respectively.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42599357
+      evidence_source: HUMAN_CLINICAL
+      explanation: Shows favorable clinical and microbiological outcomes in a carbapenem-resistant Gram-negative
+        infection cohort in which most patients received fosfomycin as part of combination therapy and
+        K. pneumoniae predominated.
+    first_seen_at: '2026-10-03T22:44:37.069068+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:42599357
+  eb2e5babd5f7c3c158e1c79d6bea88fe554ee45d89616d68a20d82e1320a0863:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: MALDI-TOF species identification
+        description: Matrix-assisted laser desorption/ionization time-of-flight mass spectrometry rapidly
+          identifies cultured K. pneumoniae isolates from clinically relevant specimens.
+        diagnosis_term:
+          preferred_term: MALDI-TOF mass spectrometry
+      selected_evidence:
+        snippet: A total of 174 K. pneumoniae isolates obtained from clinically relevant material were
+          correctly identified by Bruker MALDI-TOF MS with log (score) >2.0.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27239799
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates MALDI-TOF identification of K. pneumoniae in a 174-isolate diagnostic
+        study.
+    first_seen_at: '2026-10-03T22:44:37.155782+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:27239799
+  0acd57959b0389f2bfce3f588f5db3485829005ce6d4adbdf560657c526e2ae9:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Blood-culture molecular pathogen and KPC detection
+        description: Rapid molecular panels on positive blood cultures can identify bloodstream pathogens
+          and detect resistance determinants such as blaKPC before slower conventional susceptibility
+          workflows finish.
+        diagnosis_term:
+          preferred_term: blood culture identification panel
+      selected_evidence:
+        snippet: Among the 100 positively flagged blood cultures, 94% of FilmArray BCID panel results
+          were consistent with the MALDI Biotyper results.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32305272
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports rapid molecular identification from positive blood cultures as concordant
+        with MALDI-TOF in a comparative diagnostic study.
+    first_seen_at: '2026-10-03T22:44:37.299128+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:32305272
+  16987700ae2c078df03828db5e8b45881f9c9dbbcdc7b3f0667c398d62727def:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: MALDIxin colistin-resistance detection
+        description: MALDIxin detects lipid A modifications that mediate K. pneumoniae colistin and polymyxin
+          resistance and can distinguish chromosomal from plasmid MCR mechanisms.
+        diagnosis_term:
+          preferred_term: MALDIxin lipid A resistance test
+      selected_evidence:
+        snippet: The optimized method allowed the rapid (<30 min) identification of l-Ara4N- and pEtN-modified
+          lipid A of K. pneumoniae, which are known to be the real triggers of polymyxin resistance.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31580426
+      evidence_source: HUMAN_CLINICAL
+      explanation: Shows that MALDIxin can rapidly detect lipid A modifications that confer polymyxin
+        resistance in K. pneumoniae.
+    first_seen_at: '2026-10-03T22:44:37.396365+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      reference: PMID:31580426
+  c9d35cd9397e3f915da73666b8753c28a07e6a0b544eef42444f72538b57703f:
+    claim:
+      about:
+        disease:
+          name: Klebsiella Pneumonia
+          disease_term:
+            preferred_term: Klebsiella pneumonia
+            term:
+              id: MONDO:0030602
+              label: Klebsiella pneumonia
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Intrapulmonary C57BL/6J mouse K. pneumoniae pneumonia model
+        species: Mus musculus
+        background: C57BL/6J
+        category: Pulmonary challenge model
+        description: Male C57BL/6J mice inoculated intrapulmonarily with K. pneumoniae ATCC 43816 develop
+          bronchopneumonia, pulmonary bacterial burden, innate leukocyte recruitment, and survival changes
+          that measure local antibacterial immunity after TLR4 agonist pretreatment.
+        modeled_mechanisms:
+        - target: Pulmonary Klebsiella Bacterial Burden
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          model_scale: ORGANISM
+          description: Measures viable K. pneumoniae in lung tissue after controlled intrapulmonary challenge.
+          limitations: The model uses a defined intrapulmonary inoculum in otherwise healthy male mice;
+            it does not reproduce chronic human colonization, device-associated ventilator pneumonia,
+            or resistant plasmid ecology.
+      selected_evidence:
+        snippet: Mice received intrapulmonary 3D PHAD (20 μg) or vehicle for 2 consecutive days before
+          challenge with intrapulmonary Klebsiella pneumoniae (2.3 × 10 3 colony-forming units).
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36018281
+      evidence_source: MODEL_ORGANISM
+      explanation: Describes the controlled intrapulmonary mouse challenge used to model K. pneumoniae
+        pneumonia and TLR4 agonist pretreatment.
+    first_seen_at: '2026-10-03T22:44:37.494739+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:44.132476+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:44.132476+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:36018281
+assessments:
+  eeaf222c69936771c6c005b755c73ac82ef549be7acfffb3154655e6dc924ae6:
+    input_sha256: 3f7d3f5ff33b52765a9a09071934df4c3248a2c0b4f8db49e4c2b9ebf6172c02
+    configuration_sha256: a26608e8702f13598b9be642f3c6ce75751f84cd3f5177fe9f00ddb0cfd920f8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:34.508152+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MATCH: 0.15
+            MISMATCH: 0.05
+          confidence: 0.7
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.58
+            MISMATCH: 0.12
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.91
+            MISMATCH: 0.03
+          confidence: 0.87
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.81
+            MATCH: 0.08
+            MISMATCH: 0.11
+          confidence: 0.71
+        /assertion/infectious_agent_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.87
+            MISMATCH: 0.04
+          confidence: 0.81
+        /assertion/infectious_agent_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.91
+            MISMATCH: 0.02
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6316
+        output_tokens: 277
+      elapsed_seconds: 0.3631
+      request_sha256: cc6d8fdb67a82c9aa196f9313ada2799978a2d7db5bdf0cf40705e149cec2ea6
+      request_sha256s:
+      - cc6d8fdb67a82c9aa196f9313ada2799978a2d7db5bdf0cf40705e149cec2ea6
+  bb5f744c95055c934192218c1dadad1d88fbf0864db0cc719ed18ad3abdd2818:
+    input_sha256: ab33f623e976af9c3201e84f4ec038242020ee6383f994b13b2f2ad8d75f3803
+    configuration_sha256: 48d3dedba739a104812910d60f7155bad4e512b0c4499626ca9df986a5068b46
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:34.509245+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.62
+            MISMATCH: 0.11
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.76
+            MISMATCH: 0.06
+          confidence: 0.64
+        /assertion/classification_value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.6
+            MISMATCH: 0.11
+          confidence: 0.41
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.52
+            MISMATCH: 0.2
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4337
+        output_tokens: 178
+      elapsed_seconds: 0.3404
+      request_sha256: df763c5e02e170c3a56c0f47403a86acaa87c087e161e770b2bde5c144c89fb2
+      request_sha256s:
+      - df763c5e02e170c3a56c0f47403a86acaa87c087e161e770b2bde5c144c89fb2
+  09c957b9835d7c4a12d452d2f30594f691f3df87c1d470d7ad164420f59a61b8:
+    input_sha256: a7956dbb1c2fdd47c4886d50d3354782f2d55cec2fa7f0324749d4fb5faa7162
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.559962+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.03
+            PARTIAL: 0.45
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.06
+            PARTIAL: 0.31
+          confidence: 0.45
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.12
+            PARTIAL: 0.39
+          confidence: 0.24
+        /assertion/environmental_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.01
+            PARTIAL: 0.15
+          confidence: 0.75
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.16
+            PARTIAL: 0.65
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.05
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.84
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7572
+        output_tokens: 318
+      elapsed_seconds: 0.2011
+      request_sha256: 7f1ecf2d97d50d3fc71932f817546862a5d88ac513f17a18ac7969c3e5aa396a
+      request_sha256s:
+      - 7f1ecf2d97d50d3fc71932f817546862a5d88ac513f17a18ac7969c3e5aa396a
+  914c129ed87f2573df6897993e66c355f74e182280e47a62453353e7c72c74e8:
+    input_sha256: d70f680b21de3f20dcbd158ff7a76e0091b46fd38b78139db4477887f31c5885
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.558918+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.68
+            MATCH: 0.28
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.32
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.18
+            MATCH: 0.81
+          confidence: 0.71
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.64
+            MATCH: 0.34
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4347
+        output_tokens: 177
+      elapsed_seconds: 0.2163
+      request_sha256: 1ca638d20ce965b06544f9ad45dca4262f5b898fc55bc40e527c10239afd7378
+      request_sha256s:
+      - 1ca638d20ce965b06544f9ad45dca4262f5b898fc55bc40e527c10239afd7378
+  2a84aabe3d27744c0e1aab2bd9d63a1f62b15f46d13cf2de87086c79eb7e858f:
+    input_sha256: 07cf5a5d81db5ecda08c2b9875c92a0f85e0deffec04e2f9105211593daaa799
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.581993+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.88
+            MATCH: 0.11
+            MISMATCH: 0.01
+          confidence: 0.82
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.67
+            MISMATCH: 0.02
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.86
+            MATCH: 0.13
+            MISMATCH: 0.01
+          confidence: 0.78
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4282
+        output_tokens: 177
+      elapsed_seconds: 0.2183
+      request_sha256: 870395d36a41bba45e1e00380c8fa6756cab6abdce237674898d2db1af9d34d3
+      request_sha256s:
+      - 870395d36a41bba45e1e00380c8fa6756cab6abdce237674898d2db1af9d34d3
+  41f6bceb06f10e7f462cf5f4f74fb3c4b087cb4ecc463afb0f905811f36dbf4e:
+    input_sha256: b390163f33fb5ad320df4058ef49b08fbfd7b904a307fd2e03f665c683e089ee
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.582549+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.04
+            PARTIAL: 0.85
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.04
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.18
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.04
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.19
+            PARTIAL: 0.78
+          confidence: 0.66
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.04
+            PARTIAL: 0.84
+          confidence: 0.76
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.04
+            PARTIAL: 0.33
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7516
+        output_tokens: 321
+      elapsed_seconds: 0.2402
+      request_sha256: 6a48d76a4b0766764b312d95c74bc3c0c0f5e5a0d8f1e23055ea53597242d54a
+      request_sha256s:
+      - 6a48d76a4b0766764b312d95c74bc3c0c0f5e5a0d8f1e23055ea53597242d54a
+  39c2ad7c2a1980d355e0e60c78b570f681908201c9dc892de55060c2820b5b4e:
+    input_sha256: d8a488b55e0cc566eb7fa061e4558a4087ec43a591540b44d87be3393d0ea659
+    configuration_sha256: 082d71dc5e3df20dc7b41ae43efc0ca33b94fc653198839adf2b681ecb68e019
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.777763+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.06
+            PARTIAL: 0.88
+          confidence: 0.83
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.07
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.18
+            PARTIAL: 0.62
+          confidence: 0.44
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.12
+            PARTIAL: 0.68
+          confidence: 0.53
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.04
+            PARTIAL: 0.9
+          confidence: 0.85
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.31
+            PARTIAL: 0.34
+          confidence: 0.03
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.47
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.49
+            PARTIAL: 0.46
+          confidence: 0.24
+        /assertion/locations/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.44
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/locations/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.51
+            PARTIAL: 0.44
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10589
+        output_tokens: 479
+      elapsed_seconds: 0.2278
+      request_sha256: 02356778e64545aa01c2b55d3867566375f4e1fc73109745b5287505e1e17090
+      request_sha256s:
+      - 02356778e64545aa01c2b55d3867566375f4e1fc73109745b5287505e1e17090
+  3362b3fffc0547ce3d393f19f732e9082ffec6e8730dce61d090a83e53cf3116:
+    input_sha256: 6444a8f5e4bdd6f9dd627f7ad21818f643445867962d9aab70de9be281df44e1
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.854162+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.13
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.2
+            PARTIAL: 0.34
+          confidence: 0.19
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.23
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.15
+            PARTIAL: 0.69
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.05
+            PARTIAL: 0.78
+          confidence: 0.67
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6437
+        output_tokens: 272
+      elapsed_seconds: 0.1825
+      request_sha256: e354b238ad7adfdf65cb00c6bbf79829a783d1c3e980da4c38e887e42ad728eb
+      request_sha256s:
+      - e354b238ad7adfdf65cb00c6bbf79829a783d1c3e980da4c38e887e42ad728eb
+  6df608cf295f9e076ff036edb3c1788f8c7a6ce084df86cb8191445e4238cf71:
+    input_sha256: f1467753509bc1991eb98ffca6467ddb0266208d2f4b80b1c60561698ea1c9ab
+    configuration_sha256: 4d056e38bf96a59529111de98848dd956deaac6884aadabf7a79082dba788b14
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.825270+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.75
+            MATCH: 0.16
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.62
+            MATCH: 0.16
+          confidence: 0.43
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.68
+            MATCH: 0.18
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.79
+            MATCH: 0.14
+          confidence: 0.69
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.35
+            MATCH: 0.38
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6640
+        output_tokens: 270
+      elapsed_seconds: 0.2105
+      request_sha256: 4dc04936519a231eb566e26f8283999dff8530e38fa53bcad2104a7f51c185da
+      request_sha256s:
+      - 4dc04936519a231eb566e26f8283999dff8530e38fa53bcad2104a7f51c185da
+  fc1e86785215736f68cff2f852fe2f850824cd1ab3ee3d202836261000988e32:
+    input_sha256: 7f898ad01efe2249b511875d8bf717795c1ec541dc694b6c6577497833752ad9
+    configuration_sha256: 4d056e38bf96a59529111de98848dd956deaac6884aadabf7a79082dba788b14
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:35.802291+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MISMATCH: 0.02
+            MATCH: 0.14
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.08
+            MATCH: 0.31
+          confidence: 0.43
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.15
+            MATCH: 0.14
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.89
+            MISMATCH: 0.01
+            MATCH: 0.1
+          confidence: 0.83
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.03
+            MATCH: 0.84
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6633
+        output_tokens: 270
+      elapsed_seconds: 0.2107
+      request_sha256: 206ad062297487e15b241f2d16cddaa9151b4248ea499544a41d1239a13ee0a1
+      request_sha256s:
+      - 206ad062297487e15b241f2d16cddaa9151b4248ea499544a41d1239a13ee0a1
+  384c5219c8757a6da5a7745afb551c8413e814a89f931d0e75348d49dcb29423:
+    input_sha256: f61db65ffb37f929f4a16f4d26a03608156c48cc5e152062cf73f4dc662a6125
+    configuration_sha256: 4d056e38bf96a59529111de98848dd956deaac6884aadabf7a79082dba788b14
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.038973+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.71
+            MISMATCH: 0.02
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.21
+            MISMATCH: 0.03
+          confidence: 0.64
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            PARTIAL: 0.22
+            MISMATCH: 0.03
+          confidence: 0.62
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.23
+            MISMATCH: 0.11
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.72
+            MISMATCH: 0.03
+          confidence: 0.58
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6662
+        output_tokens: 269
+      elapsed_seconds: 0.2273
+      request_sha256: c1a5107275a2296376fdb33e60b70d7ef4f3234ff29b20a132166784dcb92537
+      request_sha256s:
+      - c1a5107275a2296376fdb33e60b70d7ef4f3234ff29b20a132166784dcb92537
+  c9f3fb689a50a0b3a14fcbb919ebe04f17888b90c4f17cb13e0e67af221cc2a4:
+    input_sha256: 8489b89aa6a66b727f999ba372c42cc2fc5ab495a04fb8d992e6ccb98b3fa8e3
+    configuration_sha256: faf0649928e3e1dff15692c94c1a3c572e0e16a8334ec72378f83c704863bb42
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.154135+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.03
+            MATCH: 0.39
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.02
+            MATCH: 0.85
+          confidence: 0.77
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.04
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.02
+            MATCH: 0.32
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.1
+            MATCH: 0.6
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+            MATCH: 0.9
+          confidence: 0.86
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+            MATCH: 0.96
+          confidence: 0.93
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.2
+            MATCH: 0.42
+          confidence: 0.12
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.26
+            MATCH: 0.29
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10661
+        output_tokens: 477
+      elapsed_seconds: 0.187
+      request_sha256: 26984a0769000858b837f09893f9a06f770bf2b48f1503f6ff85a93afdd9fae0
+      request_sha256s:
+      - 26984a0769000858b837f09893f9a06f770bf2b48f1503f6ff85a93afdd9fae0
+  e9168e23e7f7d829cccbf6fdd6ce9140b734e3690d2c65136cd6193dd6e5b193:
+    input_sha256: 0e424b472b98c6d52bfc0f86a4c767900d7e36f3e80362f377fea8e1df0cfd12
+    configuration_sha256: 4d056e38bf96a59529111de98848dd956deaac6884aadabf7a79082dba788b14
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.151944+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.39
+            MISMATCH: 0.03
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.24
+            MISMATCH: 0.1
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.39
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.97
+            MISMATCH: 0.01
+          confidence: 0.94
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6674
+        output_tokens: 269
+      elapsed_seconds: 0.2352
+      request_sha256: 93fc1cebaa130b7bb54f9116d430c69610f1f9529995275ed60c04b0b618fd49
+      request_sha256s:
+      - 93fc1cebaa130b7bb54f9116d430c69610f1f9529995275ed60c04b0b618fd49
+  b2861d71e9cd693fddc57b574a05ecb8c6499622b8c49346a52faf9fd1467076:
+    input_sha256: 99d01d01a3516efd04f955d155dd218aa2bcb1b128193722305a38677329df64
+    configuration_sha256: 1d14f8a59213ba044711885592325d4a953d629796aa9bbadf9d844f108d80af
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.153364+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.67
+            PARTIAL: 0.31
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.24
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.61
+            PARTIAL: 0.34
+          confidence: 0.41
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.62
+            PARTIAL: 0.35
+          confidence: 0.43
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.73
+            PARTIAL: 0.26
+          confidence: 0.6
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.5
+            PARTIAL: 0.33
+          confidence: 0.25
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.27
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.31
+            PARTIAL: 0.5
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8612
+        output_tokens: 384
+      elapsed_seconds: 0.2389
+      request_sha256: f4eae59d53efb4607fb92a971f58deb272de80996d66469061cf3a84b462e720
+      request_sha256s:
+      - f4eae59d53efb4607fb92a971f58deb272de80996d66469061cf3a84b462e720
+  91b82fb64a985a3cb067ff54c6c1e3b0fd7910fa4254a1232c861bfc541ca4bc:
+    input_sha256: 0453bc2cbc655ba02260787258b1f6ac37c5c8a07d6d8d9e18a6db634dba8057
+    configuration_sha256: e16ae0eb91cb7a047448384bc2e4d65fa7a25457eb28490cdf26275cd97f499c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.310245+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.1
+            MATCH: 0.4
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.04
+            MATCH: 0.59
+          confidence: 0.39
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.25
+            MATCH: 0.22
+          confidence: 0.29
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.06
+            MATCH: 0.78
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5577
+        output_tokens: 225
+      elapsed_seconds: 0.2044
+      request_sha256: 0859c63a492df0f1258ddd0b4ea8339e5ddc1fab33a6e8eedf90dfaffb286503
+      request_sha256s:
+      - 0859c63a492df0f1258ddd0b4ea8339e5ddc1fab33a6e8eedf90dfaffb286503
+  220c407a9e27b1b0d4441673624aaee5aeab626e7ec6698ea7e39e329de319a1:
+    input_sha256: 4fbb21c73dd1eda8ff47be4c2ecd5f161d933ed1b6e29eaf4e6211f1dcf4148e
+    configuration_sha256: 74a7f49a21ef90b79209835eb9418d41954331837d33201344e6a6ae07820dd1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.392662+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.67
+            MISMATCH: 0.01
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.96
+            MISMATCH: 0.0
+          confidence: 0.93
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.86
+            MISMATCH: 0.01
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.67
+            MISMATCH: 0.01
+          confidence: 0.52
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.03
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.05
+            MISMATCH: 0.56
+          confidence: 0.33
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.87
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.73
+            MISMATCH: 0.02
+          confidence: 0.61
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.87
+            MISMATCH: 0.01
+          confidence: 0.8
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.28
+            MISMATCH: 0.24
+          confidence: 0.21
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.32
+            MISMATCH: 0.28
+          confidence: 0.1
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17806
+        output_tokens: 844
+      elapsed_seconds: 0.2589
+      request_sha256: 3a42d540727dfe34badfc2960e5fa547516f2e35c50b823ef97bad5a82d2399d
+      request_sha256s:
+      - 3a42d540727dfe34badfc2960e5fa547516f2e35c50b823ef97bad5a82d2399d
+  fc42fe5eec332caf6c5d6b1e44c27594d3d7dc4af7568fee044be078b79beb0f:
+    input_sha256: 1b8423761ffb29743ffc65af373934f5aca7ce1613dfdc996b0ac56aa5c50ddc
+    configuration_sha256: 1d14f8a59213ba044711885592325d4a953d629796aa9bbadf9d844f108d80af
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.502762+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MISMATCH: 0.05
+            MATCH: 0.27
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.09
+            MATCH: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.09
+            MATCH: 0.35
+          confidence: 0.34
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.05
+            MATCH: 0.66
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.03
+            MATCH: 0.3
+          confidence: 0.51
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.03
+            MATCH: 0.88
+          confidence: 0.83
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.12
+            MATCH: 0.59
+          confidence: 0.39
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.15
+            MATCH: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8639
+        output_tokens: 369
+      elapsed_seconds: 0.2225
+      request_sha256: cd0420c1ef640deb0355d62f79cdd413ac2a7f6d65d0d91ca2df7e33f53c50a4
+      request_sha256s:
+      - cd0420c1ef640deb0355d62f79cdd413ac2a7f6d65d0d91ca2df7e33f53c50a4
+  634bd798e240b9abea600b6e55e9bdef022110917207255670907232d6ce0270:
+    input_sha256: e59e309efaae6fecfbface7b5b2c1c88ecc63a9e007dd395f95dda533aaf1ac6
+    configuration_sha256: 1d14f8a59213ba044711885592325d4a953d629796aa9bbadf9d844f108d80af
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.446472+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.02
+            PARTIAL: 0.69
+          confidence: 0.54
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.16
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.38
+            MATCH: 0.05
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.19
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.02
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.5
+            PARTIAL: 0.35
+          confidence: 0.26
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.1
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.06
+            PARTIAL: 0.44
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8640
+        output_tokens: 375
+      elapsed_seconds: 0.3492
+      request_sha256: 7713cdbcbfcd705018aae5f14b89b286e6642b212beffac182cc48e3a634d358
+      request_sha256s:
+      - 7713cdbcbfcd705018aae5f14b89b286e6642b212beffac182cc48e3a634d358
+  7ff6ea98ee3288571ea0552e3da0be46588b9fdf73efb7c02d789dc9894fb606:
+    input_sha256: fad7b59bde9291ac9d6b03775e299c1f8cea3594ed651dc2adeda9219e2509d0
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.578958+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.56
+            MATCH: 0.39
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.55
+            MATCH: 0.33
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.21
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.67
+            MATCH: 0.24
+          confidence: 0.5
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.2
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.2
+            MATCH: 0.78
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6258
+        output_tokens: 276
+      elapsed_seconds: 0.2181
+      request_sha256: e820fde4a82eb342786ee2c428ee2c8eb1719515701d7bfb7921e7630321e9e6
+      request_sha256s:
+      - e820fde4a82eb342786ee2c428ee2c8eb1719515701d7bfb7921e7630321e9e6
+  ad8fe1f3bcdc2a0ccc295a37a4194a704f642edcaea5b9680ae2ca22556c817f:
+    input_sha256: 2b10621c96420ac6f89cbc8ff667aa3e6f041021d752837ecf7a3736e3135575
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.718662+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.14
+            PARTIAL: 0.84
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.08
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.72
+            PARTIAL: 0.27
+          confidence: 0.58
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.67
+            PARTIAL: 0.31
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6271
+        output_tokens: 275
+      elapsed_seconds: 0.2687
+      request_sha256: 2c1669a5afb33aaec6c06cbe96735e05c3bf897dc8af111f5af52ca2e5fce099
+      request_sha256s:
+      - 2c1669a5afb33aaec6c06cbe96735e05c3bf897dc8af111f5af52ca2e5fce099
+  f5683b2ca79b4f0ff3f81621a21916b6d03f0ad29f889d0567d1ffd43222789e:
+    input_sha256: 340038a0aecd2885ba2595eb06064acee0a519a74b77cdb2916311c778c33be7
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.798592+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.03
+            MATCH: 0.38
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.9
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.27
+            MATCH: 0.1
+          confidence: 0.44
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+            MATCH: 0.9
+          confidence: 0.85
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6296
+        output_tokens: 275
+      elapsed_seconds: 0.2253
+      request_sha256: 4c82e9667aab87b243046d058a758b26f2a27fc926114e5b84048b4aafc5a0ea
+      request_sha256s:
+      - 4c82e9667aab87b243046d058a758b26f2a27fc926114e5b84048b4aafc5a0ea
+  1bd3b6a398201485fde281efb4d37431309569be43c777121e6c30e6201b7238:
+    input_sha256: 675e7e63c305873cf6dc54bd9a484eefbb3dc84a3b55a1684ceabaecd80ada26
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.951313+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.19
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.04
+            PARTIAL: 0.36
+          confidence: 0.39
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.04
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.16
+            PARTIAL: 0.41
+          confidence: 0.14
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.06
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.04
+            PARTIAL: 0.24
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7693
+        output_tokens: 323
+      elapsed_seconds: 0.2058
+      request_sha256: 8a1dd20b59bc82df3d07a61679b210270f0fda87432630a564da5f1fded36637
+      request_sha256s:
+      - 8a1dd20b59bc82df3d07a61679b210270f0fda87432630a564da5f1fded36637
+  d57dfd252587cd4b89f0061fec09bbdecbedf2ac809b83a2e9d180ef8e123191:
+    input_sha256: 3edee19e50f75a983903848b49af38e9cd9676dc215e7d6a3cc08dcb4f480398
+    configuration_sha256: 9a6db956b0d156b7e37facf5eca876429a5083b0f02a72037c4c84f883359bee
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:36.951849+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.11
+            MISMATCH: 0.21
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.12
+            MISMATCH: 0.42
+          confidence: 0.19
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.54
+            MISMATCH: 0.07
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.19
+            MISMATCH: 0.11
+          confidence: 0.55
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.24
+            MISMATCH: 0.53
+          confidence: 0.31
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.31
+            MISMATCH: 0.36
+          confidence: 0.04
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.36
+            MISMATCH: 0.3
+          confidence: 0.03
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.55
+            MISMATCH: 0.12
+          confidence: 0.32
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.6
+            MISMATCH: 0.1
+          confidence: 0.41
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.5599999999999999
+            MISMATCH: 0.13
+          confidence: 0.35
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.54
+            MISMATCH: 0.17
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11708
+        output_tokens: 559
+      elapsed_seconds: 0.3445
+      request_sha256: 20ad874139586b8a54b93520f5e1ff5c087875a36b48d53c6e58b52a14c4fd9b
+      request_sha256s:
+      - 20ad874139586b8a54b93520f5e1ff5c087875a36b48d53c6e58b52a14c4fd9b
+  ba1f688892be7e87e84e6167daae5c712332e44cc549f23e296aaae1beee6954:
+    input_sha256: 652639e8dcf2c405fae9fe1b54f77799e2893016a37a7b0445dd09e56e116bfb
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:37.069068+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.79
+            MATCH: 0.04
+          confidence: 0.68
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.8
+            MATCH: 0.03
+          confidence: 0.7
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.6900000000000001
+            MATCH: 0.07
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.77
+            MATCH: 0.04
+          confidence: 0.66
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.3
+            MATCH: 0.46
+          confidence: 0.19
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            PARTIAL: 0.45
+            MATCH: 0.24
+          confidence: 0.17
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.44
+            MATCH: 0.27
+          confidence: 0.16
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.3
+            MATCH: 0.62
+          confidence: 0.42
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+            MATCH: 0.6
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9732
+        output_tokens: 442
+      elapsed_seconds: 0.306
+      request_sha256: a344d6ef1c886baf3b39f57a6eaa25a40be2a7f57d1f5b2ee36561bfb4773a04
+      request_sha256s:
+      - a344d6ef1c886baf3b39f57a6eaa25a40be2a7f57d1f5b2ee36561bfb4773a04
+  8d2f32cf5bff4bd28d218dbfd694fcd1ee8bd6bbea3188495f7b0619a9a6414b:
+    input_sha256: eb2e5babd5f7c3c158e1c79d6bea88fe554ee45d89616d68a20d82e1320a0863
+    configuration_sha256: a7b4f06be7170f154cda08edeb6cf54e55f7b2b8f289b13836ba3ccfdd42339a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:37.155782+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.04
+            MATCH: 0.75
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.04
+            MATCH: 0.91
+          confidence: 0.87
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.04
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.02
+            MATCH: 0.72
+          confidence: 0.57
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.05
+            MATCH: 0.88
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5311
+        output_tokens: 226
+      elapsed_seconds: 0.3359
+      request_sha256: c2ee1359c729c443a6600b486f0c05511b0b6d81d93e3401ea513d82b223319e
+      request_sha256s:
+      - c2ee1359c729c443a6600b486f0c05511b0b6d81d93e3401ea513d82b223319e
+  2c715c5c79337f5cdc626612452abbf6f400c91af98444e5997bf050c0a8f41b:
+    input_sha256: 0acd57959b0389f2bfce3f588f5db3485829005ce6d4adbdf560657c526e2ae9
+    configuration_sha256: a7b4f06be7170f154cda08edeb6cf54e55f7b2b8f289b13836ba3ccfdd42339a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:37.299128+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.48
+            MATCH: 0.02
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.72
+            MATCH: 0.0
+          confidence: 0.57
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.33
+            MATCH: 0.12
+          confidence: 0.32
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.37
+            MATCH: 0.03
+          confidence: 0.4
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.12
+            MATCH: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5295
+        output_tokens: 232
+      elapsed_seconds: 0.2957
+      request_sha256: d903ee2733ee22b4b5e43c565b3a8e32cccd660198a6f500fd419df5f3ebf4f2
+      request_sha256s:
+      - d903ee2733ee22b4b5e43c565b3a8e32cccd660198a6f500fd419df5f3ebf4f2
+  e6e13945cd7e6ea6769df34b02d7ef0c576d4add14a7443d54c561ecba43e87b:
+    input_sha256: 16987700ae2c078df03828db5e8b45881f9c9dbbcdc7b3f0667c398d62727def
+    configuration_sha256: a7b4f06be7170f154cda08edeb6cf54e55f7b2b8f289b13836ba3ccfdd42339a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:37.396365+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.03
+            PARTIAL: 0.7
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.21
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.04
+            PARTIAL: 0.73
+          confidence: 0.59
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.11
+            PARTIAL: 0.36
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5321
+        output_tokens: 229
+      elapsed_seconds: 0.2693
+      request_sha256: 62392291faeb82d3715697854fe42ddd5715aa5e7a7ccd3b50d7ddce0db2c654
+      request_sha256s:
+      - 62392291faeb82d3715697854fe42ddd5715aa5e7a7ccd3b50d7ddce0db2c654
+  301144decc4467f9c98366e6805851e70d0ea802050f69f642a47e5a9ebc75ab:
+    input_sha256: c9d35cd9397e3f915da73666b8753c28a07e6a0b544eef42444f72538b57703f
+    configuration_sha256: 47fdc36364a1c1bfdc98a8000fd43e755fbdbbaec680abfd9ea85c75c2e8bbc9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:44:37.494739+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.66
+            MISMATCH: 0.05
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.56
+            MISMATCH: 0.14
+          confidence: 0.34
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            PARTIAL: 0.14
+            MISMATCH: 0.03
+          confidence: 0.76
+        /assertion/background:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.3
+            MISMATCH: 0.68
+          confidence: 0.51
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.26
+            MISMATCH: 0.06
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.77
+            MISMATCH: 0.16
+          confidence: 0.65
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.57
+            MISMATCH: 0.22
+          confidence: 0.36
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.33
+            MISMATCH: 0.43
+          confidence: 0.15
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.56
+            MISMATCH: 0.32
+          confidence: 0.34
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.26
+            MISMATCH: 0.65
+          confidence: 0.47
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.49
+            MISMATCH: 0.38
+          confidence: 0.25
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.26
+            MISMATCH: 0.72
+          confidence: 0.57
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13654
+        output_tokens: 643
+      elapsed_seconds: 0.3451
+      request_sha256: bf2168928cdb58abd62c6ddee984bc1656fad871356d3ed04d3d031d4a75b472
+      request_sha256s:
+      - bf2168928cdb58abd62c6ddee984bc1656fad871356d3ed04d3d031d4a75b472

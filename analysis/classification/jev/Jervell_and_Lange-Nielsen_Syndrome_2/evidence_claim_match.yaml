@@ -6272,6 +6272,59 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT06534671
+  11fcedd078b15d37d7ef819c1880bc615bb47129cd144e9ea7177b4f7b0718ac:
+    claim:
+      about:
+        disease:
+          name: Jervell and Lange-Nielsen Syndrome 2
+          disease_term:
+            preferred_term: Jervell and Lange-Nielsen syndrome 2
+            term:
+              id: MONDO:0012871
+              label: Jervell and Lange-Nielsen syndrome 2
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Arrhythmogenic Substrate and Ventricular Tachyarrhythmia
+        conforms_to: cardiac_ion_channel_repolarization#Ventricular Tachyarrhythmia
+        role: intermediate
+        biological_scale: TISSUE
+        description: Prolonged, heterogeneous ventricular repolarization predisposes to early afterdepolarizations
+          and re-entrant torsade de pointes, which can degenerate into sustained ventricular tachycardia
+          or ventricular fibrillation. Available comparative data suggest that this arrhythmic risk is
+          present but lower in genotype-confirmed JLNS2 (biallelic KCNE1) than in JLNS1 (biallelic KCNQ1).
+        locations:
+        - preferred_term: heart
+          term:
+            id: UBERON:0000948
+            label: heart
+      selected_evidence:
+        snippet: Event incidence did not differ significantly for Type 2 Jervell and Lange-Nielsen syndrome
+          patients relative to the overall heterozygous cohort (10.5%
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31941373
+      reference_title: 'An International Multicenter Evaluation of Type 5 Long QT Syndrome: A Low Penetrant
+        Primary Arrhythmic Condition.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly quantifies the definite arrhythmic event rate (10.5%, 2 of 19 genotype-confirmed
+        patients) in the largest reported JLNS2 cohort, providing a JLNS2-specific severity estimate rather
+        than an imported JLNS1 figure.
+    first_seen_at: '2026-10-03T21:21:02.795750+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:02.795750+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:02.795750+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:31941373
 assessments:
   b4c540dc570ac286a1b07b2d21fab82f0d0280b4c15e4431e388fb5a99ee9137:
     input_sha256: bd83a3f89f57eb3a1acab726582569bfbea958779b0b1f69612b32499227b218
@@ -14541,3 +14594,83 @@ assessments:
       request_sha256: 2b488106df277079f791bbec3299037670c270f93cb7985725d656b7d207d1d6
       request_sha256s:
       - 2b488106df277079f791bbec3299037670c270f93cb7985725d656b7d207d1d6
+  a9e0d8b9f9bba4418491804f67395696dc105bfb639ab3f29a82dafa8a10679d:
+    input_sha256: 11fcedd078b15d37d7ef819c1880bc615bb47129cd144e9ea7177b4f7b0718ac
+    configuration_sha256: e661b512294aaba64467b76daedcf9b7b3d7da8eb91cf19073a9e162d6c9d68b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:02.795750+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.39
+            PARTIAL: 0.57
+          confidence: 0.36
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.26
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.62
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.57
+            PARTIAL: 0.37
+          confidence: 0.36
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.54
+            PARTIAL: 0.28
+          confidence: 0.32
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.44
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.46
+            PARTIAL: 0.32
+          confidence: 0.19
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.53
+            PARTIAL: 0.34
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9768
+        output_tokens: 429
+      elapsed_seconds: 0.1898
+      request_sha256: 026e5cc16e8096a244dbe7c7f7a9c6532742bdad7bfa776cc97b4ad5ee8a6f3a
+      request_sha256s:
+      - 026e5cc16e8096a244dbe7c7f7a9c6532742bdad7bfa776cc97b4ad5ee8a6f3a

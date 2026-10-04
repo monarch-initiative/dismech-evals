@@ -3108,6 +3108,54 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:37703311
+  5bf86d99fda94cdf3c57216e6d8ba6f9199825154bb00986f4f1daa7d93434fb:
+    claim:
+      about:
+        disease:
+          name: Pick Disease
+          disease_term:
+            preferred_term: Pick disease
+            term:
+              id: MONDO:0008243
+              label: Pick disease
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Tau Protein Accumulation
+        notes: Tau-positive inclusions found in neurons and glial cells
+        cell_types:
+        - preferred_term: Glial Cell
+          term:
+            id: CL:0000125
+            label: glial cell
+        - preferred_term: Neuron
+          term:
+            id: CL:0000540
+            label: neuron
+      selected_evidence:
+        snippet: Our findings show how tau can adopt distinct folds in the human brain in different diseases,
+          an essential step for understanding the formation and propagation of molecular conformers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/4
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30158706
+      reference_title: Structures of filaments from Pick's disease reveal a novel tau protein fold.
+      explanation: The study discusses the tau protein's propensity to form pathological inclusions in
+        cells, specifically mentioning both neurons and glial cells.
+    first_seen_at: '2026-10-03T21:20:06.113114+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:06.113114+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:06.113114+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/4
+      reference: PMID:30158706
 assessments:
   65fd3857ecb5b0c52125a66e8327e9b59d166c19f1c0c66ff7f954d312b8dc00:
     input_sha256: 29a98aee179b8aa5b6438d685fb60423e87520a4971f4fcb6b3add027696627c
@@ -7581,3 +7629,76 @@ assessments:
       request_sha256: be9e67702cf93de80184d4e1ac798f0df1a0a83f7cf1d2a8092d577ca7f92564
       request_sha256s:
       - be9e67702cf93de80184d4e1ac798f0df1a0a83f7cf1d2a8092d577ca7f92564
+  7dc404cbe8e51ed98f5fe6f9e92918a47b28713d93b75d01e0b071546a487c68:
+    input_sha256: 5bf86d99fda94cdf3c57216e6d8ba6f9199825154bb00986f4f1daa7d93434fb
+    configuration_sha256: 157c4598ec0a476116caa8d3241e7c0fa04e2eaa1fcf4b2f7a57b77b0bda8443
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:06.113114+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.43
+            MATCH: 0.02
+          confidence: 0.32
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.18
+            MATCH: 0.03
+          confidence: 0.69
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.2
+            MATCH: 0.13
+          confidence: 0.51
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.61
+            MATCH: 0.01
+          confidence: 0.41
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.61
+            MATCH: 0.02
+          confidence: 0.41
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.02
+            MISMATCH: 0.58
+          confidence: 0.37
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.47
+            MATCH: 0.05
+          confidence: 0.21
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.44
+            MATCH: 0.05
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8205
+        output_tokens: 388
+      elapsed_seconds: 0.3242
+      request_sha256: c58454eb9f03ea529d8f6884cac1bd6a786986f06a5cdafd0345bb354591add9
+      request_sha256s:
+      - c58454eb9f03ea529d8f6884cac1bd6a786986f06a5cdafd0345bb354591add9

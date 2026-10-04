@@ -3262,6 +3262,171 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:42404495
+  f922202b91b96fec6cfa105a6bac4122181442f77a4f54e3ab95d1378c200ff2:
+    claim:
+      about:
+        disease:
+          name: Filippi Syndrome
+          disease_term:
+            preferred_term: Filippi syndrome
+            term:
+              id: MONDO:0010092
+              label: Filippi syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: mismatch_ckap2l_knockout_mouse_lacks_human_phenotype
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        prompt: Why does a constitutive Ckap2l knockout mouse show no overt developmental abnormality
+          — no microcephaly, no growth failure, no digit anomaly — when biallelic human CKAP2L loss of
+          function causes a multiple-congenital-anomaly syndrome?
+        attaches_to:
+        - pathophysiology#Neural Progenitor Division Failure
+        - pathophysiology#Cortical Progenitor Pool Depletion
+        - pathophysiology#Reduced Cortical Neuron Output and Postnatal Microcephaly
+        rationale: 'This is the sharpest open problem in the disorder''s mechanism. The canonical model
+          attributes human microcephaly to CKAP2L-dependent neural progenitor division, and the mouse
+          ortholog radmis was the source of that model — yet the 2026 constitutive knockout produced only
+          reduced male fertility with abnormally elongated sperm flagella, not the human developmental
+          phenotype. Candidate explanations that would change how the mechanism should be curated include:
+          (1) mouse-specific paralog redundancy (e.g. CKAP2) that human progenitors lack; (2) a human-specific
+          requirement in outer radial glia and the OSVZ, the compartment responsible for primate cortical
+          expansion and absent from lissencephalic mouse cortex — the same argument already recorded for
+          other progenitor microcephalies in this KB; or (3) that the human phenotype does not in fact
+          arise from the progenitor-proliferation arm at all. Until this is resolved, the mouse data support
+          the cellular spindle phenotype but do not license the inference from spindle defect to human
+          microcephaly.'
+        proposed_experiments:
+        - experiment_id: exp_ckap2l_human_cortical_organoid
+          name: CKAP2L-null human cortical organoid phenotyping
+          description: Generate CKAP2L-null and patient-variant human iPSC-derived cortical organoids
+            alongside isogenic controls and quantify apical and basal progenitor number, outer-radial-glia
+            abundance, spindle orientation, and organoid size across corticogenesis.
+          experiment_type:
+            preferred_term: human iPSC-derived organoid disease modeling
+          decision_criterion: The progenitor arm is supported for human biology if CKAP2L-null organoids
+            show reduced progenitor number and organoid size relative to isogenic controls; a null result
+            would argue that the mouse-based progenitor model does not explain the human phenotype.
+        - experiment_id: exp_ckap2l_ckap2_paralog_redundancy
+          name: Ckap2l/Ckap2 paralog-redundancy test in mouse cortex
+          description: Compare Ckap2l single-knockout with Ckap2l;Ckap2 double-knockout mouse cortex for
+            progenitor depletion, spindle phenotype, and brain size.
+          experiment_type:
+            preferred_term: mouse compound-knockout genetic interaction study
+          decision_criterion: Paralog redundancy explains the absent single-knockout phenotype if the
+            double knockout, but not the single knockout, reproduces progenitor depletion and reduced
+            brain size.
+        - experiment_id: exp_ckap2l_primary_human_progenitor_spindle
+          name: Spindle phenotype in primary human neural progenitors
+          description: Assay primary human fetal neural progenitors, or patient-derived cells differentiated
+            to a progenitor state, for the multipolar-spindle and cytokinesis-failure phenotypes described
+            in lymphoblastoid cells.
+          experiment_type:
+            preferred_term: primary human cell immunofluorescence assay
+          decision_criterion: The cellular defect is relevant to the disease-affected cell type if multipolar
+            spindles and cytokinesis failure are reproduced in human neural progenitors, not only in lymphoblastoid
+            lines.
+      selected_evidence:
+        snippet: Ckap2l knockout mice show no overt developmental abnormalities, with the exception of
+          reduced male fertility, evidenced by decreased sperm count, impaired motility, and abnormally
+          elongated flagella.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41370039
+      reference_title: Filippi syndrome-associated CKAP2L modulates microtubule dynamics essential for
+        mitosis and ciliary length regulation.
+      evidence_source: MODEL_ORGANISM
+      explanation: Documents the failure of the constitutive mouse knockout to reproduce the human developmental
+        phenotype — the mismatch itself.
+    first_seen_at: '2026-10-03T21:20:25.427070+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:25.427070+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:25.427070+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:41370039
+  06a1dee731f38d935ad4d6b60917214822a4c93f82faf2b17cd147f8df228652:
+    claim:
+      about:
+        disease:
+          name: Filippi Syndrome
+          disease_term:
+            preferred_term: Filippi syndrome
+            term:
+              id: MONDO:0010092
+              label: Filippi syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Biallelic CKAP2L Loss of Function
+        biological_scale: MOLECULAR
+        description: 'Biallelic loss-of-function variants in CKAP2L — most commonly homozygous frameshift
+          alleles, with rarer canonical splice-site, start-codon, and (in one family) missense alleles
+          in trans — abolish or destabilize cytoskeleton-associated protein 2-like. CKAP2L is a bona fide
+          microtubule-associated protein that localizes to microtubule-based organelles: the centrosome,
+          the mitotic spindle and its poles, and the ciliary basal body. In lymphoblastoid cell lines
+          from individuals homozygous for the founding c.571dupA allele, CKAP2L is no longer detectable
+          at the spindle poles, establishing loss of function at the level of protein localization rather
+          than a dominant-negative or gain-of-function mechanism.'
+        genes:
+        - preferred_term: CKAP2L
+          term:
+            id: hgnc:26877
+            label: CKAP2L
+        molecular_functions:
+        - preferred_term: microtubule binding
+          term:
+            id: GO:0008017
+            label: microtubule binding
+          modifier: DECREASED
+        cellular_components:
+        - preferred_term: spindle pole
+          term:
+            id: GO:0000922
+            label: spindle pole
+        - preferred_term: centrosome
+          term:
+            id: GO:0005813
+            label: centrosome
+        - preferred_term: ciliary basal body
+          term:
+            id: GO:0036064
+            label: ciliary basal body
+      selected_evidence:
+        snippet: CKAP2L is a bona fide microtubule-associated protein that localizes to microtubule-based
+          organelles, including the centrosome, mitotic spindle, and ciliary basal body.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41370039
+      reference_title: Filippi syndrome-associated CKAP2L modulates microtubule dynamics essential for
+        mitosis and ciliary length regulation.
+      evidence_source: IN_VITRO
+      explanation: Establishes the subcellular localization set that defines which microtubule-based organelles
+        are at risk when CKAP2L is lost.
+    first_seen_at: '2026-10-03T21:20:25.366760+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:25.366760+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:25.366760+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:41370039
 assessments:
   a836756d2a55486be195472d02ce11ad4fc77c3286cc6916e435656ec440e1e9:
     input_sha256: fa897f0921fbb9b48f4808cb2a512940beffd74d64f163a2703ab7fb391c4216
@@ -8256,3 +8421,310 @@ assessments:
       request_sha256: 18688146f0d87a2d9680210643571696f33445423db393cbf36bdb37b1a53d96
       request_sha256s:
       - 18688146f0d87a2d9680210643571696f33445423db393cbf36bdb37b1a53d96
+  783f84f992373debee756aa9f3fd7f39e72dcf1320e3b1775c750edd5f4f8263:
+    input_sha256: f922202b91b96fec6cfa105a6bac4122181442f77a4f54e3ab95d1378c200ff2
+    configuration_sha256: f04f6dae4dcd66b19acbdc5164a0d073bfcc32e2fb889a9764794f50f0f14f28
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:25.427070+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6799999999999999
+            PARTIAL: 0.18
+            MISMATCH: 0.14
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.34
+            MISMATCH: 0.2
+          confidence: 0.18
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.18
+            MISMATCH: 0.61
+          confidence: 0.41
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.18
+            MISMATCH: 0.53
+          confidence: 0.3
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.09
+            MISMATCH: 0.89
+          confidence: 0.84
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            PARTIAL: 0.2
+            MISMATCH: 0.05
+          confidence: 0.64
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.36
+            MISMATCH: 0.32
+          confidence: 0.03
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.29
+            MISMATCH: 0.22
+          confidence: 0.23
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.15
+            MISMATCH: 0.76
+          confidence: 0.64
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.16
+            MISMATCH: 0.77
+          confidence: 0.65
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.13
+            MISMATCH: 0.85
+          confidence: 0.77
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.08
+            MISMATCH: 0.88
+          confidence: 0.81
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.1
+            MISMATCH: 0.87
+          confidence: 0.81
+        /assertion/proposed_experiments/1/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.27
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/proposed_experiments/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.31
+            MISMATCH: 0.54
+          confidence: 0.3
+        /assertion/proposed_experiments/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.36
+            MISMATCH: 0.5
+          confidence: 0.24
+        /assertion/proposed_experiments/1/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.15
+            MISMATCH: 0.74
+          confidence: 0.62
+        /assertion/proposed_experiments/1/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.23
+            MISMATCH: 0.68
+          confidence: 0.53
+        /assertion/proposed_experiments/2/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.2
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/proposed_experiments/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.35
+            MISMATCH: 0.39
+          confidence: 0.08
+        /assertion/proposed_experiments/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.27
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/proposed_experiments/2/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.11
+            MISMATCH: 0.78
+          confidence: 0.68
+        /assertion/proposed_experiments/2/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.15
+            MISMATCH: 0.72
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 23498
+        output_tokens: 1215
+      elapsed_seconds: 0.3417
+      request_sha256: 4f0457742128ac0b47d13b6ac9921b66415accec1d8265577f96e20419e0f55f
+      request_sha256s:
+      - 4f0457742128ac0b47d13b6ac9921b66415accec1d8265577f96e20419e0f55f
+  d7f6e8cfe1fdbc484b477ed79778faba90bc61bf95a882c9c252084f0254aa52:
+    input_sha256: 06a1dee731f38d935ad4d6b60917214822a4c93f82faf2b17cd147f8df228652
+    configuration_sha256: 2e8cfad610b037501e97f6d1179a9db0326057a9a3ed12a2da1855cc6214c553
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:25.366760+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.65
+            MISMATCH: 0.21
+          confidence: 0.48
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.57
+            MISMATCH: 0.32
+          confidence: 0.36
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.45
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.18
+            MISMATCH: 0.11
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.19
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            PARTIAL: 0.18
+            MISMATCH: 0.09
+          confidence: 0.58
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.15
+            PARTIAL: 0.25
+          confidence: 0.4
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.45
+            MISMATCH: 0.4
+          confidence: 0.18
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.48
+            MISMATCH: 0.35
+          confidence: 0.22
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.39
+            PARTIAL: 0.51
+          confidence: 0.28
+        /assertion/cellular_components/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+          confidence: 0.21
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            PARTIAL: 0.34
+            MISMATCH: 0.13
+          confidence: 0.29
+        /assertion/cellular_components/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.27
+            MISMATCH: 0.09
+          confidence: 0.47
+        /assertion/cellular_components/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.27
+            MISMATCH: 0.1
+          confidence: 0.45
+        /assertion/cellular_components/2/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.26
+            MISMATCH: 0.12
+          confidence: 0.43
+        /assertion/cellular_components/2/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.11
+            PARTIAL: 0.29
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16901
+        output_tokens: 788
+      elapsed_seconds: 0.2134
+      request_sha256: abb76b1a5f09523f04ac4a2af943a245e75a474dcbd348b8298dfa3619b3c42f
+      request_sha256s:
+      - abb76b1a5f09523f04ac4a2af943a245e75a474dcbd348b8298dfa3619b3c42f

@@ -2128,6 +2128,64 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/0
       evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/1
       reference: PMID:33234702
+  a69a6bf39fba5a82e75c875c150faed3aa1544370d517b997b2a788fc85ae2bb:
+    claim:
+      about:
+        disease:
+          name: Frank-Ter Haar Syndrome
+          disease_term:
+            preferred_term: Frank-Ter Haar syndrome
+            term:
+              id: MONDO:0009579
+              label: Frank-Ter Haar syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Incomplete Podosome Formation and Failed MT1-MMP Recruitment
+        biological_scale: CELLULAR
+        description: 'TKS4 is required for podosomes and invadopodia, actin-rich membrane protrusions
+          that coordinate pericellular proteolysis with cell migration. Fibroblasts lacking Tks4 form
+          only incomplete podosomes, and crucially fail to recruit membrane type-1 matrix metalloproteinase
+          (MT1-MMP) to them. The rescue experiments locate the defect precisely: reintroducing Tks4 restores
+          both podosome formation and matrix degradation, whereas overexpressing the related Tks5 restores
+          podosome formation only. TKS4 therefore carries a non-redundant role in the proteolytic arm
+          specifically, which is the step that fails in this disease.'
+        cell_types:
+        - preferred_term: fibroblast
+          term:
+            id: CL:0000057
+            label: fibroblast
+        cellular_components:
+        - preferred_term: podosome
+          term:
+            id: GO:0002102
+            label: podosome
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Both phenotypes were rescued by reintroduction of Tks4, whereas only podosome formation,
+          but not ECM degradation, was rescued by overexpression of Tks5.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19144821
+      reference_title: The novel adaptor protein Tks4 (SH3PXD2B) is required for functional podosome formation.
+      evidence_source: IN_VITRO
+      explanation: The differential rescue establishes that TKS4's role in matrix degradation is non-redundant
+        with TKS5, explaining why its loss alone causes disease.
+    first_seen_at: '2026-10-03T21:18:39.975476+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:39.975476+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:39.975476+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      reference: PMID:19144821
 assessments:
   4f64087614b5970eefd9ef188a662e08a68bec551cc8cb8de356dcbf22e5f49e:
     input_sha256: 055a96fa7ad46a5b4289455d0f9ba3088ccf49d965377a244758c4263e1adcf4
@@ -5234,3 +5292,90 @@ assessments:
       request_sha256: c10488f3a85c9bd53b2cae70bfad652c2ed0cf1abfc29fce6e6c257770d9e4b9
       request_sha256s:
       - c10488f3a85c9bd53b2cae70bfad652c2ed0cf1abfc29fce6e6c257770d9e4b9
+  ab63c491705bf7d76700a15d9273e89d7d96cbb2d1135d21e00ea047a99ccde1:
+    input_sha256: a69a6bf39fba5a82e75c875c150faed3aa1544370d517b997b2a788fc85ae2bb
+    configuration_sha256: 5b725005b2961a5743f0c5734eacf3152c41f425799521cd1adcdd79d0fd06a5
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:39.975476+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.19
+            MISMATCH: 0.41
+          confidence: 0.13
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.06
+            MISMATCH: 0.54
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.44
+            MISMATCH: 0.17
+          confidence: 0.16
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.95
+            MISMATCH: 0.02
+          confidence: 0.92
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.58
+            MISMATCH: 0.07
+          confidence: 0.37
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.5
+            MISMATCH: 0.17
+          confidence: 0.26
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.51
+            MISMATCH: 0.15
+          confidence: 0.27
+        /assertion/cellular_components/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.57
+            MISMATCH: 0.1
+          confidence: 0.36
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.44
+            MISMATCH: 0.15
+          confidence: 0.17
+        /assertion/cellular_components/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.62
+            MISMATCH: 0.1
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10912
+        output_tokens: 481
+      elapsed_seconds: 0.3969
+      request_sha256: cadf4247cb57bf95c9ee1dde47387eac0dc90457ab068fbda2be3a97ea712780
+      request_sha256s:
+      - cadf4247cb57bf95c9ee1dde47387eac0dc90457ab068fbda2be3a97ea712780

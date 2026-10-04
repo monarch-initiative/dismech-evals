@@ -1,0 +1,235 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/FGFR_Altered_Urothelial_Carcinoma.yaml
+disease: FGFR-Altered Urothelial Carcinoma
+inventory:
+  source_sha256: ab2789899854e12a58556586ad797d8d0514529150fced54e3fbe5fb739d2f9e
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-03T23:58:33.118943+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  e4627b211d673a90f61c3f48bfda4ec1723680271f637ce0a4000620c7baf7b3:
+    claim:
+      about:
+        disease:
+          name: FGFR-Altered Urothelial Carcinoma
+          disease_term:
+            preferred_term: urothelial carcinoma
+            term:
+              id: MONDO:0040679
+              label: urothelial carcinoma
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Urothelial Carcinoma
+        finding_term:
+          preferred_term: Urothelial Carcinoma
+          term:
+            id: NCIT:C4030
+            label: Urothelial Carcinoma
+        frequency: VERY_FREQUENT
+        description: Bladder carcinomas are classified as urothelial carcinoma.
+      selected_evidence:
+        snippet: carcinomas are classified as urothelial carcinoma (UC)
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21566415
+      reference_title: Diagnosis and management of urothelial carcinoma of the bladder.
+      explanation: Abstract states that bladder carcinomas are classified as urothelial carcinoma.
+    first_seen_at: '2026-10-03T22:38:59.466302+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:33.118943+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:33.118943+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:21566415
+  2a2b79d62213c427da0b93fcf1be7d83cecf2a1879f13885297c4ba71fc10b76:
+    claim:
+      about:
+        disease:
+          name: FGFR-Altered Urothelial Carcinoma
+          disease_term:
+            preferred_term: urothelial carcinoma
+            term:
+              id: MONDO:0040679
+              label: urothelial carcinoma
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: FGFR3
+        gene_term:
+          preferred_term: FGFR3
+          term:
+            id: hgnc:3690
+            label: FGFR3
+        association: Somatic Activating Mutations and Fusions
+        notes: FGFR3 alterations occur in 15-20% of metastatic urothelial carcinomas. Common mutations
+          include S249C, Y373C, R248C, and G370C. FGFR3-TACC3 fusions and other rearrangements also activate
+          the pathway. FGFR2 alterations are less common.
+      selected_evidence:
+        snippet: Specific mutations have been identified that predict response to therapy including ERCC2
+          mutations and cisplatin, DNA damage and repair mutations and checkpoint inhibitors, and FGFR3
+          mutations and FGFR tyrosine kinase inhibitors such as erdafitinib.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31264434
+      reference_title: Evolving Role of Genomics in Genitourinary Neoplasms.
+      explanation: Supports clinically relevant FGFR3 mutations in urothelial carcinoma.
+    first_seen_at: '2026-10-03T22:38:59.875472+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:33.118943+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:33.118943+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:31264434
+assessments:
+  720c59ee7ce371cfedb17afda8e685b0bbbeb241364c27a05abdf81bfbf97ca2:
+    input_sha256: e4627b211d673a90f61c3f48bfda4ec1723680271f637ce0a4000620c7baf7b3
+    configuration_sha256: d8fd9e5655656b6be03f4cd749736b3cfca36da48ba55860fa9acbca30ca277d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:38:59.466302+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.13
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.41
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/finding_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.05
+            PARTIAL: 0.16
+          confidence: 0.68
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.32
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.05
+            PARTIAL: 0.21
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7258
+        output_tokens: 322
+      elapsed_seconds: 0.3482
+      request_sha256: 72469e4a5f9d8f7d0c6995c39f713614f6ebf8d4d8f00b13fe1624d7588ed9a6
+      request_sha256s:
+      - 72469e4a5f9d8f7d0c6995c39f713614f6ebf8d4d8f00b13fe1624d7588ed9a6
+  4eaca523a84b80ae21fccb904f8aa809c19083a25b9d3b3297f443821aa6731f:
+    input_sha256: 2a2b79d62213c427da0b93fcf1be7d83cecf2a1879f13885297c4ba71fc10b76
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:38:59.875472+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.61
+            MISMATCH: 0.04
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.56
+            MISMATCH: 0.1
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.18
+            MISMATCH: 0.02
+          confidence: 0.7
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            PARTIAL: 0.13
+            MISMATCH: 0.03
+          confidence: 0.75
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            PARTIAL: 0.2
+            MISMATCH: 0.05
+          confidence: 0.62
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.64
+            MISMATCH: 0.06
+          confidence: 0.45
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.5
+            MISMATCH: 0.48
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7285
+        output_tokens: 319
+      elapsed_seconds: 0.3232
+      request_sha256: 2a5f86df00380a160431c5a93a28a761b7ad2de51b53b3167dff90a7c5bf394b
+      request_sha256s:
+      - 2a5f86df00380a160431c5a93a28a761b7ad2de51b53b3167dff90a7c5bf394b

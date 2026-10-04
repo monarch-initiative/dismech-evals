@@ -3030,6 +3030,54 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:20869245
+  16b3308823cbc9beafd58e361a9f2ca137c1058a90b6b3810f29df82c7d4c25c:
+    claim:
+      about:
+        disease:
+          name: Obesity Due to MC4R Pathway Disruption
+          disease_term:
+            preferred_term: obesity due to MC4R pathway disruption
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: LEP
+        display_name: LEP-related monogenic obesity
+        genes:
+        - preferred_term: LEP
+          term:
+            id: hgnc:6553
+            label: LEP
+        description: 'Severe early-onset obesity caused by congenital leptin deficiency, including classical
+          hormone deficiency, biologically inactive hormone, and antagonistic hormone forms. This row
+          carries no subtype_term because the MONDO class for the disease (MONDO:0013991, obesity due
+          to congenital leptin deficiency) is bound as the `disease_term` of Congenital_Leptin_Deficiency,
+          where the same three forms are curated in full.
+
+          '
+      selected_evidence:
+        snippet: Biallelic pathogenic leptin gene variants cause severe early-onset obesity usually associated
+          with low or undetectable circulating leptin levels.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/3
+      evidence_path: /has_subtypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38470203
+      reference_title: Classification of Congenital Leptin Deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Defines the LEP-related monogenic obesity subtype.
+    first_seen_at: '2026-10-03T21:09:59.031263+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:59.031263+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:59.031263+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/3
+      evidence_path: /has_subtypes/3/evidence/0
+      reference: PMID:38470203
 assessments:
   0adc5abaad86ac175bf3a3c9259233ec54d7ffd43dbe25baf870c1a054402ece:
     input_sha256: 1929aa359c038d6190bf55a48082541bb2a239d9270c42e6339b86ac1b04d994
@@ -7647,3 +7695,69 @@ assessments:
       request_sha256: c7d9b9d7745baba4cf32b0d828cff00fb4a8a6372d18bce46e19ac9e3aedfb1c
       request_sha256s:
       - c7d9b9d7745baba4cf32b0d828cff00fb4a8a6372d18bce46e19ac9e3aedfb1c
+  af091cdfc1425c7f5794339370010944e4cba9c5d3a5953a9c43ff5f7bab0b12:
+    input_sha256: 16b3308823cbc9beafd58e361a9f2ca137c1058a90b6b3810f29df82c7d4c25c
+    configuration_sha256: 699ea2e35c12c48e2ad1f49d144c148cd96442ff2c1d82afcd5b5b817db32e57
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:59.031263+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.03
+            MISMATCH: 0.9
+          confidence: 0.86
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.02
+            MISMATCH: 0.97
+          confidence: 0.96
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.47
+            PARTIAL: 0.05
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/display_name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.17
+            MISMATCH: 0.43
+          confidence: 0.14
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.07
+            MISMATCH: 0.34
+          confidence: 0.38
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.06
+            MISMATCH: 0.39
+          confidence: 0.33
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.3
+            MISMATCH: 0.38
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7278
+        output_tokens: 332
+      elapsed_seconds: 0.1767
+      request_sha256: cadb67be5d6c5d763f7504454cbb1ec803552f7c4fdb6b8fa772d03563a901e3
+      request_sha256s:
+      - cadb67be5d6c5d763f7504454cbb1ec803552f7c4fdb6b8fa772d03563a901e3

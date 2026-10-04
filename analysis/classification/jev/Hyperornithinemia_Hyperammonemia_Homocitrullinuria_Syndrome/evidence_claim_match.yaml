@@ -7138,6 +7138,58 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:39086438
+  3de3e71411c6923edcf4bf0d0a2733e90112ccf619bb01e4710c86b1a0fa57a3:
+    claim:
+      about:
+        disease:
+          name: Hyperornithinemia-hyperammonemia-homocitrullinuria syndrome
+          disease_term:
+            preferred_term: hyperornithinemia-hyperammonemia-homocitrullinuria syndrome
+            term:
+              id: MONDO:0009393
+              label: ornithine translocase deficiency
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Hyperammonemic Encephalopathy
+            description: Hyperammonemic crises produce acute encephalopathy with vomiting, confusion,
+              lethargy, and coma; recurrent or severe episodes contribute to long-term neurologic injury.
+            chemical_entities:
+            - preferred_term: ammonia
+              term:
+                id: CHEBI:16134
+                label: ammonia
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Tachypnea
+        description: Acute metabolic decompensation can include tachypnea.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: HP:0002789 | Tachypnea | Frequent (79-30%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/6
+      evidence_path: /pathophysiology/4/downstream/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: ORPHA:415
+      reference_title: Hyperornithinemia-hyperammonemia-homocitrullinuria syndrome
+      evidence_source: OTHER
+      explanation: Orphanet records tachypnea as a frequent HHH phenotype.
+    first_seen_at: '2026-10-03T21:09:14.637249+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:14.637249+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:14.637249+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/6
+      evidence_path: /pathophysiology/4/downstream/6/evidence/0
+      reference: ORPHA:415
 assessments:
   2674b0c354691f27131a2a11b5d63c12919b6376b9459327f19450f2cca36318:
     input_sha256: a5ad528ee08f1f6d3533b6015961b1739d7734d98b144b46db6d1b0880558b4d
@@ -16413,3 +16465,62 @@ assessments:
       request_sha256: d6ba9899f608a9273d53a4652646b2aecfb9bed6121525f78970d24d0fec1512
       request_sha256s:
       - d6ba9899f608a9273d53a4652646b2aecfb9bed6121525f78970d24d0fec1512
+  6f36336512e2f3e2cc10b573370f8af6c767d7cfd94f7a73e7e323a5771b87f5:
+    input_sha256: 3de3e71411c6923edcf4bf0d0a2733e90112ccf619bb01e4710c86b1a0fa57a3
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:14.637249+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.26
+            MATCH: 0.28
+          confidence: 0.18
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.55
+            MATCH: 0.12
+          confidence: 0.34
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.14
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.2
+            MATCH: 0.39999999999999997
+          confidence: 0.11
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.44
+            MATCH: 0.04
+          confidence: 0.27
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.3
+            MATCH: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6434
+        output_tokens: 273
+      elapsed_seconds: 0.3008
+      request_sha256: c7f270798774b2fb34cf9c44d27b62137bd8c6f47db12713666e57ef18854b83
+      request_sha256s:
+      - c7f270798774b2fb34cf9c44d27b62137bd8c6f47db12713666e57ef18854b83

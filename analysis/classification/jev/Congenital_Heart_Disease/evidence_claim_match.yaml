@@ -8680,6 +8680,58 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/0/readouts/0
       evidence_path: /experimental_models/0/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:39273002
+  5f613594c1f3afafc173feb8bfa08f354eae4da7d0ff62ea513e1f5ce1043dc7:
+    claim:
+      about:
+        disease:
+          name: Congenital Heart Disease
+          disease_term:
+            preferred_term: congenital heart disease
+            term:
+              id: MONDO:0005453
+              label: congenital heart disease
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn pulse oximetry screening for critical congenital heart disease
+        diagnosis_term:
+          preferred_term: disease screening
+          term:
+            id: NCIT:C15419
+            label: Disease Screening
+        description: Postductal (or pre- and postductal) oxygen-saturation measurement in the asymptomatic
+          newborn, exploiting the fact that most critical CHD produces a detectable arterial saturation
+          deficit before it produces visible cyanosis or a murmur. Its high specificity is what makes
+          it viable as universal screening; its moderate sensitivity means a normal result does not exclude
+          CHD, and it will not detect non-cyanotic lesions such as an isolated ventricular septal defect.
+        results: Pooled sensitivity 76.5% (95% CI 67.7-83.5), specificity 99.9%, false-positive rate 0.14%.
+          Screening after 24 hours of age reduces the false-positive rate roughly tenfold (0.05% vs 0.50%).
+      selected_evidence:
+        snippet: The false-positive rate for detection of critical congenital heart defects was particularly
+          low when newborn pulse oximetry was done after 24 h from birth than when it was done before
+          24 h
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22554860
+      reference_title: 'Pulse oximetry screening for critical congenital heart defects in asymptomatic
+        newborn babies: a systematic review and meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the timing dependence recorded in the results field.
+    first_seen_at: '2026-10-03T22:35:24.655668+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:35:24.655668+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:35:24.655668+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:22554860
 assessments:
   fae95e2bcfa389370e70d83b0163cc6786787be903727d0c2b87a2fc6bfb7fe9:
     input_sha256: ee5a4475a9defd368a5e02acd01abb35c884cb648f969fbd12dea22720e99eb3
@@ -21170,3 +21222,69 @@ assessments:
       request_sha256: 7b44b225fef87b88cd4ef9373cd5b56a0d1302a7ab8e8530d5c3f6e9d273c6ea
       request_sha256s:
       - 7b44b225fef87b88cd4ef9373cd5b56a0d1302a7ab8e8530d5c3f6e9d273c6ea
+  5c3ce7541d3592e4f7213932edfca5ae8544b1f3a095878745b31edf2621fe9c:
+    input_sha256: 5f613594c1f3afafc173feb8bfa08f354eae4da7d0ff62ea513e1f5ce1043dc7
+    configuration_sha256: 00acd91c50bf28068a639226ceab01082a380410713f7e403d50533248d52b31
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:35:24.655668+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.4
+            MISMATCH: 0.05
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            PARTIAL: 0.25
+            MISMATCH: 0.06
+          confidence: 0.54
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.22
+            MISMATCH: 0.15
+          confidence: 0.44
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            PARTIAL: 0.24
+            MISMATCH: 0.23
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.48
+            MISMATCH: 0.18
+          confidence: 0.23
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.5
+            MISMATCH: 0.09
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7349
+        output_tokens: 320
+      elapsed_seconds: 0.3067
+      request_sha256: a3b84fe5e4e0aff10fcf332ef3816f474a715445de37110b853b54ff0e1dd35a
+      request_sha256s:
+      - a3b84fe5e4e0aff10fcf332ef3816f474a715445de37110b853b54ff0e1dd35a

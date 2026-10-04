@@ -2112,6 +2112,127 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:41834458
+  38b12ff06a363c12ca20c9e49ed045021b5013ea135941aba94fef130c990ad8:
+    claim:
+      about:
+        disease:
+          name: Multiple Myeloma
+          disease_term:
+            preferred_term: multiple myeloma
+            term:
+              id: MONDO:0009693
+              label: plasma cell myeloma
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_mm_obesity_accelerated_progression
+        prompt: Severe obesity is epidemiologically associated with increased multiple myeloma risk and
+          mortality, yet the mechanisms by which obesity accelerates myeloma progression are unknown.
+          Which obesity-driven factors — adipokine dysregulation (leptin, adiponectin, IL-6, TNF-alpha),
+          altered marrow lipid and metabolic flux, and immune disruption — causally promote clonal plasma
+          cell expansion and impair anti-tumor immunity, and do these mechanisms operate universally or
+          only in specific genetic and immune-competent backgrounds?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Clonal Plasma Cell Proliferation
+        - pathophysiology#Immune Dysregulation
+        - pathophysiology#Bone Marrow Failure
+        rationale: 'Epidemiologic data robustly link severe obesity to higher multiple myeloma incidence
+          and mortality, and Fairfield et al. (2026) confirmed in CoMMpass clinical data that moderate-to-severe
+          obesity at diagnosis associates with increased patient mortality and distinct myeloma-cell gene-expression
+          and pathway signatures. They further showed that high-fat-diet obesity accelerated myeloma only
+          in the immune-competent C57BL/6J 5TGM1 semisyngeneic model — not in the SCID-beige xenograft
+          or the Vk*MYC model — implicating the host immune system rather than a tumor-intrinsic effect
+          alone. However, the underlying mechanisms remain unknown: it is unresolved which specific immune
+          populations (T cells, NK cells, macrophages, neutrophils, regulatory T cells) are disrupted,
+          and how obesity-associated adipokines and altered marrow lipid/metabolic flux mechanistically
+          drive plasma-cell survival and proliferation. It is also unclear whether the obesity-altered
+          myeloma-cell gene signatures activate stemness, drug-resistance, or immune-evasion programs.
+          Resolving whether obesity acts primarily through impaired anti-tumor immunity, a permissive
+          adipocyte-rich marrow niche, or tumor-intrinsic reprogramming would clarify whether obesity
+          is a modifiable target for myeloma prevention and which interventions to prioritize.'
+        proposed_experiments:
+        - experiment_id: exp_mm_obesity_immune_niche_dissection
+          name: Immune and metabolic dissection of obesity-accelerated myeloma in the 5TGM1 model
+          description: Use the immune-competent HFD-fed C57BL/6J 5TGM1-TKGFP+/Luc+ semisyngeneic model
+            with bioluminescent tumor tracking to compare obese versus lean mice. Profile bone-marrow
+            and tumor-infiltrating immune populations by flow cytometry and single-cell RNA-seq, quantify
+            circulating and marrow adipokines and lipid metabolites, and perform selective immune-cell
+            depletion or adipokine blockade to test causal contributions. In parallel, mine MMRF CoMMpass
+            obese-versus-normal myeloma-cell transcriptomes to nominate driver pathways for functional
+            testing.
+          experiment_type:
+            preferred_term: integrated in vivo immunophenotyping and transcriptomic perturbation study
+          readouts:
+          - name: Tumor burden and engraftment in obese vs lean hosts
+            target: pathophysiology#Clonal Plasma Cell Proliferation
+            description: 'Quantify myeloma engraftment, growth kinetics, and serum IgG/M-protein in HFD-obese
+              versus lean mice using noninvasive bioluminescent imaging and serum immunoglobulin measurement,
+              with and without adipokine blockade.
+
+              '
+            assays:
+            - preferred_term: bioluminescent tumor imaging
+            - preferred_term: serum immunoglobulin quantification
+            direction: POSITIVE
+          - name: Tumor-infiltrating and marrow immune-cell composition
+            target: pathophysiology#Immune Dysregulation
+            description: 'Characterize T-cell, NK-cell, macrophage, neutrophil, and regulatory T-cell
+              frequencies and functional/exhaustion states in obese versus lean marrow, and test causality
+              by selective immune-cell depletion.
+
+              '
+            assays:
+            - preferred_term: multiparameter flow cytometry
+            - preferred_term: single-cell RNA sequencing
+            direction: NEGATIVE
+          - name: Marrow adipokine and lipid-metabolic environment
+            target: pathophysiology#Bone Marrow Failure
+            description: 'Measure marrow and circulating leptin, adiponectin, IL-6, TNF-alpha, and lipid
+              metabolites in obese versus lean hosts to link adipocyte-rich niche remodeling to plasma-cell
+              support and suppressed hematopoiesis.
+
+              '
+            assays:
+            - preferred_term: adipokine immunoassay
+            - preferred_term: marrow lipidomic profiling
+            direction: POSITIVE
+          decision_criterion: An obesity-driven immune/niche mechanism is supported if HFD-obese hosts
+            show significantly higher myeloma engraftment than lean controls, if depletion of a specific
+            immune population or blockade of a specific adipokine reverses the obesity-accelerated phenotype,
+            and if the responsible pathway is concordantly enriched in obese-patient CoMMpass myeloma-cell
+            transcriptomes.
+          would_support:
+          - pathophysiology#Clonal Plasma Cell Proliferation
+          - pathophysiology#Immune Dysregulation
+          - pathophysiology#Bone Marrow Failure
+      selected_evidence:
+        snippet: gene expression is altered in myeloma cells from patients with obesity, further implicating
+          obesity as a critical modifier for prevention
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41834458
+      reference_title: Obesity Accelerates Multiple Myeloma Progression in Certain Mouse Models and in
+        Humans.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports altered myeloma-cell gene expression in obese patients (CoMMpass), the human
+        arm motivating the proposed metabolic/transcriptomic mechanism work.
+    first_seen_at: '2026-10-03T21:22:10.554786+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:22:10.554786+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:22:10.554786+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/2
+      reference: PMID:41834458
 assessments:
   e9b7bb5a72137a4e1a51bf1c37fa39ed33d4cb4b7d5906dc5281d1fd5453356c:
     input_sha256: 89281d7e3f737e07d9fe9654164cde6900fb063bc92e9a270bf815197308f02c
@@ -5046,3 +5167,244 @@ assessments:
       request_sha256: b566c7fd5d60c39ea65d5e32887e3f2f6236983b69827af09caca265ada8cb23
       request_sha256s:
       - b566c7fd5d60c39ea65d5e32887e3f2f6236983b69827af09caca265ada8cb23
+  ac85d452f3e1157ecd9b5183a80a8fc3b391f5e44641454bbc4a9bd7c34a6cfe:
+    input_sha256: 38b12ff06a363c12ca20c9e49ed045021b5013ea135941aba94fef130c990ad8
+    configuration_sha256: db47a43496d507cf320b6bb82edddf406c17bf4f4fc26a738477dc02bb6bbf39
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:22:10.554786+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.7
+            MATCH: 0.26
+          confidence: 0.55
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.97
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.15
+            MATCH: 0.14
+          confidence: 0.57
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.73
+            MATCH: 0.2
+          confidence: 0.6
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            PARTIAL: 0.2
+            MATCH: 0.22
+          confidence: 0.37
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.88
+            PARTIAL: 0.1
+            MATCH: 0.02
+          confidence: 0.83
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            PARTIAL: 0.48
+            MATCH: 0.29
+          confidence: 0.21
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.67
+            MATCH: 0.22
+          confidence: 0.5
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            PARTIAL: 0.2
+            MATCH: 0.13
+          confidence: 0.52
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.39
+            MATCH: 0.12
+          confidence: 0.23
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            PARTIAL: 0.55
+            MATCH: 0.09
+          confidence: 0.32
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.24
+            MATCH: 0.05
+          confidence: 0.57
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5599999999999999
+            PARTIAL: 0.36
+            MATCH: 0.08
+          confidence: 0.35
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.63
+            MATCH: 0.16
+          confidence: 0.44
+        /assertion/proposed_experiments/0/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+            MATCH: 0.03
+          confidence: 0.57
+        /assertion/proposed_experiments/0/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.77
+            PARTIAL: 0.17
+            MATCH: 0.06
+          confidence: 0.66
+        /assertion/proposed_experiments/0/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            PARTIAL: 0.2
+            MATCH: 0.08
+          confidence: 0.58
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.43
+            MATCH: 0.09
+          confidence: 0.22
+        /assertion/proposed_experiments/0/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+            MATCH: 0.03
+          confidence: 0.67
+        /assertion/proposed_experiments/0/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            PARTIAL: 0.28
+            MATCH: 0.05
+          confidence: 0.51
+        /assertion/proposed_experiments/0/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.83
+            PARTIAL: 0.16
+            MATCH: 0.01
+          confidence: 0.73
+        /assertion/proposed_experiments/0/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            PARTIAL: 0.19
+            MATCH: 0.05
+          confidence: 0.64
+        /assertion/proposed_experiments/0/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            PARTIAL: 0.18
+            MATCH: 0.06
+          confidence: 0.64
+        /assertion/proposed_experiments/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+            MATCH: 0.02
+          confidence: 0.57
+        /assertion/proposed_experiments/0/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            PARTIAL: 0.35
+            MATCH: 0.07
+          confidence: 0.36
+        /assertion/proposed_experiments/0/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            PARTIAL: 0.28
+            MATCH: 0.05
+          confidence: 0.5
+        /assertion/proposed_experiments/0/readouts/2/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+            MATCH: 0.03
+          confidence: 0.59
+        /assertion/proposed_experiments/0/readouts/2/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            PARTIAL: 0.24
+            MATCH: 0.08
+          confidence: 0.52
+        /assertion/proposed_experiments/0/readouts/2/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            PARTIAL: 0.21
+            MATCH: 0.06
+          confidence: 0.6
+        /assertion/proposed_experiments/0/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.44
+            MATCH: 0.03
+          confidence: 0.29
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            PARTIAL: 0.43
+            MATCH: 0.06
+          confidence: 0.26
+        /assertion/proposed_experiments/0/would_support:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            PARTIAL: 0.45999999999999996
+            MATCH: 0.2
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 33024
+        output_tokens: 1814
+      elapsed_seconds: 0.4448
+      request_sha256: c2e2507d594160619fbc4911bd837c830fbbf763de4419d1eb14a49a477846e3
+      request_sha256s:
+      - c2e2507d594160619fbc4911bd837c830fbbf763de4419d1eb14a49a477846e3

@@ -9906,6 +9906,173 @@ inputs:
     - assertion_path: /datasets/3
       evidence_path: /datasets/3/evidence/1
       reference: GEO:GSE311894
+  60486378f8e3b4a029c521ff8210ea5119be847a877796fba5e550dc21be1978:
+    claim:
+      about:
+        disease:
+          name: Kashin-Beck Disease
+          disease_term:
+            preferred_term: Kashin-Beck disease
+            term:
+              id: MONDO:0005610
+              label: Kashin-Beck disease
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Chondroitin and Glucosamine
+        description: The best-performing symptomatic treatment for adults in the network meta-analysis
+          of KBD treatments, on a standardised mean difference of 1.46 for pain against placebo. An earlier
+          draft of this entry recorded no adult treatment at all, which was wrong.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: chondroitin sulfate
+            term:
+              id: CHEBI:37397
+              label: chondroitin sulfate
+          - preferred_term: glucosamine
+            term:
+              id: CHEBI:5417
+              label: glucosamine
+        notes: The same review is explicit that "the strength of most evidence was limited by the small
+          number of trials with low to moderate quality", and this record should be read with that caveat.
+      selected_evidence:
+        snippet: In adults, chondroitin plus glucosamine was the best for pain (standardised mean difference
+          1.46, 95% CI 1.07-1.85), followed by intra-articular injection of hyaluronic acid (IAH) (1.09,
+          0.70-1.48), chondroitin (0.84, 0.47-1.21), diclofenac (0.63, 1.18-1.08), naproxen (0.55, 0.12-0.98),
+          meloxicam (0.52, 0.03-1.01) and glucosamine (0.40, 0.13-0.67) compared to placebo
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31376086
+      reference_title: 'The effectiveness of treatments for Kashin-Beck disease: a systematic review and
+        network meta-analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The ranked effect estimates, with this combination at the top.
+    first_seen_at: '2026-10-03T21:19:20.820360+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:20.820360+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:20.820360+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: PMID:31376086
+  cd1b62e325833368a8af89dc4ddae65a2e8639114e073a368434c9b5e06c9108:
+    claim:
+      about:
+        disease:
+          name: Kashin-Beck Disease
+          disease_term:
+            preferred_term: Kashin-Beck disease
+            term:
+              id: MONDO:0005610
+              label: Kashin-Beck disease
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: SELENOS susceptibility variant
+        gene_term:
+          preferred_term: SELENOS
+          term:
+            id: hgnc:30396
+            label: SELENOS
+        relationship_type: SUSCEPTIBILITY
+        variant_origin: GERMLINE
+        frequency: pooled allele-model odds ratio 2.47 (1.85-3.29) in the meta-analysis
+        notes: SEPS1 in the older literature. Curated as susceptibility, not causation - none of these
+          variants produces the disease outside an endemic area.
+      selected_evidence:
+        snippet: There were a total of eight included case-control studies covering 2025 KBD patients
+          and 1962 controls.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33844169
+      reference_title: 'Meta-analysis of Association Studies of Selenoprotein Gene Polymorphism and Kashin-Beck
+        Disease: an Updated Systematic Review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The size of the pooled sample behind those estimates.
+    first_seen_at: '2026-10-03T21:19:20.791031+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:20.791031+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:20.791031+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      reference: PMID:33844169
+  580933575c24f39bd8cfbc7672a0ea47ad5b1186968fd0a732cff19f0116e27f:
+    claim:
+      about:
+        disease:
+          name: Kashin-Beck Disease
+          disease_term:
+            preferred_term: Kashin-Beck disease
+            term:
+              id: MONDO:0005610
+              label: Kashin-Beck disease
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Hair selenium
+        presence: Decreased
+        biomarker_term:
+          preferred_term: hair selenium concentration
+          term:
+            id: NCIT:C825
+            label: Selenium
+        notes: Recorded separately from serum selenium because it is a different specimen with a different
+          time constant - hair integrates months of intake - and because it is the marker current Chinese
+          surveillance actually uses for population monitoring. Both records bind `NCIT:C825` because
+          NCIT has no specimen-qualified selenium term; see the note on the serum record for the search.
+        readouts:
+        - target: Chronic Dietary Selenium Deficiency
+          relationship: READOUT_OF
+          direction: NEGATIVE
+          endpoint_context: MONITORING
+          interpretation: Used to monitor whether the exposure is returning in areas where the disease
+            was controlled. Note it separated endemic from non-endemic villages in only one of six provinces
+            surveyed.
+      selected_evidence:
+        snippet: Particularly in Tibet and Sichuan, grain selenium levels remain critically low
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41272335
+      reference_title: Investigation of Selenium and T-2 Toxin Exposure Levels in the Internal and External
+        Environments of Key Areas of Kashin Beck Disease in China.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The dietary source the hair measurement integrates - grain selenium still critically
+        low in Tibet and Sichuan.
+    first_seen_at: '2026-10-03T21:19:20.846122+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:20.846122+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:20.846122+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:41272335
 assessments:
   ffc2a7da91d8f5886d83b0db21f95f4da0eb16491556a22793e350ffda9486d8:
     input_sha256: ea7624e9f6746c470aa9cd4959669859a8268ad27920719c9906602c0c71321c
@@ -23726,3 +23893,285 @@ assessments:
       request_sha256: f362863c556fb2ca5222bcb74e65b89924c201a7835f3fb08557f94dadb57134
       request_sha256s:
       - f362863c556fb2ca5222bcb74e65b89924c201a7835f3fb08557f94dadb57134
+  479fab7641a2a0c99a859efebd673e74cc6bdc5fdaecf2627280228bfc5dafca:
+    input_sha256: 60486378f8e3b4a029c521ff8210ea5119be847a877796fba5e550dc21be1978
+    configuration_sha256: 3e38c61a7060c1ec9a7d55b90e98cd36be48210a3940e9b5194e80346899e95c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:20.820360+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.08
+            MATCH: 0.65
+          confidence: 0.48
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.13
+            MATCH: 0.45
+          confidence: 0.17
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.02
+            MATCH: 0.95
+          confidence: 0.93
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.1
+            MATCH: 0.75
+          confidence: 0.63
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.13
+            MATCH: 0.71
+          confidence: 0.57
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.33
+            MATCH: 0.34
+          confidence: 0.0
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.27
+            MATCH: 0.37
+          confidence: 0.05
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.02
+            MATCH: 0.9
+          confidence: 0.84
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.04
+            MATCH: 0.85
+          confidence: 0.78
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.04
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.05
+            MATCH: 0.84
+          confidence: 0.75
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.29
+            MATCH: 0.29
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12834
+        output_tokens: 595
+      elapsed_seconds: 0.4566
+      request_sha256: 28ce43a3bb0ef34d505da970094e8e8cac8c2135819876d24375ea0e732021bd
+      request_sha256s:
+      - 28ce43a3bb0ef34d505da970094e8e8cac8c2135819876d24375ea0e732021bd
+  7631ae37a3ba1945df993198be39843a52bc23a7e5e447451f5b45316e9feb8f:
+    input_sha256: cd1b62e325833368a8af89dc4ddae65a2e8639114e073a368434c9b5e06c9108
+    configuration_sha256: 9920e3a7cc56b699a5b5ed3f65114d9056ffec0788cdf6d77b1c652b181ca5c6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:20.791031+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.19
+            PARTIAL: 0.69
+          confidence: 0.55
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+          confidence: 0.29
+        /assertion/gene_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/gene_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.43
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.25
+            PARTIAL: 0.52
+          confidence: 0.29
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.39
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.65
+            PARTIAL: 0.34
+          confidence: 0.48
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9643
+        output_tokens: 426
+      elapsed_seconds: 0.5072
+      request_sha256: c3ab3d16a29e4118c5094145cbbcf176071ac104f030b64297d99f0e0df180de
+      request_sha256s:
+      - c3ab3d16a29e4118c5094145cbbcf176071ac104f030b64297d99f0e0df180de
+  8306455e41914aaaa600d7ab9b42e9ba018a93c078726e7eed514a2744db0c2d:
+    input_sha256: 580933575c24f39bd8cfbc7672a0ea47ad5b1186968fd0a732cff19f0116e27f
+    configuration_sha256: 11328fefeead59759c1fcad804a155d817c4490f4540fb4066836fc2db57b92d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:20.846122+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.05
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.18
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.1
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.05
+            PARTIAL: 0.77
+          confidence: 0.65
+        /assertion/biomarker_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.12
+            PARTIAL: 0.43
+          confidence: 0.17
+        /assertion/biomarker_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            MATCH: 0.16
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            MATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.51
+            PARTIAL: 0.44
+          confidence: 0.28
+        /assertion/readouts/0/relationship:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.2
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.29
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/readouts/0/endpoint_context:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.17
+            PARTIAL: 0.41
+          confidence: 0.14
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            MATCH: 0.04
+            PARTIAL: 0.41
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12343
+        output_tokens: 594
+      elapsed_seconds: 0.4156
+      request_sha256: 831795b4097ab89813eb47b634b05c1cd1f7f54c808331b6a9df6bea079fab10
+      request_sha256s:
+      - 831795b4097ab89813eb47b634b05c1cd1f7f54c808331b6a9df6bea079fab10

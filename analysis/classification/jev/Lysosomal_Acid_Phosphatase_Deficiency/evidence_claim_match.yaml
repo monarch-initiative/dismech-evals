@@ -1,0 +1,885 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Lysosomal_Acid_Phosphatase_Deficiency.yaml
+disease: Lysosomal Acid Phosphatase Deficiency
+inventory:
+  source_sha256: d517409e8ec88cdbce4d69419a613dfcb940204729d52dc9926084270d8b8569
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:02:17.459953+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  f6f9e84a0563ffeeaa29b8a644c490ca9c3ecc7330510b30980f525bba02c364:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Lysosomal Acid Phosphatase 2 Deficiency
+        conforms_to: lysosomal_substrate_accumulation#Lysosomal Hydrolase or Cofactor Deficiency
+        description: Loss of lysosomal acid phosphatase 2 (ACP2) impairs lysosomal dephosphorylation and
+          mannose-6-phosphate removal; ACP2 is critical for cerebellar development and brain function.
+        gene:
+          preferred_term: ACP2
+          term:
+            id: hgnc:123
+            label: ACP2
+        molecular_functions:
+        - preferred_term: lysosomal acid phosphatase activity
+          term:
+            id: GO:0003993
+            label: acid phosphatase activity
+          modifier: DECREASED
+        biological_processes:
+        - preferred_term: dephosphorylation
+          term:
+            id: GO:0016311
+            label: dephosphorylation
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Lysosomal enzymes such as lysosomal acid phosphatase 2 (Acp2) play a critical role in
+          mannose-6-phosphate removal and Acp2 controls molecular and cellular functions in the brain
+          during development and adulthood
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27132795
+      reference_title: 'Lysosomal Acid Phosphatase Biosynthesis and Dysfunction: A Mini Review Focused
+        on Lysosomal Enzyme Dysfunction in Brain.'
+      evidence_source: OTHER
+      explanation: Establishes the molecular role of ACP2 in lysosomal dephosphorylation / M6P removal
+        and brain function.
+    first_seen_at: '2026-10-03T21:44:34.544614+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:27132795
+  4fc1cdf80557654cf8e5b1e8e668d8d347f7b8dbbdd64c7326af1f6867e18bed:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Lysosomal Acid Phosphatase 2 Deficiency
+            conforms_to: lysosomal_substrate_accumulation#Lysosomal Hydrolase or Cofactor Deficiency
+            description: Loss of lysosomal acid phosphatase 2 (ACP2) impairs lysosomal dephosphorylation
+              and mannose-6-phosphate removal; ACP2 is critical for cerebellar development and brain function.
+            gene:
+              preferred_term: ACP2
+              term:
+                id: hgnc:123
+                label: ACP2
+            molecular_functions:
+            - preferred_term: lysosomal acid phosphatase activity
+              term:
+                id: GO:0003993
+                label: acid phosphatase activity
+              modifier: DECREASED
+            biological_processes:
+            - preferred_term: dephosphorylation
+              term:
+                id: GO:0016311
+                label: dephosphorylation
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Cerebellar neurodevelopmental and neurodegenerative disease
+        description: ACP2 deficiency perturbs lysosomal enzyme function in brain development, producing
+          severe cerebellar neurodevelopmental and neurodegenerative disease.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Impaired lysosomal mannose-6-phosphate removal
+        - Abnormal brain molecular and cellular functions
+      selected_evidence:
+        snippet: Acp2 is essential in cerebellar development, and mutations in this gene cause severe
+          cerebellar neurodevelopmental and neurodegenerative disorders
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:27132795
+      reference_title: 'Lysosomal Acid Phosphatase Biosynthesis and Dysfunction: A Mini Review Focused
+        on Lysosomal Enzyme Dysfunction in Brain.'
+      evidence_source: OTHER
+      explanation: This directly links ACP2 dysfunction to the cerebellar developmental and neurodegenerative
+        phenotype represented downstream of enzyme deficiency.
+    first_seen_at: '2026-10-03T21:44:35.044815+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      reference: PMID:27132795
+  5fdd4de1b2d68fee695f4b3a462c09f0126cbfebcaae2ec25939b7b2c24a9fd9:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Lysosomal Storage in Kidney and CNS
+        conforms_to: lysosomal_substrate_accumulation#Lysosomal Substrate Accumulation
+        description: Enzyme deficiency causes lysosomal storage of heterogeneous material in renal podocytes
+          and tubular epithelium and in CNS microglia, ependyma, and astroglia, with progressive astrogliosis
+          and microglial activation.
+        cell_types:
+        - preferred_term: podocyte
+          term:
+            id: CL:0000653
+            label: podocyte
+        - preferred_term: microglial cell
+          term:
+            id: CL:0000129
+            label: microglial cell
+      selected_evidence:
+        snippet: Within the central nervous system, lysosomal storage was detected to a regionally different
+          extent in microglia, ependymal cells, and astroglia concomitant with the development of a progressive
+          astrogliosis and microglial activation
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9228031
+      reference_title: Mice deficient in lysosomal acid phosphatase develop lysosomal storage in the kidney
+        and central nervous system.
+      evidence_source: MODEL_ORGANISM
+      explanation: The Acp2-deficient mouse demonstrates lysosomal storage and reactive gliosis in the
+        CNS.
+    first_seen_at: '2026-10-03T21:44:35.046109+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:9228031
+  144cc6ae2113b3bd1d946e5aa0a3c63e30e46f1e1684b1f316d5e0f0c172b54f:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Cerebellar neurodevelopmental and neurodegenerative disease
+        description: ACP2 dysfunction is associated with severe cerebellar neurodevelopmental and neurodegenerative
+          disease.
+        phenotype_term:
+          preferred_term: Abnormal cerebellum morphology
+          term:
+            id: HP:0001317
+            label: Abnormal cerebellum morphology
+      selected_evidence:
+        snippet: Acp2 is essential in cerebellar development, and mutations in this gene cause severe
+          cerebellar neurodevelopmental and neurodegenerative disorders
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27132795
+      reference_title: 'Lysosomal Acid Phosphatase Biosynthesis and Dysfunction: A Mini Review Focused
+        on Lysosomal Enzyme Dysfunction in Brain.'
+      evidence_source: OTHER
+      explanation: Links ACP2 mutations to severe cerebellar neurodevelopmental and neurodegenerative
+        disease.
+    first_seen_at: '2026-10-03T21:44:35.373157+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:27132795
+  8d658f5ef6a7446a7aefc0f681e378407ce5512388c4c44573ed29d1275775ef:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: ACP2 loss of function
+        gene_term:
+          preferred_term: ACP2
+          term:
+            id: hgnc:123
+            label: ACP2
+        association: Causative
+        notes: Loss of ACP2 (lysosomal acid phosphatase 2) underlies the disorder; the phenotype is characterized
+          predominantly from the targeted Acp2 knockout mouse.
+      selected_evidence:
+        snippet: Acp2 is essential in cerebellar development, and mutations in this gene cause severe
+          cerebellar neurodevelopmental and neurodegenerative disorders
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27132795
+      reference_title: 'Lysosomal Acid Phosphatase Biosynthesis and Dysfunction: A Mini Review Focused
+        on Lysosomal Enzyme Dysfunction in Brain.'
+      evidence_source: OTHER
+      explanation: Identifies ACP2 as the causative gene.
+    first_seen_at: '2026-10-03T21:44:35.374019+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:27132795
+  95c3c41c3d3e90e19b7afb11a5b2e5e2a44a756706e815036c45450300a960a2:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        species: Mouse (Mus musculus)
+        genotype: Acp2 knockout (LAP-deficient)
+        description: Mice with targeted disruption of the lysosomal acid phosphatase (LAP / Acp2) gene
+          are viable and develop progressive lysosomal storage in renal podocytes and tubular epithelium
+          and in CNS glia, with astrogliosis, microglial activation, generalized seizures in a minority,
+          and later kyphoscoliosis.
+        associated_phenotypes:
+        - Renal lysosomal storage
+        - CNS lysosomal storage with astrogliosis
+        - Generalized seizures
+      selected_evidence:
+        snippet: Microscopic examination of various peripheral organs revealed progredient lysosomal storage
+          in podocytes and tubular epithelial cells of the kidney
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9228031
+      reference_title: Mice deficient in lysosomal acid phosphatase develop lysosomal storage in the kidney
+        and central nervous system.
+      evidence_source: MODEL_ORGANISM
+      explanation: The Acp2 knockout mouse develops renal lysosomal storage, modeling the enzyme deficiency.
+    first_seen_at: '2026-10-03T21:44:35.406691+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:9228031
+  b17c6c55073ea97bcae5775ad261fb5d20a15b95a9d95fbe9e295bde9fb55fc2:
+    claim:
+      about:
+        disease:
+          name: Lysosomal Acid Phosphatase Deficiency
+          disease_term:
+            preferred_term: lysosomal acid phosphatase deficiency
+            term:
+              id: MONDO:0008705
+              label: lysosomal acid phosphatase deficiency
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        species: Mouse (Mus musculus)
+        genotype: Acp2 knockout (LAP-deficient)
+        description: Mice with targeted disruption of the lysosomal acid phosphatase (LAP / Acp2) gene
+          are viable and develop progressive lysosomal storage in renal podocytes and tubular epithelium
+          and in CNS glia, with astrogliosis, microglial activation, generalized seizures in a minority,
+          and later kyphoscoliosis.
+        associated_phenotypes:
+        - Renal lysosomal storage
+        - CNS lysosomal storage with astrogliosis
+        - Generalized seizures
+      selected_evidence:
+        snippet: approximately 7% of the deficient animals developed generalized seizures
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9228031
+      reference_title: Mice deficient in lysosomal acid phosphatase develop lysosomal storage in the kidney
+        and central nervous system.
+      evidence_source: MODEL_ORGANISM
+      explanation: A subset of Acp2-deficient mice develop seizures.
+    first_seen_at: '2026-10-03T21:44:35.407272+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:17.459953+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:17.459953+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/1
+      reference: PMID:9228031
+assessments:
+  4f135d0d7d43b464759d35452567ea3c86c591d9588513682b8c0afdc92cfdc3:
+    input_sha256: f6f9e84a0563ffeeaa29b8a644c490ca9c3ecc7330510b30980f525bba02c364
+    configuration_sha256: 06987b19be86daa728300031fa2d6d9427339e11b829ca004defdc2f075e472e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:34.544614+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.4
+            MISMATCH: 0.1
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.14
+            MATCH: 0.63
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.58
+            MISMATCH: 0.16
+          confidence: 0.38
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.27
+            MISMATCH: 0.24
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.47
+            MISMATCH: 0.03
+          confidence: 0.25
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.85
+            MISMATCH: 0.04
+          confidence: 0.78
+        /assertion/gene/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.79
+            MISMATCH: 0.07
+          confidence: 0.69
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.4
+            MISMATCH: 0.15
+          confidence: 0.17
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.14
+            MATCH: 0.49
+          confidence: 0.23
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.15
+            MATCH: 0.41
+          confidence: 0.17
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.34
+            MISMATCH: 0.1
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.27
+            MISMATCH: 0.11
+          confidence: 0.43
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.4
+            MISMATCH: 0.11
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13837
+        output_tokens: 637
+      elapsed_seconds: 0.3533
+      request_sha256: 2a0737c78e62223080cb3ab518e5509e209ba003afe906ce24b4995eb2262bfa
+      request_sha256s:
+      - 2a0737c78e62223080cb3ab518e5509e209ba003afe906ce24b4995eb2262bfa
+  9fc495b6f39fb2e1591f13d741ae059768bbb47310b3a2744b324a29e97d9e44:
+    input_sha256: 4fc1cdf80557654cf8e5b1e8e668d8d347f7b8dbbdd64c7326af1f6867e18bed
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.044815+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.7
+            MISMATCH: 0.12
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.19
+            MATCH: 0.65
+          confidence: 0.47
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.02
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.05
+            MATCH: 0.67
+          confidence: 0.5
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.1
+            MATCH: 0.44
+          confidence: 0.2
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.31
+            MATCH: 0.19
+          confidence: 0.25
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.74
+            MISMATCH: 0.11
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7628
+        output_tokens: 319
+      elapsed_seconds: 0.3094
+      request_sha256: a24c632d06ae694d2ff89777ee3ee00b3b76ead5718740fb431a460131a266ab
+      request_sha256s:
+      - a24c632d06ae694d2ff89777ee3ee00b3b76ead5718740fb431a460131a266ab
+  d6231845d63e1e9e1d77e2abdecc2909d92bf60e25220cda73987cb237fdd5c1:
+    input_sha256: 5fdd4de1b2d68fee695f4b3a462c09f0126cbfebcaae2ec25939b7b2c24a9fd9
+    configuration_sha256: ced9e76ab93df5a090760829be16f199d7569bbddc569a7cc28115509579d134
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.046109+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.06
+            PARTIAL: 0.85
+          confidence: 0.78
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.08
+            PARTIAL: 0.73
+          confidence: 0.6
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.08
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.07
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.02
+            PARTIAL: 0.79
+          confidence: 0.69
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.89
+            PARTIAL: 0.1
+          confidence: 0.85
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.89
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/cell_types/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/cell_types/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.93
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9366
+        output_tokens: 431
+      elapsed_seconds: 0.3153
+      request_sha256: 021f9811ee0c64eecfa6dae817da3623641037c19f66c89f0d6cb85dd027b001
+      request_sha256s:
+      - 021f9811ee0c64eecfa6dae817da3623641037c19f66c89f0d6cb85dd027b001
+  416f55d2ae1a70cefdc1bc2928d282f99a0fbbcb0a6062a1807e1165d91abb0e:
+    input_sha256: 144cc6ae2113b3bd1d946e5aa0a3c63e30e46f1e1684b1f316d5e0f0c172b54f
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.373157+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.09
+            MATCH: 0.73
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.07
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.05
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.03
+            MATCH: 0.9
+          confidence: 0.84
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.06
+            MATCH: 0.66
+          confidence: 0.5
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.04
+            MATCH: 0.73
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6279
+        output_tokens: 273
+      elapsed_seconds: 0.1814
+      request_sha256: 23f6848675d314c83964a8d663de6df2c87760194986c9971e7cd84c6105be64
+      request_sha256s:
+      - 23f6848675d314c83964a8d663de6df2c87760194986c9971e7cd84c6105be64
+  78dcbc37808a0011fb9c4e19a954a67634f95dc4ad11e351aa1bef13e9616bb2:
+    input_sha256: 8d658f5ef6a7446a7aefc0f681e378407ce5512388c4c44573ed29d1275775ef
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.374019+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.35
+            MISMATCH: 0.13
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.41
+            MISMATCH: 0.2
+          confidence: 0.11
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            PARTIAL: 0.26
+            MISMATCH: 0.07
+          confidence: 0.5
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.22
+            MISMATCH: 0.07
+          confidence: 0.57
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.15
+            MISMATCH: 0.05
+          confidence: 0.7
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.2
+            MISMATCH: 0.06
+          confidence: 0.62
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.47
+            MISMATCH: 0.27
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7229
+        output_tokens: 318
+      elapsed_seconds: 0.2026
+      request_sha256: 6bcca4c55696081697c9e6fce1679ec26c9bdc30dae27842798667cab7a64ab7
+      request_sha256s:
+      - 6bcca4c55696081697c9e6fce1679ec26c9bdc30dae27842798667cab7a64ab7
+  b6dc5f262055c010970367af8d37655c1a5b78ac82b684080fcae3bdcdccd855:
+    input_sha256: 95c3c41c3d3e90e19b7afb11a5b2e5e2a44a756706e815036c45450300a960a2
+    configuration_sha256: 3041be9d7e8921750848dee96c675ccb2945c151f497727130349d4c5841365a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.406691+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.83
+            MISMATCH: 0.02
+            MATCH: 0.15
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/species:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.56
+            MATCH: 0.05
+          confidence: 0.34
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.6
+            MATCH: 0.04
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.82
+            MISMATCH: 0.02
+            MATCH: 0.16
+          confidence: 0.73
+        /assertion/associated_phenotypes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MISMATCH: 0.04
+            MATCH: 0.12
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6257
+        output_tokens: 279
+      elapsed_seconds: 0.2049
+      request_sha256: a747b92337b2335249066a5ab00c98a2e98739e230b611c6918491581732bcad
+      request_sha256s:
+      - a747b92337b2335249066a5ab00c98a2e98739e230b611c6918491581732bcad
+  a2b35159d456aff8c9ad72d642587caca17986475db7193b4b4201f8a6619db9:
+    input_sha256: b17c6c55073ea97bcae5775ad261fb5d20a15b95a9d95fbe9e295bde9fb55fc2
+    configuration_sha256: 3041be9d7e8921750848dee96c675ccb2945c151f497727130349d4c5841365a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:44:35.407272+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.61
+            MATCH: 0.34
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+            MATCH: 0.8
+          confidence: 0.71
+        /assertion/species:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            PARTIAL: 0.46
+            MATCH: 0.14
+          confidence: 0.19
+        /assertion/genotype:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.43
+            MATCH: 0.16
+          confidence: 0.15
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.61
+            MATCH: 0.31
+          confidence: 0.41
+        /assertion/associated_phenotypes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.65
+            MATCH: 0.27
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6237
+        output_tokens: 275
+      elapsed_seconds: 0.1802
+      request_sha256: f0c508277269ff34feaee241ddf9b1613d348e76c0c62a531ec905e9e24fcdae
+      request_sha256s:
+      - f0c508277269ff34feaee241ddf9b1613d348e76c0c62a531ec905e9e24fcdae

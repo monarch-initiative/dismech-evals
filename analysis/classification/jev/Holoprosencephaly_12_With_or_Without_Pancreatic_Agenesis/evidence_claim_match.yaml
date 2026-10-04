@@ -3434,6 +3434,74 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:31006513
+  9840ffb7b14c3e7d63b13a4b08555cc04c9d7ccb0ced1c68c8444544d2d348bc:
+    claim:
+      about:
+        disease:
+          name: Holoprosencephaly 12 With or Without Pancreatic Agenesis
+          disease_term:
+            preferred_term: holoprosencephaly 12 with or without pancreatic agenesis
+            term:
+              id: MONDO:0032787
+              label: holoprosencephaly 12 with or without pancreatic agenesis
+        context:
+        - path: /genetic/0
+          value:
+            name: CNOT1
+            gene_term:
+              preferred_term: CNOT1
+              description: CCR4-NOT transcription complex subunit 1, the scaffold of the CCR4-NOT mRNA
+                deadenylase complex.
+              term:
+                id: hgnc:7877
+                label: CNOT1
+            relationship_type: CAUSATIVE
+            variant_origin: DE_NOVO
+            association: The single recurrent heterozygous de novo missense variant c.1603C>T (p.Arg535Cys)
+              is the only CNOT1 allele reported to cause HPE12. Other de novo CNOT1 variants (missense,
+              splice-site, nonsense) cause Vissers-Bodmer syndrome without holoprosencephaly or pancreatic
+              agenesis, so the gene-disease relationship for HPE12 is allele-specific.
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: NM_016284.4:c.1603C>T (p.Arg535Cys)
+        description: Recurrent de novo missense substitution of a residue conserved to C. elegans; absent
+          from dbSNP, DECIPHER, and gnomAD; predicted deleterious by AlignGVGD, PolyPhen2, and SIFT. Reported
+          in at least six unrelated individuals plus one fetus.
+        type: missense variant
+        clinical_significance: PATHOGENIC
+        gene:
+          preferred_term: CNOT1
+          term:
+            id: hgnc:7877
+            label: CNOT1
+      selected_evidence:
+        snippet: The p.Arg535Cys variant is absent from dbSNP138, DECIPHER, and GnomAD and affects a residue
+          which is highly conserved across species (up to C. elegans)
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:31006513
+      reference_title: A Specific CNOT1 Mutation Results in a Novel Syndrome of Pancreatic Agenesis and
+        Holoprosencephaly through Impaired Pancreatic and Neurological Development.
+      evidence_source: COMPUTATIONAL
+      explanation: Population-database absence and cross-species conservation supporting pathogenicity;
+        COMPUTATIONAL because both are database and sequence-alignment analyses rather than patient observations.
+    first_seen_at: '2026-10-03T21:20:53.728274+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:53.728274+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:53.728274+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      reference: PMID:31006513
 assessments:
   eefff7e31c299de74531f44870a8981990bea512f254a7d81295c7949b302432:
     input_sha256: 8157e6882bbac4abe302780f6b36a5e956c7fec59f7b651ee05c3dd37e1bf500
@@ -8541,3 +8609,83 @@ assessments:
       request_sha256: 747c8742be55fa22d51f8bf08903b9212f8bdc286c85357255251daaeff6d653
       request_sha256s:
       - 747c8742be55fa22d51f8bf08903b9212f8bdc286c85357255251daaeff6d653
+  1434c28ecf435dcd9f020368caaf378624057b9e313f09d91469a1addb313a48:
+    input_sha256: 9840ffb7b14c3e7d63b13a4b08555cc04c9d7ccb0ced1c68c8444544d2d348bc
+    configuration_sha256: 2281cb813148def6e60131d4c49ef71a297788534bdb86bd94d6552ccf55df98
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:53.728274+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.16
+            PARTIAL: 0.61
+          confidence: 0.41
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.12
+            PARTIAL: 0.4
+          confidence: 0.22
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.39999999999999997
+            MATCH: 0.26
+            PARTIAL: 0.34
+          confidence: 0.11
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.41
+            PARTIAL: 0.5
+          confidence: 0.26
+        /assertion/type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.1
+            PARTIAL: 0.34
+          confidence: 0.34
+        /assertion/clinical_significance:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.12
+            PARTIAL: 0.77
+          confidence: 0.65
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.35
+            PARTIAL: 0.3
+          confidence: 0.03
+        /assertion/gene/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.25
+            PARTIAL: 0.32
+          confidence: 0.13
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.18
+            PARTIAL: 0.38
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9535
+        output_tokens: 422
+      elapsed_seconds: 0.1872
+      request_sha256: 6cf0f8276da03e2c1472fea4aab486d1f670bdd9b8994404d58864c1051e3dd7
+      request_sha256s:
+      - 6cf0f8276da03e2c1472fea4aab486d1f670bdd9b8994404d58864c1051e3dd7

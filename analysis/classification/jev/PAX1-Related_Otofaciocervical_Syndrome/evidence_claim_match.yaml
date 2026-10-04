@@ -3625,6 +3625,66 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/1
       reference: PMID:35879406
+  8d1198ca73fd0127840233cf0daae42071064da91294b631350c1959ee56c2ba:
+    claim:
+      about:
+        disease:
+          name: PAX1-Related Otofaciocervical Syndrome
+          disease_term:
+            preferred_term: otofaciocervical syndrome 2
+            term:
+              id: MONDO:0014254
+              label: otofaciocervical syndrome 2
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of Thymic T Cell Development
+        biological_scale: CELLULAR
+        description: 'Absent or severely reduced T cell output producing a syndromic severe combined immunodeficiency.
+          The stromal locus of the defect is therapeutically decisive: allogeneic haematopoietic stem
+          cell transplantation supplies progenitors but not the epithelial niche they require, so T cell
+          reconstitution fails even after successful engraftment.'
+        cell_types:
+        - preferred_term: T cell
+          term:
+            id: CL:0000084
+            label: T cell
+        biological_processes:
+        - preferred_term: T cell differentiation in thymus
+          term:
+            id: GO:0033077
+            label: T cell differentiation in thymus
+          modifier: DECREASED
+        notes: 'Immunological severity is variable across reported families and is not predictable from
+          genotype: a biallelic truncating PAX1 variant has been reported in a patient without immunodeficiency.
+          Do not infer SCID from a PAX1 genotype alone.'
+      selected_evidence:
+        snippet: We investigated the molecular and cellular basis of severe combined immunodeficiency
+          (SCID) in six patients with otofaciocervical syndrome type 2 who failed to attain T cell reconstitution
+          after allogeneic hematopoietic stem cell transplantation, despite successful engraftment in
+          three of them.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32111619
+      reference_title: PAX1 is essential for development and function of the human thymus.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The engraftment-without-reconstitution result is the direct clinical demonstration
+        that the defect is stromal rather than haematopoietic.
+    first_seen_at: '2026-10-03T21:20:03.412482+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:03.412482+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:03.412482+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:32111619
 assessments:
   5a2c1150bfffd12d9dbdc66237d0741e3c11270f9a714b909662f57cf5309192:
     input_sha256: b7d98745d0bc74384a49a73d05cbfdc1d05d712c6ecc229293ab0f20be273dc2
@@ -8437,3 +8497,97 @@ assessments:
       request_sha256: 080cc09e9e663299e03ea9052c1b825cef3910f3aa74935c81ed5888dc324a2a
       request_sha256s:
       - 080cc09e9e663299e03ea9052c1b825cef3910f3aa74935c81ed5888dc324a2a
+  c92f35c450bc9bca9116794b92280ff454ad74e38a0f70aa5437edfadc24c088:
+    input_sha256: 8d1198ca73fd0127840233cf0daae42071064da91294b631350c1959ee56c2ba
+    configuration_sha256: 9f5bb2905860c0542f6b8d23ab2b3137ed53015d73ef3d80ded9b7b9ea0b616e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:03.412482+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.03
+            MATCH: 0.41
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.03
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.04
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.03
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+            MATCH: 0.89
+          confidence: 0.84
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.04
+            MATCH: 0.76
+          confidence: 0.65
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.02
+            MATCH: 0.71
+          confidence: 0.55
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.04
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.74
+            MATCH: 0.01
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11889
+        output_tokens: 532
+      elapsed_seconds: 0.3381
+      request_sha256: 4cd8937da033ec53bbba7772003d151efc91aa5381de36003a7480a92fe8583a
+      request_sha256s:
+      - 4cd8937da033ec53bbba7772003d151efc91aa5381de36003a7480a92fe8583a

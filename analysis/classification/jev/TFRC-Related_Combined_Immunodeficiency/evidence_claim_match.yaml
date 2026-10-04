@@ -5231,6 +5231,62 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/1
       reference: PMID:33096268
+  363fb1394f5a2b059a1303cb19a5282b5ae4d0e4a5fc735b1818b23d7ac53d26:
+    claim:
+      about:
+        disease:
+          name: TFRC-related Combined Immunodeficiency
+          disease_term:
+            preferred_term: TFRC-related combined immunodeficiency
+            term:
+              id: MONDO:0014760
+              label: TFRC-related combined immunodeficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Surface and soluble transferrin receptor 1
+        presence: INCREASED
+        context: 'The diagnostically distinctive laboratory finding, and the one that separates this disorder
+          from every other cause of impaired cellular iron acquisition. Because the receptor cannot be
+          internalized, it accumulates where it was made: surface TfR1 is 13-fold and 7-fold higher on
+          patient T and B cells respectively than on controls, and 6-fold higher on patient fibroblasts.
+          Soluble TfR1, released by cleavage of the surface receptor, is correspondingly raised in serum.
+          The direction is the counter-intuitive part - in ordinary iron deficiency TfR1 also rises, but
+          here it rises because the receptor is stranded rather than because the cell is signalling for
+          more iron, and the two contributions are not separated by any cited measurement.'
+        readouts:
+        - target: Defective TfR1 Endocytosis with Surface Accumulation
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Raised surface and soluble TfR1 is the direct observable consequence of the
+            internalization block, and is what makes the mechanism visible in a patient sample.
+      selected_evidence:
+        snippet: Surface TfR1 was minimally expressed on unstimulated control T and B cells, but was expressed
+          on a large percentage of patients’ T and B cells, at levels 13- and 7-fold higher, respectively,
+          than in controls
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26642240
+      reference_title: A missense mutation in TFRC, encoding transferrin receptor 1, causes combined immunodeficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Carries the quantified contrast with controls in the two cell types that bear the disease
+        phenotype. These are the 13-fold and 7-fold figures the context field cites.
+    first_seen_at: '2026-10-03T21:20:29.960120+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:29.960120+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:29.960120+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:26642240
 assessments:
   8d52b67f0fdf71fe3538a570cb798abdc36afe485f4f3500f48150b7034c3837:
     input_sha256: 0db6541c4849b831b788d91beaaf2d0f1649ff2a29cf8a0bb66e30c95096391a
@@ -12293,3 +12349,90 @@ assessments:
       request_sha256: cada8c5da5a453f1f3ef38fabcf1c749856efcdbc43e4e3ec6ac3193bbc9b4c1
       request_sha256s:
       - cada8c5da5a453f1f3ef38fabcf1c749856efcdbc43e4e3ec6ac3193bbc9b4c1
+  0871c958754ba1851d0b05a951f5152a2dfc1665c1eeafef8d1c4ae2933c2462:
+    input_sha256: 363fb1394f5a2b059a1303cb19a5282b5ae4d0e4a5fc735b1818b23d7ac53d26
+    configuration_sha256: 2ac3aa8f53067b7d50ceb4582943c42c5e1d57e0c2b4b127a3d8653ae2fc28cc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:29.960120+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.45
+            MISMATCH: 0.04
+          confidence: 0.26
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5599999999999999
+            MATCH: 0.37
+            MISMATCH: 0.07
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.76
+            MISMATCH: 0.03
+          confidence: 0.64
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.82
+            MISMATCH: 0.01
+          confidence: 0.73
+        /assertion/context:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.32
+            MISMATCH: 0.38
+          confidence: 0.06
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.72
+            MISMATCH: 0.02
+          confidence: 0.57
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.8
+            MISMATCH: 0.01
+          confidence: 0.7
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.84
+            MISMATCH: 0.01
+          confidence: 0.76
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.59
+            MISMATCH: 0.05
+          confidence: 0.38
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.46
+            MISMATCH: 0.05
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10503
+        output_tokens: 478
+      elapsed_seconds: 0.3584
+      request_sha256: bc94f7a2e690e541cad7b4e6de626fbebdd1c215068468902cb6a0af066691dd
+      request_sha256s:
+      - bc94f7a2e690e541cad7b4e6de626fbebdd1c215068468902cb6a0af066691dd

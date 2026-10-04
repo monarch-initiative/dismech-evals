@@ -5457,6 +5457,76 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/2
       reference: PMID:40855518
+  2beded3c8634a162e03c7ff9949ee547bbbd62a719544729fefc2e9fdc825eb8:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Neuronal Hyperexcitability
+        biological_scale: CELLULAR
+        description: 'Patient-derived neurons show intrinsic hyperexcitability, offering a cellular endophenotype
+          that sits between the ion-channel genetics and the circuit-level findings. iPSC-derived hippocampal
+          dentate-gyrus-like granule neurons from bipolar patients fire action potentials hyperactively
+          and carry mitochondrial abnormalities relative to control-derived neurons. The finding is also
+          a treatment-response stratifier: lithium reverses the hyperexcitability only in neurons from
+          donors who were themselves clinical lithium responders. Scope limits -- six manic bipolar I
+          donors and four unaffected individuals, one differentiated neuron type, and no demonstration
+          that hyperexcitability causes episode switching rather than marking trait vulnerability.
+
+          '
+        cell_types:
+        - preferred_term: iPSC-derived hippocampal dentate gyrus-like granule neuron
+          term:
+            id: CL:0001033
+            label: hippocampal granule cell
+        biological_processes:
+        - preferred_term: Action Potential Firing
+          term:
+            id: GO:0001508
+            label: action potential
+          modifier: INCREASED
+        - preferred_term: Regulation of Neuronal Membrane Potential
+          term:
+            id: GO:0042391
+            label: regulation of membrane potential
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: we have detected mitochondrial abnormalities in young neurons from patients with bipolar
+          disorder by using mitochondrial assays; in addition, using both patch-clamp recording and somatic
+          Ca(2+) imaging, we have observed hyperactive action-potential firing.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26524527
+      reference_title: Differential responses to lithium in hyperexcitable neurons from patients with
+        bipolar disorder.
+      evidence_source: IN_VITRO
+      explanation: 'The primary measurement behind this node: patch-clamp and calcium imaging in patient-derived
+        dentate-gyrus-like neurons show hyperactive action-potential firing alongside mitochondrial abnormalities,
+        in patient-derived human tissue rather than an animal model.'
+    first_seen_at: '2026-10-03T21:19:46.429833+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:46.429833+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:46.429833+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:26524527
 assessments:
   f649263e65f107cbace5196b944e22094aed160dab29c14b68265123ebe91f22:
     input_sha256: 6ae96ef394a3a6f8ecdda01e1fa5964a901620735f506ebeb071636b9b15656d
@@ -11984,3 +12054,111 @@ assessments:
       request_sha256: 81d0146ffbb08cb42490a387128b6f52bd37539186f188d828267ff9bf2d8bf4
       request_sha256s:
       - 81d0146ffbb08cb42490a387128b6f52bd37539186f188d828267ff9bf2d8bf4
+  d47e91876a410cc59334c0e553864a4d8dec5f2852dcedc46a4d5be263dd1659:
+    input_sha256: 2beded3c8634a162e03c7ff9949ee547bbbd62a719544729fefc2e9fdc825eb8
+    configuration_sha256: 5e9d414cb754d3988f561ebc9c4093aecc1843f38c84655d8326712a9f9cbc90
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:46.429833+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.64
+            MISMATCH: 0.01
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+          confidence: 0.84
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.66
+            MISMATCH: 0.02
+          confidence: 0.49
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.59
+            MISMATCH: 0.34
+          confidence: 0.39
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.6
+            MISMATCH: 0.25
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+          confidence: 0.94
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+          confidence: 0.95
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            PARTIAL: 0.39
+            MISMATCH: 0.13
+          confidence: 0.22
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.49
+            MISMATCH: 0.06
+          confidence: 0.25
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.48
+            MISMATCH: 0.12
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14172
+        output_tokens: 652
+      elapsed_seconds: 0.3741
+      request_sha256: 5c49a2ed841363b7d2074b9de8d4835254ab344244fe2ff3c2206a87e739d91f
+      request_sha256s:
+      - 5c49a2ed841363b7d2074b9de8d4835254ab344244fe2ff3c2206a87e739d91f

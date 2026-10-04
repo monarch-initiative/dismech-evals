@@ -10113,6 +10113,135 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:32634219
+  ecbfc18e38c591be75718d92eaea20cc25e70c302df2956348a46f8d729b1811:
+    claim:
+      about:
+        disease:
+          name: Turner Syndrome
+          disease_term:
+            preferred_term: Turner syndrome
+            term:
+              id: MONDO:0019499
+              label: Turner syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Haploinsufficiency of Pseudoautosomal and X-Inactivation Escape Genes
+            role: central_effector
+            biological_scale: MOLECULAR
+            description: 'Genes in the pseudoautosomal regions and the subset of X-linked genes that escape
+              X-inactivation are normally transcribed from both sex chromosomes. With one sex chromosome
+              absent or truncated they drop to a single functional dose. This node is the convergence
+              point of the disease: every downstream arm is a tissue-specific consequence of a dosage
+              shortfall in one or more of these genes. Only SHOX is confidently assigned to its phenotype;
+              the identity of the escape genes responsible for the gonadal, cardiovascular, renal, auditory
+              and immune arms is unresolved, and is curated here as an explicit knowledge gap rather than
+              as a mechanism.
+
+              '
+            notes: 'No GO annotation is attached to this node deliberately. The obvious candidate, GO:0009048
+              (dosage compensation by inactivation of X chromosome), misdescribes 45,X: with a single
+              X there is no second chromosome to inactivate, so dosage compensation is not pathologically
+              decreased, it is simply not required. The lesion is half-dose of the pseudoautosomal and
+              escape genes, which the node name already states accurately. Preferring no term to a misleading
+              one.
+
+              '
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Granulosa-Cell Apelin/APJ Signaling Dysfunction
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - granulosa_apelin_model
+        description: 'A patient-derived iPSC study nominates impaired apelin/APJ signaling as one route
+          by which the 45,X dosage state may disrupt granulosa-cell development. The responsible X-dosage
+          relay is not known, so the edge is indirect and belongs to an emerging hypothesis rather than
+          the canonical disease path.
+
+          '
+      selected_evidence:
+        snippet: The apelin/APJ pathway exhibited differential signaling between the healthy and TS groups.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:39543104
+      reference_title: Identification of apelin/APJ signaling dysregulation in a human iPSC-derived granulosa
+        cell model of Turner syndrome.
+      evidence_source: IN_VITRO
+      explanation: 'Patient-derived granulosa-like cells show the signaling difference, but the non-isogenic
+        in-vitro comparison does not identify the intervening X-dosage mechanism or establish the state
+        in an intact human ovary.
+
+        '
+    first_seen_at: '2026-10-03T21:23:16.598106+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:23:16.598106+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:23:16.598106+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/3
+      evidence_path: /pathophysiology/1/downstream/3/evidence/0
+      reference: PMID:39543104
+  3b203522c7b34a158627b51cc939d6af2d18b33f1ac43872cc87f94eba6209d1:
+    claim:
+      about:
+        disease:
+          name: Turner Syndrome
+          disease_term:
+            preferred_term: Turner syndrome
+            term:
+              id: MONDO:0019499
+              label: Turner syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Lymphatic
+        name: Webbed Neck
+        description: 'Residual skin fold from an intrauterine nuchal cystic hygroma; a marker of the fetal
+          lymphatic lesion rather than an active abnormality.
+
+          '
+        phenotype_term:
+          preferred_term: Webbed neck
+          term:
+            id: HP:0000465
+            label: Webbed neck
+        frequency: FREQUENT
+      selected_evidence:
+        snippet: Of 193 cases with documented 45 X-O karyotype, 106 (55%) had a web neck and 87 (45%)
+          had a normal neck.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:6463900
+      reference_title: 'Neck web and congenital heart defects: a pathogenic association in 45 X-O Turner
+        syndrome?'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Gives an explicit count (106/193 = 55%) in a 45,X series, which maps to the HPO Frequent
+        (30-79%) band.
+
+        '
+    first_seen_at: '2026-10-03T21:23:18.072517+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:23:18.072517+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:23:18.072517+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:6463900
 assessments:
   f3c6e27287c4102c4bb51ad24d8dc638b064b21ed2136cee57e5fba29490d555:
     input_sha256: 2bc7cee14f497f7b209d9b2e148a0d874c2bb373a885d270f4eab8440ce8e512
@@ -22158,3 +22287,142 @@ assessments:
       request_sha256: c0533db6f186d978f4ce355938c727c191f9409d88818fd574315e0a05917b01
       request_sha256s:
       - c0533db6f186d978f4ce355938c727c191f9409d88818fd574315e0a05917b01
+  cee9e4a1a2cc921d3b5fa98c70ef1ce42a57236acf7f48fcda54b943c71e47b7:
+    input_sha256: ecbfc18e38c591be75718d92eaea20cc25e70c302df2956348a46f8d729b1811
+    configuration_sha256: 8d93dca18137cb624375e85f55d7aa5bdf35ab093970845a1b579d45705d4370
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:23:16.598106+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.74
+            MATCH: 0.21
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.31
+            MATCH: 0.62
+          confidence: 0.42
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.52
+            MATCH: 0.39
+          confidence: 0.28
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.59
+            MATCH: 0.24
+          confidence: 0.4
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.38
+            PARTIAL: 0.48
+            MATCH: 0.14
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.73
+            MATCH: 0.17
+          confidence: 0.61
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            PARTIAL: 0.36
+            MATCH: 0.28
+          confidence: 0.05
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7594
+        output_tokens: 321
+      elapsed_seconds: 0.2879
+      request_sha256: cdf9c5b2dd77ca8c61db465f2f993d4b30644be19c809f8abed00bb40204e20d
+      request_sha256s:
+      - cdf9c5b2dd77ca8c61db465f2f993d4b30644be19c809f8abed00bb40204e20d
+  5d6fdbcd6a8883c329cab861a91369f6d9a5d2d0cbddbd5a6a2b6a4a2682ec2b:
+    input_sha256: 3b203522c7b34a158627b51cc939d6af2d18b33f1ac43872cc87f94eba6209d1
+    configuration_sha256: bad6442a0792fd3a644f8385ba7999cb6c8b78e7929e8675138707221f21436e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:23:18.072517+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.65
+            MISMATCH: 0.03
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.96
+            MISMATCH: 0.01
+          confidence: 0.95
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.19
+            MISMATCH: 0.42
+          confidence: 0.12
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.96
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.03
+            MISMATCH: 0.68
+          confidence: 0.51
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.9
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8228
+        output_tokens: 367
+      elapsed_seconds: 0.1994
+      request_sha256: d8a4e2dff9bfeaeba76afb1f891f5e9db819b999df236822ad797ec620059a1b
+      request_sha256s:
+      - d8a4e2dff9bfeaeba76afb1f891f5e9db819b999df236822ad797ec620059a1b

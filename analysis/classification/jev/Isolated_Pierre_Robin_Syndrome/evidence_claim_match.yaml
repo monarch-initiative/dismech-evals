@@ -1162,6 +1162,111 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:37728101
+  036d3d8bb561822a8370b716c67f0678f5a2c04b87fb59a1eaa4d0c216f3b407:
+    claim:
+      about:
+        disease:
+          name: Isolated Pierre Robin Syndrome
+          disease_term:
+            preferred_term: isolated Pierre-Robin syndrome
+            term:
+              id: MONDO:0009869
+              label: isolated Pierre-Robin syndrome
+        context:
+        - path: /genetic/0
+          value:
+            name: SOX9
+            subtype: SOX9 regulatory
+            association: Regulatory target of pathogenic noncoding deletions in a subset of isolated Robin
+              sequence
+            gene_term:
+              preferred_term: SOX9
+              term:
+                id: hgnc:11204
+                label: SOX9
+            notes: SOX9 coding sequence is intact in the distal enhancer deletion discussed here. Experimental
+              enhancer-cluster deletions establish a restricted expression mechanism, but no patient-cell
+              expression assay for the complete F1 deletion is reported in the cited studies.
+          role: ancestor
+        - path: /has_subtypes/0
+          value:
+            name: SOX9 regulatory
+            subtype_term:
+              preferred_term: SOX9-associated isolated Robin sequence
+            description: Isolated Robin sequence associated with disruption of noncoding regulatory DNA
+              controlling SOX9. Distal enhancer deletions and rearrangements can perturb craniofacial
+              expression without deleting SOX9 coding sequence. This etiologic subtype does not encompass
+              all isolated Robin sequence.
+            genes:
+            - preferred_term: SOX9
+              term:
+                id: hgnc:11204
+                label: SOX9
+          role: subtype
+      assertion_type: Variant
+      assertion:
+        name: Distal SOX9 enhancer deletion in family F1 (Benko 2009; refined Gordon 2014)
+        variant_type: deletion
+        type: Deletion with a 9 bp junction insertion
+        genomic_contexts:
+        - intergenic region
+        affected_regions:
+        - name: EC1.45 craniofacial enhancer cluster
+          regulatory_element_type: ENHANCER
+          description: Enhancer cluster approximately 1.45 Mb upstream of SOX9 within the intervening
+            gene desert. This feature overlaps the family F1 deletion and does not describe its complete
+            extent. EC1.25 is a separate experimentally studied cluster, not part of the F1 deletion.
+        regulatory_target_gene:
+          preferred_term: SOX9
+          term:
+            id: hgnc:11204
+            label: SOX9
+        description: The historical approximately 75 kb F1 deletion was resolved by breakpoint-spanning
+          sequencing as hg19 chr17:68,663,923-68,748,011 inclusive, approximately 84 kb, accompanied by
+          a 9 bp insertion. It overlaps EC1.45 in the SOX9 upstream gene desert and leaves SOX9 coding
+          sequence intact. POSTRE Table 1 patient Nr2 uses the earlier 75 kb representation chr17:68,663,405-68,738,405
+          (hg19), citing Long 2020, whose Figure 1 identifies the original F1 deletion. The POSTRE input
+          interval is retained as benchmark provenance and is not treated as identical nucleotide-resolved
+          boundaries or as a second allele.
+        functional_effects:
+        - function: SOX9 expression during cranial neural crest development
+          type: Reduced gene expression
+          regulatory_element_type: ENHANCER
+          regulatory_mechanism: Deletion of distal craniofacial enhancer DNA
+          description: The F1 deletion overlaps a cranial neural crest enhancer cluster. Engineered EC1.45
+            deletion, which is smaller than the patient deletion, reduces SOX9 expression in hESC-derived
+            cranial neural crest cells but not in derived chondrocytes. Modular loss of expression is
+            therefore a supported model for the patient's regulatory defect rather than a direct patient
+            expression measurement.
+      selected_evidence:
+        snippet: In summary, EC1.45 and EC1.25 are required for normal expression of SOX9 in the cranial
+          neural crest
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:32991838
+      reference_title: Loss of Extreme Long-Range Enhancers in Human Neural Crest Drives a Craniofacial
+        Disorder.
+      evidence_source: IN_VITRO
+      explanation: Functional perturbation of enhancer clusters supports SOX9 as the regulatory target
+        without claiming an assay of the complete F1 allele.
+    first_seen_at: '2026-10-03T21:25:02.181785+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:02.181785+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:02.181785+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/1
+      reference: PMID:32991838
 assessments:
   8ebeeac8a590d56583462684f0cfa4b9d955c73c366348c6cb06543ae364ef75:
     input_sha256: 9e75424e49a8e67c8bcb6137480f4b19b72576d6163ea84f3b87bdf48681cf1b
@@ -2617,3 +2722,153 @@ assessments:
       request_sha256: ce687d7a4c8d562f781508c556aba47a06152c246c65937b51a1cd10b562fb05
       request_sha256s:
       - ce687d7a4c8d562f781508c556aba47a06152c246c65937b51a1cd10b562fb05
+  d159fe13d2250a865a27322c3150c06c9d31e62e0e8f8aaffd806061e40e8bcb:
+    input_sha256: 036d3d8bb561822a8370b716c67f0678f5a2c04b87fb59a1eaa4d0c216f3b407
+    configuration_sha256: 6f69f3302cdc2e1e4b5ac7c03ccea9848fda96bca27ff57d58d2db8612b34616
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:02.181785+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.17
+            PARTIAL: 0.73
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.27
+            PARTIAL: 0.44
+          confidence: 0.17
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.12
+            PARTIAL: 0.39
+          confidence: 0.23
+        /assertion/variant_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.15
+            PARTIAL: 0.21
+          confidence: 0.47
+        /assertion/type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            MATCH: 0.05
+            PARTIAL: 0.22
+          confidence: 0.6
+        /assertion/genomic_contexts:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.19
+            PARTIAL: 0.21
+          confidence: 0.41
+        /assertion/affected_regions/0/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.77
+            PARTIAL: 0.17
+          confidence: 0.65
+        /assertion/affected_regions/0/regulatory_element_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.94
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/affected_regions/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.46
+            MATCH: 0.16
+            PARTIAL: 0.38
+          confidence: 0.19
+        /assertion/regulatory_target_gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.81
+            PARTIAL: 0.14
+          confidence: 0.72
+        /assertion/regulatory_target_gene/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.73
+            PARTIAL: 0.19
+          confidence: 0.6
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.06
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/functional_effects/0/function:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.65
+            PARTIAL: 0.32
+          confidence: 0.47
+        /assertion/functional_effects/0/type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.56
+            PARTIAL: 0.36
+          confidence: 0.34
+        /assertion/functional_effects/0/regulatory_element_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/functional_effects/0/regulatory_mechanism:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/functional_effects/0/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.23
+            PARTIAL: 0.66
+          confidence: 0.5
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.65
+            PARTIAL: 0.3
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19992
+        output_tokens: 933
+      elapsed_seconds: 0.4246
+      request_sha256: b796c7adb73ac0036e97cc03119c47482344374b102886591c9735612079d851
+      request_sha256s:
+      - b796c7adb73ac0036e97cc03119c47482344374b102886591c9735612079d851

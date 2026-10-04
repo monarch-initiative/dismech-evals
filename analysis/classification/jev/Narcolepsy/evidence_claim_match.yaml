@@ -1,0 +1,4974 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Narcolepsy.yaml
+disease: Narcolepsy
+inventory:
+  source_sha256: 270b2d5ab2b42ac95f944b7ec5b9bf2b3e480d1e9d43713e8f36c9eb13952ee8
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:03:38.418964+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  042e97f19a4b3972fe1a3d70c73a10bf94726c551b047da39040bf63c9d37b54:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: Narcolepsy Type 1
+        description: With cataplexy and orexin/hypocretin deficiency.
+      selected_evidence:
+        snippet: 'The disease is nowadays distinguished as narcolepsy type 1 and type 2.
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/0
+      evidence_path: /has_subtypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1111/jsr.14277
+      reference_title: Narcolepsy and rapid eye movement sleep
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The deep-research report surfaced this 2024 review as current support for the NT1/NT2
+        subtype split.
+
+        '
+    first_seen_at: '2026-10-03T22:07:26.717592+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/0
+      evidence_path: /has_subtypes/0/evidence/0
+      reference: DOI:10.1111/jsr.14277
+  d794344e3dc0e7d34f81b7dc4daa9348cb75a1f7dcef759fb0cbdef99caaee09:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: Narcolepsy Type 2
+        subtype_term:
+          preferred_term: narcolepsy without cataplexy
+          term:
+            id: MONDO:0019371
+            label: narcolepsy without cataplexy
+        description: Without cataplexy, normal or near-normal orexin levels.
+      selected_evidence:
+        snippet: 'Conversely, the causes of narcolepsy type 2, where cataplexy and orexin deficiency are
+          absent, remain unknown.
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1111/jsr.14277
+      reference_title: Narcolepsy and rapid eye movement sleep
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'This directly supports the NT2 definition used in the subtype assertion.
+
+        '
+    first_seen_at: '2026-10-03T22:07:27.421438+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      reference: DOI:10.1111/jsr.14277
+  173c463e13956ebea6b66c7cbdcde728c199e1dc5d38f5144b93f12c3351d92c:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Narcolepsy Type 1
+            description: With cataplexy and orexin/hypocretin deficiency.
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Orexin/Hypocretin Deficiency
+        description: 'Loss of orexin-producing neurons in the lateral hypothalamus removes the signal
+          that normally holds the sleep-wake switch in a stable position. Postmortem series show an 85-95%
+          reduction in orexin neuron number, and the loss is cell-type-selective: the intermingled melanin-concentrating
+          hormone neurons are spared, which excludes a nonspecific hypothalamic lesion. Because the population
+          is small and unreplaced, the deficit is permanent, and it is detectable in life as low or undetectable
+          CSF hypocretin-1. Scoped to Narcolepsy Type 1: CSF hypocretin-1 is normal or intermediate in
+          most patients with Type 2, which is why this node - and its conformance to the orexin module''s
+          trigger - applies to the Type 1 subtype only.
+
+          '
+        role: trigger
+        biological_scale: CELLULAR
+        subtypes:
+        - Narcolepsy Type 1
+        conforms_to: orexin_arousal_instability#Loss of Hypothalamic Orexin (Hypocretin) Signal
+        cell_types:
+        - preferred_term: Orexin Neuron
+          term:
+            id: CL:0011109
+            label: hypocretin-secreting neuron
+        biological_processes:
+        - preferred_term: Sleep-Wake Regulation
+          term:
+            id: GO:0042745
+            label: circadian sleep/wake cycle
+      selected_evidence:
+        snippet: Narcolepsy with cataplexy is caused by hypocretin deficiency owing to destruction of
+          most of the hypocretin-producing neurons in the hypothalamus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Landmark review establishes hypocretin neuron loss as the cause of narcolepsy with
+        cataplexy.
+    first_seen_at: '2026-10-03T22:07:27.422512+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:25728441
+  6677abc4ee78c3b747fa468875e487a4049c5e3a5951649c3702870ca4b40bae:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Narcolepsy Type 1
+            description: With cataplexy and orexin/hypocretin deficiency.
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Autoimmune Destruction
+        description: 'Strong HLA-DQB1*06:02 association suggests autoimmune etiology. T-cell mediated
+          destruction of hypocretin neurons is the leading hypothesis. Environmental triggers (infections,
+          H1N1 vaccination) may initiate the autoimmune response in genetically susceptible individuals.
+          Direct cellular evidence has since been obtained: hypocretin-specific CD4+ T cells are detectable
+          in patients and not in controls, and hypocretin-specific CD8+ T cells are found in blood and
+          cerebrospinal fluid.
+
+          '
+        role: trigger
+        biological_scale: CELLULAR
+        subtypes:
+        - Narcolepsy Type 1
+        biological_processes:
+        - preferred_term: Autoimmune Response
+          term:
+            id: GO:0002460
+            label: adaptive immune response based on somatic recombination of immune receptors built from
+              immunoglobulin superfamily domains
+      selected_evidence:
+        snippet: The hypothesis that a targeted immune-mediated or autoimmune attack causes the specific
+          degeneration of hypocretin neurons arose mainly through the discovery of genetic associations,
+          first with the HLA-DQB1*06:02 allele and then with the T-cell receptor α locus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Genetic associations with HLA and TCR loci strongly support autoimmune etiology.
+    first_seen_at: '2026-10-03T22:07:27.836945+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:25728441
+  44d99a821687b9eb59baa88ca9f81c73a7a69a9bb2b8d1ed34ff2a8176b53363:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Narcolepsy Type 1
+            description: With cataplexy and orexin/hypocretin deficiency.
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Autoimmune Destruction
+        description: 'Strong HLA-DQB1*06:02 association suggests autoimmune etiology. T-cell mediated
+          destruction of hypocretin neurons is the leading hypothesis. Environmental triggers (infections,
+          H1N1 vaccination) may initiate the autoimmune response in genetically susceptible individuals.
+          Direct cellular evidence has since been obtained: hypocretin-specific CD4+ T cells are detectable
+          in patients and not in controls, and hypocretin-specific CD8+ T cells are found in blood and
+          cerebrospinal fluid.
+
+          '
+        role: trigger
+        biological_scale: CELLULAR
+        subtypes:
+        - Narcolepsy Type 1
+        biological_processes:
+        - preferred_term: Autoimmune Response
+          term:
+            id: GO:0002460
+            label: adaptive immune response based on somatic recombination of immune receptors built from
+              immunoglobulin superfamily domains
+      selected_evidence:
+        snippet: Narcolepsy type 1 is hypothesized to be an autoimmune disease targeting the hypocretin/orexin
+          neurons in the hypothalamus. Ample genetic and epidemiological evidence points in the direction
+          of a pathogenesis involving the immune system
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:32227223
+      reference_title: 'Narcolepsy type 1: what have we learned from immunology?'
+      explanation: Recent review summarizing that genetic and epidemiological evidence supports autoimmune
+        pathogenesis.
+    first_seen_at: '2026-10-03T22:07:27.837928+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:32227223
+  f9741bef5d8015d48d40fe06fb31fef4225b3d73c2579fd790c34e40ac9791cc:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sleep-Wake State Instability
+        description: 'The rate-limiting step, and the node that makes sense of the disorder''s apparent
+          paradox. Loss of orexinergic stabilisation does not abolish any single behavioural state; it
+          makes every state transition too easy. Wakefulness fragments into involuntary sleep episodes,
+          and nocturnal sleep fragments into frequent awakenings - which is why these patients are simultaneously
+          excessively sleepy by day and poor sleepers by night, an observation a simple "insufficient
+          wake drive" account does not predict. Unlike the trigger nodes above, this node is not scoped
+          to Type 1: Type 2 patients show the same state instability without a demonstrated orexin deficit,
+          which is precisely why the module places its conformance bar at the trigger rather than here.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Sleep-Wake State Instability
+        biological_processes:
+        - preferred_term: sleep-wake cycle state transition
+          term:
+            id: GO:0022410
+            label: circadian sleep/wake cycle process
+          modifier: ABNORMAL
+        - preferred_term: regulation of the sleep-wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: DECREASED
+      selected_evidence:
+        snippet: We propose that orexin regulates sleep/wakefulness states
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:10481909
+      reference_title: 'Narcolepsy in orexin knockout mice: molecular genetics of sleep regulation.'
+      evidence_source: MODEL_ORGANISM
+      explanation: Names the function lost at this node - regulation of behavioural state rather than
+        production of wakefulness - which is the distinction that makes the day-night paradox coherent.
+    first_seen_at: '2026-10-03T22:07:27.868200+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:10481909
+  f49c548e85a4909c0dc057acc682e8215e0f7bfedce52815c8d18b1dbd729e4d:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Narcolepsy Type 1
+            description: With cataplexy and orexin/hypocretin deficiency.
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Autoimmune Destruction
+        description: 'Strong HLA-DQB1*06:02 association suggests autoimmune etiology. T-cell mediated
+          destruction of hypocretin neurons is the leading hypothesis. Environmental triggers (infections,
+          H1N1 vaccination) may initiate the autoimmune response in genetically susceptible individuals.
+          Direct cellular evidence has since been obtained: hypocretin-specific CD4+ T cells are detectable
+          in patients and not in controls, and hypocretin-specific CD8+ T cells are found in blood and
+          cerebrospinal fluid.
+
+          '
+        role: trigger
+        biological_scale: CELLULAR
+        subtypes:
+        - Narcolepsy Type 1
+        biological_processes:
+        - preferred_term: Autoimmune Response
+          term:
+            id: GO:0002460
+            label: adaptive immune response based on somatic recombination of immune receptors built from
+              immunoglobulin superfamily domains
+      selected_evidence:
+        snippet: Narcolepsy Type I (NT1) is a rare, life-long sleep disorder arising as a consequence
+          of the extensive destruction of orexin-producing hypothalamic neurons. The mechanisms involved
+          in the destruction of orexin neurons are not yet elucidated but the association of narcolepsy
+          with environmental triggers and genetic susceptibility (strong association with the HLA, TCRs
+          and other immunologically-relevant loci) implicates an immuno-pathological process.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:38077397
+      reference_title: The transcriptomics profiling of blood CD4 and CD8 T-cells in narcolepsy type I.
+      explanation: Transcriptomic study confirms the immunological basis and T-cell involvement in narcolepsy
+        pathogenesis.
+    first_seen_at: '2026-10-03T22:07:27.867431+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      reference: PMID:38077397
+  6565a9de68c5df150494aca9571070f5030e1931c4150d4c10245db5a443a4af:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sleep-Wake State Instability
+        description: 'The rate-limiting step, and the node that makes sense of the disorder''s apparent
+          paradox. Loss of orexinergic stabilisation does not abolish any single behavioural state; it
+          makes every state transition too easy. Wakefulness fragments into involuntary sleep episodes,
+          and nocturnal sleep fragments into frequent awakenings - which is why these patients are simultaneously
+          excessively sleepy by day and poor sleepers by night, an observation a simple "insufficient
+          wake drive" account does not predict. Unlike the trigger nodes above, this node is not scoped
+          to Type 1: Type 2 patients show the same state instability without a demonstrated orexin deficit,
+          which is precisely why the module places its conformance bar at the trigger rather than here.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Sleep-Wake State Instability
+        biological_processes:
+        - preferred_term: sleep-wake cycle state transition
+          term:
+            id: GO:0022410
+            label: circadian sleep/wake cycle process
+          modifier: ABNORMAL
+        - preferred_term: regulation of the sleep-wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: DECREASED
+      selected_evidence:
+        snippet: It is characterized by daytime sleepiness, cataplexy, and striking transitions from wakefulness
+          into rapid eye movement (REM) sleep.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:10458611
+      reference_title: The sleep disorder canine narcolepsy is caused by a mutation in the hypocretin
+        (orexin) receptor 2 gene.
+      evidence_source: MODEL_ORGANISM
+      explanation: Describes the instability phenotype as abrupt inappropriate state transitions, which
+        is the readout this node encodes.
+    first_seen_at: '2026-10-03T22:07:28.077747+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:10458611
+  f3257dd235305c78d1e1057edcd8a17ca13f40db83217819a6a0841f11be29f2:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: a disorder characterized primarily by rapid eye movement (REM) sleep dysregulation
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:10481909
+      reference_title: 'Narcolepsy in orexin knockout mice: molecular genetics of sleep regulation.'
+      evidence_source: MODEL_ORGANISM
+      explanation: Identifies REM dysregulation as the defining downstream consequence of orexin loss,
+        which is what this node models.
+    first_seen_at: '2026-10-03T22:07:28.190728+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:10481909
+  b70ec15abe3282a86a89bc6cc95def6b0be61f0a99299ab45c876de0696d697f:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sleep-Wake State Instability
+        description: 'The rate-limiting step, and the node that makes sense of the disorder''s apparent
+          paradox. Loss of orexinergic stabilisation does not abolish any single behavioural state; it
+          makes every state transition too easy. Wakefulness fragments into involuntary sleep episodes,
+          and nocturnal sleep fragments into frequent awakenings - which is why these patients are simultaneously
+          excessively sleepy by day and poor sleepers by night, an observation a simple "insufficient
+          wake drive" account does not predict. Unlike the trigger nodes above, this node is not scoped
+          to Type 1: Type 2 patients show the same state instability without a demonstrated orexin deficit,
+          which is precisely why the module places its conformance bar at the trigger rather than here.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Sleep-Wake State Instability
+        biological_processes:
+        - preferred_term: sleep-wake cycle state transition
+          term:
+            id: GO:0022410
+            label: circadian sleep/wake cycle process
+          modifier: ABNORMAL
+        - preferred_term: regulation of the sleep-wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Narcolepsy-cataplexy with hypocretin deficiency is a genuine disease entity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12374492
+      reference_title: The role of cerebrospinal fluid hypocretin measurement in the diagnosis of narcolepsy
+        and other hypersomnias.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the hypocretin-deficient state-instability syndrome as a distinct human
+        entity, not an extrapolation from the knockout phenotype.
+    first_seen_at: '2026-10-03T22:07:28.189915+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/3
+      reference: PMID:12374492
+  fdd2e7261eaec1a9006b3017c1be989bbba71a267ceb6228649a7ced3b375257:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sleep-Wake State Instability
+        description: 'The rate-limiting step, and the node that makes sense of the disorder''s apparent
+          paradox. Loss of orexinergic stabilisation does not abolish any single behavioural state; it
+          makes every state transition too easy. Wakefulness fragments into involuntary sleep episodes,
+          and nocturnal sleep fragments into frequent awakenings - which is why these patients are simultaneously
+          excessively sleepy by day and poor sleepers by night, an observation a simple "insufficient
+          wake drive" account does not predict. Unlike the trigger nodes above, this node is not scoped
+          to Type 1: Type 2 patients show the same state instability without a demonstrated orexin deficit,
+          which is precisely why the module places its conformance bar at the trigger rather than here.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Sleep-Wake State Instability
+        biological_processes:
+        - preferred_term: sleep-wake cycle state transition
+          term:
+            id: GO:0022410
+            label: circadian sleep/wake cycle process
+          modifier: ABNORMAL
+        - preferred_term: regulation of the sleep-wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: DECREASED
+      selected_evidence:
+        snippet: human narcoleptics have an 85%-95% reduction in the number of Hcrt neurons
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11055430
+      reference_title: Reduced number of hypocretin neurons in human narcolepsy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Human evidence that the lesion upstream of this node is present, and near total, in
+        patients rather than only in the animal models above - which matters because this is the entry's
+        rate-limiting node and the model evidence alone would not license a human claim.
+    first_seen_at: '2026-10-03T22:07:28.115462+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      reference: PMID:11055430
+  f9dc3604df888fc772b0e6fcd5c741b9ae7bdcafcca6d2cbac7dee3b9bbc5727:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: This result identifies hypocretins as major sleep-modulating neurotransmitters
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:10458611
+      reference_title: The sleep disorder canine narcolepsy is caused by a mutation in the hypocretin
+        (orexin) receptor 2 gene.
+      evidence_source: MODEL_ORGANISM
+      explanation: Places the REM-dissociation phenotype downstream of hypocretin neurotransmission rather
+        than treating it as an independent finding.
+    first_seen_at: '2026-10-03T22:07:28.382211+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:10458611
+  505643d925146332447e2046aa6d41a1b44171f6fddc922ff012f8e430e23c96:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: HLA-DQB1*0602 frequency was increased in narcolepsy with typical cataplexy (93% vs 17%
+          in controls), narcolepsy without cataplexy (56%), and in essential hypersomnia (52%).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12374492
+      reference_title: The role of cerebrospinal fluid hypocretin measurement in the diagnosis of narcolepsy
+        and other hypersomnias.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Human clinical evidence stratified by the presence of cataplexy - the REM-dissociation
+        feature this node models - showing that the cataplexy-positive group is the one carrying the near-complete
+        HLA association, which grounds the node in patients rather than in the knockout models above.
+    first_seen_at: '2026-10-03T22:07:28.444678+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/2
+      reference: PMID:12374492
+  570d06fabdf97fd0a9c15f1e85e74ad8376c1cd070b337cb081e4d526b0a80fd:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: These patients did not always have abnormal MSLT.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12374492
+      reference_title: The role of cerebrospinal fluid hypocretin measurement in the diagnosis of narcolepsy
+        and other hypersomnias.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Cited as PARTIAL because it qualifies this node in humans: the sleep-onset-REM readout
+        is not universally present even in hypocretin-deficient patients, so REM dissociation is characteristic
+        of the disorder without being obligate on testing.'
+    first_seen_at: '2026-10-03T22:07:28.501869+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/3
+      reference: PMID:12374492
+  391ab6839480dff1f806f03ef948ee468ab0e5373637ab3516cae497c4f62eb1:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: A positive MSLT (mean sleep latency ≤ 8.0 minutes and ≥2 SOREMPs) was found in 53 NC
+          (95%), 1 PD (1%), 8 SDB (9%), and 12 ISS patients (52%).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/4
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29069490
+      reference_title: Optimizing MSLT Specificity in Narcolepsy With Cataplexy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The direct human polysomnographic measurement of this node: sleep-onset REM periods
+        in 95% of narcolepsy-with-cataplexy patients, against 1-9% in the neurological and respiratory
+        comparators. This is the observation the node models, measured in patients rather than inferred
+        from the animal models above.'
+    first_seen_at: '2026-10-03T22:07:28.605860+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/4
+      reference: PMID:29069490
+  bfcf32fe94487da7cc5299d277c6b85086fe042bc7f0ca0185f6e7efb0cf37f5:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dissociated Intrusion of REM Sleep Components
+        description: 'REM sleep is normally an all-or-none package: EEG desynchronisation, rapid eye movements,
+          dreaming, and skeletal muscle atonia arrive together. State instability lets the package come
+          apart, so single components appear at the wrong time and without the others. Muscle atonia intruding
+          into full wakefulness is cataplexy; atonia persisting into waking consciousness at a state boundary
+          is sleep paralysis; dream imagery without sleep is hypnagogic hallucination; and the whole state
+          entered directly from wake is a sleep-onset REM period. This node is what distinguishes orexin-driven
+          hypersomnolence from every other cause of sleepiness, and is the reason the multiple sleep latency
+          test counts sleep-onset REM periods rather than only measuring sleep latency.'
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: orexin_arousal_instability#Dissociated Intrusion of REM Sleep Components into Wakefulness
+        biological_processes:
+        - preferred_term: REM sleep
+          term:
+            id: GO:0042747
+            label: circadian sleep/wake cycle, REM sleep
+          modifier: ABNORMAL
+        notes: The atonia machinery whose intrusion produces cataplexy is the same pontine circuit modelled
+          in rem_sleep_atonia_control_failure, where it fails in the opposite direction - atonia absent
+          during REM sleep rather than present during wakefulness. Narcolepsy type 1 can show both, and
+          REM sleep behaviour disorder is a recognised association. This entry does not declare conformance
+          to that module, because it curates no polysomnographic finding of REM sleep without atonia,
+          which is that module's stated entry requirement.
+      selected_evidence:
+        snippet: Multiple sleep onset rapid eye movement (R) periods (SOREMPs) and a mean sleep latency
+          of ≤8 minutes on the multiple sleep latency test (MSLT) are diagnostic criteria of narcolepsy
+          (NC), but also occur in other conditions with increased sleep pressure, including insufficient
+          sleep syndrome (ISS), sleep-disordered breathing (SDB), or Parkinson's disease (PD).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/5
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29069490
+      reference_title: Optimizing MSLT Specificity in Narcolepsy With Cataplexy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Cited as PARTIAL because it bounds the node''s specificity in the quoted sentence
+        itself: the same readout occurs in other conditions with increased sleep pressure, so REM dissociation
+        on the MSLT is characteristic of orexin-deficient narcolepsy without being unique to it - which
+        is why the module places its conformance bar at the orexin trigger rather than at this readout.
+        The companion SUPPORT item on this node quantifies the overlap.'
+    first_seen_at: '2026-10-03T22:07:28.702092+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/5
+      reference: PMID:29069490
+  e76c3302e823cb0d5607b7639867d8372561f40a0d4d05e2cc989970efca1e33:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Excessive Daytime Sleepiness
+        category: Sleep
+        frequency: OBLIGATE
+        diagnostic: true
+        notes: Cardinal symptom, irresistible sleep attacks
+        phenotype_term:
+          preferred_term: Excessive Daytime Sleepiness
+          term:
+            id: HP:0002329
+            label: Drowsiness
+      selected_evidence:
+        snippet: Narcolepsy Type I (NT1) is a rare, life-long sleep disorder arising as a consequence
+          of the extensive destruction of orexin-producing hypothalamic neurons.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38077397
+      reference_title: The transcriptomics profiling of blood CD4 and CD8 T-cells in narcolepsy type I.
+      explanation: Excessive daytime sleepiness results from loss of orexin neurons that regulate wakefulness.
+    first_seen_at: '2026-10-03T22:07:28.784722+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:38077397
+  1e398e5a487e90184d1f1755869ea64c230c7981d79f99db6f104bc36746638c:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Cataplexy
+        category: Motor
+        frequency: VERY_FREQUENT
+        diagnostic: true
+        notes: Sudden muscle weakness triggered by emotions, pathognomonic for Type 1
+        phenotype_term:
+          preferred_term: Cataplexy
+          term:
+            id: HP:0002524
+            label: Cataplexy
+      selected_evidence:
+        snippet: Narcolepsy with cataplexy is caused by hypocretin deficiency owing to destruction of
+          most of the hypocretin-producing neurons in the hypothalamus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Cataplexy is the defining feature that distinguishes Type 1 narcolepsy and is caused
+        by hypocretin deficiency.
+    first_seen_at: '2026-10-03T22:07:28.866001+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:25728441
+  1014b18a83be1c935f13f84f8422357d8caa7b8730c63ecbe8c05cfc4ab7a86f:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Sleep Paralysis
+        category: Sleep
+        frequency: FREQUENT
+        notes: Temporary inability to move upon waking or falling asleep
+        phenotype_term:
+          preferred_term: Sleep Paralysis
+          term:
+            id: HP:0025233
+            label: Sleep paralysis
+      selected_evidence:
+        snippet: Narcolepsy with cataplexy is caused by hypocretin deficiency owing to destruction of
+          most of the hypocretin-producing neurons in the hypothalamus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Sleep paralysis is part of the narcolepsy symptom tetrad resulting from hypocretin
+        deficiency.
+    first_seen_at: '2026-10-03T22:07:28.953628+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:25728441
+  40990c402382808706a4c43dfada24b6f610a70f59775eb50a095782b507b513:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hypnagogic Hallucinations
+        category: Psychiatric
+        frequency: FREQUENT
+        notes: Vivid dream-like experiences at sleep onset
+        phenotype_term:
+          preferred_term: Hypnagogic Hallucination
+          term:
+            id: HP:0002519
+            label: Hypnagogic hallucination
+      selected_evidence:
+        snippet: Narcolepsy with cataplexy is caused by hypocretin deficiency
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Hypnagogic hallucinations are part of the classic narcolepsy tetrad resulting from
+        REM sleep intrusion.
+    first_seen_at: '2026-10-03T22:07:29.058282+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:25728441
+  05965c41ff465cdfee7d4285da6f3e57579fc2cb5c1e62d64ce983bfbe34467c:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Disrupted Nighttime Sleep
+        category: Sleep
+        frequency: FREQUENT
+        notes: Fragmented nocturnal sleep despite daytime sleepiness
+        phenotype_term:
+          preferred_term: Sleep Disturbance
+          term:
+            id: HP:0002360
+            label: Sleep disturbance
+      selected_evidence:
+        snippet: Narcolepsy with cataplexy is caused by hypocretin deficiency owing to destruction of
+          most of the hypocretin-producing neurons in the hypothalamus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: OTHER
+      explanation: Fragmented nighttime sleep results from impaired sleep-wake regulation due to orexin
+        neuron loss.
+    first_seen_at: '2026-10-03T22:07:29.155567+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:25728441
+  77cbf176ebdd8190c06507a2cb9b02a34391d08d5dc92398526862024da4434f:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: HLA-DQB1*06:02
+        association: Risk Factor
+        notes: Present in >98% of Type 1 narcolepsy, but also 25% of general population
+      selected_evidence:
+        snippet: Autoreactive T cells and autoantibodies have been detected in blood samples from patients
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32227223
+      reference_title: 'Narcolepsy type 1: what have we learned from immunology?'
+      explanation: Detection of autoreactive T cells in narcolepsy patients supports the HLA-mediated
+        autoimmune mechanism.
+    first_seen_at: '2026-10-03T22:07:29.374314+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:32227223
+  d938dfd6af2490f54343f8e1c316bde23a829b30ad8bc47b63b0e444f00bf450:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: CSF Orexin/Hypocretin-1
+        presence: Decreased
+        context: Low or undetectable in Type 1 narcolepsy (<110 pg/mL)
+      selected_evidence:
+        snippet: 'Narcolepsy is a sleep disorder caused by an apparent degeneration of orexin/hypocretin
+          neurons in the lateral hypothalamic area and a subsequent decrease in orexin/hypocretin levels
+          in the cerebrospinal fluid.
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1111/iji.12688
+      reference_title: High-resolution HLA sequencing and hypocretin receptor 2 autoantibodies in narcolepsy
+        type 1 and type 2
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The deep-research report highlighted this 2024 immunogenetics study; its abstract
+        supports decreased CSF orexin/hypocretin as a key biochemical marker.
+
+        '
+    first_seen_at: '2026-10-03T22:07:29.269838+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: DOI:10.1111/iji.12688
+  f83ce88bdf8cdf0af2b514947f62fe0b5efb1a95f58315295043586317cbb1a7:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: HLA-DQB1*06:02
+        association: Risk Factor
+        notes: Present in >98% of Type 1 narcolepsy, but also 25% of general population
+      selected_evidence:
+        snippet: 'We confirmed the previous association of NT1 with HLA‐DQB1*06:02:01 extended genotypes.
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1111/iji.12688
+      reference_title: High-resolution HLA sequencing and hypocretin receptor 2 autoantibodies in narcolepsy
+        type 1 and type 2
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'This deep-research citation updates the HLA assertion with high-resolution 2024 HLA
+        sequencing evidence.
+
+        '
+    first_seen_at: '2026-10-03T22:07:29.482461+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: DOI:10.1111/iji.12688
+  4ab6a0225f3006162a672816efdae64e7de0118d5d2d5d194af52b6d59c49ad5:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: HCRT
+        gene_term:
+          preferred_term: HCRT
+          term:
+            id: hgnc:4847
+            label: HCRT
+        association: Causative
+        notes: Rare mutations in hypocretin gene cause familial narcolepsy
+      selected_evidence:
+        snippet: Ablation of hypocretin or hypocretin receptors also leads to narcolepsy phenotypes in
+          animal models.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: MODEL_ORGANISM
+      explanation: Demonstrates that loss of hypocretin gene function causes narcolepsy.
+    first_seen_at: '2026-10-03T22:07:29.663928+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      reference: PMID:25728441
+  16a789384e1a6c6ddf7e58428104f50220b060935102700bb365ee5cd4b748d1:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: H1N1 Infection
+        exposure_term:
+          preferred_term: viral exposure
+          term:
+            id: ECTO:3000001
+            label: exposure to virus
+        notes: Increased risk after 2009 pandemic. Evidenced independently of vaccination by a Chinese
+          post-pandemic series, in which almost no patient had been vaccinated.
+      selected_evidence:
+        snippet: we found a 3-fold increase in narcolepsy onset following the 2009 H1N1 winter influenza
+          pandemic. The increase is unlikely to be explained by increased vaccination, as only 8 of 142
+          (5.6%) patients recalled receiving an H1N1 vaccination
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21866560
+      reference_title: Narcolepsy onset is seasonal and increased following the 2009 H1N1 pandemic in
+        China.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Retrospective analysis of onset in 629 Beijing patients, 86 percent of them children.
+        Because vaccination was rare in this sample, it separates the infection exposure from the vaccine
+        exposure curated below.
+    first_seen_at: '2026-10-03T22:07:29.897513+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:21866560
+  0a7546dc1394ff0b504622b4b17992850f6a5b0c531365f8768c70802d976e87:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Pandemrix Vaccine
+        notes: Associated with increased narcolepsy risk in Europe after the 2009 pandemic vaccination
+          campaign. The magnitude is drawn from observational studies whose methodological limitations
+          are contested; both the estimate and the manufacturer-affiliated critique of it are cited, and
+          they disagree.
+      selected_evidence:
+        snippet: the risk of narcolepsy was increased 5- to 14-fold in children and adolescents and 2-
+          to 7-fold in adults
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29855798
+      reference_title: Narcolepsy Associated with Pandemrix Vaccine.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports the magnitude of the association between the AS03-adjuvanted pandemic vaccine
+        and incident narcolepsy across European studies.
+    first_seen_at: '2026-10-03T22:07:30.019311+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:29855798
+  f9c4063be3452be4282dba9c3831501398587b22a3d795ae05d85823702a8cc5:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: HCRTR2
+        gene_term:
+          preferred_term: HCRTR2
+          term:
+            id: hgnc:4849
+            label: HCRTR2
+        association: Causative
+        notes: Hypocretin receptor 2 mutations (canine model)
+      selected_evidence:
+        snippet: Ablation of hypocretin or hypocretin receptors also leads to narcolepsy phenotypes in
+          animal models.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25728441
+      reference_title: Hypocretin (orexin) biology and the pathophysiology of narcolepsy with cataplexy.
+      evidence_source: MODEL_ORGANISM
+      explanation: Confirms that hypocretin receptor mutations cause narcolepsy in animal models.
+    first_seen_at: '2026-10-03T22:07:29.896649+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      reference: PMID:25728441
+  ab58caf5c50d7debe5b436083cb73b822246a6743102f1ea772590825cd77644:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Pandemrix Vaccine
+        notes: Associated with increased narcolepsy risk in Europe after the 2009 pandemic vaccination
+          campaign. The magnitude is drawn from observational studies whose methodological limitations
+          are contested; both the estimate and the manufacturer-affiliated critique of it are cited, and
+          they disagree.
+      selected_evidence:
+        snippet: significant methodological limitations of the studies have not been fully addressed and
+          raise questions about the reported risk estimates
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26379011
+      reference_title: 'Pandemrix™ and narcolepsy: A critical appraisal of the observational studies.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Cited deliberately alongside the risk estimate as the dissenting reading of the same
+        twelve European studies. Provenance matters here and is not neutral: the authors are staff and
+        contractors of GSK Vaccines, the manufacturer of Pandemrix, together with a pharmacovigilance
+        consultancy, so this is the manufacturer-affiliated critique rather than independent scrutiny.
+        The two cited sources genuinely disagree - PMID:29855798 concedes that confounding and diagnostic
+        bias may influence some studies but judges it unlikely they explain the increased incidence across
+        every country where Pandemrix was used. The dispute is recorded here rather than resolved.'
+    first_seen_at: '2026-10-03T22:07:30.148736+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/1
+      reference: PMID:26379011
+  1bc97c04d5c7e9227b14516fdb10a290ecb6f57a8645c21a5c5664c9c6e3a76d:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Streptococcal Infection
+        exposure_term:
+          preferred_term: Infectious agent exposure
+          term:
+            id: ECTO:3000000
+            label: exposure to organism
+        notes: Possible trigger in some cases
+      selected_evidence:
+        snippet: Streptococcal infections are probably a significant environmental trigger for narcolepsy
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19725248
+      reference_title: Elevated anti-streptococcal antibodies in patients with recent narcolepsy onset.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Serological study of anti-streptolysin O titers in narcolepsy near disease onset. The
+        authors hedge as probable rather than established, which is the level of confidence this note
+        records.
+    first_seen_at: '2026-10-03T22:07:30.286676+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/0
+      reference: PMID:19725248
+  9c19edf45a85c645a4f2bb8052158c03a6c6ff89ffe951d81b8c4ccc3bd9de29:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Sodium Oxybate
+        description: First-line for cataplexy and daytime sleepiness, improves nighttime sleep.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: Sodium Oxybate
+            term:
+              id: NCIT:C61870
+              label: Sodium Oxybate
+      selected_evidence:
+        snippet: Narcolepsy patients on SXB have significant reductions in cataplexy and daytime sleepiness.
+          SXB is well tolerated in patients with narcolepsy, and most adverse events were mild to moderate
+          in severity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22893778
+      reference_title: 'Sodium oxybate for narcolepsy with cataplexy: systematic review and meta-analysis.'
+      explanation: Systematic review and meta-analysis of 6 RCTs confirms efficacy for both cataplexy
+        and sleepiness with acceptable safety.
+    first_seen_at: '2026-10-03T22:07:30.555705+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:22893778
+  ed6938f88fcbe2a7f22510d1c64455cbfd366df0e55c2cccdd24fa9d372a0f67:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Pitolisant
+        description: Histamine H3 receptor antagonist, promotes wakefulness.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: pitolisant
+            term:
+              id: CHEBI:134709
+              label: pitolisant
+      selected_evidence:
+        snippet: The results of this analysis demonstrate the robust efficacy of pitolisant for the reduction
+          in both excessive daytime sleepiness and cataplexy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34935103
+      reference_title: 'Clinical Impact of Pitolisant on Excessive Daytime Sleepiness and Cataplexy in
+        Adults With Narcolepsy: An Analysis of Randomized Placebo-Controlled Trials.'
+      explanation: Analysis of randomized placebo-controlled trials demonstrates large effect sizes for
+        pitolisant.
+    first_seen_at: '2026-10-03T22:07:30.704492+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:34935103
+  a3be68dafcea7bab70343da2a6eb1eeffd7b942afc6b2786c1feb42d7f491f1c:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Modafinil
+        description: Wake-promoting agent for excessive daytime sleepiness.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: modafinil
+            term:
+              id: CHEBI:31859
+              label: modafinil
+      selected_evidence:
+        snippet: In narcoleptic patients, modafinil in comparison with placebo is effective in the treatment
+          of excessive daytime sleepiness, but not cataplexy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20671626
+      reference_title: 'Modafinil for narcolepsy: systematic review and meta-analysis.'
+      explanation: Systematic review and meta-analysis of 9 RCTs confirms modafinil efficacy for excessive
+        daytime sleepiness.
+    first_seen_at: '2026-10-03T22:07:30.556962+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:20671626
+  0b2646b068daeed4794c4215446fc2c285884ba18f4d15259102e846ff0b6f85:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Orexin Receptor 2 Agonists
+        description: 'Investigational mechanism-based therapy intended to replace deficient orexin signaling
+          in narcolepsy type 1 and consolidate wakefulness.
+
+          '
+        notes: TAK-861/oveporexton remains investigational in this entry; evidence includes model-organism
+          and early clinical literature surfaced by deep research.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: 'Similar to TAK-994, TAK-861 substantially ameliorates wakefulness fragmentation and
+          cataplexy-like episodes in orexin/ataxin-3 and orexin-tTA;TetO DTA mice (NT1 mouse models).
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1038/s41598-024-70594-1
+      reference_title: TAK-861, a potent, orally available orexin receptor 2-selective agonist, produces
+        wakefulness in monkeys and improves narcolepsy-like phenotypes in mouse models
+      evidence_source: MODEL_ORGANISM
+      explanation: 'The deep-research report identified OX2R agonists as mechanism-based emerging therapy;
+        this preclinical evidence supports biological rationale while not yet establishing approved human
+        treatment.
+
+        '
+    first_seen_at: '2026-10-03T22:07:31.002798+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: DOI:10.1038/s41598-024-70594-1
+  5a1dfd30407c71efa22fabc426f10c8c8403dfb1b817503a7dc0e92ce6d42859:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Solriamfetol
+        description: Dopamine/norepinephrine reuptake inhibitor for sleepiness.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: solriamfetol
+            term:
+              id: NCIT:C152389
+              label: Solriamfetol
+      selected_evidence:
+        snippet: Solriamfetol has the potential to be an important therapeutic option for the treatment
+          of impaired wakefulness and excessive sleepiness in patients with narcolepsy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30694576
+      reference_title: A randomized study of solriamfetol for excessive sleepiness in narcolepsy.
+      explanation: Phase 3 RCT demonstrated significant improvements in MWT and ESS scores versus placebo.
+    first_seen_at: '2026-10-03T22:07:30.854274+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      reference: PMID:30694576
+  37327cb1f52f715337857f197c098665b78f8e863705da03466266d2ae5cd22a:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Amphetamines
+        description: Traditional stimulants (amphetamine, methylphenidate).
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: amphetamine
+            term:
+              id: CHEBI:2679
+              label: amphetamine
+          - preferred_term: methylphenidate
+            term:
+              id: CHEBI:6887
+              label: methylphenidate
+      selected_evidence:
+        snippet: Modafinil has replaced methylphenidate and amphetamine as the first-line treatment of
+          excessive daytime sleepiness (EDS) and sleep attacks
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/5
+      evidence_path: /treatments/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18830438
+      reference_title: 'Narcolepsy: current treatment options and future approaches.'
+      explanation: Confirms amphetamines were traditional first-line treatments for EDS before modafinil.
+    first_seen_at: '2026-10-03T22:07:31.360391+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/5
+      evidence_path: /treatments/5/evidence/0
+      reference: PMID:18830438
+  7a23dc7b92fab5030e4ca7eb94aae959888cbc18ec439d7663cb1f2a4f4a74c4:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Antidepressants
+        description: SNRIs/SSRIs for cataplexy (venlafaxine, fluoxetine).
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: venlafaxine
+            term:
+              id: CHEBI:9943
+              label: venlafaxine
+          - preferred_term: fluoxetine
+            term:
+              id: CHEBI:5118
+              label: fluoxetine
+      selected_evidence:
+        snippet: Venlafaxine demonstrated significantly greater improvements in MSL in the MWT (p < 0.01).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30837110
+      reference_title: 'Antidepressants for the treatment of narcolepsy: A prospective study of 148 patients
+        in northern China.'
+      explanation: Prospective study of 148 patients showed significant improvement in cataplexy and sleepiness
+        with antidepressants.
+    first_seen_at: '2026-10-03T22:07:31.361399+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      reference: PMID:30837110
+  3bd16ef02bde2293dc56b79059e731eb69f2d5c0a6cf06ea44821ab79e6e5cfd:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Scheduled Naps
+        description: Short planned naps can improve alertness.
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: behavioral counseling
+          term:
+            id: NCIT:C181743
+            label: Behavioral Counseling
+      selected_evidence:
+        snippet: The management of narcolepsy is presently at a turning point.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18830438
+      reference_title: 'Narcolepsy: current treatment options and future approaches.'
+      explanation: Review discusses comprehensive narcolepsy management including behavioral approaches
+        like scheduled naps.
+    first_seen_at: '2026-10-03T22:07:31.695314+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:03:38.418964+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:03:38.418964+00:00'
+    occurrences:
+    - assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/0
+      reference: PMID:18830438
+assessments:
+  eb01561628fae6075f6de456dba691b6a902ac59d1e43af40ebda20fbbcf32e7:
+    input_sha256: 042e97f19a4b3972fe1a3d70c73a10bf94726c551b047da39040bf63c9d37b54
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:26.717592+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.1
+            PARTIAL: 0.79
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.03
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.65
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4231
+        output_tokens: 179
+      elapsed_seconds: 0.3409
+      request_sha256: 0b4544a8ae3c70cfd766946eda6b34045f1575f846add3b5f537acc8100604de
+      request_sha256s:
+      - 0b4544a8ae3c70cfd766946eda6b34045f1575f846add3b5f537acc8100604de
+  fe7ae1222274cb248a9a3967053d2409a619446cb28659260e562579191c23ba:
+    input_sha256: d794344e3dc0e7d34f81b7dc4daa9348cb75a1f7dcef759fb0cbdef99caaee09
+    configuration_sha256: 82c1fff062be1ff18321a64edb767d658d72333dedf15449b2e273a88ab00c93
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.421438+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.05
+            MATCH: 0.61
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.02
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/subtype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/subtype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+            MATCH: 0.87
+          confidence: 0.81
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.09
+            MATCH: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6237
+        output_tokens: 273
+      elapsed_seconds: 0.3107
+      request_sha256: 5c84185b89b1c98b4c8f4f22eaa5a608ca908cb18cd950e7a5de35690a46da64
+      request_sha256s:
+      - 5c84185b89b1c98b4c8f4f22eaa5a608ca908cb18cd950e7a5de35690a46da64
+  8d3b1a7da010cd83c3cae097f8ad4accfc8c01e4fdaa32ebbd8acfcd833e0ad4:
+    input_sha256: 173c463e13956ebea6b66c7cbdcde728c199e1dc5d38f5144b93f12c3351d92c
+    configuration_sha256: d1396fd88f66b23d0001c310e633209386eabe8ca1b5212df0b80d25369ae45b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.422512+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.45
+            MISMATCH: 0.04
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.09
+            MISMATCH: 0.03
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.53
+            MISMATCH: 0.03
+          confidence: 0.3
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.28
+            MISMATCH: 0.06
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.08
+            MISMATCH: 0.04
+          confidence: 0.81
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            PARTIAL: 0.05
+            MISMATCH: 0.02
+          confidence: 0.9
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.52
+            MISMATCH: 0.35
+          confidence: 0.27
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+          confidence: 0.86
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.15
+            MISMATCH: 0.06
+          confidence: 0.69
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.42
+            MISMATCH: 0.08
+          confidence: 0.25
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.49
+            MISMATCH: 0.09
+          confidence: 0.23
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.1
+            MISMATCH: 0.04
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13870
+        output_tokens: 611
+      elapsed_seconds: 0.2724
+      request_sha256: 1da77ef1e20fd838413e70c0a6db50442cf3948d7939ed5c6c2501667f30286c
+      request_sha256s:
+      - 1da77ef1e20fd838413e70c0a6db50442cf3948d7939ed5c6c2501667f30286c
+  fd94bc0da9a58d4947ce333f917870f873c9860177a456c0aa8897a2861950d4:
+    input_sha256: 6677abc4ee78c3b747fa468875e487a4049c5e3a5951649c3702870ca4b40bae
+    configuration_sha256: 8a39db06663aba95267e1b96d07f86f50dc7034137344ff599926cec3493e186
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.836945+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MISMATCH: 0.02
+            MATCH: 0.3
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.02
+            MATCH: 0.85
+          confidence: 0.78
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.01
+            MATCH: 0.79
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.02
+            MATCH: 0.34
+          confidence: 0.46
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.03
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.07
+            MATCH: 0.72
+          confidence: 0.58
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.05
+            MATCH: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.03
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.1
+            MATCH: 0.61
+          confidence: 0.42
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.05
+            MATCH: 0.66
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10770
+        output_tokens: 465
+      elapsed_seconds: 0.2156
+      request_sha256: ad38bbe4abab95754d876ba2ab25db0a9b3ea88a408fece33155c42fd79fdd4e
+      request_sha256s:
+      - ad38bbe4abab95754d876ba2ab25db0a9b3ea88a408fece33155c42fd79fdd4e
+  4788810bb39f2ca7e9816804218c8934485daad80b6021520aa4edc598f3a32a:
+    input_sha256: 44d99a821687b9eb59baa88ca9f81c73a7a69a9bb2b8d1ed34ff2a8176b53363
+    configuration_sha256: 8a39db06663aba95267e1b96d07f86f50dc7034137344ff599926cec3493e186
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.837928+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.36
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.76
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.2
+            PARTIAL: 0.76
+          confidence: 0.64
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.65
+            PARTIAL: 0.31
+          confidence: 0.47
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.57
+            PARTIAL: 0.33
+          confidence: 0.36
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.65
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10769
+        output_tokens: 465
+      elapsed_seconds: 0.2449
+      request_sha256: 3afcdbfb4b31efae866a8f3b35314fa9aa861dfbb47ffcf083abf06b4603ef0a
+      request_sha256s:
+      - 3afcdbfb4b31efae866a8f3b35314fa9aa861dfbb47ffcf083abf06b4603ef0a
+  5b625cad9cccf7a1318434d752cc4a3f47c65d1151709f175e3ffaa21190ef64:
+    input_sha256: f9741bef5d8015d48d40fe06fb31fef4225b3d73c2579fd790c34e40ac9791cc
+    configuration_sha256: 2c80951735382606394ea2930514ac0be7025d7f6a3524889904870add0791ad
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.868200+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.83
+            MISMATCH: 0.1
+            MATCH: 0.07
+          confidence: 0.75
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.06
+            MATCH: 0.38
+          confidence: 0.34
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.14
+            MATCH: 0.19
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MATCH: 0.05
+            MISMATCH: 0.15
+          confidence: 0.7
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.28
+            MATCH: 0.13
+          confidence: 0.38
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.16
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.35
+            MATCH: 0.06
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.23
+            MISMATCH: 0.11
+          confidence: 0.49
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.15
+            MATCH: 0.24
+          confidence: 0.41
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.29
+            MATCH: 0.07
+          confidence: 0.46
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.22
+            MISMATCH: 0.15
+          confidence: 0.44
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.25
+            MATCH: 0.16
+          confidence: 0.39
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.04
+            MISMATCH: 0.39
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14251
+        output_tokens: 647
+      elapsed_seconds: 0.2431
+      request_sha256: a952706638af57e556da4217d0fbf9445a4cc70b9632405365793dc75c2c2e67
+      request_sha256s:
+      - a952706638af57e556da4217d0fbf9445a4cc70b9632405365793dc75c2c2e67
+  c10526b3f29b0c30e9cf2370c0a95c3d1b59b70edbf9e289e6ff29c88cff6ef9:
+    input_sha256: f49c548e85a4909c0dc057acc682e8215e0f7bfedce52815c8d18b1dbd729e4d
+    configuration_sha256: 8a39db06663aba95267e1b96d07f86f50dc7034137344ff599926cec3493e186
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:27.867431+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.82
+            MATCH: 0.16
+          confidence: 0.73
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.48
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.87
+            MATCH: 0.1
+          confidence: 0.81
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.32
+            MATCH: 0.66
+          confidence: 0.49
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.25
+            MATCH: 0.71
+          confidence: 0.57
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+            MATCH: 0.95
+          confidence: 0.91
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.34
+            MATCH: 0.64
+          confidence: 0.47
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.39
+            MATCH: 0.55
+          confidence: 0.32
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+            MATCH: 0.87
+          confidence: 0.81
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10814
+        output_tokens: 465
+      elapsed_seconds: 0.2439
+      request_sha256: 2c9439cea67e76d083d674eecfc100f5e057e2ad396d0f2431973e6fb5e4e119
+      request_sha256s:
+      - 2c9439cea67e76d083d674eecfc100f5e057e2ad396d0f2431973e6fb5e4e119
+  bc09716c288b7af3e2f594a844d006a78f4ddc1e33f5f918cbf8996bd325bcc5:
+    input_sha256: 6565a9de68c5df150494aca9571070f5030e1931c4150d4c10245db5a443a4af
+    configuration_sha256: 2c80951735382606394ea2930514ac0be7025d7f6a3524889904870add0791ad
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.077747+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.8
+            MISMATCH: 0.06
+            MATCH: 0.14
+          confidence: 0.7
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.04
+            MATCH: 0.35
+          confidence: 0.42
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.83
+            MISMATCH: 0.09
+            MATCH: 0.08
+          confidence: 0.75
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.41
+            MATCH: 0.09
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.05
+            MATCH: 0.78
+          confidence: 0.66
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.55
+            MATCH: 0.02
+          confidence: 0.31
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.04
+            MATCH: 0.43
+          confidence: 0.29
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.14
+            MATCH: 0.29
+          confidence: 0.36
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.05
+            MATCH: 0.49
+          confidence: 0.25
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.19
+            MATCH: 0.19
+          confidence: 0.43
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.25
+            MATCH: 0.18
+          confidence: 0.36
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.26
+            MATCH: 0.09
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14269
+        output_tokens: 647
+      elapsed_seconds: 0.2593
+      request_sha256: 0b7c6f5b75cb5fb74a00921d4779d5a59d9767b4436f7546cb45066c378392ae
+      request_sha256s:
+      - 0b7c6f5b75cb5fb74a00921d4779d5a59d9767b4436f7546cb45066c378392ae
+  88654b7fba303218b7c480e00944e6e95e20d0a99dec0a75a2993832e671e6bd:
+    input_sha256: f3257dd235305c78d1e1057edcd8a17ca13f40db83217819a6a0841f11be29f2
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.190728+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.06
+            MATCH: 0.21
+          confidence: 0.59
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.04
+            MATCH: 0.51
+          confidence: 0.26
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.12
+            MATCH: 0.24
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MISMATCH: 0.08
+            MATCH: 0.17
+          confidence: 0.63
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.29
+            MATCH: 0.18
+          confidence: 0.3
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.15
+            MATCH: 0.47
+          confidence: 0.2
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.52
+            MATCH: 0.07
+          confidence: 0.28
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.04
+            MATCH: 0.63
+          confidence: 0.45
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.08
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.02
+            MATCH: 0.77
+          confidence: 0.65
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.57
+            MATCH: 0.04
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12077
+        output_tokens: 527
+      elapsed_seconds: 0.1992
+      request_sha256: 706333e54634fe76b4fec1f9b97c79d7450d7c56f25d91fbf8cba6e2d1a77037
+      request_sha256s:
+      - 706333e54634fe76b4fec1f9b97c79d7450d7c56f25d91fbf8cba6e2d1a77037
+  23b050f700150ce60ae1cf612e1bb85a44353ed08c845909d12f81133fccd14e:
+    input_sha256: b70ec15abe3282a86a89bc6cc95def6b0be61f0a99299ab45c876de0696d697f
+    configuration_sha256: 2c80951735382606394ea2930514ac0be7025d7f6a3524889904870add0791ad
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.189915+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.4
+            MISMATCH: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+          confidence: 0.94
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.31
+            MISMATCH: 0.65
+          confidence: 0.47
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.23
+            MISMATCH: 0.76
+          confidence: 0.63
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.27
+            MISMATCH: 0.6799999999999999
+          confidence: 0.53
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.26
+            MISMATCH: 0.48
+          confidence: 0.23
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.24
+            MISMATCH: 0.75
+          confidence: 0.63
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.23
+            MISMATCH: 0.74
+          confidence: 0.6
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.29
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.27
+            MISMATCH: 0.7
+          confidence: 0.54
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.25
+            MISMATCH: 0.71
+          confidence: 0.56
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.23
+            MISMATCH: 0.74
+          confidence: 0.62
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.36
+            MISMATCH: 0.61
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14258
+        output_tokens: 671
+      elapsed_seconds: 0.2428
+      request_sha256: 70d01f33ddfa172efe8432e821cc1e4226c74d6e4443a29dc51a47a871fbea40
+      request_sha256s:
+      - 70d01f33ddfa172efe8432e821cc1e4226c74d6e4443a29dc51a47a871fbea40
+  0feea5dae7fd5e01dc090ae5146ed8325724512d865f2bbe533a0b6d8d34360a:
+    input_sha256: fdd2e7261eaec1a9006b3017c1be989bbba71a267ceb6228649a7ced3b375257
+    configuration_sha256: 2c80951735382606394ea2930514ac0be7025d7f6a3524889904870add0791ad
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.115462+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.12
+            PARTIAL: 0.76
+          confidence: 0.65
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.17
+            MISMATCH: 0.31
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.06
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.12
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.41
+            PARTIAL: 0.18
+          confidence: 0.12
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.51
+            MATCH: 0.03
+            PARTIAL: 0.46
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.11
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.09
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.26
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.15
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            MATCH: 0.16
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.24
+            PARTIAL: 0.64
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14261
+        output_tokens: 648
+      elapsed_seconds: 0.4279
+      request_sha256: d111c42fb764370928a7b7b125f53f4d672129d037d3573b18f7def44d242aba
+      request_sha256s:
+      - d111c42fb764370928a7b7b125f53f4d672129d037d3573b18f7def44d242aba
+  b741a198fbe35b88cac7c0edbad334e739f2694e3849f76ccf9e5325d381d60d:
+    input_sha256: f9dc3604df888fc772b0e6fcd5c741b9ae7bdcafcca6d2cbac7dee3b9bbc5727
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.382211+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.07
+            MISMATCH: 0.27
+          confidence: 0.48
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.63
+            MISMATCH: 0.04
+          confidence: 0.44
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.47
+            MATCH: 0.05
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.02
+            PARTIAL: 0.38
+          confidence: 0.4
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.09
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.32
+            MISMATCH: 0.45
+          confidence: 0.16
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.04
+            MISMATCH: 0.67
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.13
+            MISMATCH: 0.35
+          confidence: 0.27
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.1
+            MISMATCH: 0.36
+          confidence: 0.3
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.08
+            MISMATCH: 0.4
+          confidence: 0.29
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            MATCH: 0.03
+            PARTIAL: 0.35
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12079
+        output_tokens: 537
+      elapsed_seconds: 0.2502
+      request_sha256: 335a0b66f113fbe1e508178c7877c4e06595aec1b387594e636118bdc6c1841e
+      request_sha256s:
+      - 335a0b66f113fbe1e508178c7877c4e06595aec1b387594e636118bdc6c1841e
+  23002422db414246fba7cb7f52709da1eb2e73c65ba76ed668c0a3d9aafc34b6:
+    input_sha256: 505643d925146332447e2046aa6d41a1b44171f6fddc922ff012f8e430e23c96
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.444678+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.71
+            PARTIAL: 0.23
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.84
+            PARTIAL: 0.15
+          confidence: 0.75
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.77
+            PARTIAL: 0.19
+          confidence: 0.65
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.61
+            PARTIAL: 0.17
+          confidence: 0.41
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.77
+            PARTIAL: 0.17
+          confidence: 0.65
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.83
+            PARTIAL: 0.16
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12119
+        output_tokens: 547
+      elapsed_seconds: 0.2538
+      request_sha256: 39a11b868558b285c867bef42e879e03acd4dad90d7244e8c10c5570dbd3e2a4
+      request_sha256s:
+      - 39a11b868558b285c867bef42e879e03acd4dad90d7244e8c10c5570dbd3e2a4
+  d7d3cd7e8dd7c548bd1583e5ef82f26d2aa2c02e6752dc1c57467b98f5481461:
+    input_sha256: 570d06fabdf97fd0a9c15f1e85e74ad8376c1cd070b337cb081e4d526b0a80fd
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.501869+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            PARTIAL: 0.34
+            MATCH: 0.04
+          confidence: 0.43
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.75
+            MATCH: 0.13
+          confidence: 0.63
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.27
+            MATCH: 0.04
+          confidence: 0.54
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+            MATCH: 0.02
+          confidence: 0.67
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.81
+            PARTIAL: 0.16
+            MATCH: 0.03
+          confidence: 0.71
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            PARTIAL: 0.23
+            MATCH: 0.1
+          confidence: 0.51
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+            MATCH: 0.02
+          confidence: 0.77
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+            MATCH: 0.05
+          confidence: 0.43
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            PARTIAL: 0.33
+            MATCH: 0.03
+          confidence: 0.46
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+            MATCH: 0.03
+          confidence: 0.56
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+            MATCH: 0.02
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12072
+        output_tokens: 548
+      elapsed_seconds: 0.264
+      request_sha256: 066854d74bf6708a26510b62224de5ec4afe641c00f6816fb607c0f2d6f7afc7
+      request_sha256s:
+      - 066854d74bf6708a26510b62224de5ec4afe641c00f6816fb607c0f2d6f7afc7
+  8ad68d78402ec796a78079f613c7cd9e301bf47b79e90311e46763d9b24bd3a6:
+    input_sha256: 391ab6839480dff1f806f03ef948ee468ab0e5373637ab3516cae497c4f62eb1
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.605860+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.64
+            MISMATCH: 0.08
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.33
+            MISMATCH: 0.06
+          confidence: 0.42
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.59
+            MISMATCH: 0.1
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.7
+            MISMATCH: 0.14
+          confidence: 0.56
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.42
+            MISMATCH: 0.37
+          confidence: 0.12
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.22
+            MISMATCH: 0.17
+          confidence: 0.42
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.3
+            MISMATCH: 0.65
+          confidence: 0.47
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.49
+            MISMATCH: 0.09
+          confidence: 0.23
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.44
+            MISMATCH: 0.11
+          confidence: 0.17
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.53
+            MISMATCH: 0.11
+          confidence: 0.3
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.3
+            MISMATCH: 0.65
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12118
+        output_tokens: 529
+      elapsed_seconds: 0.2402
+      request_sha256: d085630413f1c5a050cd4794b542ebd1824bd0653c580c8d640ab69d30ede56d
+      request_sha256s:
+      - d085630413f1c5a050cd4794b542ebd1824bd0653c580c8d640ab69d30ede56d
+  6840f214651b2198320e89a759fbe9d05ee498c713bc29efecf4851c031a4c22:
+    input_sha256: bfcf32fe94487da7cc5299d277c6b85086fe042bc7f0ca0185f6e7efb0cf37f5
+    configuration_sha256: dfd6c2a16afca439a6cfcf7a28ee6fa384b0684015c967fb477fa883686f4bd7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.702092+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.77
+            MATCH: 0.14
+          confidence: 0.65
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.66
+            MATCH: 0.17
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.79
+            MATCH: 0.06
+          confidence: 0.68
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.38
+            PARTIAL: 0.44
+            MATCH: 0.18
+          confidence: 0.17
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.26
+            MATCH: 0.59
+          confidence: 0.38
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.65
+            PARTIAL: 0.31
+            MATCH: 0.04
+          confidence: 0.47
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.49
+            MATCH: 0.46
+          confidence: 0.23
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.37
+            MATCH: 0.53
+          confidence: 0.3
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.58
+            MATCH: 0.32
+          confidence: 0.36
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+            MATCH: 0.03
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12140
+        output_tokens: 529
+      elapsed_seconds: 0.2482
+      request_sha256: b4c1805c1c8d7aa4e0bea363700adf450afc10e34f52cb85499742738a1c00a8
+      request_sha256s:
+      - b4c1805c1c8d7aa4e0bea363700adf450afc10e34f52cb85499742738a1c00a8
+  d742d5f29123c034d31a7415539d8ad92125aa252d2aba798e7c162424ca7433:
+    input_sha256: e76c3302e823cb0d5607b7639867d8372561f40a0d4d05e2cc989970efca1e33
+    configuration_sha256: 2175e0dcc24b76c3ffe04c2022bb195e63d41fc250d11280006aa279fc15ab19
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.784722+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.46
+            MATCH: 0.08
+          confidence: 0.19
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.04
+            MISMATCH: 0.62
+          confidence: 0.42
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.23
+            MATCH: 0.41
+          confidence: 0.12
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.62
+            MATCH: 0.01
+          confidence: 0.43
+        /assertion/diagnostic:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.02
+            MISMATCH: 0.68
+          confidence: 0.51
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.78
+            MATCH: 0.01
+          confidence: 0.67
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.64
+            MATCH: 0.04
+          confidence: 0.45
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.66
+            MATCH: 0.06
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9140
+        output_tokens: 427
+      elapsed_seconds: 0.271
+      request_sha256: 8d2a8be702fb47966d3efd4c87e896efd224e0d308331f0ef9f130ace79f4ee3
+      request_sha256s:
+      - 8d2a8be702fb47966d3efd4c87e896efd224e0d308331f0ef9f130ace79f4ee3
+  26a086dc2ccb6b5f28d9f5acba18cd7bbd51da2944b6f5185469149ebc4891b4:
+    input_sha256: 1e398e5a487e90184d1f1755869ea64c230c7981d79f99db6f104bc36746638c
+    configuration_sha256: 2175e0dcc24b76c3ffe04c2022bb195e63d41fc250d11280006aa279fc15ab19
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.866001+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.4
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.85
+            PARTIAL: 0.12
+          confidence: 0.77
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.1
+            PARTIAL: 0.29
+          confidence: 0.41
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.05
+            PARTIAL: 0.45
+          confidence: 0.25
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.21
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.13
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.69
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9143
+        output_tokens: 415
+      elapsed_seconds: 0.302
+      request_sha256: 3be50ec5a94ab4331add4ad59852993cf5f53b6acc0da296612a0d0e2b7f561f
+      request_sha256s:
+      - 3be50ec5a94ab4331add4ad59852993cf5f53b6acc0da296612a0d0e2b7f561f
+  2a05091a301a49de95d943db3b2ce69d28c2c1b178e6188ece5f784edd5d2a82:
+    input_sha256: 1014b18a83be1c935f13f84f8422357d8caa7b8730c63ecbe8c05cfc4ab7a86f
+    configuration_sha256: 5f4be454160cfecd96b5ccb46706c30645458ba7ac350af2869ad0fc04f9170d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:28.953628+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.73
+            MATCH: 0.03
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.82
+            MATCH: 0.05
+          confidence: 0.74
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.61
+            MATCH: 0.12
+          confidence: 0.41
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.9
+            MATCH: 0.0
+          confidence: 0.84
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.92
+            MATCH: 0.01
+          confidence: 0.88
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.79
+            MATCH: 0.06
+          confidence: 0.68
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.78
+            MATCH: 0.03
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8190
+        output_tokens: 381
+      elapsed_seconds: 0.3032
+      request_sha256: f4d8298804e394cbfec104b4ce631203f8f9bb9f9d3cea9654ef53e7678a5018
+      request_sha256s:
+      - f4d8298804e394cbfec104b4ce631203f8f9bb9f9d3cea9654ef53e7678a5018
+  4b72f21ddf8cba1c78aeb010d8a8a9f3f172695fae1aeed9de976d4747822efd:
+    input_sha256: 40990c402382808706a4c43dfada24b6f610a70f59775eb50a095782b507b513
+    configuration_sha256: 5f4be454160cfecd96b5ccb46706c30645458ba7ac350af2869ad0fc04f9170d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.058282+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.23
+            MISMATCH: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.25
+            MISMATCH: 0.05
+          confidence: 0.55
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.14
+            MISMATCH: 0.84
+          confidence: 0.76
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.12
+            MISMATCH: 0.85
+          confidence: 0.78
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            PARTIAL: 0.1
+            MISMATCH: 0.9
+          confidence: 0.84
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.07
+            MISMATCH: 0.92
+          confidence: 0.88
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.14
+            MISMATCH: 0.81
+          confidence: 0.72
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.15
+            MISMATCH: 0.82
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8185
+        output_tokens: 381
+      elapsed_seconds: 0.2501
+      request_sha256: 064a2f6666e2675582aa9819ca8df172889f8458b2600ea589f9ba4e38c4820f
+      request_sha256s:
+      - 064a2f6666e2675582aa9819ca8df172889f8458b2600ea589f9ba4e38c4820f
+  cd7b557be4e7c9ce2fd08055eb8d6c47cd386f886eea8dcdba963e2583fce93c:
+    input_sha256: 05965c41ff465cdfee7d4285da6f3e57579fc2cb5c1e62d64ce983bfbe34467c
+    configuration_sha256: 5f4be454160cfecd96b5ccb46706c30645458ba7ac350af2869ad0fc04f9170d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.155567+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.33
+            MISMATCH: 0.62
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.28
+            MISMATCH: 0.69
+          confidence: 0.54
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.31
+            MISMATCH: 0.55
+          confidence: 0.33
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.32
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.21
+            MISMATCH: 0.78
+          confidence: 0.68
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.34
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.33
+            MISMATCH: 0.62
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8196
+        output_tokens: 381
+      elapsed_seconds: 0.2645
+      request_sha256: 1b932dcc20f2bd5dba2f6fd9ede35afcf23d7430d6e958419e52c5f5919d0b58
+      request_sha256s:
+      - 1b932dcc20f2bd5dba2f6fd9ede35afcf23d7430d6e958419e52c5f5919d0b58
+  4ba5039632899d94aead789cbe991a164ba8ad196543c69ed15d251076e9b633:
+    input_sha256: 77cbf176ebdd8190c06507a2cb9b02a34391d08d5dc92398526862024da4434f
+    configuration_sha256: e1a996e490d5828b16b5607147000ccbeaf664e549c1dc8270e48418c4db19b2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.374314+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.76
+            MATCH: 0.03
+          confidence: 0.64
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.09
+            MATCH: 0.39
+          confidence: 0.29
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.89
+            MATCH: 0.01
+          confidence: 0.83
+        /assertion/association:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.67
+            MATCH: 0.03
+          confidence: 0.5
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.95
+            MATCH: 0.0
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5210
+        output_tokens: 233
+      elapsed_seconds: 0.2483
+      request_sha256: a8e4f7f92c5981b63829f6b564bb571759f493e35cdf3739b9c94b4c493feed6
+      request_sha256s:
+      - a8e4f7f92c5981b63829f6b564bb571759f493e35cdf3739b9c94b4c493feed6
+  2623caab20c472b8cc803822666cd6eed8e9aa6549badd6482de31535fc7c2c2:
+    input_sha256: d938dfd6af2490f54343f8e1c316bde23a829b30ad8bc47b63b0e444f00bf450
+    configuration_sha256: 87c8f1c95ffd8a12f85b8d37c651a4ea63f296bc6390204b782ae7fd5c275ef6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.269838+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.33
+            MISMATCH: 0.01
+          confidence: 0.48
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.84
+            MISMATCH: 0.02
+          confidence: 0.77
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.55
+            MISMATCH: 0.01
+          confidence: 0.33
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.13
+            MISMATCH: 0.21
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5219
+        output_tokens: 220
+      elapsed_seconds: 0.2999
+      request_sha256: 82f8e122825088689d69e991463a23f8bf2f55427dde47a0467da3bb98fa2130
+      request_sha256s:
+      - 82f8e122825088689d69e991463a23f8bf2f55427dde47a0467da3bb98fa2130
+  e7ba6d8bf2cd65aadc8975ddd296a2aca028b473a798a6e8ec4062d61d78acc0:
+    input_sha256: f83ce88bdf8cdf0af2b514947f62fe0b5efb1a95f58315295043586317cbb1a7
+    configuration_sha256: e1a996e490d5828b16b5607147000ccbeaf664e549c1dc8270e48418c4db19b2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.482461+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.03
+            PARTIAL: 0.76
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.0
+            PARTIAL: 0.08
+          confidence: 0.87
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.05
+            PARTIAL: 0.13
+          confidence: 0.72
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.05
+            PARTIAL: 0.39
+          confidence: 0.34
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.66
+            PARTIAL: 0.33
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5219
+        output_tokens: 224
+      elapsed_seconds: 0.2992
+      request_sha256: 09220e35a15c03fdc599181a90ba0e2c771c8da7f081662b6cda5f2952e8a8c1
+      request_sha256s:
+      - 09220e35a15c03fdc599181a90ba0e2c771c8da7f081662b6cda5f2952e8a8c1
+  61367c9ff74a22a1ad5f07033888f2847fa6f84a46792cb5495cbeada29701df:
+    input_sha256: 4ab6a0225f3006162a672816efdae64e7de0118d5d2d5d194af52b6d59c49ad5
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.663928+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.12
+            PARTIAL: 0.78
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.58
+            PARTIAL: 0.3
+          confidence: 0.37
+        /assertion/gene_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.42
+            PARTIAL: 0.43
+          confidence: 0.16
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.38
+            PARTIAL: 0.59
+          confidence: 0.37
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.48
+            MATCH: 0.03
+            PARTIAL: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7177
+        output_tokens: 320
+      elapsed_seconds: 0.3014
+      request_sha256: bf55ddda66a618c824f99cef5773e927589e9279bf58d38ce08aacb6478e4734
+      request_sha256s:
+      - bf55ddda66a618c824f99cef5773e927589e9279bf58d38ce08aacb6478e4734
+  68080b938968ec107b59ce32d4449534daae0225605ed8c6bcbf50373cb262a9:
+    input_sha256: 16a789384e1a6c6ddf7e58428104f50220b060935102700bb365ee5cd4b748d1
+    configuration_sha256: cb95a869c85fce647976f87d2ecc54215d210aabe2bad848e0aebbbb4d418872
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.897513+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.79
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.06
+            MATCH: 0.8099999999999999
+          confidence: 0.72
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.03
+            MATCH: 0.77
+          confidence: 0.66
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.02
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.04
+            MATCH: 0.7
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6283
+        output_tokens: 272
+      elapsed_seconds: 0.2425
+      request_sha256: cefb4f09c42a9895f0a2e2de0b76e32ce0428f044af165909e87d88484e0979a
+      request_sha256s:
+      - cefb4f09c42a9895f0a2e2de0b76e32ce0428f044af165909e87d88484e0979a
+  add28aa9d880d6d482ef020b6b926b2865597ca65cdbd3681320eb596408913b:
+    input_sha256: 0a7546dc1394ff0b504622b4b17992850f6a5b0c531365f8768c70802d976e87
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.019311+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.39
+            MISMATCH: 0.03
+          confidence: 0.36
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.07
+            MISMATCH: 0.63
+          confidence: 0.45
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.06
+            MISMATCH: 0.32
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4281
+        output_tokens: 179
+      elapsed_seconds: 0.2648
+      request_sha256: edacfeab17cf5bd7d4401ae646232da8d650eda0ee65f3b82d801bbc99368591
+      request_sha256s:
+      - edacfeab17cf5bd7d4401ae646232da8d650eda0ee65f3b82d801bbc99368591
+  cfbb8da990d8e207c3beadb01b7d0a2012bd10cf5efcaaa90c334bbcf8ec1b71:
+    input_sha256: f9c4063be3452be4282dba9c3831501398587b22a3d795ae05d85823702a8cc5
+    configuration_sha256: fe85bc4b67ea2397e296d943ea7ecc13b63fba973d22e551d10b18a39dc0d578
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:29.896649+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.28
+            MISMATCH: 0.15
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.92
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.4
+            MISMATCH: 0.09
+          confidence: 0.27
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.49
+            MISMATCH: 0.11
+          confidence: 0.23
+        /assertion/gene_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.4
+            MISMATCH: 0.12
+          confidence: 0.22
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.44
+            MISMATCH: 0.08
+          confidence: 0.22
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.33
+            MISMATCH: 0.19
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7183
+        output_tokens: 321
+      elapsed_seconds: 0.3015
+      request_sha256: ffa5037050772dda1bd5c1b1746200b961747dd1a5f06f2e76e8f66b9ebee6cb
+      request_sha256s:
+      - ffa5037050772dda1bd5c1b1746200b961747dd1a5f06f2e76e8f66b9ebee6cb
+  371522da02f4cc876086415b9537ba728abc353da34c5a971e7e7d1f0de82c43:
+    input_sha256: ab58caf5c50d7debe5b436083cb73b822246a6743102f1ea772590825cd77644
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.148736+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.67
+            MATCH: 0.07
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.34
+            MATCH: 0.13
+          confidence: 0.28
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+            MATCH: 0.02
+          confidence: 0.59
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.66
+            MATCH: 0.22
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4275
+        output_tokens: 180
+      elapsed_seconds: 0.2446
+      request_sha256: df4b35872601c32e68a0ddb1528b6d01b1818787a1816fb5f5c87a3f43b46ba9
+      request_sha256s:
+      - df4b35872601c32e68a0ddb1528b6d01b1818787a1816fb5f5c87a3f43b46ba9
+  2fcaf364cc4eff001f069b6011ed5ba819d5c6f50ed161ab325fd0c9a5019365:
+    input_sha256: 1bc97c04d5c7e9227b14516fdb10a290ecb6f57a8645c21a5c5664c9c6e3a76d
+    configuration_sha256: cb95a869c85fce647976f87d2ecc54215d210aabe2bad848e0aebbbb4d418872
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.286676+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.01
+            MATCH: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.03
+            MATCH: 0.84
+          confidence: 0.75
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.18
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.11
+            MATCH: 0.56
+          confidence: 0.34
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.01
+            MATCH: 0.66
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6212
+        output_tokens: 272
+      elapsed_seconds: 0.3091
+      request_sha256: 9eae6fc98147775838026962298ff765f8cae22f8edc852b989dee8af3ca3b06
+      request_sha256s:
+      - 9eae6fc98147775838026962298ff765f8cae22f8edc852b989dee8af3ca3b06
+  e757081a3b53591d2684da8d6939205c818467164caef25fc893bed1422f00cd:
+    input_sha256: 9c19edf45a85c645a4f2bb8052158c03a6c6ff89ffe951d81b8c4ccc3bd9de29
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.555705+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.73
+            MISMATCH: 0.02
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.17
+            MISMATCH: 0.06
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.83
+            MISMATCH: 0.05
+          confidence: 0.75
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            PARTIAL: 0.32
+            MISMATCH: 0.21
+          confidence: 0.21
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.32
+            MISMATCH: 0.18
+          confidence: 0.25
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.11
+            MISMATCH: 0.03
+          confidence: 0.79
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.11
+            MISMATCH: 0.03
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8256
+        output_tokens: 389
+      elapsed_seconds: 0.2791
+      request_sha256: 5ceec71e764fb0b935f0cd989115b294c4cfad0f521896e8a60b5ba134515c6e
+      request_sha256s:
+      - 5ceec71e764fb0b935f0cd989115b294c4cfad0f521896e8a60b5ba134515c6e
+  d8cfabf14cecd61eba6da10e8e58b481c694d0dcdf19b3cb9d64daacf0a4e9b8:
+    input_sha256: ed6938f88fcbe2a7f22510d1c64455cbfd366df0e55c2cccdd24fa9d372a0f67
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.704492+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.78
+            MISMATCH: 0.03
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.56
+            MISMATCH: 0.05
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.92
+            MISMATCH: 0.02
+          confidence: 0.87
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.04
+            MISMATCH: 0.74
+          confidence: 0.6
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.57
+            MISMATCH: 0.16
+          confidence: 0.35
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.48
+            MISMATCH: 0.19
+          confidence: 0.22
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.93
+            MISMATCH: 0.02
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8228
+        output_tokens: 390
+      elapsed_seconds: 0.2679
+      request_sha256: ec91f8699b477a8e2cf2bdd9bc8269126809a08754a741bd894f78d29e993ae4
+      request_sha256s:
+      - ec91f8699b477a8e2cf2bdd9bc8269126809a08754a741bd894f78d29e993ae4
+  ec36051b9be54f5b448e53ccfb1d9c7e85ff8ccaec7f16c87062e99d8248facd:
+    input_sha256: a3be68dafcea7bab70343da2a6eb1eeffd7b942afc6b2786c1feb42d7f491f1c
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.556962+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.81
+            MISMATCH: 0.02
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.95
+            MISMATCH: 0.02
+          confidence: 0.92
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.75
+            MISMATCH: 0.08
+          confidence: 0.63
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.69
+            MISMATCH: 0.1
+          confidence: 0.53
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.62
+            MISMATCH: 0.1
+          confidence: 0.43
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8230
+        output_tokens: 387
+      elapsed_seconds: 0.3378
+      request_sha256: 531b71754075d7900da9d6498fc820036b8b7f441f8d85fd2772761be110ad72
+      request_sha256s:
+      - 531b71754075d7900da9d6498fc820036b8b7f441f8d85fd2772761be110ad72
+  a4aa39c17ad82e1121ffdda13dd2849ffe401e7430347f1a2f8c714a19b3ca04:
+    input_sha256: 0b2646b068daeed4794c4215446fc2c285884ba18f4d15259102e846ff0b6f85
+    configuration_sha256: 2ebdd7d3670576a6f3f997c96b920399580891f02c9484072cd0e024bc066fc2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:31.002798+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.03
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.11
+            PARTIAL: 0.27
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.1
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.24
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.23
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.22
+            PARTIAL: 0.45
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7247
+        output_tokens: 322
+      elapsed_seconds: 0.3537
+      request_sha256: df8fcecabe13059451e77ac0528940e61722f595a035da3baa6fc19242eb10db
+      request_sha256s:
+      - df8fcecabe13059451e77ac0528940e61722f595a035da3baa6fc19242eb10db
+  a8e21cbaa815ce527ab54d70fb5a6ab7a735385ef69cfbc10eb86997991f2430:
+    input_sha256: 5a1dfd30407c71efa22fabc426f10c8c8403dfb1b817503a7dc0e92ce6d42859
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:30.854274+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.25
+            MISMATCH: 0.01
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+          confidence: 0.8
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.33
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.25
+            MISMATCH: 0.07
+          confidence: 0.52
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.28
+            MISMATCH: 0.08
+          confidence: 0.46
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+          confidence: 0.84
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+          confidence: 0.85
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8244
+        output_tokens: 390
+      elapsed_seconds: 0.2489
+      request_sha256: 1582ada78bb3d50d6eb10f1212a09b5688f733a5aec88ecf158b7096cd18ace1
+      request_sha256s:
+      - 1582ada78bb3d50d6eb10f1212a09b5688f733a5aec88ecf158b7096cd18ace1
+  269e9c40636e32b6e3f814edb9428c3e6aab41b91803d8c0e10dcea83e4517a9:
+    input_sha256: 37327cb1f52f715337857f197c098665b78f8e863705da03466266d2ae5cd22a
+    configuration_sha256: 8c6c17390e1bb8e362cada03f7ef9cf14b05e37392c935d840505484d9e0808b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:31.360391+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.38
+            MATCH: 0.18
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.05
+            MATCH: 0.46
+          confidence: 0.23
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.29
+            MATCH: 0.28
+          confidence: 0.15
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.25
+            MATCH: 0.4
+          confidence: 0.1
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.25
+            MATCH: 0.33
+          confidence: 0.13
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.24
+            MATCH: 0.32
+          confidence: 0.16
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.19
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.17
+            MATCH: 0.41
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.21
+            MATCH: 0.46
+          confidence: 0.19
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.15
+            MATCH: 0.53
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10221
+        output_tokens: 507
+      elapsed_seconds: 0.2764
+      request_sha256: 70bae6c3b9d86d68e51acc9c532c1265d69bf2f5787cb7e5364c51be53424a9f
+      request_sha256s:
+      - 70bae6c3b9d86d68e51acc9c532c1265d69bf2f5787cb7e5364c51be53424a9f
+  a8ad0be0913da30299357247ab1afa9eefd690e58bc181cd6841e4e00e97a51d:
+    input_sha256: 7a23dc7b92fab5030e4ca7eb94aae959888cbc18ec439d7663cb1f2a4f4a74c4
+    configuration_sha256: 8c6c17390e1bb8e362cada03f7ef9cf14b05e37392c935d840505484d9e0808b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:31.361399+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.05
+            MISMATCH: 0.31
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.43
+            MISMATCH: 0.07
+          confidence: 0.25
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.23
+            MISMATCH: 0.21
+          confidence: 0.34
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.02
+            MISMATCH: 0.7
+          confidence: 0.56
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.4
+            MISMATCH: 0.15
+          confidence: 0.19
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.36
+            MISMATCH: 0.15
+          confidence: 0.24
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.68
+            MISMATCH: 0.07
+          confidence: 0.52
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.74
+            MISMATCH: 0.06
+          confidence: 0.61
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.39
+            MISMATCH: 0.34
+          confidence: 0.08
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.28
+            MISMATCH: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10225
+        output_tokens: 512
+      elapsed_seconds: 0.3637
+      request_sha256: 26e807ef53398bf830ad5e0c656302979431753df7d9babfac79a6011e5b274f
+      request_sha256s:
+      - 26e807ef53398bf830ad5e0c656302979431753df7d9babfac79a6011e5b274f
+  40b2e0fb783fbc861238ae80af35eacd86ac779d8aada5a30088fb4ab1d2aed4:
+    input_sha256: 3bd16ef02bde2293dc56b79059e731eb69f2d5c0a6cf06ea44821ab79e6e5cfd
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:31.695314+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.67
+            MATCH: 0.02
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.04
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.77
+            MATCH: 0.01
+          confidence: 0.66
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.82
+            MATCH: 0.01
+          confidence: 0.73
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.6799999999999999
+            MATCH: 0.04
+          confidence: 0.53
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.77
+            MATCH: 0.01
+          confidence: 0.65
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.77
+            MATCH: 0.01
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7630
+        output_tokens: 340
+      elapsed_seconds: 0.3066
+      request_sha256: 25a48cfb4ee2712eeac2eec5e2f4100adcbb18f7f790398318aec2f8130382a9
+      request_sha256s:
+      - 25a48cfb4ee2712eeac2eec5e2f4100adcbb18f7f790398318aec2f8130382a9

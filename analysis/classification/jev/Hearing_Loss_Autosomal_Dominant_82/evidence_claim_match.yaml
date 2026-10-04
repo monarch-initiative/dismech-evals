@@ -3713,6 +3713,66 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/3
       reference: PMID:37582836
+  9ec069865f30f008257126114e4adc97803f3197bfd7a838ee442d10fb9ae95b:
+    claim:
+      about:
+        disease:
+          name: Hearing Loss Autosomal Dominant 82
+          disease_term:
+            preferred_term: hearing loss, autosomal dominant 82
+            term:
+              id: MONDO:0030719
+              label: hearing loss, autosomal dominant 82
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Genetic Counselling with Serial Audiometry from Infancy
+        description: 'Counselling for a dominant condition with a 50 percent transmission risk, and scheduled
+          audiometry starting well before school age. The surveillance recommendation is forced by the
+          natural history rather than being generic: newborn screening is passed, diagnosis currently
+          happens at three to six years, and the loss is rapidly progressive once it begins, so a child
+          known to carry a familial ATP2B2 truncating allele needs testing on a schedule rather than on
+          parental concern. Two of the five index cases arose de novo, which means unaffected parents
+          do not exclude the diagnosis in a child.'
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: genetic counseling
+          term:
+            id: NCIT:C15240
+            label: Genetic Counseling
+        notes: 'No ATP2B2-specific pharmacological treatment has been reported, and no DFNA82-specific
+          clinical trial was identified. Hearing amplification and cochlear implantation are standard
+          in progressive severe sensorineural hearing loss but no DFNA82-specific outcome data exist,
+          so neither is curated here as a treatment - a scoping decision, not a judgement that they are
+          inappropriate. Allele-specific gene editing is not curated as a treatment either: the work is
+          preclinical, in a mouse missense allele rather than a human truncating one, and is recorded
+          under animal_models with its limitations.'
+      selected_evidence:
+        snippet: After normal newborn hearing screening, a rapidly progressive high-frequency hearing
+          impairment was diagnosed at the age of about 3-6 years.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30535804
+      reference_title: De novo and inherited loss-of-function variants of ATP2B2 are associated with rapidly
+        progressive hearing impairment.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The interval between a normal screen and diagnosis, which is the window scheduled audiometry
+        exists to shorten.
+    first_seen_at: '2026-10-03T21:24:24.718769+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:24:24.718769+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:24:24.718769+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:30535804
 assessments:
   e36c4886bacbd459df58f47e46af951e79d54ff70a6861a19d92500c192453fd:
     input_sha256: 54b7b3873f87d106daf3eb32611e649f0150b02e05e6fbaa8bddf0cff25c987e
@@ -8166,3 +8226,76 @@ assessments:
       request_sha256: 5fcd283ac27450a93e7d33d33e844d22a51b98729858f36abfc05052f5a1894b
       request_sha256s:
       - 5fcd283ac27450a93e7d33d33e844d22a51b98729858f36abfc05052f5a1894b
+  1c1c51cad1f6797b85c25e4abc2a7e6dbde8e410de48e173cf63a17b2070da60:
+    input_sha256: 9ec069865f30f008257126114e4adc97803f3197bfd7a838ee442d10fb9ae95b
+    configuration_sha256: 070a9a6512402e8ace54d1d7514ea42f417604f21bed2ff8adcf608f437307a4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:24.718769+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MATCH: 0.15
+            MISMATCH: 0.07
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.55
+            MISMATCH: 0.04
+          confidence: 0.32
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.17
+            MISMATCH: 0.21
+          confidence: 0.43
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MISMATCH: 0.04
+            MATCH: 0.22
+          confidence: 0.6
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.09
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.16
+            MISMATCH: 0.37
+          confidence: 0.2
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45999999999999996
+            MATCH: 0.14
+            MISMATCH: 0.4
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.56
+            MATCH: 0.09
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8839
+        output_tokens: 377
+      elapsed_seconds: 0.3698
+      request_sha256: 19c1b0fe75c388470e0a4e5db1af6a84294684eea1073cc393cc455fb1b096ae
+      request_sha256s:
+      - 19c1b0fe75c388470e0a4e5db1af6a84294684eea1073cc393cc455fb1b096ae

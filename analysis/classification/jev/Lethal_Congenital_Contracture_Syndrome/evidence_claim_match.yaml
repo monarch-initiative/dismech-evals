@@ -14067,6 +14067,103 @@ inputs:
     - assertion_path: /discussions/11
       evidence_path: /discussions/11/evidence/0
       reference: PMID:28726266
+  338975e4c39e30cf1dc53b1131e489657e4fdb9021838919261f94ef349fa0da:
+    claim:
+      about:
+        disease:
+          name: Lethal Congenital Contracture Syndrome
+          disease_term:
+            preferred_term: lethal congenital contracture syndrome
+            term:
+              id: MONDO:0017436
+              label: lethal congenital contracture syndrome
+        context:
+        - path: /pathophysiology/9
+          value:
+            name: Myofibril Assembly Failure
+            genes:
+            - preferred_term: MYBPC1
+              term:
+                id: hgnc:7549
+                label: MYBPC1
+            - preferred_term: ZBTB42
+              term:
+                id: hgnc:32550
+                label: ZBTB42
+            biological_scale: CELLULAR
+            subtypes:
+            - LCCS6
+            description: ZBTB42 knockdown causes myofibrillar disorganization and abnormal neuromuscular
+              junctions in zebrafish, with impaired coiling and escape movement. Wild-type human ZBTB42,
+              but not the variant construct, rescues the model phenotype. Human muscle biopsy and autopsy
+              were declined, so the exact human tissue lesion remains inferred.
+            cell_types:
+            - preferred_term: skeletal muscle fiber
+              term:
+                id: CL:0008002
+                label: skeletal muscle fiber
+            biological_processes:
+            - preferred_term: myofibril assembly
+              term:
+                id: GO:0030239
+                label: myofibril assembly
+              modifier: DECREASED
+          role: ancestor
+        - path: /has_subtypes/5
+          value:
+            name: LCCS6
+            display_name: LCCS6 (ZBTB42-related)
+            subtype_term:
+              preferred_term: lethal congenital contracture syndrome 6
+              term:
+                id: MONDO:0014549
+                label: lethal congenital contracture syndrome 6
+            geography:
+            - Saudi Arabia
+            genes:
+            - preferred_term: ZBTB42
+              term:
+                id: hgnc:32550
+                label: ZBTB42
+            description: Identified by autozygome analysis in a consanguineous Saudi family with recurrent
+              stillbirths. ZBTB42 is enriched in skeletal muscle, particularly at the neuromuscular junction,
+              and zebrafish knockdown reproduces disorganized myofibrils - placing the lesion at the muscle/NMJ
+              end of the motor unit.
+          role: subtype
+      assertion_type: CausalEdge
+      assertion:
+        target: Absent Fetal Movement
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Reduced muscle organization and function in ZBTB42-deficient fish provide a model-supported
+          explanation for human fetal akinesia, with incomplete human tissue confirmation.
+      selected_evidence:
+        snippet: The decreased spontaneous coiling and diminished touch-evoked escape behaviors are indicative
+          of reduced muscle function and overall muscle weakness.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/9/downstream/0
+      evidence_path: /pathophysiology/9/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/9
+      - /has_subtypes/5
+    evidence_metadata:
+      reference: PMID:25055871
+      reference_title: ZBTB42 mutation defines a novel lethal congenital contracture syndrome (LCCS6).
+      evidence_source: MODEL_ORGANISM
+      explanation: The movement phenotype is measured in zebrafish; translation to the human LCCS6 fetal
+        phenotype is indirect.
+    first_seen_at: '2026-10-03T21:19:30.020793+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:30.020793+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:30.020793+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/9/downstream/0
+      evidence_path: /pathophysiology/9/downstream/0/evidence/0
+      reference: PMID:25055871
 assessments:
   2200ba04bdd357b2ba77d721ecb798d3f6ba7807f4cafe133dac797d476e6dc8:
     input_sha256: 0c003820d8f1ba04f3637a12fc82b88e21c9f60d90a15f5bc086c42b9586db2d
@@ -30273,3 +30370,69 @@ assessments:
       request_sha256: 5daf1b08c98d969750933a48ec30dfd9cbd87525115b0fbaf509b88b521a56cf
       request_sha256s:
       - 5daf1b08c98d969750933a48ec30dfd9cbd87525115b0fbaf509b88b521a56cf
+  596ece244f443f3c5f2c421cccf7e8a71b51e3a96c90aeaa283a5b11a7253e4c:
+    input_sha256: 338975e4c39e30cf1dc53b1131e489657e4fdb9021838919261f94ef349fa0da
+    configuration_sha256: 3125a9f4429107079fb032e3ee6aa18b2f8ea7d57c70374179f5663d5e0a08ac
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:30.020793+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.73
+            MISMATCH: 0.09
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.47
+            MISMATCH: 0.23
+          confidence: 0.21
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.66
+            MISMATCH: 0.16
+          confidence: 0.5
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.53
+            MISMATCH: 0.04
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.72
+            MISMATCH: 0.04
+          confidence: 0.57
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.42
+            MISMATCH: 0.12
+          confidence: 0.18
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.42
+            MISMATCH: 0.12
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7915
+        output_tokens: 317
+      elapsed_seconds: 0.3578
+      request_sha256: 3e08af091dde820c029a2e09f74a4b88c609c76fe06b12d8826a71e50c164a3d
+      request_sha256s:
+      - 3e08af091dde820c029a2e09f74a4b88c609c76fe06b12d8826a71e50c164a3d

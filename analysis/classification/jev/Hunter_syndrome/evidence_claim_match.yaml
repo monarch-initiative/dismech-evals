@@ -4773,6 +4773,60 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/0
       reference: PMID:40598289
+  46fc1124ad2050b11a67d219b9d5441477eefbeaa19ed17dcb1bf952175506dd:
+    claim:
+      about:
+        disease:
+          name: Hunter syndrome
+          disease_term:
+            preferred_term: Hunter syndrome
+            term:
+              id: MONDO:0010674
+              label: mucopolysaccharidosis type 2
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: Non-neuronopathic
+        display_name: Attenuated (non-neuronopathic) MPS II
+        subtype_term:
+          preferred_term: Attenuated (non-neuronopathic) Hunter syndrome
+          term:
+            id: MONDO:0016316
+            label: mucopolysaccharidosis type 2, attenuated form
+        description: 'About one third of MPS II. Cognition is preserved and onset is later, but the somatic
+          disease is not benign: progressive joint contracture, airway obstruction, cardiac valve disease,
+          hepatosplenomegaly, and skeletal involvement still accumulate over decades and determine morbidity
+          and lifespan. Cerebrospinal fluid glycosaminoglycan levels are lower than in the neuronopathic
+          form. This is the subtype for which idursulfase enzyme replacement therapy is best matched,
+          since its inability to cross the blood-brain barrier costs nothing where there is no CNS disease
+          - the same logic that makes enzyme replacement first-line in attenuated MPS I.'
+      selected_evidence:
+        snippet: While both phenotypes display accumulation of GAGs relative to a control pediatric population,
+          nMPS II patients have higher levels of GAGs in the cerebrospinal fluid (CSF) than non-neuronopathic
+          patients
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32707880
+      reference_title: Characterization of Fluid Biomarkers Reveals Lysosome Dysfunction and Neurodegeneration
+        in Neuronopathic MPS II Patients.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Establishes the non-neuronopathic phenotype as a distinct arm and gives its biochemical
+        contrast with the neuronopathic form: storage is present in both, but lower in CSF here.'
+    first_seen_at: '2026-10-03T21:24:31.218071+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:24:31.218071+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:24:31.218071+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      reference: PMID:32707880
 assessments:
   59fa49be8ef109165afe67bc66e45e9b47b0b7dd2fd2e2a1fdd718a354969823:
     input_sha256: 5dd0b93371875132b054e07869bbf206db4dd52014f20615f53af71a0e9b0a70
@@ -10703,3 +10757,69 @@ assessments:
       request_sha256: 88c807d8e07b1fb7a40fb4dd17c99d9756854e2c9dc87821fa748a6d47128f51
       request_sha256s:
       - 88c807d8e07b1fb7a40fb4dd17c99d9756854e2c9dc87821fa748a6d47128f51
+  6f1a35604858e6ff40f45647882ca804f2affe301203a7b359bea2a2937fc15b:
+    input_sha256: 46fc1124ad2050b11a67d219b9d5441477eefbeaa19ed17dcb1bf952175506dd
+    configuration_sha256: e6da6e837ced05009abbe1b62bb5f1f161b376e202dd8b5c45d2bf388159af85
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:31.218071+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.23
+            MISMATCH: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.3
+            MISMATCH: 0.34
+          confidence: 0.04
+        /assertion/display_name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.26
+            MISMATCH: 0.43
+          confidence: 0.15
+        /assertion/subtype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.36
+            MISMATCH: 0.38
+          confidence: 0.06
+        /assertion/subtype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.37
+            MISMATCH: 0.32
+          confidence: 0.05
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.08
+            MISMATCH: 0.69
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7386
+        output_tokens: 331
+      elapsed_seconds: 0.3582
+      request_sha256: 04fb7a0051584348496a3d631544d3ce15b76c1373a7b4ec8675b8324f5c1916
+      request_sha256s:
+      - 04fb7a0051584348496a3d631544d3ce15b76c1373a7b4ec8675b8324f5c1916

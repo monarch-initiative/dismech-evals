@@ -8409,6 +8409,92 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: PMID:38755526
+  c350f5e424bf92215ce735521412f10cbcfd27e5b9ebf9ccb9ff8f1bd4cc07c2:
+    claim:
+      about:
+        disease:
+          name: Congenital Glaucoma
+          disease_term:
+            preferred_term: congenital glaucoma
+            term:
+              id: MONDO:0020366
+              label: congenital glaucoma
+        context:
+        - path: /genetic/0
+          value:
+            name: CYP1B1
+            association: Causative
+            relationship_type: CAUSATIVE
+            variant_origin: GERMLINE
+            subtype: GLC3A
+            notes: GLC3A locus, 2p21. The most frequently implicated gene in congenital glaucoma, but
+              its share of cases is strongly population-dependent, so a negative CYP1B1 result carries
+              very different weight in a consanguineous founder population than in an outbred one.
+            gene_term:
+              preferred_term: CYP1B1
+              term:
+                id: hgnc:2597
+                label: CYP1B1
+          role: ancestor
+        - path: /has_subtypes/1
+          value:
+            name: GLC3A
+            display_name: GLC3A - CYP1B1-related Primary Congenital Glaucoma
+            description: Autosomal recessive PCG mapping to 2p21 and caused by biallelic CYP1B1 variants.
+              CYP1B1 is by far the most frequently implicated gene in congenital glaucoma worldwide, though
+              its share of cases is strongly population-dependent, being highest in consanguineous and
+              founder populations and much lower in outbred cohorts. Penetrance is incomplete and expressivity
+              is variable, so mildly affected relatives of a proband can be missed.
+            classification: molecular
+            subtype_term:
+              preferred_term: glaucoma 3A
+              term:
+                id: MONDO:0009277
+                label: glaucoma 3A
+            genes:
+            - preferred_term: CYP1B1
+              term:
+                id: hgnc:2597
+                label: CYP1B1
+          role: subtype
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal Recessive
+        inheritance_term:
+          preferred_term: Autosomal recessive inheritance
+          term:
+            id: HP:0000007
+            label: Autosomal recessive inheritance
+        penetrance: INCOMPLETE
+      selected_evidence:
+        snippet: Formal linkage analysis in 25 Saudi PCG families confirmed both significant linkage to
+          polymorphic markers in this region and incomplete penetrance, but it showed no evidence of genetic
+          heterogeneity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/inheritance/0
+      evidence_path: /genetic/0/inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+      - /has_subtypes/1
+    evidence_metadata:
+      reference: PMID:9463332
+      reference_title: Mutations in CYP1B1, the gene for cytochrome P4501B1, are the predominant cause
+        of primary congenital glaucoma in Saudi Arabia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms recessive linkage at GLC3A together with the incomplete penetrance recorded
+        on this inheritance block.
+    first_seen_at: '2026-10-03T22:51:28.710702+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:51:28.710702+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:51:28.710702+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/inheritance/0
+      evidence_path: /genetic/0/inheritance/0/evidence/0
+      reference: PMID:9463332
 assessments:
   83bfcdf28c40865fb427af23dd79908c368fba687050ef0bc91616551129afa5:
     input_sha256: c8dbdc77dd8a8136f273e84f30bc3450be1549ee10c7747fe94de3498bb5ca84
@@ -20875,3 +20961,76 @@ assessments:
       request_sha256: 326153ddab708c5209f48930bbc12797e4536e17af7ceb4c2c48622454bce228
       request_sha256s:
       - 326153ddab708c5209f48930bbc12797e4536e17af7ceb4c2c48622454bce228
+  de9fc3876c09833d898e994da9bd3793a21c9b50b726df33f53bcd9bebc28982:
+    input_sha256: c350f5e424bf92215ce735521412f10cbcfd27e5b9ebf9ccb9ff8f1bd4cc07c2
+    configuration_sha256: c0ea2629d41ba99621934425d0d4159113ee0cea1f03b16a5b9ed7e42fada875
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:51:28.710702+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.04
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.89
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.2
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/inheritance_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.12
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/inheritance_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.1
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/penetrance:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.96
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.22
+            PARTIAL: 0.43
+          confidence: 0.15
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.1
+            PARTIAL: 0.28
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8698
+        output_tokens: 369
+      elapsed_seconds: 0.2515
+      request_sha256: 3c4fdf4cdf9873922746147d98dda3d3869d16da1e4a24201c28e91336a8fe5e
+      request_sha256s:
+      - 3c4fdf4cdf9873922746147d98dda3d3869d16da1e4a24201c28e91336a8fe5e

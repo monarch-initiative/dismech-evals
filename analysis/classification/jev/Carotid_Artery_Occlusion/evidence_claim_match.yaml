@@ -2290,6 +2290,53 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT03179774
+  e32e2e94ffd7bb54e99a605d8c64e31fd7b9a50f4d31d169ac0d9ac4976dde16:
+    claim:
+      about:
+        disease:
+          name: Carotid Artery Occlusion
+          disease_term:
+            preferred_term: carotid artery occlusion
+            term:
+              id: MONDO:0004450
+              label: carotid artery occlusion
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cardiovascular
+        name: Carotid artery stenosis or near-occlusion
+        description: Severe carotid stenosis is a precursor and related manifestation on the same carotid
+          atherosclerotic disease continuum.
+        phenotype_term:
+          preferred_term: Carotid artery stenosis
+          term:
+            id: HP:0100546
+            label: Carotid artery stenosis
+      selected_evidence:
+        snippet: 1662 (6.3%) had severe baseline ACAS.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39319460
+      reference_title: Prediction of Severe Baseline Asymptomatic Carotid Stenosis and Subsequent Risk
+        of Stroke and Cardiovascular Disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This large registry validation documents severe asymptomatic carotid stenosis as a
+        measurable carotid atherosclerotic phenotype.
+    first_seen_at: '2026-10-03T22:32:08.196443+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:08.196443+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:08.196443+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:39319460
 assessments:
   7ba93b5ccf2233ab316e18e9a557e8236c6c086967d487c471c6d8a9b76e1499:
     input_sha256: 8991fcfcc10a6957dac2059c401f8e0db258d426bc4a3868ecfdc12b517d3a17
@@ -5437,3 +5484,69 @@ assessments:
       request_sha256: 2e29e9be2104807756cc0bc96f21976bac15fd16435631a99cc3dd5f4b568e41
       request_sha256s:
       - 2e29e9be2104807756cc0bc96f21976bac15fd16435631a99cc3dd5f4b568e41
+  213ba8f392c939aed213b0412c81108e036db338b26edaf1e2face2a96ef41e2:
+    input_sha256: e32e2e94ffd7bb54e99a605d8c64e31fd7b9a50f4d31d169ac0d9ac4976dde16
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:08.196443+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.49
+            MATCH: 0.11
+          confidence: 0.23
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.63
+            MATCH: 0.05
+          confidence: 0.45
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.18
+            MATCH: 0.56
+          confidence: 0.33
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.22
+            MATCH: 0.35
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.41
+            MATCH: 0.05
+          confidence: 0.32
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.18
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.23
+            MATCH: 0.39
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7192
+        output_tokens: 324
+      elapsed_seconds: 0.2778
+      request_sha256: 2571a260087db044321ca922894193e1eb245773b2c1457c9bf1a32f4460e006
+      request_sha256s:
+      - 2571a260087db044321ca922894193e1eb245773b2c1457c9bf1a32f4460e006

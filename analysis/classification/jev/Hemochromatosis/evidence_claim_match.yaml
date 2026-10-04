@@ -9800,6 +9800,129 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT04202965
+  88165edb5cc93b5261d3df42071be60c80095af92d9933f3e01dc82b9a8aea0d:
+    claim:
+      about:
+        disease:
+          name: Hemochromatosis
+          disease_term:
+            preferred_term: hereditary hemochromatosis
+            term:
+              id: MONDO:0006507
+              label: hereditary hemochromatosis
+        context:
+        - path: /treatments/0
+          value:
+            name: Phlebotomy (Therapeutic Venesection)
+            description: 'Regular blood removal is the primary treatment, which reduces iron stores by
+              requiring the body to use iron for new red blood cell production. Initially weekly until
+              iron stores normalize, then maintenance every 2-3 months.
+
+              '
+            treatment_term:
+              preferred_term: phlebotomy
+              term:
+                id: NCIT:C28221
+                label: Phlebotomy
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Systemic Iron Overload
+        treatment_effect: INHIBITS
+        description: Periodic blood removal depletes body iron stores and prevents downstream organ injury.
+      selected_evidence:
+        snippet: Early diagnosis and treatment by phlebotomy can prevent cirrhosis, hepatocellular carcinoma,
+          diabetes, arthropathy and other complications.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:35662478
+      reference_title: EASL Clinical Practice Guidelines on haemochromatosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: EASL guideline supports phlebotomy as an iron-depletion intervention that prevents
+        downstream complications.
+    first_seen_at: '2026-10-03T21:18:59.368983+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:59.368983+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:59.368983+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:35662478
+  cf09e3e9c1e7a23f039388cdffe40a1a5bae706fe4f767883392ef2d49e2d3c0:
+    claim:
+      about:
+        disease:
+          name: Hemochromatosis
+          disease_term:
+            preferred_term: hereditary hemochromatosis
+            term:
+              id: MONDO:0006507
+              label: hereditary hemochromatosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Non-HFE Hepcidin Deficiency
+        description: 'HJV, HAMP, and TFR2 pathogenic variants cause non-HFE hemochromatosis by disrupting
+          hepcidin production or hepcidin-pathway signaling, leading to severe or earlier-onset iron overload.
+
+          '
+        genes:
+        - preferred_term: HJV
+          term:
+            id: hgnc:4887
+            label: HJV
+        - preferred_term: HAMP
+          term:
+            id: hgnc:15598
+            label: HAMP
+        - preferred_term: TFR2
+          term:
+            id: hgnc:11762
+            label: TFR2
+        biological_processes:
+        - preferred_term: regulation of iron ion transport
+          term:
+            id: GO:0034756
+            label: regulation of iron ion transport
+          modifier: ABNORMAL
+        - preferred_term: negative regulation of iron ion transport
+          term:
+            id: GO:0034757
+            label: negative regulation of iron ion transport
+          modifier: DECREASED
+      selected_evidence:
+        snippet: TFR2-related hemochromatosis (TFR2-HC) is characterized by increased intestinal iron
+          absorption resulting in iron accumulation in the liver, heart, pancreas, and endocrine organs.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301523
+      reference_title: TFR2-Related Hemochromatosis.
+      evidence_source: OTHER
+      explanation: GeneReviews links TFR2-related hemochromatosis to increased intestinal iron absorption
+        and multi-organ iron accumulation.
+    first_seen_at: '2026-10-03T21:18:59.281354+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:59.281354+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:59.281354+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      reference: PMID:20301523
 assessments:
   d0ebb933e7bcaeb7300a0a2f415d322ce587ba79d850031068ddb312258eb408:
     input_sha256: 9bbffd185d082a2a1f80740725d1a5958324d798704918abe7558059beec913a
@@ -23053,3 +23176,191 @@ assessments:
       request_sha256: 95344c4db6edf8372333cbda97007c9ff69233fffdeddc9a9a3a8ea6e5574f4e
       request_sha256s:
       - 95344c4db6edf8372333cbda97007c9ff69233fffdeddc9a9a3a8ea6e5574f4e
+  2697e2fd62800b004984ad5e72f17a080398c89634717c0af8c5882047864c37:
+    input_sha256: 88165edb5cc93b5261d3df42071be60c80095af92d9933f3e01dc82b9a8aea0d
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:59.368983+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.4
+            MATCH: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.4
+            MATCH: 0.57
+          confidence: 0.35
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+            MATCH: 0.59
+          confidence: 0.38
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.36
+            MATCH: 0.59
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.52
+            MATCH: 0.44
+          confidence: 0.27
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.28
+            MATCH: 0.63
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6433
+        output_tokens: 268
+      elapsed_seconds: 0.4054
+      request_sha256: 34e820c3d8c69fd08e72b36598ae22da624ff4761180e46542851930d7456478
+      request_sha256s:
+      - 34e820c3d8c69fd08e72b36598ae22da624ff4761180e46542851930d7456478
+  ce244726037b384bcb9cdb7669cef4d607b23e90ab13c8e1afacb69165f286a8:
+    input_sha256: cf09e3e9c1e7a23f039388cdffe40a1a5bae706fe4f767883392ef2d49e2d3c0
+    configuration_sha256: 0cb074bba74991141b52e22820279e15e7ceca1f8322bcb80bda1154e077cf87
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:59.281354+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.03
+            MISMATCH: 0.29
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.59
+            MISMATCH: 0.12
+          confidence: 0.39
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.1
+            MISMATCH: 0.35
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.02
+            MISMATCH: 0.28
+          confidence: 0.55
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.03
+            MISMATCH: 0.83
+          confidence: 0.74
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.02
+            MISMATCH: 0.87
+          confidence: 0.8
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.16
+            MISMATCH: 0.62
+          confidence: 0.43
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.03
+            MISMATCH: 0.77
+          confidence: 0.65
+        /assertion/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.3
+            MISMATCH: 0.37
+          confidence: 0.06
+        /assertion/genes/2/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.31
+            MISMATCH: 0.31
+          confidence: 0.06
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.3
+            MISMATCH: 0.12
+          confidence: 0.38
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.31
+            MISMATCH: 0.13
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.2
+            MISMATCH: 0.29
+          confidence: 0.27
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5599999999999999
+            MATCH: 0.12
+            MISMATCH: 0.32
+          confidence: 0.35
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.16
+            MISMATCH: 0.28
+          confidence: 0.34
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.13
+            MISMATCH: 0.43
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16713
+        output_tokens: 818
+      elapsed_seconds: 0.3191
+      request_sha256: f77f17d8ac79a23dda0b6c19d8a43f62bffb2cba94594d6335d8965fe1cef9dd
+      request_sha256s:
+      - f77f17d8ac79a23dda0b6c19d8a43f62bffb2cba94594d6335d8965fe1cef9dd

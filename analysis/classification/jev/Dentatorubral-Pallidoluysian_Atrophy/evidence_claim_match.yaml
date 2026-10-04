@@ -2446,6 +2446,61 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:30410817
+  f0a9f2f81bfe3939efea9be2b35f41030703862b3d39977ef03bd07722318cf6:
+    claim:
+      about:
+        disease:
+          name: Dentatorubral-Pallidoluysian Atrophy
+          disease_term:
+            preferred_term: dentatorubral-pallidoluysian atrophy
+            term:
+              id: MONDO:0007435
+              label: dentatorubral-pallidoluysian atrophy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: ATN1 Transcriptional Co-repressor Dysregulation
+        conforms_to: polyglutamine_expansion_proteotoxicity#Transcriptional Dysregulation
+        description: ATN1 encodes a transcriptional co-repressor, and pathogenic atrophin-1 disrupts transcriptional
+          networks with downstream dysregulation of cerebellar gene-expression programs in DRPLA.
+        gene:
+          preferred_term: ATN1
+          term:
+            id: hgnc:3033
+            label: ATN1
+        biological_processes:
+        - preferred_term: Regulation of transcription by RNA polymerase II
+          term:
+            id: GO:0006357
+            label: regulation of transcription by RNA polymerase II
+          modifier: DYSREGULATED
+      selected_evidence:
+        snippet: Treatment with human, but not mouse, ATN1-targeting ASOs provides remarkable protection
+          from a range of disease-related behavioral phenotypes and marked rescue of transcriptional dysregulation
+          in the cerebellum.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41624332
+      reference_title: Atrophin-1 antisense oligonucleotide provides robust protection from pathology
+        in a fully humanized DRPLA model.
+      evidence_source: MODEL_ORGANISM
+      explanation: Rescue of cerebellar transcriptional dysregulation by ATN1 lowering provides functional
+        support for this mechanism in vivo.
+    first_seen_at: '2026-10-03T21:20:02.097126+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:02.097126+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:02.097126+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:41624332
 assessments:
   9182a0dd5b03f952d4813d83baa6473baed10f605da971d8919b95027995a83d:
     input_sha256: 31c2adebf0807e0908fdbc288318efcc070befd7067e610b1077076203268bc7
@@ -5576,3 +5631,90 @@ assessments:
       request_sha256: beaa4a4a967200de4226018564f1a6d27ee344ad33b729e808308a70783b3a3f
       request_sha256s:
       - beaa4a4a967200de4226018564f1a6d27ee344ad33b729e808308a70783b3a3f
+  be854738020220ea9fcf258c293cdb0404ac6027a40260dd173e204832a8c3f2:
+    input_sha256: f0a9f2f81bfe3939efea9be2b35f41030703862b3d39977ef03bd07722318cf6
+    configuration_sha256: 85f7082d6d74a6626ba82d3fc3e3380527dffc1d2270e87e1807722db64f4283
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:02.097126+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.42
+            MISMATCH: 0.04
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.29
+            MISMATCH: 0.06
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.37
+            MISMATCH: 0.06
+          confidence: 0.35
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.56
+            MISMATCH: 0.13
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.52
+            MISMATCH: 0.05
+          confidence: 0.28
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.19
+            MISMATCH: 0.07
+          confidence: 0.61
+        /assertion/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.17
+            MISMATCH: 0.06
+          confidence: 0.65
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            PARTIAL: 0.17
+            MISMATCH: 0.02
+          confidence: 0.71
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.27
+            MISMATCH: 0.03
+          confidence: 0.55
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+          confidence: 0.78
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10625
+        output_tokens: 478
+      elapsed_seconds: 0.3374
+      request_sha256: d3d50d6ddda71bdd000e1b1a41209116f8ec19ce04eaa3142d478be1e179d87d
+      request_sha256s:
+      - d3d50d6ddda71bdd000e1b1a41209116f8ec19ce04eaa3142d478be1e179d87d

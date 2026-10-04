@@ -4954,6 +4954,115 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/1
       evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
       reference: PMID:23262390
+  d95eee5d6317dae60237bf51adae12173444a60156a7c8d81692a02b97c19d3d:
+    claim:
+      about:
+        disease:
+          name: Manganism
+          disease_term:
+            preferred_term: manganese poisoning
+            term:
+              id: MONDO:0017638
+              label: manganese poisoning
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Brain MRI with T1-weighted sequences
+        description: 'The most direct test available, in the literal sense: manganese is paramagnetic,
+          so the accumulated metal is what generates the signal. Symmetric pallidal T1 hyperintensity
+          without gadolinium is the finding. It reports body burden rather than disease, and the two come
+          apart - the signal tracks ongoing exposure, and it fades after exposure stops while symptoms
+          do not.'
+        diagnosis_term:
+          preferred_term: T1-weighted brain magnetic resonance imaging
+          term:
+            id: NCIT:C16809
+            label: Magnetic Resonance Imaging
+        notes: Bound to the generic NCIT:C16809 Magnetic Resonance Imaging. NCIT's brain-specific MRI
+          terms are contrast-qualified (NCIT:C137874 without contrast, NCIT:C137913 with and without),
+          and this finding is a plain unenhanced T1 sequence, so neither is a better fit than the parent;
+          `ancestors -p i` confirms C16809 reaches NCIT:C25218.
+      selected_evidence:
+        snippet: These data suggested that prolonged inhalation of welding fumes induces a high MRI T1
+          signal intensity with an elevation of the blood manganese level.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17127642
+      reference_title: Changes in blood manganese concentration and MRI t1 relaxation time during 180
+        days of stainless steel welding-fume exposure in cynomolgus monkeys.
+      evidence_source: MODEL_ORGANISM
+      explanation: Shows the signal rising with ongoing exposure, which is the basis for reading it as
+        a burden measure. MODEL_ORGANISM because this is six cynomolgus monkeys in an inhalation chamber,
+        not the welders the title's phrasing might suggest.
+    first_seen_at: '2026-10-03T21:21:06.284294+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:06.284294+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:06.284294+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      reference: PMID:17127642
+  8e93e8b1310d9c14fe3ff3d8b6e121c8de71d50da0c0a59a30d3c189fa597e97:
+    claim:
+      about:
+        disease:
+          name: Manganism
+          disease_term:
+            preferred_term: manganese poisoning
+            term:
+              id: MONDO:0017638
+              label: manganese poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Hepatobiliary Manganese Excretion
+        role: trigger
+        biological_scale: ORGANISM
+        description: 'The other way to reach overload: normal intake with a broken exit. Manganese is
+          cleared in bile, so chronic liver failure raises body burden without any unusual exposure, and
+          parenteral nutrition delivers manganese straight into the blood past the gut and liver entirely.
+          Both produce the same pallidal accumulation as the occupational route.'
+        biological_processes:
+        - preferred_term: manganese ion homeostasis
+          term:
+            id: GO:0055071
+            label: manganese ion homeostasis
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: Patients with liver failure or hepatic encephalopathy can develop Mn toxicity as it is
+          excreted in the bile.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33911374
+      reference_title: 'Inherited Manganese Disorders and the Brain: What Neurologists Need to Know.'
+      evidence_source: OTHER
+      quote_role: BACKGROUND
+      explanation: Independent corroboration of the excretion-failure route from a second review, so the
+        claim does not rest on one source.
+    first_seen_at: '2026-10-03T21:21:06.216190+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:06.216190+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:06.216190+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:33911374
 assessments:
   d74be7a46a1877247a32295ae1f606202543ee540c89a1e29525ec3f8b99f719:
     input_sha256: e0bbba7cb106ed2ea0ad585de39286366b7e89eca9b788b5b662c9164b51b791
@@ -11386,3 +11495,149 @@ assessments:
       request_sha256: fbb0006d6d81d7cb9c2011b453372762e2feae108f869b312229fae90c224fb3
       request_sha256s:
       - fbb0006d6d81d7cb9c2011b453372762e2feae108f869b312229fae90c224fb3
+  c171fdf62808b8174324ad468acf430fddd307c1b05d42cc696493cba9741dbf:
+    input_sha256: d95eee5d6317dae60237bf51adae12173444a60156a7c8d81692a02b97c19d3d
+    configuration_sha256: 2840a0204a217a29c91765869338fffe92f7125042b4b2cce902af65e64a2f5c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:06.284294+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.49
+            MATCH: 0.43
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.85
+            PARTIAL: 0.14
+          confidence: 0.78
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.21
+            MATCH: 0.73
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.59
+            MATCH: 0.23
+          confidence: 0.38
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.38
+            MATCH: 0.51
+          confidence: 0.27
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.33
+            MATCH: 0.54
+          confidence: 0.31
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+            MATCH: 0.05
+          confidence: 0.51
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7360
+        output_tokens: 324
+      elapsed_seconds: 0.1844
+      request_sha256: ddf2cb92ee7f368266e73bf60a8b88d2102affc500ab71e2844935c32ab89f51
+      request_sha256s:
+      - ddf2cb92ee7f368266e73bf60a8b88d2102affc500ab71e2844935c32ab89f51
+  5b7ea984606ddb9e4de6b53f1f3671299ad43b6641bbc9e0fd1766ac078a5748:
+    input_sha256: 8e93e8b1310d9c14fe3ff3d8b6e121c8de71d50da0c0a59a30d3c189fa597e97
+    configuration_sha256: 85d0e6763e59a50b4ad55b74b98ce30717231aadec8a72bef5f897873abffe61
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:06.216190+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.02
+            MATCH: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.82
+            MISMATCH: 0.02
+          confidence: 0.74
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.7
+            MISMATCH: 0.04
+          confidence: 0.55
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.71
+            MISMATCH: 0.12
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.03
+            MATCH: 0.26
+          confidence: 0.57
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.02
+            MATCH: 0.75
+          confidence: 0.63
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.72
+            MISMATCH: 0.02
+          confidence: 0.57
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9894
+        output_tokens: 429
+      elapsed_seconds: 0.1452
+      request_sha256: 74bdc817e9376cc647c3e72ada39e77527e22885f8aed9372f05e4821ef87e8a
+      request_sha256s:
+      - 74bdc817e9376cc647c3e72ada39e77527e22885f8aed9372f05e4821ef87e8a

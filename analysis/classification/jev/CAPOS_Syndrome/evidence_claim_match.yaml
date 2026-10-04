@@ -5717,6 +5717,71 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:30409907
+  59fda38921925f4c3c316b1ef6638f38b126250fabdfaa60b11616b84af9b0ce:
+    claim:
+      about:
+        disease:
+          name: CAPOS Syndrome
+          disease_term:
+            preferred_term: CAPOS syndrome
+            term:
+              id: MONDO:0011038
+              label: cerebellar ataxia-areflexia-pes cavus-optic atrophy-sensorineural hearing loss syndrome
+        context:
+        - path: /genetic/0
+          value:
+            name: ATP1A3
+            gene_term:
+              preferred_term: ATP1A3
+              term:
+                id: hgnc:801
+                label: ATP1A3
+            relationship_type: CAUSATIVE
+            notes: 'ATP1A3 encodes the neuron-specific alpha-3 catalytic subunit of the Na+/K+-ATPase.
+              CAPOS is genetically homogeneous to a degree that is unusual even among Mendelian disorders:
+              essentially every reported patient carries the same heterozygous missense change, c.2452G>A
+              (p.Glu818Lys). This is a striking genotype-phenotype restriction, because the same gene
+              produces clinically distinct allelic disorders (alternating hemiplegia of childhood, rapid-onset
+              dystonia-parkinsonism, RECA/FIPWE) through a large and heterogeneous set of other variants.'
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: ATP1A3 c.2452G>A (p.Glu818Lys)
+        type: MISSENSE
+        clinical_significance: PATHOGENIC
+        description: The recurrent, near-exclusive CAPOS allele. Glu818 lies in a hydrogen-bonding/salt-bridge
+          network that positions residues coordinating sodium at the pump's third, sodium-specific ion-binding
+          site; the glutamate-to-lysine charge reversal disrupts that network.
+        gene:
+          preferred_term: ATP1A3
+          term:
+            id: hgnc:801
+            label: ATP1A3
+      selected_evidence:
+        snippet: An underlying c.2452G>A mutation in the ATP1A3 gene was found in all four individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:27091223
+      reference_title: 'The Genetic Homogeneity of CAPOS Syndrome: Four New Patients With the c.2452G>A
+        (p.Glu818Lys) Mutation in the ATP1A3 Gene.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Independent replication of the same recurrent allele in a further family cohort.
+    first_seen_at: '2026-10-03T22:48:15.562510+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:48:15.562510+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:48:15.562510+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/1
+      reference: PMID:27091223
 assessments:
   fa66cddc510c1127275985ac6d169125eacb2a77b5a27859131b839a8e5b9da1:
     input_sha256: 5abbd8a51b307ae9fc7c6b3e99c8f1bc961816cffc2d57e635743f1d110194b7
@@ -13748,3 +13813,83 @@ assessments:
       request_sha256: 4020e03a8ad9ab8bd9b2623d91e4ce3c9891efce1f48a1c3e00a7c8d53b3e7f4
       request_sha256s:
       - 4020e03a8ad9ab8bd9b2623d91e4ce3c9891efce1f48a1c3e00a7c8d53b3e7f4
+  9fd4bfdd5d4bbbfea39de937def3b006f301f587846e5c1109640c2a4f08b5bd:
+    input_sha256: 59fda38921925f4c3c316b1ef6638f38b126250fabdfaa60b11616b84af9b0ce
+    configuration_sha256: 6fba07bed2f6f7754012a17ed10e6a6db10a4da0e7572f2d8954cbda685749e0
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:48:15.562510+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.43
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.34
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.76
+            PARTIAL: 0.2
+          confidence: 0.64
+        /assertion/type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.21
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/clinical_significance:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.41
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.08
+            PARTIAL: 0.42
+          confidence: 0.25
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.91
+            PARTIAL: 0.06
+          confidence: 0.88
+        /assertion/gene/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.58
+            PARTIAL: 0.36
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9482
+        output_tokens: 411
+      elapsed_seconds: 0.2802
+      request_sha256: 677b23e6090f290760a4b84c5d63ad04121e84b05f9d78ee8620beb0abf814e0
+      request_sha256s:
+      - 677b23e6090f290760a4b84c5d63ad04121e84b05f9d78ee8620beb0abf814e0

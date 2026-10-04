@@ -9168,6 +9168,55 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/5
       reference: PMID:38867112
+  0a4d14174f2344476d030e2ecdcb925f601edb52d5a79b2ff27e53244f85d56c:
+    claim:
+      about:
+        disease:
+          name: Iron Poisoning
+          disease_term:
+            preferred_term: iron poisoning
+            term:
+              id: MONDO:0800385
+              label: iron poisoning
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Deliberate self-poisoning with iron tablets
+        description: Intentional ingestion of iron, typically by adolescents and adults, accounts for
+          the larger ingested doses and is the route behind most severe and fatal adult cases.
+        exposure_term:
+          preferred_term: exposure to iron via ingestion
+          term:
+            id: ECTO:0900035
+            label: exposure to iron via ingestion
+        effect: Establishes a high ingested iron burden associated with severe poisoning.
+      selected_evidence:
+        snippet: Delay in treatment was there due to misdiagnosis of the intoxicating agent. She developed
+          fulminant hepatic failure with rapid clinical deterioration.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/4
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30598567
+      reference_title: 'Fatal Iron Toxicity in an Adult: Clinical Profile and Review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'A fatal adult case, and the only cited source in which the diagnosis itself was the
+        delay: the ingested agent was misidentified before iron was recognised. That is the practical
+        cost of the adult route being under-described, and it is a different failure from any the diagnosis
+        section models, which assume iron is already suspected. Single case report.'
+    first_seen_at: '2026-10-03T21:09:24.702111+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:24.702111+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:24.702111+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/4
+      reference: PMID:30598567
 assessments:
   2c385d2f31cdb2240c0ce7d4923205c368b716a793c2d55a252f89fd934ed17a:
     input_sha256: 1f3bed31156c5316752aeff56f329c260ba98b94ebaa846278ad83042f505621
@@ -20995,3 +21044,69 @@ assessments:
       request_sha256: fd8b1d66a9787cfdf1030a4ff457b3f55f8b6e1072a9499e2ab12510ec797c67
       request_sha256s:
       - fd8b1d66a9787cfdf1030a4ff457b3f55f8b6e1072a9499e2ab12510ec797c67
+  6fc81aed8e24bbca0dd8ca372a30d2f61306b6b5518fab1b97a0aa3ffe80dc8f:
+    input_sha256: 0a4d14174f2344476d030e2ecdcb925f601edb52d5a79b2ff27e53244f85d56c
+    configuration_sha256: 27c9db762bc4f8eba3250b6850b3a3900c329e247536feef49ae932a76ce2346
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:24.702111+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.49
+            PARTIAL: 0.48
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.06
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.7
+            PARTIAL: 0.29
+          confidence: 0.55
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.61
+            PARTIAL: 0.38
+          confidence: 0.41
+        /assertion/exposure_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.24
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/exposure_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.23
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.32
+            PARTIAL: 0.61
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7213
+        output_tokens: 331
+      elapsed_seconds: 0.2996
+      request_sha256: 9eab614ebb299514523cddf997004f6a7bddc2fbd52ce4a6025e03226b7f600f
+      request_sha256s:
+      - 9eab614ebb299514523cddf997004f6a7bddc2fbd52ce4a6025e03226b7f600f

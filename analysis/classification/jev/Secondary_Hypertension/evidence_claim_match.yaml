@@ -1,0 +1,2346 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Secondary_Hypertension.yaml
+disease: Secondary Hypertension
+inventory:
+  source_sha256: a30a8783203ce2b9d465b3163dedb7a4af84e0fc58dcc4307be3b962780d578d
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:06:10.536173+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  5e7ddaa5b2afd6f43ade7f8375562518ec17034ca1181442c88b3c833631e1c7:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sympathetic and hormonal coactivation
+        description: A common theme across several of the non-pharmacological causes of secondary hypertension,
+          in which sympathetic drive and hormonal axes are coactivated and blood-pressure regulation is
+          reset upward. The causes this node is curated for are renal parenchymal disease, renovascular
+          disease and obstructive sleep apnea, where increased sympathetic outflow is an established contributor.
+        role: central_effector
+        biological_scale: ORGANISM
+        biological_processes:
+        - preferred_term: regulation of systemic arterial blood pressure
+          term:
+            id: GO:0003073
+            label: regulation of systemic arterial blood pressure
+          modifier: DYSREGULATED
+        notes: 'Deliberately scoped rather than exhaustive. The supporting source says a common theme
+          across SEVERAL contributors, so this node claims no more than that, and it is not asserted as
+          the route for every cause named in the entry''s description. Two are excluded on mechanism:
+          primary aldosteronism reaches hypertension through renin-independent mineralocorticoid-receptor
+          signalling and ENaC-mediated sodium and volume retention, with reciprocal renin suppression
+          rather than sympathetic coactivation; and coarctation is substantially mechanical. Both still
+          converge on the Hypertension phenotype, which is where the entry models the shared endpoint
+          - the shared endpoint is the phenotype, not this mechanism. Pheochromocytoma is at best a partial
+          fit, since catecholamine release from the tumour is not under normal neural control. Curating
+          those routes as their own nodes is the natural follow-up.'
+      selected_evidence:
+        snippet: A common theme across several contributors to SH are coactivation of the sympathetic
+          drive and hormonal changes, independent of hormonal axis activation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37115960
+      reference_title: 'Secondary hypertension: evaluation and management.'
+      explanation: This review highlights sympathetic and hormonal coactivation as shared mechanisms.
+    first_seen_at: '2026-10-03T22:16:55.151105+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:37115960
+  5ecb8f16525ea2f722de19de289439c9976a31b440704eabbfab94d89119f558:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: VEGF Pathway Inhibitor Exposure
+        description: Drug-induced secondary hypertension arising from anticancer agents that block vascular
+          endothelial growth factor signalling — the anti-VEGF antibody bevacizumab, the VEGF trap aflibercept,
+          the VEGFR2 antibody ramucirumab, and the VEGF signalling pathway tyrosine kinase inhibitors
+          (sunitinib, sorafenib, axitinib, pazopanib, lenvatinib, cabozantinib). This is curated as one
+          worked exemplar of the "certain drugs" cause named in this entry's description; other pharmacological
+          causes of secondary hypertension (NSAIDs, combined oral contraceptives, glucocorticoids, calcineurin
+          inhibitors, sympathomimetics) are equally in scope for this entry but are not yet modelled.
+        role: trigger
+        biological_scale: MOLECULAR
+        conforms_to: vegf_inhibitor_hypertension#VEGF Signaling Pathway Inhibition
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: vascular endothelial growth factor receptor signaling pathway
+          term:
+            id: GO:0048010
+            label: vascular endothelial growth factor receptor signaling pathway
+          modifier: DECREASED
+      selected_evidence:
+        snippet: One of the most common side effects of these drugs is hypertension, especially in patients
+          treated with vascular endothelial growth factor inhibitors, as well as tyrosine kinase inhibitors
+          and proteasome inhibitors.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36621810
+      reference_title: 'Cancer Therapy-Related Hypertension: A Scientific Statement From the American
+        Heart Association.'
+      evidence_source: OTHER
+      explanation: Establishes VEGF pathway inhibition as a leading identifiable drug cause of secondary
+        hypertension. Evidence source is OTHER because this is a scientific statement / review.
+    first_seen_at: '2026-10-03T22:16:55.152478+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:36621810
+  ff245062d431e884ebcae7091adf48daa830064a6ad8f5cd58aa920eb53aa526:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Endothelial Nitric Oxide Deficiency and Oxidative Stress
+        description: VEGF signalling normally drives endothelial nitric oxide synthase through PI3K/Akt
+          and MAPK, so pathway inhibition reduces nitric oxide production and raises oxidative stress
+          in the endothelium. This is the first of the three mediator arms the entry previously named
+          only in prose.
+        role: amplifier
+        biological_scale: CELLULAR
+        conforms_to: vegf_inhibitor_hypertension#Endothelial Nitric Oxide Deficiency and Oxidative Stress
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: nitric oxide biosynthetic process
+          term:
+            id: GO:0006809
+            label: nitric oxide biosynthetic process
+          modifier: DECREASED
+        - preferred_term: response to oxidative stress
+          term:
+            id: GO:0006979
+            label: response to oxidative stress
+          modifier: INCREASED
+      selected_evidence:
+        snippet: VEGF, mediated by PI3K/Akt and MAPK pathway, upregulates the endothelial nitric oxide
+          synthase enzyme leading to up-regulation of NO production.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26386874
+      reference_title: Treatment of sunitinib-induced hypertension in solid tumor by nitric oxide donors.
+      evidence_source: OTHER
+      explanation: Establishes the signalling route by which VEGF sustains nitric oxide production, so
+        its inhibition withdraws that tone.
+    first_seen_at: '2026-10-03T22:16:56.727917+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:26386874
+  4691d87ee6e47551525732bec680af626c932d8b48acede57563f9977694e5b5:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: VEGF Pathway Inhibitor Exposure
+        description: Drug-induced secondary hypertension arising from anticancer agents that block vascular
+          endothelial growth factor signalling — the anti-VEGF antibody bevacizumab, the VEGF trap aflibercept,
+          the VEGFR2 antibody ramucirumab, and the VEGF signalling pathway tyrosine kinase inhibitors
+          (sunitinib, sorafenib, axitinib, pazopanib, lenvatinib, cabozantinib). This is curated as one
+          worked exemplar of the "certain drugs" cause named in this entry's description; other pharmacological
+          causes of secondary hypertension (NSAIDs, combined oral contraceptives, glucocorticoids, calcineurin
+          inhibitors, sympathomimetics) are equally in scope for this entry but are not yet modelled.
+        role: trigger
+        biological_scale: MOLECULAR
+        conforms_to: vegf_inhibitor_hypertension#VEGF Signaling Pathway Inhibition
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: vascular endothelial growth factor receptor signaling pathway
+          term:
+            id: GO:0048010
+            label: vascular endothelial growth factor receptor signaling pathway
+          modifier: DECREASED
+      selected_evidence:
+        snippet: The incidence of TKI-induced HTN among the VEGF inhibitors ranges from 5 to 80% and is
+          dose dependent.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29931399
+      reference_title: Tyrosine Kinase Inhibitor-Induced Hypertension.
+      evidence_source: OTHER
+      explanation: Dose dependence across the class supports an identifiable, on-target drug cause rather
+        than coincident essential hypertension. Evidence source is OTHER because this is a review article.
+    first_seen_at: '2026-10-03T22:16:56.725193+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:29931399
+  dd129b38d607b254218425ea9dcc47dfdc49aca7431745cb4fcbc7ba6979586b:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Endothelial Nitric Oxide Deficiency and Oxidative Stress
+        description: VEGF signalling normally drives endothelial nitric oxide synthase through PI3K/Akt
+          and MAPK, so pathway inhibition reduces nitric oxide production and raises oxidative stress
+          in the endothelium. This is the first of the three mediator arms the entry previously named
+          only in prose.
+        role: amplifier
+        biological_scale: CELLULAR
+        conforms_to: vegf_inhibitor_hypertension#Endothelial Nitric Oxide Deficiency and Oxidative Stress
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: nitric oxide biosynthetic process
+          term:
+            id: GO:0006809
+            label: nitric oxide biosynthetic process
+          modifier: DECREASED
+        - preferred_term: response to oxidative stress
+          term:
+            id: GO:0006979
+            label: response to oxidative stress
+          modifier: INCREASED
+      selected_evidence:
+        snippet: inhibition of endothelial NO synthase (eNOS), reduced nitric oxide (NO) production, oxidative
+          stress, activation of the endothelin system, and rarefaction have been implicated
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32990313
+      reference_title: Vascular toxicity associated with anti-angiogenic drugs.
+      evidence_source: OTHER
+      explanation: Names reduced nitric oxide and oxidative stress among the implicated mechanisms of
+        anti-angiogenic hypertension.
+    first_seen_at: '2026-10-03T22:16:56.765962+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:32990313
+  50ee9ee32e9dd85d19905c5d2d1d440883f57c254b0d4baae6485e708002ce22:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Endothelin-1 System Activation
+        description: VEGF pathway inhibition activates the endothelin-1 system, a potent vasoconstrictor
+          axis acting on vascular smooth muscle. The second of the three mediator arms.
+        role: amplifier
+        biological_scale: MOLECULAR
+        conforms_to: vegf_inhibitor_hypertension#Endothelin-1 System Activation
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: endothelin receptor signaling pathway
+          term:
+            id: GO:0086100
+            label: endothelin receptor signaling pathway
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The mechanism of action involves VSP inhibition, leading to decreased nitric oxide and
+          increased endothelin production, which causes vasoconstriction, capillary rarefaction, and hypertension.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29931399
+      reference_title: Tyrosine Kinase Inhibitor-Induced Hypertension.
+      evidence_source: OTHER
+      explanation: Places increased endothelin production between pathway inhibition and vasoconstriction.
+    first_seen_at: '2026-10-03T22:16:56.766759+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:29931399
+  bef66a0a6cfe650686e64359dcd84957412dc142a22e78bcff45e052a0fb6183:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Endothelin-1 System Activation
+        description: VEGF pathway inhibition activates the endothelin-1 system, a potent vasoconstrictor
+          axis acting on vascular smooth muscle. The second of the three mediator arms.
+        role: amplifier
+        biological_scale: MOLECULAR
+        conforms_to: vegf_inhibitor_hypertension#Endothelin-1 System Activation
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        biological_processes:
+        - preferred_term: endothelin receptor signaling pathway
+          term:
+            id: GO:0086100
+            label: endothelin receptor signaling pathway
+          modifier: INCREASED
+      selected_evidence:
+        snippet: recent discoveries indicate an important role for reduced nitric oxide generation, oxidative
+          stress, endothelin-1, prostaglandins, endothelial dysfunction, increased sympathetic outflow
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36621810
+      reference_title: 'Cancer Therapy-Related Hypertension: A Scientific Statement From the American
+        Heart Association.'
+      evidence_source: OTHER
+      explanation: Independent statement naming endothelin-1 among the mediators of cancer-therapy hypertension.
+    first_seen_at: '2026-10-03T22:16:56.933907+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:36621810
+  8658b198974888c75432c713601f7413316a40fa3ba33594ad3370cd012bb4d8:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Microvascular Rarefaction
+        description: Withdrawal of VEGF survival signalling to endothelium reduces capillary density,
+          so the same cardiac output is delivered through fewer parallel resistance vessels. The third
+          mediator arm, and the one that best explains why the blood pressure rise is sustained rather
+          than transient.
+        role: effector
+        biological_scale: TISSUE
+        conforms_to: vegf_inhibitor_hypertension#Microvascular Rarefaction
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: angiogenesis
+          term:
+            id: GO:0001525
+            label: angiogenesis
+          modifier: DECREASED
+        locations:
+        - preferred_term: capillary
+          term:
+            id: UBERON:0001982
+            label: capillary
+      selected_evidence:
+        snippet: These include nitric oxide decrease, a change in endothelin-1 levels and capillary rarefaction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30706818
+      reference_title: 'Tyrosine Kinase Inhibitor-Induced Hypertension: Role of Hypertension as a Biomarker
+        in Cancer Treatment.'
+      evidence_source: OTHER
+      explanation: Names capillary rarefaction alongside the other two mediator arms.
+    first_seen_at: '2026-10-03T22:16:56.966372+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:30706818
+  073459779caacd34603eed65bc865ab1202d5c9836acfe4dcb138bd1f4567d0e:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Drug-Induced Vasoconstriction and Increased Peripheral Vascular Resistance
+        description: 'The convergence step for VEGF-inhibitor-induced secondary hypertension: reduced
+          endothelial nitric oxide with oxidative stress, endothelin-1 system activation, and microvascular
+          rarefaction together shift the peripheral circulation toward constriction and raise total peripheral
+          vascular resistance. Unlike most causes of secondary hypertension curated in this entry, the
+          lesion is reversible on withdrawal of the culprit drug.'
+        role: central_effector
+        biological_scale: TISSUE
+        conforms_to: vegf_inhibitor_hypertension#Vasoconstriction and Increased Peripheral Vascular Resistance
+        cell_types:
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        locations:
+        - preferred_term: blood vessel
+          term:
+            id: UBERON:0001981
+            label: blood vessel
+        biological_processes:
+        - preferred_term: vasoconstriction
+          term:
+            id: GO:0042310
+            label: vasoconstriction
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The mechanism of action involves VSP inhibition, leading to decreased nitric oxide and
+          increased endothelin production, which causes vasoconstriction, capillary rarefaction, and hypertension.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29931399
+      reference_title: Tyrosine Kinase Inhibitor-Induced Hypertension.
+      evidence_source: OTHER
+      explanation: Places vasoconstriction between the mediator changes and the clinical hypertension,
+        which is the convergence claim of this node. Evidence source is OTHER because this is a review
+        article.
+    first_seen_at: '2026-10-03T22:16:57.043920+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:29931399
+  eb9e61b7c66e592eb556ea93f8620264a815b40924323999ff0b951fe021752c:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Microvascular Rarefaction
+        description: Withdrawal of VEGF survival signalling to endothelium reduces capillary density,
+          so the same cardiac output is delivered through fewer parallel resistance vessels. The third
+          mediator arm, and the one that best explains why the blood pressure rise is sustained rather
+          than transient.
+        role: effector
+        biological_scale: TISSUE
+        conforms_to: vegf_inhibitor_hypertension#Microvascular Rarefaction
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: angiogenesis
+          term:
+            id: GO:0001525
+            label: angiogenesis
+          modifier: DECREASED
+        locations:
+        - preferred_term: capillary
+          term:
+            id: UBERON:0001982
+            label: capillary
+      selected_evidence:
+        snippet: the potential role of microparticles, vascular smooth muscle cells, vascular stiffness,
+          and microvessel rarefaction
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35179707
+      reference_title: 'VEGF Receptor Inhibitor-Induced Hypertension: Emerging Mechanisms and Clinical
+        Implications.'
+      evidence_source: OTHER
+      explanation: Independent review naming microvessel rarefaction among the mechanisms of tyrosine-kinase-inhibitor
+        hypertension.
+    first_seen_at: '2026-10-03T22:16:57.042949+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      reference: PMID:35179707
+  82dfd598d8097522e9a3392c55d26be374ce2a65ba1e615653eee1564351e013:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Drug-Induced Vasoconstriction and Increased Peripheral Vascular Resistance
+        description: 'The convergence step for VEGF-inhibitor-induced secondary hypertension: reduced
+          endothelial nitric oxide with oxidative stress, endothelin-1 system activation, and microvascular
+          rarefaction together shift the peripheral circulation toward constriction and raise total peripheral
+          vascular resistance. Unlike most causes of secondary hypertension curated in this entry, the
+          lesion is reversible on withdrawal of the culprit drug.'
+        role: central_effector
+        biological_scale: TISSUE
+        conforms_to: vegf_inhibitor_hypertension#Vasoconstriction and Increased Peripheral Vascular Resistance
+        cell_types:
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000359
+            label: vascular associated smooth muscle cell
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        locations:
+        - preferred_term: blood vessel
+          term:
+            id: UBERON:0001981
+            label: blood vessel
+        biological_processes:
+        - preferred_term: vasoconstriction
+          term:
+            id: GO:0042310
+            label: vasoconstriction
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Cancer therapy-induced hypertension is often dose limiting, increases cardiovascular
+          mortality in cancer survivors, and is usually reversible after interruption or discontinuation
+          of treatment.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36621810
+      reference_title: 'Cancer Therapy-Related Hypertension: A Scientific Statement From the American
+        Heart Association.'
+      evidence_source: OTHER
+      explanation: Documents reversibility on drug withdrawal, which distinguishes this drug cause of
+        secondary hypertension from structural or endocrine causes. Evidence source is OTHER because this
+        is a scientific statement / review.
+    first_seen_at: '2026-10-03T22:16:57.159444+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      reference: PMID:36621810
+  a6e408e356f289b6213c8d1d04e8609275d7e79fe924f099f14bdc11748df3df:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Renin-Angiotensin System Inhibition (ACE Inhibitor or ARB)
+        description: ACE inhibitors and angiotensin receptor blockers are first-line for the hypertension
+          induced by VEGF pathway inhibitors, and are given while the anticancer drug continues rather
+          than as a reason to stop it.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ACE inhibitor
+            term:
+              id: NCIT:C247
+              label: ACE Inhibitor
+          - preferred_term: angiotensin II receptor antagonist
+            term:
+              id: NCIT:C66930
+              label: Angiotensin II Receptor Antagonist
+      selected_evidence:
+        snippet: ASIs and calcium channel blockers are first-line therapy for treatment and are associated
+          with improved overall survival.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29931399
+      reference_title: Tyrosine Kinase Inhibitor-Induced Hypertension.
+      evidence_source: OTHER
+      explanation: Establishes renin-angiotensin system inhibitors as first-line for tyrosine-kinase-inhibitor
+        hypertension.
+    first_seen_at: '2026-10-03T22:16:57.218047+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:29931399
+  a5d51950d21531081ecec25fc8e963d3c6817fc3aa1d0ee9d318982cecf0bb88:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Calcium Channel Blocker
+        description: Dihydropyridine calcium channel blockers are the other first-line option for VEGF-inhibitor
+          hypertension, opposing vasoconstriction directly at vascular smooth muscle.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: calcium channel blocker
+            term:
+              id: NCIT:C333
+              label: Calcium Channel Blocker
+        notes: Both treatments deliberately target the VEGF arm's convergence node and NOT the Sympathetic
+          and hormonal coactivation node. The supporting evidence is specifically about tyrosine-kinase-inhibitor
+          hypertension, so attaching it to the generic non-pharmacological convergence node would extend
+          the claim past what the source says - the same overreach this revision removes from that node's
+          description.
+      selected_evidence:
+        snippet: ASIs and calcium channel blockers are first-line therapy for treatment and are associated
+          with improved overall survival.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29931399
+      reference_title: Tyrosine Kinase Inhibitor-Induced Hypertension.
+      evidence_source: OTHER
+      explanation: Establishes calcium channel blockers as first-line alongside renin-angiotensin system
+        inhibitors.
+    first_seen_at: '2026-10-03T22:16:57.294436+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:29931399
+  9aa3c13fb3c71f943f754ed80889f2e12164f4e935a91a7945a1488f59407e09:
+    claim:
+      about:
+        disease:
+          name: Secondary Hypertension
+          disease_term:
+            preferred_term: secondary hypertension
+            term:
+              id: MONDO:0001200
+              label: secondary hypertension
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hypertension
+        description: Elevated blood pressure attributable to an identifiable cause.
+        phenotype_term:
+          preferred_term: Hypertension
+          term:
+            id: HP:0000822
+            label: Hypertension
+      selected_evidence:
+        snippet: Hypertension (HTN) that can be attributed to a particular source is known as secondary
+          HTN (SH).
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37115960
+      reference_title: 'Secondary hypertension: evaluation and management.'
+      explanation: The abstract defines secondary hypertension as hypertension attributable to a specific
+        cause.
+    first_seen_at: '2026-10-03T22:16:57.362955+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:06:10.536173+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:06:10.536173+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:37115960
+assessments:
+  1ef710a124f300444e3989f18d0fd2212ba32e5e03ef4de6b87d5108f2a4d44c:
+    input_sha256: 5e7ddaa5b2afd6f43ade7f8375562518ec17034ca1181442c88b3c833631e1c7
+    configuration_sha256: dc7a442204f45cda53376789e47b4ed44dc59f65b9be047eae6807ff979438ea
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:55.151105+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.42
+            MISMATCH: 0.12
+          confidence: 0.18
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.06
+            MISMATCH: 0.02
+          confidence: 0.88
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.4
+            MISMATCH: 0.15
+          confidence: 0.17
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.5
+            MISMATCH: 0.34
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            PARTIAL: 0.25
+            MISMATCH: 0.08
+          confidence: 0.49
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.43
+            MISMATCH: 0.11
+          confidence: 0.18
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.43
+            MISMATCH: 0.11
+          confidence: 0.18
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.48
+            MISMATCH: 0.07
+          confidence: 0.21
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.46
+            MISMATCH: 0.32
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11019
+        output_tokens: 475
+      elapsed_seconds: 0.2359
+      request_sha256: 992e4fd8cbafaee9a5a9e3e9df3f9f5828743050bc70fc721f8b89136976e9ce
+      request_sha256s:
+      - 992e4fd8cbafaee9a5a9e3e9df3f9f5828743050bc70fc721f8b89136976e9ce
+  71b1f8b0011af75e7837afd9b0963135fdcce82a1554e34113b96a4fa5002a96:
+    input_sha256: 5ecb8f16525ea2f722de19de289439c9976a31b440704eabbfab94d89119f558
+    configuration_sha256: cd414f9bf6b5a63efef39d0b93be432c575bba5a773ac645f22ed8e2c088eb46
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:55.152478+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.76
+            MISMATCH: 0.03
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.28
+            MISMATCH: 0.02
+          confidence: 0.55
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.33
+            MISMATCH: 0.04
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.65
+            MISMATCH: 0.03
+          confidence: 0.48
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.28
+            MISMATCH: 0.04
+          confidence: 0.52
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39999999999999997
+            PARTIAL: 0.35
+            MISMATCH: 0.25
+          confidence: 0.11
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.44
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.44
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.38
+            MISMATCH: 0.59
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.58
+            MISMATCH: 0.15
+          confidence: 0.38
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.57
+            MISMATCH: 0.24
+          confidence: 0.35
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            PARTIAL: 0.52
+            MISMATCH: 0.25
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13059
+        output_tokens: 587
+      elapsed_seconds: 0.3691
+      request_sha256: 52db97150c034bfb32c8677461ec0d70a8524dab3f4a75c93be530f913a377e4
+      request_sha256s:
+      - 52db97150c034bfb32c8677461ec0d70a8524dab3f4a75c93be530f913a377e4
+  2338e5d4d59465fa95489c18f0f40ebb71f83ab3ce1fc93b325852935c3dcafe:
+    input_sha256: ff245062d431e884ebcae7091adf48daa830064a6ad8f5cd58aa920eb53aa526
+    configuration_sha256: 130ec02804f7515dd10fccc9d5d7a25ca1f3d4156bfa88fdb648fef14d983456
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.727917+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.11
+            MISMATCH: 0.19
+          confidence: 0.55
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.07
+            MISMATCH: 0.43
+          confidence: 0.25
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.42
+            MISMATCH: 0.13
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.32
+            MISMATCH: 0.05
+          confidence: 0.44
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.07
+            MISMATCH: 0.31
+          confidence: 0.43
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.84
+            MISMATCH: 0.04
+          confidence: 0.76
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.07
+            MISMATCH: 0.38
+          confidence: 0.34
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.71
+            MISMATCH: 0.06
+          confidence: 0.56
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.75
+            MISMATCH: 0.05
+          confidence: 0.63
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.32
+            MISMATCH: 0.14
+          confidence: 0.31
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.38
+            MISMATCH: 0.11
+          confidence: 0.27
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.22
+            MISMATCH: 0.34
+          confidence: 0.17
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.08
+            MISMATCH: 0.57
+          confidence: 0.35
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.08
+            MISMATCH: 0.55
+          confidence: 0.33
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.08
+            MISMATCH: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16182
+        output_tokens: 753
+      elapsed_seconds: 0.1798
+      request_sha256: abb50b251c1918f3b1a4789e84512271056fd31ae0a3804558ff3696b0d19e19
+      request_sha256s:
+      - abb50b251c1918f3b1a4789e84512271056fd31ae0a3804558ff3696b0d19e19
+  40875876b85e68f0d43412359ac355e011ce0819564d943d9513d53157d2f5ba:
+    input_sha256: 4691d87ee6e47551525732bec680af626c932d8b48acede57563f9977694e5b5
+    configuration_sha256: cd414f9bf6b5a63efef39d0b93be432c575bba5a773ac645f22ed8e2c088eb46
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.725193+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.31
+            MISMATCH: 0.06
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.88
+            MISMATCH: 0.01
+          confidence: 0.81
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.64
+            MISMATCH: 0.05
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.34
+            MISMATCH: 0.04
+          confidence: 0.43
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.61
+            MISMATCH: 0.07
+          confidence: 0.41
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.25
+            MISMATCH: 0.51
+          confidence: 0.27
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.05
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.08
+            MISMATCH: 0.54
+          confidence: 0.31
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.03
+            MISMATCH: 0.63
+          confidence: 0.45
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.16
+            MISMATCH: 0.31
+          confidence: 0.3
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.11
+            MISMATCH: 0.35
+          confidence: 0.31
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.16
+            MISMATCH: 0.39
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13045
+        output_tokens: 590
+      elapsed_seconds: 0.2035
+      request_sha256: 64c576a3232469f70015272abbbb48f65dfb7282220139cf32cbe65cb6f3a55f
+      request_sha256s:
+      - 64c576a3232469f70015272abbbb48f65dfb7282220139cf32cbe65cb6f3a55f
+  7209e6450ba8fbb61d5407cc7b370a223e2a55c27ed15a66132c4b40a385fb6f:
+    input_sha256: dd129b38d607b254218425ea9dcc47dfdc49aca7431745cb4fcbc7ba6979586b
+    configuration_sha256: 130ec02804f7515dd10fccc9d5d7a25ca1f3d4156bfa88fdb648fef14d983456
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.765962+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.05
+            MATCH: 0.32
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.06
+            MATCH: 0.39
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.03
+            MATCH: 0.74
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MISMATCH: 0.2
+            MATCH: 0.1
+          confidence: 0.54
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.13
+            MATCH: 0.14
+          confidence: 0.6
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+            MATCH: 0.78
+          confidence: 0.66
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.24
+            MATCH: 0.11
+          confidence: 0.49
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.05
+            MATCH: 0.63
+          confidence: 0.44
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.05
+            MATCH: 0.67
+          confidence: 0.51
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.03
+            MATCH: 0.7
+          confidence: 0.56
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.04
+            MATCH: 0.66
+          confidence: 0.48
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.05
+            MATCH: 0.67
+          confidence: 0.51
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16187
+        output_tokens: 740
+      elapsed_seconds: 0.1968
+      request_sha256: 8e7b2bb554906ffb586ae00e3ca16d71af526ce7b476676e1e546166ebd9a9a4
+      request_sha256s:
+      - 8e7b2bb554906ffb586ae00e3ca16d71af526ce7b476676e1e546166ebd9a9a4
+  eb23cbbfe708eaa583c06aedb5499d6d1f29afff992e1c5cab7c339299ac20f5:
+    input_sha256: 50ee9ee32e9dd85d19905c5d2d1d440883f57c254b0d4baae6485e708002ce22
+    configuration_sha256: 8960ec9d294f29671f1cf51e18e788e98cfcf14680dd01f50d7b13c37da6283d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.766759+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.38
+            MATCH: 0.53
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.48
+            MATCH: 0.44
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.19
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.61
+            MATCH: 0.34
+          confidence: 0.41
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.22
+            MATCH: 0.71
+          confidence: 0.56
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.6
+            MATCH: 0.19
+          confidence: 0.4
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+            MATCH: 0.45
+          confidence: 0.17
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.41
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.53
+            MATCH: 0.29
+          confidence: 0.29
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.5
+            MATCH: 0.34
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.34
+            MATCH: 0.62
+          confidence: 0.44
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.52
+            MATCH: 0.43
+          confidence: 0.28
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.28
+            MATCH: 0.69
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14904
+        output_tokens: 679
+      elapsed_seconds: 0.1954
+      request_sha256: 0e1b4ef05599df417e7e0822f7311c61871c7266996f7c694afcc5ae838adf07
+      request_sha256s:
+      - 0e1b4ef05599df417e7e0822f7311c61871c7266996f7c694afcc5ae838adf07
+  e05b053d04eb12e39d1daf4146cf50fb5fa074337bc301d04536db7ff637deb6:
+    input_sha256: bef66a0a6cfe650686e64359dcd84957412dc142a22e78bcff45e052a0fb6183
+    configuration_sha256: 8960ec9d294f29671f1cf51e18e788e98cfcf14680dd01f50d7b13c37da6283d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.933907+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.19
+            PARTIAL: 0.76
+          confidence: 0.65
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.06
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.03
+            PARTIAL: 0.47
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.44
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.2
+            PARTIAL: 0.77
+          confidence: 0.65
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.13
+            PARTIAL: 0.36
+          confidence: 0.26
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.48
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.19
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.15
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.34
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.33
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.02
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.04
+            PARTIAL: 0.69
+          confidence: 0.54
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.03
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14901
+        output_tokens: 687
+      elapsed_seconds: 0.1766
+      request_sha256: a6b54dfa2dad3d5bf0d28b1408527df2bf0c602c1368867635fdd3f0cdf9d6aa
+      request_sha256s:
+      - a6b54dfa2dad3d5bf0d28b1408527df2bf0c602c1368867635fdd3f0cdf9d6aa
+  d8a3799e5da6873e95630c50c857ddbcc38dfa1cfe50a131e41ed6b59682d0c4:
+    input_sha256: 8658b198974888c75432c713601f7413316a40fa3ba33594ad3370cd012bb4d8
+    configuration_sha256: 75d0a3ced0aa028a2b1471eacb10d7e8da11df80f8a48ee178e5a370affbe777
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:56.966372+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.78
+            MATCH: 0.15
+          confidence: 0.66
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.72
+            MATCH: 0.2
+          confidence: 0.58
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.25
+            MATCH: 0.72
+          confidence: 0.57
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.75
+            MATCH: 0.04
+          confidence: 0.63
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.57
+            MATCH: 0.37
+          confidence: 0.37
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.22
+            MATCH: 0.74
+          confidence: 0.61
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            PARTIAL: 0.43
+            MATCH: 0.05
+          confidence: 0.28
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.51
+            MATCH: 0.27
+          confidence: 0.27
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.56
+            MATCH: 0.23
+          confidence: 0.34
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.51
+            MATCH: 0.39
+          confidence: 0.26
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.47
+            MATCH: 0.47
+          confidence: 0.22
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.34
+            MATCH: 0.61
+          confidence: 0.42
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.28
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.28
+            MATCH: 0.7
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14902
+        output_tokens: 684
+      elapsed_seconds: 0.1896
+      request_sha256: 580c6445b4abec7ab36b0da3bdd74782a1a4bfbd3255740eded8c279da40f539
+      request_sha256s:
+      - 580c6445b4abec7ab36b0da3bdd74782a1a4bfbd3255740eded8c279da40f539
+  7d33c1dea5f7ddf89670fa246c63c27443b65edd68b8248ec3b20cf0fdc3dfab:
+    input_sha256: 073459779caacd34603eed65bc865ab1202d5c9836acfe4dcb138bd1f4567d0e
+    configuration_sha256: c16dde636118d3f2f216c0fe5a9dacbce9563990a2f572316db9142b2d845ca7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.043920+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.62
+            MISMATCH: 0.03
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.26
+            MISMATCH: 0.03
+          confidence: 0.56
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.67
+            MISMATCH: 0.04
+          confidence: 0.5
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            PARTIAL: 0.36
+            MISMATCH: 0.04
+          confidence: 0.39
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.17
+            MISMATCH: 0.03
+          confidence: 0.7
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.56
+            MISMATCH: 0.12
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.64
+            MISMATCH: 0.18
+          confidence: 0.46
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.59
+            MISMATCH: 0.25
+          confidence: 0.37
+        /assertion/cell_types/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.43
+            MISMATCH: 0.11
+          confidence: 0.19
+        /assertion/cell_types/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.37
+            MISMATCH: 0.08
+          confidence: 0.32
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+          confidence: 0.67
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            PARTIAL: 0.23
+            MISMATCH: 0.04
+          confidence: 0.61
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16942
+        output_tokens: 778
+      elapsed_seconds: 0.1826
+      request_sha256: 68e273b3ddf96c317687a6635a9c0751038ce30061167f3e907012eb0e531b6b
+      request_sha256s:
+      - 68e273b3ddf96c317687a6635a9c0751038ce30061167f3e907012eb0e531b6b
+  16a91b2d41d69bdc17bb2bcb3bdabcb1f5c976352f8cbc91e11fecb5210676ae:
+    input_sha256: eb9e61b7c66e592eb556ea93f8620264a815b40924323999ff0b951fe021752c
+    configuration_sha256: 75d0a3ced0aa028a2b1471eacb10d7e8da11df80f8a48ee178e5a370affbe777
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.042949+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.12
+            PARTIAL: 0.81
+          confidence: 0.72
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.08
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.05
+            PARTIAL: 0.43
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.27
+            PARTIAL: 0.71
+          confidence: 0.55
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.12
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.06
+            PARTIAL: 0.38
+          confidence: 0.34
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.5
+            PARTIAL: 0.46
+          confidence: 0.25
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.32
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.31
+            PARTIAL: 0.54
+          confidence: 0.3
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.13
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.09
+            PARTIAL: 0.71
+          confidence: 0.57
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.18
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.04
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.04
+            PARTIAL: 0.51
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14901
+        output_tokens: 687
+      elapsed_seconds: 0.2247
+      request_sha256: 4be6f17c337ec412583bc75a7c8100561b7a5c3d1dcf72d034c15246e96c32ba
+      request_sha256s:
+      - 4be6f17c337ec412583bc75a7c8100561b7a5c3d1dcf72d034c15246e96c32ba
+  3adbc2992097fb003071f94011d685b34448fc90f891049b328614015d6928c0:
+    input_sha256: 82dfd598d8097522e9a3392c55d26be374ce2a65ba1e615653eee1564351e013
+    configuration_sha256: c16dde636118d3f2f216c0fe5a9dacbce9563990a2f572316db9142b2d845ca7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.159444+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.72
+            MISMATCH: 0.17
+          confidence: 0.58
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.44
+            MISMATCH: 0.05
+          confidence: 0.26
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.34
+            MISMATCH: 0.63
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.6
+            MISMATCH: 0.26
+          confidence: 0.4
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.44
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.28
+            MISMATCH: 0.58
+          confidence: 0.37
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.28
+            MISMATCH: 0.68
+          confidence: 0.53
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.24
+            MISMATCH: 0.75
+          confidence: 0.62
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.24
+            MISMATCH: 0.74
+          confidence: 0.61
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.25
+            MISMATCH: 0.71
+          confidence: 0.58
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.25
+            MISMATCH: 0.73
+          confidence: 0.59
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.28
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.36
+            MISMATCH: 0.5599999999999999
+          confidence: 0.35
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.27
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.3
+            MISMATCH: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.23
+            MISMATCH: 0.75
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16932
+        output_tokens: 814
+      elapsed_seconds: 0.2432
+      request_sha256: 289f8c0718362949b6d84c23f8c8dc207b580d22dfbb066193a0ead98dc43c4e
+      request_sha256s:
+      - 289f8c0718362949b6d84c23f8c8dc207b580d22dfbb066193a0ead98dc43c4e
+  57a8d6e243e357783e322d11a00f20315adcf593c85b67ea74c754efcd17383a:
+    input_sha256: a6e408e356f289b6213c8d1d04e8609275d7e79fe924f099f14bdc11748df3df
+    configuration_sha256: 9a6db956b0d156b7e37facf5eca876429a5083b0f02a72037c4c84f883359bee
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.218047+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.3
+            PARTIAL: 0.58
+            MATCH: 0.12
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.56
+            MATCH: 0.17
+          confidence: 0.34
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.45
+            MATCH: 0.4
+          confidence: 0.17
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.47
+            MATCH: 0.04
+          confidence: 0.22
+        /assertion/therapeutic_modality:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            PARTIAL: 0.39
+            MATCH: 0.22
+          confidence: 0.09
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.43
+            MATCH: 0.24
+          confidence: 0.15
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.41
+            MATCH: 0.22
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+            MATCH: 0.47
+          confidence: 0.2
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.42
+            MATCH: 0.46
+          confidence: 0.2
+        /assertion/treatment_term/therapeutic_agent/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.38
+            MATCH: 0.45
+          confidence: 0.17
+        /assertion/treatment_term/therapeutic_agent/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            PARTIAL: 0.39
+            MATCH: 0.37
+          confidence: 0.08
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11694
+        output_tokens: 560
+      elapsed_seconds: 0.2039
+      request_sha256: 266aa43f89247d2835d023a1f3974cc5d98394af6200632bc7338acf8110b764
+      request_sha256s:
+      - 266aa43f89247d2835d023a1f3974cc5d98394af6200632bc7338acf8110b764
+  58b455e60ccbbb6a59ede02401a408e653bef70dc7d291a284d7c6581edea331:
+    input_sha256: a5d51950d21531081ecec25fc8e963d3c6817fc3aa1d0ee9d318982cecf0bb88
+    configuration_sha256: f3c4e15e639d02e93a3867a428e9a679c521f9e9142e0a3a0c0bca6ad7a77c50
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.294436+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.47
+            MISMATCH: 0.41
+          confidence: 0.2
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.37
+            MISMATCH: 0.57
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.26
+            MISMATCH: 0.1
+          confidence: 0.47
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.29
+            MISMATCH: 0.68
+          confidence: 0.52
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.34
+            MISMATCH: 0.27
+          confidence: 0.08
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.36
+            MISMATCH: 0.21
+          confidence: 0.15
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.41
+            MISMATCH: 0.24
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            PARTIAL: 0.24
+            MISMATCH: 0.09
+          confidence: 0.5
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.25
+            MISMATCH: 0.1
+          confidence: 0.48
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.35
+            MISMATCH: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10688
+        output_tokens: 491
+      elapsed_seconds: 0.2713
+      request_sha256: 45585afcdeb27ffb55fff7490238e54518186a4121bf5f18379e394a93904024
+      request_sha256s:
+      - 45585afcdeb27ffb55fff7490238e54518186a4121bf5f18379e394a93904024
+  6e6ab599de467a1343aee8385f3faea0be4d5b650b6b7ec6b233ada26758d05d:
+    input_sha256: 9aa3c13fb3c71f943f754ed80889f2e12164f4e935a91a7945a1488f59407e09
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:16:57.362955+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.93
+            PARTIAL: 0.05
+          confidence: 0.9
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.9
+            PARTIAL: 0.07
+          confidence: 0.85
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.98
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.78
+            PARTIAL: 0.13
+          confidence: 0.67
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.89
+            PARTIAL: 0.07
+          confidence: 0.84
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6219
+        output_tokens: 273
+      elapsed_seconds: 0.1877
+      request_sha256: ee54c96a8742121aa068f306e5991ba7a1ccee57b95abe3b3f453127f7d44e02
+      request_sha256s:
+      - ee54c96a8742121aa068f306e5991ba7a1ccee57b95abe3b3f453127f7d44e02

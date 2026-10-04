@@ -6629,6 +6629,64 @@ inputs:
     - assertion_path: /treatments/5
       evidence_path: /treatments/5/evidence/1
       reference: PMID:39434156
+  30f8e29d5c757778ebe97e17709cc9c8b5aaaadb186cfb5cbf43c0ec84213da1:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Nonsyndromic Hearing Loss 50
+          disease_term:
+            preferred_term: autosomal dominant nonsyndromic hearing loss 50
+            term:
+              id: MONDO:0013114
+              label: autosomal dominant nonsyndromic hearing loss 50
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Repression of Novel Targets Acquired by the Mutant Seed
+        biological_scale: MOLECULAR
+        description: A changed miR-96-5p seed can acquire a different target repertoire. Mutant-seed matches
+          are enriched among downregulated transcripts in diminuendo and both human-seed knock-in lines.
+          Normal hearing thresholds in heterozygous deletion models support a contribution from mutant
+          RNA beyond reduced normal dosage, but do not exclude quantitative effects for every human allele.
+          The acquired targets depend on allele and species.
+        biological_processes:
+        - preferred_term: miRNA-mediated post-transcriptional gene silencing of transcripts complementary
+            to the mutant seed
+          term:
+            id: GO:0035195
+            label: miRNA-mediated post-transcriptional gene silencing
+        notes: Target-set specificity is described separately from quantitative changes in gene silencing.
+          Motif enrichment supports acquired targeting across a transcriptome; it does not validate every
+          predicted individual target.
+        mechanism_confidence: PROVISIONAL
+      selected_evidence:
+        snippet: the phenotype results from a lack of repression of normal targets even though we show
+          a gain of repression of novel targets
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19363478
+      reference_title: An ENU-induced mutation of miR-96 associated with progressive hearing loss in mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: The founding mouse paper's own weighting of the two halves, which at that time put
+        the abandoned targets first. Recorded because the weighting later shifted, and both readings should
+        be visible.
+      quote_role: PRIMARY_RESULT
+    first_seen_at: '2026-10-03T21:28:13.130614+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:28:13.130614+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:28:13.130614+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/2
+      reference: PMID:19363478
 assessments:
   973262b728e1bd1570062276ec814fcd18c30913b50564bd85bc8e018baf4339:
     input_sha256: 74257855447a8e6e09aaa7a45d679db634cfe9aa8c80d1629bb167b6746eb619
@@ -16069,3 +16127,83 @@ assessments:
       request_sha256: c4029e8d1edfd7287aaadd8464e806f6be73d4fe20bc67cbda4cddeda088af2e
       request_sha256s:
       - c4029e8d1edfd7287aaadd8464e806f6be73d4fe20bc67cbda4cddeda088af2e
+  19f09c839a52db2a8a958c17d92e07ac930ad1ae1b9ca4bb35e2aaf3f78d14fb:
+    input_sha256: 30f8e29d5c757778ebe97e17709cc9c8b5aaaadb186cfb5cbf43c0ec84213da1
+    configuration_sha256: 35ea47bd72f57554be1b6c8f7a6476df05360d855526c34e3d5dcf8f722803b7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:28:13.130614+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.16
+            MATCH: 0.32
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.17
+            MATCH: 0.33
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.09
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.1
+            MATCH: 0.43
+          confidence: 0.2
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.07
+            MATCH: 0.7
+          confidence: 0.54
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.08
+            MATCH: 0.68
+          confidence: 0.51
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.22
+            MATCH: 0.24
+          confidence: 0.31
+        /assertion/mechanism_confidence:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.15
+            MATCH: 0.39
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9690
+        output_tokens: 427
+      elapsed_seconds: 0.2624
+      request_sha256: a9a4c92bb9a4ff7293d834906ecb65e2122d4fac2922b5b514eec3c7df5baf1f
+      request_sha256s:
+      - a9a4c92bb9a4ff7293d834906ecb65e2122d4fac2922b5b514eec3c7df5baf1f

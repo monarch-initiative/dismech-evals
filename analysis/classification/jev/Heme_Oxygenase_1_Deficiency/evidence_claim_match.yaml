@@ -11688,6 +11688,136 @@ inputs:
     - assertion_path: /discussions/5
       evidence_path: /discussions/5/evidence/2
       reference: PMID:33546372
+  6ecfeb076e51537d68a64a2b72e981119bc87526f441913736d9e885d37c4b97:
+    claim:
+      about:
+        disease:
+          name: Heme Oxygenase 1 Deficiency
+          disease_term:
+            preferred_term: Heme oxygenase 1 deficiency
+            term:
+              id: MONDO:0013536
+              label: heme oxygenase 1 deficiency
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Hmox1-null mouse (Poss and Tonegawa, C57BL/6)
+        species: Mouse
+        genotype: Hmox1 -/- (targeted null)
+        publication: PMID:9380735
+        description: 'The founding genetic model, reported two years before the first human case and directly
+          cited by Yachie et al. as corroborating their patient. Adult nulls develop anaemia with abnormally
+          low serum iron yet accumulate hepatic and renal iron causing oxidative damage and chronic inflammation;
+          embryonic fibroblasts are hypersensitive to hemin and peroxide, and adults die when challenged
+          with endotoxin.
+
+          '
+        modeled_mechanisms:
+        - target: Impaired Heme-Iron Recycling and Tissue Iron Deposition
+          relationship: RECAPITULATES
+          fidelity: HIGH
+          description: Reproduces the counter-intuitive combination of low serum iron with hepatic and
+            renal iron accumulation that defines this node, and was the experiment that established the
+            recycling mechanism.
+          limitations: Mouse nulls develop marked splenomegaly, whereas human patients characteristically
+            have asplenia or functional hyposplenism, so the splenic phenotype does not transfer.
+          readouts:
+          - name: Hepatic and renal tissue iron content
+            target: Impaired Heme-Iron Recycling and Tissue Iron Deposition
+            direction: INCREASED
+            interpretation: Tissue iron accumulation is the structural correlate of failed iron release
+              from hepatic and renal cells.
+        - target: Failure of Stress-Inducible Heme Catabolism
+          relationship: RECAPITULATES
+          fidelity: HIGH
+          description: Cells and animals lacking Hmox1 lose the adaptive protection normally conferred
+            by its stress induction, which is the defining property of this node.
+          limitations: Demonstrated with pharmacological and chemical stressors (hemin, peroxide, paraquat,
+            cadmium, endotoxin) rather than with the spontaneous haemolytic load that drives the human
+            disease.
+          readouts:
+          - name: Survival and hepatic necrosis after endotoxin challenge
+            target: Failure of Stress-Inducible Heme Catabolism
+            direction: DECREASED
+            interpretation: Mortality on endotoxin challenge quantifies the loss of the inducible stress-protective
+              response.
+      selected_evidence:
+        snippet: Here, we generated mice lacking functional heme oxygenase 1 (Hmox1; EC 1.14.99.3), which
+          catabolizes heme to biliverdin, carbon monoxide, and free iron, to assess its participation
+          in iron homeostasis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9380735
+      reference_title: Heme oxygenase 1 is required for mammalian iron reutilization.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes the existence and construction of this targeted Hmox1-null mouse line.
+    first_seen_at: '2026-10-03T21:20:33.217474+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:33.217474+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:33.217474+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:9380735
+  224e60135a97f2a1143b61b6004a40ee108a13855c7d8a5dbcf1519f131321d9:
+    claim:
+      about:
+        disease:
+          name: Heme Oxygenase 1 Deficiency
+          disease_term:
+            preferred_term: Heme oxygenase 1 deficiency
+            term:
+              id: MONDO:0013536
+              label: heme oxygenase 1 deficiency
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Corticosteroid and Immunosuppressive Therapy
+        description: 'Responses vary: refractory disease and minimal sustained benefit are common, but
+          corticosteroids can temporarily control inflammatory flares, and HLH-directed therapy produced
+          remission of HLH signs in one patient. These responses do not establish correction of the underlying
+          cytoprotective defect or durable disease control. The agents span several classes, so no single
+          therapeutic_agent is bound.
+
+          '
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: Therapy with corticosteroid, anti-IL-1R, anti-IL-6, and cyclosporine had been tried but
+          with minimal benefit.
+        supports: REFUTE
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33546372
+      reference_title: 'Heme Oxygenase-1 Deficiency and Oxidative Stress: A Review of 9 Independent Human
+        Cases and Animal Models.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Independent confirmation that broad anti-cytokine and immunosuppressive therapy provides
+        minimal benefit.
+    first_seen_at: '2026-10-03T21:20:33.240472+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:33.240472+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:33.240472+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      reference: PMID:33546372
 assessments:
   c10d1bd38bcaf08dd67370477ef022a959f8de284248745d58420d4f0b4819b2:
     input_sha256: 8dcdda2e45e13194ea3c8f972673b5271f3401efa1bd9874062107cf6b7f31f6
@@ -25870,3 +26000,254 @@ assessments:
       request_sha256: 30122c1024cc064e39e8b38f3f29f9563a5ce833b26bbb7403f0501e2fccfaaf
       request_sha256s:
       - 30122c1024cc064e39e8b38f3f29f9563a5ce833b26bbb7403f0501e2fccfaaf
+  a7ce641d7e3c50334fd382585b69e5c716f766979ba201eaec62feb1869ff7a4:
+    input_sha256: 6ecfeb076e51537d68a64a2b72e981119bc87526f441913736d9e885d37c4b97
+    configuration_sha256: 94c1a8cbd0a41e7afd6b45cc245880192343e6088f46bb653e825cf7148a75b6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:33.217474+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.04
+            MATCH: 0.5
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.07
+            MATCH: 0.54
+          confidence: 0.32
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/genotype:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.47
+            MATCH: 0.14
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.26
+            MATCH: 0.07
+          confidence: 0.5
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.05
+            MATCH: 0.34
+          confidence: 0.41
+        /assertion/modeled_mechanisms/0/relationship:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.33
+            MATCH: 0.28
+          confidence: 0.08
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MISMATCH: 0.12
+            MATCH: 0.12
+          confidence: 0.64
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MISMATCH: 0.12
+            MATCH: 0.14
+          confidence: 0.61
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.83
+            MATCH: 0.02
+          confidence: 0.75
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.15
+            MATCH: 0.2
+          confidence: 0.49
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.09
+            MATCH: 0.38
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.25
+            MATCH: 0.1
+          confidence: 0.49
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.25
+            MATCH: 0.13
+          confidence: 0.42
+        /assertion/modeled_mechanisms/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.15
+            MATCH: 0.41
+          confidence: 0.16
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.38
+            MATCH: 0.25
+          confidence: 0.08
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.16
+            MATCH: 0.13
+          confidence: 0.57
+        /assertion/modeled_mechanisms/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.24
+            MATCH: 0.1
+          confidence: 0.48
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.78
+            MATCH: 0.02
+          confidence: 0.67
+        /assertion/modeled_mechanisms/1/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.66
+            MATCH: 0.06
+          confidence: 0.49
+        /assertion/modeled_mechanisms/1/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.22
+            MATCH: 0.29
+          confidence: 0.24
+        /assertion/modeled_mechanisms/1/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.51
+            MATCH: 0.06
+          confidence: 0.26
+        /assertion/modeled_mechanisms/1/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.55
+            MATCH: 0.05
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 25499
+        output_tokens: 1342
+      elapsed_seconds: 0.3359
+      request_sha256: 91ea85ed5ead98f7fd60fe2956eb7b1a4806f9f44946862a26807bfce55d4708
+      request_sha256s:
+      - 91ea85ed5ead98f7fd60fe2956eb7b1a4806f9f44946862a26807bfce55d4708
+  ebcab2b9ddad71abd78e84777cc64971f13212731f11c1db55b84c2b0bd540ae:
+    input_sha256: 224e60135a97f2a1143b61b6004a40ee108a13855c7d8a5dbcf1519f131321d9
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:33.240472+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.35
+            MATCH: 0.29
+          confidence: 0.03
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.14
+            MATCH: 0.15
+          confidence: 0.56
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.29
+            MATCH: 0.38
+          confidence: 0.06
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.27
+            MATCH: 0.33
+          confidence: 0.1
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.22
+            MATCH: 0.46
+          confidence: 0.2
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.26
+            MATCH: 0.44
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6322
+        output_tokens: 276
+      elapsed_seconds: 0.281
+      request_sha256: fa33ab9d5e4b83c408caf7d5693cbb35093b030f5d00263ec1a9503be7029a48
+      request_sha256s:
+      - fa33ab9d5e4b83c408caf7d5693cbb35093b030f5d00263ec1a9503be7029a48

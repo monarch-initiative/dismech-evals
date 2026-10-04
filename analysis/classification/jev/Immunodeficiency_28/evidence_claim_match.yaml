@@ -2000,6 +2000,53 @@ inputs:
     - assertion_path: /prevalence/0
       evidence_path: /prevalence/0/evidence/1
       reference: PMID:32025907
+  147c146934b6f42b35efe64a071192027ea58419ee74e6b21c020d05bce625b1:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 28
+          disease_term:
+            preferred_term: immunodeficiency 28
+            term:
+              id: MONDO:0013953
+              label: immunodeficiency 28
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Functional IFN-gamma responsiveness of patient cells
+        description: Stimulation of patient-derived fibroblasts or EBV-transformed B cells with IFN-gamma,
+          reading out the induced response. This is the assay that assigns a patient to the complete or
+          the partial form, because it measures the residual signalling the whole entry is organised around,
+          and it is the measurement that separates a receptor defect from an IFN-gamma production defect
+          at the bedside before sequencing returns.
+        markers: IFN-gamma-induced STAT1 phosphorylation and downstream gene induction in patient fibroblasts
+          or EBV-B cells
+      selected_evidence:
+        snippet: SV40-fibroblasts of P1 and P2 responded weakly to IFN-γ, and Epstein Barr virus-transformed
+          B cells had a barely detectable response to IFN-γ.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31222290
+      reference_title: A purely quantitative form of partial recessive IFN-γR2 deficiency caused by mutations
+        of the initiation or second codon.
+      evidence_source: IN_VITRO
+      explanation: The functional readout in the two cell types used, showing the graded result that assigns
+        the partial form.
+    first_seen_at: '2026-10-03T21:19:15.754935+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:15.754935+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:15.754935+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:31222290
 assessments:
   17ce261f97426957647e3ca3aa4574c32b6d90fd0d7786f985f0e889f278d89b:
     input_sha256: e697ec014503643ec947d4bf1285ddd5544dc7d730e3dea729dd2e7eda05ab41
@@ -4694,3 +4741,55 @@ assessments:
       request_sha256: 22ee78500f37aaafdd95bc92e7a810835431dc832ecd6b03dfd09da9700d8f16
       request_sha256s:
       - 22ee78500f37aaafdd95bc92e7a810835431dc832ecd6b03dfd09da9700d8f16
+  034682da93026193fbe7d4f2fa1c082085ee5374c132b8d6088b0ca933a14584:
+    input_sha256: 147c146934b6f42b35efe64a071192027ea58419ee74e6b21c020d05bce625b1
+    configuration_sha256: b1f483523e40a407dec1324730167f1f8ffc470b068b82501174acbdadfc77e7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:15.754935+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.59
+            PARTIAL: 0.31
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.29
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.87
+            PARTIAL: 0.1
+          confidence: 0.81
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.58
+            PARTIAL: 0.28
+          confidence: 0.37
+        /assertion/markers:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.51
+            PARTIAL: 0.43
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5319
+        output_tokens: 221
+      elapsed_seconds: 0.3554
+      request_sha256: 474ba8959621b945bd1129f8e104c7f1d06b02613d2cde2f4ef30ac96e71384b
+      request_sha256s:
+      - 474ba8959621b945bd1129f8e104c7f1d06b02613d2cde2f4ef30ac96e71384b

@@ -6352,6 +6352,50 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:36924191
+  74f9170a4f72501611e8c19c7541e48167d46d3b5eb946f6436b77dad92e10f3:
+    claim:
+      about:
+        disease:
+          name: Cardiac Sarcoidosis
+          disease_term:
+            preferred_term: cardiac sarcoidosis
+            term:
+              id: MONDO:0001707
+              label: cardiac sarcoidosis
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Survival in clinically manifest disease
+        notes: Contemporary survival in manifest cardiac sarcoidosis is reported as roughly 90-96% at
+          5 years and 80-90% at 10 years in specialist series; a nationwide Finnish series including autopsy-detected
+          cases reported 85% at 5 years and 76% at 10 years from symptom onset. The difference between
+          these figures reflects ascertainment - the nationwide series includes cases first identified
+          at death.
+      selected_evidence:
+        snippet: The Kaplan-Meier estimate (95% CI) of survival from symptom onset was 85% (80-90%) at
+          5 years and 76% (68-84%) at 10 years.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31230070
+      reference_title: 'Sudden death in cardiac sarcoidosis: an analysis of nationwide clinical and cause-of-death
+        registries.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the nationwide-registry survival estimates for contrast.
+    first_seen_at: '2026-10-03T21:21:56.308034+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:56.308034+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:56.308034+00:00'
+    occurrences:
+    - assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/1
+      reference: PMID:31230070
 assessments:
   2bd4bc2be6b8bcc0bcc89a6329b61fc488a89ade849770ae6657134538bd262c:
     input_sha256: 5c3c947bee43cbb1e00b8eb8f18da79eb9b795fc057de58cd36940eba38627d2
@@ -15015,3 +15059,48 @@ assessments:
       request_sha256: 472b316daf400f568b44ba6f8162962930ce027f0b9bc3ef89859527153739dd
       request_sha256s:
       - 472b316daf400f568b44ba6f8162962930ce027f0b9bc3ef89859527153739dd
+  cdc3247e2021b0c810da78d4c80176914e0dd6ee13de4efb8c00dec5152c14b0:
+    input_sha256: 74f9170a4f72501611e8c19c7541e48167d46d3b5eb946f6436b77dad92e10f3
+    configuration_sha256: f96784d87f8ca05ad10a679b94eb789dd9a9c307a2309f99e9472865f6cabccd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:56.308034+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.47
+            MISMATCH: 0.03
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.37
+            MISMATCH: 0.04
+          confidence: 0.38
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            PARTIAL: 0.16
+            MISMATCH: 0.01
+          confidence: 0.74
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.55
+            MISMATCH: 0.03
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4359
+        output_tokens: 176
+      elapsed_seconds: 0.254
+      request_sha256: 70ea9901dfbbe20578e2204caed57a7c6e93c9df46ce4a80182e9cb8a187dc9e
+      request_sha256s:
+      - 70ea9901dfbbe20578e2204caed57a7c6e93c9df46ce4a80182e9cb8a187dc9e

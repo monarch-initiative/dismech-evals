@@ -4015,6 +4015,57 @@ inputs:
     - assertion_path: /environmental/1/influences_mechanisms/0
       evidence_path: /environmental/1/influences_mechanisms/0/evidence/0
       reference: PMID:39282548
+  e61deb3976d7b89d4151edbac445bef415d2976a1ce15b35f4479671f9e89dc5:
+    claim:
+      about:
+        disease:
+          name: Clostridioides difficile Infection
+          disease_term:
+            preferred_term: Clostridium difficile colitis
+            term:
+              id: MONDO:0000705
+              label: Clostridium difficile colitis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of Secondary Bile Acid Production
+        description: 'Loss of bile acid 7α-dehydroxylating bacteria (Clostridium scindens, C. hylemonae,
+          and related taxa) prevents conversion of primary bile acids (cholate, chenodeoxycholate) to
+          secondary bile acids (deoxycholate, lithocholate). Primary bile acids promote C. difficile spore
+          germination; secondary bile acids inhibit both germination and vegetative growth.
+
+          '
+        notes: 'The bai (bile acid-inducible) operon encodes the 7α-dehydroxylation pathway. ~2mM deoxycholate
+          is sufficient to inhibit C. difficile growth in vitro.
+
+          '
+      selected_evidence:
+        snippet: Inhibition of C. difficile by commensals correlated with the efficient conversion of
+          cholate to deoxycholate, a secondary bile acid that inhibits C. difficile germination, growth,
+          and toxin production.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32179626
+      reference_title: Strain-Dependent Inhibition of Clostridioides difficile by Commensal Clostridia
+        Carrying the Bile Acid-Inducible (bai) Operon.
+      evidence_source: IN_VITRO
+      explanation: Study shows bile acid conversion by bai operon-carrying bacteria is key to C. difficile
+        inhibition.
+    first_seen_at: '2026-10-03T21:19:54.065279+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:54.065279+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:54.065279+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:32179626
 assessments:
   4a273dbced9ff55134832cebb2c5d64c7a06203701430db418b704092ac03beb:
     input_sha256: 6bfa9df8978fc4af6cc7652792cd0839501ace878a09dc2e15fba42e6ea5044d
@@ -8817,3 +8868,55 @@ assessments:
       request_sha256: 7847639ba58315fcc267e19f912afe96d5bb382d354abd33f3f833365708ad9a
       request_sha256s:
       - 7847639ba58315fcc267e19f912afe96d5bb382d354abd33f3f833365708ad9a
+  6fd4c1c2745b44032717271a32f3ea7ae432f084325828056983816e1feb8dcd:
+    input_sha256: e61deb3976d7b89d4151edbac445bef415d2976a1ce15b35f4479671f9e89dc5
+    configuration_sha256: da37de9e1ea82c1571c4d8463dc2f098cc014c6041a36d2d879e0a172b65881c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:54.065279+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.45
+            MATCH: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.29
+            MATCH: 0.68
+          confidence: 0.51
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.46
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            PARTIAL: 0.44
+            MATCH: 0.04
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5336
+        output_tokens: 222
+      elapsed_seconds: 0.2461
+      request_sha256: 0f9a799db5dadc15d062a794dd0e67826f48d3b66a255db96fee39144786d1ae
+      request_sha256s:
+      - 0f9a799db5dadc15d062a794dd0e67826f48d3b66a255db96fee39144786d1ae

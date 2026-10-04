@@ -6211,6 +6211,62 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:37755971
+  72c89d911f93907ebb65aa247f8e08e651240b157e735c5495db359a2d62c7d5:
+    claim:
+      about:
+        disease:
+          name: Botulism
+          disease_term:
+            preferred_term: botulism
+            term:
+              id: MONDO:0005498
+              label: botulism
+        context:
+        - path: /pathophysiology/11
+          value:
+            name: Autonomic cholinergic transmission failure
+            description: Presynaptic blockade at postganglionic parasympathetic terminals reduces salivation
+              and intestinal or bladder activity and impairs pupillary constriction, producing dry mouth,
+              constipation, urinary retention, and dilated pupils.
+            cell_types:
+            - preferred_term: cholinergic neuron
+              term:
+                id: CL:0000108
+                label: cholinergic neuron
+            mechanism_confidence: ESTABLISHED
+            biological_scale: TISSUE
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Constipation
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - reduced gastrointestinal cholinergic motility
+        description: Autonomic cholinergic blockade slows intestinal transit.
+      selected_evidence:
+        snippet: Constipation 30
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/11/downstream/2
+      evidence_path: /pathophysiology/11/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/11
+    evidence_metadata:
+      reference: PMID:33956777
+      reference_title: Clinical Guidelines for Diagnosis and Treatment of Botulism, 2021.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Constipation was reported in 30% of the confirmed-case series.
+    first_seen_at: '2026-10-03T22:50:14.494372+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:50:14.494372+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:50:14.494372+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/11/downstream/2
+      evidence_path: /pathophysiology/11/downstream/2/evidence/0
+      reference: PMID:33956777
 assessments:
   366a736961da843eab0805ddc33dcf62d20dd7b02cd8fc5d3e0101a499e3c32e:
     input_sha256: 08f999927dbac31fac1c9c1e50f8dbc6839b920c80545e6d519bdf9d10e1dc1e
@@ -14351,3 +14407,69 @@ assessments:
       request_sha256: 2ceec3a4dfbc20a46d0e25e5311f993b64521044142817a3c4a64931f552a029
       request_sha256s:
       - 2ceec3a4dfbc20a46d0e25e5311f993b64521044142817a3c4a64931f552a029
+  13111e60335d1cf435388b3914183c0e527e4e844406ed12a41b51f41c66df39:
+    input_sha256: 72c89d911f93907ebb65aa247f8e08e651240b157e735c5495db359a2d62c7d5
+    configuration_sha256: 173939322d3756299507443af686180124576749096dc844d810fdedb5e0ccfc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:50:14.494372+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.19
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.17
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.65
+            PARTIAL: 0.27
+          confidence: 0.47
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.23
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/intermediate_mechanisms:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.15
+            PARTIAL: 0.41
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            MATCH: 0.13
+            PARTIAL: 0.47000000000000003
+          confidence: 0.2
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.34
+            PARTIAL: 0.35
+          confidence: 0.03
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7389
+        output_tokens: 325
+      elapsed_seconds: 0.3002
+      request_sha256: cadaaf2e643bf2b2d2d86aceae8a6f408d0d5e3502e122dc7abfd9b45eef32dc
+      request_sha256s:
+      - cadaaf2e643bf2b2d2d86aceae8a6f408d0d5e3502e122dc7abfd9b45eef32dc

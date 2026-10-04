@@ -7433,6 +7433,54 @@ inputs:
     - assertion_path: /discussions/14
       evidence_path: /discussions/14/evidence/0
       reference: PMID:35603789
+  2ed55bae9626896ff3740b0a1cd3ee0dc1f63cf042df9fc67a1982a667997c4a:
+    claim:
+      about:
+        disease:
+          name: Meier-Gorlin syndrome
+          disease_term:
+            preferred_term: Meier-Gorlin syndrome
+            term:
+              id: MONDO:0016817
+              label: Meier-Gorlin syndrome
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: GINS2-related
+        display_name: GINS2-related Meier-Gorlin syndrome
+        description: Caused by biallelic GINS2 variants; the reported p.(Arg114Leu) allele sits at the
+          CDC45 and MCM5 docking interface of GINS2, so this arm phenocopies CDC45-related disease with
+          craniosynostosis, mild short stature, and patellar hypoplasia.
+        genes:
+        - preferred_term: GINS2
+          term:
+            id: hgnc:24575
+            label: GINS2
+      selected_evidence:
+        snippet: Interestingly, our patient's phenotype is strikingly similar to the phenotype of patients
+          with CDC45-related MGORS, particularly those with craniosynostosis, mild short stature and patellar
+          hypoplasia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/9
+      evidence_path: /has_subtypes/9/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34353863
+      reference_title: Biallelic GINS2 variant p.(Arg114Leu) causes Meier-Gorlin syndrome with craniosynostosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the phenotypic convergence of the GINS2 and CDC45 CMG-module arms.
+    first_seen_at: '2026-10-03T21:25:08.430287+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:08.430287+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:08.430287+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/9
+      evidence_path: /has_subtypes/9/evidence/1
+      reference: PMID:34353863
 assessments:
   a677e7012e6def8b8b2ad72f3e5920cebd46b16e6195265f7c98a601b374c736:
     input_sha256: 1eac6659073261a9f2889d90507f79bd267c269bb6cb7643be92257dce9a36f2
@@ -18484,3 +18532,69 @@ assessments:
       request_sha256: b8a536a35210949bff7a07a0a5735b609b206a8884829d9d602b7d00f17a16a8
       request_sha256s:
       - b8a536a35210949bff7a07a0a5735b609b206a8884829d9d602b7d00f17a16a8
+  541463a782d545b6ec632a84564173252245e0f543015fbb67d07c3c21357b94:
+    input_sha256: 2ed55bae9626896ff3740b0a1cd3ee0dc1f63cf042df9fc67a1982a667997c4a
+    configuration_sha256: 3624bda0eec8468c3170fbe0d2adf9bf18a167b6424fa0de3818479045cf5814
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:08.430287+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MISMATCH: 0.19
+            MATCH: 0.11
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.95
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.15
+            MISMATCH: 0.46
+          confidence: 0.2
+        /assertion/display_name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.27
+            MATCH: 0.34
+          confidence: 0.09
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MISMATCH: 0.22
+            MATCH: 0.1
+          confidence: 0.52
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.68
+            MATCH: 0.08
+          confidence: 0.51
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.63
+            MATCH: 0.09
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7295
+        output_tokens: 329
+      elapsed_seconds: 0.2308
+      request_sha256: 3f3e9d791b3fcae3fcb36e0dc3b1e264fc74561d0266f39ae54ddef3db2b90b7
+      request_sha256s:
+      - 3f3e9d791b3fcae3fcb36e0dc3b1e264fc74561d0266f39ae54ddef3db2b90b7

@@ -2422,6 +2422,81 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT05058443
+  5233b01f2f17cd415a6b0354b4b48b444afc368ee0407efd29128f4b697202dd:
+    claim:
+      about:
+        disease:
+          name: Kummell Disease
+          disease_term:
+            preferred_term: Kummell disease
+            term:
+              id: MONDO:0003940
+              label: Kummell disease
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Percutaneous kyphoplasty
+        description: 'Balloon kyphoplasty involves percutaneous placement of an inflatable balloon tamp
+          into the vertebral body to restore height before cement injection. Provides comparable pain
+          relief and height restoration to vertebroplasty. Achieves fewer cement leakages than vertebroplasty
+          but at higher cost and longer operative time. The relationship between cement distribution and
+          the intravertebral cleft is an important factor affecting long-term outcomes.
+
+          '
+        context: Stage I-III disease without neurological deficits
+        treatment_term:
+          preferred_term: orthopedic procedure
+          term:
+            id: NCIT:C16186
+            label: Orthopedic Surgical Procedure
+        target_phenotypes:
+        - preferred_term: Back pain
+          term:
+            id: HP:0003418
+            label: Back pain
+        - preferred_term: Kyphosis
+          term:
+            id: HP:0002808
+            label: Kyphosis
+        - preferred_term: Vertebral compression fracture
+          term:
+            id: HP:0002953
+            label: Vertebral compression fracture
+        notes: 'Fewer cement leakages (8.6%) compared to vertebroplasty (26.3%) but higher cost and longer
+          operative time. Cement distribution relative to the cleft is critical: diffuse distribution
+          around the cleft yields better outcomes than cement confined within the cleft. Liquid-filled
+          IVCs with fibrosclerotic rims can limit cement dispersion and increase recollapse risk. PKP
+          is also effective for stage III without neurological injury, though intact posterior walls yield
+          better long-term vertebral height maintenance.
+
+          '
+      selected_evidence:
+        snippet: PKP is safe and effective for stage III Kümmell's disease with or without posterior wall
+          integrity. However, having intact posterior walls is better for maintaining vertebral height
+          in long-term.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41552306
+      reference_title: Efficacy of percutaneous kyphoplasty in treating stage III Kümmell disease without
+        neurological injury.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Study of 79 patients demonstrating PKP safety and efficacy for stage III KD, extending
+        the indication beyond stage I-II.
+    first_seen_at: '2026-10-03T21:19:28.484494+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:28.484494+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:28.484494+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/2
+      reference: PMID:41552306
 assessments:
   b774ce56105ee4fb0ac415c550ccd93df66ce143680e322d42166b5181bfd72e:
     input_sha256: d9815f36d25515e3f07a44524bcf50ad8ed7b72684bcd0215c82f0c87472c509
@@ -5467,3 +5542,118 @@ assessments:
       request_sha256: ebd07c1ace5b9c10582e4c69844f9faf9c37b5dce8fe06c8a06a2d4d4a4ad65c
       request_sha256s:
       - ebd07c1ace5b9c10582e4c69844f9faf9c37b5dce8fe06c8a06a2d4d4a4ad65c
+  881966514871b5cecf251e1e7d3b58fdc40485bd72b5e160157683572d2946e0:
+    input_sha256: 5233b01f2f17cd415a6b0354b4b48b444afc368ee0407efd29128f4b697202dd
+    configuration_sha256: 08e70ca5735d6e24250fdfaf561cfb18f1c3708894bfc9d5d448e02f601e066f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:28.484494+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.06
+            PARTIAL: 0.7
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.4
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.17
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.32
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.29
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.35
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.25
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/target_phenotypes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.08
+            PARTIAL: 0.6
+          confidence: 0.41
+        /assertion/target_phenotypes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.14
+            PARTIAL: 0.5700000000000001
+          confidence: 0.34
+        /assertion/target_phenotypes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.12
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/target_phenotypes/2/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.1
+            PARTIAL: 0.44
+          confidence: 0.2
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.3
+            PARTIAL: 0.55
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14273
+        output_tokens: 689
+      elapsed_seconds: 0.3533
+      request_sha256: 64f9133b5390aa9408d696f9a7294861051eda9f021ad6be33e445ac28e74659
+      request_sha256s:
+      - 64f9133b5390aa9408d696f9a7294861051eda9f021ad6be33e445ac28e74659

@@ -7955,6 +7955,74 @@ inputs:
     - assertion_path: /experimental_models/1/modeled_mechanisms/1
       evidence_path: /experimental_models/1/modeled_mechanisms/1/evidence/0
       reference: PMID:42475431
+  1483a765e3894c806f745115006e87b412c5d61ce0e7b7ba711ebcfb22735ec9:
+    claim:
+      about:
+        disease:
+          name: Chronic_Obstructive_Pulmonary_Disease
+          disease_term:
+            preferred_term: chronic obstructive pulmonary disease
+            term:
+              id: MONDO:0005002
+              label: chronic obstructive pulmonary disease
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Pulmonary Copper Dyshomeostasis
+        biological_scale: MOLECULAR
+        description: Cigarette smoke disrupts copper handling in the lung, producing a microenvironment
+          in which intracellular copper is no longer held below the threshold that homeostatic mechanisms
+          normally maintain. This is the proposed initiating step of the cuproptosis arm and is a state
+          of the copper-handling machinery, not yet cell death.
+        biological_processes:
+        - preferred_term: Copper Ion Homeostasis
+          modifier: DYSREGULATED
+          term:
+            id: GO:0055070
+            label: copper ion homeostasis
+          description: 'DYSREGULATED rather than DECREASED: the claim is that homeostatic control of copper
+            is lost and intracellular copper rises above its threshold, which is the qualitative case,
+            not a process running below its normal level.'
+        - preferred_term: stress response to copper ion
+          term:
+            id: GO:1990169
+            label: stress response to copper ion
+          description: 'The cellular response to the copper excess this node names. Carried over from
+            the bundled node that PR #10119 merged to main; it belongs here rather than on the cuproptosis
+            node because it is the response to copper itself and not the death programme that response
+            can end in.'
+        locations:
+        - preferred_term: lung
+          term:
+            id: UBERON:0002048
+            label: lung
+        notes: Curated as a distinct node from the cuproptosis event it enables, because a change in copper
+          handling is a molecular state and the death of a cell is not.
+      selected_evidence:
+        snippet: Copper is an essential cofactor for all organisms, and yet it becomes toxic if concentrations
+          exceed a threshold maintained by evolutionarily conserved homeostatic mechanisms.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35298263
+      reference_title: Copper induces cell death by targeting lipoylated TCA cycle proteins.
+      evidence_source: IN_VITRO
+      explanation: Establishes that copper is held below a toxicity threshold by homeostatic mechanisms,
+        which is the control this node describes being lost.
+    first_seen_at: '2026-10-03T21:19:49.009166+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:49.009166+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:49.009166+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/1
+      reference: PMID:35298263
 assessments:
   e1197a01d9aa0141ac91198f72682fc76b3c08598c7753c10d633a43f7e8d9ed:
     input_sha256: 3a83900c2373836e35b4412c50a14f29fbee8fc5db6850837b98602cfb93471c
@@ -19379,3 +19447,125 @@ assessments:
       request_sha256: c8308e72b00ce91125323b63dd24a079584650c89579b5dc349fa2cf5cc26be7
       request_sha256s:
       - c8308e72b00ce91125323b63dd24a079584650c89579b5dc349fa2cf5cc26be7
+  baf75f00b188077b21a9cdf453443d94b281f9043fbdb03103548564006b541f:
+    input_sha256: 1483a765e3894c806f745115006e87b412c5d61ce0e7b7ba711ebcfb22735ec9
+    configuration_sha256: ce58067045666f69e712b38df75cc07e9d75c92c27b4bac6cb189a7feb6ed7f1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:49.009166+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.03
+            MISMATCH: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.01
+            MISMATCH: 0.81
+          confidence: 0.72
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.11
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.58
+            MISMATCH: 0.15
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.03
+            MISMATCH: 0.45
+          confidence: 0.28
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.27
+            MISMATCH: 0.19
+          confidence: 0.31
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.17
+            MISMATCH: 0.25
+          confidence: 0.38
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.25
+            MISMATCH: 0.18
+          confidence: 0.35
+        /assertion/biological_processes/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.19
+            MISMATCH: 0.19
+          confidence: 0.42
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.15
+            MISMATCH: 0.26
+          confidence: 0.37
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.12
+            MISMATCH: 0.41
+          confidence: 0.2
+        /assertion/biological_processes/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.1
+            MISMATCH: 0.45
+          confidence: 0.18
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.14
+            MISMATCH: 0.51
+          confidence: 0.26
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.11
+            MISMATCH: 0.5599999999999999
+          confidence: 0.35
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.13
+            MISMATCH: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15837
+        output_tokens: 772
+      elapsed_seconds: 0.3742
+      request_sha256: 3c1697bd010669fb539506012611e0bd2dd86b72c0031da26fe1851e88431aec
+      request_sha256s:
+      - 3c1697bd010669fb539506012611e0bd2dd86b72c0031da26fe1851e88431aec

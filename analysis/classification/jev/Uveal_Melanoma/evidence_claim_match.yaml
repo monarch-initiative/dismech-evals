@@ -1,0 +1,282 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Uveal_Melanoma.yaml
+disease: Uveal Melanoma
+inventory:
+  source_sha256: f636f0d4df5f7a8837a5f087916d1630ce6000765eb5ae602b3bbc4b7db89695
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:07:31.725545+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  c0450ea7e8dba2ddd7de4cec4f57f7553f84f6fc8b13e681769138c3ce15bdcc:
+    claim:
+      about:
+        disease:
+          name: Uveal Melanoma
+          disease_term:
+            preferred_term: uveal melanoma
+            term:
+              id: MONDO:0006486
+              label: uveal melanoma
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Melanocytic Neoplasm
+        finding_term:
+          preferred_term: Melanocytic Neoplasm
+          term:
+            id: NCIT:C7058
+            label: Melanocytic Neoplasm
+        frequency: VERY_FREQUENT
+        description: Malignant melanoma represents a neoplasm stemming from melanocytes.
+      selected_evidence:
+        snippet: Malignant melanoma represents a neoplasm stemming from melanocytes
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27268913
+      reference_title: 'Malignant melanoma: diagnosis, treatment and cancer stem cells.'
+      explanation: Abstract defines melanoma as a neoplasm stemming from melanocytes.
+    first_seen_at: '2026-10-03T22:07:35.530261+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:07:31.725545+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:07:31.725545+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:27268913
+  738fd2deda8fc1cf4a04e0a85e143be5454632eed06902216c93e4715e91d04e:
+    claim:
+      about:
+        disease:
+          name: Uveal Melanoma
+          disease_term:
+            preferred_term: uveal melanoma
+            term:
+              id: MONDO:0006486
+              label: uveal melanoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: GNAQ/GNA11 Oncogenic Mutations
+        genetic_context:
+          variant_origin: SOMATIC
+        description: GNAQ and GNA11 encode alpha subunits of heterotrimeric Gq/11 G-proteins. Mutations
+          at Q209 (most common) or R183 lock the protein in a constitutively active GTP-bound state, resulting
+          in persistent downstream signaling through phospholipase C beta, protein kinase C, and ultimately
+          the MAPK pathway. These mutations are mutually exclusive and early, initiating events.
+        cell_types:
+        - preferred_term: melanocyte
+          term:
+            id: CL:0000148
+            label: melanocyte
+        biological_processes:
+        - preferred_term: signal transduction
+          modifier: INCREASED
+          term:
+            id: GO:0007165
+            label: signal transduction
+        locations:
+        - preferred_term: uvea
+          term:
+            id: UBERON:0001768
+            label: uvea
+      selected_evidence:
+        snippet: Recently, major key genes involved in uveal melanoma development, GNAQ, GNA11, BAP1,
+          SF3B1 and EIF1AX, have been identified.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23877823
+      reference_title: '[Uveal melanoma: current insights into clinical relevance of genetic testing].'
+      explanation: Supports GNAQ and GNA11 as key genes in uveal melanoma development.
+    first_seen_at: '2026-10-03T22:07:35.528344+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:07:31.725545+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:07:31.725545+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:23877823
+assessments:
+  2197940dab9dec29ebe30347841bc0a20b9c7942cf753f6e024f9128f4ec4ce8:
+    input_sha256: c0450ea7e8dba2ddd7de4cec4f57f7553f84f6fc8b13e681769138c3ce15bdcc
+    configuration_sha256: d8fd9e5655656b6be03f4cd749736b3cfca36da48ba55860fa9acbca30ca277d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:35.530261+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.08
+            MATCH: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.15
+            MATCH: 0.34
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.02
+            MATCH: 0.86
+          confidence: 0.78
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.03
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/finding_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.03
+            MATCH: 0.83
+          confidence: 0.74
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.39999999999999997
+            MATCH: 0.28
+          confidence: 0.11
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+            MATCH: 0.89
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7266
+        output_tokens: 322
+      elapsed_seconds: 0.3248
+      request_sha256: 148a00b41e8bdfd074e5614aff47933d4496bbe317b5a7a40b9935ac0ce543f1
+      request_sha256s:
+      - 148a00b41e8bdfd074e5614aff47933d4496bbe317b5a7a40b9935ac0ce543f1
+  f4ed053454217edeed2a6682e76adb1b675adb36fd34d94df3407c7b8af3e537:
+    input_sha256: 738fd2deda8fc1cf4a04e0a85e143be5454632eed06902216c93e4715e91d04e
+    configuration_sha256: ebd20fb92a0482c7ba8600dd63d2fa005c13b3b0197696b31abfbb858fde7d8f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:07:35.528344+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.91
+            MISMATCH: 0.05
+          confidence: 0.86
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.43
+            MISMATCH: 0.02
+          confidence: 0.32
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.68
+            MISMATCH: 0.3
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.71
+            MISMATCH: 0.28
+          confidence: 0.56
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.56
+            MISMATCH: 0.39
+          confidence: 0.34
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.5
+            MISMATCH: 0.46
+          confidence: 0.26
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.57
+            MISMATCH: 0.38
+          confidence: 0.35
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.56
+            MISMATCH: 0.41
+          confidence: 0.33
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.51
+            MISMATCH: 0.45
+          confidence: 0.27
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.5
+            MISMATCH: 0.08
+          confidence: 0.25
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.51
+            MISMATCH: 0.1
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12613
+        output_tokens: 596
+      elapsed_seconds: 0.4011
+      request_sha256: 6b7e32dddbe5fdcc20960e14404fb1b060de56ebc31b8b950a3e3edb067d45c5
+      request_sha256s:
+      - 6b7e32dddbe5fdcc20960e14404fb1b060de56ebc31b8b950a3e3edb067d45c5

@@ -4622,6 +4622,57 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: PMID:27594777
+  77d97bc2e19265b2052f0972860911eb977dc49d5722f867fcb5aa63815619d7:
+    claim:
+      about:
+        disease:
+          name: Antisynthetase Syndrome
+          disease_term:
+            preferred_term: Antisynthetase Syndrome
+            term:
+              id: MONDO:0019344
+              label: antisynthetase syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravenous Immunoglobulin (IVIG)
+        description: Pooled donor IgG used as adjunctive therapy, especially for refractory myositis;
+          a case report suggests possible benefit in IIM-related ILD.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: intravenous immunoglobulin
+            term:
+              id: NCIT:C2701
+              label: Therapeutic Immune Globulin
+      selected_evidence:
+        snippet: A recent case report suggested IVIG may be effective in ILD related to IIM as well
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27594777
+      reference_title: The Diagnosis and Treatment of Antisynthetase Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports only case-report-level possible benefit in IIM-related ILD, not established
+        antisynthetase-syndrome efficacy or the refractory-myositis qualifier.
+    first_seen_at: '2026-10-03T21:41:32.328422+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:41:32.328422+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:41:32.328422+00:00'
+    occurrences:
+    - assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      reference: PMID:27594777
 assessments:
   1f398c6a64a13eddc4065774414536cc7f675216f56e47fd0930009e10ec33ef:
     input_sha256: 1b0b171620bc3cda56d5807280a3500a79c3778d324d2b2b7a43c9bd85250e33
@@ -10366,3 +10417,83 @@ assessments:
       request_sha256: a55cc89b18e56cabdf8b18863373aa7a89fc993f9f5bfd1c8929f8513f9fc062
       request_sha256s:
       - a55cc89b18e56cabdf8b18863373aa7a89fc993f9f5bfd1c8929f8513f9fc062
+  66ab2b70a122951ea80d8683cc05d9ae7fd19cf76652ba48f80a797716dba327:
+    input_sha256: 77d97bc2e19265b2052f0972860911eb977dc49d5722f867fcb5aa63815619d7
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:41:32.328422+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.78
+            MATCH: 0.17
+          confidence: 0.67
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.66
+            MATCH: 0.25
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.31
+            MATCH: 0.63
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.6
+            MATCH: 0.26
+          confidence: 0.4
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.3
+            MATCH: 0.17
+          confidence: 0.29
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            PARTIAL: 0.34
+            MATCH: 0.16
+          confidence: 0.25
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            PARTIAL: 0.4
+            MATCH: 0.16
+          confidence: 0.17
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.28
+            MATCH: 0.69
+          confidence: 0.53
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+            MATCH: 0.64
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9688
+        output_tokens: 448
+      elapsed_seconds: 0.3532
+      request_sha256: d0686474f84cce406b430378b08130014d560261a5281d7c13d484b4057cbc6c
+      request_sha256s:
+      - d0686474f84cce406b430378b08130014d560261a5281d7c13d484b4057cbc6c

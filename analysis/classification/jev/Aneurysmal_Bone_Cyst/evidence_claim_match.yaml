@@ -3204,6 +3204,61 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:31476792
+  0c9843999a3902d19e99069ee2dc2fd89e057ecab2324423597a9c65e3128e1c:
+    claim:
+      about:
+        disease:
+          name: Aneurysmal Bone Cyst
+          disease_term:
+            preferred_term: aneurysmal bone cyst
+            term:
+              id: MONDO:0018815
+              label: aneurysmal bone cyst
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: NF-kappa-B Activation
+            biological_scale: MOLECULAR
+            description: Canonical NF-kappa-B signalling is switched on downstream of USP6, and is the
+              transcriptional route to the matrix proteases that do the tissue damage.
+            biological_processes:
+            - preferred_term: canonical NF-kappaB signal transduction
+              modifier: INCREASED
+              term:
+                id: GO:0007249
+                label: canonical NF-kappaB signal transduction
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Matrix Metalloproteinase Production and Matrix Degradation
+        causal_link_type: DIRECT
+        description: NF-kappa-B drives transcription of MMP-9, with MMP-10 also induced.
+      selected_evidence:
+        snippet: TRE17 induces transcription of MMP-9 through activation of nuclear factor-kappaB (NF-kappaB),
+          mediated in part by the GTPase RhoA and its effector kinase, ROCK.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:20418905
+      reference_title: TRE17/USP6 oncogene translocated in aneurysmal bone cyst induces matrix metalloproteinase
+        production via activation of NF-kappaB.
+      evidence_source: IN_VITRO
+      explanation: States the NF-kappa-B-to-MMP-9 transcriptional step that this edge asserts.
+    first_seen_at: '2026-10-03T21:41:31.947237+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:41:31.947237+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:41:31.947237+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      reference: PMID:20418905
 assessments:
   60667d45645fa8c1d672a10a1abdc9b15607fa7daf1d5ca0af209423d6566ab6:
     input_sha256: 493d15febbeb318b54d93c09c45ee088b3cd4223af8146ac7d0ec0662cb762e1
@@ -7329,3 +7384,62 @@ assessments:
       request_sha256: c0fce977edc7ceb1f2f74a4148aa0e9a42434b43028233b338de1bc7c0638a03
       request_sha256s:
       - c0fce977edc7ceb1f2f74a4148aa0e9a42434b43028233b338de1bc7c0638a03
+  08ba2208c0709d2dfdcdcf3ec0d069a7fba44d4d2ec791834bc1f5ee61cd1daf:
+    input_sha256: 0c9843999a3902d19e99069ee2dc2fd89e057ecab2324423597a9c65e3128e1c
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:41:31.947237+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.64
+            MATCH: 0.11
+          confidence: 0.46
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            PARTIAL: 0.46
+            MATCH: 0.11
+          confidence: 0.19
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.51
+            MATCH: 0.44
+          confidence: 0.26
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.77
+            MATCH: 0.14
+          confidence: 0.66
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.46
+            MATCH: 0.29
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6459
+        output_tokens: 273
+      elapsed_seconds: 0.2862
+      request_sha256: 2d95f4c98cf808858f8640d183a3105d44d19766aab9d4bbb1e3f0ba26bb947a
+      request_sha256s:
+      - 2d95f4c98cf808858f8640d183a3105d44d19766aab9d4bbb1e3f0ba26bb947a

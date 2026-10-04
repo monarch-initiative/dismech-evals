@@ -4447,6 +4447,55 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:32914526
+  1e587064d98f7ef4ec7c6f4efd4ab2744dbc1369fd98df80f6418249b5e64bb8:
+    claim:
+      about:
+        disease:
+          name: Acquired Thrombotic Thrombocytopenic Purpura
+          disease_term:
+            preferred_term: Acquired Thrombotic Thrombocytopenic Purpura
+            term:
+              id: MONDO:0019740
+              label: acquired thrombotic thrombocytopenic purpura
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Neuropsychological and depression surveillance
+        description: Ask survivors about cognition, mood, anxiety, work function, and quality of life.
+          Positive screening or functional concerns should prompt appropriate neurologic, neuropsychological,
+          primary-care, or mental-health evaluation.
+        diagnosis_term:
+          preferred_term: disease screening
+          term:
+            id: NCIT:C15419
+            label: Disease Screening
+        results: Depression or cognitive impairment may persist despite hematologic remission and should
+          not be dismissed as evidence that the acute episode has fully resolved.
+      selected_evidence:
+        snippet: These observations emphasize the importance of screening evaluations for depression and
+          cognitive impairment.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/4
+      evidence_path: /diagnosis/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25975932
+      reference_title: Depression and cognitive impairment following recovery from thrombotic thrombocytopenic
+        purpura.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The survivor study directly recommends screening.
+    first_seen_at: '2026-10-03T21:27:32.018245+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:27:32.018245+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:27:32.018245+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/4
+      evidence_path: /diagnosis/4/evidence/0
+      reference: PMID:25975932
 assessments:
   d97110c8ded4fe6879472a254765abce4bacec74abdd02307d82e16eb79ccab0:
     input_sha256: 701401d489fe7f6acb357f7eb3103471b9cfb28070b2cef92c998199111a05d6
@@ -10319,3 +10368,69 @@ assessments:
       request_sha256: 062d3e668d55b85a5d0ce6ee42b12184388208d717e235864217928792910e2a
       request_sha256s:
       - 062d3e668d55b85a5d0ce6ee42b12184388208d717e235864217928792910e2a
+  a8b304bdf8b3df0d85b17e00ff66d08e6d28612686babc6bfd7244870bb5a495:
+    input_sha256: 1e587064d98f7ef4ec7c6f4efd4ab2744dbc1369fd98df80f6418249b5e64bb8
+    configuration_sha256: 6872e6c707fc39186d289aac89c80624fb6d968561c3841fb3e0db8d95c7f97e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:27:32.018245+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.41
+            PARTIAL: 0.52
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.16
+            PARTIAL: 0.68
+          confidence: 0.53
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.39
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.64
+            PARTIAL: 0.25
+          confidence: 0.47
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.5599999999999999
+            PARTIAL: 0.29
+          confidence: 0.35
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.43
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7249
+        output_tokens: 322
+      elapsed_seconds: 0.2984
+      request_sha256: a1a68852ee799d155f13290f948339a9996c891f5183f1d028dc4e71501b544f
+      request_sha256s:
+      - a1a68852ee799d155f13290f948339a9996c891f5183f1d028dc4e71501b544f

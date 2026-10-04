@@ -2564,6 +2564,58 @@ inputs:
     - assertion_path: /pathophysiology/3
       evidence_path: /pathophysiology/3/evidence/1
       reference: PMID:20416459
+  82e9420fcca90f6c579e6410c80f6ccc205b6d10a21f18cfe8b6b9af24981a42:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Nonsyndromic Hearing Loss 17
+          disease_term:
+            preferred_term: DFNA17
+            term:
+              id: MONDO:0011350
+              label: autosomal dominant nonsyndromic hearing loss 17
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Avoidance of Ototoxic, Nephrotoxic and Antiplatelet Agents
+        description: 'A drug-safety measure rather than a therapy, taken from the MYH9-RD GeneReviews
+          *Agents/Circumstances to Avoid* section. It is curated here because it is the practical consequence
+          of the unresolved lump/split question: if a DFNA17 patient is in fact within the MYH9-RD spectrum,
+          then antiplatelet drugs carry bleeding risk on top of the ototoxicity concern that a progressive
+          hearing loss already implies. Hazardous noise exposure and high-injury-risk activities are named
+          in the same section.
+
+          '
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: supportive care
+          term:
+            id: NCIT:C15747
+            label: Supportive Care
+      selected_evidence:
+        snippet: Drugs that inhibit platelet function or reduce platelet count, and drugs that are ototoxic,
+          nephrotoxic, or hepatotoxic should be used only after assessment of risk-to-benefit ratio.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301740
+      reference_title: MYH9-Related Disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The GeneReviews agents-to-avoid statement, quoted directly.
+    first_seen_at: '2026-10-03T21:13:43.958473+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:13:43.958473+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:13:43.958473+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:20301740
 assessments:
   b97d695bae94588475b04c1289755f5b5c6e65a6f00a9917785eaef210ac0e85:
     input_sha256: 49210befd35d8a73a8bdf5917e2d91d87e036e79d14394839a47377293487125
@@ -5937,3 +5989,69 @@ assessments:
       request_sha256: fea9629769761d33cef1f483d0527a3a4832de321ff4826f7b38cc76efdafbdd
       request_sha256s:
       - fea9629769761d33cef1f483d0527a3a4832de321ff4826f7b38cc76efdafbdd
+  2c0f7f2da3d88e1e51be75c140473639c93d3faa10339ba740290d5b18930b47:
+    input_sha256: 82e9420fcca90f6c579e6410c80f6ccc205b6d10a21f18cfe8b6b9af24981a42
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:13:43.958473+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            MATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            MATCH: 0.01
+            PARTIAL: 0.41
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.42
+            PARTIAL: 0.35
+          confidence: 0.12
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.15
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.4
+            PARTIAL: 0.27
+          confidence: 0.1
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.24
+            PARTIAL: 0.46
+          confidence: 0.18
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.21
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7806
+        output_tokens: 331
+      elapsed_seconds: 0.2602
+      request_sha256: 782f5d6d515643e41a704f332d148bef7d68a924d8f5b3074a62a539276fa54d
+      request_sha256s:
+      - 782f5d6d515643e41a704f332d148bef7d68a924d8f5b3074a62a539276fa54d

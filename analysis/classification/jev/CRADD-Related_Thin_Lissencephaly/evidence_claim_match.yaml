@@ -664,6 +664,67 @@ inputs:
     - assertion_path: /phenotypes/3
       evidence_path: /phenotypes/3/evidence/0
       reference: PMID:27773430
+  d1471db9b427785f074b2fa357ac89db2c15170c4766f425cfef6b090eacf80d:
+    claim:
+      about:
+        disease:
+          name: CRADD-Related Thin Lissencephaly
+          disease_term:
+            preferred_term: CRADD-related thin lissencephaly
+            term:
+              id: MONDO:0013785
+              label: intellectual disability, autosomal recessive 34
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Cortical Sculpting with Megalencephaly and Thin Lissencephaly
+        description: Deficient developmental apoptosis impairs the normal "sculpting" of the neocortex
+          — the elimination of excess neurons and neuropil that shapes cortical size and gyration. The
+          proposed consequence is megalencephaly with a thin lissencephaly pattern (anterior-predominant
+          pachygyria, wide shallow sulci, mildly thickened cortex) together with intellectual disability,
+          reflecting a failure to prune inappropriate neurons rather than a neuronal migration arrest.
+        cell_types:
+        - preferred_term: Cerebral cortex neuron
+          term:
+            id: CL:0010012
+            label: cerebral cortex neuron
+        biological_processes:
+        - preferred_term: Cerebral cortex development
+          term:
+            id: GO:0021987
+            label: cerebral cortex development
+          modifier: ABNORMAL
+        - preferred_term: Synapse pruning
+          term:
+            id: GO:0098883
+            label: synapse pruning
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Our data suggest that CRADD/caspase-2 signaling is critical for normal gyration of the
+          developing human neocortex and for normal cognitive ability.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27773430
+      reference_title: Mutations in CRADD Result in Reduced Caspase-2-Mediated Neuronal Apoptosis and
+        Cause Megalencephaly with a Rare Lissencephaly Variant.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Connects CRADD/caspase-2 signaling to normal human cortical gyration and cognition,
+        the functions disrupted in TLIS.
+    first_seen_at: '2026-10-03T22:32:07.611796+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:07.611796+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:07.611796+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:27773430
 assessments:
   f436f7e740ff64e06a4a4162d7fd40cf43a651222178f57ebaeae3470c9b551b:
     input_sha256: 2d9468e286add0b3b22fbdfe0a53ff55362a81c101c7de9597fcfd766a2cbdea
@@ -1639,3 +1700,104 @@ assessments:
       request_sha256: 934fc533ce815d28c7ee781fef7decaf37c0144eb5727724476c6184e629016d
       request_sha256s:
       - 934fc533ce815d28c7ee781fef7decaf37c0144eb5727724476c6184e629016d
+  486ae88625b9ad964dc1429c96edaf5028e6bcc73bec5b55715be7f3ca9bbba4:
+    input_sha256: d1471db9b427785f074b2fa357ac89db2c15170c4766f425cfef6b090eacf80d
+    configuration_sha256: 5c11330473f58330b9e9f2ecfb92e77d19cd70a4cf3a328bdfca453c15a6d22c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:07.611796+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.85
+            MISMATCH: 0.07
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.22
+            MISMATCH: 0.02
+          confidence: 0.63
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.6799999999999999
+            MISMATCH: 0.22
+          confidence: 0.53
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.88
+            MISMATCH: 0.06
+          confidence: 0.82
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.49
+            MISMATCH: 0.06
+          confidence: 0.24
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.48
+            MISMATCH: 0.08
+          confidence: 0.22
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.47
+            MISMATCH: 0.02
+          confidence: 0.26
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.4
+            MISMATCH: 0.02
+          confidence: 0.36
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.48
+            MISMATCH: 0.02
+          confidence: 0.25
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.47
+            MISMATCH: 0.48
+          confidence: 0.23
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.52
+            MISMATCH: 0.45
+          confidence: 0.27
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.77
+            MISMATCH: 0.13
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12818
+        output_tokens: 609
+      elapsed_seconds: 0.3699
+      request_sha256: d215735d3c7b79cb43f2f60e8dfde4a730d41382a03742e503233384fcbfb620
+      request_sha256s:
+      - d215735d3c7b79cb43f2f60e8dfde4a730d41382a03742e503233384fcbfb620

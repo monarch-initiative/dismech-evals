@@ -3077,6 +3077,68 @@ inputs:
     - assertion_path: /differential_diagnoses/1
       evidence_path: /differential_diagnoses/1/evidence/1
       reference: PMID:25575569
+  fd27ba1b35cff6cb8725b669fee94aa2ecadf4ab978f39bde646f90480869583:
+    claim:
+      about:
+        disease:
+          name: Cornelia de Lange Syndrome 4
+          disease_term:
+            preferred_term: Cornelia de Lange syndrome 4
+            term:
+              id: MONDO:0013864
+              label: Cornelia de Lange syndrome 4
+        context:
+        - path: /animal_models/0
+          value:
+            name: Zebrafish expressing CdLS4 RAD21 variants
+            species: Zebrafish
+            genotype: rad21 variant expression modelling patient RAD21 missense alleles
+            description: The zebrafish system used in the entity-defining study to test whether patient
+              RAD21 variants disrupt transcription. It is the only in vivo model reported for CdLS4 specifically.
+            publication: PMID:22633399
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Cohesin-Dependent Transcriptional Dysregulation
+        relationship: RECAPITULATES
+        fidelity: MODERATE
+        description: Patient RAD21 variants disrupt transcription in zebrafish, which is the arm of cohesin
+          biology that the developmental phenotype is attributed to.
+        limitations: The abstract reports the transcriptional readout only; no facial, limb, growth or
+          cognitive correlate is claimed, and no zebrafish line carrying a knock-in patient allele at
+          the endogenous locus is described. The model therefore supports the transcriptional step and
+          says nothing about the attenuation that defines the human entity.
+        readouts:
+        - name: Transcription in zebrafish expressing patient RAD21 variants
+          target: Cohesin-Dependent Transcriptional Dysregulation
+          direction: ALTERED
+          interpretation: Disrupted transcription, the functional consequence this node asserts.
+      selected_evidence:
+        snippet: Here we show that human mutations in the integral cohesin structural protein RAD21 result
+          in a congenital phenotype consistent with a "cohesinopathy."
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:22633399
+      reference_title: RAD21 mutations cause a human cohesinopathy.
+      evidence_source: MODEL_ORGANISM
+      explanation: The study in which the zebrafish work was done to support the human cohesinopathy claim.
+    first_seen_at: '2026-10-03T22:49:05.865279+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:49:05.865279+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:49:05.865279+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:22633399
 assessments:
   bb67c78c45ba24a78ae537234ff3c26faa84bbe183b1ab52bc375f0f8481c86c:
     input_sha256: 34ef15cf775c34a452df7bc64e01ff3d828a927196f83f75da62085335e4279f
@@ -7094,3 +7156,104 @@ assessments:
       request_sha256: e78b9956ad23cb6511cd3fcbeed73cb321b8d069616a6e1a483a729f6de22e5a
       request_sha256s:
       - e78b9956ad23cb6511cd3fcbeed73cb321b8d069616a6e1a483a729f6de22e5a
+  d74234022d297d36e1121061806ead336624e6e52f12d5bae456a7f5f300d863:
+    input_sha256: fd27ba1b35cff6cb8725b669fee94aa2ecadf4ab978f39bde646f90480869583
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:49:05.865279+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.15
+            MATCH: 0.21
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.08
+            MATCH: 0.46
+          confidence: 0.2
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.14
+            MATCH: 0.3
+          confidence: 0.34
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.52
+            MATCH: 0.16
+          confidence: 0.28
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.11
+            MATCH: 0.49
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.29
+            MATCH: 0.11
+          confidence: 0.4
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.65
+            MATCH: 0.04
+          confidence: 0.47
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.39
+            MATCH: 0.17
+          confidence: 0.17
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.12
+            MATCH: 0.31
+          confidence: 0.35
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.35
+            MATCH: 0.11
+          confidence: 0.32
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.28
+            MATCH: 0.26
+          confidence: 0.19
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.14
+            MATCH: 0.36
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12546
+        output_tokens: 573
+      elapsed_seconds: 0.3931
+      request_sha256: 9db08b1ac5b68cc782e170e49846e0d3d7a1cf73297a0bf0b0da3b6421489045
+      request_sha256s:
+      - 9db08b1ac5b68cc782e170e49846e0d3d7a1cf73297a0bf0b0da3b6421489045

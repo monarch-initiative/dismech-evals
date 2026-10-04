@@ -5097,6 +5097,60 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:25346323
+  993a5bc6dcc58487209a4553fdd365324f5f33f4824389a4add75c05e3e0b6d8:
+    claim:
+      about:
+        disease:
+          name: Morquio syndrome
+          disease_term:
+            preferred_term: Morquio syndrome
+            term:
+              id: MONDO:0018938
+              label: mucopolysaccharidosis type 4
+        context:
+        - path: /treatments/1
+          value:
+            name: Cervical decompression and fusion
+            description: Surgical stabilization of the craniovertebral junction is used when odontoid
+              hypoplasia and atlantoaxial instability threaten the spinal cord.
+            treatment_term:
+              preferred_term: cervical decompression and fusion
+              term:
+                id: NCIT:C157986
+                label: Spinal Fusion
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Craniovertebral instability
+        treatment_effect: INHIBITS
+        description: Decompression and fusion stabilize the upper cervical spine and inhibit ongoing craniovertebral
+          instability.
+      selected_evidence:
+        snippet: Therefore, most patients require several surgeries to alleviate severe orthopedic complications,
+          such as cervical spinal decompression and fusion, limb osteotomy, hemiepiphysiodesis, and hip
+          reconstruction/replacement
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:29326877
+      reference_title: Natural history of Morquio A patient with tracheal obstruction from birth to death.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly links surgery to the craniovertebral instability branch.
+    first_seen_at: '2026-10-03T21:09:51.965104+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:51.965104+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:51.965104+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:29326877
 assessments:
   71542ef6a2243d914f379f46c03eba802e080c81f2a3a1c0b84f25934da17bf9:
     input_sha256: 6ddc48e9688c05aed9ff486abbb9cb675e288192ae0f8a9288a91d4f41f2dc3b
@@ -11521,3 +11575,62 @@ assessments:
       request_sha256: 5c9abad003afa6b98ae5dcc1da6d8faef4c28f74d55b76e8c3619c148b3dd811
       request_sha256s:
       - 5c9abad003afa6b98ae5dcc1da6d8faef4c28f74d55b76e8c3619c148b3dd811
+  26710b49f2e7a64fc56635f0ba218b1d987cbd1c4e17d63568168f25741fdfc6:
+    input_sha256: 993a5bc6dcc58487209a4553fdd365324f5f33f4824389a4add75c05e3e0b6d8
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:51.965104+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.71
+            MISMATCH: 0.11
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.51
+            MISMATCH: 0.09
+          confidence: 0.25
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.59
+            MISMATCH: 0.1
+          confidence: 0.38
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.7
+            MISMATCH: 0.08
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.76
+            MISMATCH: 0.13
+          confidence: 0.65
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.41
+            MISMATCH: 0.1
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6432
+        output_tokens: 272
+      elapsed_seconds: 0.3265
+      request_sha256: 99cf7d1eab112747dbf06ab3f4ecf5c563b0c26663d436d314b3df44c0f5368e
+      request_sha256s:
+      - 99cf7d1eab112747dbf06ab3f4ecf5c563b0c26663d436d314b3df44c0f5368e

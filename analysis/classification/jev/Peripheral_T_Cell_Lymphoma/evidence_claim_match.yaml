@@ -2896,6 +2896,57 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/1
       reference: PMID:36010351
+  c30d91215a090a1e08a577b094fc2b61632c23c29f2a1ee6c3b48f723fa64b8c:
+    claim:
+      about:
+        disease:
+          name: Peripheral T-Cell Lymphoma
+          disease_term:
+            preferred_term: peripheral T-cell lymphoma
+            term:
+              id: MONDO:0015760
+              label: T-cell non-Hodgkin lymphoma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Brentuximab Vedotin Plus CHP
+        description: Frontline regimen for CD30-expressing PTCL, especially systemic ALCL and selected
+          PTCL-NOS and TFH cases with CD30 expression.
+        treatment_term:
+          preferred_term: chemotherapy
+          term:
+            id: NCIT:C15632
+            label: Chemotherapy
+          therapeutic_agent:
+          - preferred_term: brentuximab vedotin
+            term:
+              id: NCIT:C66944
+              label: Brentuximab Vedotin
+      selected_evidence:
+        snippet: The median PFS was 48.2 months with BV+CHP versus 20.8 months with CHOP
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30914464
+      reference_title: 'FDA Approval Summary: Brentuximab Vedotin in First-Line Treatment of Peripheral
+        T-Cell Lymphoma.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports improved frontline progression-free survival with brentuximab
+        vedotin plus CHP in CD30-expressing PTCL.
+    first_seen_at: '2026-10-03T21:20:04.130382+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:04.130382+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:04.130382+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:30914464
 assessments:
   5d8ab5bfda43c1c3c2e88d4b5e7d3b9e5b6c3802acf248d97c41ceb8f6c70063:
     input_sha256: abec0171374c2032fba732d89158484d6638cc18ca2e47bd8ae2c7e10be12cfc
@@ -6793,3 +6844,76 @@ assessments:
       request_sha256: 7614d5bb16dbbe24c6119a768ed1b56ffcc8dd3a7ea0ba821901d347c932ba7f
       request_sha256s:
       - 7614d5bb16dbbe24c6119a768ed1b56ffcc8dd3a7ea0ba821901d347c932ba7f
+  67f275645d2ebaa0c47c070ba2de51324e2308bb5b27a692cfc4d89e89648906:
+    input_sha256: c30d91215a090a1e08a577b094fc2b61632c23c29f2a1ee6c3b48f723fa64b8c
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:04.130382+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MATCH: 0.32
+            MISMATCH: 0.04
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.52
+            MISMATCH: 0.03
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.72
+            MISMATCH: 0.03
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MATCH: 0.06
+            MISMATCH: 0.22
+          confidence: 0.57
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.39999999999999997
+            MISMATCH: 0.25
+          confidence: 0.11
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.41
+            MISMATCH: 0.2
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.8
+            MISMATCH: 0.04
+          confidence: 0.7
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MATCH: 0.81
+            MISMATCH: 0.04
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8273
+        output_tokens: 389
+      elapsed_seconds: 0.4084
+      request_sha256: e781d3d1e68424c558f8187441ed286196d5a2b13dac75d15989a1ee74641738
+      request_sha256s:
+      - e781d3d1e68424c558f8187441ed286196d5a2b13dac75d15989a1ee74641738

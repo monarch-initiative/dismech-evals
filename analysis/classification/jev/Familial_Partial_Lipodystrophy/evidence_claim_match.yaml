@@ -3358,6 +3358,50 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT02527343
+  dd55a28f80796d0d17ca01c30075c1d3261c50a3386ad72e6c4bb0957cb959d6:
+    claim:
+      about:
+        disease:
+          name: Familial Partial Lipodystrophy
+          disease_term:
+            preferred_term: Familial Partial Lipodystrophy
+            term:
+              id: MONDO:0020088
+              label: familial partial lipodystrophy
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Insulin resistance
+        category: Laboratory
+        phenotype_term:
+          preferred_term: Insulin resistance
+          term:
+            id: HP:0000855
+            label: Insulin resistance
+      selected_evidence:
+        snippet: their associated metabolic complications, such as insulin resistance, hypertriglyceridemia,
+          hepatic steatosis, and metabolic syndrome
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39125589
+      reference_title: 'Navigating Lipodystrophy: Insights from Laminopathies and Beyond.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Lists insulin resistance among the core metabolic complications of FPLD.
+    first_seen_at: '2026-10-03T21:20:23.196312+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:23.196312+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:23.196312+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:39125589
 assessments:
   9df004516c8e0b138d340080170771f6f00206a90bb2892ed22283ab6d3ef542:
     input_sha256: de399dbd4a796a47819facfb179afa8c3063ac8041c2c57a1ba869c398c4c730
@@ -8103,3 +8147,62 @@ assessments:
       request_sha256: e52606681635e4f631b6d7911d441e322da16ecc9e203eab528842fad3392076
       request_sha256s:
       - e52606681635e4f631b6d7911d441e322da16ecc9e203eab528842fad3392076
+  5b5610edeb1329d842dd44d874edcf07e9f914d7d12ee8f4f9a0ef8829702b2b:
+    input_sha256: dd55a28f80796d0d17ca01c30075c1d3261c50a3386ad72e6c4bb0957cb959d6
+    configuration_sha256: 5bb87c499eed9c982aeb5a3f79134bd5c52e8eeb767166d9a866faf816020085
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:23.196312+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.01
+            MATCH: 0.85
+          confidence: 0.76
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.06
+            MATCH: 0.46
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.9
+        /assertion/category:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.5
+            MATCH: 0.32
+          confidence: 0.26
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.89
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+            MATCH: 0.91
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6225
+        output_tokens: 275
+      elapsed_seconds: 0.2963
+      request_sha256: 19bf7c739229d156bb050c1f2e430ad93e6a75878b5d86e8a20defe79a538717
+      request_sha256s:
+      - 19bf7c739229d156bb050c1f2e430ad93e6a75878b5d86e8a20defe79a538717

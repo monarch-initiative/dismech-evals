@@ -2412,6 +2412,64 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/2
       reference: PMID:8583238
+  7dd1a4f5f5bae16b5382112b7a4d86ce4bb6f0c47a09b7fec03f633bad3dd8b5:
+    claim:
+      about:
+        disease:
+          name: Lambert-Eaton Myasthenic Syndrome
+          disease_term:
+            preferred_term: Lambert-Eaton myasthenic syndrome
+            term:
+              id: MONDO:0018556
+              label: Lambert-Eaton myasthenic syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Amifampridine (3,4-Diaminopyridine)
+        description: 'Potassium channel blocker that prolongs the presynaptic action potential, widening
+          the window for calcium entry and so increasing acetylcholine release. It works downstream of
+          the lesion without correcting it - the antibody is untouched.
+
+          The efficacy trial used a randomised withdrawal design rather than a conventional placebo start,
+          because the drug had been in use for thirty years without conclusive evidence and withholding
+          it de novo was not acceptable. Patients stable on 3,4-DAP were tapered to placebo or continued:
+          none of the 14 continued on drug deteriorated by more than 30% on timed up-and-go, against 72%
+          of the 18 tapered to placebo.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: amifampridine
+            term:
+              id: CHEBI:135948
+              label: amifampridine
+      selected_evidence:
+        snippet: None of the 14 participants who received continuous 3,4-DAP had > 30% deterioration in
+          3TUG time versus 72% of the 18 who tapered to placebo (P < 0.0001)
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29280483
+      reference_title: 3,4-diaminopyridine base effectively treats the weakness of Lambert-Eaton myasthenia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The primary efficacy result, with both arms and its denominators.
+    first_seen_at: '2026-10-03T21:19:28.590526+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:28.590526+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:28.590526+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:29280483
 assessments:
   6b37800a569e5e6d74483cbbb7d71ba39f867892673e6d41b78b2c6ee03ff38c:
     input_sha256: a3684c4f331ac8b13f467158a4de0215dca15e9d0ad7f8c556d90e76d159ec05
@@ -5598,3 +5656,83 @@ assessments:
       request_sha256: a7171026018e9c346972baeb02b78ce45eb19f59f542c24bf3c445538e626b8a
       request_sha256s:
       - a7171026018e9c346972baeb02b78ce45eb19f59f542c24bf3c445538e626b8a
+  6d70b51651e462d704700ff86e531cc34f327e7f3007dbeb69fe620e2bb1f56b:
+    input_sha256: 7dd1a4f5f5bae16b5382112b7a4d86ce4bb6f0c47a09b7fec03f633bad3dd8b5
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:28.590526+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.41
+            MATCH: 0.54
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.51
+            MATCH: 0.42
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+            MATCH: 0.77
+          confidence: 0.66
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            PARTIAL: 0.35
+            MATCH: 0.15
+          confidence: 0.25
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.26
+            PARTIAL: 0.29
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.28
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.31
+            MATCH: 0.5
+          confidence: 0.24
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.15
+            MATCH: 0.77
+          confidence: 0.66
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.15
+            MATCH: 0.79
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9846
+        output_tokens: 440
+      elapsed_seconds: 0.3618
+      request_sha256: 1887bb49e6b55da1b2b8a9542613aaf4c010796053129aa7617657157575147b
+      request_sha256s:
+      - 1887bb49e6b55da1b2b8a9542613aaf4c010796053129aa7617657157575147b

@@ -9474,6 +9474,130 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:40926052
+  1a1fcb36128b3563e17a80a6428fa0e4645a15148e3744485d846daeeacfafbc:
+    claim:
+      about:
+        disease:
+          name: Autosomal Recessive Primary Microcephaly
+          disease_term:
+            preferred_term: autosomal recessive primary microcephaly
+            term:
+              id: MONDO:0016660
+              label: autosomal recessive primary microcephaly
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Syndromic primary microcephaly
+        description: Many Mendelian syndromes cause prenatal microcephaly but have major extracranial
+          anomalies or a broader malformation pattern and should not be automatically collapsed into classic
+          MCPH.
+        distinguishing_features:
+        - Major congenital anomalies, disproportionate growth failure, metabolic disease, or multisystem
+          involvement favor a syndromic diagnosis.
+        - Molecular testing assigns the causal disorder even when head-size severity overlaps.
+      selected_evidence:
+        snippet: It differs from syndromic primary microcephaly (PM) by the lack of syndromic features
+          and major brain malformations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42141383
+      reference_title: Elucidating the Genetic Landscape, Phenotypic Spectrum, and Pathogenic Mechanisms
+        in a Turkish Cohort with Primary Microcephaly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort explicitly distinguishes classic MCPH from syndromic primary microcephaly.
+    first_seen_at: '2026-10-03T21:45:08.816919+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:45:08.816919+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:45:08.816919+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      reference: PMID:42141383
+  e7caaa08e656668a36f599f223334d965b25207853796064bb58ce7d024bf2fd:
+    claim:
+      about:
+        disease:
+          name: Autosomal Recessive Primary Microcephaly
+          disease_term:
+            preferred_term: autosomal recessive primary microcephaly
+            term:
+              id: MONDO:0016660
+              label: autosomal recessive primary microcephaly
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: G1/S Cell-Cycle Entry Failure
+            description: 'Biallelic CDK4 loss of function removes the G1 cyclin-D-dependent kinase that
+              phosphorylates retinoblastoma protein and licenses S-phase entry. Patient fibroblasts have
+              no detectable full-length CDK4, accumulate in G0/G1, and divide roughly three times more
+              slowly, with S phase itself unaffected. Endogenous CDK6 does not compensate: its level is
+              unchanged in patient cells, and the two kinases'' microcephaly mechanisms are explicitly
+              distinct. This node is therefore a parallel route from the shared upstream gene-dysfunction
+              node to progenitor failure, bypassing the centrosome and mitotic branches.'
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            genes:
+            - preferred_term: CDK4
+              term:
+                id: hgnc:1773
+                label: CDK4
+              modifier: LOSS_OF_FUNCTION
+            molecular_functions:
+            - preferred_term: CDK4 cyclin D-dependent kinase activity
+              term:
+                id: GO:0004693
+                label: cyclin-dependent protein serine/threonine kinase activity
+              modifier: DECREASED
+            biological_processes:
+            - preferred_term: G1/S transition of mitotic cell cycle
+              term:
+                id: GO:0000082
+                label: G1/S transition of mitotic cell cycle
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Neural-Progenitor Proliferation and Survival Failure
+        causal_link_type: DIRECT
+        description: A lengthened G1 reduces the number of divisions a progenitor pool completes in the
+          fixed window of cortical neurogenesis, so fewer neurons are produced without any mitotic-error
+          or apoptotic step being required.
+      selected_evidence:
+        snippet: Hence, resulting hypocellularity likely accounts for microcephaly and growth failure
+          in CDK4 cases
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:40210435
+      reference_title: CDK4 loss-of-function mutations cause microcephaly and short stature.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The authors' own statement of the cell-number route from the proliferation defect to
+        the clinical phenotype.
+    first_seen_at: '2026-10-03T21:45:08.758202+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:45:08.758202+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:45:08.758202+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/1
+      reference: PMID:40210435
 assessments:
   db0e050f0c660e16e67ea45178aef3372abf45f17897b77820ae98102a818688:
     input_sha256: 76d97cffe420c7e7a455e225fadb405e3be25a4f2c455e03934ef5d76f1821db
@@ -22605,3 +22729,114 @@ assessments:
       request_sha256: b16b8725695a1b75711c120ab569c1921f767637e982251284e00e2a330a6ce7
       request_sha256s:
       - b16b8725695a1b75711c120ab569c1921f767637e982251284e00e2a330a6ce7
+  59937bf69b357143f07c02587b6ca2cb1f117ac0958f128e90aaf4c2dabdc637:
+    input_sha256: 1a1fcb36128b3563e17a80a6428fa0e4645a15148e3744485d846daeeacfafbc
+    configuration_sha256: 01e9af62b71cde6c0944f2071d2d886f0670da9f49850aca9b583b7b6367f9b5
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:45:08.816919+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.23
+            MISMATCH: 0.15
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.18
+            MISMATCH: 0.14
+          confidence: 0.52
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.26
+            MISMATCH: 0.35
+          confidence: 0.07
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.42
+            MISMATCH: 0.22
+          confidence: 0.14
+        /assertion/distinguishing_features:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.41
+            MISMATCH: 0.07
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5318
+        output_tokens: 224
+      elapsed_seconds: 0.3667
+      request_sha256: afa5527e1a3fb9324736c05606cadadd07818d99fed1073be71e12db1e003de1
+      request_sha256s:
+      - afa5527e1a3fb9324736c05606cadadd07818d99fed1073be71e12db1e003de1
+  7359a1687bffbaac075b1f3a55300c8ffee8d84e4e7306fa258ef51d0a2a30f4:
+    input_sha256: e7caaa08e656668a36f599f223334d965b25207853796064bb58ce7d024bf2fd
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:45:08.758202+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.47
+            MISMATCH: 0.13
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.5
+            MISMATCH: 0.17
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.38
+            MISMATCH: 0.07
+          confidence: 0.33
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            PARTIAL: 0.46
+            MISMATCH: 0.07
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.53
+            MISMATCH: 0.1
+          confidence: 0.3
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.38
+            MISMATCH: 0.16
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6776
+        output_tokens: 271
+      elapsed_seconds: 0.268
+      request_sha256: fd72ab5e592fe8c7277fa7bdd8527f3895b504f76ded823568046d7ae1e11f1a
+      request_sha256s:
+      - fd72ab5e592fe8c7277fa7bdd8527f3895b504f76ded823568046d7ae1e11f1a

@@ -2075,6 +2075,62 @@ inputs:
     - assertion_path: /treatments/0/target_mechanisms/0
       evidence_path: /treatments/0/target_mechanisms/0/evidence/1
       reference: PMID:34054692
+  5db45260d9a381a1c6c86163d921b196ccc5d970343552a59b1a707409ebe7b4:
+    claim:
+      about:
+        disease:
+          name: Dopa-Responsive Dystonia
+          disease_term:
+            preferred_term: dopa-responsive dystonia
+            term:
+              id: MONDO:0016812
+              label: dopa-responsive dystonia
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: AD-DRD
+            display_name: Autosomal Dominant Dopa-Responsive Dystonia
+            description: Most commonly due to heterozygous GCH1 pathogenic variants (Segawa disease /
+              GTPCH1-deficient DRD); rarer dominant causes include IMPDH2 and NR4A2 variants. Curated
+              as `Autosomal_Dominant_Dopa_Responsive_Dystonia`.
+          role: subtype
+      assertion_type: Phenotype
+      assertion:
+        category: Metabolic
+        name: Transient Hyperphenylalaninemia
+        subtype: AD-DRD
+        frequency: FREQUENT
+        description: Transient hyperphenylalaninemia is a BH4-branch metabolic phenotype in the autosomal
+          dominant GTPCH1-deficient record, reflecting impaired BH4-dependent aromatic amino-acid hydroxylation.
+        phenotype_term:
+          preferred_term: Transient hyperphenylalaninemia
+          term:
+            id: HP:0008297
+            label: Transient hyperphenylalaninemia
+      selected_evidence:
+        snippet: '| HP:0008297 | Transient hyperphenylalaninemia | Frequent (79-30%) |'
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: ORPHA:98808
+      reference_title: Autosomal dominant dopa-responsive dystonia
+      evidence_source: OTHER
+      explanation: Orphanet lists transient hyperphenylalaninemia as frequent in autosomal dominant DRD.
+    first_seen_at: '2026-10-03T21:32:10.544124+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:32:10.544124+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:32:10.544124+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: ORPHA:98808
 assessments:
   82954e661e5182e97a34873e4db9251a5fe9c0724c75ad3cfaf03199ca64990c:
     input_sha256: 18d965b6af9c677bf43d7740b64f68ef6970a678f9da7a4649cdeb0f2e79efee
@@ -4703,3 +4759,90 @@ assessments:
       request_sha256: 342f8235955ddb40796e3f14f6fc43d77a25e761a0e7f29fe7107d7fa082a6da
       request_sha256s:
       - 342f8235955ddb40796e3f14f6fc43d77a25e761a0e7f29fe7107d7fa082a6da
+  d257eef73a686061844fdcb39bfc49dfcd8761e685724ef76178f24f8443f0b6:
+    input_sha256: 5db45260d9a381a1c6c86163d921b196ccc5d970343552a59b1a707409ebe7b4
+    configuration_sha256: 5cdf3e7ba2adfc2525a60a76244ccf83165defb670015a43a517ed1cff383908
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:32:10.544124+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.1
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.23
+            MATCH: 0.32
+          confidence: 0.18
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.2
+            MATCH: 0.47
+          confidence: 0.21
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+            MATCH: 0.91
+          confidence: 0.86
+        /assertion/subtype:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.27
+            MATCH: 0.24
+          confidence: 0.23
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.01
+            MATCH: 0.82
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.3
+            MATCH: 0.12
+          confidence: 0.37
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+            MATCH: 0.91
+          confidence: 0.85
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+            MATCH: 0.9
+          confidence: 0.86
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.36
+            MATCH: 0.25
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10281
+        output_tokens: 454
+      elapsed_seconds: 0.3252
+      request_sha256: 33278d986d7e1bf87bc3d46425b5d1d7193ccf4610df95901f0f72ef1259f883
+      request_sha256s:
+      - 33278d986d7e1bf87bc3d46425b5d1d7193ccf4610df95901f0f72ef1259f883

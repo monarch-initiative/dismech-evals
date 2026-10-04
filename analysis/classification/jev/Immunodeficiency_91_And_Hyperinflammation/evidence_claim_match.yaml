@@ -3216,6 +3216,71 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/0/readouts/0
       evidence_path: /animal_models/1/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:38016036
+  fd3c3a3d8ec9df32330347e797324cea24c203b4a7f99f0befb7a14a377d4f62:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 91 and Hyperinflammation
+          disease_term:
+            preferred_term: immunodeficiency 91 and hyperinflammation
+            term:
+              id: MONDO:0030491
+              label: immunodeficiency 91 and hyperinflammation
+        context:
+        - path: /animal_models/1
+          value:
+            name: Znfx1-knockout mouse infected with Mycobacterium tuberculosis
+            species: Mouse
+            genotype: Znfx1 knockout
+            publication: PMID:38016036
+            description: 'A separate model addressing the mycobacterial pole of the disease. It offers
+              a candidate mechanism the human work does not: ZNFX1 stabilises the mRNA encoding an AMPK
+              catalytic subunit, and its loss impairs autophagic control of M. tuberculosis in macrophages.'
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Impaired Monocyte Homeostasis and Antimycobacterial Defence
+        relationship: PARTIALLY_RECAPITULATES
+        fidelity: LOW
+        description: Znfx1-knockout mice show increased mycobacterial burden and progressive lung injury,
+          matching the direction of the human mycobacterial phenotype.
+        limitations: The model reproduces susceptibility but not the defining human feature of this arm,
+          which is monocytosis; and the proposed AMPK-autophagy mechanism has not been tested in patient
+          cells. Human patients presented with BCG-osis and disseminated tuberculosis rather than with
+          the chronic pulmonary disease modelled here. Fidelity is graded LOW for that reason rather than
+          because the murine work is weak.
+        readouts:
+        - name: Pulmonary M. tuberculosis burden
+          target: Impaired Monocyte Homeostasis and Antimycobacterial Defence
+          direction: INCREASED
+          interpretation: Confirms the direction of the susceptibility phenotype in vivo.
+      selected_evidence:
+        snippet: ZNFX1 critically maintained AMPK-regulated autophagic flux by stabilizing protein kinase
+          AMP-activated catalytic subunit alpha 2 mRNA
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/1
+    evidence_metadata:
+      reference: PMID:38016036
+      reference_title: ZNFX1 promotes AMPK-mediated autophagy against Mycobacterium tuberculosis by stabilizing
+        Prkaa2 mRNA.
+      evidence_source: MODEL_ORGANISM
+      explanation: The proposed molecular mechanism linking ZNFX1 loss to defective antimycobacterial
+        autophagy.
+    first_seen_at: '2026-10-03T21:24:57.862183+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:24:57.862183+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:24:57.862183+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:38016036
 assessments:
   0b0ff8a78b900037276547b6056838f50c7db2e5280b90faaede2335a7103016:
     input_sha256: 014d2329ca8584f5e97db70b128b5f4f7fcf5fe6c7a2c6a7775b714b94df2ae8
@@ -7515,3 +7580,104 @@ assessments:
       request_sha256: 303ec69ae998d3091a5d58254831c069f04986dc7aab7a88b3e412671d52f401
       request_sha256s:
       - 303ec69ae998d3091a5d58254831c069f04986dc7aab7a88b3e412671d52f401
+  e8e8c8e4434779badf85d5bdd17583ddac50995a363e2bdb51b254a683317bc1:
+    input_sha256: fd3c3a3d8ec9df32330347e797324cea24c203b4a7f99f0befb7a14a377d4f62
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:57.862183+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.26
+            PARTIAL: 0.55
+          confidence: 0.32
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.38
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.13
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            MATCH: 0.08
+            PARTIAL: 0.25
+          confidence: 0.5
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.33
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.46
+            MATCH: 0.12
+            PARTIAL: 0.42
+          confidence: 0.19
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.05
+            PARTIAL: 0.35
+          confidence: 0.41
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.08
+            PARTIAL: 0.31
+          confidence: 0.42
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.17
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.47
+            MATCH: 0.13
+            PARTIAL: 0.4
+          confidence: 0.21
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.08
+            PARTIAL: 0.31
+          confidence: 0.41
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.5
+            PARTIAL: 0.36
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12588
+        output_tokens: 581
+      elapsed_seconds: 0.3035
+      request_sha256: c976f90257566605cc00074872e01972e5fe447ad03b64c9f455c98800522a34
+      request_sha256s:
+      - c976f90257566605cc00074872e01972e5fe447ad03b64c9f455c98800522a34

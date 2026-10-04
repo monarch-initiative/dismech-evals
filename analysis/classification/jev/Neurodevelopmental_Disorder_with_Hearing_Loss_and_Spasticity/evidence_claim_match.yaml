@@ -4948,6 +4948,52 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:40760247
+  f209a14c4203ce44be0725735ad91af0e7d6f39a65c98896c8e06b55838b0d0f:
+    claim:
+      about:
+        disease:
+          name: Neurodevelopmental Disorder with Hearing Loss and Spasticity
+          disease_term:
+            preferred_term: neurodevelopmental disorder with hearing loss and spasticity
+            term:
+              id: MONDO:0859206
+              label: neurodevelopmental disorder with hearing loss and spasticity
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: HarrisonsChapterAssignment
+      assertion:
+        classification_value: DISORDER_OF_EAR
+      selected_evidence:
+        snippet: Collectively, our results indicate that bi-allelic SPATA5L1 variants lead to a human
+          disease characterized by sensorineural hearing loss (SNHL) with or without a nonprogressive
+          mixed neurodevelopmental phenotype.
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/harrisons_chapter/1
+      evidence_path: /classifications/harrisons_chapter/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:34626583
+      reference_title: Bi-allelic variants in SPATA5L1 lead to intellectual disability, spastic-dystonic
+        cerebral palsy, epilepsy, and hearing loss.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Sensorineural hearing loss is the defining and near-universal feature and can occur
+        without any neurodevelopmental involvement, placing the entity squarely in the disorders-of-the-ear
+        chapter.
+    first_seen_at: '2026-10-03T21:25:19.411691+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:19.411691+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:19.411691+00:00'
+    occurrences:
+    - assertion_path: /classifications/harrisons_chapter/1
+      evidence_path: /classifications/harrisons_chapter/1/evidence/0
+      reference: PMID:34626583
 assessments:
   ea589e761425d44cfc0206cb68eee8475e2e99f2f19916fff937468441bddddc:
     input_sha256: 7d2be94692746a819e3a96a98e39526ff9714be402fae6dc44fee1bcb512f13d
@@ -12032,3 +12078,48 @@ assessments:
       request_sha256: dbbc7f88bfb6bcb2a6f6ae75bb2995f8fb0eebc23ec08035009e705e0d2ff821
       request_sha256s:
       - dbbc7f88bfb6bcb2a6f6ae75bb2995f8fb0eebc23ec08035009e705e0d2ff821
+  e43bf3752a2eb5e9d17a4e7b63f2dafaf40e374c276c101a85e618e8c9aea08a:
+    input_sha256: f209a14c4203ce44be0725735ad91af0e7d6f39a65c98896c8e06b55838b0d0f
+    configuration_sha256: 48d3dedba739a104812910d60f7155bad4e512b0c4499626ca9df986a5068b46
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:19.411691+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.53
+            MATCH: 0.16
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.11
+            MATCH: 0.4
+          confidence: 0.23
+        /assertion/classification_value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.61
+            MATCH: 0.12
+          confidence: 0.42
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.41
+            MATCH: 0.22
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4341
+        output_tokens: 188
+      elapsed_seconds: 0.1996
+      request_sha256: 44ced0c79f41f7a43089db118bc446cbcc2ed0a35279ab4c046f79ae0a90816d
+      request_sha256s:
+      - 44ced0c79f41f7a43089db118bc446cbcc2ed0a35279ab4c046f79ae0a90816d

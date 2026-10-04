@@ -1,0 +1,5111 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Delayed_Sleep_Phase_Syndrome.yaml
+disease: Delayed Sleep Phase Syndrome
+inventory:
+  source_sha256: fe921be2637fed62cfc77ab1a166f809c51918c6320f8ff95e9254573026d6d5
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-03T23:57:22.065552+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  a9a7427d661c3ffdfe0012750aade055f75258164c7ce26ec7413c82f1fc3561:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: Circadian-Delayed DSWPD
+        description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+          phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+          minimum. These patients have a true delay of the endogenous circadian pacemaker relative to
+          the light-dark cycle.
+        subtype_frequency: ~60%
+        classification: clinical_phenotype
+      selected_evidence:
+        snippet: individuals with DSWPD without having misalignment of objectively measured circadian
+          rhythm markers account for approximately 40% of the cases, wherein the psychological and behavioral
+          characteristics of young people, such as truancy and academic or social troubles, are largely
+          involved in the mechanism of this disorder.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/0
+      evidence_path: /has_subtypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: By stating that ~40% of DSWPD cases have normal circadian markers, this implies ~60%
+        have delayed circadian markers, defining the circadian-delayed subtype.
+    first_seen_at: '2026-10-03T22:36:58.761354+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/0
+      evidence_path: /has_subtypes/0/evidence/0
+      reference: PMID:37275982
+  eb2d95dbffd9c7fb2c9a3991f3644f1ac351d590e860eb22eaaa8d7f7e3f6b81:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: Circadian-Entrained DSWPD
+        description: A substantial subtype (~40% of cases) in which patients present with clinically delayed
+          sleep timing despite normal objective circadian rhythm markers (e.g., normal DLMO timing). Psychological
+          and behavioral factors, including academic/social difficulties, are more prominently involved
+          in the mechanism of delayed sleep in this subgroup.
+        subtype_frequency: ~40%
+        classification: clinical_phenotype
+      selected_evidence:
+        snippet: individuals with DSWPD without having misalignment of objectively measured circadian
+          rhythm markers account for approximately 40% of the cases, wherein the psychological and behavioral
+          characteristics of young people, such as truancy and academic or social troubles, are largely
+          involved in the mechanism of this disorder.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly describes the circadian-entrained subtype, accounting for ~40% of DSWPD cases
+        with normal melatonin timing but behaviorally delayed sleep schedules.
+    first_seen_at: '2026-10-03T22:36:58.762155+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/0
+      reference: PMID:37275982
+  3e4110a804accdea8dc3ebcdc39e4e1318804a25927571b705f25c90cbc2cd63:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Circadian-Delayed DSWPD
+            description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+              phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+              minimum. These patients have a true delay of the endogenous circadian pacemaker relative
+              to the light-dark cycle.
+            subtype_frequency: ~60%
+            classification: clinical_phenotype
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Circadian Clock Gene Polymorphisms
+        role: trigger
+        biological_scale: MOLECULAR
+        subtypes:
+        - Circadian-Delayed DSWPD
+        conforms_to: circadian_phase_misalignment#Intrinsic Core Clock Period or Phase Lesion
+        description: Variants in core circadian clock genes alter the molecular oscillator that drives
+          the sleep-wake cycle. The circadian clock operates via transcription-translation feedback loops
+          involving CLOCK, BMAL1, PER, and CRY gene families. A gain-of-function mutation in CRY1 (c.1657+3A>C)
+          creates a transcriptional inhibitor with enhanced affinity for Clock and Bmal1, lengthening
+          the circadian period by approximately 30 minutes. Additional polymorphisms in PER3 and CLOCK
+          contribute to DSPS susceptibility.
+        cell_types:
+        - preferred_term: Neuron
+          term:
+            id: CL:0000540
+            label: neuron
+        biological_processes:
+        - preferred_term: Circadian Rhythm
+          term:
+            id: GO:0007623
+            label: circadian rhythm
+        genes:
+        - preferred_term: CRY1
+          term:
+            id: hgnc:2384
+            label: CRY1
+        - preferred_term: PER3
+          term:
+            id: hgnc:8847
+            label: PER3
+        - preferred_term: CLOCK
+          term:
+            id: hgnc:2082
+            label: CLOCK
+      selected_evidence:
+        snippet: we report a hereditary form of DSPD associated with a dominant coding variation in the
+          core circadian clock gene CRY1, which creates a transcriptional inhibitor with enhanced affinity
+          for circadian activator proteins Clock and Bmal1. This gain-of-function CRY1 variant causes
+          reduced expression of key transcriptional targets and lengthens the period of circadian molecular
+          rhythms, providing a mechanistic link to DSPD symptoms.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This landmark Cell paper establishes CRY1 as a causative gene for familial DSPD, demonstrating
+        a gain-of-function mechanism that lengthens the circadian period and delays sleep phase.
+    first_seen_at: '2026-10-03T22:36:59.601493+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:28388406
+  af63e4aa24baa4dc49053f5d672b034a6713b09fd4a332764fbe86cd7bbd463a:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Circadian-Delayed DSWPD
+            description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+              phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+              minimum. These patients have a true delay of the endogenous circadian pacemaker relative
+              to the light-dark cycle.
+            subtype_frequency: ~60%
+            classification: clinical_phenotype
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Altered Melatonin Secretion Timing
+        role: amplifier
+        biological_scale: ORGANISM
+        subtypes:
+        - Circadian-Delayed DSWPD
+        conforms_to: circadian_phase_misalignment#Shifted or Free-Running Endogenous Circadian Phase
+        description: DSPS patients exhibit a delayed dim light melatonin onset (DLMO), reflecting a shifted
+          circadian pacemaker. The suprachiasmatic nucleus (SCN) signal to the pineal gland for melatonin
+          synthesis is phase-delayed, resulting in later endogenous melatonin rise and consequently delayed
+          sleep propensity. This delay in melatonin secretion is a hallmark biomarker of the condition.
+          However, approximately 40% of DSWPD cases may have normal melatonin timing, suggesting heterogeneity
+          in the underlying mechanism.
+        cell_types:
+        - preferred_term: Pinealocyte
+          term:
+            id: CL:0000652
+            label: pinealocyte
+        biological_processes:
+        - preferred_term: Melatonin Biosynthetic Process
+          term:
+            id: GO:0030187
+            label: melatonin biosynthetic process
+      selected_evidence:
+        snippet: individuals with DSWPD without having misalignment of objectively measured circadian
+          rhythm markers account for approximately 40% of the cases, wherein the psychological and behavioral
+          characteristics of young people, such as truancy and academic or social troubles, are largely
+          involved in the mechanism of this disorder.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates that DSWPD is heterogeneous with respect to melatonin timing, with approximately
+        40% of cases showing normal circadian rhythm markers despite delayed sleep schedules, suggesting
+        both circadian-delayed and circadian-entrained subtypes.
+    first_seen_at: '2026-10-03T22:36:59.634994+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:37275982
+  4ecb7ffae21aab988e511fea10b6a2ab0a885db5b2ef0c12dcc1b82d10823d1f:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Circadian-Delayed DSWPD
+            description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+              phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+              minimum. These patients have a true delay of the endogenous circadian pacemaker relative
+              to the light-dark cycle.
+            subtype_frequency: ~60%
+            classification: clinical_phenotype
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Circadian Clock Gene Polymorphisms
+        role: trigger
+        biological_scale: MOLECULAR
+        subtypes:
+        - Circadian-Delayed DSWPD
+        conforms_to: circadian_phase_misalignment#Intrinsic Core Clock Period or Phase Lesion
+        description: Variants in core circadian clock genes alter the molecular oscillator that drives
+          the sleep-wake cycle. The circadian clock operates via transcription-translation feedback loops
+          involving CLOCK, BMAL1, PER, and CRY gene families. A gain-of-function mutation in CRY1 (c.1657+3A>C)
+          creates a transcriptional inhibitor with enhanced affinity for Clock and Bmal1, lengthening
+          the circadian period by approximately 30 minutes. Additional polymorphisms in PER3 and CLOCK
+          contribute to DSPS susceptibility.
+        cell_types:
+        - preferred_term: Neuron
+          term:
+            id: CL:0000540
+            label: neuron
+        biological_processes:
+        - preferred_term: Circadian Rhythm
+          term:
+            id: GO:0007623
+            label: circadian rhythm
+        genes:
+        - preferred_term: CRY1
+          term:
+            id: hgnc:2384
+            label: CRY1
+        - preferred_term: PER3
+          term:
+            id: hgnc:8847
+            label: PER3
+        - preferred_term: CLOCK
+          term:
+            id: hgnc:2082
+            label: CLOCK
+      selected_evidence:
+        snippet: The Per3 polymorphism correlated significantly with extreme diurnal preference, the longer
+          allele associating with morningness and the shorter allele with eveningness. The shorter allele
+          was strongly associated with the delayed sleep phase syndrome patients, 75% of whom were homozygous.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:12841365
+      reference_title: A length polymorphism in the circadian clock gene Per3 is linked to delayed sleep
+        phase syndrome and extreme diurnal preference.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates the PER3 VNTR polymorphism as a genetic marker for DSPS, with the shorter
+        4-repeat allele associated with evening preference and DSPS.
+    first_seen_at: '2026-10-03T22:36:59.602901+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:12841365
+  22b4402ea39e283e6ae4f6d48f50ffaa8525b2c200cabef80d80fda614750f7a:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Circadian-Delayed DSWPD
+            description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+              phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+              minimum. These patients have a true delay of the endogenous circadian pacemaker relative
+              to the light-dark cycle.
+            subtype_frequency: ~60%
+            classification: clinical_phenotype
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Circadian Clock Gene Polymorphisms
+        role: trigger
+        biological_scale: MOLECULAR
+        subtypes:
+        - Circadian-Delayed DSWPD
+        conforms_to: circadian_phase_misalignment#Intrinsic Core Clock Period or Phase Lesion
+        description: Variants in core circadian clock genes alter the molecular oscillator that drives
+          the sleep-wake cycle. The circadian clock operates via transcription-translation feedback loops
+          involving CLOCK, BMAL1, PER, and CRY gene families. A gain-of-function mutation in CRY1 (c.1657+3A>C)
+          creates a transcriptional inhibitor with enhanced affinity for Clock and Bmal1, lengthening
+          the circadian period by approximately 30 minutes. Additional polymorphisms in PER3 and CLOCK
+          contribute to DSPS susceptibility.
+        cell_types:
+        - preferred_term: Neuron
+          term:
+            id: CL:0000540
+            label: neuron
+        biological_processes:
+        - preferred_term: Circadian Rhythm
+          term:
+            id: GO:0007623
+            label: circadian rhythm
+        genes:
+        - preferred_term: CRY1
+          term:
+            id: hgnc:2384
+            label: CRY1
+        - preferred_term: PER3
+          term:
+            id: hgnc:8847
+            label: PER3
+        - preferred_term: CLOCK
+          term:
+            id: hgnc:2082
+            label: CLOCK
+      selected_evidence:
+        snippet: Circadian rhythms and sleep are fundamental biological processes integral to human health.
+          Their disruption is associated with detrimental physiological consequences, including cognitive,
+          metabolic, cardiovascular and immunological dysfunctions.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:36028773
+      reference_title: Genetics of circadian rhythms and sleep in human health and disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This Nature Reviews Genetics review summarizes the genetic architecture of circadian
+        and sleep traits, including Mendelian forms of delayed sleep-wake phase disorder linked to clock
+        genes.
+    first_seen_at: '2026-10-03T22:36:59.631716+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:36028773
+  e42cb4ac84bc801d480823f171532b281cb7af65d8eabb8ece2b39ee6b4f498e:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Circadian-Delayed DSWPD
+            description: The majority subtype (~60% of cases) characterized by objectively delayed circadian
+              phase markers, including delayed dim light melatonin onset (DLMO) and core body temperature
+              minimum. These patients have a true delay of the endogenous circadian pacemaker relative
+              to the light-dark cycle.
+            subtype_frequency: ~60%
+            classification: clinical_phenotype
+          role: subtype
+      assertion_type: Pathophysiology
+      assertion:
+        name: Altered Melatonin Secretion Timing
+        role: amplifier
+        biological_scale: ORGANISM
+        subtypes:
+        - Circadian-Delayed DSWPD
+        conforms_to: circadian_phase_misalignment#Shifted or Free-Running Endogenous Circadian Phase
+        description: DSPS patients exhibit a delayed dim light melatonin onset (DLMO), reflecting a shifted
+          circadian pacemaker. The suprachiasmatic nucleus (SCN) signal to the pineal gland for melatonin
+          synthesis is phase-delayed, resulting in later endogenous melatonin rise and consequently delayed
+          sleep propensity. This delay in melatonin secretion is a hallmark biomarker of the condition.
+          However, approximately 40% of DSWPD cases may have normal melatonin timing, suggesting heterogeneity
+          in the underlying mechanism.
+        cell_types:
+        - preferred_term: Pinealocyte
+          term:
+            id: CL:0000652
+            label: pinealocyte
+        biological_processes:
+        - preferred_term: Melatonin Biosynthetic Process
+          term:
+            id: GO:0030187
+            label: melatonin biosynthetic process
+      selected_evidence:
+        snippet: Consistent with a phase delay, entrained DLMO occurred at 2:32 am, well after the time
+          expected in a subject of normal chronotype (typically between 8 to 10 pm) and closer to the
+          time of habitual sleep onset
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates objectively measured delayed DLMO (2:32 AM vs. normal 8-10 PM) in a DSPD
+        proband, confirming delayed melatonin secretion as a marker of circadian phase delay.
+    first_seen_at: '2026-10-03T22:36:59.892980+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:28388406
+  e3216286af48be9dc7f6093c43842bae2b6e5e64c1e1bf33630e55fcaa701e2d:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Misalignment Between Circadian Phase and Social Schedule
+        description: 'The rate-limiting step, and a relation rather than a state of the clock alone: it
+          requires both a delayed endogenous phase and an externally imposed schedule that the phase cannot
+          meet. This is what makes delayed sleep-wake phase disorder unusual among diseases - the same
+          physiology is pathological or benign depending only on what the person is required to do, and
+          an extreme evening chronotype with a permissive schedule is not a patient. Sleep attempted during
+          the circadian wake-maintenance zone is delayed in onset and curtailed by the alarm clock, while
+          wake required near the core temperature minimum brings maximal sleepiness and severe sleep inertia.
+          Released from the schedule, the same person sleeps normally at their own phase - the diagnostic
+          hallmark separating this disorder from chronic insomnia, with which it is routinely confused
+          and with which it shares no treatment.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: circadian_phase_misalignment#Misalignment Between Endogenous Circadian Phase and
+          the Imposed Sleep-Wake Schedule
+        notes: Conformance to the circadian module is scoped by subtype elsewhere in this entry, but deliberately
+          not here. The Circadian-Entrained subtype - roughly 40% of cases, presenting with clinically
+          delayed sleep timing despite normal objective phase markers - does not satisfy the module's
+          entry arms, since neither an intrinsic clock lesion nor an entrainment failure has been demonstrated
+          in those patients. Whether that subtype belongs in this disease entry at all is a live question,
+          recorded rather than resolved.
+        biological_processes:
+        - preferred_term: entrainment of circadian clock
+          term:
+            id: GO:0009649
+            label: entrainment of circadian clock
+          modifier: DECREASED
+        - preferred_term: regulation of the circadian sleep/wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: This system is altered in delayed sleep phase disorder (DSPD), a common form of insomnia
+          in which sleep episodes are shifted to later times misaligned with the societal norm.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the relation this node models explicitly - sleep episodes shifted relative to
+        an external societal norm - rather than an abnormality of sleep itself.
+    first_seen_at: '2026-10-03T22:36:59.962889+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:28388406
+  656b1e07cf3fce80a68b933195b735f2ffb297038df2852b5a52cea972aed956:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Photic Entrainment
+        role: trigger
+        biological_scale: CELLULAR
+        conforms_to: circadian_phase_misalignment#Loss or Mistiming of Photic Entrainment Input
+        description: The circadian system normally entrains to the 24-hour light-dark cycle through retinal
+          light input to the SCN via melanopsin-containing intrinsically photosensitive retinal ganglion
+          cells (ipRGCs). In DSPS, there may be increased sensitivity to the melatonin-suppressing effect
+          of evening light, and potentially impaired melanopsin-dependent phototransduction, resulting
+          in a net phase delay of the circadian oscillator.
+        cell_types:
+        - preferred_term: Retinal Ganglion Cell
+          term:
+            id: CL:0000740
+            label: retinal ganglion cell
+        biological_processes:
+        - preferred_term: Entrainment of Circadian Clock
+          term:
+            id: GO:0009649
+            label: entrainment of circadian clock
+      selected_evidence:
+        snippet: The pathophysiology of DSPD remains obscure with suspected causes including a differential
+          susceptibility of an individual's circadian clock to environmental entrainment cues such as
+          the light/dark cycle, and altered properties of the oscillator itself that affect its period
+          length
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies altered light entrainment susceptibility as a suspected pathophysiological
+        mechanism in DSPD, alongside intrinsic oscillator changes.
+    first_seen_at: '2026-10-03T22:36:59.960474+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:28388406
+  f5a6298b3f9f17495ba1cbf5a1cd3aa36baeb8bd88e498f6ebbca1626882d370:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Misalignment Between Circadian Phase and Social Schedule
+        description: 'The rate-limiting step, and a relation rather than a state of the clock alone: it
+          requires both a delayed endogenous phase and an externally imposed schedule that the phase cannot
+          meet. This is what makes delayed sleep-wake phase disorder unusual among diseases - the same
+          physiology is pathological or benign depending only on what the person is required to do, and
+          an extreme evening chronotype with a permissive schedule is not a patient. Sleep attempted during
+          the circadian wake-maintenance zone is delayed in onset and curtailed by the alarm clock, while
+          wake required near the core temperature minimum brings maximal sleepiness and severe sleep inertia.
+          Released from the schedule, the same person sleeps normally at their own phase - the diagnostic
+          hallmark separating this disorder from chronic insomnia, with which it is routinely confused
+          and with which it shares no treatment.'
+        role: central_effector
+        biological_scale: ORGANISM
+        conforms_to: circadian_phase_misalignment#Misalignment Between Endogenous Circadian Phase and
+          the Imposed Sleep-Wake Schedule
+        notes: Conformance to the circadian module is scoped by subtype elsewhere in this entry, but deliberately
+          not here. The Circadian-Entrained subtype - roughly 40% of cases, presenting with clinically
+          delayed sleep timing despite normal objective phase markers - does not satisfy the module's
+          entry arms, since neither an intrinsic clock lesion nor an entrainment failure has been demonstrated
+          in those patients. Whether that subtype belongs in this disease entry at all is a live question,
+          recorded rather than resolved.
+        biological_processes:
+        - preferred_term: entrainment of circadian clock
+          term:
+            id: GO:0009649
+            label: entrainment of circadian clock
+          modifier: DECREASED
+        - preferred_term: regulation of the circadian sleep/wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: CRSDs result from a misalignment between the timing of the circadian rhythm and the external
+          environment (eg, jet lag and shift work) or a dysfunction of the circadian clock or its afferent
+          and efferent pathways (eg, delayed sleep-phase, advanced sleep-phase, non-24-hour, and irregular
+          sleep-wake rhythm disorders).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23385698
+      reference_title: Circadian rhythm abnormalities.
+      evidence_source: OTHER
+      explanation: Places delayed sleep-phase disorder explicitly in the clock-dysfunction arm of the
+        circadian disorders, and states the misalignment relation this node encodes.
+    first_seen_at: '2026-10-03T22:37:00.021597+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:23385698
+  09a867d43a5debb00ba43ea7c6c8464949d94e83563d98a211660836271f9f71:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: VERY_FREQUENT
+        name: Sleep Onset Insomnia
+        frequency: VERY_FREQUENT
+        description: Inability to fall asleep at a conventional or desired bedtime, with sleep onset typically
+          delayed to 2-6 AM. This is the cardinal feature of DSPS.
+        phenotype_term:
+          preferred_term: Sleep onset insomnia
+          term:
+            id: HP:0031354
+            label: Sleep onset insomnia
+      selected_evidence:
+        snippet: Delayed sleep-wake phase disorder (DSWPD) is a sleep disorder in which the habitual sleep-wake
+          timing is delayed, resulting in difficulty in falling asleep and waking up at the desired time.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms that difficulty falling asleep at desired times is a defining feature of DSWPD.
+    first_seen_at: '2026-10-03T22:37:00.215558+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:37275982
+  6f984a6db3340bf89fcff55d246dccc8739ff07253da42424542f43f5cfe87cc:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: VERY_FREQUENT
+        name: Excessive Daytime Sleepiness
+        frequency: VERY_FREQUENT
+        description: When patients must adhere to conventional wake times for work or school, the resulting
+          sleep debt causes significant daytime somnolence and impaired alertness.
+        phenotype_term:
+          preferred_term: Excessive daytime sleepiness
+          term:
+            id: HP:0002329
+            label: Drowsiness
+      selected_evidence:
+        snippet: Patients with DSWPD frequently experience fatigue, impaired concentration, sleep deprivation
+          during weekdays, and problems of absenteeism, which may be further complicated by depressive
+          symptoms.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents fatigue, impaired concentration, and sleep deprivation as frequent consequences
+        of DSWPD when patients must adhere to conventional schedules.
+    first_seen_at: '2026-10-03T22:37:00.291898+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:37275982
+  a0cec66cf20048da3920fb25104c3132de1ea11608dd7916c6167dc2f726d614:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: VERY_FREQUENT
+        name: Sleep-Wake Cycle Disturbance
+        frequency: VERY_FREQUENT
+        description: Extreme difficulty waking at the desired time, often requiring multiple alarms and
+          external assistance. The sleep-wake cycle is persistently shifted later relative to desired
+          or conventional schedules.
+        phenotype_term:
+          preferred_term: Sleep-wake cycle disturbance
+          term:
+            id: HP:0006979
+            label: Sleep-wake cycle disturbance
+      selected_evidence:
+        snippet: Delayed Sleep Phase Disorder (DSPD), which is characterized by a persistent and intractable
+          delay of sleep onset and offset times relative to the societal norm, represents the most commonly
+          diagnosed type of circadian rhythm sleep disorder
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms persistent delay of both sleep onset and offset times as the defining characteristic
+        of DSPD, reflecting a shifted sleep-wake cycle.
+    first_seen_at: '2026-10-03T22:37:00.421084+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:28388406
+  644e7d55981526d1b87bb2e45daeb6369c356920f6048cf2789ccccd2b5abd4a:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: FREQUENT
+        name: Abnormal Pineal Melatonin Secretion
+        frequency: FREQUENT
+        description: Delayed dim light melatonin onset (DLMO) is a hallmark biomarker of DSPS, reflecting
+          the delayed circadian phase of the endogenous pacemaker. DLMO occurs hours later than in normal
+          sleepers.
+        phenotype_term:
+          preferred_term: Abnormal pineal melatonin secretion
+          term:
+            id: HP:0012689
+            label: Abnormal pineal melatonin secretion
+      selected_evidence:
+        snippet: Consistent with a phase delay, entrained DLMO occurred at 2:32 am, well after the time
+          expected in a subject of normal chronotype (typically between 8 to 10 pm) and closer to the
+          time of habitual sleep onset
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents a markedly delayed DLMO in a DSPD patient, occurring at 2:32 AM compared
+        to the normal 8-10 PM range.
+    first_seen_at: '2026-10-03T22:37:00.422105+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:28388406
+  cc04c8940973a9c3373195132ec7dc6971e2f5108de3e611f609ae4ffdb5a81c:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: FREQUENT
+        name: Depression
+        frequency: FREQUENT
+        notes: Depression is frequently comorbid with DSPS rather than a core phenotype. It may be driven
+          by chronic sleep deprivation, circadian misalignment, and/or shared genetic factors (CRY1 variant
+          carriers show phenome-wide associations with major depressive disorder). Retained as a phenotype
+          because the bidirectional relationship and high frequency in DSWPD populations make it clinically
+          relevant.
+        description: Depression is frequently comorbid with DSPS, potentially related to chronic sleep
+          deprivation and circadian misalignment. CRY1 variant carriers show phenome-wide associations
+          with major depressive disorder.
+        phenotype_term:
+          preferred_term: Depression
+          term:
+            id: HP:0000716
+            label: Depression
+      selected_evidence:
+        snippet: DSWPD is frequently comorbid with psychiatric disorders, particularly mood and neurodevelopmental
+          disorders, both of which have a bidirectional association with the pathophysiology of DSWPD.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes frequent comorbidity between DSWPD and mood disorders, with a bidirectional
+        pathophysiological relationship.
+    first_seen_at: '2026-10-03T22:37:00.530932+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:37275982
+  b48e465140763471ffb5396561a11147c1a02fac6d96b31450a0e9d9286ed594:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: FREQUENT
+        name: Depression
+        frequency: FREQUENT
+        notes: Depression is frequently comorbid with DSPS rather than a core phenotype. It may be driven
+          by chronic sleep deprivation, circadian misalignment, and/or shared genetic factors (CRY1 variant
+          carriers show phenome-wide associations with major depressive disorder). Retained as a phenotype
+          because the bidirectional relationship and high frequency in DSWPD populations make it clinically
+          relevant.
+        description: Depression is frequently comorbid with DSPS, potentially related to chronic sleep
+          deprivation and circadian misalignment. CRY1 variant carriers show phenome-wide associations
+          with major depressive disorder.
+        phenotype_term:
+          preferred_term: Depression
+          term:
+            id: HP:0000716
+            label: Depression
+      selected_evidence:
+        snippet: we found in a phenome-wide association study involving 9438 unrelated adult Europeans
+          that CRY1Δ11 was associated with major depressive disorder, insomnia, and anxiety.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32538895
+      reference_title: Human CRY1 variants associate with attention deficit/hyperactivity disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Phenome-wide association study demonstrates that the CRY1 DSPD variant is associated
+        with major depressive disorder, providing a genetic link between circadian disruption and depression.
+    first_seen_at: '2026-10-03T22:37:00.619328+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/1
+      reference: PMID:32538895
+  e9104e2878e220fab06bb7e0ee17404e34d143186b450e104b2a17a8034ed536:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: FREQUENT
+        name: Anxiety
+        frequency: FREQUENT
+        description: Patients with DSWPD have a strong tendency toward anxiety, which may result in aggravation
+          of insomnia symptoms. CRY1 variant carriers also show phenome-wide associations with anxiety.
+        phenotype_term:
+          preferred_term: Anxiety
+          term:
+            id: HP:0000739
+            label: Anxiety
+      selected_evidence:
+        snippet: patients with DSWPD have a strong tendency toward neuroticism and anxiety, which may
+          result in the aggravation of insomnia symptoms.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the strong association between DSWPD and anxiety traits.
+    first_seen_at: '2026-10-03T22:37:00.842931+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: PMID:37275982
+  3297c9e471cbaea6d58827acb7e3236e323e191f03f3aed0c8f565d360a45bcd:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: FREQUENT
+        name: Anxiety
+        frequency: FREQUENT
+        description: Patients with DSWPD have a strong tendency toward anxiety, which may result in aggravation
+          of insomnia symptoms. CRY1 variant carriers also show phenome-wide associations with anxiety.
+        phenotype_term:
+          preferred_term: Anxiety
+          term:
+            id: HP:0000739
+            label: Anxiety
+      selected_evidence:
+        snippet: we found in a phenome-wide association study involving 9438 unrelated adult Europeans
+          that CRY1Δ11 was associated with major depressive disorder, insomnia, and anxiety.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32538895
+      reference_title: Human CRY1 variants associate with attention deficit/hyperactivity disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Phenome-wide association study links the CRY1 DSPD variant to anxiety.
+    first_seen_at: '2026-10-03T22:37:00.844171+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/1
+      reference: PMID:32538895
+  27ba4ed4d904cabf9e0b20ec832736e57fec6a0a5bfcc9f4cce5efe58feaec98:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: CRY1
+        association: Causative
+        gene_term:
+          preferred_term: CRY1
+          term:
+            id: hgnc:2384
+            label: CRY1
+        inheritance:
+        - name: Autosomal dominant
+      selected_evidence:
+        snippet: One variant, CRY1Δ11 c.1657+3A>C, is present in approximately 1% of Europeans, therefore
+          standing out as a diagnostic and therapeutic marker. We showed by exome sequencing in an independent
+          cohort of patients with combined ADHD and insomnia that 8 of 62 patients and 0 of 369 controls
+          carried CRY1Δ11.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32538895
+      reference_title: Human CRY1 variants associate with attention deficit/hyperactivity disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Validates CRY1Δ11 as a common variant (~1% in Europeans) enriched in patients with
+        ADHD and insomnia, confirming its role in delayed sleep phase phenotypes.
+    first_seen_at: '2026-10-03T22:37:01.046585+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:32538895
+  e5dc8f24bf6b14960d259b8fd717ed45b4a301d0de1a30b36cd115a333cac142:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: CRY1
+        association: Causative
+        gene_term:
+          preferred_term: CRY1
+          term:
+            id: hgnc:2384
+            label: CRY1
+        inheritance:
+        - name: Autosomal dominant
+      selected_evidence:
+        snippet: we report a hereditary form of DSPD associated with a dominant coding variation in the
+          core circadian clock gene CRY1, which creates a transcriptional inhibitor with enhanced affinity
+          for circadian activator proteins Clock and Bmal1. This gain-of-function CRY1 variant causes
+          reduced expression of key transcriptional targets and lengthens the period of circadian molecular
+          rhythms, providing a mechanistic link to DSPD symptoms. The allele has a frequency of up to
+          0.6%, and reverse phenotyping of unrelated families corroborates late and/or fragmented sleep
+          patterns in carriers
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Landmark study identifying CRY1 c.1657+3A>C as a gain-of-function variant causing familial
+        DSPD with autosomal dominant inheritance and up to 0.6% allele frequency.
+    first_seen_at: '2026-10-03T22:37:00.950211+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:28388406
+  6bd1115baa1452d987a12205f63bb3abbd2784a6ff7337bda09f20fee3975208:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /genetic/0
+          value:
+            name: CRY1
+            association: Causative
+            gene_term:
+              preferred_term: CRY1
+              term:
+                id: hgnc:2384
+                label: CRY1
+          role: ancestor
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal dominant
+      selected_evidence:
+        snippet: Delayed sleep behavior was found to be common among male and female family members and
+          across several generations, consistent with an autosomal dominant inheritance pattern
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/inheritance/0
+      evidence_path: /genetic/0/inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates autosomal dominant inheritance of CRY1-related DSPD across multiple generations
+        in affected families.
+    first_seen_at: '2026-10-03T22:37:01.198363+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/inheritance/0
+      evidence_path: /genetic/0/inheritance/0/evidence/0
+      reference: PMID:28388406
+  a4ad49a1e0b9a181ba4e9228989d645a1b72f42c28ecf456456e25a9e3a5e471:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PER3
+        association: Risk Factor
+        gene_term:
+          preferred_term: PER3
+          term:
+            id: hgnc:8847
+            label: PER3
+      selected_evidence:
+        snippet: The Per3 polymorphism correlated significantly with extreme diurnal preference, the longer
+          allele associating with morningness and the shorter allele with eveningness. The shorter allele
+          was strongly associated with the delayed sleep phase syndrome patients, 75% of whom were homozygous.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12841365
+      reference_title: A length polymorphism in the circadian clock gene Per3 is linked to delayed sleep
+        phase syndrome and extreme diurnal preference.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the PER3 VNTR polymorphism as a genetic marker for DSPS, with the shorter
+        4-repeat allele strongly associated with DSPS patients.
+    first_seen_at: '2026-10-03T22:37:01.303150+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      reference: PMID:12841365
+  27f4d2d8aa699829c47bfa241644a9c37cb4142bb91db86e275f84d44cd96bef:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PER2
+        association: Risk Factor
+        gene_term:
+          preferred_term: PER2
+          term:
+            id: hgnc:8846
+            label: PER2
+      selected_evidence:
+        snippet: A low-frequency missense variant (p.Val1205Met) in PER2 showed a significant association
+          with DSWPD (2.5% in cases and 1.1% in controls, P = 0.026, odds ratio (OR) = 2.32).
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31527662
+      reference_title: A missense variant in PER2 is associated with delayed sleep-wake phase disorder
+        in a Japanese population.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Case-control genetic association data support PER2 p.Val1205Met as a DSWPD risk variant
+        in a Japanese population.
+    first_seen_at: '2026-10-03T22:37:01.409605+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      reference: PMID:31527662
+  da9b098eaa676bfa4d62eb3e8d66da82dd1b397e1bbeb5468720d4197dd09aa6:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Evening and Nighttime Light Exposure
+        description: Exposure to artificial light, particularly short-wavelength (blue, ~480 nm) light
+          from screens and indoor lighting during evening hours, suppresses melatonin secretion and exacerbates
+          circadian phase delay. DSWPD patients may have higher photosensitivity to evening light compared
+          to normal sleepers, amplifying the phase-delaying effect. The COVID-19 pandemic period demonstrated
+          that behavioral changes in light exposure and schedule patterns can promote delayed sleep phase.
+      selected_evidence:
+        snippet: The pathophysiology of DSPD remains obscure with suspected causes including a differential
+          susceptibility of an individual's circadian clock to environmental entrainment cues such as
+          the light/dark cycle, and altered properties of the oscillator itself that affect its period
+          length
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies differential susceptibility to the light/dark cycle as a suspected environmental
+        contributor to DSPD pathophysiology.
+    first_seen_at: '2026-10-03T22:37:01.519446+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:28388406
+  6e02aeb22ecbf996bb95b0e5e3aca980ab6d0c3317a4119545d7110d1e5075cb:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Social Jet Lag and Schedule Misalignment
+        description: Mismatch between the individual's endogenous circadian phase and social obligations
+          (school, work schedules) exacerbates symptoms and perpetuates the delayed phase. Adolescents
+          and young adults are particularly vulnerable due to developmental changes in circadian timing
+          that coincide with early school start times.
+      selected_evidence:
+        snippet: DSWPD is typically prevalent during adolescence and young adulthood.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the high prevalence of DSWPD in adolescents and young adults, consistent
+        with developmental circadian changes interacting with social schedule demands.
+    first_seen_at: '2026-10-03T22:37:01.760560+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /environmental/1
+      evidence_path: /environmental/1/evidence/0
+      reference: PMID:37275982
+  5dccf3278a97bf6f3fb5525ff75437a921e4d76790c75764cc484154b00905d9:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Evening and Nighttime Light Exposure
+        description: Exposure to artificial light, particularly short-wavelength (blue, ~480 nm) light
+          from screens and indoor lighting during evening hours, suppresses melatonin secretion and exacerbates
+          circadian phase delay. DSWPD patients may have higher photosensitivity to evening light compared
+          to normal sleepers, amplifying the phase-delaying effect. The COVID-19 pandemic period demonstrated
+          that behavioral changes in light exposure and schedule patterns can promote delayed sleep phase.
+      selected_evidence:
+        snippet: delayed sleep phase and prolonged sleep duration in the young generation have been reported
+          during the period of COVID-19 pandemic-related behavioral restrictions. This phenomenon raises
+          a concern about the risk of a mismatch between their sleep-wake phase and social life that may
+          lead to the development of DSWPD after the removal of these restrictions.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents that behavioral restrictions (including altered light exposure patterns and
+        schedules) during the pandemic promoted delayed sleep phase, supporting environmental contributions
+        to DSWPD development.
+    first_seen_at: '2026-10-03T22:37:01.639120+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/1
+      reference: PMID:37275982
+  db41248999d89dcdafb1741f2275c47ef9ab237150502b8635e7b0ef41c89d57:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Polysomnography when etiology is unclear
+        description: Overnight polysomnography is not required for all cases but can help characterize
+          biological versus behavioral contributors, especially when dim light melatonin onset testing
+          is unavailable.
+        diagnosis_term:
+          preferred_term: polysomnography
+          term:
+            id: NCIT:C114185
+            label: Polysomnography
+      selected_evidence:
+        snippet: We suggest that PSG can provide useful information regarding the prevailing etiology
+          (biological versus behavioral) if dim light melatonin onset testing is not available.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34942585
+      reference_title: 'Delayed Sleep-Wake Phase Disorder: Can Polysomnography Be Useful?'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Adolescent DSWPD cohort data support selective use of PSG to clarify the dominant mechanism
+        when circadian phase testing is unavailable.
+    first_seen_at: '2026-10-03T22:37:02.008253+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:34942585
+  c9cb748d5fc5d51af723d0ab3a7b6e7aa9f3069f98db1a54adc84b2b19e0fb0b:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Sleep diary and actigraphy
+        description: Serial sleep diaries combined with actigraphy help document the persistent delay
+          in sleep onset and wake timing under real-world conditions and improve identification of delayed
+          sleep-wake phase disorder.
+        diagnosis_term:
+          preferred_term: actigraphy
+          term:
+            id: NCIT:C180883
+            label: Actigraphy
+      selected_evidence:
+        snippet: Sleep questionnaires, sleep diaries, and actigraphy have improved identification of individuals
+          with delayed sleep.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40273170
+      reference_title: Delayed sleep-wake phase disorder.
+      evidence_source: OTHER
+      explanation: Review-level guidance supports diary-based sleep logs plus actigraphy as practical
+        tools for identifying delayed sleep timing.
+    first_seen_at: '2026-10-03T22:37:02.007313+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:40273170
+  029609e29fa1539d6cead18b0ccfcb2cc427f0ce1072f8d81ed6041ce553bb28:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Strategically Timed Melatonin
+        description: Low-dose melatonin (0.5-5 mg) administered in the evening, typically 3-7 hours before
+          desired sleep onset (relative to DLMO), to phase-advance the circadian clock. Dosing time relative
+          to DLMO is more critical than dose variation for phase shifting.
+        treatment_term:
+          preferred_term: melatonin supplementation
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: melatonin
+            term:
+              id: CHEBI:16796
+              label: melatonin
+      selected_evidence:
+        snippet: Available data allowed for positive endorsement (at a second-tier degree of confidence)
+          of strategically timed melatonin (for the treatment of DSWPD, blind adults with N24SWD, and
+          children/adolescents with ISWRD and comorbid neurological disorders), and light therapy with
+          or without accompanying behavioral interventions
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26414986
+      reference_title: 'Clinical Practice Guideline for the Treatment of Intrinsic Circadian Rhythm Sleep-Wake
+        Disorders: Advanced Sleep-Wake Phase Disorder (ASWPD), Delayed Sleep-Wake Phase Disorder (DSWPD),
+        Non-24-Hour Sleep-Wake Rhythm Disorder (N24SWD), and Irregular Sleep-Wake Rhythm Disorder (ISWRD).
+        An Update for 2015: An American Academy of Sleep Medicine Clinical Practice Guideline.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: AASM Clinical Practice Guideline provides second-tier endorsement for strategically
+        timed melatonin in DSWPD treatment.
+    first_seen_at: '2026-10-03T22:37:02.280387+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:26414986
+  65c537844d0773ba67acba897efca4309d5bf110d87e8e2ef35aa952194275fb:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Bright Light Therapy
+        description: Timed exposure to bright light (2,500-10,000 lux) in the morning, timed after the
+          core body temperature minimum or 1-3 hours before spontaneous awakening, to phase-advance the
+          circadian clock. The AASM guideline endorses light therapy for children and adolescents with
+          DSWPD.
+        notes: No specific NCIT term for bright light therapy/phototherapy for circadian disorders currently
+          exists.
+      selected_evidence:
+        snippet: Available data allowed for positive endorsement (at a second-tier degree of confidence)
+          of strategically timed melatonin (for the treatment of DSWPD, blind adults with N24SWD, and
+          children/adolescents with ISWRD and comorbid neurological disorders), and light therapy with
+          or without accompanying behavioral interventions
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26414986
+      reference_title: 'Clinical Practice Guideline for the Treatment of Intrinsic Circadian Rhythm Sleep-Wake
+        Disorders: Advanced Sleep-Wake Phase Disorder (ASWPD), Delayed Sleep-Wake Phase Disorder (DSWPD),
+        Non-24-Hour Sleep-Wake Rhythm Disorder (N24SWD), and Irregular Sleep-Wake Rhythm Disorder (ISWRD).
+        An Update for 2015: An American Academy of Sleep Medicine Clinical Practice Guideline.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: AASM Clinical Practice Guideline provides second-tier endorsement for light therapy
+        with or without behavioral interventions specifically for children and adolescents with DSWPD;
+        adult DSWPD was not endorsed for light therapy in this guideline.
+    first_seen_at: '2026-10-03T22:37:02.281335+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:26414986
+  6bc8b8b1d237cc44dc147c833443b41ac4f74815e856d81e453401ec350677cc:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Tasimelteon
+        description: A dual MT1/MT2 melatonin receptor agonist under investigation for DSWPD. Clinical
+          trials include evaluation in the general DSWPD population and in CRY1Δ11 variant carriers specifically.
+          A case report describes symptom resolution in a DSWPD patient treated with tasimelteon.
+        treatment_term:
+          preferred_term: tasimelteon
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: Tasimelteon
+            term:
+              id: NCIT:C152515
+              label: Tasimelteon
+      selected_evidence:
+        snippet: The participant was enrolled in an 11-month Open-Label Extension (OLE) following the
+          randomized portion of a clinical study and was successfully treated with tasimelteon. DSWPD
+          symptoms were resolved, and their previously delayed sleep-wake cycle was advanced.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3389/fnins.2023.1287514
+      reference_title: 'Case report: A patient with Delayed Sleep-Wake Phase Disorder and Optic Nerve
+        Hypoplasia treated with tasimelteon: a case study'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Case report demonstrating successful resolution of DSWPD symptoms with tasimelteon
+        treatment, with advancement of the previously delayed sleep-wake cycle. Note: this patient had
+        comorbid Optic Nerve Hypoplasia (ONH), which commonly impairs photic entrainment and can independently
+        cause non-24-hour sleep-wake disorder; this comorbidity limits generalizability to uncomplicated
+        DSWPD.'
+    first_seen_at: '2026-10-03T22:37:02.610364+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      reference: DOI:10.3389/fnins.2023.1287514
+  0f54e6d5da8c41a9c5fac9bc2634c5a21f3755843801a95846362fa787dae987:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Chronotherapy
+        description: Progressive delay of sleep times around the clock until the desired bedtime is reached.
+          This approach exploits the natural tendency toward phase delay but requires strict schedule
+          adherence and is difficult to maintain long-term.
+        notes: The AASM 2015 guideline did not provide a recommendation for or against chronotherapy for
+          DSWPD due to insufficient evidence. No specific NCIT term exists for chronotherapy.
+      selected_evidence:
+        snippet: No recommendations were provided for remaining treatments/ populations, due to either
+          insufficient or absent data.
+        supports: NO_EVIDENCE
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26414986
+      reference_title: 'Clinical Practice Guideline for the Treatment of Intrinsic Circadian Rhythm Sleep-Wake
+        Disorders: Advanced Sleep-Wake Phase Disorder (ASWPD), Delayed Sleep-Wake Phase Disorder (DSWPD),
+        Non-24-Hour Sleep-Wake Rhythm Disorder (N24SWD), and Irregular Sleep-Wake Rhythm Disorder (ISWRD).
+        An Update for 2015: An American Academy of Sleep Medicine Clinical Practice Guideline.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The AASM guideline could not provide recommendations for chronotherapy in DSWPD due
+        to insufficient evidence, reflecting the limited data supporting this approach.
+    first_seen_at: '2026-10-03T22:37:02.609327+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:26414986
+  4e8197ddf5d20d8062175f65d789282e9bb13d975f85036dcf61936c4a493750:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT04652882
+        phase: PHASE_III
+        status: COMPLETED
+        description: A multicenter, double-blind, randomized study evaluating the efficacy and safety
+          of daily oral tasimelteon versus placebo in participants with DSWPD.
+      selected_evidence:
+        snippet: This is a multicenter, double-blind, randomized study to evaluate the efficacy and safety
+          of a daily single oral dose of tasimelteon and matching placebo in male and female participants
+          with DSWPD.
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT04652882
+      reference_title: A Multicenter, Double-blind, Randomized Study to Evaluate the Effects of Tasimelteon
+        vs. Placebo in Participants With Delayed Sleep-Wake Phase Disorder (DSWPD)
+      explanation: Phase III trial directly evaluating tasimelteon for DSWPD, the most common circadian
+        rhythm sleep disorder.
+    first_seen_at: '2026-10-03T22:37:02.910096+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/0
+      evidence_path: /clinical_trials/0/evidence/0
+      reference: clinicaltrials:NCT04652882
+  d0264697a93c90e9d68a9a1d2cb6f0eb1f65cda8b78c7f20cd995fb4edbb310d:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Cognitive-Behavioral Interventions
+        description: Behavioral approaches including sleep hygiene education, stimulus control, and cognitive
+          therapy for insomnia-related cognitions. Particularly relevant for the circadian-entrained DSWPD
+          subtype where psychological and behavioral factors play a larger role.
+        treatment_term:
+          preferred_term: cognitive and behavioral intervention
+          term:
+            id: NCIT:C15184
+            label: Behavioral Intervention
+      selected_evidence:
+        snippet: future studies should address the effectiveness of cognitive-behavioral approaches in
+          addition to chronobiological approaches in the treatment of DSWPD.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Highlights the need for cognitive-behavioral interventions as adjuncts to chronobiological
+        treatments, particularly given the circadian-entrained subtype where behavioral factors predominate.
+    first_seen_at: '2026-10-03T22:37:02.908931+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: PMID:37275982
+  7484e44f1564fbf398ac9c8750cd9f2107a56d51b03233b254fc1ab9750978c8:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT06701396
+        phase: PHASE_III
+        status: RECRUITING
+        description: A double-blind, randomized, two-period crossover study evaluating tasimelteon versus
+          placebo specifically in patients with DSWPD who carry the CRY1Δ11 variant. This precision medicine
+          trial targets the genetically defined DSWPD subtype.
+      selected_evidence:
+        snippet: This is a double-blind, randomized, two-period crossover study to evaluate the efficacy
+          and safety of a single oral dose of tasimelteon and matching placebo in male and female subjects
+          with DSWPD and the CRY1Δ11 variant.
+        supports: SUPPORT
+    origin:
+      assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT06701396
+      reference_title: A Double-Blind, Randomized, Two-Period Crossover Study to Evaluate the Effects
+        of Tasimelteon Vs. Placebo in Subjects with Delayed Sleep-Wake Phase Disorder (DSWPD) and the
+        CRY1Δ11 Variant
+      explanation: First precision medicine trial in DSWPD, targeting patients with the CRY1Δ11 genetic
+        variant for tasimelteon treatment.
+    first_seen_at: '2026-10-03T22:37:03.219717+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      reference: clinicaltrials:NCT06701396
+  3bc94336fdb82ef41dcd121318007012b8af9634d37b4c5f97ca26e9c9c1cc34:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Global
+        measure_type: POINT_PREVALENCE
+        prevalence_class: ABOVE_1_IN_1000
+        rate_low: 200.0
+        rate_high: 10000.0
+        percentage: 0.2-10
+      selected_evidence:
+        snippet: Delayed Sleep Phase Disorder (DSPD), which is characterized by a persistent and intractable
+          delay of sleep onset and offset times relative to the societal norm, represents the most commonly
+          diagnosed type of circadian rhythm sleep disorder with an estimated prevalence of 0.2–10% in
+          the general population
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports the wide prevalence range of DSPD, reflecting heterogeneity in manifestation
+        and variation in diagnostic criteria stringency.
+    first_seen_at: '2026-10-03T22:37:03.220813+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      reference: PMID:28388406
+  39224a9ceace530fb30bfffefe93fdce2c1cd85d4f7bbc2e005919f82717c019:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Global
+        measure_type: POINT_PREVALENCE
+        prevalence_class: ABOVE_1_IN_1000
+        rate_per_100000: 3000.0
+        percentage: '3'
+      selected_evidence:
+        snippet: Delayed sleep-wake phase disorder (DSWPD) is a sleep disorder in which the habitual sleep-wake
+          timing is delayed, resulting in difficulty in falling asleep and waking up at the desired time.
+          ... DSWPD is typically prevalent during adolescence and young adulthood. Although there are
+          no studies comparing internationally, the prevalence of DSWPD is estimated to be approximately
+          3% with little racial differences between Caucasians and Asians.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37275982
+      reference_title: Delayed sleep-wake phase disorder and its related sleep behaviors in the young
+        generation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The review estimates DSWPD prevalence at approximately 3% and identifies adolescence
+        and young adulthood as typical affected ages. It explicitly notes the absence of international
+        comparative studies.
+    first_seen_at: '2026-10-03T22:37:03.553876+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      reference: PMID:37275982
+  c6a16342a051cc863edebdb599e8bccd6eb895f8a6ea10ce10dc36ae91f29465:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Complex/Multifactorial
+      selected_evidence:
+        snippet: many classical twin studies have found a strong hereditary component to chronotype preference
+          in the range of 40–50%, arguing for an important role of genetic predisposition to DSPD etiology
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Twin studies demonstrate 40-50% heritability of chronotype preference, supporting a
+        significant genetic contribution to DSPS susceptibility.
+    first_seen_at: '2026-10-03T22:37:03.554906+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      reference: PMID:28388406
+  3543151359af1c3fda0940975bd4e71ec44f1be26ecd47115e0e903b257ffdba:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: HarrisonsChapterAssignment
+      assertion:
+        classification_value: NEUROLOGIC
+      selected_evidence:
+        snippet: Delayed sleep-wake phase disorder (DSWPD) is the most commonly encountered of the circadian
+          rhythm sleep-wake disorders (CRSDs),
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:29445534
+      reference_title: Delayed sleep-wake phase disorder.
+      evidence_source: OTHER
+      explanation: Supports classification as a nervous-system proxy in the current schema, which lacks
+        a dedicated sleep/circadian Harrison chapter.
+    first_seen_at: '2026-10-03T22:37:03.958910+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /classifications/harrisons_chapter/0
+      evidence_path: /classifications/harrisons_chapter/0/evidence/0
+      reference: PMID:29445534
+  61f0c8f7141b5f5a6ca7a899c77c2225b326d9d7fb8cc1f96cc40bcb5cfe82dc:
+    claim:
+      about:
+        disease:
+          name: Delayed Sleep Phase Syndrome
+          disease_term:
+            preferred_term: Delayed Sleep Phase Syndrome
+            term:
+              id: MONDO:0024377
+              label: circadian rhythm sleep disorder, delayed sleep phase type
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal dominant (CRY1 subtype)
+      selected_evidence:
+        snippet: Delayed sleep behavior was found to be common among male and female family members and
+          across several generations, consistent with an autosomal dominant inheritance pattern
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/1
+      evidence_path: /inheritance/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28388406
+      reference_title: Mutation of the Human Circadian Clock Gene CRY1 in Familial Delayed Sleep Phase
+        Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates autosomal dominant inheritance of CRY1-related DSPD across multiple generations
+        in affected families.
+    first_seen_at: '2026-10-03T22:37:03.957722+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:57:22.065552+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:57:22.065552+00:00'
+    occurrences:
+    - assertion_path: /inheritance/1
+      evidence_path: /inheritance/1/evidence/0
+      reference: PMID:28388406
+assessments:
+  0d0c0b666eb34c8cd6af88b8f4106da0b80236fdd3b400012eed21ed7bc6abb3:
+    input_sha256: a9a7427d661c3ffdfe0012750aade055f75258164c7ce26ec7413c82f1fc3561
+    configuration_sha256: 576a32061ff9ffe6ec83c981f35e8c022122aa2586ea34af98678858a1c7c234
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:58.761354+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.05
+            PARTIAL: 0.42
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.25
+            PARTIAL: 0.36
+          confidence: 0.09
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.09
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/subtype_frequency:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/classification:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.29
+            PARTIAL: 0.38
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6380
+        output_tokens: 269
+      elapsed_seconds: 0.4355
+      request_sha256: b2f566a4373b5280070f8b7f0468905a8ab93f126fcbd8aa02b93c399f9603e2
+      request_sha256s:
+      - b2f566a4373b5280070f8b7f0468905a8ab93f126fcbd8aa02b93c399f9603e2
+  6aa6f2143263bf12f63aa11b723b9c6abaeb79076a5caa602cd9e35609280f7e:
+    input_sha256: eb2d95dbffd9c7fb2c9a3991f3644f1ac351d590e860eb22eaaa8d7f7e3f6b81
+    configuration_sha256: 576a32061ff9ffe6ec83c981f35e8c022122aa2586ea34af98678858a1c7c234
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:58.762155+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+            MATCH: 0.8
+          confidence: 0.7
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.47
+            MATCH: 0.31
+          confidence: 0.2
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/subtype_frequency:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/classification:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.36
+            MATCH: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6379
+        output_tokens: 268
+      elapsed_seconds: 0.3251
+      request_sha256: 5d26cbe7e94bfcc2d364f99d9a599e0ed465a9844bc3db7a29d42e71a570c299
+      request_sha256s:
+      - 5d26cbe7e94bfcc2d364f99d9a599e0ed465a9844bc3db7a29d42e71a570c299
+  f0d9e0f89434cc37deb0df84c88c53db48d38976ca81a13e68220f1c6ccbbe95:
+    input_sha256: 3e4110a804accdea8dc3ebcdc39e4e1318804a25927571b705f25c90cbc2cd63
+    configuration_sha256: 0bfb7686cf42cd245c0d0260af763c2b426c9a4c26f5f523d8c7cb2f4e681328
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.601493+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.01
+            MATCH: 0.36
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.02
+            MATCH: 0.68
+          confidence: 0.52
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.03
+            MATCH: 0.6799999999999999
+          confidence: 0.53
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.29
+            MISMATCH: 0.12
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.43
+            MISMATCH: 0.01
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.19
+            MATCH: 0.19
+          confidence: 0.42
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.32
+            MATCH: 0.11
+          confidence: 0.35
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+            MATCH: 0.92
+          confidence: 0.88
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.03
+            MISMATCH: 0.69
+          confidence: 0.53
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.68
+            MATCH: 0.03
+          confidence: 0.52
+        /assertion/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.6
+            MATCH: 0.06
+          confidence: 0.41
+        /assertion/genes/2/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.66
+            MATCH: 0.05
+          confidence: 0.49
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.09
+            MATCH: 0.45999999999999996
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19856
+        output_tokens: 919
+      elapsed_seconds: 0.2649
+      request_sha256: 15d828e53f51ef00b72604aa03807d0cef3f1be2056812bbccc71e9aa3ac2429
+      request_sha256s:
+      - 15d828e53f51ef00b72604aa03807d0cef3f1be2056812bbccc71e9aa3ac2429
+  5cf047ad1d7df89debcd290de3ec5b8834cb6f8db14ae4587cbd57ae5297e35d:
+    input_sha256: af63e4aa24baa4dc49053f5d672b034a6713b09fd4a332764fbe86cd7bbd463a
+    configuration_sha256: ebb5f5ccad0d9c767d7cb7047247da4e2835d19dd02215a4ed6d14b58e53921e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.634994+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.3
+            MISMATCH: 0.14
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.2
+            MISMATCH: 0.25
+          confidence: 0.32
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.07
+            MISMATCH: 0.42
+          confidence: 0.26
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.47
+            MISMATCH: 0.25
+          confidence: 0.21
+        /assertion/subtypes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.27
+            MISMATCH: 0.28
+          confidence: 0.18
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.06
+            MISMATCH: 0.38
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.27
+            MISMATCH: 0.19
+          confidence: 0.31
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.04
+            MISMATCH: 0.71
+          confidence: 0.57
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.03
+            MISMATCH: 0.71
+          confidence: 0.57
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.05
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.06
+            MISMATCH: 0.59
+          confidence: 0.37
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.28
+            MISMATCH: 0.22
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13911
+        output_tokens: 627
+      elapsed_seconds: 0.2538
+      request_sha256: 64535545289973201362125499fcd093147bce14f75f217ee420ae708d5c77de
+      request_sha256s:
+      - 64535545289973201362125499fcd093147bce14f75f217ee420ae708d5c77de
+  b3df0ca7c052027a29200a8e4c5148bdcd218146d90ecf502553317c47787fe1:
+    input_sha256: 4ecb7ffae21aab988e511fea10b6a2ab0a885db5b2ef0c12dcc1b82d10823d1f
+    configuration_sha256: 0bfb7686cf42cd245c0d0260af763c2b426c9a4c26f5f523d8c7cb2f4e681328
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.602901+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.03
+            MATCH: 0.24
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.04
+            MATCH: 0.54
+          confidence: 0.31
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.04
+            MATCH: 0.6
+          confidence: 0.4
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.06
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/subtypes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.06
+            MATCH: 0.35
+          confidence: 0.39
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.37
+            MATCH: 0.1
+          confidence: 0.29
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MISMATCH: 0.13
+            MATCH: 0.09
+          confidence: 0.66
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.61
+            MATCH: 0.03
+          confidence: 0.42
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.59
+            MATCH: 0.02
+          confidence: 0.39
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.06
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45999999999999996
+            MISMATCH: 0.1
+            MATCH: 0.44
+          confidence: 0.2
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.84
+            MATCH: 0.04
+          confidence: 0.77
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.84
+            MATCH: 0.04
+          confidence: 0.76
+        /assertion/genes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.03
+            MATCH: 0.84
+          confidence: 0.77
+        /assertion/genes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.03
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.6
+            MATCH: 0.11
+          confidence: 0.4
+        /assertion/genes/2/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.63
+            MATCH: 0.1
+          confidence: 0.45
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.11
+            MATCH: 0.3
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19822
+        output_tokens: 926
+      elapsed_seconds: 0.2868
+      request_sha256: 0878d8c909a34c8d92a6ca8ad1744def1092506ed52e5042a9758b93a9408da5
+      request_sha256s:
+      - 0878d8c909a34c8d92a6ca8ad1744def1092506ed52e5042a9758b93a9408da5
+  d741f828c724f18990146d27a0ecd02615226511b5c75d9decf76e33034503e2:
+    input_sha256: 22b4402ea39e283e6ae4f6d48f50ffaa8525b2c200cabef80d80fda614750f7a
+    configuration_sha256: 0bfb7686cf42cd245c0d0260af763c2b426c9a4c26f5f523d8c7cb2f4e681328
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.631716+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.69
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.55
+            PARTIAL: 0.42
+          confidence: 0.32
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.66
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.72
+            PARTIAL: 0.2
+          confidence: 0.58
+        /assertion/subtypes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.78
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.72
+            PARTIAL: 0.27
+          confidence: 0.57
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.8
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.8099999999999999
+            PARTIAL: 0.18
+          confidence: 0.72
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.65
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.2
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.17
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.85
+            PARTIAL: 0.14
+          confidence: 0.78
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.75
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.71
+        /assertion/genes/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.74
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19803
+        output_tokens: 955
+      elapsed_seconds: 0.3195
+      request_sha256: cf23d45ed7303c974937d0d60db6247fe4f239952b5d18b8d112061d3c08c75d
+      request_sha256s:
+      - cf23d45ed7303c974937d0d60db6247fe4f239952b5d18b8d112061d3c08c75d
+  70830b3fae754efb396fe74cefc040c7d1b8b1954bc3f2611976b83615777455:
+    input_sha256: e42cb4ac84bc801d480823f171532b281cb7af65d8eabb8ece2b39ee6b4f498e
+    configuration_sha256: ebb5f5ccad0d9c767d7cb7047247da4e2835d19dd02215a4ed6d14b58e53921e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.892980+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.55
+            MISMATCH: 0.02
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.32
+            MISMATCH: 0.02
+          confidence: 0.49
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.12
+            MISMATCH: 0.02
+          confidence: 0.79
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.62
+            MISMATCH: 0.11
+          confidence: 0.43
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.1
+            MISMATCH: 0.03
+          confidence: 0.81
+        /assertion/subtypes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+          confidence: 0.67
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            PARTIAL: 0.64
+            MISMATCH: 0.13
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.52
+            MISMATCH: 0.03
+          confidence: 0.29
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.47
+            MISMATCH: 0.33
+          confidence: 0.2
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.43
+            MISMATCH: 0.42
+          confidence: 0.15
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.5
+            MISMATCH: 0.21
+          confidence: 0.26
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.5
+            MISMATCH: 0.25
+          confidence: 0.24
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.33
+            MISMATCH: 0.05
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13903
+        output_tokens: 616
+      elapsed_seconds: 0.2735
+      request_sha256: c1198561f48a4579d85c7461a1ce95e631530ab3630ed6ce05a666f2c8eae9fe
+      request_sha256s:
+      - c1198561f48a4579d85c7461a1ce95e631530ab3630ed6ce05a666f2c8eae9fe
+  84f074740959769290353921410698e1e73b14e644f40a6afc330888f1a84ac2:
+    input_sha256: e3216286af48be9dc7f6093c43842bae2b6e5e64c1e1bf33630e55fcaa701e2d
+    configuration_sha256: 283701d3583dec34a1066b8d8566beea296c8c72a3744e262b46781067346979
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.962889+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.05
+            PARTIAL: 0.77
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.05
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.05
+            PARTIAL: 0.78
+          confidence: 0.66
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.41
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.07
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.38
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.71
+            PARTIAL: 0.28
+          confidence: 0.56
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.11
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.36
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.29
+            PARTIAL: 0.66
+          confidence: 0.48
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.22
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.31
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.26
+            PARTIAL: 0.63
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15348
+        output_tokens: 693
+      elapsed_seconds: 0.2624
+      request_sha256: dc26d841fd0a2b98c6057ac91a742c79d4a3d5d2a8303462009165e5428f8582
+      request_sha256s:
+      - dc26d841fd0a2b98c6057ac91a742c79d4a3d5d2a8303462009165e5428f8582
+  9b319dd550be4730f31a2bf095de1012d26052fcfb8f13ee4ca7a5480a14087a:
+    input_sha256: 656b1e07cf3fce80a68b933195b735f2ffb297038df2852b5a52cea972aed956
+    configuration_sha256: 742d254217214eb9ba30ea0699ae49908f3e2d8096523ff7962f6bd4432ea4f9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:36:59.960474+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.85
+            MISMATCH: 0.02
+            MATCH: 0.13
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.95
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MISMATCH: 0.02
+            MATCH: 0.22
+          confidence: 0.63
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.02
+            MATCH: 0.38
+          confidence: 0.4
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.32
+            MATCH: 0.13
+          confidence: 0.32
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MISMATCH: 0.19
+            MATCH: 0.07
+          confidence: 0.62
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.9
+            MISMATCH: 0.04
+            MATCH: 0.06
+          confidence: 0.85
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.56
+            MATCH: 0.03
+          confidence: 0.35
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.53
+            MATCH: 0.04
+          confidence: 0.3
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.02
+            MATCH: 0.43
+          confidence: 0.33
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.03
+            MATCH: 0.47
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11766
+        output_tokens: 533
+      elapsed_seconds: 0.3281
+      request_sha256: 472fc2a9831b2352fe428525d65ff46f29451bb7457db174786150d331780825
+      request_sha256s:
+      - 472fc2a9831b2352fe428525d65ff46f29451bb7457db174786150d331780825
+  8339694552f772312eaff0b4e229e87bc24cb29f1b4c293b93fead540e9e84d1:
+    input_sha256: f5a6298b3f9f17495ba1cbf5a1cd3aa36baeb8bd88e498f6ebbca1626882d370
+    configuration_sha256: 283701d3583dec34a1066b8d8566beea296c8c72a3744e262b46781067346979
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.021597+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.02
+            MATCH: 0.44
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.78
+            MISMATCH: 0.02
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.03
+            MATCH: 0.38
+          confidence: 0.39
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.22
+            MISMATCH: 0.27
+          confidence: 0.26
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.72
+            MISMATCH: 0.07
+          confidence: 0.58
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.16
+            MATCH: 0.29
+          confidence: 0.32
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.52
+            MATCH: 0.03
+          confidence: 0.29
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.22
+            MISMATCH: 0.16
+          confidence: 0.42
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5599999999999999
+            MISMATCH: 0.27
+            MATCH: 0.17
+          confidence: 0.35
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.11
+            MISMATCH: 0.27
+          confidence: 0.43
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.41
+            MISMATCH: 0.08
+          confidence: 0.26
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.42
+            MISMATCH: 0.08
+          confidence: 0.24
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.46
+            MISMATCH: 0.07
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15387
+        output_tokens: 692
+      elapsed_seconds: 0.2667
+      request_sha256: fc9bcf430f6d61ea9fe575302d2cec40346c78907586134b69497c1b3a291fbc
+      request_sha256s:
+      - fc9bcf430f6d61ea9fe575302d2cec40346c78907586134b69497c1b3a291fbc
+  0f9b5b946f658b4d8c335df0723a351a51c90deb081ac5da1080fb5a2646ef57:
+    input_sha256: 09a867d43a5debb00ba43ea7c6c8464949d94e83563d98a211660836271f9f71
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.215558+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.06
+            MATCH: 0.5
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+            MATCH: 0.95
+          confidence: 0.93
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.27
+            MATCH: 0.07
+          confidence: 0.49
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.03
+            MATCH: 0.79
+          confidence: 0.68
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.2
+            MATCH: 0.13
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.05
+            MATCH: 0.35
+          confidence: 0.39
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.03
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+            MATCH: 0.78
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8237
+        output_tokens: 364
+      elapsed_seconds: 0.2438
+      request_sha256: a7b67e985ea2e438966ce886341d9286ce07e1e2f15078c591689fdfc2e3fb27
+      request_sha256s:
+      - a7b67e985ea2e438966ce886341d9286ce07e1e2f15078c591689fdfc2e3fb27
+  cbd428b1a79ccd98550dbab570ada563db9969f19330e074d0068dd731986028:
+    input_sha256: 6f984a6db3340bf89fcff55d246dccc8739ff07253da42424542f43f5cfe87cc
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.291898+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.05
+            MATCH: 0.42
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.12
+            MATCH: 0.15
+          confidence: 0.61
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.09
+            MATCH: 0.44
+          confidence: 0.21
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MISMATCH: 0.08
+            MATCH: 0.14
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.05
+            MATCH: 0.34
+          confidence: 0.42
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.05
+            MATCH: 0.55
+          confidence: 0.33
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.05
+            MATCH: 0.58
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8231
+        output_tokens: 366
+      elapsed_seconds: 0.2464
+      request_sha256: 82d03a8f60d9082f4abfeef1b8125248ed3ddd180a238b2289440b004dafafc7
+      request_sha256s:
+      - 82d03a8f60d9082f4abfeef1b8125248ed3ddd180a238b2289440b004dafafc7
+  800387390cbcbe218c9437ca33ac4d48f90c0cece91d89cb8692b78195234259:
+    input_sha256: a0cec66cf20048da3920fb25104c3132de1ea11608dd7916c6167dc2f726d614
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.421084+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.04
+            MATCH: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.25
+            MATCH: 0.11
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.03
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.24
+            MATCH: 0.17
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.04
+            MATCH: 0.35
+          confidence: 0.41
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.02
+            MATCH: 0.81
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8245
+        output_tokens: 364
+      elapsed_seconds: 0.1952
+      request_sha256: 8dc356004efa863fc1e09d10495289719ad6e77479121892c6dc8c1a03f65c0d
+      request_sha256s:
+      - 8dc356004efa863fc1e09d10495289719ad6e77479121892c6dc8c1a03f65c0d
+  82e3242dc72926b82dbd984bc0a05786e845aa190a8ce5f436b471531fe8fd5e:
+    input_sha256: 644e7d55981526d1b87bb2e45daeb6369c356920f6048cf2789ccccd2b5abd4a
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.422105+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.03
+            MATCH: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.02
+            MATCH: 0.73
+          confidence: 0.6
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.13
+            MATCH: 0.21
+          confidence: 0.49
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+            MATCH: 0.78
+          confidence: 0.68
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.81
+            MISMATCH: 0.13
+            MATCH: 0.06
+          confidence: 0.71
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MISMATCH: 0.02
+            MATCH: 0.81
+          confidence: 0.72
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.03
+            MATCH: 0.78
+          confidence: 0.68
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.02
+            MATCH: 0.84
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8282
+        output_tokens: 363
+      elapsed_seconds: 0.1946
+      request_sha256: 21fc25ce3e3ca6fe48673f2d0b95b98b7c35784db27af8e7d4ae5ed01480d8cd
+      request_sha256s:
+      - 21fc25ce3e3ca6fe48673f2d0b95b98b7c35784db27af8e7d4ae5ed01480d8cd
+  4ff03668d7dcea730ffdef867485ad2e65dcb45230db6915322c827bf72917d6:
+    input_sha256: cc04c8940973a9c3373195132ec7dc6971e2f5108de3e611f609ae4ffdb5a81c
+    configuration_sha256: 6dc478b8e580f0f40ea2ffe59266a8674f24c695c4da323bcf7c37fb5a712885
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.530932+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.36
+            MISMATCH: 0.02
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.6
+            MISMATCH: 0.03
+          confidence: 0.39
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.6
+            MISMATCH: 0.05
+          confidence: 0.39
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MATCH: 0.21
+            MISMATCH: 0.03
+          confidence: 0.64
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.11
+            MISMATCH: 0.12
+          confidence: 0.65
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MATCH: 0.24
+            MISMATCH: 0.05
+          confidence: 0.57
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.68
+            MISMATCH: 0.03
+          confidence: 0.52
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.54
+            MISMATCH: 0.05
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9260
+        output_tokens: 409
+      elapsed_seconds: 0.2605
+      request_sha256: 25fc46a737b468dede7fe6c619c367ea1841b6b21ede522c72c3a8b67d6b09c1
+      request_sha256s:
+      - 25fc46a737b468dede7fe6c619c367ea1841b6b21ede522c72c3a8b67d6b09c1
+  80bcfb4feb250c28f80dab76750deb50d66c22245ae7d371674f317296079a37:
+    input_sha256: b48e465140763471ffb5396561a11147c1a02fac6d96b31450a0e9d9286ed594
+    configuration_sha256: 6dc478b8e580f0f40ea2ffe59266a8674f24c695c4da323bcf7c37fb5a712885
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.619328+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.77
+            MISMATCH: 0.07
+          confidence: 0.66
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.62
+            MISMATCH: 0.18
+          confidence: 0.43
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.8
+            MISMATCH: 0.14
+          confidence: 0.69
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.32
+            MISMATCH: 0.06
+          confidence: 0.43
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.66
+            MISMATCH: 0.33
+          confidence: 0.49
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.64
+            MISMATCH: 0.04
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.54
+            MISMATCH: 0.05
+          confidence: 0.32
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.35
+            MISMATCH: 0.06
+          confidence: 0.39
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.39
+            MISMATCH: 0.06
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9253
+        output_tokens: 411
+      elapsed_seconds: 0.2607
+      request_sha256: c9fa8bd41c4aa35cfb86b558b1b644050e24914c3bf04e4d41b89732337046de
+      request_sha256s:
+      - c9fa8bd41c4aa35cfb86b558b1b644050e24914c3bf04e4d41b89732337046de
+  ece1405f4abc794aa021075eb90e0acaaa9a3f3023c4931a5564c87a60fc566c:
+    input_sha256: e9104e2878e220fab06bb7e0ee17404e34d143186b450e104b2a17a8034ed536
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.842931+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.04
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.03
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.24
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.86
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.01
+            PARTIAL: 0.11
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8223
+        output_tokens: 364
+      elapsed_seconds: 0.2532
+      request_sha256: 06ad97e0a9d31e7f7e1aa6f962b0179ebdac799ff0bea07603c1f1fecd2eedb9
+      request_sha256s:
+      - 06ad97e0a9d31e7f7e1aa6f962b0179ebdac799ff0bea07603c1f1fecd2eedb9
+  6b66906be89384c4d6b09d8b04f1870fdc3caaa24f97def255d998e32435963e:
+    input_sha256: 3297c9e471cbaea6d58827acb7e3236e323e191f03f3aed0c8f565d360a45bcd
+    configuration_sha256: 595557c1f409846170eca0ce4fafaa32779b09f71a727aaf9bf21c4bf3a14a34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.844171+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.8
+            MATCH: 0.06
+          confidence: 0.69
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.12
+            PARTIAL: 0.72
+          confidence: 0.57
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.75
+            MATCH: 0.06
+          confidence: 0.63
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+            MATCH: 0.75
+          confidence: 0.62
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.72
+            MATCH: 0.01
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.21
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.34
+            MATCH: 0.63
+          confidence: 0.44
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.31
+            MATCH: 0.65
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8232
+        output_tokens: 366
+      elapsed_seconds: 0.3034
+      request_sha256: e98f58b61963ed64a8f658aae464ffa4c4aa071ee86ce841e51316777924ce4a
+      request_sha256s:
+      - e98f58b61963ed64a8f658aae464ffa4c4aa071ee86ce841e51316777924ce4a
+  e6d5922f1beb97df93117a5f143d651e0e1e7310e1299b65cbb4974fec685932:
+    input_sha256: 27ba4ed4d904cabf9e0b20ec832736e57fec6a0a5bfcc9f4cce5efe58feaec98
+    configuration_sha256: fe748600bf56be10fba744429a5b1a38938506017a4ba1b042cef3b9a9efbf27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.046585+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.7
+            MISMATCH: 0.16
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.54
+            MISMATCH: 0.16
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+          confidence: 0.81
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.5
+            MISMATCH: 0.08
+          confidence: 0.25
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8099999999999999
+            PARTIAL: 0.16
+            MISMATCH: 0.03
+          confidence: 0.72
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.18
+            MISMATCH: 0.04
+          confidence: 0.68
+        /assertion/inheritance/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.35
+            MISMATCH: 0.64
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7251
+        output_tokens: 327
+      elapsed_seconds: 0.2502
+      request_sha256: 1d2a3b114ea8e9e561db2b4508d9384c0988b613fb73c59c15712887f10aacb4
+      request_sha256s:
+      - 1d2a3b114ea8e9e561db2b4508d9384c0988b613fb73c59c15712887f10aacb4
+  2eb1943fd8a1fbf0f81457666bf44a2dec72d69ae511cdaf8f24e12bc6eed476:
+    input_sha256: e5dc8f24bf6b14960d259b8fd717ed45b4a301d0de1a30b36cd115a333cac142
+    configuration_sha256: fe748600bf56be10fba744429a5b1a38938506017a4ba1b042cef3b9a9efbf27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:00.950211+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+          confidence: 0.94
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+          confidence: 0.96
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.01
+            MISMATCH: 0.01
+          confidence: 0.97
+        /assertion/inheritance/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7293
+        output_tokens: 321
+      elapsed_seconds: 0.4564
+      request_sha256: 94b3569ea2b35d18d6438fed7a1a52a4f045d12e99ed267b3899c2298d09288b
+      request_sha256s:
+      - 94b3569ea2b35d18d6438fed7a1a52a4f045d12e99ed267b3899c2298d09288b
+  6ac30eac37f19791c69fd17262b859e27eda572cd8193df11f3b68a497f3211b:
+    input_sha256: 6bd1115baa1452d987a12205f63bb3abbd2784a6ff7337bda09f20fee3975208
+    configuration_sha256: 6f369c59b0098365a67132fd57e7c81b32fd59d6096dc871c0b798ca2c5397aa
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.198363+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+          confidence: 0.82
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+          confidence: 0.93
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+          confidence: 0.94
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.42
+            MISMATCH: 0.22
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4342
+        output_tokens: 175
+      elapsed_seconds: 0.2929
+      request_sha256: a63ed14d9b5173fb00662748040f71adab593421f7b61b9e22cbbc167382229e
+      request_sha256s:
+      - a63ed14d9b5173fb00662748040f71adab593421f7b61b9e22cbbc167382229e
+  502bbe736b66eb09643f03879239a8295929c1f76f7f5411846a355d11c27ec8:
+    input_sha256: a4ad49a1e0b9a181ba4e9228989d645a1b72f42c28ecf456456e25a9e3a5e471
+    configuration_sha256: 977f7b4dd2e376df382e514dc1db6f2b2e7cd87f3170fd62b6f626144aeb7705
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.303150+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.96
+            PARTIAL: 0.04
+          confidence: 0.93
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.91
+            PARTIAL: 0.06
+          confidence: 0.87
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.9400000000000001
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.8
+            PARTIAL: 0.14
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6266
+        output_tokens: 272
+      elapsed_seconds: 0.2567
+      request_sha256: f8ac8006f6807fa297035225e7d662a193291a1a04d3363517ff0a63762705e7
+      request_sha256s:
+      - f8ac8006f6807fa297035225e7d662a193291a1a04d3363517ff0a63762705e7
+  b65f4454058813f835b20832806819328a2faa434678437f2f8e271949e42ce8:
+    input_sha256: 27f4d2d8aa699829c47bfa241644a9c37cb4142bb91db86e275f84d44cd96bef
+    configuration_sha256: 977f7b4dd2e376df382e514dc1db6f2b2e7cd87f3170fd62b6f626144aeb7705
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.409605+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+            MATCH: 0.96
+          confidence: 0.93
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.0
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+            MATCH: 0.94
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6273
+        output_tokens: 272
+      elapsed_seconds: 0.3117
+      request_sha256: fdabd460c8855906a3199e3e539d65c6231f9f77da77ed1c25120c4b1fa22114
+      request_sha256s:
+      - fdabd460c8855906a3199e3e539d65c6231f9f77da77ed1c25120c4b1fa22114
+  1fea9a678b941111fc8f77efcba052ab547a6e7623337044faf32ea693c36b89:
+    input_sha256: da9b098eaa676bfa4d62eb3e8d66da82dd1b397e1bbeb5468720d4197dd09aa6
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.519446+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.06
+            PARTIAL: 0.9
+          confidence: 0.85
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.84
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.06
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.08
+            PARTIAL: 0.9
+          confidence: 0.84
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4363
+        output_tokens: 178
+      elapsed_seconds: 0.2381
+      request_sha256: e2bdb025d3403590992de17f87755c0fa4573b66d1eee0622cee64fc30c29969
+      request_sha256s:
+      - e2bdb025d3403590992de17f87755c0fa4573b66d1eee0622cee64fc30c29969
+  c92e686524058dab73a4b9126062546c3c6298e9afe7e572ff104becb72f843f:
+    input_sha256: 6e02aeb22ecbf996bb95b0e5e3aca980ab6d0c3317a4119545d7110d1e5075cb
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.760560+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.53
+            MISMATCH: 0.45
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.08
+            MISMATCH: 0.02
+          confidence: 0.86
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.23
+            MISMATCH: 0.74
+          confidence: 0.62
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.44
+            MISMATCH: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4281
+        output_tokens: 182
+      elapsed_seconds: 0.2431
+      request_sha256: 4901ad24bd9dbb7e94dc364bf0d4996253b8f56e4d688501da65273561013c92
+      request_sha256s:
+      - 4901ad24bd9dbb7e94dc364bf0d4996253b8f56e4d688501da65273561013c92
+  6bb11247fafab2ee1f5bfa9d1040277e216443cb78f6eafe74355eca6227f83e:
+    input_sha256: 5dccf3278a97bf6f3fb5525ff75437a921e4d76790c75764cc484154b00905d9
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:01.639120+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.89
+            MISMATCH: 0.09
+          confidence: 0.84
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.09
+            MISMATCH: 0.0
+          confidence: 0.86
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.53
+            MISMATCH: 0.42
+          confidence: 0.29
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.76
+            MISMATCH: 0.22
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4378
+        output_tokens: 178
+      elapsed_seconds: 0.3175
+      request_sha256: 50a36c86a2bb509bc4b4b5c9b9fa277b39732a57e48aa83887b841de59221683
+      request_sha256s:
+      - 50a36c86a2bb509bc4b4b5c9b9fa277b39732a57e48aa83887b841de59221683
+  2aa4eed182cf99956077897dddd3de0808d5b46503f967a5512a7f353f9d2228:
+    input_sha256: db41248999d89dcdafb1741f2275c47ef9ab237150502b8635e7b0ef41c89d57
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.008253+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.05
+            PARTIAL: 0.36
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.13
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.08
+            PARTIAL: 0.24
+          confidence: 0.52
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+          confidence: 0.66
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.74
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6274
+        output_tokens: 276
+      elapsed_seconds: 0.2593
+      request_sha256: 9454556ada47097216f3b7589e3cdee07d6f151350b515767cae1c2194827f62
+      request_sha256s:
+      - 9454556ada47097216f3b7589e3cdee07d6f151350b515767cae1c2194827f62
+  11d3c4e5aac05476bd222169c70ba89fd470a166d4a5a39a9e8949e7a562e3e1:
+    input_sha256: c9cb748d5fc5d51af723d0ab3a7b6e7aa9f3069f98db1a54adc84b2b19e0fb0b
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.007313+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.64
+            MISMATCH: 0.02
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.85
+            MISMATCH: 0.01
+          confidence: 0.78
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.81
+            MISMATCH: 0.01
+          confidence: 0.72
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.43
+            MISMATCH: 0.03
+          confidence: 0.3
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.79
+            MISMATCH: 0.03
+          confidence: 0.68
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.84
+            MISMATCH: 0.03
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6258
+        output_tokens: 276
+      elapsed_seconds: 0.2706
+      request_sha256: e36541cac1dfc3711994c59daf371baa3898edd1186fc023c87cce492a1b0913
+      request_sha256s:
+      - e36541cac1dfc3711994c59daf371baa3898edd1186fc023c87cce492a1b0913
+  6170fe8e48d90204af71ff3e9ec7e9e14ab3a9931988f6b571dcd74b43397039:
+    input_sha256: 029609e29fa1539d6cead18b0ccfcb2cc427f0ce1072f8d81ed6041ce553bb28
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.280387+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.02
+            MATCH: 0.51
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.9
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MISMATCH: 0.19
+            MATCH: 0.11
+          confidence: 0.56
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.05
+            MATCH: 0.77
+          confidence: 0.65
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.29
+            MATCH: 0.36
+          confidence: 0.05
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+            MATCH: 0.96
+          confidence: 0.93
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+            MATCH: 0.92
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8328
+        output_tokens: 388
+      elapsed_seconds: 0.3089
+      request_sha256: 5b782a1b902b82813552db03c5a65c075910e1b9dcd1d59db1b249fa9b613399
+      request_sha256s:
+      - 5b782a1b902b82813552db03c5a65c075910e1b9dcd1d59db1b249fa9b613399
+  783f124ee9f228dc397bd0f3472bd0ff4ed366758e7e568c8041e2b057df3b3b:
+    input_sha256: 65c537844d0773ba67acba897efca4309d5bf110d87e8e2ef35aa952194275fb
+    configuration_sha256: da37de9e1ea82c1571c4d8463dc2f098cc014c6041a36d2d879e0a172b65881c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.281335+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.4
+            MISMATCH: 0.02
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.23
+            MISMATCH: 0.15
+          confidence: 0.43
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.02
+            MISMATCH: 0.86
+          confidence: 0.79
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5295
+        output_tokens: 224
+      elapsed_seconds: 0.3133
+      request_sha256: a0e7ceafaaad2f63d646fb32193e53a3dc14dec60ca0f9b54e4e1b5bc6b34c42
+      request_sha256s:
+      - a0e7ceafaaad2f63d646fb32193e53a3dc14dec60ca0f9b54e4e1b5bc6b34c42
+  1a30260444be50d137cbba859a9febfb4173ccb49cf5bda4af375d94c067af4f:
+    input_sha256: 6bc8b8b1d237cc44dc147c833443b41ac4f74815e856d81e453401ec350677cc
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.610364+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.02
+            MATCH: 0.41
+          confidence: 0.36
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.93
+            MISMATCH: 0.01
+          confidence: 0.9
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6799999999999999
+            MISMATCH: 0.15
+            MATCH: 0.17
+          confidence: 0.53
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.21
+            MATCH: 0.6
+          confidence: 0.4
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.35
+            MATCH: 0.41
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.97
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.91
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8313
+        output_tokens: 389
+      elapsed_seconds: 0.2951
+      request_sha256: 3b033c51aba0af8280267243a3f01fede8423525eeebeb45236ae1796f9d1512
+      request_sha256s:
+      - 3b033c51aba0af8280267243a3f01fede8423525eeebeb45236ae1796f9d1512
+  3b0e3f806f63c6f76d7a3716217e8a97a39dae9225f407abfc72fda9a8a9a36b:
+    input_sha256: 0f54e6d5da8c41a9c5fac9bc2634c5a21f3755843801a95846362fa787dae987
+    configuration_sha256: da37de9e1ea82c1571c4d8463dc2f098cc014c6041a36d2d879e0a172b65881c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.609327+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.47
+            PARTIAL: 0.29
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.22
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.62
+            PARTIAL: 0.26
+          confidence: 0.44
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.21
+            PARTIAL: 0.27
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5244
+        output_tokens: 229
+      elapsed_seconds: 0.2543
+      request_sha256: 0f6a4cc40d8f16c9276703f47b96e7e3806deaf942b780532570cbbf7bf0ac78
+      request_sha256s:
+      - 0f6a4cc40d8f16c9276703f47b96e7e3806deaf942b780532570cbbf7bf0ac78
+  82976897f46e25612d8b2cc8ddee04ba1b51d6930b28dd3b84d95d637048caa5:
+    input_sha256: 4e8197ddf5d20d8062175f65d789282e9bb13d975f85036dcf61936c4a493750
+    configuration_sha256: eacddbb7a3c889e5650a0f72df9790b82080714126a0f0ce01e7e0d3812fdae8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.910096+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.27
+            MISMATCH: 0.05
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.03
+            MISMATCH: 0.78
+          confidence: 0.66
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.01
+            MISMATCH: 0.58
+          confidence: 0.37
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.0
+            MISMATCH: 0.78
+          confidence: 0.66
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.88
+            MISMATCH: 0.01
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6180
+        output_tokens: 272
+      elapsed_seconds: 0.2516
+      request_sha256: a7beaafea81db8edd48c16ae0883985894b201ba2239d6c9a381f84fd1d2952f
+      request_sha256s:
+      - a7beaafea81db8edd48c16ae0883985894b201ba2239d6c9a381f84fd1d2952f
+  d47ddc21ca0e4c9f92f65cb4cba0342a7f5e5694fe3271ec169b0e5b4278f75e:
+    input_sha256: d0264697a93c90e9d68a9a1d2cb6f0eb1f65cda8b78c7f20cd995fb4edbb310d
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:02.908931+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.87
+            MATCH: 0.09
+          confidence: 0.8
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.59
+            MATCH: 0.39
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.64
+            MATCH: 0.03
+          confidence: 0.46
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.67
+            MATCH: 0.31
+          confidence: 0.51
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.65
+            MATCH: 0.33
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6279
+        output_tokens: 278
+      elapsed_seconds: 0.2795
+      request_sha256: 707405506fb89ab2253c8d26502805091ba7af8ace1bd6fd2a3111ed5de8cb9b
+      request_sha256s:
+      - 707405506fb89ab2253c8d26502805091ba7af8ace1bd6fd2a3111ed5de8cb9b
+  e1d1f45cd370e9a6c9d127503d63e06f830aee0a630dbfff0590d63b6e9cdccc:
+    input_sha256: 7484e44f1564fbf398ac9c8750cd9f2107a56d51b03233b254fc1ab9750978c8
+    configuration_sha256: eacddbb7a3c889e5650a0f72df9790b82080714126a0f0ce01e7e0d3812fdae8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.219717+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.56
+            MISMATCH: 0.05
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.25
+            MISMATCH: 0.69
+          confidence: 0.53
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.48
+            MISMATCH: 0.51
+          confidence: 0.26
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            PARTIAL: 0.3
+            MISMATCH: 0.7
+          confidence: 0.54
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.23
+            MISMATCH: 0.05
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6206
+        output_tokens: 272
+      elapsed_seconds: 0.3317
+      request_sha256: b28095adb2a95cb1c2012d573f8fc8968777fb4e6977f9e09690215edfb222b7
+      request_sha256s:
+      - b28095adb2a95cb1c2012d573f8fc8968777fb4e6977f9e09690215edfb222b7
+  1b461ab5294e16b18b66ec130f49bbd2335b64bc7919b1379e14a1a892a7f99e:
+    input_sha256: 3bc94336fdb82ef41dcd121318007012b8af9634d37b4c5f97ca26e9c9c1cc34
+    configuration_sha256: 4a917ada8285fe71ca5bf06ffdf42ecad15f338879a44d9ffaf27826dce636bf
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.220813+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.02
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/measure_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.16
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/rate_low:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.11
+            PARTIAL: 0.17
+          confidence: 0.59
+        /assertion/rate_high:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.15
+            PARTIAL: 0.33
+          confidence: 0.29
+        /assertion/percentage:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.96
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9043
+        output_tokens: 362
+      elapsed_seconds: 0.32
+      request_sha256: ef39e1cc12c1dd4501b05e31b6ab708d6f5bb9df12e9ce460f693b4fba17e7eb
+      request_sha256s:
+      - ef39e1cc12c1dd4501b05e31b6ab708d6f5bb9df12e9ce460f693b4fba17e7eb
+  ead2eb6cd97b026c920777a157dbfb3a4af28fcc512470d7e4af2ce536171c22:
+    input_sha256: 39224a9ceace530fb30bfffefe93fdce2c1cd85d4f7bbc2e005919f82717c019
+    configuration_sha256: d9492f6d1b5d0beb36601a31f5823c9a779118001acb5c1cb17b19053cd99bcd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.553876+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.03
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.06
+            PARTIAL: 0.76
+          confidence: 0.65
+        /assertion/measure_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.16
+            PARTIAL: 0.72
+          confidence: 0.57
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.08
+            PARTIAL: 0.25
+          confidence: 0.51
+        /assertion/percentage:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.0
+            PARTIAL: 0.12
+          confidence: 0.81
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8167
+        output_tokens: 326
+      elapsed_seconds: 0.3228
+      request_sha256: f7a441885d49a3e3848936619afc480847ad7bbd479b8113a154ac2480e55ceb
+      request_sha256s:
+      - f7a441885d49a3e3848936619afc480847ad7bbd479b8113a154ac2480e55ceb
+  f015faa625210d132cde481d4fba9c1bad63d1cc25fdb2d38dd5f4d83e399eeb:
+    input_sha256: c6a16342a051cc863edebdb599e8bccd6eb895f8a6ea10ce10dc36ae91f29465
+    configuration_sha256: b70939e6e69ca18b8c82acb91fc678edbcfdcb5377f52220e61d1ae8980c1ae9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.554906+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.02
+            PARTIAL: 0.45
+          confidence: 0.29
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.03
+            PARTIAL: 0.48
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 3316
+        output_tokens: 130
+      elapsed_seconds: 0.3426
+      request_sha256: d27b2e26e063c89d606f1c5d22593569d438df2e95b5ab4492dacde83c8f830d
+      request_sha256s:
+      - d27b2e26e063c89d606f1c5d22593569d438df2e95b5ab4492dacde83c8f830d
+  b97a0bdacfe0f896b29ad76accc513e53c39d44e3ab9020c93eb243ac5f1139b:
+    input_sha256: 3543151359af1c3fda0940975bd4e71ec44f1be26ecd47115e0e903b257ffdba
+    configuration_sha256: 48d3dedba739a104812910d60f7155bad4e512b0c4499626ca9df986a5068b46
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.958910+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            PARTIAL: 0.27
+            MATCH: 0.18
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/classification_value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            PARTIAL: 0.26
+            MATCH: 0.06
+          confidence: 0.52
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.39
+            MATCH: 0.28
+          confidence: 0.08
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4291
+        output_tokens: 185
+      elapsed_seconds: 0.2619
+      request_sha256: 04af60579c3c6073c95448bb937f0238def920a9ad5d0936e3904927fc01a8fd
+      request_sha256s:
+      - 04af60579c3c6073c95448bb937f0238def920a9ad5d0936e3904927fc01a8fd
+  cafda04923c7bb762a7ae8c16d9330549823576564ce7afd1da25904563e6d62:
+    input_sha256: 61f0c8f7141b5f5a6ca7a899c77c2225b326d9d7fb8cc1f96cc40bcb5cfe82dc
+    configuration_sha256: b70939e6e69ca18b8c82acb91fc678edbcfdcb5377f52220e61d1ae8980c1ae9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:37:03.957722+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.16
+            MATCH: 0.05
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.0
+            MATCH: 0.9400000000000001
+          confidence: 0.9
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.22
+            MATCH: 0.12
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 3301
+        output_tokens: 132
+      elapsed_seconds: 0.2363
+      request_sha256: aedbb059caa2dbd8d572c3faee406dfbeeabd3b5e68070a3366a5e43a59962ca
+      request_sha256s:
+      - aedbb059caa2dbd8d572c3faee406dfbeeabd3b5e68070a3366a5e43a59962ca

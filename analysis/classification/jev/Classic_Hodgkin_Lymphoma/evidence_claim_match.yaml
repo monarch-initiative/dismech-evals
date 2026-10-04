@@ -3010,6 +3010,60 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT00265889
+  b0a2b507633cb6d9f6dafd5c0331b363b193a3a21fef526d7494ac2ab124db6d:
+    claim:
+      about:
+        disease:
+          name: Classic Hodgkin Lymphoma
+          disease_term:
+            preferred_term: classic Hodgkin lymphoma
+            term:
+              id: MONDO:0009348
+              label: classic Hodgkin lymphoma
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: JAK2
+        gene_term:
+          preferred_term: JAK2
+          term:
+            id: hgnc:6192
+            label: JAK2
+        association: Somatic alteration activating JAK/STAT signaling
+        relationship_type: SOMATIC_DRIVER
+        variant_origin: SOMATIC
+        notes: JAK2 lies within the same 9p24.1 amplicon as CD274 and PDCD1LG2, and JAK2-STAT signalling
+          further induces the PD-1 ligands encoded beside it, so one copy-number event both raises ligand
+          dosage and amplifies the pathway that drives ligand transcription. This gene was already bound
+          on the Mutation-Driven JAK/STAT Activation pathophysiology node but had no `genetic:` record,
+          and only `genetic:` records reach the gene-to-disease export.
+      selected_evidence:
+        snippet: In cHL, chromosome 9p24.1/PD-L1/PD-L2 alterations increase the abundance of the PD-1
+          ligands, PD-L1 and PD-L2, and their further induction through Janus kinase 2-signal transducers
+          and activators of transcription signaling.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/6
+      evidence_path: /genetic/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27069084
+      reference_title: PD-L1 and PD-L2 Genetic Alterations Define Classical Hodgkin Lymphoma and Predict
+        Outcome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Places JAK2-STAT signalling as an amplifier of PD-1 ligand abundance in cHL alongside
+        the copy-number gain.
+    first_seen_at: '2026-10-03T21:19:53.866467+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:53.866467+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:53.866467+00:00'
+    occurrences:
+    - assertion_path: /genetic/6
+      evidence_path: /genetic/6/evidence/0
+      reference: PMID:27069084
 assessments:
   99a1506f071b131c75c28a82bbbedb6310a78271f1924167a2c08741a906abf4:
     input_sha256: 827b784718936cda83568faed19002efe29b314d59614a1be66a2d4a0dc3c9aa
@@ -7247,3 +7301,83 @@ assessments:
       request_sha256: a2a4d748b534c17a81b7ba8141394850c70088620775a58a311c4f8f31b3b4ff
       request_sha256s:
       - a2a4d748b534c17a81b7ba8141394850c70088620775a58a311c4f8f31b3b4ff
+  33bc8f55cb3c4a30969204094612951b5bc542a4dffb57eb1e6c1fd99d3d6dd7:
+    input_sha256: b0a2b507633cb6d9f6dafd5c0331b363b193a3a21fef526d7494ac2ab124db6d
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:53.866467+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.05
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.05
+            PARTIAL: 0.18
+          confidence: 0.65
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.08
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+          confidence: 0.3
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.06
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.08
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.09
+            PARTIAL: 0.51
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9685
+        output_tokens: 412
+      elapsed_seconds: 0.3212
+      request_sha256: 852cd7ba503838f352964598a1b08e0d385e4be36e2de5db76276dbca452d6bc
+      request_sha256s:
+      - 852cd7ba503838f352964598a1b08e0d385e4be36e2de5db76276dbca452d6bc

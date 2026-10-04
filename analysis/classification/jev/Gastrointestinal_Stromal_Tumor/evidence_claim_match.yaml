@@ -356,6 +356,73 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:32615108
+  db61e4dbc41ab4bfc96fdffc489a6e513e09f2fe693e8fc1eaf5e459cd77dd41:
+    claim:
+      about:
+        disease:
+          name: Gastrointestinal Stromal Tumor
+          disease_term:
+            preferred_term: gastrointestinal stromal tumor
+            term:
+              id: MONDO:0011719
+              label: gastrointestinal stromal tumor
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: KIT Receptor Tyrosine Kinase Activation
+        description: Gain-of-function mutations in KIT result in constitutive receptor dimerization and
+          kinase activation without ligand (stem cell factor) binding. This drives downstream signaling
+          through RAS-MAPK and PI3K-AKT pathways, promoting cell proliferation and survival.
+        cell_types:
+        - preferred_term: interstitial cell of Cajal
+          term:
+            id: CL:0002088
+            label: interstitial cell of Cajal
+        biological_processes:
+        - preferred_term: receptor signaling protein tyrosine kinase activity
+          modifier: INCREASED
+          term:
+            id: GO:0006468
+            label: protein phosphorylation
+        - preferred_term: signal transduction
+          modifier: INCREASED
+          term:
+            id: GO:0007165
+            label: signal transduction
+        gene_products:
+        - preferred_term: KIT receptor
+          term:
+            id: NCIT:C17328
+            label: Mast/Stem Cell Growth Factor Receptor Kit
+        locations:
+        - preferred_term: gastrointestinal tract
+          term:
+            id: UBERON:0005409
+            label: alimentary part of gastrointestinal system
+      selected_evidence:
+        snippet: Constitutive activation of KIT receptor tyrosine kinase is critical in the pathogenesis
+          of gastrointestinal stromal tumors.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12181401
+      reference_title: Efficacy and safety of imatinib mesylate in advanced gastrointestinal stromal tumors.
+      explanation: This landmark NEJM study established that constitutive KIT activation is the critical
+        driver of GIST pathogenesis.
+    first_seen_at: '2026-10-03T21:20:27.764358+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:27.764358+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:27.764358+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:12181401
 assessments:
   6da3b40b630508796faa244bda3a154aa7bd0cd568fa0687c6ea053ba8c721ec:
     input_sha256: 06ea143e295a5f92e7b284f5c4bb91a291d33a9e5a72be29b36df481ff539cbd
@@ -840,3 +907,132 @@ assessments:
       request_sha256: 6900db107219bad2f8f612a7c0c13b3798b53dbf79025ebb35ea376d0cb7260d
       request_sha256s:
       - 6900db107219bad2f8f612a7c0c13b3798b53dbf79025ebb35ea376d0cb7260d
+  fc1ee4f24e92d6892313adde13478ce3148c5eec5da671c58558476ae9b12452:
+    input_sha256: db61e4dbc41ab4bfc96fdffc489a6e513e09f2fe693e8fc1eaf5e459cd77dd41
+    configuration_sha256: 6e9f8378b879ae2730f1865bb8434d62288603ad99ca27c6d21f9e702a001320
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:27.764358+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.32
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.95
+            PARTIAL: 0.05
+          confidence: 0.93
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.29
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.05
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.03
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.39
+            PARTIAL: 0.35
+          confidence: 0.09
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.55
+            PARTIAL: 0.36
+          confidence: 0.32
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.69
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.47
+            PARTIAL: 0.45
+          confidence: 0.2
+        /assertion/gene_products/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/gene_products/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.88
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.69
+            PARTIAL: 0.26
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16747
+        output_tokens: 803
+      elapsed_seconds: 0.2894
+      request_sha256: e8e61b33ba9bc45c0cb202d028f49a608137540a3b221eb10460209cc1a432c7
+      request_sha256s:
+      - e8e61b33ba9bc45c0cb202d028f49a608137540a3b221eb10460209cc1a432c7

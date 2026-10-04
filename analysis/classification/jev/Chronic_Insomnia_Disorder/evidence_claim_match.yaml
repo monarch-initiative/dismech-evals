@@ -1581,6 +1581,65 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: PMID:32790576
+  9a077d0bcb63b583c387bf68cb511ad9b9f191f2fa391954bd7d347074b60483:
+    claim:
+      about:
+        disease:
+          name: Chronic Insomnia Disorder
+          disease_term:
+            preferred_term: insomnia
+            term:
+              id: MONDO:0013600
+              label: insomnia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Persistent 24-Hour Physiological Hyperarousal
+        description: 'The central effector and the disorder''s best-established abnormality. Elevated
+          arousal is demonstrable across independent measurement domains - autonomic, neuroendocrine,
+          neuroimmunological, electrophysiological, and neuroimaging - and the convergence across modalities
+          is what makes it robust rather than any single finding. Its critical property is temporal: arousal
+          is elevated during the day as well as at night. That distinguishes insomnia sharply from sleep
+          deprivation, which produces daytime sleepiness, and explains the characteristic complaint of
+          exhaustion without the ability to nap. A specific circuit-level account has been proposed -
+          a locus coeruleus that is abnormally sensitive to, or abnormally driven by, salience-network
+          input, remaining responsive even during REM sleep when it should be silent, so that the overnight
+          adaptation to emotional distress that REM sleep normally provides fails and distress accumulates.'
+        role: central_effector
+        biological_scale: ORGANISM
+        biological_processes:
+        - preferred_term: regulation of the sleep/wake cycle
+          term:
+            id: GO:0042749
+            label: regulation of circadian sleep/wake cycle
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: The model proposes that in people with a vulnerability to develop insomnia, the locus
+          coeruleus is more sensitive to-or receives more input from-the salience network and related
+          circuits, even during rapid eye movement sleep, when it should normally be sound asleep.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32790576
+      reference_title: 'Brain mechanisms of insomnia: new perspectives on causes and consequences.'
+      evidence_source: OTHER
+      explanation: Cited as PARTIAL because the source explicitly presents this as a testable proposed
+        model rather than an established finding; it is the most specific circuit-level account available
+        and is curated as a proposal.
+    first_seen_at: '2026-10-03T22:32:32.786057+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:32.786057+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:32.786057+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      reference: PMID:32790576
 assessments:
   3ca89fe6f7a9f5a7795cbe983e65694dd1256cdd9ff3071fc091c4fc82f30f33:
     input_sha256: 1567592b9daf421b14d18bdd2b80b8a13c1deab5f8f48a1349392cd3d95a40af
@@ -3572,3 +3631,83 @@ assessments:
       request_sha256: 8959fb11fa25640098461dfc1a32c4c4a11815628453a814f9ed0d708446402d
       request_sha256s:
       - 8959fb11fa25640098461dfc1a32c4c4a11815628453a814f9ed0d708446402d
+  8f020efd37b7e3f1cd5f9cfe98dcc58235cb9b9a248d2329ad5a435a571f4d0b:
+    input_sha256: 9a077d0bcb63b583c387bf68cb511ad9b9f191f2fa391954bd7d347074b60483
+    configuration_sha256: 11ec1c641ba2ec9d65f31c8f37030a4eaa297a64e7d9d7f1d7fc5e306e88e454
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:32.786057+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.2
+            MISMATCH: 0.03
+          confidence: 0.65
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.95
+            MISMATCH: 0.0
+          confidence: 0.91
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.28
+            MISMATCH: 0.12
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.2
+            MISMATCH: 0.07
+          confidence: 0.6
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.4
+            MISMATCH: 0.09
+          confidence: 0.27
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.44
+            MISMATCH: 0.24
+          confidence: 0.17
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.34
+            MISMATCH: 0.09
+          confidence: 0.36
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.33
+            MISMATCH: 0.09
+          confidence: 0.37
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.5
+            MISMATCH: 0.05
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10049
+        output_tokens: 434
+      elapsed_seconds: 0.2868
+      request_sha256: ec28814dd40789ddaddc78494b232160144b3c0d6874c193caa4e4220b0cc205
+      request_sha256s:
+      - ec28814dd40789ddaddc78494b232160144b3c0d6874c193caa4e4220b0cc205

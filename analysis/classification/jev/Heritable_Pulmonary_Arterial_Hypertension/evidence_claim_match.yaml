@@ -5466,6 +5466,92 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:29032562
+  d905414232506712c301a06c0adf69064aa92f66ae2fef037e03555a200579d1:
+    claim:
+      about:
+        disease:
+          name: Heritable Pulmonary Arterial Hypertension
+          disease_term:
+            preferred_term: heritable pulmonary arterial hypertension
+            term:
+              id: MONDO:0017148
+              label: heritable pulmonary arterial hypertension
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Pulmonary arterial endothelial dysfunction and apoptotic selection
+        description: Pulmonary arterial endothelial cells show early dysfunction, impaired vasodilator
+          production, and an apoptosis-to-apoptosis-resistant transition that seeds maladaptive vascular
+          remodeling. CAV1 (caveolar signaling scaffold), KDR (VEGFR2) and SOX17 (endothelial-restricted
+          transcription factor) are the HPAH genes whose products act within this endothelial compartment,
+          together with ATP13A3, a polyamine transporter whose loss in endothelial cells reduces proliferation
+          and increases apoptosis.
+        genes:
+        - preferred_term: CAV1
+          term:
+            id: hgnc:1527
+            label: CAV1
+        - preferred_term: KDR
+          term:
+            id: hgnc:6307
+            label: KDR
+        - preferred_term: SOX17
+          term:
+            id: hgnc:18122
+            label: SOX17
+        - preferred_term: ATP13A3
+          term:
+            id: hgnc:24113
+            label: ATP13A3
+        cell_types:
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        locations:
+        - preferred_term: pulmonary artery
+          term:
+            id: UBERON:0002012
+            label: pulmonary artery
+        biological_processes:
+        - preferred_term: apoptotic process
+          term:
+            id: GO:0006915
+            label: apoptotic process
+          modifier: ABNORMAL
+        - preferred_term: endothelial to mesenchymal transition
+          term:
+            id: GO:0001837
+            label: epithelial to mesenchymal transition
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The Bayesian inference approach allowed us to independently validate KDR, which encodes
+          for the Vascular Endothelial Growth Factor Receptor 2 (VEGFR2), as a novel PAH candidate gene.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33320693
+      reference_title: Bayesian Inference Associates Rare KDR Variants with Specific Phenotypes in Pulmonary
+        Arterial Hypertension.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Identifies the KDR product as VEGFR2 and validates the gene in PAH. Note the limit
+        of this quote: it establishes gene and product identity, not that VEGFR2 acts in the pulmonary
+        arterial endothelium, which is why the KDR binding on this node is weaker than the SOX17 and ATP13A3
+        ones beside it.'
+    first_seen_at: '2026-10-03T21:20:52.074862+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:52.074862+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:52.074862+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      reference: PMID:33320693
 assessments:
   fcceb415ea8c22c5b3403c009b8af1933fb98556427ee5706598eb0adfa7f8a2:
     input_sha256: 937e319030059fbd01d4e67f0caa66ed95b7e3ca93049dc550043c4f6ac751e0
@@ -14010,3 +14096,174 @@ assessments:
       request_sha256: 9590db4dad819870e5b851a13993d4e79a23aa748e11748ffd37ba4114590848
       request_sha256s:
       - 9590db4dad819870e5b851a13993d4e79a23aa748e11748ffd37ba4114590848
+  187cd93ebc39b4f7049e7af42d5337f7fe20694f4b50bd0c3ba6769b0f3cbd66:
+    input_sha256: d905414232506712c301a06c0adf69064aa92f66ae2fef037e03555a200579d1
+    configuration_sha256: 1d38251fd6100d847a78108f832b42c440a5b88b57355284928bb2bbbc5e3109
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:52.074862+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MATCH: 0.02
+            MISMATCH: 0.19
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.51
+            MISMATCH: 0.05
+          confidence: 0.28
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.05
+            MISMATCH: 0.49
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.01
+            MISMATCH: 0.32
+          confidence: 0.49
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.03
+            MISMATCH: 0.87
+          confidence: 0.8
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.01
+            MISMATCH: 0.9
+          confidence: 0.85
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.3
+            MISMATCH: 0.49
+          confidence: 0.24
+        /assertion/genes/1/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.43
+            MISMATCH: 0.36
+          confidence: 0.15
+        /assertion/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.26
+            MISMATCH: 0.53
+          confidence: 0.29
+        /assertion/genes/2/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.08
+            MISMATCH: 0.75
+          confidence: 0.62
+        /assertion/genes/3/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.02
+            MISMATCH: 0.91
+          confidence: 0.86
+        /assertion/genes/3/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.0
+            MISMATCH: 0.96
+          confidence: 0.93
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.16
+            MISMATCH: 0.31
+          confidence: 0.29
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5599999999999999
+            MATCH: 0.28
+            MISMATCH: 0.16
+          confidence: 0.35
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MATCH: 0.19
+            MISMATCH: 0.28
+          confidence: 0.31
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.16
+            MISMATCH: 0.27
+          confidence: 0.36
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.01
+            MISMATCH: 0.8
+          confidence: 0.71
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.01
+            MISMATCH: 0.78
+          confidence: 0.67
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.01
+            MISMATCH: 0.8
+          confidence: 0.7
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.0
+            MISMATCH: 0.91
+          confidence: 0.86
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.01
+            MISMATCH: 0.88
+          confidence: 0.82
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.01
+            MISMATCH: 0.86
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 22755
+        output_tokens: 1139
+      elapsed_seconds: 0.3472
+      request_sha256: c7548014c9fe91bbc8282e74e8e44c76e6242987bc1b420d4054d284355d764b
+      request_sha256s:
+      - c7548014c9fe91bbc8282e74e8e44c76e6242987bc1b420d4054d284355d764b

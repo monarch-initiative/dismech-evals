@@ -6216,6 +6216,64 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/1
       reference: PMID:33099630
+  1c8baaa40591f2f0e36f99c2464c6fdb219b22b9ee6ffeeea3ead5b5a4b6fab1:
+    claim:
+      about:
+        disease:
+          name: Infantile Hypercalcemia
+          disease_term:
+            preferred_term: hypercalcemia, infantile
+            term:
+              id: MONDO:0000212
+              label: hypercalcemia, infantile
+        context:
+        - path: /biochemical/4
+          value:
+            name: Increased active vitamin D exposure
+            presence: INCREASED
+            context: 'CYP24A1 variants disturb active vitamin D catabolism, while SLC34A1 variants increase
+              1,25-dihydroxyvitamin D3 generation downstream of phosphate wasting.
+
+              '
+            biomarker_term:
+              preferred_term: calcitriol
+              term:
+                id: CHEBI:17823
+                label: calcitriol
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Active vitamin D excess and PTH-independent hypercalcemia
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: Elevated or inappropriately high active vitamin D metabolites read out the convergent
+          biochemical mechanism.
+      selected_evidence:
+        snippet: hypercalcaemia with elevated 1,25(OH)2D3 levels
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/4/readouts/0
+      evidence_path: /biochemical/4/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/4
+    evidence_metadata:
+      reference: PMID:33099630
+      reference_title: Long-term outcome of the survivors of infantile hypercalcaemia with CYP24A1 and
+        SLC34A1 mutations.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort background links high vitamin D metabolite exposure to symptomatic hypercalcemia.
+    first_seen_at: '2026-10-03T21:19:17.180209+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:17.180209+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:17.180209+00:00'
+    occurrences:
+    - assertion_path: /biochemical/4/readouts/0
+      evidence_path: /biochemical/4/readouts/0/evidence/0
+      reference: PMID:33099630
 assessments:
   da42f0fe6c6da2da3f90d352af439f5d77a902bfef30c0bf45a1b0c4355fa359:
     input_sha256: c014490b37fcfd8d4e1259344b814c85ec69c9745ce8f87740c3c4c6f822f667
@@ -14435,3 +14493,76 @@ assessments:
       request_sha256: aed82df065d46977ed8fd639a96b90dd94bf7161d712cc1aced6318f145a1eb2
       request_sha256s:
       - aed82df065d46977ed8fd639a96b90dd94bf7161d712cc1aced6318f145a1eb2
+  c42e491cc90a5962fed6dc5ba9c3a1c994a30977cbc8b2f1f481edded166b4e9:
+    input_sha256: 1c8baaa40591f2f0e36f99c2464c6fdb219b22b9ee6ffeeea3ead5b5a4b6fab1
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:17.180209+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.54
+            MISMATCH: 0.04
+          confidence: 0.31
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.54
+            MISMATCH: 0.04
+          confidence: 0.31
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.47
+            MISMATCH: 0.04
+          confidence: 0.23
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            PARTIAL: 0.25
+            MISMATCH: 0.02
+          confidence: 0.59
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.44
+            MISMATCH: 0.04
+          confidence: 0.28
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.45
+            MISMATCH: 0.05
+          confidence: 0.25
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.31
+            MISMATCH: 0.07
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8550
+        output_tokens: 362
+      elapsed_seconds: 0.4103
+      request_sha256: f72cafdc3659adde1cf6de42125a72c0e4bd5f0976ad16c41947f69965e8b268
+      request_sha256s:
+      - f72cafdc3659adde1cf6de42125a72c0e4bd5f0976ad16c41947f69965e8b268

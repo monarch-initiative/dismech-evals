@@ -5352,6 +5352,59 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/0
       reference: clinicaltrials:NCT06205550
+  a7b301d8c69319fd634753cb9eb79cfa5b3e2c2255a7fc3020309d73fd2c2c88:
+    claim:
+      about:
+        disease:
+          name: Andersen-Tawil Syndrome
+          disease_term:
+            preferred_term: Andersen-Tawil syndrome
+            term:
+              id: MONDO:0008222
+              label: Andersen-Tawil syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Resting and ambulatory electrocardiography
+        description: Twelve-lead electrocardiography is the core cardiac diagnostic test in suspected
+          ATS. The type-1 ATS electrocardiographic phenotype comprises frequent premature ventricular
+          contractions, Q-U interval prolongation, prominent U waves, and bidirectional ventricular tachycardia,
+          with QT/QTc typically normal or only minimally prolonged. Dedicated electrocardiographic criteria
+          for type-1 ATS have been proposed on this basis.
+        results: Frequent resting premature ventricular contractions, QU/QUc prolongation, prominent U
+          waves, and bidirectional ventricular tachycardia with a normal or minimally prolonged QT support
+          type-1 ATS.
+        diagnosis_term:
+          preferred_term: electrocardiography
+          term:
+            id: NCIT:C38053
+            label: Electrocardiography
+      selected_evidence:
+        snippet: The article describes the new electrocardiographic criteria proposed for diagnosis of
+          type-1 Andersen-Tawil syndrome.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24827800
+      reference_title: Electrocardiogram in Andersen-Tawil syndrome. New electrocardiographic criteria
+        for diagnosis of type-1 Andersen-Tawil syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes that formal electrocardiographic diagnostic criteria exist specifically
+        for type-1 ATS.
+    first_seen_at: '2026-10-03T22:21:43.573787+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:43.573787+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:43.573787+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:24827800
 assessments:
   1ae379fe21383754279c28030168c29142d87a21edab3c20bcbe036b21244288:
     input_sha256: 00028f53655462c3718a780063a8b817f3778329a05a161a637cde656582df56
@@ -12855,3 +12908,69 @@ assessments:
       request_sha256: 74c4e76a6be697dce8deab62ad24ffdc2cf27f148a829985f5c9742b2cb376da
       request_sha256s:
       - 74c4e76a6be697dce8deab62ad24ffdc2cf27f148a829985f5c9742b2cb376da
+  c4d28e9dd91316b5abdf9dbe0b93e68e52671c56e90a1bbe0909bafca631934d:
+    input_sha256: a7b301d8c69319fd634753cb9eb79cfa5b3e2c2255a7fc3020309d73fd2c2c88
+    configuration_sha256: 6d24d6116d653829e5d2e409850739ef5e18a89fa527a279513ab2f9f1b8f1a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:43.573787+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.06
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.09
+            PARTIAL: 0.26
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.07
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.09
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.11
+            PARTIAL: 0.2
+          confidence: 0.52
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.14
+            PARTIAL: 0.24
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7320
+        output_tokens: 321
+      elapsed_seconds: 0.3169
+      request_sha256: 0f73f13fac9242e6a78ebd53178fbb92f584677bfd66ed0cc0255485e040f921
+      request_sha256s:
+      - 0f73f13fac9242e6a78ebd53178fbb92f584677bfd66ed0cc0255485e040f921

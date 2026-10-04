@@ -4173,6 +4173,59 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/2
       reference: PMID:39022653
+  c4dc260abe2bf0d17a3e2f0178617407c8ead0a392c205e110c44c58f97e6b91:
+    claim:
+      about:
+        disease:
+          name: Congenital Prothrombin Deficiency
+          disease_term:
+            preferred_term: congenital prothrombin deficiency
+            term:
+              id: MONDO:0013361
+              label: congenital prothrombin deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Deficient Thrombin Activity at the Site of Injury
+        biological_scale: ORGANISM
+        description: Thrombin is the hub of the haemostatic response, and this node is where the single
+          upstream lesion fans out. Thrombin converts fibrinogen to fibrin, activates platelets through
+          protease-activated receptors, feeds back to activate factors V, VIII and XI so that its own
+          generation becomes a burst, activates factor XIII to cross-link the fibrin mesh, and - complexed
+          with thrombomodulin - switches on protein C. Losing one enzyme therefore removes five distinct
+          outputs at once.
+        biological_processes:
+        - preferred_term: blood coagulation
+          modifier: DECREASED
+          term:
+            id: GO:0007596
+            label: blood coagulation
+      selected_evidence:
+        snippet: It triggers platelet aggregation and promote coagulation by activating regulatory pathways
+          and generating fibrin monomers by cleavage of a specific peptide bond in fibrinogen α- and β-
+          subunits at N-termini
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28394285
+      reference_title: Diagnosis and Treatment of von Willebrand Disease and Rare Bleeding Disorders.
+      evidence_source: HUMAN_CLINICAL
+      explanation: A review of this disease states the same multi-output role for thrombin, anchoring
+        the hub to the disease rather than to general biochemistry.
+    first_seen_at: '2026-10-03T21:50:31.482753+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:50:31.482753+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:50:31.482753+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      reference: PMID:28394285
 assessments:
   72ac6990a9ea1cc8e9e3937c351bdf666f5378516d63881ef8c6af849e5bc2df:
     input_sha256: 38e43543019348268e5fe03dae2a3b1ae58773c9bd4f6b59881658955bb44d10
@@ -10391,3 +10444,76 @@ assessments:
       request_sha256: 4f5f1492659d472c83240ae746f55964f46cea58a8a035bbcfc5086a09e014b3
       request_sha256s:
       - 4f5f1492659d472c83240ae746f55964f46cea58a8a035bbcfc5086a09e014b3
+  7e9ff4d9a202000f0be2722bff4552df89650f461d084d2930038c84fd1760cc:
+    input_sha256: c4dc260abe2bf0d17a3e2f0178617407c8ead0a392c205e110c44c58f97e6b91
+    configuration_sha256: b89092fe642e58be121bc76d1c656d9fbf473767536033fd69caa3595f1d9884
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:50:31.482753+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            MATCH: 0.09
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.08
+            PARTIAL: 0.43
+          confidence: 0.24
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.14
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            MATCH: 0.09
+            PARTIAL: 0.16
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.14
+            PARTIAL: 0.55
+          confidence: 0.34
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            MATCH: 0.12
+            PARTIAL: 0.19
+          confidence: 0.53
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.1
+            PARTIAL: 0.26
+          confidence: 0.46
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            PARTIAL: 0.25
+            MATCH: 0.16
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8911
+        output_tokens: 402
+      elapsed_seconds: 0.2235
+      request_sha256: 0420ba9c4a1432798042f8e7b393a1265d05ee3aa79868aa03f2aaa4dc73879a
+      request_sha256s:
+      - 0420ba9c4a1432798042f8e7b393a1265d05ee3aa79868aa03f2aaa4dc73879a

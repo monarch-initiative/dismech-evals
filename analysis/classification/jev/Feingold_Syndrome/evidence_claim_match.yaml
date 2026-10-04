@@ -2591,6 +2591,57 @@ inputs:
     - assertion_path: /animal_models/0
       evidence_path: /animal_models/0/evidence/0
       reference: PMID:29636449
+  2b417cdf59172ca20fd46af60e803161471fa9863af47b911d2ed7975ad6cee8:
+    claim:
+      about:
+        disease:
+          name: Feingold Syndrome
+          disease_term:
+            preferred_term: Feingold syndrome
+            term:
+              id: MONDO:0015267
+              label: Feingold syndrome
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        species: Mouse
+        genotype: Limb mesenchyme conditional Mir17-92 deficiency
+        description: Conditional Mir17-92 deficiency in mouse limb mesenchyme models FS2 skeletal pathogenesis
+          through increased TGF-beta signaling, with genetic or pharmacologic TGF-beta inhibition rescuing
+          skeletal defects.
+        genes:
+        - preferred_term: MIR17HG
+          term:
+            id: hgnc:23564
+            label: MIR17HG
+        associated_phenotypes:
+        - Skeletal defects
+        - Increased TGF-beta signaling in limb mesenchyme
+      selected_evidence:
+        snippet: TGF-β signaling efficiently rescues the skeletal defects caused by Mir17-92
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29636449
+      reference_title: Distinct molecular pathways mediate Mycn and Myc-regulated miR-17-92 microRNA action
+        in Feingold syndrome mouse models
+      evidence_source: MODEL_ORGANISM
+      explanation: Mouse model rescue experiment directly supports TGF-beta signaling as a model-organism
+        FS2 mechanism.
+    first_seen_at: '2026-10-03T22:35:41.289298+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:35:41.289298+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:35:41.289298+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      reference: PMID:29636449
 assessments:
   b1324845e120c170e144c96f6e3af376b1be3da42f5669c5e4997ebbb56f3c5b:
     input_sha256: 009bbebb6fce6c99d541aa0cac4ef6932f2c58b277651cceddfb7d3a121b73eb
@@ -6065,3 +6116,76 @@ assessments:
       request_sha256: e31814c42cf85ecafb4d68c222a3d78e047feb86021e37b135a651501af43997
       request_sha256s:
       - e31814c42cf85ecafb4d68c222a3d78e047feb86021e37b135a651501af43997
+  e13b4300df50a8dcf221dde13687db4a034179da3db5edebe3a78e7b92cf63da:
+    input_sha256: 2b417cdf59172ca20fd46af60e803161471fa9863af47b911d2ed7975ad6cee8
+    configuration_sha256: be321be9efe68cfd947ed39be2000d525677fd091779dce15197da0839cdcfb8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:35:41.289298+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            MATCH: 0.05
+            PARTIAL: 0.36
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.19
+            PARTIAL: 0.52
+          confidence: 0.27
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.56
+            PARTIAL: 0.28
+          confidence: 0.34
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.15
+            PARTIAL: 0.4
+          confidence: 0.18
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            MATCH: 0.05
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/genes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.34
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.39
+            PARTIAL: 0.37
+          confidence: 0.08
+        /assertion/associated_phenotypes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            MATCH: 0.1
+            PARTIAL: 0.53
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8172
+        output_tokens: 380
+      elapsed_seconds: 0.3483
+      request_sha256: a7e0213d192819f3e4ddc624264303d4d5d57bfe46e350cc1b25b24977a2e75f
+      request_sha256s:
+      - a7e0213d192819f3e4ddc624264303d4d5d57bfe46e350cc1b25b24977a2e75f

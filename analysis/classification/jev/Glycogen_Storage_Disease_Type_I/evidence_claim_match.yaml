@@ -7262,6 +7262,92 @@ inputs:
     - assertion_path: /treatments/10
       evidence_path: /treatments/10/evidence/0
       reference: PMID:20301489
+  45d2e47e9d581aa91081051fac5f886b16b1d8fa003e9293c3146a198e621d92:
+    claim:
+      about:
+        disease:
+          name: Glycogen Storage Disease Type I
+          disease_term:
+            preferred_term: glycogen storage disease type I
+            term:
+              id: MONDO:0002413
+              label: glycogen storage disease I
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Secondary metabolic derangements
+            description: 'The block in glucose-6-phosphate hydrolysis leads to accumulation of metabolic
+              intermediates, resulting in several secondary biochemical abnormalities. Excess glucose-6-phosphate
+              is shunted into glycolysis, producing excess pyruvate and lactate (lactic acidosis). Increased
+              acetyl-CoA flux drives de novo lipogenesis, causing hypertriglyceridemia and hypercholesterolemia.
+              Accelerated purine degradation from excess glucose-6-phosphate metabolism, combined with
+              decreased renal urate clearance due to competitive inhibition by lactate, leads to hyperuricemia.
+
+              '
+            cell_types:
+            - preferred_term: Hepatocyte
+              term:
+                id: CL:0000182
+                label: hepatocyte
+            biological_processes:
+            - preferred_term: Gluconeogenesis
+              modifier: DECREASED
+              term:
+                id: GO:0006094
+                label: gluconeogenesis
+            chemical_entities:
+            - preferred_term: lactate
+              modifier: INCREASED
+              term:
+                id: CHEBI:24996
+                label: lactate
+            - preferred_term: triglyceride
+              modifier: INCREASED
+              term:
+                id: CHEBI:17855
+                label: triglyceride
+            - preferred_term: uric acid
+              modifier: INCREASED
+              term:
+                id: CHEBI:27226
+                label: uric acid
+            - preferred_term: cholesterol
+              modifier: INCREASED
+              term:
+                id: CHEBI:16113
+                label: cholesterol
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hepatocellular adenoma development
+        description: Poor metabolic control is associated with liver adenoma risk.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: poor metabolic control is a risk factor for the development of long-term complications,
+          such as liver adenomas,
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/12
+      evidence_path: /pathophysiology/1/downstream/12/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:26001652
+      reference_title: 'Hepatic glycogen storage disorders: what have we learned in recent years?'
+      evidence_source: OTHER
+      explanation: This review supports liver adenomas as a long-term complication associated with poor
+        metabolic control in GSD I.
+    first_seen_at: '2026-10-03T21:18:57.695837+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:57.695837+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:57.695837+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/12
+      evidence_path: /pathophysiology/1/downstream/12/evidence/0
+      reference: PMID:26001652
 assessments:
   405034249ab6eb88e75c1192aa1d19f493463b6a78e2fefa6d4f421af83b63fd:
     input_sha256: b8973cc171cf65bbc9731769eeda35404acfb66e6fb5aa44c934b172d019350d
@@ -15259,3 +15345,62 @@ assessments:
       request_sha256: 7998daffb9aa66b5b5d7789a8b69b76ffeabf988f82dc619e07ea192adbc0cf0
       request_sha256s:
       - 7998daffb9aa66b5b5d7789a8b69b76ffeabf988f82dc619e07ea192adbc0cf0
+  394e373f05889657f2df930ae9903b4d5551a07fb101e2a1cea89698c0f389bf:
+    input_sha256: 45d2e47e9d581aa91081051fac5f886b16b1d8fa003e9293c3146a198e621d92
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:57.695837+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+            MATCH: 0.81
+          confidence: 0.72
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.6
+            MATCH: 0.3
+          confidence: 0.4
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.08
+            MATCH: 0.89
+          confidence: 0.84
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.65
+            MATCH: 0.24
+          confidence: 0.48
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.41000000000000003
+            PARTIAL: 0.23
+            MATCH: 0.36
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6795
+        output_tokens: 273
+      elapsed_seconds: 0.3116
+      request_sha256: 56660366b180db544c0b690ff813d8bad18ce875d33c5aae967280265c9cc97c
+      request_sha256s:
+      - 56660366b180db544c0b690ff813d8bad18ce875d33c5aae967280265c9cc97c

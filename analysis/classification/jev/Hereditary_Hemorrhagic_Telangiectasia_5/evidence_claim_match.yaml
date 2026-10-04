@@ -5992,6 +5992,70 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: PMID:31828546
+  6a37bebe311b8caaced858713b56e2274d86119034a9d88ebf9da8c37d7978d4:
+    claim:
+      about:
+        disease:
+          name: Hereditary Hemorrhagic Telangiectasia Type 5
+          disease_term:
+            preferred_term: hereditary hemorrhagic telangiectasia type 5
+            term:
+              id: MONDO:0014217
+              label: telangiectasia, hereditary hemorrhagic, type 5
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced Endothelial ALK1-SMAD1/5/8 Signaling
+        biological_scale: CELLULAR
+        mechanism_confidence: ESTABLISHED
+        description: BMP9 and BMP10 bind a heterotetrameric endothelial receptor complex of two ALK1 type-I
+          receptors and two type-II receptors (BMPR-II, ActR-IIA or ActR-IIB), with endoglin as co-receptor,
+          and signal through phosphorylation of SMAD1/5/8 and complex formation with SMAD4. Loss of ligand
+          therefore converges on exactly the pathway that ACVRL1 (ALK1, HHT2), ENG (endoglin, HHT1) and
+          SMAD4 variants disrupt at the receptor, co-receptor and effector levels - which is the mechanistic
+          reason a ligand disease sits inside the HHT series at all.
+        cell_types:
+        - preferred_term: vascular endothelial cell
+          term:
+            id: CL:0002139
+            label: endothelial cell of vascular tree
+        biological_processes:
+        - preferred_term: SMAD1/5/8 signal transduction downstream of ALK1
+          term:
+            id: GO:0060395
+            label: SMAD protein signal transduction
+          modifier: DECREASED
+        - preferred_term: cellular response to BMP9
+          term:
+            id: GO:0071773
+            label: cellular response to BMP stimulus
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Ultimately, this signaling axis is considered to maintain normal endothelial homeostasis
+          by promoting endothelial quiescence and reducing apoptosis and barrier permeability
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33834622
+      reference_title: Homozygous GDF2 nonsense mutations result in a loss of circulating BMP9 and BMP10
+        and are associated with either PAH or an "HHT-like" syndrome in children.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the homeostatic function of the BMP9/ALK1 axis whose reduction defines this
+        node.
+    first_seen_at: '2026-10-03T21:19:01.335373+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:01.335373+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:01.335373+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:33834622
 assessments:
   e3f6735e29e87cfcf7213ed5042afb8fa0d685f602b2cb0c62aa1490f47be3fd:
     input_sha256: dea72ea5586802e4887ac0d2115e90047bd587ab58b80b98e40ef067b1f2bced
@@ -14084,3 +14148,118 @@ assessments:
       request_sha256: fca860a5bd96bc823ce660673ee46fc63fe15058de5209e14f3c931207c11ea3
       request_sha256s:
       - fca860a5bd96bc823ce660673ee46fc63fe15058de5209e14f3c931207c11ea3
+  8f3b32cb884bb92c0dc25bfa3075a203d5bf88a610049966bc0341babe904ec2:
+    input_sha256: 6a37bebe311b8caaced858713b56e2274d86119034a9d88ebf9da8c37d7978d4
+    configuration_sha256: 5f7b9169b813e6821482651f0e85a442f6e491c555f19613a9fa268de09a1bed
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:01.335373+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.05
+            PARTIAL: 0.45
+          confidence: 0.26
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.26
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            MATCH: 0.05
+            PARTIAL: 0.43
+          confidence: 0.27
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.63
+            PARTIAL: 0.24
+          confidence: 0.43
+        /assertion/mechanism_confidence:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.02
+            PARTIAL: 0.42
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.44
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.23
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.39
+            PARTIAL: 0.44
+          confidence: 0.17
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.55
+            MATCH: 0.04
+            PARTIAL: 0.41
+          confidence: 0.32
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.23
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.09
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.04
+            PARTIAL: 0.43
+          confidence: 0.29
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.04
+            PARTIAL: 0.46
+          confidence: 0.25
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            MATCH: 0.06
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15242
+        output_tokens: 721
+      elapsed_seconds: 0.5259
+      request_sha256: 8ec865ed3113a4b297b7abca54eb2ccfbd91aa88a1a46add265a48c1da48c4ec
+      request_sha256s:
+      - 8ec865ed3113a4b297b7abca54eb2ccfbd91aa88a1a46add265a48c1da48c4ec

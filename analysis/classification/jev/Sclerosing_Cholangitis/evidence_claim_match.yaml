@@ -2761,6 +2761,76 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/0
       reference: clinicaltrials:NCT06286709
+  b51dfe006b41982362ed7238875106b801cb6353b4d189827b4246c6c26d0603:
+    claim:
+      about:
+        disease:
+          name: Sclerosing Cholangitis
+          disease_term:
+            preferred_term: sclerosing cholangitis
+            term:
+              id: MONDO:0018646
+              label: sclerosing cholangitis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Bile Duct Inflammation
+        description: Inflammatory injury of the bile-duct epithelium and duct wall is a shared upstream
+          feature across sclerosing cholangitis categories.
+        cell_types:
+        - preferred_term: Cholangiocyte
+          term:
+            id: CL:1000488
+            label: cholangiocyte
+        - preferred_term: Kupffer cell / liver macrophage
+          term:
+            id: CL:0000235
+            label: macrophage
+        - preferred_term: CD4-positive T cell
+          term:
+            id: CL:0000624
+            label: CD4-positive, alpha-beta T cell
+        - preferred_term: Th17 cell
+          term:
+            id: CL:0000899
+            label: T-helper 17 cell
+        - preferred_term: regulatory T cell
+          term:
+            id: CL:0000815
+            label: regulatory T cell
+        biological_processes:
+        - preferred_term: inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: 'Sclerosing cholangitis (SC) is defined as a condition with progressive stenosis and
+          destruction of the bile ducts due to diffuse inflammation and fibrosis and currently includes
+          three categories: primary sclerosing cholangitis (PSC), secondary cholangitis, and IgG4-related
+          sclerosing cholangitis (IgG4-SC).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30205418
+      reference_title: IgG4-Related Sclerosing Cholangitis and Primary Sclerosing Cholangitis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review defines the root condition by bile-duct inflammation, fibrosis, stenosis,
+        and destruction and identifies major clinical categories.
+    first_seen_at: '2026-10-03T21:20:24.525213+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:24.525213+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:24.525213+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:30205418
 assessments:
   a278234406dad4b1fcda0cb9d7588e6c4f5b45614249566b015996e92103c731:
     input_sha256: 83d18120b27e77e6b0bc13653e287fd13120ec440ceba5109945589562995434
@@ -6705,3 +6775,139 @@ assessments:
       request_sha256: 8e55e84cd3185e8dda82a93ffeb03887f8b44a534496bb7051d0b997c4d87454
       request_sha256s:
       - 8e55e84cd3185e8dda82a93ffeb03887f8b44a534496bb7051d0b997c4d87454
+  f1efaf215eaf366681344eb8cfe41835bee8d70d802d12e2317d1274d0acc78c:
+    input_sha256: b51dfe006b41982362ed7238875106b801cb6353b4d189827b4246c6c26d0603
+    configuration_sha256: 9361716483b7b41e6bb4bc192ea65ba356514e86d6e3633d72d22a3134b8a2d7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:24.525213+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.02
+            MATCH: 0.19
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+            MATCH: 0.88
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.02
+            MATCH: 0.43
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MISMATCH: 0.1
+            MATCH: 0.2
+          confidence: 0.55
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.21
+            MATCH: 0.2
+          confidence: 0.38
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.48
+            MATCH: 0.04
+          confidence: 0.22
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.46
+            MATCH: 0.05
+          confidence: 0.23
+        /assertion/cell_types/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.49
+            MATCH: 0.06
+          confidence: 0.24
+        /assertion/cell_types/2/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.46
+            MATCH: 0.07
+          confidence: 0.21
+        /assertion/cell_types/3/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.5
+            MATCH: 0.03
+          confidence: 0.24
+        /assertion/cell_types/3/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.5
+            MATCH: 0.03
+          confidence: 0.24
+        /assertion/cell_types/4/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.52
+            MATCH: 0.03
+          confidence: 0.27
+        /assertion/cell_types/4/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.41
+            MATCH: 0.02
+          confidence: 0.35
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.01
+            MATCH: 0.8099999999999999
+          confidence: 0.73
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.02
+            MATCH: 0.73
+          confidence: 0.6
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.01
+            MATCH: 0.86
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17482
+        output_tokens: 859
+      elapsed_seconds: 0.4893
+      request_sha256: 1eeab2c78dc9aba249d3fa0de22542613af0e277b47f40811ec8213b04ae13ef
+      request_sha256s:
+      - 1eeab2c78dc9aba249d3fa0de22542613af0e277b47f40811ec8213b04ae13ef

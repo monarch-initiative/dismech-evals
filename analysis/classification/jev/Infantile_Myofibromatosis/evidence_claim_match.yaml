@@ -770,6 +770,66 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/1
       reference: PMID:32500973
+  c780be32327e81ee656698e2eb70c60c36aadb13a3b323b76f4f4b09d5314a43:
+    claim:
+      about:
+        disease:
+          name: Infantile_Myofibromatosis
+          disease_term:
+            preferred_term: familial infantile myofibromatosis
+            term:
+              id: MONDO:0009227
+              label: myofibromatosis, infantile, 1
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Constitutive PDGFRB Signaling
+            description: Gain-of-function mutations in PDGFRB lead to ligand-independent receptor activation,
+              promoting myofibroblast proliferation and tumor formation. The mechanism is reminiscent
+              of multifocal venous malformations induced by TIE2 mutations.
+            genes:
+            - preferred_term: PDGFRB
+              term:
+                id: hgnc:8804
+                label: PDGFRB
+            molecular_functions:
+            - preferred_term: platelet-derived growth factor beta-receptor activity
+              term:
+                id: GO:0005019
+                label: platelet-derived growth factor beta-receptor activity
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Fibroma
+        description: The PDGFRB-driven myofibromatosis phenotype is a benign fibrous soft-tissue tumor
+          phenotype.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: 'Infantile myofibromatosis (IM) is the most common benign fibrous tumor of soft
+
+          tissues affecting young children.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:23731537
+      reference_title: A recurrent PDGFRB mutation causes familial infantile myofibromatosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The familial PDGFRB paper supports the broad fibroma phenotype for infantile myofibromatosis.
+    first_seen_at: '2026-10-03T21:09:20.531307+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:20.531307+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:20.531307+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/1
+      evidence_path: /pathophysiology/0/downstream/1/evidence/0
+      reference: PMID:23731537
 assessments:
   c9a8a2ee26c6d99a0599b9746dd1217bc05e2be8a057fed9cfd189122212f979:
     input_sha256: b31764a80bf451e68cb76daa4fdcdbf7b49ece266cc3b8f8cb0b2a702ea9a027
@@ -1747,3 +1807,62 @@ assessments:
       request_sha256: c830fd9eb99e256dbf723b78377d77fc9bce77743292585760dd22ca07e852e2
       request_sha256s:
       - c830fd9eb99e256dbf723b78377d77fc9bce77743292585760dd22ca07e852e2
+  2c4de6cd95c0e71b5b806dc9f47503a87c2b723d2aa00d685af78463518b5f21:
+    input_sha256: c780be32327e81ee656698e2eb70c60c36aadb13a3b323b76f4f4b09d5314a43
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:20.531307+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.1
+            MATCH: 0.42
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.29
+            MATCH: 0.65
+          confidence: 0.47
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.27
+            MATCH: 0.61
+          confidence: 0.41
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.26
+            MATCH: 0.69
+          confidence: 0.53
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.46
+            MATCH: 0.05
+          confidence: 0.23
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.4
+            PARTIAL: 0.32
+            MATCH: 0.28
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6503
+        output_tokens: 275
+      elapsed_seconds: 0.369
+      request_sha256: 21fcb6bc9d9eb5815411d869ad8dd12669f11d6bb152831128006c27b7302caf
+      request_sha256s:
+      - 21fcb6bc9d9eb5815411d869ad8dd12669f11d6bb152831128006c27b7302caf

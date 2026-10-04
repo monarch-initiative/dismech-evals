@@ -6087,6 +6087,81 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/0/readouts/1
       evidence_path: /experimental_models/0/modeled_mechanisms/0/readouts/1/evidence/0
       reference: PMID:32403198
+  0fd8cdbca103d048b9513e4f19ff09e6b5165f67142c9c9bdd83c0204ebc98e2:
+    claim:
+      about:
+        disease:
+          name: Muscular Dystrophy, Congenital Hearing Loss, and Ovarian Insufficiency Syndrome
+          disease_term:
+            preferred_term: muscular dystrophy, congenital hearing loss, and ovarian insufficiency syndrome
+            term:
+              id: MONDO:0859189
+              label: muscular dystrophy, congenital hearing loss, and ovarian insufficiency syndrome
+        context:
+        - path: /animal_models/1
+          value:
+            name: Oocyte-specific Ggpps conditional knockout mouse
+            species: Mouse
+            genotype: Ggpps flox/flox; Ddx4-Cre (oocyte-specific conditional knockout)
+            publication: PMID:28072828
+            description: Not built as a model of this disease -- it predates it by three years and its
+              authors were asking how oocyte-granulosa cell communication is established -- but it is
+              the only animal system in which loss of GGPP produces a phenotype in one of this disease's
+              three target organs. Follicles are almost entirely lost by six weeks, the primary-to-secondary
+              transition fails, Rho GTPase geranylgeranylation is inhibited, and supplying GGPP rescues
+              all of it.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Ovarian Follicle Depletion
+        relationship: PARTIALLY_RECAPITULATES
+        fidelity: MODERATE
+        model_scale: TISSUE
+        description: Reproduces follicle loss and infertility from loss of GGPP in the oocyte, and identifies
+          the failing step as Rho GTPase geranylgeranylation. The rescue by GGPP is what makes the attribution
+          causal rather than correlative.
+        limitations: This is a conditional null restricted to the oocyte, whereas patients carry a partial
+          loss of function expressed in every tissue, so the model overstates the enzymatic deficit while
+          missing any granulosa-cell or somatic contribution. It is a mouse ovary rather than a human
+          one, the phenotype is near-complete follicle loss by six weeks rather than ovarian insufficiency
+          after apparently normal puberty, and no patient with this syndrome has had ovarian histology
+          examined, so the correspondence is by mechanism and not by observation.
+        readouts:
+        - name: Ovarian follicle number
+          target: Ovarian Follicle Depletion
+          direction: DECREASED
+          interpretation: Direct histological correlate of the follicle-depletion node in this model.
+        - name: Follicular development after GGPP administration
+          target: Ovarian Follicle Depletion
+          direction: RESTORED
+          interpretation: Rescue by the missing metabolite establishes that the follicular defect follows
+            from GGPP depletion rather than from some other consequence of deleting the enzyme.
+      selected_evidence:
+        snippet: oocyte geranylgeranyl diphosphate (GGPP), a metabolic intermediate involved in protein
+          geranylgeranylation, is required to establish the oocyte-granulosa cell communication.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/1
+    evidence_metadata:
+      reference: PMID:28072828
+      reference_title: GGPP-Mediated Protein Geranylgeranylation in Oocyte Is Essential for the Establishment
+        of Oocyte-Granulosa Cell Communication and Primary-Secondary Follicle Transition in Mouse Ovary.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes that this model is informative for the requirement for GGPP in the ovary.
+    first_seen_at: '2026-10-03T21:25:16.287779+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:16.287779+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:16.287779+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:28072828
 assessments:
   e1bd424464ac7ebccbc157edb4732f978f94f951a4347987e3121c9a432e77a6:
     input_sha256: 2bb2fd685aea53e66b5818a1a41bbb7925127f96d606725dc2a31a04a6efccb8
@@ -14240,3 +14315,139 @@ assessments:
       request_sha256: 490088f632626b88196fc2facab22f9f037a5a578f97ab54fdce8d3831d322bd
       request_sha256s:
       - 490088f632626b88196fc2facab22f9f037a5a578f97ab54fdce8d3831d322bd
+  0eec261c227a7faea28c441065001a7da13203dd514089a20a9a729f4b4f2ee7:
+    input_sha256: 0fd8cdbca103d048b9513e4f19ff09e6b5165f67142c9c9bdd83c0204ebc98e2
+    configuration_sha256: 9d1ce2e07f0147a72aaaf45e35420b139c5a65b2520420659a85ff98f5916775
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:16.287779+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.34
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.57
+            PARTIAL: 0.36
+          confidence: 0.35
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.22
+            PARTIAL: 0.56
+          confidence: 0.33
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.48
+            PARTIAL: 0.37
+          confidence: 0.23
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.19
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.38
+            PARTIAL: 0.23
+          confidence: 0.1
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.23
+            PARTIAL: 0.59
+          confidence: 0.4
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.44
+            PARTIAL: 0.43
+          confidence: 0.17
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.28
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.33
+            PARTIAL: 0.47000000000000003
+          confidence: 0.2
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.54
+            PARTIAL: 0.3
+          confidence: 0.31
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.54
+            PARTIAL: 0.36
+          confidence: 0.31
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.26
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.51
+            PARTIAL: 0.33
+          confidence: 0.26
+        /assertion/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.23
+            PARTIAL: 0.35
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18011
+        output_tokens: 833
+      elapsed_seconds: 0.3953
+      request_sha256: 522aa235b17a79416d417e9c37cfd7b49ba1203e4e00bfe464ca360c66f1a8da
+      request_sha256s:
+      - 522aa235b17a79416d417e9c37cfd7b49ba1203e4e00bfe464ca360c66f1a8da

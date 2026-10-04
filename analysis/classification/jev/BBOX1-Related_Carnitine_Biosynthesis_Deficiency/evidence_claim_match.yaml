@@ -3080,6 +3080,115 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:41022783
+  c4fb6b468c4f8e0ffb8e38254ac86adfb3eb45bce994befbf77341057e164bd9:
+    claim:
+      about:
+        disease:
+          name: BBOX1-Related Carnitine Biosynthesis Deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Carnitine Transport Inhibition by Gamma-Butyrobetaine
+        biological_scale: CELLULAR
+        description: Hypothesised second pathogenic arm in which accumulated gamma-butyrobetaine is itself
+          harmful rather than merely a marker of the block. In C. elegans, exposure of gbh-1 loss-of-function
+          strains to millimolar gamma-butyrobetaine caused complete embryonic lethality even on carnitine-producing
+          bacteria, which is the observation the toxicity proposal rests on. The suggested mechanism -
+          competitive inhibition of the carnitine transporter, which would deepen the intracellular carnitine
+          deficit - has not been demonstrated directly in either system.
+        biological_processes:
+        - preferred_term: carnitine transmembrane transport
+          term:
+            id: GO:1902603
+            label: carnitine transmembrane transport
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Exposure to 1 mM γ-BB resulted in total embryonic lethality in the gbh-1(ko), gbh-1(G247Vfs*6),
+          and gbh-1(G283R) mutants
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:41022783
+      reference_title: Biallelic variants in BBOX1 cause L-Carnitine deficiency and elevated γ-butyrobetaine.
+      evidence_source: MODEL_ORGANISM
+      explanation: Provides the experimental basis for treating accumulated gamma-butyrobetaine as independently
+        harmful.
+    first_seen_at: '2026-10-03T22:25:25.754778+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:25:25.754778+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:25:25.754778+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:41022783
+  45996fbaefc89dc7a4021ad1af98252e303cb7dba6fea872145ffd9d475d66af:
+    claim:
+      about:
+        disease:
+          name: BBOX1-Related Carnitine Biosynthesis Deficiency
+        context:
+        - path: /animal_models/1
+          value:
+            name: gbh-1 patient-allele knock-in C. elegans
+            species: Caenorhabditis elegans
+            genotype: gbh-1(D72G), gbh-1(G283R) and gbh-1(G247Vfs*6) knock-in strains modelling p.Asp59Gly,
+              p.Gly263Arg and p.Gly227Valfs*6
+            genes:
+            - preferred_term: BBOX1
+              term:
+                id: hgnc:964
+                label: BBOX1
+            description: CRISPR/Cas9 knock-in strains carrying worm equivalents of the three patient alleles.
+              G283R and G247Vfs*6 genocopy the null. D72G, the equivalent of the p.Asp59Gly allele that
+              both family 1 siblings carry, has normal embryonic viability, normal L-carnitine and only
+              a roughly 2-fold gamma-butyrobetaine rise, and worms carrying D72G in trans with the frameshift
+              allele - the actual patient genotype - showed no lethality at all.
+            publication: PMID:41022783
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: BBOX1 Loss of Function
+        relationship: PARTIALLY_RECAPITULATES
+        fidelity: MODERATE
+        description: Two of the three patient alleles behave as functional nulls in the worm, which is
+          the functional evidence supporting their pathogenicity; the third does not.
+        limitations: Allele-level fidelity is uneven, and the compound-heterozygous genotype of the two
+          family 1 patients produces no phenotype in this system.
+        readouts:
+        - name: Embryonic hatch rate of patient-allele strains
+          target: BBOX1 Loss of Function
+          direction: DECREASED
+          interpretation: Genocopying the knockout is the functional criterion used to call G283R and
+            G247Vfs*6 pathogenic.
+      selected_evidence:
+        snippet: These results strongly suggest that gbh-1(G283R) and gbh-1(G247Vfs*6) are functional
+          alleles.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /animal_models/1
+    evidence_metadata:
+      reference: PMID:41022783
+      reference_title: Biallelic variants in BBOX1 cause L-Carnitine deficiency and elevated γ-butyrobetaine.
+      evidence_source: MODEL_ORGANISM
+      explanation: The authors' functional conclusion for the two alleles that behave as nulls.
+    first_seen_at: '2026-10-03T22:25:28.364321+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:25:28.364321+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:25:28.364321+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:41022783
 assessments:
   d0efd7b5b965b403831d0550650ae9a4a9e1a4f565dc1a47c25fab18a6b39ef7:
     input_sha256: 6f76b4f02a55192fbb20bdfac86ce85ff408df70cab4faf5f98f7e2e3acbbe29
@@ -7885,3 +7994,177 @@ assessments:
       request_sha256: d18a354eeb095ffbc27b452c11af8e5f261210282fede1962961f1b5149e36cb
       request_sha256s:
       - d18a354eeb095ffbc27b452c11af8e5f261210282fede1962961f1b5149e36cb
+  cbac52bfa319bc78730f574cd55d467f78f774efcefb815fec98e2eb1bbd86f2:
+    input_sha256: c4fb6b468c4f8e0ffb8e38254ac86adfb3eb45bce994befbf77341057e164bd9
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:25:25.754778+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.26
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41000000000000003
+            MISMATCH: 0.22
+            PARTIAL: 0.37
+          confidence: 0.1
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.32
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.43
+            PARTIAL: 0.3
+          confidence: 0.15
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.08
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.44
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.5
+            PARTIAL: 0.46
+          confidence: 0.25
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.29
+            PARTIAL: 0.67
+          confidence: 0.51
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8883
+        output_tokens: 395
+      elapsed_seconds: 0.2732
+      request_sha256: 17c1d9bea435a6b16f8bcf507cbc05ddf98ff6d57b7d54fcb34d7164edea1276
+      request_sha256s:
+      - 17c1d9bea435a6b16f8bcf507cbc05ddf98ff6d57b7d54fcb34d7164edea1276
+  7c232c41a22ab781b97b4558ceab92d98b5338e5a7efaa07c27bcbc2a2c21c67:
+    input_sha256: 45996fbaefc89dc7a4021ad1af98252e303cb7dba6fea872145ffd9d475d66af
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:25:28.364321+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.41
+            MISMATCH: 0.3
+          confidence: 0.13
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.26
+            MISMATCH: 0.08
+          confidence: 0.49
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.61
+            MISMATCH: 0.17
+          confidence: 0.41
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.31
+            MISMATCH: 0.45
+          confidence: 0.18
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.46
+            MISMATCH: 0.11
+          confidence: 0.18
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.39
+            MISMATCH: 0.23
+          confidence: 0.08
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.3
+            MISMATCH: 0.62
+          confidence: 0.44
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.11
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.31
+            MISMATCH: 0.19
+          confidence: 0.25
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.22
+            MISMATCH: 0.48
+          confidence: 0.21
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.3
+            MISMATCH: 0.34
+          confidence: 0.03
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.52
+            MISMATCH: 0.2
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12631
+        output_tokens: 572
+      elapsed_seconds: 0.3361
+      request_sha256: 3f6e802163824c3f6b274da706ca5ea1144dd2143024e747a368da9317a4cc4b
+      request_sha256s:
+      - 3f6e802163824c3f6b274da706ca5ea1144dd2143024e747a368da9317a4cc4b

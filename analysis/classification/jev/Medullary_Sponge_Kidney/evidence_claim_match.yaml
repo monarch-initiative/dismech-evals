@@ -2475,6 +2475,58 @@ inputs:
     - assertion_path: /diagnosis/1
       evidence_path: /diagnosis/1/evidence/0
       reference: PMID:37057397
+  0055731ac8476de9d0ab43fa7f09a3732029b554a95dfbb78766d1d1e6d97467:
+    claim:
+      about:
+        disease:
+          name: Medullary Sponge Kidney
+          disease_term:
+            preferred_term: medullary sponge kidney
+            term:
+              id: MONDO:0015268
+              label: medullary sponge kidney
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Thiazide Diuretics
+        description: Thiazides reduce urinary calcium and are used alongside or instead of potassium citrate
+          to prevent calcium stones; no trial has tested them specifically in MSK.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: hydrochlorothiazide
+            term:
+              id: CHEBI:5778
+              label: hydrochlorothiazide
+      selected_evidence:
+        snippet: With reference to the prevention of renal stones in patients with MSK, thiazides and
+          KC are suggested (6), although no trial has formally studied their usefulness.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20576821
+      reference_title: Long-term treatment with potassium citrate and renal stones in medullary sponge
+        kidney.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Thiazides are suggested for MSK stone prevention, without trial evidence.
+    first_seen_at: '2026-10-03T21:19:43.468250+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:43.468250+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:43.468250+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      reference: PMID:20576821
 assessments:
   8028f17ff2efbfd074163646228735d9c844325233eec6b53c757405ae8e385b:
     input_sha256: e9776be889167a1ecc6ab17723c7044f331f141c779ebcd6e92e97b456f357d2
@@ -5709,3 +5761,83 @@ assessments:
       request_sha256: 0d2477589bafcdf01be4f1f60a5bad589a1db3edec1b7ca2ae7dd4ab00987d46
       request_sha256s:
       - 0d2477589bafcdf01be4f1f60a5bad589a1db3edec1b7ca2ae7dd4ab00987d46
+  85a8af47d0837044620885c84e6ebdd38abe0d1ddc5f618e427868573c40254c:
+    input_sha256: 0055731ac8476de9d0ab43fa7f09a3732029b554a95dfbb78766d1d1e6d97467
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:43.468250+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.04
+            MATCH: 0.42
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.03
+            MATCH: 0.75
+          confidence: 0.62
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.14
+            MATCH: 0.19
+          confidence: 0.51
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.33
+            MATCH: 0.37
+          confidence: 0.05
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.32
+            MATCH: 0.27
+          confidence: 0.12
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.22
+            MATCH: 0.35
+          confidence: 0.14
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MISMATCH: 0.11
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.21
+            MATCH: 0.3
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9691
+        output_tokens: 441
+      elapsed_seconds: 0.4234
+      request_sha256: 10d59231264487fa50e11ac2bed55baff39797414e1d10ca86bc5035c1bfd7be
+      request_sha256s:
+      - 10d59231264487fa50e11ac2bed55baff39797414e1d10ca86bc5035c1bfd7be

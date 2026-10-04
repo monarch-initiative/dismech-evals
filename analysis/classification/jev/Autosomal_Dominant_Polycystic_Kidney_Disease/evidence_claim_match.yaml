@@ -3629,6 +3629,45 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT00428948
+  18ceac4271b08d6231e19581920a16ee51902125de7db7871e4f954052458005:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Polycystic Kidney Disease
+          disease_term:
+            preferred_term: autosomal dominant polycystic kidney disease
+            term:
+              id: MONDO:0004691
+              label: autosomal dominant polycystic kidney disease
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Creatinine
+        presence: INCREASED
+        context: Circulating creatinine increases as glomerular filtration declines.
+      selected_evidence:
+        snippet: HP:0003259 | Elevated circulating creatinine concentration | Very frequent (99-80%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: ORPHA:730
+      reference_title: Autosomal dominant polycystic kidney disease
+      evidence_source: OTHER
+      explanation: Orphanet supports elevated creatinine as a very frequent laboratory feature.
+    first_seen_at: '2026-10-03T22:32:35.299647+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:35.299647+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:35.299647+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: ORPHA:730
 assessments:
   13aba754dd3add5220bce3f619f1ba967f663042ce2b704d17c382551b1f4ac7:
     input_sha256: aff4510f13890eaba6a9f88cea56c3089a1e9ab8cfb951b79b10a5dd134915c3
@@ -8910,3 +8949,55 @@ assessments:
       request_sha256: f800a1e488906a1585cb2ab0d96c9e26b38c860977b0d510be6e4b4581b3ef0e
       request_sha256s:
       - f800a1e488906a1585cb2ab0d96c9e26b38c860977b0d510be6e4b4581b3ef0e
+  b71c7d3bbc2df8779a4145655fb8ac2c759cf4327445c9c399750ee4b8e145e5:
+    input_sha256: 18ceac4271b08d6231e19581920a16ee51902125de7db7871e4f954052458005
+    configuration_sha256: 87c8f1c95ffd8a12f85b8d37c651a4ea63f296bc6390204b782ae7fd5c275ef6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:35.299647+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.38
+            MATCH: 0.48
+          confidence: 0.22
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.57
+            MATCH: 0.21
+          confidence: 0.36
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+            MATCH: 0.9
+          confidence: 0.85
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.3
+            MATCH: 0.37
+          confidence: 0.05
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5200
+        output_tokens: 219
+      elapsed_seconds: 0.4383
+      request_sha256: e1f96906c2f62d7f474a2f88b8a37dc310aee5e6cb0ef0dc9d6bab420c6fa8c1
+      request_sha256s:
+      - e1f96906c2f62d7f474a2f88b8a37dc310aee5e6cb0ef0dc9d6bab420c6fa8c1

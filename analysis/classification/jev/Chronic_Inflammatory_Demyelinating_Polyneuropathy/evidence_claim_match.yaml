@@ -989,6 +989,58 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/1
       evidence_path: /classifications/harrisons_chapter/1/evidence/0
       reference: PMID:40720971
+  4b81ecb8bb5fc65a141974f7389f7bd5bfda95183c9d49cceec768d270dbfa5e:
+    claim:
+      about:
+        disease:
+          name: Chronic Inflammatory Demyelinating Polyneuropathy
+          disease_term:
+            preferred_term: Chronic Inflammatory Demyelinating Polyradiculoneuropathy
+            term:
+              id: MONDO:0006702
+              label: chronic inflammatory demyelinating polyradiculoneuropathy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Efgartigimod
+        description: FcRn blocker approved for CIDP treatment, reducing pathogenic IgG exposure through
+          neonatal Fc receptor blockade.
+        treatment_term:
+          preferred_term: FcRn antagonist therapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: efgartigimod
+            term:
+              id: NCIT:C171817
+              label: Efgartigimod Alfa
+      selected_evidence:
+        snippet: The neonatal Fc receptor (FcRn) has also been targeted as a promising treatment avenue
+          due to its role in immunoglobulin G degradation. Efgartigimod is the first FcRn blocker approved
+          for the treatment of CIDP.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3389/fimmu.2025.1575464
+      reference_title: A pathophysiological and mechanistic review of chronic inflammatory demyelinating
+        polyradiculoneuropathy therapy
+      evidence_source: HUMAN_CLINICAL
+      explanation: The review directly documents efgartigimod as an approved FcRn-blocking CIDP treatment.
+    first_seen_at: '2026-10-03T21:49:58.641434+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:49:58.641434+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:49:58.641434+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: DOI:10.3389/fimmu.2025.1575464
 assessments:
   9c5c6862a944797b4c8335e6c9ee4a51433a130d723c9e8f8aa5820f327231b5:
     input_sha256: 2f7f361445f705a7c3b03696c0201379b425c0edc2ee3175f4a58c4bb834b9ae
@@ -2415,3 +2467,76 @@ assessments:
       request_sha256: 50b72baa4fb61d6e230eaf24130c2662329c7cc7c2192ff4302cb63774b4c660
       request_sha256s:
       - 50b72baa4fb61d6e230eaf24130c2662329c7cc7c2192ff4302cb63774b4c660
+  be6cab6145eef4061afa5dd3e2c0a2990d46365db00f6cb707af81d619e596ac:
+    input_sha256: 4b81ecb8bb5fc65a141974f7389f7bd5bfda95183c9d49cceec768d270dbfa5e
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:49:58.641434+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.1
+            PARTIAL: 0.18
+          confidence: 0.58
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.11
+            PARTIAL: 0.22
+          confidence: 0.52
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.08
+            PARTIAL: 0.22
+          confidence: 0.55
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.35
+            PARTIAL: 0.27
+          confidence: 0.07
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.03
+            PARTIAL: 0.09
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8306
+        output_tokens: 387
+      elapsed_seconds: 0.2608
+      request_sha256: 90393c03986419641301260b471c9b9160352978579d90493cc0fce902751689
+      request_sha256s:
+      - 90393c03986419641301260b471c9b9160352978579d90493cc0fce902751689

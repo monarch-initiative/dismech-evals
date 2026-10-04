@@ -6663,6 +6663,73 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/0
       evidence_path: /experimental_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:29056330
+  2b779d15281165edbb4eec63008581318a905c0e558b8481dae32f396bd07eca:
+    claim:
+      about:
+        disease:
+          name: Craniometaphyseal Dysplasia
+          disease_term:
+            preferred_term: craniometaphyseal dysplasia
+            term:
+              id: MONDO:0015465
+              label: craniometaphyseal dysplasia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced ANKH-Mediated Pyrophosphate Export
+        description: 'ANKH encodes a multipass transmembrane protein classically described as moving inorganic
+          pyrophosphate (PPi) from the cytosol into the extracellular matrix. That substrate assignment
+          has been revised: more recent work describes ANK/ANKH as a transporter of small molecules including
+          citrate and ATP, with extracellular PPi generated downstream from exported ATP by ENPP1 rather
+          than exported as PPi in appreciable amounts. The node is retained because the *direction* of
+          the lesion is unchanged under either reading — less ANKH activity means less extracellular pyrophosphate
+          — but curators should not treat "ANKH is the PPi transporter" as settled. AD-CMD-causing variants
+          cluster within a few amino acids of one cytosolic domain and abolish measurable PPi transport
+          in the oocyte assay. The mutant protein is also short-lived and mislocalized: steady-state ANK/ANKH
+          levels fall through rapid proteasomal and lysosomal degradation, and what protein remains is
+          found in the cytoplasm rather than at the plasma membrane. Notably, co-expression experiments
+          show mutant ANK does not impair wild-type ANK, arguing against the classical dominant-negative
+          reading of the original report.
+
+          '
+        genes:
+        - preferred_term: ANKH
+          term:
+            id: hgnc:15492
+            label: ANKH
+        role: trigger
+        biological_scale: MOLECULAR
+        biological_processes:
+        - preferred_term: Inorganic pyrophosphate export to the extracellular matrix
+          term:
+            id: GO:0030505
+            label: inorganic diphosphate transport
+          modifier: DECREASED
+      selected_evidence:
+        snippet: All mutations cluster within seven amino acids in one of the six possible cytosolic domains
+          of ANK.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11326338
+      reference_title: Autosomal dominant craniometaphyseal dysplasia is caused by mutations in the transmembrane
+        protein ANK.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the tight mutational clustering characteristic of CMD alleles.
+    first_seen_at: '2026-10-03T21:46:44.102716+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:46:44.102716+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:46:44.102716+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:11326338
 assessments:
   49fe6086e3e75ac5d320f6368bdce4b011908df61a646c271028b0ec82f86f8e:
     input_sha256: 4e24a1320f8f9f405cf656e4c63bcf19e229212e4657244b710e84e183e93573
@@ -14719,3 +14786,97 @@ assessments:
       request_sha256: 660265685a48134b6e69e64dc47676287291e0316cabf88d5b582b48756be0bc
       request_sha256s:
       - 660265685a48134b6e69e64dc47676287291e0316cabf88d5b582b48756be0bc
+  c3ce1b96f60774ca0de588bd1b27c784aa088bdb5ced20c511cc24b286ad7de7:
+    input_sha256: 2b779d15281165edbb4eec63008581318a905c0e558b8481dae32f396bd07eca
+    configuration_sha256: d7f22b67ad0dcba0c09d4818ffc1f2c212ec627dc896e3a643b4694797898b6d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:46:44.102716+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.24
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.38
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            MATCH: 0.17
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.18
+            PARTIAL: 0.56
+          confidence: 0.33
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.62
+            PARTIAL: 0.24
+          confidence: 0.42
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.51
+            PARTIAL: 0.32
+          confidence: 0.28
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            MATCH: 0.18
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.71
+            PARTIAL: 0.17
+          confidence: 0.56
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.47
+            MATCH: 0.08
+            PARTIAL: 0.45
+          confidence: 0.21
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.06
+            PARTIAL: 0.41
+          confidence: 0.29
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.07
+            PARTIAL: 0.48
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12088
+        output_tokens: 538
+      elapsed_seconds: 0.2533
+      request_sha256: 1e254b3183da4e86b725d6e1538e2c6944aa488e5c1ba9f7e712861af31f746d
+      request_sha256s:
+      - 1e254b3183da4e86b725d6e1538e2c6944aa488e5c1ba9f7e712861af31f746d

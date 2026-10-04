@@ -1,0 +1,1250 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Malignant_Mesothelioma.yaml
+disease: Malignant Mesothelioma
+inventory:
+  source_sha256: da6477df27b8f03a77288dd3f2ac9ab0f7b5f55299fcb8965173eaa6bdc7f355
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:02:36.418832+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  3548332af28fcad6056763e61a6c2451024563a3efe395a7ff67a39945d77cab:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Asbestos Exposure
+        description: Asbestos fibers, when inhaled or ingested, become lodged in mesothelial tissues where
+          they cause chronic inflammation, oxidative stress, and DNA damage. The fibers persist indefinitely
+          in tissue and are directly genotoxic, causing chromosomal abnormalities and mesothelial cell
+          transformation. Occupational exposure accounts for approximately 80% of cases.
+        exposure_term:
+          preferred_term: exposure to asbestos
+          term:
+            id: ECTO:9000033
+            label: exposure to asbestos
+      selected_evidence:
+        snippet: Malignant pleural mesothelioma (MPM) is an aggressive, malignant tumor of the pleural
+          surface and is strongly associated with asbestos exposure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23743993
+      reference_title: '[Regional treatment of malignant pleural mesothelioma: results from the tumor
+        centre Regensburg].'
+      explanation: Supports the strong association between mesothelioma and asbestos exposure.
+    first_seen_at: '2026-10-03T21:59:47.709605+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:23743993
+  76ae89405b1f29c4a0fe059b0880ad2d323028e2efcf1acbdd6cd7c5d812ab0a:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context:
+        - path: /environmental/0
+          value:
+            name: Asbestos Exposure
+            description: Asbestos fibers, when inhaled or ingested, become lodged in mesothelial tissues
+              where they cause chronic inflammation, oxidative stress, and DNA damage. The fibers persist
+              indefinitely in tissue and are directly genotoxic, causing chromosomal abnormalities and
+              mesothelial cell transformation. Occupational exposure accounts for approximately 80% of
+              cases.
+            exposure_term:
+              preferred_term: exposure to asbestos
+              term:
+                id: ECTO:9000033
+                label: exposure to asbestos
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Asbestos-Induced Mesothelial Injury
+        environmental_effect: TRIGGERS
+        causal_link_type: DIRECT
+        description: Fibers reaching and lodging in mesothelial tissue are what set off the repeated injury-and-regeneration
+          cycle; because the fibers persist indefinitely, the insult is ongoing rather than a single hit.
+      selected_evidence:
+        snippet: Malignant pleural mesothelioma (MPM) is an aggressive, malignant tumor of the pleural
+          surface and is strongly associated with asbestos exposure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:23743993
+      reference_title: '[Regional treatment of malignant pleural mesothelioma: results from the tumor
+        centre Regensburg].'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Ties asbestos exposure specifically to tumors of the pleural surface, the mesothelial
+        tissue in which the fiber-induced injury cycle occurs.
+    first_seen_at: '2026-10-03T21:59:48.777352+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:23743993
+  ffd4b4f4c4c178e510664dc74413ba1988a0aa2d81ff69cfd4910334ffb37b9d:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: BAP1 Tumor Suppressor Inactivation
+        description: BAP1 (BRCA1-associated protein 1) is a nuclear deubiquitinase that regulates chromatin
+          remodeling, DNA damage response, and cell cycle progression. BAP1 is one of the most frequently
+          inactivated tumor suppressors in mesothelioma, affected through germline or somatic loss-of-function
+          alterations that predispose to malignant transformation. BAP1 loss impairs chromatin regulation
+          and global gene expression control.
+        genes:
+        - preferred_term: BAP1
+          term:
+            id: hgnc:950
+            label: BAP1
+        molecular_functions:
+        - preferred_term: deubiquitinase activity
+          modifier: DECREASED
+          term:
+            id: GO:0101005
+            label: deubiquitinase activity
+        biological_processes:
+        - preferred_term: DNA damage response
+          modifier: DECREASED
+          term:
+            id: GO:0006974
+            label: DNA damage response
+      selected_evidence:
+        snippet: The cyclin-dependent kinase inhibitor 2A/alternative reading frame (CDKN2A/ARF), neurofibromatosis
+          type 2 (NF2) and BRCA1-associated protein-1 (BAP1) genes are the most frequently mutated tumor
+          suppressor genes detected in MM cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23677068
+      reference_title: Molecular pathogenesis of malignant mesothelioma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Sekido's molecular pathogenesis review of malignant mesothelioma identifies BAP1 as
+        one of the most frequently mutated tumor suppressor genes in MM, supporting the claim that BAP1
+        inactivation is a recurrent driver event.
+    first_seen_at: '2026-10-03T21:59:48.778255+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:23677068
+  9eef414a4180337b793394887bc19e3d19cb737ca00163efe2c3b8ce0ff33827:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: BAP1 Tumor Suppressor Inactivation
+        description: BAP1 (BRCA1-associated protein 1) is a nuclear deubiquitinase that regulates chromatin
+          remodeling, DNA damage response, and cell cycle progression. BAP1 is one of the most frequently
+          inactivated tumor suppressors in mesothelioma, affected through germline or somatic loss-of-function
+          alterations that predispose to malignant transformation. BAP1 loss impairs chromatin regulation
+          and global gene expression control.
+        genes:
+        - preferred_term: BAP1
+          term:
+            id: hgnc:950
+            label: BAP1
+        molecular_functions:
+        - preferred_term: deubiquitinase activity
+          modifier: DECREASED
+          term:
+            id: GO:0101005
+            label: deubiquitinase activity
+        biological_processes:
+        - preferred_term: DNA damage response
+          modifier: DECREASED
+          term:
+            id: GO:0006974
+            label: DNA damage response
+      selected_evidence:
+        snippet: BAP1 is involved in histone modification and its inactivation induces the disturbance
+          of global gene expression profiling
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23677068
+      reference_title: Molecular pathogenesis of malignant mesothelioma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Same review establishes the mechanistic role of BAP1 in chromatin regulation/histone
+        modification, supporting the description of BAP1 as a chromatin-remodeling tumor suppressor whose
+        loss disrupts gene expression.
+    first_seen_at: '2026-10-03T21:59:49.483997+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:23677068
+  56c817fc3d8d644986876d5093dc0d70d12e86cf239af3879f14f1b00e536a60:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: NF2/Merlin Inactivation
+        genetic_context:
+          variant_origin: SOMATIC
+        cell_types:
+        - preferred_term: mesothelial cell
+          term:
+            id: CL:0000077
+            label: mesothelial cell
+        description: The NF2 gene encoding merlin is frequently inactivated in mesothelioma. Merlin loss
+          activates YAP/TAZ signaling through the Hippo pathway, promoting cell proliferation and inhibiting
+          contact-dependent growth arrest.
+        genes:
+        - preferred_term: NF2
+          term:
+            id: hgnc:7773
+            label: NF2
+        biological_processes:
+        - preferred_term: Hippo signaling
+          modifier: DECREASED
+          term:
+            id: GO:0035329
+            label: hippo signaling
+      selected_evidence:
+        snippet: Merlin, which is encoded by NF2, regulates multiple cell signaling cascades including
+          the Hippo and mammalian target of rapamycin pathways, which regulate cell proliferation and
+          growth
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23677068
+      reference_title: Molecular pathogenesis of malignant mesothelioma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Same review establishes the mechanistic link between NF2/merlin loss and dysregulated
+        Hippo (and mTOR) signaling that drives mesothelioma cell proliferation, supporting the YAP/TAZ
+        activation downstream edge.
+    first_seen_at: '2026-10-03T21:59:49.513590+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:23677068
+  c2cfb43bd69f7985d4125483c8fadb290bb1347e08e670a2fa931ba5825398e1:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: NF2/Merlin Inactivation
+        genetic_context:
+          variant_origin: SOMATIC
+        cell_types:
+        - preferred_term: mesothelial cell
+          term:
+            id: CL:0000077
+            label: mesothelial cell
+        description: The NF2 gene encoding merlin is frequently inactivated in mesothelioma. Merlin loss
+          activates YAP/TAZ signaling through the Hippo pathway, promoting cell proliferation and inhibiting
+          contact-dependent growth arrest.
+        genes:
+        - preferred_term: NF2
+          term:
+            id: hgnc:7773
+            label: NF2
+        biological_processes:
+        - preferred_term: Hippo signaling
+          modifier: DECREASED
+          term:
+            id: GO:0035329
+            label: hippo signaling
+      selected_evidence:
+        snippet: The cyclin-dependent kinase inhibitor 2A/alternative reading frame (CDKN2A/ARF), neurofibromatosis
+          type 2 (NF2) and BRCA1-associated protein-1 (BAP1) genes are the most frequently mutated tumor
+          suppressor genes detected in MM cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23677068
+      reference_title: Molecular pathogenesis of malignant mesothelioma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Sekido's molecular pathogenesis review of malignant mesothelioma identifies NF2 as
+        one of the most frequently mutated tumor suppressor genes in MM, supporting the claim that NF2
+        inactivation is a recurrent driver event.
+    first_seen_at: '2026-10-03T21:59:49.484890+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:23677068
+  e961bb3effc7a23b1badae5ba43fdd96a0672f7f35ae35c69a800815cbbabb57:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: CDKN2A/p16 Loss
+        description: Homozygous deletion of CDKN2A, encoding p16INK4a and p14ARF, is one of the most frequent
+          genetic alterations in mesothelioma. Loss of p16 removes CDK4/6 inhibition, promoting cell cycle
+          progression, while p14ARF loss compromises p53 stabilization.
+        genes:
+        - preferred_term: CDKN2A
+          term:
+            id: hgnc:1787
+            label: CDKN2A
+        biological_processes:
+        - preferred_term: negative regulation of G1/S transition
+          modifier: DECREASED
+          term:
+            id: GO:2000134
+            label: negative regulation of G1/S transition of mitotic cell cycle
+      selected_evidence:
+        snippet: The cyclin-dependent kinase inhibitor 2A/alternative reading frame (CDKN2A/ARF), neurofibromatosis
+          type 2 (NF2) and BRCA1-associated protein-1 (BAP1) genes are the most frequently mutated tumor
+          suppressor genes detected in MM cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23677068
+      reference_title: Molecular pathogenesis of malignant mesothelioma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Sekido's molecular pathogenesis review identifies CDKN2A/ARF as one of the most frequently
+        mutated tumor suppressor genes in mesothelioma, supporting the claim that CDKN2A inactivation
+        is a recurrent driver event.
+    first_seen_at: '2026-10-03T21:59:49.514483+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:23677068
+  7936e02422234db18955f439064f5eeaab79f164be007c8b374b2b3624db3011:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Mesothelial Neoplasm
+        finding_term:
+          preferred_term: Mesothelial Neoplasm
+          term:
+            id: NCIT:C3786
+            label: Mesothelial Neoplasm
+        frequency: VERY_FREQUENT
+        description: Malignant mesothelioma is a neoplasm arising from mesothelial cells lining serosal
+          cavities.
+      selected_evidence:
+        snippet: Malignant mesothelioma (MM) is a neoplasm arising from mesothelial cells lining
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21412769
+      reference_title: 'Malignant mesothelioma: facts, myths, and hypotheses.'
+      explanation: Abstract defines malignant mesothelioma as arising from mesothelial cells.
+    first_seen_at: '2026-10-03T21:59:49.672061+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:21412769
+  7ee32f693d03043756c2d9797f61fba770b91cdaa68c64a7c9bee2c770035f7e:
+    claim:
+      about:
+        disease:
+          name: Malignant Mesothelioma
+          disease_term:
+            preferred_term: malignant mesothelioma
+            term:
+              id: MONDO:0006292
+              label: malignant mesothelioma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Immune Checkpoint Inhibition
+        description: Nivolumab plus ipilimumab is approved for unresectable pleural mesothelioma based
+          on the CheckMate 743 trial, which showed improved overall survival compared to chemotherapy.
+          Response rates are highest in non-epithelioid subtypes.
+        treatment_term:
+          preferred_term: immunotherapy
+          term:
+            id: NCIT:C15262
+            label: Immunotherapy
+      selected_evidence:
+        snippet: Recently, in first-line treatment, immunotherapy combining nivolumab with ipilimumab
+          has been shown to be superior to chemotherapy in the CheckMate-743 study in terms of overall
+          survival (18.1 months), leading to its approval by the FDA and EMA.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/cancers15245787
+      reference_title: Current State-of-the-Art Therapy for Malignant Pleural Mesothelioma and Future
+        Options Centered on Immunotherapy
+      evidence_source: HUMAN_CLINICAL
+      explanation: This review summarizes CheckMate-743 survival benefit and regulatory approval for nivolumab
+        plus ipilimumab in first-line malignant pleural mesothelioma.
+    first_seen_at: '2026-10-03T21:59:49.705375+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:02:36.418832+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:02:36.418832+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: DOI:10.3390/cancers15245787
+assessments:
+  3ddacb8693ceb47ee362ebd21c9500f7872200065c4a36582c5fb79341e8241c:
+    input_sha256: 3548332af28fcad6056763e61a6c2451024563a3efe395a7ff67a39945d77cab
+    configuration_sha256: 3e8723c847dcdccc399b4fd98ef5ec59588f9bc2b0798c31b8baba30e1140991
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:47.709605+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.17
+            PARTIAL: 0.81
+          confidence: 0.72
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.78
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.32
+            MATCH: 0.03
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6304
+        output_tokens: 275
+      elapsed_seconds: 0.2837
+      request_sha256: aa7f958d71e33a20bf209c9f7512b5b64b0bf9e68523c65ba1fb044cf1b02108
+      request_sha256s:
+      - aa7f958d71e33a20bf209c9f7512b5b64b0bf9e68523c65ba1fb044cf1b02108
+  6579e7c3025cf5973d302ec3ced2a22438751a9c7440d793e03c86b18c200d9a:
+    input_sha256: 76ae89405b1f29c4a0fe059b0880ad2d323028e2efcf1acbdd6cd7c5d812ab0a
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:48.777352+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.15
+            MATCH: 0.06
+            PARTIAL: 0.79
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.83
+            PARTIAL: 0.16
+          confidence: 0.75
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.16
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.14
+            PARTIAL: 0.74
+          confidence: 0.6
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            MATCH: 0.04
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.01
+            PARTIAL: 0.43
+          confidence: 0.34
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.35
+            PARTIAL: 0.54
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7611
+        output_tokens: 324
+      elapsed_seconds: 0.2819
+      request_sha256: 82c210cdd3c103be5b41136b9a93723f306c8f04e2f86cb8290cfc3247c05f83
+      request_sha256s:
+      - 82c210cdd3c103be5b41136b9a93723f306c8f04e2f86cb8290cfc3247c05f83
+  18059fed2d41c0ecbef670a7b33ecc8359a33a62d3b78ef49d0877d87ab55948:
+    input_sha256: ffd4b4f4c4c178e510664dc74413ba1988a0aa2d81ff69cfd4910334ffb37b9d
+    configuration_sha256: 5e3d67aff9c89f5d23335baa8d6d38620354170dcb67d426ab1469c4965ec007
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:48.778255+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            PARTIAL: 0.75
+            MISMATCH: 0.02
+          confidence: 0.63
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.37
+            MISMATCH: 0.02
+          confidence: 0.41
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.77
+            MISMATCH: 0.09
+          confidence: 0.64
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+          confidence: 0.82
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.18
+            MISMATCH: 0.05
+          confidence: 0.65
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.62
+            MISMATCH: 0.13
+          confidence: 0.44
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.55
+            MISMATCH: 0.05
+          confidence: 0.33
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.67
+            MISMATCH: 0.19
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.54
+            MISMATCH: 0.42
+          confidence: 0.32
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.79
+            MISMATCH: 0.13
+          confidence: 0.68
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.54
+            MISMATCH: 0.44
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12817
+        output_tokens: 596
+      elapsed_seconds: 0.2823
+      request_sha256: 50877f48eba7a871de15b0b61fd4b95faba3df32797f22cbfd155f24e5bab31d
+      request_sha256s:
+      - 50877f48eba7a871de15b0b61fd4b95faba3df32797f22cbfd155f24e5bab31d
+  e79dd0eecb993b0685f8fcaa9520ea388f61e6b19993be50ab4dbb6f9b2e796d:
+    input_sha256: 9eef414a4180337b793394887bc19e3d19cb737ca00163efe2c3b8ce0ff33827
+    configuration_sha256: 5e3d67aff9c89f5d23335baa8d6d38620354170dcb67d426ab1469c4965ec007
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.483997+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.8
+            MISMATCH: 0.05
+          confidence: 0.69
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.63
+            MISMATCH: 0.11
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            PARTIAL: 0.38
+            MISMATCH: 0.06
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.73
+            MISMATCH: 0.05
+          confidence: 0.59
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.22
+            MISMATCH: 0.06
+          confidence: 0.58
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.34
+            MISMATCH: 0.11
+          confidence: 0.33
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.36
+            MISMATCH: 0.12
+          confidence: 0.28
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.35
+            MISMATCH: 0.06
+          confidence: 0.38
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.49
+            MISMATCH: 0.15
+          confidence: 0.23
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.31
+            MISMATCH: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.62
+            MISMATCH: 0.33
+          confidence: 0.43
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.42
+            MISMATCH: 0.56
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12777
+        output_tokens: 599
+      elapsed_seconds: 0.1638
+      request_sha256: d848ec563d0b2c565ddedf06ddecb61c783836921a4199324a35596e1de2766f
+      request_sha256s:
+      - d848ec563d0b2c565ddedf06ddecb61c783836921a4199324a35596e1de2766f
+  d195caa4e9518416307d057ca7f905b05cbf4aab4e180381e6ea0d658a6f5e30:
+    input_sha256: 56c817fc3d8d644986876d5093dc0d70d12e86cf239af3879f14f1b00e536a60
+    configuration_sha256: f91614afc63486195d44e5475bda129e1947d61d4eeeb033c7a925f9e2fa135a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.513590+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.05
+            PARTIAL: 0.83
+          confidence: 0.75
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.65
+            MATCH: 0.18
+          confidence: 0.48
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.61
+            MATCH: 0.32
+          confidence: 0.43
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.46
+            MATCH: 0.01
+          confidence: 0.3
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.29
+            PARTIAL: 0.59
+            MATCH: 0.12
+          confidence: 0.38
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.35
+            MATCH: 0.09
+            PARTIAL: 0.56
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.88
+            MATCH: 0.04
+          confidence: 0.83
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.87
+            PARTIAL: 0.1
+          confidence: 0.8
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.84
+            PARTIAL: 0.13
+          confidence: 0.76
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            PARTIAL: 0.66
+            MATCH: 0.11
+          confidence: 0.5
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            PARTIAL: 0.61
+            MATCH: 0.03
+          confidence: 0.43
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.66
+            MATCH: 0.09
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12556
+        output_tokens: 596
+      elapsed_seconds: 0.1599
+      request_sha256: 5cc68d47a0ac9c4f89ccd285a2fbeed1b4feb7c7dc16b0243c82eddc5ddf8cad
+      request_sha256s:
+      - 5cc68d47a0ac9c4f89ccd285a2fbeed1b4feb7c7dc16b0243c82eddc5ddf8cad
+  109dfd3e7e0406679684d762919a94aec5c62613d73d64a2d5ad10a4693cf860:
+    input_sha256: c2cfb43bd69f7985d4125483c8fadb290bb1347e08e670a2fa931ba5825398e1
+    configuration_sha256: f91614afc63486195d44e5475bda129e1947d61d4eeeb033c7a925f9e2fa135a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.484890+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.83
+            MISMATCH: 0.05
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.35
+            MISMATCH: 0.02
+          confidence: 0.44
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.53
+            MISMATCH: 0.05
+          confidence: 0.29
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.36
+            MISMATCH: 0.05
+          confidence: 0.39
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.38
+            MISMATCH: 0.07
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.66
+            MISMATCH: 0.32
+          confidence: 0.5
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.55
+            MISMATCH: 0.39
+          confidence: 0.31
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.54
+            MISMATCH: 0.41
+          confidence: 0.32
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.31
+            MISMATCH: 0.67
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12583
+        output_tokens: 592
+      elapsed_seconds: 0.2177
+      request_sha256: 3a65444871204808801cb66120a14f311c0e0a6976c726927148548ad16c61e6
+      request_sha256s:
+      - 3a65444871204808801cb66120a14f311c0e0a6976c726927148548ad16c61e6
+  660bbd8def375b5256dfc2a7cf705e905b0806d999f42e4daa1f80abc477cb2a:
+    input_sha256: e961bb3effc7a23b1badae5ba43fdd96a0672f7f35ae35c69a800815cbbabb57
+    configuration_sha256: a8e55949d63de496a7eb99cd3c9c89a99ce35fea962f35954fe6c1b05a4a8d7b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.514483+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.83
+            MATCH: 0.14
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+            MATCH: 0.98
+          confidence: 0.96
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.55
+            MATCH: 0.42
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.88
+            MATCH: 0.05
+          confidence: 0.82
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.19
+            MATCH: 0.77
+          confidence: 0.65
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.24
+            MATCH: 0.67
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.66
+            MATCH: 0.17
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.71
+            MATCH: 0.17
+          confidence: 0.57
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.67
+            MATCH: 0.14
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9578
+        output_tokens: 441
+      elapsed_seconds: 0.2935
+      request_sha256: 924af8242bd1ab6f68890bae9802a119270728004d79e7bcc9519aab47fa2ee8
+      request_sha256s:
+      - 924af8242bd1ab6f68890bae9802a119270728004d79e7bcc9519aab47fa2ee8
+  5707325e5749df0ac6830a627e34cf1af5117d5e5a6047a7f279f35a50e8fcfd:
+    input_sha256: 7936e02422234db18955f439064f5eeaab79f164be007c8b374b2b3624db3011
+    configuration_sha256: d8fd9e5655656b6be03f4cd749736b3cfca36da48ba55860fa9acbca30ca277d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.672061+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.67
+            MISMATCH: 0.05
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.9
+            MISMATCH: 0.02
+          confidence: 0.85
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.84
+        /assertion/finding_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.86
+            MISMATCH: 0.02
+          confidence: 0.78
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.16
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.01
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7284
+        output_tokens: 321
+      elapsed_seconds: 0.1838
+      request_sha256: 951390e2c43150f83233e58761b5460e64a0a5a3214c95b67ac4b66b875c4ee1
+      request_sha256s:
+      - 951390e2c43150f83233e58761b5460e64a0a5a3214c95b67ac4b66b875c4ee1
+  67eb0ea1773dd198a5c595fa6cdd19496af65651e805838d973856c2f1407621:
+    input_sha256: 7ee32f693d03043756c2d9797f61fba770b91cdaa68c64a7c9bee2c770035f7e
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:59:49.705375+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.82
+            MATCH: 0.16
+            MISMATCH: 0.02
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.62
+            MISMATCH: 0.05
+          confidence: 0.44
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.81
+            MATCH: 0.15
+            MISMATCH: 0.04
+          confidence: 0.71
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.93
+            MISMATCH: 0.01
+          confidence: 0.89
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6318
+        output_tokens: 275
+      elapsed_seconds: 0.1506
+      request_sha256: a7314e363a8cde46f9a635d37080a45aa43d127ee12a71b022d8e4ecd3c238ce
+      request_sha256s:
+      - a7314e363a8cde46f9a635d37080a45aa43d127ee12a71b022d8e4ecd3c238ce

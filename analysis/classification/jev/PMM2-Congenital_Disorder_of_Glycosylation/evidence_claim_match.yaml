@@ -3684,6 +3684,76 @@ inputs:
     - assertion_path: /animal_models/2/modeled_mechanisms/0
       evidence_path: /animal_models/2/modeled_mechanisms/0/evidence/0
       reference: PMID:22956764
+  ecd27c2b4acfb94936b167c344050f10e68a36addda5c6e0e0894e50e3c2b43b:
+    claim:
+      about:
+        disease:
+          name: PMM2-Congenital Disorder of Glycosylation
+          disease_term:
+            preferred_term: PMM2-congenital disorder of glycosylation
+            term:
+              id: MONDO:0008907
+              label: PMM2-congenital disorder of glycosylation
+        context:
+        - path: /genetic/0
+          value:
+            name: PMM2
+            gene_term:
+              preferred_term: PMM2
+              term:
+                id: hgnc:9115
+                label: PMM2
+            relationship_type: CAUSATIVE
+            notes: 'At least one hypomorphic allele is required: biallelic complete loss of activity is
+              not compatible with survival, which is why missense alleles predominate and why a functional
+              null such as R141H is never seen homozygous. Per-allele residual activity is what places
+              a patient on the severity spectrum; the two alleles that carry most of that argument, R141H
+              and F119L, are curated as structured variants above rather than named only in this paragraph.'
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: c.357C>A (p.Phe119Leu)
+        clinical_significance: PATHOGENIC
+        description: 'The partial-activity allele that most often sits opposite R141H. The source that
+          makes that pairing claim ties it to Scandinavia, where F119L is most prevalent, so R141H/F119L
+          is reported as the commonest genotype there rather than established as the commonest worldwide.
+          Its interest is that it is the substrate the only enzyme-directed therapy needs: an activator
+          can raise residual activity but cannot create it, so a genotype pairing a null with a hypomorph
+          is precisely where such a drug has something to act on. R141H/F119L fibroblasts were one of
+          the four lines in which epalrestat was shown to raise PMM2 activity.'
+        functional_effects:
+        - function: phosphomannomutase activity
+          type: loss-of-function
+          description: Partial rather than complete - a hypomorph. The activity that survives is what
+            distinguishes this allele from R141H functionally, and what the enzyme-activator approach
+            depends on.
+      selected_evidence:
+        snippet: the two most prevalent human pathogenic variants R141H (NM_000303.2:c.422G>A (p.Arg141His),
+          ClinVar 7706) and F119L (NM_000303.2:c.357C>A (p.Phe119Leu), ClinVar 7711)
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/1
+      evidence_path: /genetic/0/variants/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:40501776
+      reference_title: Novel mouse model reveals neurodevelopmental origin of PMM2-CDG brain pathology.
+      evidence_source: OTHER
+      explanation: 'Establishes that F119L is one of the two most prevalent pathogenic alleles, which
+        the record previously asserted without a citation. Graded OTHER for the same reason as the sibling
+        R141H frequency item from this paper: it recites human epidemiology inside a mouse-model study.'
+    first_seen_at: '2026-10-03T21:10:00.182507+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:10:00.182507+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:10:00.182507+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/1
+      evidence_path: /genetic/0/variants/1/evidence/2
+      reference: PMID:40501776
 assessments:
   502a33847f07cc6c9c611a56cdddc9cbb16a3bae9b723cfbc170255f9a4e738a:
     input_sha256: 8e1b3f708c732a9b61f9e9787fb0769a9afdc689c24220545299fcc03490579a
@@ -8623,3 +8693,83 @@ assessments:
       request_sha256: b1abd0d3bf9bd1658f91101d0c9a40292caa56d52dd5f997c61c5a283dcd10e3
       request_sha256s:
       - b1abd0d3bf9bd1658f91101d0c9a40292caa56d52dd5f997c61c5a283dcd10e3
+  c7c78ae50895a420cff9e9aa8d34f2ebd040d7e602810ee7b0afc1a7413a2a10:
+    input_sha256: ecd27c2b4acfb94936b167c344050f10e68a36addda5c6e0e0894e50e3c2b43b
+    configuration_sha256: a9bed3855af2b988cedfe6bd9c8769045a5d22cac66636d891b168b82f2db8a8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:10:00.182507+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.07
+            PARTIAL: 0.6
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.07
+            PARTIAL: 0.28
+          confidence: 0.47
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+          confidence: 0.84
+        /assertion/clinical_significance:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.27
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/functional_effects/0/function:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.35
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/functional_effects/0/type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.32
+            PARTIAL: 0.51
+          confidence: 0.25
+        /assertion/functional_effects/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.49
+            PARTIAL: 0.45
+          confidence: 0.24
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.12
+            PARTIAL: 0.33
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9593
+        output_tokens: 426
+      elapsed_seconds: 0.4312
+      request_sha256: d1947ea512057ea4027d5a172d763b157b08c4b303186b44ad05de3661bd7e93
+      request_sha256s:
+      - d1947ea512057ea4027d5a172d763b157b08c4b303186b44ad05de3661bd7e93

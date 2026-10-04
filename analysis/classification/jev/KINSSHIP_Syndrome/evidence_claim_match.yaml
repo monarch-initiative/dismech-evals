@@ -935,6 +935,74 @@ inputs:
     - assertion_path: /differential_diagnoses/0
       evidence_path: /differential_diagnoses/0/evidence/0
       reference: PMID:33961779
+  4ab456a6c76dbd7209d1622b3a96de5df31e7dfb6805d3718994e1a5b3ede253:
+    claim:
+      about:
+        disease:
+          name: KINSSHIP Syndrome
+          disease_term:
+            preferred_term: KINSSHIP syndrome
+            term:
+              id: MONDO:0851095
+              label: KINSSHIP syndrome
+        context:
+        - path: /animal_models/0
+          value:
+            name: Aff3 degron knockin mouse
+            species: Mouse
+            genotype: Aff3 degron microdeletion knockin; Aff3 recurrent degron missense knockin
+            publication: PMID:33961779
+            description: 'Two allele-matched knockin lines, one modelling a patient microdeletion and
+              one the most common patient missense variant. They separate cleanly: the microdeletion line
+              shows the limb phenotype, the missense line dies early.'
+          role: ancestor
+        - path: /animal_models/0/modeled_mechanisms/0
+          value:
+            target: Multisystem Developmental Patterning Failure
+            relationship: PARTIALLY_RECAPITULATES
+            fidelity: MODERATE
+            description: The microdeletion knockin reproduces the lower mesomelic limb deformity seen
+              in affected individuals.
+            limitations: Only the lower-limb component is reported as recapitulated, and the missense
+              knockin's early lethality means the allele closest to the common human variant cannot be
+              phenotyped for the multisystem pattern at all — the more severe model is the less informative
+              one.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Lower limb mesomelic deformity
+        target: Multisystem Developmental Patterning Failure
+        direction: ALTERED
+        interpretation: The limb deformity is the measured point of correspondence between mouse and human.
+      selected_evidence:
+        snippet: knockin animals modeling one of the microdeletions and the most common of the missense
+          variants identified in affected individuals presented with lower mesomelic limb deformities
+          like KINSSHIP-affected individuals and early lethality, respectively
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+      - /animal_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:33961779
+      reference_title: Variants in the degron of AFF3 are associated with intellectual disability, mesomelic
+        dysplasia, horseshoe kidney, and epileptic encephalopathy.
+      evidence_source: MODEL_ORGANISM
+      explanation: Reports the limb phenotype in the microdeletion knockin and the early lethality of
+        the missense knockin.
+    first_seen_at: '2026-10-03T21:21:03.000224+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:03.000224+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:03.000224+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:33961779
 assessments:
   c88531a836616cb78713444d04a7825b6540367b874711b14dc984d8b8a4e693:
     input_sha256: 9791d23ce66acc4df9243eb375293ec1a8e65d839a628f6f44fafb6e3aefe031
@@ -2215,3 +2283,76 @@ assessments:
       request_sha256: ff02435bada6e1bca8250ccd5628479f824e0a2c51e0bb75b4276a8cff569874
       request_sha256s:
       - ff02435bada6e1bca8250ccd5628479f824e0a2c51e0bb75b4276a8cff569874
+  ccd075536b169ed08e0c134068afd965ea06e7abd0a769b00da8af66c1f727d1:
+    input_sha256: 4ab456a6c76dbd7209d1622b3a96de5df31e7dfb6805d3718994e1a5b3ede253
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:03.000224+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.09
+            PARTIAL: 0.4
+          confidence: 0.26
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.33
+            PARTIAL: 0.35
+          confidence: 0.03
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.05
+            PARTIAL: 0.23
+          confidence: 0.58
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.07
+            PARTIAL: 0.31
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8549
+        output_tokens: 356
+      elapsed_seconds: 0.1975
+      request_sha256: 5148758707c431beccca3c38eaca2d444ceee504e3e9d53db0257c0375f145ca
+      request_sha256s:
+      - 5148758707c431beccca3c38eaca2d444ceee504e3e9d53db0257c0375f145ca

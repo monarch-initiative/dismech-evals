@@ -1384,6 +1384,53 @@ inputs:
     - assertion_path: /treatments/5
       evidence_path: /treatments/5/evidence/0
       reference: PMID:24700941
+  5d265bf4ac7c49a43af89428c08f0ab1adc29678c8135f5db53528fb83033e2f:
+    claim:
+      about:
+        disease:
+          name: Hailey-Hailey Disease
+          disease_term:
+            preferred_term: Hailey-Hailey disease
+            term:
+              id: MONDO:0008218
+              label: Hailey-Hailey disease
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Botulinum Toxin A
+        description: Botulinum toxin A reduces local sweating, removing one of the mechanical and thermal
+          triggers of flexural flares. It is an adjunct rather than a primary therapy, and the evidence
+          base is small.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: Botulinum toxin is not almighty, but a promising alternative option.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33533135
+      reference_title: 'Botulinum toxin in treating Hailey-Hailey disease: A systematic review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Records the authors' own hedged positioning of botulinum toxin, which is why this entry
+        presents it as an adjunct rather than as first-line therapy.
+    first_seen_at: '2026-10-03T21:18:57.914712+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:57.914712+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:57.914712+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/1
+      reference: PMID:33533135
 assessments:
   c6a4de5e1df3d9130ac9482a4332fd229611effbd40fe48a090415db9a6e0dcd:
     input_sha256: 13cdd6edb21f5ef6ef7873f03c6850755a19d781f20ef6f4136aae4f8794c6b9
@@ -3528,3 +3575,69 @@ assessments:
       request_sha256: 42582db778010dad8f483a50f7451a745de6b28a12c614a5aad074bc89d83d8f
       request_sha256s:
       - 42582db778010dad8f483a50f7451a745de6b28a12c614a5aad074bc89d83d8f
+  5b988a0af99b2f0cdf9dda8e2a18ce6dff868eca5c09ad32da9554b6df3c4d96:
+    input_sha256: 5d265bf4ac7c49a43af89428c08f0ab1adc29678c8135f5db53528fb83033e2f
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:57.914712+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.8099999999999999
+            MISMATCH: 0.13
+          confidence: 0.72
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.72
+            MISMATCH: 0.19
+          confidence: 0.58
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47000000000000003
+            PARTIAL: 0.44
+            MISMATCH: 0.09
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.63
+            MISMATCH: 0.35
+          confidence: 0.44
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            PARTIAL: 0.35
+            MISMATCH: 0.51
+          confidence: 0.28
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.45
+            MISMATCH: 0.36
+          confidence: 0.17
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.46
+            MISMATCH: 0.44
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7672
+        output_tokens: 330
+      elapsed_seconds: 0.3651
+      request_sha256: 01fff2dfc57c49938f1bb51dba59ace49f299de08c75a4df5838ceada7d63d6e
+      request_sha256s:
+      - 01fff2dfc57c49938f1bb51dba59ace49f299de08c75a4df5838ceada7d63d6e

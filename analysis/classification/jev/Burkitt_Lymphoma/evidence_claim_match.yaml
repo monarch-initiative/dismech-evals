@@ -1905,6 +1905,115 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:39909657
+  6efb485761cfbd72eef6a151acac31fa93d81dc735fcbf96dcc649b64a7b6a78:
+    claim:
+      about:
+        disease:
+          name: Burkitt Lymphoma
+          disease_term:
+            preferred_term: Burkitt lymphoma
+            term:
+              id: MONDO:0007243
+              label: Burkitt lymphoma
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: High-Grade Malignancy with Rapid Tumor Growth
+            description: The combination of constitutive MYC-driven proliferation and apoptosis resistance
+              results in rapidly growing tumors and aggressive clinical progression.
+            biological_processes:
+            - preferred_term: cell population proliferation
+              modifier: INCREASED
+              term:
+                id: GO:0008283
+                label: cell population proliferation
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Jaw Swelling
+        description: Rapid craniofacial tumor expansion in endemic Burkitt lymphoma produces jaw swelling.
+      selected_evidence:
+        snippet: The endemic form of this malignancy occurs primarily in children aged 5 to 7 years, and
+          it presents with jaw and facial bone involvement.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/1
+      evidence_path: /pathophysiology/3/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:19623516
+      reference_title: 'Adult Burkitt lymphoma originating in the sphenoid sinus: case report and review
+        of the literature.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This clinical review supports jaw involvement as a characteristic manifestation of
+        endemic Burkitt lymphoma.
+    first_seen_at: '2026-10-03T22:50:18.491714+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:50:18.491714+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:50:18.491714+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/1
+      evidence_path: /pathophysiology/3/downstream/1/evidence/0
+      reference: PMID:19623516
+  74ac3bb18dd9b2a386763d46f765e793740859f28be47cfc16414fb6f0437059:
+    claim:
+      about:
+        disease:
+          name: Burkitt Lymphoma
+          disease_term:
+            preferred_term: Burkitt lymphoma
+            term:
+              id: MONDO:0007243
+              label: Burkitt lymphoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Apoptosis Resistance
+        description: While MYC normally sensitizes cells to apoptosis, Burkitt lymphoma cells acquire
+          mutations or alterations that counteract MYC-induced apoptosis. Cooperating TP53 alterations
+          and EBV-associated survival signals can counteract cell death in subsets of Burkitt lymphoma.
+        genes:
+        - preferred_term: TP53
+          term:
+            id: hgnc:11998
+            label: TP53
+        biological_processes:
+        - preferred_term: apoptotic process
+          modifier: DECREASED
+          term:
+            id: GO:0006915
+            label: apoptotic process
+      selected_evidence:
+        snippet: However, the intricate genetic landscape of BL, featuring additional alterations, such
+          as mutations in TP53, TCF3, and ID3, may necessitate a combinatorial approach targeting multiple
+          oncogenic pathways for effective intervention.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/lymphatics1020010
+      reference_title: 'Translocation Tales: Unraveling the MYC Deregulation in Burkitt Lymphoma for Innovative
+        Therapeutic Strategies'
+      evidence_source: OTHER
+      explanation: The review identifies TP53 mutations as recurrent cooperating alterations in the Burkitt
+        lymphoma genetic landscape.
+    first_seen_at: '2026-10-03T22:50:18.489217+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:50:18.489217+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:50:18.489217+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: DOI:10.3390/lymphatics1020010
 assessments:
   a08a0a1bc251a944dcb51f4a64475909bc22e31b71c9b897efd09c8d051f66c2:
     input_sha256: 77d5ea5beda5d35d76be79bc789afac8fdb9860f4d2278e208fb3ac05ad1ab79
@@ -4348,3 +4457,135 @@ assessments:
       request_sha256: dfb7b323fee5b454c95ccd336f7fe85f3c67f2a7ad9f84e9e3e6dd4f431fa2d2
       request_sha256s:
       - dfb7b323fee5b454c95ccd336f7fe85f3c67f2a7ad9f84e9e3e6dd4f431fa2d2
+  a1c2988d4696395b946cc0d835789676052f582c22779ecdbf0475f4dbd3474e:
+    input_sha256: 6efb485761cfbd72eef6a151acac31fa93d81dc735fcbf96dcc649b64a7b6a78
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:50:18.491714+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.71
+            MATCH: 0.25
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+            MATCH: 0.79
+          confidence: 0.69
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.75
+            MATCH: 0.19
+          confidence: 0.62
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.38
+            PARTIAL: 0.35
+            MATCH: 0.27
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5366
+        output_tokens: 226
+      elapsed_seconds: 0.2275
+      request_sha256: 138a1275e5cbe9e9ec1dd7e6375f7dd7a003d95fb8f63ee951646628cac7c327
+      request_sha256s:
+      - 138a1275e5cbe9e9ec1dd7e6375f7dd7a003d95fb8f63ee951646628cac7c327
+  00a0ce21948822b6169a7ca33981c54c68e8781934ccb0bbf3c4b67e150f4c7d:
+    input_sha256: 74ac3bb18dd9b2a386763d46f765e793740859f28be47cfc16414fb6f0437059
+    configuration_sha256: a8e55949d63de496a7eb99cd3c9c89a99ce35fea962f35954fe6c1b05a4a8d7b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:50:18.489217+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MATCH: 0.03
+            MISMATCH: 0.26
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.05
+            MISMATCH: 0.44
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.02
+            MISMATCH: 0.33
+          confidence: 0.48
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.59
+            MISMATCH: 0.06
+          confidence: 0.39
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.67
+            MISMATCH: 0.04
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.03
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.02
+            MISMATCH: 0.47
+          confidence: 0.27
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.02
+            MISMATCH: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9534
+        output_tokens: 445
+      elapsed_seconds: 0.2615
+      request_sha256: d702030f680ff62349e0a0ff56828784223ba6ab0b52226f3688f56db972e023
+      request_sha256s:
+      - d702030f680ff62349e0a0ff56828784223ba6ab0b52226f3688f56db972e023

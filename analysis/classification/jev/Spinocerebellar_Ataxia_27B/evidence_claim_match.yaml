@@ -4956,6 +4956,87 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:37165652
+  74e03439147db239b75466701694949209699aa0c92befe3e4123b1de1339d1e:
+    claim:
+      about:
+        disease:
+          name: Spinocerebellar ataxia 27B
+          disease_term:
+            preferred_term: Spinocerebellar ataxia 27B, late-onset
+            term:
+              id: MONDO:0859340
+              label: spinocerebellar ataxia 27B, late-onset
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: sca27b_pathogenic_threshold
+        prompt: What is the true pathogenic threshold for the FGF14 intronic GAA expansion, and how should
+          length and motif purity be combined into a single interpretive rule?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#FGF14 Intronic GAA Repeat Expansion
+        rationale: 'Every major cohort has proposed a different cut-off. The discovery study supported
+          (GAA)>=250 from family cosegregation; an independent Australian/German cohort concluded (GAA)>335
+          is fully penetrant with (GAA)>250 likely pathogenic at reduced penetrance; GeneReviews adopts
+          (GAA)>300 for a definitive diagnosis with a 250-300 reduced-penetrance zone; a downbeat-nystagmus
+          cohort found (GAA)200-249 alleles enriched 15-fold over controls with an indistinguishable phenotype;
+          and long-read work argues that once the repeat is known to be uninterrupted, enrichment begins
+          at 180-200 repeats. The disagreement is not merely statistical: it reflects that total allele
+          length is the wrong variable. The pathogenically relevant quantity appears to be the longest
+          pure GAA tract, since GAAGGA/AAGGAG hexameric expansions are equally common in patients and
+          controls, and mosaic interruptions that shorten the pure tract are enriched in unaffected carriers.
+          No consensus interpretive rule combining these dimensions exists, so laboratories currently
+          report the same allele differently.'
+        proposed_experiments:
+        - experiment_id: exp_sca27b_motif_aware_threshold
+          name: Motif-aware case-control threshold derivation by long-read sequencing
+          description: Long-read resequencing of a large multi-ancestry case-control set, reporting the
+            longest pure GAA tract rather than total allele size, to derive a motif-aware pathogenic threshold
+            with calibrated penetrance estimates.
+          decision_criterion: A motif-aware rule is preferable to a length-only rule if pure-tract length
+            separates cases from controls with materially higher accuracy than total allele length in
+            held-out cohorts.
+        - experiment_id: exp_sca27b_carrier_penetrance_cohort
+          name: Prospective penetrance follow-up of intermediate-range carriers
+          description: Prospective longitudinal follow-up of asymptomatic carriers of 200-300-repeat alleles
+            to measure age-dependent penetrance directly rather than inferring it from cross-sectional
+            case-control enrichment.
+          decision_criterion: Age-stratified conversion rates would establish whether the 200-300 zone
+            is genuinely reduced-penetrance pathogenic or simply a common non-pathogenic polymorphism
+            enriched by ascertainment.
+        - experiment_id: exp_sca27b_somatic_mosaicism_tissue
+          name: Cerebellum-versus-blood somatic repeat mosaicism
+          description: Systematic assay of somatic repeat mosaicism in cerebellum versus blood from the
+            same individuals, since a blood-derived repeat size may not represent the size present in
+            the pathogenically relevant tissue.
+          decision_criterion: Substantial cerebellum-specific somatic expansion would explain why blood-based
+            thresholds disagree across cohorts and would argue for tissue-adjusted interpretation.
+      selected_evidence:
+        snippet: It provides preliminary evidence that (GAA)200-249 alleles might be pathogenic.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38507876
+      reference_title: 'GAA-FGF14 disease: defining its frequency, molecular basis, and 4-aminopyridine
+        response in a large downbeat nystagmus cohort.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Extends candidate pathogenicity below the previously accepted cut-off, widening rather
+        than resolving the uncertainty.
+    first_seen_at: '2026-10-03T21:10:26.777499+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:10:26.777499+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:10:26.777499+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      reference: PMID:38507876
 assessments:
   ab49efd7bd55afd45a9ff3de9d6c621ad3fcba7c82aa4880f89eb12271823ea3:
     input_sha256: 048c41461ec7cd2995d80bc6b0700daf9d2576641886436fec27545de197a5c5
@@ -12591,3 +12672,160 @@ assessments:
       request_sha256: dc7fdfd72e4fcdf338f64abd0a10f46c5dc7fa893210650cd0b7a6a629d122be
       request_sha256s:
       - dc7fdfd72e4fcdf338f64abd0a10f46c5dc7fa893210650cd0b7a6a629d122be
+  ab48e9d7e0d9f9efada5075ff479ee7da1863fd02d04cc77a44023b6d4a0ba61:
+    input_sha256: 74e03439147db239b75466701694949209699aa0c92befe3e4123b1de1339d1e
+    configuration_sha256: 80b11b9cb797f77201017ead6bcf994df6024726ae6f8271f8d02f170077d97d
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:10:26.777499+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.07
+            MATCH: 0.28
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.08
+            MATCH: 0.64
+          confidence: 0.47
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.73
+            MATCH: 0.08
+          confidence: 0.6
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.82
+            MISMATCH: 0.06
+            MATCH: 0.12
+          confidence: 0.73
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.61
+            MATCH: 0.16
+          confidence: 0.41
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.85
+            MATCH: 0.02
+          confidence: 0.77
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.13
+            MATCH: 0.53
+          confidence: 0.29
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.25
+            MATCH: 0.19
+          confidence: 0.35
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.56
+            MATCH: 0.16
+          confidence: 0.35
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.63
+            MATCH: 0.06
+          confidence: 0.45
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.62
+            MATCH: 0.04
+          confidence: 0.43
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.69
+            MATCH: 0.03
+          confidence: 0.54
+        /assertion/proposed_experiments/1/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.53
+            MATCH: 0.13
+          confidence: 0.29
+        /assertion/proposed_experiments/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.49
+            MATCH: 0.12
+          confidence: 0.24
+        /assertion/proposed_experiments/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.38
+            MATCH: 0.09
+          confidence: 0.29
+        /assertion/proposed_experiments/1/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.64
+            MATCH: 0.05
+          confidence: 0.45
+        /assertion/proposed_experiments/2/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.71
+            MATCH: 0.12
+          confidence: 0.56
+        /assertion/proposed_experiments/2/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.75
+            MATCH: 0.05
+          confidence: 0.63
+        /assertion/proposed_experiments/2/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.86
+            MATCH: 0.02
+          confidence: 0.79
+        /assertion/proposed_experiments/2/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.85
+            MATCH: 0.02
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 20357
+        output_tokens: 1035
+      elapsed_seconds: 0.3261
+      request_sha256: 6c3d1f220e5eb263f48568109bae104962c85b26888fed38785f24b8f6eaa6de
+      request_sha256s:
+      - 6c3d1f220e5eb263f48568109bae104962c85b26888fed38785f24b8f6eaa6de

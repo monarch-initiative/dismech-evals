@@ -4576,6 +4576,73 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:39523189
+  516ee7e87b91d5d76774a55f971508ccc77a446401d4dbf03e2e67bd5c886e0a:
+    claim:
+      about:
+        disease:
+          name: Atopic Dermatitis
+          disease_term:
+            preferred_term: atopic dermatitis
+            term:
+              id: MONDO:0004980
+              label: atopic eczema
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Epidermal Barrier Dysfunction
+            conforms_to: epithelial_barrier_dysfunction#Epithelial Barrier Insult and Junctional Disruption
+            description: Loss-of-function mutations in filaggrin (FLG) and other barrier proteins lead
+              to impaired skin barrier integrity, increased transepidermal water loss, and enhanced allergen
+              penetration. This is the primary initiating event in many patients.
+            genes:
+            - preferred_term: FLG
+              term:
+                id: hgnc:3748
+                label: FLG
+            biological_processes:
+            - preferred_term: Keratinization
+              term:
+                id: GO:0031424
+                label: keratinization
+            cell_types:
+            - preferred_term: Keratinocyte
+              term:
+                id: CL:0000312
+                label: keratinocyte
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Xerosis
+        description: Barrier dysfunction manifests clinically as dry skin.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - abnormal epidermal differentiation
+        - increased transepidermal water loss
+      selected_evidence:
+        snippet: Atopic dermatitis, more commonly known as atopic eczema, is a chronic, relapsing inflammatory
+          skin disorder characterized by dry skin, localized erythematous rash, and intense pruritus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:39659858
+      reference_title: 'Atopic Dermatitis: A Review of Diagnosis and Treatment.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Review evidence lists dry skin as a defining clinical feature of AD.
+    first_seen_at: '2026-10-03T21:27:45.822841+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:27:45.822841+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:27:45.822841+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:39659858
 assessments:
   b8737e109c313ebb0063b09d8ab9270c68acaf1f8599c66dacc397d1ddc6f8f7:
     input_sha256: 7110c3e54ead1d29cfbe73a53d595731b6b6c5b7257fa0b094933ed6a05dea6d
@@ -10950,3 +11017,69 @@ assessments:
       request_sha256: e751bd27799d22f8f6814c814258817d98b6ddda392c3d6772d265537f42cab8
       request_sha256s:
       - e751bd27799d22f8f6814c814258817d98b6ddda392c3d6772d265537f42cab8
+  5b3bc9656ba77802a63be016a19d976108d793ad5b4ed2cc34b7d69019db0b78:
+    input_sha256: 516ee7e87b91d5d76774a55f971508ccc77a446401d4dbf03e2e67bd5c886e0a
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:27:45.822841+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.24
+            MISMATCH: 0.11
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.66
+            MISMATCH: 0.08
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.35
+            MISMATCH: 0.1
+          confidence: 0.33
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.15
+            MISMATCH: 0.36
+          confidence: 0.24
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.08
+            MISMATCH: 0.46
+          confidence: 0.19
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41000000000000003
+            MATCH: 0.37
+            MISMATCH: 0.22
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7546
+        output_tokens: 322
+      elapsed_seconds: 0.2231
+      request_sha256: 53acccb9f056343b9d5c5f7d04ea13f67bea558b54d70e444f2ed6bdfb7fa14b
+      request_sha256s:
+      - 53acccb9f056343b9d5c5f7d04ea13f67bea558b54d70e444f2ed6bdfb7fa14b

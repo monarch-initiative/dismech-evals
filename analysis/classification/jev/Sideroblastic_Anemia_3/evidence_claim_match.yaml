@@ -1940,6 +1940,58 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:16110529
+  7f388c22319a311e97ee2b6b72041bd01ab7149bfaa53f52a4c00caee6bcaf90:
+    claim:
+      about:
+        disease:
+          name: Sideroblastic Anemia 3
+          disease_term:
+            preferred_term: sideroblastic anemia 3
+            term:
+              id: MONDO:0014804
+              label: sideroblastic anemia 3
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Avoidance of routine transfusion
+        description: Transfusion worsened the anemia in the index patient, inverting the usual management
+          assumption for a microcytic anemia. This is a single-patient observation and is curated because
+          acting on the default assumption would be harmful if it generalises.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Supportive Care
+          term:
+            id: NCIT:C15747
+            label: Supportive Care
+        target_phenotypes:
+        - preferred_term: Microcytic anemia
+          term:
+            id: HP:0001935
+            label: Microcytic anemia
+      selected_evidence:
+        snippet: Anemia was worsened by blood transfusions but partially reversed by iron chelation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17485548
+      reference_title: The human counterpart of zebrafish shiraz shows sideroblastic-like microcytic anemia
+        and iron overload.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Direct observation that transfusion worsened rather than improved the anemia.
+    first_seen_at: '2026-10-03T21:10:26.205297+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:10:26.205297+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:10:26.205297+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:17485548
 assessments:
   ae97bfc3e3d6782c9e5ba350b9bd632bfb9261410d7a20f03cbbd4477e0b0e54:
     input_sha256: 690f178e46f6f13066965130d87e790b4d8561e87bfaa4e63d5da75e89415aa5
@@ -4517,3 +4569,83 @@ assessments:
       request_sha256: e21e3fbf89b5d4344e3639626c79172234f7197917c97c079c961ee07d6838a2
       request_sha256s:
       - e21e3fbf89b5d4344e3639626c79172234f7197917c97c079c961ee07d6838a2
+  63dc9bacb2880f10bfdb037bed9380c0e2665d0b87ba13e9191da663b3c7bd3e:
+    input_sha256: 7f388c22319a311e97ee2b6b72041bd01ab7149bfaa53f52a4c00caee6bcaf90
+    configuration_sha256: fefbd43b1dee592a005eaf917a4721b578427e760151e146c8496eaf519b0931
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:10:26.205297+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.05
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.08
+            PARTIAL: 0.85
+          confidence: 0.79
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.03
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.04
+            PARTIAL: 0.38
+          confidence: 0.37
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.33
+            PARTIAL: 0.33
+          confidence: 0.01
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.26
+            PARTIAL: 0.48
+          confidence: 0.21
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.18
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.29
+            PARTIAL: 0.5700000000000001
+          confidence: 0.35
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.21
+            PARTIAL: 0.59
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9692
+        output_tokens: 434
+      elapsed_seconds: 0.2556
+      request_sha256: 6faeb13a687094ec5af7bdbb8c0906171d234e649ee34fd2ce34249e94567bc6
+      request_sha256s:
+      - 6faeb13a687094ec5af7bdbb8c0906171d234e649ee34fd2ce34249e94567bc6

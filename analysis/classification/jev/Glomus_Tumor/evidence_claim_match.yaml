@@ -7300,6 +7300,56 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:32604167
+  6c50c19139189d5ddb5a4c5ecb7e0e12e03f329ba78a702c423baa12d23dadc6:
+    claim:
+      about:
+        disease:
+          name: Glomus Tumor
+          disease_term:
+            preferred_term: glomus tumor
+            term:
+              id: MONDO:0018327
+              label: glomus tumor
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: NOTCH fusion / BRAF molecular testing
+        description: FISH break-apart or RNA-based fusion testing for NOTCH1/NOTCH2/NOTCH3 rearrangement,
+          and BRAF V600E testing (by sequencing or VE1 immunohistochemistry), are reserved for deep, visceral,
+          atypical, malignant or diagnostically ambiguous lesions. A NOTCH rearrangement supports glomus
+          tumor over the PDGFRB-mutant myofibroma/myopericytoma arm of the pericytic family; a BRAF V600E
+          result is directly actionable in metastatic disease. Molecular testing is NOT required for a
+          classic subungual lesion, which is typically fusion-negative in any case.
+        diagnosis_term:
+          preferred_term: fluorescence in situ hybridization
+          term:
+            id: NCIT:C17563
+            label: Fluorescence In Situ Hybridization
+      selected_evidence:
+        snippet: rearrangements of NOTCH genes are seen in over half of GT, with NOTCH2-MIR143 being the
+          most common fusion (73%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/4
+      evidence_path: /diagnosis/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32604167
+      reference_title: A Molecular Reappraisal of Glomus Tumors and Related Pericytic Neoplasms With Emphasis
+        on NOTCH-gene Fusions.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the diagnostic yield of NOTCH rearrangement testing in glomus tumor.
+    first_seen_at: '2026-10-03T21:20:29.178041+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:29.178041+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:29.178041+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/4
+      evidence_path: /diagnosis/4/evidence/0
+      reference: PMID:32604167
 assessments:
   97a60409a26e81ff6c594bc8f94589f8572a3ae0cce5b64cda449c0e302cfb84:
     input_sha256: 02ef695a8dfd65c4ec23ac93f07a4c18990e1f9c31d2260e8de08a3e931afcc7
@@ -16662,3 +16712,62 @@ assessments:
       request_sha256: fecaa7777f0f1d5bceca6b379454d112893bdaf670cdcb17c06c74c6b7d9c4ab
       request_sha256s:
       - fecaa7777f0f1d5bceca6b379454d112893bdaf670cdcb17c06c74c6b7d9c4ab
+  c472195e65176a2d9c2155e7005e338af239e08897b53b404b92ae25908440d4:
+    input_sha256: 6c50c19139189d5ddb5a4c5ecb7e0e12e03f329ba78a702c423baa12d23dadc6
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:29.178041+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.71
+            MISMATCH: 0.12
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.4
+            MISMATCH: 0.11
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.62
+            MISMATCH: 0.12
+          confidence: 0.43
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.28
+            MISMATCH: 0.4
+          confidence: 0.1
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.3
+            MISMATCH: 0.4
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6390
+        output_tokens: 283
+      elapsed_seconds: 0.1666
+      request_sha256: a8bf210d466ffb025851c3793a8af4d25bdc6b437a360da3bf55f0b8c0bec27f
+      request_sha256s:
+      - a8bf210d466ffb025851c3793a8af4d25bdc6b437a360da3bf55f0b8c0bec27f

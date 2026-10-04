@@ -2600,6 +2600,74 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/1
       reference: PMID:34655400
+  a9435d29b0c4071c7e7095e56144f0cc5bd94423a5088f099bf59bb52f24136b:
+    claim:
+      about:
+        disease:
+          name: Congenital Disorder of Glycosylation, Type ICC
+          disease_term:
+            preferred_term: congenital disorder of glycosylation, type ICC
+            term:
+              id: MONDO:0026729
+              label: congenital disorder of glycosylation, type ICC
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Immunodeficiency
+            display_name: Primary immunodeficiency presentation (XMEN)
+            description: 'The immunodeficiency presentation, historically named XMEN. Dominated by failure
+              to control Epstein-Barr virus, with EBV-associated lymphoproliferative disease and lymphoma,
+              lymphadenopathy, autoimmune cytopenias, liver disease and recurrent sinopulmonary infection,
+              on a background of decreased NKG2D expression on CD8+ T cells and NK cells.
+
+              '
+          role: subtype
+      assertion_type: Phenotype
+      assertion:
+        category: Hematologic
+        name: Severe Autoimmune Cytopenias
+        description: 'Severe (grade 4) autoimmune cytopenias in 35% (8/23) of the reported cohort. Curated
+          separately from the isolated thrombocytopenia and neutropenia above because the claim here is
+          the autoimmune aetiology and the severity grade, not the cell count alone.
+
+          '
+        subtype: Immunodeficiency
+        phenotype_term:
+          preferred_term: Autoimmune thrombocytopenia
+          term:
+            id: HP:0001973
+            label: Autoimmune thrombocytopenia
+          severity: SEVERE
+        frequency: FREQUENT
+        notes: HPO has no general autoimmune-cytopenia class covering all lineages, so this is bound to
+          the thrombocytopenia-specific term, which is narrower than the source's "autoimmune cytopenias".
+          Recorded so the narrowing is visible rather than implied.
+      selected_evidence:
+        snippet: Recurrent mouth sores 35% (8/23) Severe autoimmune cytopenias (grade 4) 35% (8/23) Skin
+          warts or condylomata acuminata 30% (7/23)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/18
+      evidence_path: /phenotypes/18/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:31714901
+      reference_title: Defective glycosylation and multisystem abnormalities characterize the primary
+        immunodeficiency XMEN disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Cohort frequency for severe grade 4 autoimmune cytopenias.
+    first_seen_at: '2026-10-03T22:49:04.530939+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:49:04.530939+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:49:04.530939+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/18
+      evidence_path: /phenotypes/18/evidence/0
+      reference: PMID:31714901
 assessments:
   3e3e82c32aaa274b2cd64b9d7e7d2235a153a34bef9ec98304276123dbdf5c95:
     input_sha256: 9252c1ae510a5ef7b5de3bedcc41ad382ccf97400dea44672d8a71af42d77457
@@ -6001,3 +6069,104 @@ assessments:
       request_sha256: b60fa3e7a6955ac800b55fc5180361035acdbdea2a56bd6483f6d47c4a58e61a
       request_sha256s:
       - b60fa3e7a6955ac800b55fc5180361035acdbdea2a56bd6483f6d47c4a58e61a
+  8f12bdbb19167a30feea9e0d8e8e2e8a68816b9de9b62bd011f3db00608d66e3:
+    input_sha256: a9435d29b0c4071c7e7095e56144f0cc5bd94423a5088f099bf59bb52f24136b
+    configuration_sha256: b8b1f3fd790f7cc40eadea07a52453c505b2969e890c76030257e1dd0ea8dbf0
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:49:04.530939+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.24
+            PARTIAL: 0.3
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.36
+            PARTIAL: 0.42
+          confidence: 0.14
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.17
+            PARTIAL: 0.12
+          confidence: 0.56
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.06
+            PARTIAL: 0.14
+          confidence: 0.7
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.04
+            PARTIAL: 0.07
+          confidence: 0.84
+        /assertion/subtype:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.18
+            PARTIAL: 0.28
+          confidence: 0.31
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.15
+            PARTIAL: 0.41
+          confidence: 0.16
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.16
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/phenotype_term/severity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.33
+            PARTIAL: 0.39
+          confidence: 0.08
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.29
+            PARTIAL: 0.37
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12322
+        output_tokens: 547
+      elapsed_seconds: 0.3668
+      request_sha256: 7ab472651084838dc1b37fb212d0df299a221bd609458092cca4ada9de65ffe9
+      request_sha256s:
+      - 7ab472651084838dc1b37fb212d0df299a221bd609458092cca4ada9de65ffe9

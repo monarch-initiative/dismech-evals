@@ -1390,6 +1390,70 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/0
       reference: PMID:35945593
+  cddb6445ab3cb2e3738011ef5f6406702e7266a06849341d3784e20708e8f762:
+    claim:
+      about:
+        disease:
+          name: pantothenate kinase-associated neurodegeneration
+          disease_term:
+            preferred_term: pantothenate kinase-associated neurodegeneration
+            term:
+              id: MONDO:0009319
+              label: pantothenate kinase-associated neurodegeneration
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: PANK2 loss of function
+        description: Pathogenic PANK2 variants impair the mitochondrial pantothenate kinase 2 enzyme and
+          initiate the downstream neurodegenerative cascade.
+        genes:
+        - preferred_term: PANK2
+          term:
+            id: hgnc:15894
+            label: PANK2
+        cell_types:
+        - preferred_term: neuron
+          term:
+            id: CL:0000540
+            label: neuron
+        molecular_functions:
+        - preferred_term: pantothenate kinase activity
+          term:
+            id: GO:0004594
+            label: pantothenate kinase activity
+          modifier: DECREASED
+        biological_processes:
+        - preferred_term: coenzyme A biosynthetic process
+          term:
+            id: GO:0015937
+            label: coenzyme A biosynthetic process
+          modifier: DECREASED
+      selected_evidence:
+        snippet: PanK2 protein is localized to mitochondria of neurons in human brain, distinguishing
+          it from other pantothenate kinases that do not possess mitochondrial-targeting sequences.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15659606
+      reference_title: Altered neuronal mitochondrial coenzyme A synthesis in neurodegeneration with brain
+        iron accumulation caused by abnormal processing, stability, and catalytic activity of mutant pantothenate
+        kinase 2.
+      evidence_source: IN_VITRO
+      explanation: This directly supports the neuronal mitochondrial localization of PANK2.
+    first_seen_at: '2026-10-03T21:25:30.960957+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:30.960957+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:30.960957+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:15659606
 assessments:
   dadba3eb24252c2ad8498e67df23d28fc89c75ef22c3364267f4e1c611a7d5bf:
     input_sha256: e356e9755c3ec03d9ba8028d651887097ac3b46622c69d7ba69b9fdf26852b0b
@@ -3245,3 +3309,118 @@ assessments:
       request_sha256: 64d4c5be913185f8a9e951c7def26abd0ca968d96dd705da5363ad7b7d52c982
       request_sha256s:
       - 64d4c5be913185f8a9e951c7def26abd0ca968d96dd705da5363ad7b7d52c982
+  7eb8219619607eb057a7ded8b4794d93388875e7fa80740af96dc768feeded0c:
+    input_sha256: cddb6445ab3cb2e3738011ef5f6406702e7266a06849341d3784e20708e8f762
+    configuration_sha256: 473762d6fbfc159556f28d9656726cc7ec07b49f57c1bab7000898becbd98f89
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:30.960957+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.74
+            MISMATCH: 0.23
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.43
+            MISMATCH: 0.07
+          confidence: 0.25
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.54
+            MISMATCH: 0.36
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.6
+            MISMATCH: 0.38
+          confidence: 0.41
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.29
+            MISMATCH: 0.1
+          confidence: 0.43
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.36
+            MISMATCH: 0.12
+          confidence: 0.29
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.29
+            MISMATCH: 0.66
+          confidence: 0.48
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.4
+            MISMATCH: 0.54
+          confidence: 0.31
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.19
+            MISMATCH: 0.8
+          confidence: 0.71
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.35
+            MISMATCH: 0.63
+          confidence: 0.44
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.4
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.23
+            MISMATCH: 0.76
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14726
+        output_tokens: 709
+      elapsed_seconds: 0.281
+      request_sha256: ba1d4be65857d41e2a28d16f523de684dfffdc2910ba3afca753be28fa9e2e9d
+      request_sha256s:
+      - ba1d4be65857d41e2a28d16f523de684dfffdc2910ba3afca753be28fa9e2e9d

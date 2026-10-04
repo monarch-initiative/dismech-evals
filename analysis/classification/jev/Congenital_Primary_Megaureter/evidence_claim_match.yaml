@@ -2331,6 +2331,68 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT05639283
+  342c16ac16a42dc85ee1aadc33961b6b7bf8207ffd26725c8f0a4936d302043f:
+    claim:
+      about:
+        disease:
+          name: Congenital Primary Megaureter
+          disease_term:
+            preferred_term: congenital primary megaureter
+            term:
+              id: MONDO:0018960
+              label: congenital primary megaureter
+        context:
+        - path: /has_subtypes/2
+          value:
+            name: Non-obstructed Non-refluxing
+            display_name: Non-obstructed, non-refluxing primary megaureter
+            description: 'The commonest form: the aperistaltic segment produces ureteral dilation without
+              a demonstrable functional obstruction or reflux. Most cases are detected antenatally or
+              incidentally, remain stable or improve with growth of the ureter and resolution of the relative
+              caliber mismatch across the segment, and are managed with observation rather than surgery.
+
+              '
+            subtype_term:
+              preferred_term: congenital primary megaureter, nonrefluxing and unobstructed form
+              term:
+                id: MONDO:0016552
+                label: congenital primary megaureter, nonrefluxing and unobstructed form
+          role: subtype
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Non-obstructed non-refluxing form — stabilization or spontaneous resolution
+        subtype: Non-obstructed Non-refluxing
+        age_range: Infancy through early childhood (typically resolves within several years of diagnosis)
+        notes: The commonest form usually stabilizes or resolves without surgery as the ureter grows and
+          the relative caliber mismatch across the aperistaltic segment lessens.
+      selected_evidence:
+        snippet: In total, 72 PM were identified in this series. At the end of the follow-up period, 38
+          PM (52.8%) had resolved, in 18 PM (25%) ureteral dilatation persisted and 16 PM (22.2%) required
+          a surgical procedure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/2
+    evidence_metadata:
+      reference: PMID:22397575
+      reference_title: 'Long-term follow-up of neonatally diagnosed primary megaureter: rate and predictors
+        of spontaneous resolution.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies the spontaneous-resolution, persistence, and eventual surgical-requirement
+        rates in long-term follow-up of primary megaureter.
+    first_seen_at: '2026-10-03T21:19:59.103290+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:59.103290+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:59.103290+00:00'
+    occurrences:
+    - assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      reference: PMID:22397575
 assessments:
   5fddfbcc5ca95da412961fb22da4162cab61e8bb26f4a783ee26cc843f931c32:
     input_sha256: 04cfefb18278b4dd1c09dcf23753113dbd4776363708d8988b0e1dbe05cd9485
@@ -5241,3 +5303,69 @@ assessments:
       request_sha256: 276be942c35276cca2e29cf912ca72773d40786886d310321754eeb66cd75c87
       request_sha256s:
       - 276be942c35276cca2e29cf912ca72773d40786886d310321754eeb66cd75c87
+  d75d1d461b6899b53a7b6b8ae5b36c40bea202f174195f9ebbc9b0edb7c30550:
+    input_sha256: 342c16ac16a42dc85ee1aadc33961b6b7bf8207ffd26725c8f0a4936d302043f
+    configuration_sha256: 14057e0758dc3cf1959c935a202368eb19d9f06c60b2dcb4219d72b13d2dd2e1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:59.103290+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.04
+            PARTIAL: 0.77
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.01
+            PARTIAL: 0.25
+          confidence: 0.62
+        /assertion/phase:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.03
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/subtype:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.17
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/age_range:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.26
+            PARTIAL: 0.74
+          confidence: 0.6
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.04
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.08
+            PARTIAL: 0.54
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7410
+        output_tokens: 315
+      elapsed_seconds: 0.2952
+      request_sha256: a78f67bebc520a5503bbdf0610dbcb97859e9f9648fb00991a952512433cdf47
+      request_sha256s:
+      - a78f67bebc520a5503bbdf0610dbcb97859e9f9648fb00991a952512433cdf47

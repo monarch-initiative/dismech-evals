@@ -10910,6 +10910,72 @@ inputs:
     - assertion_path: /datasets/0
       evidence_path: /datasets/0/evidence/0
       reference: GEO:GSE49145
+  ef272fb11dd8dc75f3331361be7e074b6e019ac8f4c7264ffd7fd56ed3f58c08:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Epilepsy with Auditory Features
+          disease_term:
+            preferred_term: autosomal dominant epilepsy with auditory features
+            term:
+              id: MONDO:0010898
+              label: autosomal dominant epilepsy with auditory features
+        context:
+        - path: /animal_models/3
+          value:
+            name: Parvalbumin-neuron conditional Lgi1 knockout mice
+            species: Mouse
+            genotype: PV-Lgi1cKO
+            description: The tested PV-targeted deletion did not produce observed spontaneous seizures
+              or increased convulsant susceptibility. This cell-population and protocol-specific negative
+              result cannot exclude roles for other inhibitory neurons or assay conditions.
+          role: ancestor
+        - path: /animal_models/3/modeled_mechanisms/0
+          value:
+            target: Epileptic Network Activity
+            relationship: FAILS_TO_RECAPITULATE
+            description: The reported seizure endpoints were not increased in the PV-targeted conditional
+              model.
+            fidelity: UNKNOWN
+            limitations: Negative result is restricted to the targeted PV population and the reported
+              tests; source available only as an abstract.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Seizure susceptibility
+        target: Epileptic Network Activity
+        direction: UNCHANGED
+        interpretation: The reported seizure endpoints were not increased in the PV-targeted conditional
+          model.
+      selected_evidence:
+        snippet: In contrast, neither spontaneous seizures nor increased seizure susceptibility to convulsant
+          were observed when Lgi1 was deleted in parvalbumin interneurons.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /animal_models/3/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/3/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/3
+      - /animal_models/3/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:25234641
+      reference_title: Glutamatergic neuron-targeted loss of LGI1 epilepsy gene results in seizures.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: Negative result in the specific PV-targeted conditional model, not every inhibitory
+        cell population.
+    first_seen_at: '2026-10-03T22:22:12.073218+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:12.073218+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:12.073218+00:00'
+    occurrences:
+    - assertion_path: /animal_models/3/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/3/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:25234641
 assessments:
   d512623d2a269131734017b6c8311b33c5b86669a4852608a0197f2144031041:
     input_sha256: 1c53360385e41174061d5d401fc375d7bc8a89de38e68fe80af46907ef3fbb4b
@@ -26243,3 +26309,76 @@ assessments:
       request_sha256: 41e0d1a97c48fdff38ca3dfa92318297d5613d8a5e35615bd1bfdd1e72b42e52
       request_sha256s:
       - 41e0d1a97c48fdff38ca3dfa92318297d5613d8a5e35615bd1bfdd1e72b42e52
+  39c5fb4e1ecb1bf6903b7fa17fbf765f613f2c5a840a52f8e578bf0e7057b441:
+    input_sha256: ef272fb11dd8dc75f3331361be7e074b6e019ac8f4c7264ffd7fd56ed3f58c08
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:12.073218+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.13
+            PARTIAL: 0.27
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.17
+            PARTIAL: 0.41
+          confidence: 0.13
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.37
+            PARTIAL: 0.23
+          confidence: 0.09
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.09
+            PARTIAL: 0.09
+          confidence: 0.73
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.09
+            PARTIAL: 0.21
+          confidence: 0.55
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.18
+            PARTIAL: 0.28
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8455
+        output_tokens: 355
+      elapsed_seconds: 0.2509
+      request_sha256: 58764d106812597f3a61164b810317b1696ad6e09d50d54605a3f5eda96a7aea
+      request_sha256s:
+      - 58764d106812597f3a61164b810317b1696ad6e09d50d54605a3f5eda96a7aea

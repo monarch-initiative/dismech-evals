@@ -1,0 +1,4044 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Ethylene_Glycol_Poisoning.yaml
+disease: Ethylene Glycol Poisoning
+inventory:
+  source_sha256: b85c081cbeea4c0d5a38867e34315557acfdbe418fcb09a6e27f99f16b0fb4bb
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-03T23:58:27.664715+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  c5c6a8e97aa8dfd2ee2277735b79b718f857a9d3e6e87fb1159058aee192290b:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Ethylene Glycol Ingestion and Alcohol Dehydrogenase Bioactivation
+        description: Ingested ethylene glycol is oxidised by alcohol dehydrogenase to glycolaldehyde and
+          onward to glycolic and oxalic acid. The parent alcohol is only mildly intoxicating; the toxicity
+          belongs to the metabolites. That is what makes this a bioactivation poisoning rather than a
+          direct one, and it is why an enzyme inhibitor works as an antidote while removing the parent
+          compound alone does not.
+        role: trigger
+        biological_scale: MOLECULAR
+        conforms_to: drug_induced_nephrotoxicity#Nephrotoxic Drug Exposure and Tubular Uptake
+        molecular_functions:
+        - preferred_term: alcohol dehydrogenase (NAD+) activity
+          term:
+            id: GO:0004022
+            label: alcohol dehydrogenase (NAD+) activity
+          modifier: INCREASED
+        notes: Conformance is asserted on the shared step of a nephrotoxin being concentrated and acted
+          on in the kidney, not on the agent being a drug. The module's trigger names a nephrotoxic drug;
+          ethylene glycol is an ingested industrial alcohol. Unlike the chronic dietary exposures curated
+          elsewhere in this KB, the acute time course of the module fits this disease exactly.
+      selected_evidence:
+        snippet: The effects of these substances, except for isopropanol and possibly alcoholic ketoacidosis,
+          are due to their metabolites, which can cause metabolic acidosis and cellular dysfunction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: States that the toxicity belongs to the metabolites rather than the parent alcohols,
+        which is the claim this node is built on.
+    first_seen_at: '2026-10-03T21:24:00.628653+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:18045860
+  9c7b4b86223ba67b782665420904345c0c48db32eedb74f2fe6bd6bd52ed277c:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Glycolic Acid Accumulation and High Anion Gap Metabolic Acidosis
+        description: 'Glycolic acid accumulates and consumes bicarbonate, producing the high anion gap
+          acidosis that dominates early presentation. The osmolal gap moves the other way in time: it
+          is highest while unmetabolised alcohol is still present, and falls as the anion gap rises. A
+          patient sampled late can have a normal osmolal gap and a large anion gap, and a patient sampled
+          early the reverse, which is why either alone can mislead.'
+        role: amplifier
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: Accumulation of the alcohols in the blood can cause an increment in the osmolality, and
+          accumulation of their metabolites can cause an increase in the anion gap and a decrease in serum
+          bicarbonate concentration.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: Separates the osmolal gap, which tracks the parent alcohol, from the anion gap, which
+        tracks the metabolites - the basis for the timing caveat in this node's description.
+    first_seen_at: '2026-10-03T21:24:01.382038+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:18045860
+  1929f8bd7de52ccd97d1976d2dc7ce26df1424d0d864a7faebefef9a2f144878:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Oxalic Acid Production and Calcium Oxalate Crystal Deposition
+        description: 'Oxalate is the terminal metabolite. It precipitates with calcium as insoluble calcium
+          oxalate in the renal tubules. Plasma and urinary oxalate outlast the parent alcohol by days:
+          in a reported case the parent compound was cleared within 36 hours by dialysis while plasma
+          oxalate peaked on day 3 and did not normalise until day 7. The crystal burden is therefore still
+          being laid down after the poison itself has gone.'
+        role: mechanism
+        biological_scale: TISSUE
+        locations:
+        - preferred_term: proximal tubule
+          term:
+            id: UBERON:0004134
+            label: proximal tubule
+      selected_evidence:
+        snippet: Both lead to calcium-oxalate oversaturation and hence to the risk of local (renal) or
+          systemic crystal deposition.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Links raised plasma and urinary oxalate to calcium oxalate oversaturation and crystal
+        deposition.
+    first_seen_at: '2026-10-03T21:24:01.383353+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:18696123
+  95fd4858b0ac59104206ca59ee5f71439261d78153975c07a1f77423ff3abb5c:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Oxalic Acid Production and Calcium Oxalate Crystal Deposition
+        description: 'Oxalate is the terminal metabolite. It precipitates with calcium as insoluble calcium
+          oxalate in the renal tubules. Plasma and urinary oxalate outlast the parent alcohol by days:
+          in a reported case the parent compound was cleared within 36 hours by dialysis while plasma
+          oxalate peaked on day 3 and did not normalise until day 7. The crystal burden is therefore still
+          being laid down after the poison itself has gone.'
+        role: mechanism
+        biological_scale: TISSUE
+        locations:
+        - preferred_term: proximal tubule
+          term:
+            id: UBERON:0004134
+            label: proximal tubule
+      selected_evidence:
+        snippet: The plasma oxalate level, however, rose to a maximum of 89 micromol/l (normal <6.3 +/-
+          1.1) on day 3 and only normalized on day 7 after ingestion.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the kinetics behind the claim that oxalate outlasts the parent alcohol, which
+        is why crystal injury continues after the alcohol is cleared.
+    first_seen_at: '2026-10-03T21:24:01.929256+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:18696123
+  e40b671a180d57e1447f5bbd60851d08506e3a89f5072a4ad7a02e55fc02b016:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Acute Kidney Injury
+        description: Falling glomerular filtration rate following tubular injury. This is the module's
+          effector, and here the acute time course matches it exactly.
+        role: effector
+        biological_scale: ORGANISM
+        conforms_to: drug_induced_nephrotoxicity#Acute Kidney Injury
+        locations:
+        - preferred_term: kidney
+          term:
+            id: UBERON:0002113
+            label: kidney
+      selected_evidence:
+        snippet: In addition to metabolic acidosis, acute renal failure and neurologic disease can occur
+          in some of the intoxications.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: Names acute renal failure as an outcome of this class of intoxication, alongside the
+        acidosis modelled upstream.
+    first_seen_at: '2026-10-03T21:24:01.976583+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:18045860
+  11f3aea7883cda92bfe1d9ac75bb1c15abfcbd05b6a950bc2e81578ba06cf3bd:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Proximal Tubular Epithelial Cell Death
+        description: 'Death of proximal tubular epithelium. The killing agent is the crystal, not the
+          ion: calcium oxalate monohydrate crystals produce membrane damage and cell death in human proximal
+          tubule cells, while oxalate held in solution and prevented from crystallising does not. Acidosis
+          potentiates that crystal cytotoxicity, so the two arms of this poisoning are not independent
+          - the glycolic acid load makes the oxalate crystals more lethal to the same cells. Glycolate
+          itself does not potentiate it.'
+        role: central_effector
+        biological_scale: TISSUE
+        conforms_to: drug_induced_nephrotoxicity#Proximal Tubular Epithelial Cell Death
+        cell_types:
+        - preferred_term: kidney proximal tubule epithelial cell
+          term:
+            id: CL:0002306
+            label: epithelial cell of proximal tubule
+        biological_processes:
+        - preferred_term: cell death
+          term:
+            id: GO:0008219
+            label: cell death
+          modifier: INCREASED
+        - preferred_term: apoptotic process
+          term:
+            id: GO:0006915
+            label: apoptotic process
+          modifier: INCREASED
+      selected_evidence:
+        snippet: These results demonstrate that COM crystals, and not the oxalate ion, are responsible
+          for the membrane damage and cell death observed in normal human and rat PT cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15695020
+      reference_title: The cytotoxicity of oxalate, metabolite of ethylene glycol, is due to calcium oxalate
+        monohydrate formation.
+      evidence_source: IN_VITRO
+      explanation: Discriminates crystal from ion as the cytotoxic species in human proximal tubule cells,
+        which is what makes crystal deposition the causal step rather than a marker of oxalate load.
+    first_seen_at: '2026-10-03T21:24:01.932276+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:15695020
+  e257b5df4282e4462c7eb1c8351fcfc99988edb8826288c6dc74f6f1132543fb:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Proximal Tubular Epithelial Cell Death
+        description: 'Death of proximal tubular epithelium. The killing agent is the crystal, not the
+          ion: calcium oxalate monohydrate crystals produce membrane damage and cell death in human proximal
+          tubule cells, while oxalate held in solution and prevented from crystallising does not. Acidosis
+          potentiates that crystal cytotoxicity, so the two arms of this poisoning are not independent
+          - the glycolic acid load makes the oxalate crystals more lethal to the same cells. Glycolate
+          itself does not potentiate it.'
+        role: central_effector
+        biological_scale: TISSUE
+        conforms_to: drug_induced_nephrotoxicity#Proximal Tubular Epithelial Cell Death
+        cell_types:
+        - preferred_term: kidney proximal tubule epithelial cell
+          term:
+            id: CL:0002306
+            label: epithelial cell of proximal tubule
+        biological_processes:
+        - preferred_term: cell death
+          term:
+            id: GO:0008219
+            label: cell death
+          modifier: INCREASED
+        - preferred_term: apoptotic process
+          term:
+            id: GO:0006915
+            label: apoptotic process
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The cytotoxic effects of COM to HPT cells were potentiated by acidosis (pH 6.5), but
+          not by glycolate, the major metabolite of ethylene glycol.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15695020
+      reference_title: The cytotoxicity of oxalate, metabolite of ethylene glycol, is due to calcium oxalate
+        monohydrate formation.
+      evidence_source: IN_VITRO
+      explanation: Establishes that the acidosis arm potentiates the crystal arm, which is why this entry
+        does not treat the two downstream branches as independent. Also excludes glycolate itself as the
+        potentiating agent.
+    first_seen_at: '2026-10-03T21:24:01.976072+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:15695020
+  b6bda0d12f2e9f39b899e0358bc96af0ca3077b323eda62772688a6aff9a2538:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Metabolic acidosis
+        description: High anion gap metabolic acidosis, driven by glycolic acid.
+        phenotype_term:
+          preferred_term: High anion gap metabolic acidosis
+          term:
+            id: HP:0001942
+            label: Metabolic acidosis
+          temporality: ACUTE
+      selected_evidence:
+        snippet: As EG is metabolized, metabolic acidemia appears after a latent period of approximately
+          3–6 h after ingestion.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Establishes the acidaemia and its timing relative to ingestion.
+    first_seen_at: '2026-10-03T21:24:02.195700+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:36765419
+  2d8d33da04d9a55b939f3fe9900663236c397d03a1a5851f6b5f47afef6a82cb:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Nephrocalcinosis
+        description: Calcium oxalate deposition in the kidney, which can persist after recovery.
+        phenotype_term:
+          preferred_term: Nephrocalcinosis
+          term:
+            id: HP:0000121
+            label: Nephrocalcinosis
+      selected_evidence:
+        snippet: alkaline citrate was given as a preventive measure to increase urinary oxalate solubility,
+          but nephrocalcinosis still developed.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents nephrocalcinosis occurring despite a measure aimed at preventing it, in a
+        reported poisoning.
+    first_seen_at: '2026-10-03T21:24:02.274927+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:18696123
+  2d1c452519dc3e82a7c2c7929e389d47b876bc505ade2edda572bfc094caf203:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Confusion
+        description: Altered mental status belongs to the early illness, before acidaemia and renal injury
+          declare, when ethylene glycol is still acting as an alcohol. It was recorded in 237 of the 446
+          patients in the EXTRIP cohort.
+        phenotype_term:
+          preferred_term: Altered mental status
+          term:
+            id: HP:0001289
+            label: Confusion
+          temporality: ACUTE
+      selected_evidence:
+        snippet: The patient with an altered mental status or concerning history warrants consideration
+          of this potentially deadly ingestion.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29427181
+      reference_title: 'Toxic alcohol diagnosis and management: an emergency medicine review.'
+      evidence_source: OTHER
+      explanation: Establishes altered mental status as the presentation that should prompt consideration
+        of this poisoning.
+    first_seen_at: '2026-10-03T21:24:02.316420+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:29427181
+  449b7196b0195bbb42da7f6a8fd624e285179bbed1b7cd2f350392e7691d85c4:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Acute kidney injury
+        phenotype_term:
+          preferred_term: Acute kidney injury
+          term:
+            id: HP:0001919
+            label: Acute kidney injury
+          temporality: ACUTE
+      selected_evidence:
+        snippet: The incidence of AKI varies between 30 and 70%
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: The reported incidence range for the renal endpoint of this poisoning.
+    first_seen_at: '2026-10-03T21:24:02.231819+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:36765419
+  c303aee660646983413507cff4c1e25d536f53ef20d7bec2abd508ef0b4b8625:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Coma
+        phenotype_term:
+          preferred_term: Coma
+          term:
+            id: HP:0001259
+            label: Coma
+          temporality: ACUTE
+      selected_evidence:
+        snippet: Thereafter, progressive neurotoxicity (coma, cerebral edema, cranial nerve palsies, and
+          seizures), cardiotoxicity (tachycardia with hypertension or hypotension), respiratory distress,
+          and AKI occur.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Names coma among the neurotoxic manifestations of the multiorgan phase.
+    first_seen_at: '2026-10-03T21:24:02.491030+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:36765419
+  ffed0726a6efeebedc6b04614e06d9c51998a54d61f694c5d2941aa466e9aed7:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Seizure
+        phenotype_term:
+          preferred_term: Seizure
+          term:
+            id: HP:0001250
+            label: Seizure
+          temporality: ACUTE
+      selected_evidence:
+        snippet: Thereafter, progressive neurotoxicity (coma, cerebral edema, cranial nerve palsies, and
+          seizures), cardiotoxicity (tachycardia with hypertension or hypotension), respiratory distress,
+          and AKI occur.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Names seizures among the neurotoxic manifestations.
+    first_seen_at: '2026-10-03T21:24:02.545580+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/5
+      evidence_path: /phenotypes/5/evidence/0
+      reference: PMID:36765419
+  7a1ad2af7d0066a16640ec9d57a5cce3b5bc6e7bf1e25f7087689039d8e1f307:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hypocalcemia
+        description: 'A direct consequence of the oxalate arm rather than an independent disturbance:
+          calcium is consumed in forming the crystals.'
+        phenotype_term:
+          preferred_term: Hypocalcemia
+          term:
+            id: HP:0002901
+            label: Hypocalcemia
+      selected_evidence:
+        snippet: neither oxalate crystals in urine, urine immunofluorescence nor hypocalcemia nor a history
+          of EG exposure alone are indications for ECTR (but may help to diagnose EG poisoning)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names hypocalcaemia among the features that help diagnose this poisoning in humans.
+        This is the item that establishes the phenotype occurs; the chemistry item below explains why,
+        and cannot carry the claim on its own. Note that PMID:18696123, also cited in this entry, reports
+        a case in which hypocalcaemia did NOT occur, so the finding is characteristic rather than invariable.
+    first_seen_at: '2026-10-03T21:24:02.651480+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:36765419
+  be720f128b79766b2bffe876fac4c33f856fe8e881340028f61c3c3a682de290:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hypocalcemia
+        description: 'A direct consequence of the oxalate arm rather than an independent disturbance:
+          calcium is consumed in forming the crystals.'
+        phenotype_term:
+          preferred_term: Hypocalcemia
+          term:
+            id: HP:0002901
+            label: Hypocalcemia
+      selected_evidence:
+        snippet: 'Oxalate has two forms in vivo: oxalate ions and calcium oxalate monohydrate (COM) crystals
+          that readily form in the presence of calcium.'
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15695020
+      reference_title: The cytotoxicity of oxalate, metabolite of ethylene glycol, is due to calcium oxalate
+        monohydrate formation.
+      evidence_source: IN_VITRO
+      explanation: Mechanistic companion, not the support for the phenotype. It establishes that crystal
+        formation consumes calcium, which is why the oxalate arm lowers serum calcium, and it is a cell-culture
+        chemistry observation that cannot establish that the finding occurs in patients.
+    first_seen_at: '2026-10-03T21:24:02.652113+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/1
+      reference: PMID:15695020
+  55aad247919e581686fed6f2bdca3b6cfc085d9190370c9983681539411aeb7d:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hyperoxaluria
+        phenotype_term:
+          preferred_term: Hyperoxaluria
+          term:
+            id: HP:0003159
+            label: Hyperoxaluria
+      selected_evidence:
+        snippet: urinary oxalate excretion was elevated (maximum 1.16 mmol/1.73 m(2)/24 h)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Measured urinary oxalate excretion in a reported poisoning.
+    first_seen_at: '2026-10-03T21:24:02.807545+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/7
+      evidence_path: /phenotypes/7/evidence/0
+      reference: PMID:18696123
+  265ef49588fc3eb4128470be87ccdf346e3f41d955999204049730e3991b6916:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Crystalluria
+        description: Calcium oxalate crystals in the urine, the bedside correlate of the crystal deposition
+          modelled upstream.
+        phenotype_term:
+          preferred_term: Crystalluria
+          term:
+            id: HP:0020074
+            label: Crystalluria
+      selected_evidence:
+        snippet: Diagnosed by plasma EG concentration in 24 patients, and by urinary calcium oxalate crystals
+          in 6 patients
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names urinary calcium oxalate crystals in patients, which is what this phenotype asserts.
+        An earlier draft cited a sentence about nephrocalcinosis here; renal parenchymal deposition is
+        not crystals in the urine, and that sentence remains correct only where it sits on the Nephrocalcinosis
+        phenotype.
+    first_seen_at: '2026-10-03T21:24:02.871662+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      reference: PMID:36765419
+  8fb3fdfa2f8300c7e895b043d1cbc6ca97ebb36e27b2cd755d8f9e880daeee73:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Plasma oxalate
+        notes: Oxalate outlasts the parent alcohol. In a reported poisoning the ethylene glycol level
+          fell below 15 mg/dL within 36 hours under ethanol and dialysis, while plasma oxalate peaked
+          on day 3 and normalised only on day 7. Crystal formation therefore continues after the poison
+          itself has been cleared, which is why clearing the alcohol does not end the renal risk.
+        reference_ranges:
+        - lower_bound: 0.0
+          upper_bound: 6.3
+          unit: micromol/L
+          population: reference range cited for this assay
+          notes: Reported in the source as normal <6.3 +/- 1.1 micromol/L. Recorded as an upper bound;
+            the plus-or-minus is the source's own dispersion, not an interval this entry asserts.
+      selected_evidence:
+        snippet: Under treatment by ethanol infusions to block the alcohol dehydrogenase and by hemodialysis
+          to eliminate ethylene glycol and its toxic metabolites, this level decreased to below 15 mg/dl
+          within 36 h.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The parent-alcohol clearance time this oxalate course is contrasted with.
+    first_seen_at: '2026-10-03T21:24:03.006372+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:18696123
+  3efea87da95bb672c3198992601d15f124f393bbd6070e0e23e27947aec21a63:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum anion gap
+        notes: Rises as metabolites accumulate. It is the later of the two gaps and tracks glycolic acid
+          rather than the parent alcohol.
+      selected_evidence:
+        snippet: Accumulation of the alcohols in the blood can cause an increment in the osmolality, and
+          accumulation of their metabolites can cause an increase in the anion gap and a decrease in serum
+          bicarbonate concentration.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: Assigns the anion gap to the metabolites, which is what makes it the late marker.
+    first_seen_at: '2026-10-03T21:24:03.113115+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:18045860
+  f9cd7257d593a0cfc588cb7d93fd80bd3c069e2c9f0438f19c41b06995e33267:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum osmolal gap
+        notes: Rises first and falls as metabolism proceeds, because it tracks the unmetabolised parent
+          alcohol. The two gaps therefore cross over in time. A patient sampled early can have a wide
+          osmolal gap and a normal anion gap, and a patient sampled late the reverse, so either test alone
+          can reassure wrongly. Both being abnormal at once is the informative combination.
+      selected_evidence:
+        snippet: The presence of both laboratory abnormalities concurrently is an important diagnostic
+          clue, although either can be absent, depending on the time after exposure when blood is sampled.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/2
+      evidence_path: /biochemical/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: States both the diagnostic value of the pair and the time dependence that makes either
+        alone unreliable, which is the whole content of this entry.
+    first_seen_at: '2026-10-03T21:24:03.190155+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /biochemical/2
+      evidence_path: /biochemical/2/evidence/0
+      reference: PMID:18045860
+  bfdb15260465c0fe0f4cc24f581132bd6a463af7368e8dcb795526ef51d339cc:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Plasma oxalate
+        notes: Oxalate outlasts the parent alcohol. In a reported poisoning the ethylene glycol level
+          fell below 15 mg/dL within 36 hours under ethanol and dialysis, while plasma oxalate peaked
+          on day 3 and normalised only on day 7. Crystal formation therefore continues after the poison
+          itself has been cleared, which is why clearing the alcohol does not end the renal risk.
+        reference_ranges:
+        - lower_bound: 0.0
+          upper_bound: 6.3
+          unit: micromol/L
+          population: reference range cited for this assay
+          notes: Reported in the source as normal <6.3 +/- 1.1 micromol/L. Recorded as an upper bound;
+            the plus-or-minus is the source's own dispersion, not an interval this entry asserts.
+      selected_evidence:
+        snippet: The plasma oxalate level, however, rose to a maximum of 89 micromol/l (normal <6.3 +/-
+          1.1) on day 3 and only normalized on day 7 after ingestion.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the peak, the normal range and the timing, which together carry the claim that
+        oxalate outlasts the parent alcohol.
+    first_seen_at: '2026-10-03T21:24:03.005722+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:18696123
+  6b396616ca00b1da0235292ab65471f003dc702a355b8f87b9745b2907ce9bef:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Initial intoxication
+        duration: from ingestion, before metabolic acidaemia appears
+        notes: Presents as ethanol intoxication would - inebriation and ataxia. The parent alcohol is
+          acting as an alcohol, and nothing yet distinguishes the poisoning from a drunk patient, which
+          is the reason it is missed.
+      selected_evidence:
+        snippet: The initial clinical manifestations of EG poisoning mimic those of ethanol ingestion,
+          namely inebriation and ataxia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Describes the initial phase and the resemblance to ethanol intoxication.
+    first_seen_at: '2026-10-03T21:24:03.313034+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /progression/0
+      evidence_path: /progression/0/evidence/0
+      reference: PMID:36765419
+  468020bf5a86c88cb810b6dcf7344fe5d8054b9f7c0dacc4f29eaef58a8a2a77:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Metabolic acidaemia
+        duration: approximately 3 to 6 hours after ingestion
+        notes: The latent period is the interval in which enzyme blockade prevents rather than mitigates,
+          because the metabolites responsible have not yet accumulated.
+      selected_evidence:
+        snippet: As EG is metabolized, metabolic acidemia appears after a latent period of approximately
+          3–6 h after ingestion.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Gives the latent period before acidaemia, which is the only interval this entry states
+        with a number.
+    first_seen_at: '2026-10-03T21:24:03.409452+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      reference: PMID:36765419
+  b213c10017b092ee0646b1a84f487b146eceab39cc12c37f9bf35b35afb02909:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Multiorgan toxicity
+        notes: Progressive neurotoxicity, cardiotoxicity, respiratory distress and acute kidney injury
+          follow the acidaemia. Acute kidney injury occurs in 30 to 70 percent across reported series.
+      selected_evidence:
+        snippet: The incidence of AKI varies between 30 and 70%
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/2
+      evidence_path: /progression/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: The reported range for acute kidney injury, carried as a range rather than a point
+        estimate.
+    first_seen_at: '2026-10-03T21:24:03.639068+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /progression/2
+      evidence_path: /progression/2/evidence/1
+      reference: PMID:36765419
+  b10b71285cf10207dff597722416ad94a2ca051fdfb8d39100f503e012ab7d13:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Multiorgan toxicity
+        notes: Progressive neurotoxicity, cardiotoxicity, respiratory distress and acute kidney injury
+          follow the acidaemia. Acute kidney injury occurs in 30 to 70 percent across reported series.
+      selected_evidence:
+        snippet: Thereafter, progressive neurotoxicity (coma, cerebral edema, cranial nerve palsies, and
+          seizures), cardiotoxicity (tachycardia with hypertension or hypotension), respiratory distress,
+          and AKI occur.
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/2
+      evidence_path: /progression/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Orders the multiorgan phase after the acidaemia and names its components.
+    first_seen_at: '2026-10-03T21:24:03.638316+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /progression/2
+      evidence_path: /progression/2/evidence/0
+      reference: PMID:36765419
+  555339febb52fe2c9ed7cdf85d1c003a0e19340b21ae99743091bed23d9fd32f:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Ingestion of ethylene glycol
+        description: Antifreeze, de-icing fluid and other ethylene-glycol-containing products, taken deliberately
+          in self-harm, accidentally by children, or as a substitute intoxicant. The products are sweet-tasting
+          and sold without restriction, which is the reason accidental paediatric ingestion is a recurring
+          pattern.
+        exposure_term:
+          preferred_term: ingestion of ethylene glycol
+          term:
+            id: ECTO:0000231
+            label: exposure to chemical
+        exposure_classifications:
+          hazard_agent_type:
+          - classification_value: CHEMICAL
+          exposure_route:
+          - classification_value: ORAL
+          exposure_duration:
+          - classification_value: ACUTE
+        notes: Bound to the substance-level ECTO:0000231. ECTO was checked for an ethylene-glycol-specific
+          exposure class and none is resolvable through this repository's ECTO adapter (sqlite:obo:ecto);
+          a term resolving in OLS is not sufficient, since dismech does not validate ECTO against OLS.
+      selected_evidence:
+        snippet: Methanol, ethylene glycol, and isopropyl alcohol are readily available in common hardware
+          and household materials.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29427181
+      reference_title: 'Toxic alcohol diagnosis and management: an emergency medicine review.'
+      evidence_source: OTHER
+      explanation: Establishes the availability that makes this a recurring household exposure rather
+        than an occupational one.
+    first_seen_at: '2026-10-03T21:24:03.834012+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:29427181
+  e57c1781c359bbbddfd037b0404f12bd22b3515fe809a609a88a960a2dee3936:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Delayed neuropathy
+        duration: several days after ingestion, and despite treatment
+        notes: 'Cranial nerve palsies, radiculopathy and other neuropathies appearing after the acute
+          illness has been treated. The source is explicit that treatment does not prevent them.
+
+          An earlier draft of this entry gave four phases with precise windows - 0 to 12 hours, 12 to
+          24 hours, 12 hours onward, day 5 to 20. Those windows came from the deep-research report and
+          are NOT in the cited source, which gives a 3 to 6 hour latent period to acidaemia and ''several
+          days'' for the delayed neuropathy and no other numeric window. The phases were rewritten to
+          what the source states. Do not reintroduce the finer windows without a citation carrying them.'
+      selected_evidence:
+        snippet: Cranial nerve palsies, radiculopathy, and other neuropathies may appear several days
+          after ingestion, despite treatment
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/3
+      evidence_path: /progression/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36765419
+      reference_title: 'Extracorporeal treatment for ethylene glycol poisoning: systematic review and
+        recommendations from the EXTRIP workgroup.'
+      evidence_source: OTHER
+      explanation: Establishes the delayed phase and that it occurs despite treatment.
+    first_seen_at: '2026-10-03T21:24:03.735489+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /progression/3
+      evidence_path: /progression/3/evidence/0
+      reference: PMID:36765419
+  87ca1c45d8646507954ff26be6b4a303bb51689dd8f8d74549ea7fc44028e8e2:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context:
+        - path: /environmental/0
+          value:
+            name: Ingestion of ethylene glycol
+            description: Antifreeze, de-icing fluid and other ethylene-glycol-containing products, taken
+              deliberately in self-harm, accidentally by children, or as a substitute intoxicant. The
+              products are sweet-tasting and sold without restriction, which is the reason accidental
+              paediatric ingestion is a recurring pattern.
+            exposure_term:
+              preferred_term: ingestion of ethylene glycol
+              term:
+                id: ECTO:0000231
+                label: exposure to chemical
+            exposure_classifications:
+              hazard_agent_type:
+              - classification_value: CHEMICAL
+              exposure_route:
+              - classification_value: ORAL
+              exposure_duration:
+              - classification_value: ACUTE
+            notes: Bound to the substance-level ECTO:0000231. ECTO was checked for an ethylene-glycol-specific
+              exposure class and none is resolvable through this repository's ECTO adapter (sqlite:obo:ecto);
+              a term resolving in OLS is not sufficient, since dismech does not validate ECTO against
+              OLS.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: Ethylene Glycol Ingestion and Alcohol Dehydrogenase Bioactivation
+        environmental_effect: TRIGGERS
+        causal_link_type: DIRECT
+        description: Ingestion delivers the substrate that alcohol dehydrogenase then activates.
+      selected_evidence:
+        snippet: Toxic alcohols are ingested for a variety of reasons including accidental exposures,
+          intentional inebriation, homicide and suicide.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:29427181
+      reference_title: 'Toxic alcohol diagnosis and management: an emergency medicine review.'
+      evidence_source: OTHER
+      explanation: Documents the ingestion routes this entry models as the exposure.
+    first_seen_at: '2026-10-03T21:24:04.004381+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:29427181
+  1cda0b9cabb5fbe46803997b98318079c59bdcf585e3a718c4bbf3cf50d9a204:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Fomepizole
+        description: 'A competitive alcohol dehydrogenase inhibitor, and the first-line antidote. It acts
+          on the bioactivation step rather than on any downstream injury, so its value is entirely a matter
+          of timing: given before significant acidosis or organ injury it prevents renal failure outright
+          and can remove the need for dialysis, and given late it cannot undo crystal deposition that
+          has already happened.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: fomepizole
+            term:
+              id: CHEBI:5141
+              label: fomepizole
+      selected_evidence:
+        snippet: Fomepizole, a potent alcohol dehydrogenase (ADH) inhibitor, is an efficient and safe
+          antidote that prevents or reduces toxic EG and methanol metabolism.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27147840
+      reference_title: 'Treatment of patients with ethylene glycol or methanol poisoning: focus on fomepizole.'
+      evidence_source: OTHER
+      explanation: Names the enzyme target, which is what places this treatment on the bioactivation node
+        rather than on the renal injury.
+    first_seen_at: '2026-10-03T21:24:04.112462+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:27147840
+  86fb27d08d34c5ff9bd7614c0109a690117687d4e18e8a96c5de29700f868480:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Fomepizole
+        description: 'A competitive alcohol dehydrogenase inhibitor, and the first-line antidote. It acts
+          on the bioactivation step rather than on any downstream injury, so its value is entirely a matter
+          of timing: given before significant acidosis or organ injury it prevents renal failure outright
+          and can remove the need for dialysis, and given late it cannot undo crystal deposition that
+          has already happened.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: fomepizole
+            term:
+              id: CHEBI:5141
+              label: fomepizole
+      selected_evidence:
+        snippet: Administered early, fomepizole prevents EG-related renal failure and methanol-related
+          visual and neurological injuries.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27147840
+      reference_title: 'Treatment of patients with ethylene glycol or methanol poisoning: focus on fomepizole.'
+      evidence_source: OTHER
+      explanation: Supports prevention of the renal endpoint, conditional on early administration.
+    first_seen_at: '2026-10-03T21:24:04.334390+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:27147840
+  f9ab0220aefda2d4997b7d512c75fd17afef1b89680ce6c804e3ded0c45bcaf6:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Fomepizole
+        description: 'A competitive alcohol dehydrogenase inhibitor, and the first-line antidote. It acts
+          on the bioactivation step rather than on any downstream injury, so its value is entirely a matter
+          of timing: given before significant acidosis or organ injury it prevents renal failure outright
+          and can remove the need for dialysis, and given late it cannot undo crystal deposition that
+          has already happened.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: fomepizole
+            term:
+              id: CHEBI:5141
+              label: fomepizole
+      selected_evidence:
+        snippet: When administered prior to the onset of significant acidosis or organ injury, fomepizole
+          may obviate the need for hemodialysis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27147840
+      reference_title: 'Treatment of patients with ethylene glycol or methanol poisoning: focus on fomepizole.'
+      evidence_source: OTHER
+      explanation: Records the timing dependence explicitly, which is the qualification the description
+        rests on.
+    first_seen_at: '2026-10-03T21:24:04.335533+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      reference: PMID:27147840
+  f306781da59b87fa8e5db24535a036bd1507eed2fecdb6a2457ea44d7a6ed2c4:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Ethanol
+        description: The alternative alcohol dehydrogenase substrate, and the fallback antidote where
+          fomepizole is unavailable or unaffordable. It competes for the same enzyme and so acts on the
+          same node, but it requires infusion, concentration monitoring and management of its own intoxication,
+          which fomepizole does not.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ethanol
+            term:
+              id: CHEBI:16236
+              label: ethanol
+      selected_evidence:
+        snippet: Administration of fomepizole or ethanol to inhibit alcohol dehydrogenase, a critical
+          enzyme in metabolism of the alcohols, is beneficial in treatment of ethylene glycol and methanol
+          intoxication
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: Names ethanol alongside fomepizole as an alcohol dehydrogenase inhibitor for this indication.
+    first_seen_at: '2026-10-03T21:24:04.482130+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:18045860
+  173d0cefe624c75a819a0fcd2d3266bc4e2ae051f95e6ccefdefe7a6c459d60f:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Hemodialysis
+        description: Removes the unmetabolised alcohol and its organic acid metabolites, and corrects
+          the acidosis. It is the second arm alongside enzyme blockade, and it is what remains when the
+          antidote arrives too late.
+        treatment_term:
+          preferred_term: Hemodialysis
+          term:
+            id: NCIT:C15248
+            label: Hemodialysis
+        therapeutic_modality: DEVICE
+      selected_evidence:
+        snippet: Dialysis to remove the unmetabolized alcohol and possibly the organic acid anion can
+          be helpful in treatment of several of the alcohol-related intoxications.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18045860
+      reference_title: 'Toxic alcohol ingestions: clinical features, diagnosis, and management.'
+      evidence_source: OTHER
+      explanation: States what dialysis removes, which is why it attaches to the acid accumulation node
+        rather than to the enzyme step.
+    first_seen_at: '2026-10-03T21:24:04.756194+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:18045860
+  dcd38a700a63e2151fa3ef6361ea9685684ece399baed1d2c5554e7dbdd888d2:
+    claim:
+      about:
+        disease:
+          name: Ethylene Glycol Poisoning
+          disease_term:
+            preferred_term: ethylene glycol poisoning
+            term:
+              id: MONDO:0017861
+              label: ethylene glycol poisoning
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Ethanol
+        description: The alternative alcohol dehydrogenase substrate, and the fallback antidote where
+          fomepizole is unavailable or unaffordable. It competes for the same enzyme and so acts on the
+          same node, but it requires infusion, concentration monitoring and management of its own intoxication,
+          which fomepizole does not.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ethanol
+            term:
+              id: CHEBI:16236
+              label: ethanol
+      selected_evidence:
+        snippet: Under treatment by ethanol infusions to block the alcohol dehydrogenase and by hemodialysis
+          to eliminate ethylene glycol and its toxic metabolites, this level decreased to below 15 mg/dl
+          within 36 h.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18696123
+      reference_title: Hyperoxaluria after ethylene glycol poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents ethanol used in practice with the enzyme-blocking rationale stated, alongside
+        dialysis.
+    first_seen_at: '2026-10-03T21:24:04.603733+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T23:58:27.664715+00:00'
+    active: true
+    active_as_of: '2026-10-03T23:58:27.664715+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      reference: PMID:18696123
+assessments:
+  9976578c73e15f0cb20c1249b7f8ef3bb1073dbbbfee8cc3cd42fe673556d9a7:
+    input_sha256: c5c6a8e97aa8dfd2ee2277735b79b718f857a9d3e6e87fb1159058aee192290b
+    configuration_sha256: 149a4d3d932b1653d78cd398e1a82e1c19c84a9d36063d1a5e413aee48c6c21b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:00.628653+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.04
+            MATCH: 0.23
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.09
+            MATCH: 0.38
+          confidence: 0.3
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.1
+            MATCH: 0.34
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MISMATCH: 0.02
+            MATCH: 0.27
+          confidence: 0.56
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.1
+            MATCH: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.17
+            MATCH: 0.51
+          confidence: 0.25
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.77
+            MATCH: 0.01
+          confidence: 0.66
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.4
+            MATCH: 0.1
+          confidence: 0.25
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.43
+            MATCH: 0.07
+          confidence: 0.25
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.53
+            MATCH: 0.09
+          confidence: 0.3
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.36
+            MATCH: 0.1
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12021
+        output_tokens: 521
+      elapsed_seconds: 0.3727
+      request_sha256: 3cefcce47348d2616b652f09e2383cc3a47276fd3cb4f12f165fc9e3c70cf7bc
+      request_sha256s:
+      - 3cefcce47348d2616b652f09e2383cc3a47276fd3cb4f12f165fc9e3c70cf7bc
+  3883492fc5ddc8fd3dbeed0b017373e99cd47a4566117e664cd70f81b66caa37:
+    input_sha256: 9c7b4b86223ba67b782665420904345c0c48db32eedb74f2fe6bd6bd52ed277c
+    configuration_sha256: 0e69ec09cdc0c908cddf2cfc4993e92c2651bddd3a91d143594c63b7de0f93b8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.382038+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MATCH: 0.2
+            MISMATCH: 0.02
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.64
+            MISMATCH: 0.03
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.56
+            MISMATCH: 0.02
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.83
+            MATCH: 0.15
+            MISMATCH: 0.02
+          confidence: 0.74
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.12
+            MISMATCH: 0.21
+          confidence: 0.5
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.88
+            MISMATCH: 0.03
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6716
+        output_tokens: 269
+      elapsed_seconds: 0.3573
+      request_sha256: e64af3cdc12248d410caa76a3dff73a4c401044c59275f80d1b8b073a58aab28
+      request_sha256s:
+      - e64af3cdc12248d410caa76a3dff73a4c401044c59275f80d1b8b073a58aab28
+  e9b5cf2ba23fe04cafe4df05b1812249ff2fa82996269b3aae688edfd9f2676a:
+    input_sha256: 1929f8bd7de52ccd97d1976d2dc7ce26df1424d0d864a7faebefef9a2f144878
+    configuration_sha256: 7cc061ed5ab3186f80be17d05573e620e367cecae8f61dc955551f6a70acfdb9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.383353+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.72
+            MISMATCH: 0.06
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.56
+            MISMATCH: 0.06
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.29
+            MISMATCH: 0.03
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.75
+            MISMATCH: 0.12
+          confidence: 0.63
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            PARTIAL: 0.42
+            MISMATCH: 0.07
+          confidence: 0.27
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            PARTIAL: 0.14
+            MISMATCH: 0.04
+          confidence: 0.73
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.68
+            MISMATCH: 0.1
+          confidence: 0.51
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.68
+            MISMATCH: 0.08
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8677
+        output_tokens: 371
+      elapsed_seconds: 0.3297
+      request_sha256: 6de0d5e608b76af5b31a513c6e472d4bb389d2e7c2cd08ab485b3a61cbb6cd38
+      request_sha256s:
+      - 6de0d5e608b76af5b31a513c6e472d4bb389d2e7c2cd08ab485b3a61cbb6cd38
+  59823aa6e65236e3b9d6ac6784388ce7e5542e0e7090dfb9786174d6f49f8c2c:
+    input_sha256: 95fd4858b0ac59104206ca59ee5f71439261d78153975c07a1f77423ff3abb5c
+    configuration_sha256: 7cc061ed5ab3186f80be17d05573e620e367cecae8f61dc955551f6a70acfdb9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.929256+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.69
+            MATCH: 0.29
+          confidence: 0.55
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.48
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+            MATCH: 0.42
+          confidence: 0.29
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.52
+            MATCH: 0.47
+          confidence: 0.28
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.42
+            MATCH: 0.44
+          confidence: 0.16
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.28
+            PARTIAL: 0.29
+            MATCH: 0.43
+          confidence: 0.13
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.44
+            MATCH: 0.03
+          confidence: 0.3
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            PARTIAL: 0.4
+            MATCH: 0.03
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8698
+        output_tokens: 376
+      elapsed_seconds: 0.2398
+      request_sha256: 4c279070f36d4d029c7af2234b11781f514e5a614a79ec933c5cd06bc378466e
+      request_sha256s:
+      - 4c279070f36d4d029c7af2234b11781f514e5a614a79ec933c5cd06bc378466e
+  ed785e3f43792bd77a07faa5e5f744e7b2ee78db74b30da1ebd8c965d834582c:
+    input_sha256: e40b671a180d57e1447f5bbd60851d08506e3a89f5072a4ad7a02e55fc02b016
+    configuration_sha256: c8811539808282a9d659ab36c86829c5484fa426b76b7d46021db7ebae04c180
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.976583+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.59
+            MISMATCH: 0.04
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.64
+            MISMATCH: 0.04
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.34
+            MISMATCH: 0.03
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.64
+            MISMATCH: 0.2
+          confidence: 0.47
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.61
+            MISMATCH: 0.13
+          confidence: 0.42
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.2
+            MISMATCH: 0.67
+          confidence: 0.5
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.4
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.28
+            MISMATCH: 0.03
+          confidence: 0.52
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.33
+            MISMATCH: 0.06
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9653
+        output_tokens: 421
+      elapsed_seconds: 0.2152
+      request_sha256: d47326aec32fcf57749486aa003116a3ef23a5b504d79b9702bfcbf703ffa58f
+      request_sha256s:
+      - d47326aec32fcf57749486aa003116a3ef23a5b504d79b9702bfcbf703ffa58f
+  04e20fe2d0d9228f6089744b9f10d22cc4e4d17e09666b2d443aa5e67281fa77:
+    input_sha256: 11f3aea7883cda92bfe1d9ac75bb1c15abfcbd05b6a950bc2e81578ba06cf3bd
+    configuration_sha256: 130ec02804f7515dd10fccc9d5d7a25ca1f3d4156bfa88fdb648fef14d983456
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.932276+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.18
+            PARTIAL: 0.78
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.46
+            PARTIAL: 0.45
+          confidence: 0.19
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.35
+            PARTIAL: 0.62
+          confidence: 0.44
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.3
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.61
+            PARTIAL: 0.23
+          confidence: 0.42
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.15
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.85
+            PARTIAL: 0.12
+          confidence: 0.78
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.88
+            PARTIAL: 0.1
+          confidence: 0.81
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.86
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.07
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5599999999999999
+            MATCH: 0.05
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.13
+            PARTIAL: 0.56
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16225
+        output_tokens: 744
+      elapsed_seconds: 0.2697
+      request_sha256: 9bf01866d1328336eb2d41f2e909e09774f5beba9585feb434815a0bb68f51de
+      request_sha256s:
+      - 9bf01866d1328336eb2d41f2e909e09774f5beba9585feb434815a0bb68f51de
+  201dac8453446c4d2936f888ecbdb32eea3f6c323739c3d45beff016ce0bfc01:
+    input_sha256: e257b5df4282e4462c7eb1c8351fcfc99988edb8826288c6dc74f6f1132543fb
+    configuration_sha256: 130ec02804f7515dd10fccc9d5d7a25ca1f3d4156bfa88fdb648fef14d983456
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:01.976072+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.03
+            MATCH: 0.31
+          confidence: 0.48
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.26
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.45
+            MATCH: 0.43
+          confidence: 0.17
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.03
+            MATCH: 0.41
+          confidence: 0.35
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.14
+            MATCH: 0.2
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.25
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.47
+            MATCH: 0.07
+          confidence: 0.21
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.04
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.07
+            MATCH: 0.71
+          confidence: 0.57
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.1
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.14
+            MATCH: 0.41
+          confidence: 0.17
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.15
+            MATCH: 0.32
+          confidence: 0.31
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.55
+            MATCH: 0.02
+          confidence: 0.32
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.66
+            MATCH: 0.02
+          confidence: 0.49
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MISMATCH: 0.46
+            MATCH: 0.03
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16240
+        output_tokens: 752
+      elapsed_seconds: 0.295
+      request_sha256: 38fcba7f05edaa60e5e87def24cfe8327b455d290918f32436e2b0aab4ee70c8
+      request_sha256s:
+      - 38fcba7f05edaa60e5e87def24cfe8327b455d290918f32436e2b0aab4ee70c8
+  4458e9f5a706f5a3f66a577579d7209253bf64fe10d5567dbcd91c2c52c4d9a0:
+    input_sha256: b6bda0d12f2e9f39b899e0358bc96af0ca3077b323eda62772688a6aff9a2538
+    configuration_sha256: baac3f81959ea1a9b89ac4dfdc103dcf0f535ad278deb1f6d7871c3bbd915173
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.195700+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.02
+            PARTIAL: 0.47
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.19
+            MISMATCH: 0.02
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.67
+            MISMATCH: 0.25
+          confidence: 0.51
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            PARTIAL: 0.47
+            MISMATCH: 0.05
+          confidence: 0.22
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.19
+            MISMATCH: 0.02
+          confidence: 0.69
+        /assertion/phenotype_term/temporality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.8
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7293
+        output_tokens: 324
+      elapsed_seconds: 0.2511
+      request_sha256: 57ab1b416d3277fe88ed4c3b32c89cf2eeb4b0491b071b0670747cefa15dec06
+      request_sha256s:
+      - 57ab1b416d3277fe88ed4c3b32c89cf2eeb4b0491b071b0670747cefa15dec06
+  eab29705650b37e337ef9aa0fd8c242c097719a22583ecf3cd56b5fad65dfcaa:
+    input_sha256: 2d8d33da04d9a55b939f3fe9900663236c397d03a1a5851f6b5f47afef6a82cb
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.274927+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.05
+            PARTIAL: 0.39
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.36
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.21
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.02
+            PARTIAL: 0.13
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6242
+        output_tokens: 275
+      elapsed_seconds: 0.2139
+      request_sha256: a480ef3d6d0b908d4790f32f4b5f4c2a44438f63d87d36d20c44977a9ecccd28
+      request_sha256s:
+      - a480ef3d6d0b908d4790f32f4b5f4c2a44438f63d87d36d20c44977a9ecccd28
+  81b5f9b9e713004e7cea2e2b66a669b7506dfb1587c9f1b7eef7af4fb9741a4d:
+    input_sha256: 2d1c452519dc3e82a7c2c7929e389d47b876bc505ade2edda572bfc094caf203
+    configuration_sha256: baac3f81959ea1a9b89ac4dfdc103dcf0f535ad278deb1f6d7871c3bbd915173
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.316420+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.11
+            MATCH: 0.1
+          confidence: 0.69
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.05
+            MATCH: 0.35
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.1
+            MATCH: 0.55
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.31
+            MATCH: 0.03
+          confidence: 0.49
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.05
+            MATCH: 0.61
+          confidence: 0.41
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.11
+            MATCH: 0.52
+          confidence: 0.29
+        /assertion/phenotype_term/temporality:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.16
+            MATCH: 0.28
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7314
+        output_tokens: 327
+      elapsed_seconds: 0.2267
+      request_sha256: 7852470f9f439152d7fefb70cfd1cded494a6c7c06c60d526cd36ca0629686c7
+      request_sha256s:
+      - 7852470f9f439152d7fefb70cfd1cded494a6c7c06c60d526cd36ca0629686c7
+  0d899c30f4af5d7f9feff561f29d0b6a4f7b5fcb664fc693a240a86a94efb18b:
+    input_sha256: 449b7196b0195bbb42da7f6a8fd624e285179bbed1b7cd2f350392e7691d85c4
+    configuration_sha256: db6d2c06e6c9ebd25a3c0bbb675c78806ba8b5a8e8dc9d791135ad7d034d7526
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.231819+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.6
+            MISMATCH: 0.04
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.28
+            MISMATCH: 0.09
+          confidence: 0.45
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.8
+            MISMATCH: 0.04
+          confidence: 0.71
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.81
+            MISMATCH: 0.03
+          confidence: 0.71
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.03
+            MATCH: 0.73
+          confidence: 0.59
+        /assertion/phenotype_term/temporality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.5
+            MISMATCH: 0.09
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6320
+        output_tokens: 279
+      elapsed_seconds: 0.2947
+      request_sha256: 2c10affe49dbe2b5f6cbf92ea0c95e47393fe612bc6bc9536a78b54a14b5276f
+      request_sha256s:
+      - 2c10affe49dbe2b5f6cbf92ea0c95e47393fe612bc6bc9536a78b54a14b5276f
+  86f30520e4ea8014216d8967b5007dc4614739100bd706d3caebdee937a5055d:
+    input_sha256: c303aee660646983413507cff4c1e25d536f53ef20d7bec2abd508ef0b4b8625
+    configuration_sha256: db6d2c06e6c9ebd25a3c0bbb675c78806ba8b5a8e8dc9d791135ad7d034d7526
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.491030+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.06
+            PARTIAL: 0.41
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/phenotype_term/temporality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.01
+            PARTIAL: 0.18
+          confidence: 0.71
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6350
+        output_tokens: 278
+      elapsed_seconds: 0.2585
+      request_sha256: cb868ee52ec446647b4bbfebd99673642a7a093e15bc0d06b961f822b5566216
+      request_sha256s:
+      - cb868ee52ec446647b4bbfebd99673642a7a093e15bc0d06b961f822b5566216
+  39eda7e96d85b50647dc788e46414e9a31dd39a41f38038e80bf4930dee52a2d:
+    input_sha256: ffed0726a6efeebedc6b04614e06d9c51998a54d61f694c5d2941aa466e9aed7
+    configuration_sha256: db6d2c06e6c9ebd25a3c0bbb675c78806ba8b5a8e8dc9d791135ad7d034d7526
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.545580+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.01
+          confidence: 0.9
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.6
+            MISMATCH: 0.05
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.97
+            MISMATCH: 0.01
+          confidence: 0.96
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/phenotype_term/temporality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.83
+            MISMATCH: 0.01
+          confidence: 0.74
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6353
+        output_tokens: 278
+      elapsed_seconds: 0.2543
+      request_sha256: 5b02eb8cbbc151b173b8d17b2ed7467073378acd9c599bd8f2fd3d4b1dba81ba
+      request_sha256s:
+      - 5b02eb8cbbc151b173b8d17b2ed7467073378acd9c599bd8f2fd3d4b1dba81ba
+  c99eaa0784028cfd32746267dc58d6188530367cb7fea7fd2df73c7dc4ffed4a:
+    input_sha256: 7a1ad2af7d0066a16640ec9d57a5cce3b5bc6e7bf1e25f7087689039d8e1f307
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.651480+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.35
+            MATCH: 0.18
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.1
+            MATCH: 0.5
+          confidence: 0.24
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.75
+            MATCH: 0.02
+          confidence: 0.63
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.13
+            MATCH: 0.48
+          confidence: 0.21
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.2
+            MATCH: 0.36
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6257
+        output_tokens: 278
+      elapsed_seconds: 0.2164
+      request_sha256: e1fff96f46a0ec72fbf7bd2b3e784239eedc128aebf160e05486ab6b47eacfdc
+      request_sha256s:
+      - e1fff96f46a0ec72fbf7bd2b3e784239eedc128aebf160e05486ab6b47eacfdc
+  db9662163826bdd0e54d609b43202ea335eed22d1ecd6aa3d53b60c3ee4ac461:
+    input_sha256: be720f128b79766b2bffe876fac4c33f856fe8e881340028f61c3c3a682de290
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.652113+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.74
+            MATCH: 0.12
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+            MATCH: 0.27
+          confidence: 0.29
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.59
+            MATCH: 0.2
+          confidence: 0.39
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.73
+            MATCH: 0.16
+          confidence: 0.59
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.52
+            MATCH: 0.35
+          confidence: 0.28
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.61
+            MATCH: 0.21
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6261
+        output_tokens: 279
+      elapsed_seconds: 0.2173
+      request_sha256: f0f71ca42c1658ddc4cd1b83b3e4fe88734e02ade2c00639dd10be89f7ccef15
+      request_sha256s:
+      - f0f71ca42c1658ddc4cd1b83b3e4fe88734e02ade2c00639dd10be89f7ccef15
+  b36e87ebd9def2865707982feaaf6ad81dbceb45d365627c0168fa8e9ed21d0d:
+    input_sha256: 55aad247919e581686fed6f2bdca3b6cfc085d9190370c9983681539411aeb7d
+    configuration_sha256: 5881db12c7909085167d3b874d4805efb1d52c12a45857b63f3759dee37cbe4a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.807545+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.66
+            MISMATCH: 0.03
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.64
+            MISMATCH: 0.1
+          confidence: 0.47
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+          confidence: 0.8
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+          confidence: 0.84
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.9
+            MISMATCH: 0.01
+          confidence: 0.85
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5287
+        output_tokens: 229
+      elapsed_seconds: 0.2319
+      request_sha256: d4179f278d299893119a4a0f45e020d4938f5d039fded974e11b4a49b2592a1b
+      request_sha256s:
+      - d4179f278d299893119a4a0f45e020d4938f5d039fded974e11b4a49b2592a1b
+  8a72a533da0e90f323bba67c170c4e7c5df21b73027055259373d79da4adad5f:
+    input_sha256: 265ef49588fc3eb4128470be87ccdf346e3f41d955999204049730e3991b6916
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:02.871662+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.85
+            MISMATCH: 0.01
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.55
+            MISMATCH: 0.14
+          confidence: 0.31
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.88
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.9
+            MISMATCH: 0.01
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6237
+        output_tokens: 273
+      elapsed_seconds: 0.2395
+      request_sha256: 7b277a77cba871544645bb0cc08bdfe949a351b0aa7b38f93ba985891b8863a8
+      request_sha256s:
+      - 7b277a77cba871544645bb0cc08bdfe949a351b0aa7b38f93ba985891b8863a8
+  345dfec424db84d858ac68533766adaa57f1eea998a3c7cbdcd569fea40bd087:
+    input_sha256: 8fb3fdfa2f8300c7e895b043d1cbc6ca97ebb36e27b2cd755d8f9e880daeee73
+    configuration_sha256: 2ea3796c2c8a830152a2eada9cb8e492cfd645b27ccce90f59d7c517934291a4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.006372+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.17
+            PARTIAL: 0.72
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.5
+            PARTIAL: 0.28
+          confidence: 0.25
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.25
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/reference_ranges/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.78
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9167
+        output_tokens: 437
+      elapsed_seconds: 0.2276
+      request_sha256: c2db238f7c25fa0c28e37408f8ae79ea6d067e814de1c27afbe3d8fba43530f1
+      request_sha256s:
+      - c2db238f7c25fa0c28e37408f8ae79ea6d067e814de1c27afbe3d8fba43530f1
+  e264333d6b6e27e91d3af2f6424b22d5160811d9e392fe4a73be7325bc3bd97c:
+    input_sha256: 3efea87da95bb672c3198992601d15f124f393bbd6070e0e23e27947aec21a63
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.113115+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.2
+            MISMATCH: 0.03
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.75
+            MISMATCH: 0.02
+          confidence: 0.63
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.85
+            MISMATCH: 0.02
+          confidence: 0.78
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.83
+            MATCH: 0.11
+            MISMATCH: 0.06
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4282
+        output_tokens: 176
+      elapsed_seconds: 0.2039
+      request_sha256: 79fd11b45fa0f0fb8a8ed6e6717d2e61bd13bdcd7683efe78bf4b15eb8fc143f
+      request_sha256s:
+      - 79fd11b45fa0f0fb8a8ed6e6717d2e61bd13bdcd7683efe78bf4b15eb8fc143f
+  a1ddba9e5117b26fe0b02bdd6c325a052b11473c13628f4e4ab1bdcc68150182:
+    input_sha256: f9cd7257d593a0cfc588cb7d93fd80bd3c069e2c9f0438f19c41b06995e33267
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.190155+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.44
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.54
+            PARTIAL: 0.41
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.63
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.44
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4311
+        output_tokens: 176
+      elapsed_seconds: 0.1876
+      request_sha256: cd584fb11e27c2c79210e98be0de9e0d086ed399c54757e3c9a1c6bd35bd245c
+      request_sha256s:
+      - cd584fb11e27c2c79210e98be0de9e0d086ed399c54757e3c9a1c6bd35bd245c
+  9207cdf0b0476b0903780f821401cb4f4bd7557221820bafa1e303de5a942c9f:
+    input_sha256: bfdb15260465c0fe0f4cc24f581132bd6a463af7368e8dcb795526ef51d339cc
+    configuration_sha256: 2ea3796c2c8a830152a2eada9cb8e492cfd645b27ccce90f59d7c517934291a4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.005722+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.03
+            MATCH: 0.62
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.2
+            MATCH: 0.78
+          confidence: 0.68
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.52
+            MATCH: 0.46
+          confidence: 0.27
+        /assertion/reference_ranges/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            PARTIAL: 0.42
+            MATCH: 0.09
+          confidence: 0.24
+        /assertion/reference_ranges/0/upper_bound:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MISMATCH: 0.03
+            MATCH: 0.84
+          confidence: 0.76
+        /assertion/reference_ranges/0/unit:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.04
+            MATCH: 0.88
+          confidence: 0.82
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.54
+            MATCH: 0.09
+          confidence: 0.3
+        /assertion/reference_ranges/0/notes:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.13
+            MATCH: 0.62
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9161
+        output_tokens: 424
+      elapsed_seconds: 0.3872
+      request_sha256: 91e0b75b86e6b6cd630a017570fe4f359f36bf49db43577dff67afe0131176a0
+      request_sha256s:
+      - 91e0b75b86e6b6cd630a017570fe4f359f36bf49db43577dff67afe0131176a0
+  09f1e5d511e2a52f6f3c797061e0dfd35a576f2c51ab20a1f47c52e28043e492:
+    input_sha256: 6b396616ca00b1da0235292ab65471f003dc702a355b8f87b9745b2907ce9bef
+    configuration_sha256: 2e43c8fb1f97a2ad2191b2f855fc37f83a565bea22b6237ebc47ef932224fe27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.313034+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.73
+            MATCH: 0.26
+          confidence: 0.59
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 1.0
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.21
+            MATCH: 0.78
+          confidence: 0.67
+        /assertion/duration:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.84
+            MATCH: 0.03
+          confidence: 0.75
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.61
+            MATCH: 0.35
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5228
+        output_tokens: 223
+      elapsed_seconds: 0.2763
+      request_sha256: 2a836f5b318ec5960e68cc5a21d6bb7f44a1314b7aa4301e8dcc467a65259c35
+      request_sha256s:
+      - 2a836f5b318ec5960e68cc5a21d6bb7f44a1314b7aa4301e8dcc467a65259c35
+  7ee358be7c29cdc06ad5f44d7503a9598c3536e0e762b4dd2cd72e421f44328e:
+    input_sha256: 468020bf5a86c88cb810b6dcf7344fe5d8054b9f7c0dacc4f29eaef58a8a2a77
+    configuration_sha256: 2e43c8fb1f97a2ad2191b2f855fc37f83a565bea22b6237ebc47ef932224fe27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.409452+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.16
+            MISMATCH: 0.18
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/duration:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.02
+            MISMATCH: 0.73
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5209
+        output_tokens: 224
+      elapsed_seconds: 0.265
+      request_sha256: a7661eac62872989fc8bd8d961f5c36e0e74f67fa383ad6ce0e01e99460fabdc
+      request_sha256s:
+      - a7661eac62872989fc8bd8d961f5c36e0e74f67fa383ad6ce0e01e99460fabdc
+  d8e952ae40f26230464121fbd150bb9777990473b6d8d7c551741cdbded04a3b:
+    input_sha256: b213c10017b092ee0646b1a84f487b146eceab39cc12c37f9bf35b35afb02909
+    configuration_sha256: f96784d87f8ca05ad10a679b94eb789dd9a9c307a2309f99e9472865f6cabccd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.639068+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.79
+            MISMATCH: 0.04
+            MATCH: 0.17
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.05
+            MATCH: 0.48
+          confidence: 0.22
+        /assertion/phase:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.4
+            MATCH: 0.12
+          confidence: 0.23
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MISMATCH: 0.05
+            MATCH: 0.17
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4263
+        output_tokens: 178
+      elapsed_seconds: 0.2595
+      request_sha256: cc2e481d5f85008adb2df83a0013f529a040fb084b199eebe9490e56d366c5fb
+      request_sha256s:
+      - cc2e481d5f85008adb2df83a0013f529a040fb084b199eebe9490e56d366c5fb
+  ae440a4f241160f5181f26b2c3c6e34f23e2065a20e4f3e8d7af6c5571cf78a0:
+    input_sha256: b10b71285cf10207dff597722416ad94a2ca051fdfb8d39100f503e012ab7d13
+    configuration_sha256: f96784d87f8ca05ad10a679b94eb789dd9a9c307a2309f99e9472865f6cabccd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.638316+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.8
+            MISMATCH: 0.01
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.35
+            MISMATCH: 0.03
+          confidence: 0.43
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.12
+            MISMATCH: 0.01
+          confidence: 0.8
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.84
+            MISMATCH: 0.08
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4299
+        output_tokens: 177
+      elapsed_seconds: 0.3236
+      request_sha256: c9e8e486eefd156006953a5ee39747f48ca12b61d0abffef6c6cfaec499bfc4e
+      request_sha256s:
+      - c9e8e486eefd156006953a5ee39747f48ca12b61d0abffef6c6cfaec499bfc4e
+  b1fd0a9b53d3243fa6261b711d7d95686e33045aff161ff15263d661ace8fa8a:
+    input_sha256: 555339febb52fe2c9ed7cdf85d1c003a0e19340b21ae99743091bed23d9fd32f
+    configuration_sha256: 3208e32dcc8a3a5413cf07d3b64cbbc7688392c92bd7ab83bad0c1f6e99e101e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.834012+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.66
+            MATCH: 0.09
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.27
+            PARTIAL: 0.49
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.51
+            MATCH: 0.12
+          confidence: 0.27
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.38
+            MATCH: 0.03
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/exposure_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.31
+            MATCH: 0.14
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/exposure_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.16
+            PARTIAL: 0.48
+          confidence: 0.21
+        /assertion/exposure_classifications/hazard_agent_type/0/classification_value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/exposure_classifications/exposure_route/0/classification_value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.04
+            PARTIAL: 0.3
+          confidence: 0.48
+        /assertion/exposure_classifications/exposure_duration/0/classification_value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            MATCH: 0.01
+            PARTIAL: 0.32
+          confidence: 0.5
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10235
+        output_tokens: 512
+      elapsed_seconds: 0.2469
+      request_sha256: 49fe3332b5a6dde8994f0447929312190b1c982edf998e6e10ef7e5077a2e8df
+      request_sha256s:
+      - 49fe3332b5a6dde8994f0447929312190b1c982edf998e6e10ef7e5077a2e8df
+  b0d7b9017040638c2f6e4cf0cc946449703064c45783eeec9f44cf35b317db28:
+    input_sha256: e57c1781c359bbbddfd037b0404f12bd22b3515fe809a609a88a960a2dee3936
+    configuration_sha256: 2e43c8fb1f97a2ad2191b2f855fc37f83a565bea22b6237ebc47ef932224fe27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:03.735489+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.86
+            MISMATCH: 0.03
+          confidence: 0.8
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.73
+            MISMATCH: 0.02
+          confidence: 0.59
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.94
+            MISMATCH: 0.02
+          confidence: 0.91
+        /assertion/duration:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.33
+            MISMATCH: 0.3
+          confidence: 0.05
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5336
+        output_tokens: 221
+      elapsed_seconds: 0.3174
+      request_sha256: 34008a70d77e85f8dbc337f29bcdea525d556e01427150aaed1808a9e07411ea
+      request_sha256s:
+      - 34008a70d77e85f8dbc337f29bcdea525d556e01427150aaed1808a9e07411ea
+  a49de440be530c4eebae0709c1a8985436d85822c55c1c4cdefb9ef8009dbaf3:
+    input_sha256: 87ca1c45d8646507954ff26be6b4a303bb51689dd8f8d74549ea7fc44028e8e2
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.004381+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.59
+            MISMATCH: 0.37
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.54
+            MISMATCH: 0.08
+          confidence: 0.31
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.53
+            MISMATCH: 0.36
+          confidence: 0.3
+        /assertion/environmental_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.51
+            MISMATCH: 0.37
+          confidence: 0.27
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.4
+            MISMATCH: 0.56
+          confidence: 0.35
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.3
+            MISMATCH: 0.67
+          confidence: 0.51
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.52
+            MISMATCH: 0.19
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7749
+        output_tokens: 327
+      elapsed_seconds: 0.3525
+      request_sha256: d7a3e48990576e69450db6a25a08a9b5db209d801bc8dbe3cf20ef53af2c973f
+      request_sha256s:
+      - d7a3e48990576e69450db6a25a08a9b5db209d801bc8dbe3cf20ef53af2c973f
+  a779859886a280dc4533aa92c24d62d2421bda29a7aa1d1c450512f6b27850ca:
+    input_sha256: 1cda0b9cabb5fbe46803997b98318079c59bdcf585e3a718c4bbf3cf50d9a204
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.112462+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.58
+            MISMATCH: 0.02
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.79
+            MISMATCH: 0.09
+          confidence: 0.69
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.26
+            MISMATCH: 0.06
+          confidence: 0.52
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.32
+            MISMATCH: 0.23
+          confidence: 0.17
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.31
+            MISMATCH: 0.25
+          confidence: 0.16
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+          confidence: 0.95
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            PARTIAL: 0.04
+            MISMATCH: 0.02
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9743
+        output_tokens: 438
+      elapsed_seconds: 0.2982
+      request_sha256: 271f4423ea8484360caa14ed082ad4566aaf8650f9e918e6571ad8cf97ede8e5
+      request_sha256s:
+      - 271f4423ea8484360caa14ed082ad4566aaf8650f9e918e6571ad8cf97ede8e5
+  62a6437049f79ffb6e225b8f83b38720bdbf970ab560592a58ad83031c796929:
+    input_sha256: 86fb27d08d34c5ff9bd7614c0109a690117687d4e18e8a96c5de29700f868480
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.334390+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.02
+            PARTIAL: 0.58
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+          confidence: 0.81
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.06
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.53
+            PARTIAL: 0.28
+          confidence: 0.3
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.31
+            PARTIAL: 0.36
+          confidence: 0.03
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.26
+            PARTIAL: 0.33
+          confidence: 0.12
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.9
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.07
+            PARTIAL: 0.11
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9729
+        output_tokens: 442
+      elapsed_seconds: 0.2916
+      request_sha256: f3dfce385200a883aea8077e6f9ce968ee1f54b89418d3c2ebc09c02394945d2
+      request_sha256s:
+      - f3dfce385200a883aea8077e6f9ce968ee1f54b89418d3c2ebc09c02394945d2
+  28db2ec3eb81f85c3eda54e44d33fca31702d1e4778e865b8838e9a3bd496dbb:
+    input_sha256: f9ab0220aefda2d4997b7d512c75fd17afef1b89680ce6c804e3ded0c45bcaf6
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.335533+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.03
+            MATCH: 0.31
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.07
+            MATCH: 0.5
+          confidence: 0.25
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.08
+            MATCH: 0.74
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MISMATCH: 0.07
+            MATCH: 0.21
+          confidence: 0.58
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.5599999999999999
+            MATCH: 0.17
+          confidence: 0.35
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.36
+            MATCH: 0.3
+          confidence: 0.04
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.26
+            MATCH: 0.41
+          confidence: 0.11
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.04
+            MATCH: 0.85
+          confidence: 0.77
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.08
+            MATCH: 0.77
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9736
+        output_tokens: 444
+      elapsed_seconds: 0.3353
+      request_sha256: 3b3e779107c53c398472c9d2b31cb0e66d22952ad4b794e8e43154ce51fb1821
+      request_sha256s:
+      - 3b3e779107c53c398472c9d2b31cb0e66d22952ad4b794e8e43154ce51fb1821
+  831b35798969bf24ee295ccff6b0b66d69a0df420aed07543e1f5df270b75ea8:
+    input_sha256: f306781da59b87fa8e5db24535a036bd1507eed2fecdb6a2457ea44d7a6ed2c4
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.482130+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.55
+            MISMATCH: 0.02
+          confidence: 0.32
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            PARTIAL: 0.14
+            MISMATCH: 0.03
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.62
+            MISMATCH: 0.31
+          confidence: 0.43
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            PARTIAL: 0.31
+            MISMATCH: 0.12
+          confidence: 0.36
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            PARTIAL: 0.26
+            MISMATCH: 0.15
+          confidence: 0.38
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            PARTIAL: 0.31
+            MISMATCH: 0.21
+          confidence: 0.22
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9734
+        output_tokens: 438
+      elapsed_seconds: 0.2691
+      request_sha256: a08778a5e8a007fa2cb842085530818fa674d4196f96245a26f6e270ec65f521
+      request_sha256s:
+      - a08778a5e8a007fa2cb842085530818fa674d4196f96245a26f6e270ec65f521
+  84b7c121b7cf35569e5936b54037f5db65eedfe4109c61c752401ab50f35afa4:
+    input_sha256: 173d0cefe624c75a819a0fcd2d3266bc4e2ae051f95e6ccefdefe7a6c459d60f
+    configuration_sha256: 01c0514ba167497cad2a4b7e25b08492a97925121bc748167a30312b0bc40d23
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.756194+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.23
+            MISMATCH: 0.02
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.34
+            MISMATCH: 0.04
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.65
+            MISMATCH: 0.02
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.82
+            MATCH: 0.12
+            MISMATCH: 0.06
+          confidence: 0.73
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.64
+            MISMATCH: 0.03
+          confidence: 0.46
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.61
+            MISMATCH: 0.03
+          confidence: 0.41
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.4
+            MISMATCH: 0.23
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7691
+        output_tokens: 325
+      elapsed_seconds: 0.2693
+      request_sha256: d9c87e80cc65d576dbfea34a45d533e271d30e37e8a7b632a4827082cf3d8920
+      request_sha256s:
+      - d9c87e80cc65d576dbfea34a45d533e271d30e37e8a7b632a4827082cf3d8920
+  4be57b132fc63580fbe13a91bf036301f7de7805dc4921a1b53e7e1edf750a3e:
+    input_sha256: dcd38a700a63e2151fa3ef6361ea9685684ece399baed1d2c5554e7dbdd888d2
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:24:04.603733+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.5
+            MISMATCH: 0.03
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.88
+            MISMATCH: 0.03
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.15
+            MISMATCH: 0.34
+          confidence: 0.26
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.65
+            MISMATCH: 0.11
+          confidence: 0.48
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.48
+            MISMATCH: 0.23
+          confidence: 0.22
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.43
+            MISMATCH: 0.27
+          confidence: 0.15
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.93
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.91
+            MISMATCH: 0.02
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9741
+        output_tokens: 437
+      elapsed_seconds: 0.28
+      request_sha256: 70de910078086bbb78df68778b49b3ac99d25524035bf0547c2cd046f9a4833c
+      request_sha256s:
+      - 70de910078086bbb78df68778b49b3ac99d25524035bf0547c2cd046f9a4833c

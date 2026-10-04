@@ -1554,6 +1554,53 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/0
       reference: PMID:42603814
+  858a25d9419e8b44f1d9e0e12ce08a95d143face55b6df6c171360035867fa55:
+    claim:
+      about:
+        disease:
+          name: Dengue
+          disease_term:
+            term:
+              id: MONDO:0005502
+              label: dengue disease
+            preferred_term: dengue disease
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravenous Fluid Resuscitation
+        description: Timely intravenous fluid resuscitation is the critical supportive intervention for
+          dengue shock syndrome; WHO management guidelines for fluid choice remain largely empirical.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: fluid therapy
+          term:
+            id: NCIT:C116537
+            label: Fluid Therapy
+      selected_evidence:
+        snippet: Although volume replacement is recognized as the critical therapeutic intervention, World
+          Health Organization management guidelines remain empirical rather than evidence-based.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16135832
+      reference_title: Comparison of three fluid solutions for resuscitation in dengue shock syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Randomized trial identifies volume replacement as the critical intervention for dengue
+        shock syndrome.
+    first_seen_at: '2026-10-03T22:51:31.141788+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:51:31.141788+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:51:31.141788+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:16135832
 assessments:
   e20267d9ddcb27b6e9f6150329409e912e512c1245a7c12d30a4e493b22537ba:
     input_sha256: 9841287daf35f97ece061ef0c62425711a0b398ba4eb8e03287940005710962b
@@ -3518,3 +3565,69 @@ assessments:
       request_sha256: 5d76fb8f39fd22d8d43b1b53526688887c3047a7ddd5b7d054e39e70ae3c7d10
       request_sha256s:
       - 5d76fb8f39fd22d8d43b1b53526688887c3047a7ddd5b7d054e39e70ae3c7d10
+  87687f3d16459606db23255895aad9da9b7e5ff4c67df157c80607c7f33a16b3:
+    input_sha256: 858a25d9419e8b44f1d9e0e12ce08a95d143face55b6df6c171360035867fa55
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:51:31.141788+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.04
+            MATCH: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45999999999999996
+            MISMATCH: 0.09
+            MATCH: 0.45
+          confidence: 0.2
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.09
+            MATCH: 0.54
+          confidence: 0.32
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.03
+            MATCH: 0.6799999999999999
+          confidence: 0.53
+        /assertion/therapeutic_modality:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.29
+            MATCH: 0.35
+          confidence: 0.03
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.09
+            MATCH: 0.61
+          confidence: 0.42
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.06
+            MATCH: 0.7
+          confidence: 0.56
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7660
+        output_tokens: 324
+      elapsed_seconds: 0.2503
+      request_sha256: 997b2ca5c8ee05b4f587caa4c6e8e7f0366f6f0919b4403e91eba1ddb2c69622
+      request_sha256s:
+      - 997b2ca5c8ee05b4f587caa4c6e8e7f0366f6f0919b4403e91eba1ddb2c69622

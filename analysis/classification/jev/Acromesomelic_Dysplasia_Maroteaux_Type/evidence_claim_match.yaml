@@ -6371,6 +6371,54 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/1
       reference: PMID:23065701
+  410fb9cea0d5ad6869dd7a645a938dd25f31e3d5c3e7de130dc387879460f384:
+    claim:
+      about:
+        disease:
+          name: Acromesomelic Dysplasia Maroteaux Type
+          disease_term:
+            preferred_term: acromesomelic dysplasia, Maroteaux type
+            term:
+              id: MONDO:0011275
+              label: acromesomelic dysplasia 1, Maroteaux type
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Biallelic NPR2 Molecular Confirmation
+        description: Molecular genetic testing confirms the diagnosis by identifying pathogenic or likely
+          pathogenic variants affecting both NPR2 alleles. Transcript-level analysis can resolve suspected
+          splice effects, including synonymous variants.
+        diagnosis_term:
+          preferred_term: molecular genetic testing
+          term:
+            id: NCIT:C19770
+            label: Molecular Analysis
+      selected_evidence:
+        snippet: Functional analysis using patient-derived leukocyte RNA revealed aberrant splicing leading
+          to partial exon truncation, frameshift, and premature termination of NPR2
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42442044
+      reference_title: A synonymous NPR2 variant causes acromesomelic dysplasia through aberrant pre-mRNA
+        splicing.
+      evidence_source: IN_VITRO
+      explanation: Patient-derived RNA demonstrates the value of transcript analysis for a splice-altering
+        synonymous allele.
+    first_seen_at: '2026-10-03T21:26:46.756749+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:26:46.756749+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:26:46.756749+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/1
+      reference: PMID:42442044
 assessments:
   165e3d88961651373399726ef0765309bb801e3c5493890566574ab0ec9297b8:
     input_sha256: a07279b7cfb2d34c5d6bb414208e36323eb3de36e33898891745f3d7f8d7b69b
@@ -14876,3 +14924,62 @@ assessments:
       request_sha256: 7e75ef31b60abd888dc1ab9ccd9d17ccd1d93e8d414291f078e3b4e29d460fed
       request_sha256s:
       - 7e75ef31b60abd888dc1ab9ccd9d17ccd1d93e8d414291f078e3b4e29d460fed
+  30ee196e3add9d710a1c8ec5e15f030818e4c3d074cdb8f1c7e3abea6f392811:
+    input_sha256: 410fb9cea0d5ad6869dd7a645a938dd25f31e3d5c3e7de130dc387879460f384
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:26:46.756749+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.78
+            MISMATCH: 0.05
+            MATCH: 0.17
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.05
+            MATCH: 0.66
+          confidence: 0.5
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.15
+            MATCH: 0.12
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.04
+            MATCH: 0.39
+          confidence: 0.35
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.06
+            MATCH: 0.58
+          confidence: 0.36
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.07
+            MATCH: 0.56
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6294
+        output_tokens: 278
+      elapsed_seconds: 1.2336
+      request_sha256: c0ed006c50a78c916267d95578749e46f533a7e9361b815c7bb994727b74b067
+      request_sha256s:
+      - c0ed006c50a78c916267d95578749e46f533a7e9361b815c7bb994727b74b067

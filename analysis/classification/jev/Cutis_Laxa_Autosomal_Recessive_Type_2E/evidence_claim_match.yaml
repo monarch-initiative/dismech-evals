@@ -7038,6 +7038,73 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:33991472
+  99b7b11f6171b8e4848ccce2141c4d768f2c052b6efcdeff75d030df7c4b0fbb:
+    claim:
+      about:
+        disease:
+          name: Cutis Laxa Autosomal Recessive Type 2E
+          disease_term:
+            preferred_term: LTBP1-related cutis laxa syndrome
+            term:
+              id: MONDO:0030337
+              label: cutis laxa, autosomal recessive, type 2E
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: Proband dermal fibroblast cultures (c.4844del and c.1342C>T)
+        experimental_model_type: PRIMARY_CELL_CULTURE
+        description: Primary dermal fibroblasts from two probands, one per truncation class, each compared
+          against two age- and sex-matched control lines. This is the entire functional dataset for the
+          disorder, and every mechanistic claim about the branch split rests on it. Skin biopsies were
+          unavailable from the other six affected individuals.
+        modeled_mechanisms:
+        - target: Excess TGF-beta Activation and Canonical Smad2 Signaling
+          relationship: MEASURES
+          fidelity: MODERATE
+          model_scale: CELLULAR
+          description: Total TGF-beta by ELISA in conditioned medium, pSmad2/Smad2 by immunoblot, CTGF
+            and POSTN by RT-qPCR.
+          limitations: One proband line per truncation class, and dermal fibroblasts cannot report the
+            bone and suture compartments where the skeletal phenotype arises. The authors note that growth
+            factor signaling in fibroblasts may not represent osteogenic pathways.
+          readouts:
+          - name: Total TGF-beta in conditioned medium
+            target: Excess TGF-beta Activation and Canonical Smad2 Signaling
+            direction: INCREASED
+            interpretation: Increased in the C-terminal-variant line only.
+        - target: Failure of Fibulin-4 Incorporation into the Elastic Fiber Scaffold
+          relationship: MEASURES
+          fidelity: MODERATE
+          model_scale: CELLULAR
+          description: Immunofluorescent analysis of the matrix fraction at 9 days post-confluency for
+            fibulin-4, LTBP1, LTBP2, fibrillin-1, and collagens I and III.
+          limitations: A confluent fibroblast monolayer builds a matrix that is not dermis, and one line
+            per branch gives no measure of between-individual variation.
+      selected_evidence:
+        snippet: We used dermal fibroblasts cultured from skin biopsies of F1:IV-2 and F4:II-1 in this
+          study. Skin biopsies of F2:V-3, F2:V-4, F2:V-8, F2:V-9, F3:II-1, and F3:II-2 are not available.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33991472
+      reference_title: Bi-allelic premature truncating variants in LTBP1 cause cutis laxa syndrome.
+      evidence_source: IN_VITRO
+      explanation: States both what was studied and the limit on the dataset, which is why the two-branch
+        model is a two-sample observation.
+    first_seen_at: '2026-10-03T21:09:07.519658+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:07.519658+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:07.519658+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/0
+      reference: PMID:33991472
 assessments:
   e4349ba0d2b1151ed161b721fa156499a3e25254cab5031631a8b2428e3e549d:
     input_sha256: d89cc615e81797be3b5a70f6132c588247331e64d6641e51393d8dbedce261c2
@@ -16418,3 +16485,167 @@ assessments:
       request_sha256: 0288bc4eac9e5890eeaf01b28988891e9ff1cc7c236aa59103a53a60c0a7247f
       request_sha256s:
       - 0288bc4eac9e5890eeaf01b28988891e9ff1cc7c236aa59103a53a60c0a7247f
+  213b1705dcd26ae0d7a17351331fbab5b8096b2a29567b8840f3a698ea1a66d5:
+    input_sha256: 99b7b11f6171b8e4848ccce2141c4d768f2c052b6efcdeff75d030df7c4b0fbb
+    configuration_sha256: 77765d3775d825ab605b8e30ae41ae10d4f13a2093f555a386f82c8498a72c4c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:07.519658+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.06
+            MATCH: 0.54
+          confidence: 0.32
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5700000000000001
+            MISMATCH: 0.08
+            MATCH: 0.35
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.11
+            MATCH: 0.55
+          confidence: 0.33
+        /assertion/experimental_model_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.03
+            MATCH: 0.94
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.06
+            MATCH: 0.63
+          confidence: 0.46
+        /assertion/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.63
+            MATCH: 0.06
+          confidence: 0.44
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.56
+            MATCH: 0.12
+          confidence: 0.33
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.25
+            MATCH: 0.19
+          confidence: 0.34
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.3
+            MATCH: 0.44
+          confidence: 0.17
+        /assertion/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.65
+            MATCH: 0.07
+          confidence: 0.48
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.55
+            MATCH: 0.17
+          confidence: 0.32
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.67
+            MATCH: 0.07
+          confidence: 0.51
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.58
+            MATCH: 0.08
+          confidence: 0.36
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.62
+            MATCH: 0.05
+          confidence: 0.44
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.73
+            MATCH: 0.02
+          confidence: 0.59
+        /assertion/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.56
+            MATCH: 0.11
+          confidence: 0.34
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.61
+            MATCH: 0.15
+          confidence: 0.41
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.32
+            MATCH: 0.16
+          confidence: 0.27
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.35
+            MATCH: 0.4
+          confidence: 0.11
+        /assertion/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.57
+            MATCH: 0.1
+          confidence: 0.36
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.7
+            MATCH: 0.07
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 22443
+        output_tokens: 1132
+      elapsed_seconds: 0.2783
+      request_sha256: fc092fc98af799ea7d979b75de751ea400726606c98f3d2412a032c082fc1656
+      request_sha256s:
+      - fc092fc98af799ea7d979b75de751ea400726606c98f3d2412a032c082fc1656

@@ -5106,6 +5106,126 @@ inputs:
     - assertion_path: /prevalence/0
       evidence_path: /prevalence/0/evidence/0
       reference: PMID:31898322
+  47aa09e40d5a1e602a8b73d14011f31d88cbfd0773b59f1998397269ea56b895:
+    claim:
+      about:
+        disease:
+          name: Rienhoff Syndrome
+          disease_term:
+            preferred_term: Rienhoff syndrome
+            term:
+              id: MONDO:0014262
+              label: Rienhoff syndrome
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        species: Mouse (Mus musculus)
+        genotype: Tgfb3 knockout congenic strains on five genetic backgrounds
+        category: Knockout
+        background: Five different congenic genetic backgrounds
+        genes:
+        - preferred_term: Tgfb3
+          term:
+            id: hgnc:11769
+            label: TGFB3
+        associated_phenotypes:
+        - Cleft palate
+        description: Congenic Tgfb3-knockout strains carrying the identical defective Tgfb3 allele on
+          five different genetic backgrounds show different cleft palate phenotypes, tracking with each
+          strain's capacity to disintegrate the medial edge epithelium and basement membrane. This is
+          a mechanistic model-organism parallel for the reduced and variable penetrance observed in human
+          TGFB3 families, though it does not by itself identify a human modifier locus.
+      selected_evidence:
+        snippet: Although the five congenic strains carried the same defective Tgfb3 gene, the fetal palate
+          phenotypes differed among strains.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32603777
+      reference_title: Genetic background influences the capacity for medial edge epithelium disintegration
+        and phenotype of cleft palate in TGFβ3 knockout mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: Demonstrates genetic-background modulation of the Tgfb3-null phenotype, a candidate
+        explanation for variable expressivity in human carriers.
+    first_seen_at: '2026-10-03T21:20:09.392965+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:09.392965+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:09.392965+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      reference: PMID:32603777
+  2908dbfd22be92f262a40785ce72488ed272b444e984ff2ee50aea80095a646b:
+    claim:
+      about:
+        disease:
+          name: Rienhoff Syndrome
+          disease_term:
+            preferred_term: Rienhoff syndrome
+            term:
+              id: MONDO:0014262
+              label: Rienhoff syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: tgfb3_mouse_null_vs_human_heterozygote
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        prompt: Does the homozygous Tgfb3-null mouse, the only well-characterised model for this disease,
+          faithfully model a human disorder in which essentially every patient is heterozygous and many
+          alleles are hypomorphic or motif-specific rather than complete nulls?
+        attaches_to:
+        - pathophysiology#Impaired Mesenchymal Development
+        - pathophysiology#Palatal and Craniofacial Malformation
+        rationale: 'The dose mismatch is the core issue: the mouse evidence for the palatal mechanism
+          comes from biallelic nulls, whereas human Rienhoff syndrome is autosomal dominant and heterozygous.
+          Human alleles are also mechanistically varied (cysteine-knot disruption, RKKR furin-cleavage-motif
+          disruption, latency-associated peptide domain substitutions), so a complete null is not an obvious
+          surrogate for any of them. The direction of effect diverges too: the mouse null is a pure loss
+          of ligand, while human loss-of-function alleles are associated with increased pSMAD2 in the
+          aortic media. The mouse is nonetheless the strongest available support for the palatogenesis
+          mechanism, and the congenic-background series offers a real mechanistic parallel to human reduced
+          penetrance - so this is a translational-validity caveat on an otherwise well-evidenced node,
+          not an absence of evidence.'
+        proposed_experiments:
+        - experiment_id: exp_tgfb3_heterozygous_knockin_mouse
+          name: Allele-matched heterozygous Tgfb3 knock-in mouse series
+          description: Generate heterozygous mouse lines carrying the orthologous human alleles (cysteine-knot
+            p.Cys409Tyr, an RKKR-motif variant, and a latency-associated peptide domain variant) rather
+            than a null, and phenotype palate, skeletal muscle mass and aortic wall in parallel. Compare
+            each line's SMAD2 phosphorylation in palate, muscle and aorta to test whether one genotype
+            can reproduce both the muscular and the vascular arms of the human disease.
+      selected_evidence:
+        snippet: Mice lacking TGF-beta 3 exhibit an incompletely penetrant failure of the palatal shelves
+          to fuse leading to cleft palate.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7493021
+      reference_title: Transforming growth factor-beta 3 is required for secondary palate fusion.
+      evidence_source: MODEL_ORGANISM
+      explanation: The supporting palatal evidence comes from complete-null mice, not from a heterozygous
+        model matching the human genotype.
+    first_seen_at: '2026-10-03T21:20:09.347550+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:09.347550+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:09.347550+00:00'
+    occurrences:
+    - assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      reference: PMID:7493021
 assessments:
   7f4bb9e72648bfe87dfe2db8f500e6b714158638b33b0fc739458457901c0793:
     input_sha256: e64649967b68185dd1e5a617d6b9f2ae612872f52a17fada216eeb5ab90dfc7b
@@ -12019,3 +12139,184 @@ assessments:
       request_sha256: 8e211b32c9edd9f5385630dcb5d75fa3f4fb85cdea5f7ee56d0cbe924b7449cd
       request_sha256s:
       - 8e211b32c9edd9f5385630dcb5d75fa3f4fb85cdea5f7ee56d0cbe924b7449cd
+  d77527e19e5aa930f15691d63477a99a98ce0eaa07f54bc4e35dffa5c11f904d:
+    input_sha256: 47aa09e40d5a1e602a8b73d14011f31d88cbfd0773b59f1998397269ea56b895
+    configuration_sha256: 4f665b14788bed4d5ec91b7d15ac1533afa8de392b2242e76cc58efbfb6a6593
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:09.392965+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.37
+            MISMATCH: 0.46
+          confidence: 0.18
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.31
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/species:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.47000000000000003
+            MISMATCH: 0.36
+          confidence: 0.2
+        /assertion/genotype:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            PARTIAL: 0.32
+            MISMATCH: 0.04
+          confidence: 0.45
+        /assertion/category:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.45
+            MISMATCH: 0.19
+          confidence: 0.17
+        /assertion/background:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            PARTIAL: 0.13
+            MISMATCH: 0.02
+          confidence: 0.77
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.14
+            MISMATCH: 0.1
+          confidence: 0.64
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            PARTIAL: 0.11
+            MISMATCH: 0.07
+          confidence: 0.73
+        /assertion/associated_phenotypes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.24
+            MISMATCH: 0.05
+          confidence: 0.57
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.6799999999999999
+            MISMATCH: 0.1
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10094
+        output_tokens: 463
+      elapsed_seconds: 0.3546
+      request_sha256: e1b52f2f196b2904ba0c378f6d28ed714d2913c068c401489f86b0ce0e958e15
+      request_sha256s:
+      - e1b52f2f196b2904ba0c378f6d28ed714d2913c068c401489f86b0ce0e958e15
+  8e5f79cb2363266461c17a4a02234724fb0927418e3c4feeb31f4b3f8a7c059a:
+    input_sha256: 2908dbfd22be92f262a40785ce72488ed272b444e984ff2ee50aea80095a646b
+    configuration_sha256: fad4432e00a388b6bd09270cfb49cd34c6c869339bd2e9117d8ac9f4fac471e9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:09.347550+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.26
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.17
+            PARTIAL: 0.38
+          confidence: 0.18
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.67
+            PARTIAL: 0.2
+          confidence: 0.49
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.63
+            PARTIAL: 0.23
+          confidence: 0.45
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.9299999999999999
+            PARTIAL: 0.06
+          confidence: 0.91
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.27
+            PARTIAL: 0.7
+          confidence: 0.56
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.15
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.44
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.76
+            PARTIAL: 0.2
+          confidence: 0.63
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.69
+            PARTIAL: 0.29
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11516
+        output_tokens: 533
+      elapsed_seconds: 0.3441
+      request_sha256: 2e45041a4b4de112c38a5768308169cbfec048649142dbc3ae991e517f4bf9df
+      request_sha256s:
+      - 2e45041a4b4de112c38a5768308169cbfec048649142dbc3ae991e517f4bf9df

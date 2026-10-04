@@ -6621,6 +6621,54 @@ inputs:
     - assertion_path: /prevalence/0
       evidence_path: /prevalence/0/evidence/0
       reference: PMID:21699693
+  526e452aacb69568bcf85f40ca2d4b68a44df5dcb2d3207bdf8b62da84c0604d:
+    claim:
+      about:
+        disease:
+          name: Kyphoscoliotic Ehlers-Danlos Syndrome
+          disease_term:
+            preferred_term: Kyphoscoliotic Ehlers-Danlos Syndrome
+            term:
+              id: MONDO:0016002
+              label: Ehlers-Danlos syndrome, kyphoscoliotic type 1
+        context:
+        - path: /pathophysiology/6
+          value:
+            name: Weakened Musculoskeletal and Paraspinal Connective Tissue
+            biological_scale: TISSUE
+            description: 'Poorly crosslinked collagen in skeletal muscle fascia, spinal ligaments, and
+              paraspinal connective tissue reduces its mechanical support of the trunk and axial skeleton.
+
+              '
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Osteopenia
+      selected_evidence:
+        snippet: assessment for osteopenia as needed beginning at age ten to 12 years
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6/downstream/2
+      evidence_path: /pathophysiology/6/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/6
+    evidence_metadata:
+      reference: PMID:20301635
+      reference_title: PLOD1-Related Kyphoscoliotic Ehlers-Danlos Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: GeneReviews surveillance guidance documents osteopenia as a manifestation of the weakened
+        skeletal connective tissue matrix in PLOD1-kEDS.
+    first_seen_at: '2026-10-03T21:21:03.363411+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:03.363411+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:03.363411+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6/downstream/2
+      evidence_path: /pathophysiology/6/downstream/2/evidence/0
+      reference: PMID:20301635
 assessments:
   4b31155302ee97d69a30cc61663c01eb9a431f9e3393c2cba00cf87fbf49dcc0:
     input_sha256: 14eb5a40ffb6fba8eab03a05cac63c272ca5ce621a0ece6eb26765c90bf6a84d
@@ -13738,3 +13786,48 @@ assessments:
       request_sha256: 89245876dec4410f177ccc05c2f470229fe4141ef6ddad5c3cb2178ebe21f518
       request_sha256s:
       - 89245876dec4410f177ccc05c2f470229fe4141ef6ddad5c3cb2178ebe21f518
+  022ea5e78b7458cb29dad29a7062975d86f55089fe5d5d48657063c4bbb56f9b:
+    input_sha256: 526e452aacb69568bcf85f40ca2d4b68a44df5dcb2d3207bdf8b62da84c0604d
+    configuration_sha256: 3f4f5d41aec2c0507150571bcf2c4e6b206fcdebc9663614cfc1fa3ee3fa00d4
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:03.363411+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.53
+            MISMATCH: 0.41
+          confidence: 0.29
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.57
+            MISMATCH: 0.13
+          confidence: 0.35
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.57
+            MISMATCH: 0.24
+          confidence: 0.36
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.34
+            MISMATCH: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4380
+        output_tokens: 182
+      elapsed_seconds: 0.2515
+      request_sha256: c5af28a356666b7ae8f17b5a4f9756b5781ebff721f56726d782d9cc5fb35748
+      request_sha256s:
+      - c5af28a356666b7ae8f17b5a4f9756b5781ebff721f56726d782d9cc5fb35748

@@ -4904,6 +4904,85 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:36711926
+  10e31d0e8bf2cfebb18444e359ca280ed1020ef4c4d202c3242be05feb550ee5:
+    claim:
+      about:
+        disease:
+          name: Spondyloepiphyseal Dysplasia, Nishimura Type
+          disease_term:
+            preferred_term: spondyloepiphyseal dysplasia, Nishimura type
+            term:
+              id: MONDO:0032835
+              label: spondyloepiphyseal dysplasia, nishimura type
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: MIR140 Seed-Region Point Mutation
+        biological_scale: MOLECULAR
+        description: A single-nucleotide substitution, NR_029681.1:n.24A>G (chr16:g.69967007A>G, hg19),
+          at the first nucleotide of the seed of mature miR-140-5p. The seed is what selects a microRNA's
+          target set, so a substitution there changes which transcripts miR-140-5p recognises. The same
+          substitution is present in all three reported patients from two unrelated families, is absent
+          from gnomAD, and the affected nucleotide is conserved from human to Australian ghostshark.
+        genes:
+        - preferred_term: MIR140
+          term:
+            id: hgnc:31527
+            label: MIR140
+        genetic_context:
+          genes:
+          - preferred_term: MIR140
+            term:
+              id: hgnc:31527
+              label: MIR140
+          allele_type: single-nucleotide substitution at the first seed nucleotide of the mature miR-140-5p
+            strand
+          variant_origin: GERMLINE
+          zygosity: HETEROZYGOUS
+          functional_impact_category: NEOMORPHIC
+          description: Carriers are heterozygous. The variant arose de novo in the probands of both families
+            and was transmitted once, mother to son.
+          notes: On the choice of NEOMORPHIC, and how it differs from the sibling miRNA entry. The other
+            microRNA disease in this knowledge base, Autosomal_Dominant_Nonsyndromic_Hearing_Loss_50 (MIR96),
+            deliberately leaves functional_impact_category absent, on the ground that a seed mutation
+            is simultaneously hypomorphic for the wild-type target set and neomorphic for an acquired
+            one and that no single-valued category says both. The biology is the same here. The reason
+            the value is set anyway is that the mouse genetics assigns the disease-defining features to
+            the acquired half in a way the MIR96 work does not. The miR-140-null mouse is not phenotypically
+            silent - it is smaller with a shorter nose - but it does not have the delayed secondary ossification,
+            the widened basal skull growth plate or the expanded resting zone that the knock-in mouse
+            and the patients have, and the founding authors state in those words that the substitution
+            is "neomorphic, and not just loss-of-function". NEOMORPHIC in Muller's sense names an allele
+            with a new activity and does not deny that the old one is also impaired; the impaired half
+            is curated as its own node, "Loss of Repression of Wild-Type miR-140-5p Targets", with its
+            own evidence. What the single value cannot record is that the shared short stature and craniofacial
+            features track the abandoned half while the epiphyseal features track the acquired one, and
+            that is stated here rather than left to be inferred.
+      selected_evidence:
+        snippet: Here we describe a neomorphic seed region mutation in the chondrocyte-specific, super-enhancer-associated
+          MIR140 gene encoding microRNA-140 (miR-140) in a novel autosomal dominant human skeletal dysplasia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30804514
+      reference_title: Gain-of-function mutation of microRNA-140 in human skeletal dysplasia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The mechanism class the entry is built on, stated by the authors: a neomorphic seed
+        mutation in a microRNA gene.'
+    first_seen_at: '2026-10-03T21:20:27.089520+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:27.089520+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:27.089520+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:30804514
 assessments:
   3034c28587b070b7661e2fd0bc1447e928a4b85dfe2206104ba30136173f5543:
     input_sha256: 3b3fa697c5cb2a5963dbc49bf581d95ab92107654cf77710c92f74565d38ef6c
@@ -11727,3 +11806,125 @@ assessments:
       request_sha256: cd2e4866ebe645641e1e944dbe5819a96d9547344ed5fbe67b5c5982111c0e00
       request_sha256s:
       - cd2e4866ebe645641e1e944dbe5819a96d9547344ed5fbe67b5c5982111c0e00
+  a0d0eb61fe81752cd929e6c96990b5ed22f24dc287d581cbb61af42785f92d8e:
+    input_sha256: 10e31d0e8bf2cfebb18444e359ca280ed1020ef4c4d202c3242be05feb550ee5
+    configuration_sha256: 325485649035f14c9de7f7fb2f59044c4c718cbcc00518c3dbbefd6b7da14d5f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:27.089520+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.44
+            MISMATCH: 0.05
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.47
+            MISMATCH: 0.07
+          confidence: 0.21
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.5
+            MISMATCH: 0.12
+          confidence: 0.26
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.03
+          confidence: 0.9
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.24
+            MISMATCH: 0.11
+          confidence: 0.48
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.02
+          confidence: 0.91
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.9
+            MISMATCH: 0.03
+          confidence: 0.84
+        /assertion/genetic_context/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.91
+            MISMATCH: 0.03
+          confidence: 0.86
+        /assertion/genetic_context/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.79
+            MISMATCH: 0.05
+          confidence: 0.69
+        /assertion/genetic_context/allele_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.85
+            MISMATCH: 0.02
+          confidence: 0.79
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.37
+            MISMATCH: 0.11
+          confidence: 0.28
+        /assertion/genetic_context/zygosity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.19
+            MISMATCH: 0.21
+          confidence: 0.39
+        /assertion/genetic_context/functional_impact_category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /assertion/genetic_context/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.08
+            MISMATCH: 0.45
+          confidence: 0.21
+        /assertion/genetic_context/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.19
+            MISMATCH: 0.25
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16177
+        output_tokens: 723
+      elapsed_seconds: 0.3293
+      request_sha256: ed69b6f7ba398ddab5549783f30451a72be13a41ab8c38ea1c7a903accf41b10
+      request_sha256s:
+      - ed69b6f7ba398ddab5549783f30451a72be13a41ab8c38ea1c7a903accf41b10

@@ -8442,6 +8442,158 @@ inputs:
     - assertion_path: /treatments/9/target_mechanisms/0
       evidence_path: /treatments/9/target_mechanisms/0/evidence/0
       reference: PMID:35672312
+  b147a5fa69c562423be46c57965a7341c17255823a62ad4021e941848a7d9e94:
+    claim:
+      about:
+        disease:
+          name: Maple Syrup Urine Disease
+          disease_term:
+            preferred_term: maple syrup urine disease
+            term:
+              id: MONDO:0009563
+              label: maple syrup urine disease
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Plasma Leucine
+        presence: INCREASED
+        context: Markedly elevated, often greater than 2000 micromol/L in classic form; normal is 90-250
+          micromol/L
+        biomarker_term:
+          preferred_term: plasma leucine
+          term:
+            id: CHEBI:25017
+            label: leucine
+        readouts:
+        - target: Systemic BCAA and BCKA Accumulation
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Elevated plasma leucine reports the primary branched-chain amino acid accumulation
+            caused by BCKDH deficiency.
+        - target: Leucine and Ketoacid Neurotoxicity
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: MONITORING
+          interpretation: High leucine participates in the toxic leucine/KIC branch that drives MSUD-related
+            neurologic symptoms.
+      selected_evidence:
+        snippet: Leucine was significantly increased 6.4-fold in serum
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27373929
+      reference_title: Metformin inhibits Branched Chain Amino Acid (BCAA) derived ketoacidosis and promotes
+        metabolic homeostasis in MSUD.
+      explanation: Confirms marked elevation of leucine in MSUD mouse model.
+    first_seen_at: '2026-10-03T21:09:43.388183+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:43.388183+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:43.388183+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:27373929
+  f1fd183bcb68f1ef98d69b9c4b40ff620a82bda6b15d8118321dfe9942c39a96:
+    claim:
+      about:
+        disease:
+          name: Maple Syrup Urine Disease
+          disease_term:
+            preferred_term: maple syrup urine disease
+            term:
+              id: MONDO:0009563
+              label: maple syrup urine disease
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Cerebral Energy Failure and Oxidative Stress
+            description: 'KIC-mediated inhibition of mitochondrial dehydrogenases and electron transport
+              chain function leads to cerebral energy failure with reduced ATP and N-acetylaspartate.
+              Concurrently, reactive oxygen and nitrogen species accumulate, further damaging mitochondrial
+              enzymes including lipoate-containing E2/E3 modules. This combination of energy depletion
+              and oxidative stress results in cerebral edema with diffuse gray matter swelling affecting
+              the cerebral cortex, basal ganglia, hippocampus, and brainstem.
+
+              '
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            - preferred_term: astrocyte
+              term:
+                id: CL:0000127
+                label: astrocyte
+            biological_processes:
+            - preferred_term: response to oxidative stress
+              term:
+                id: GO:0006979
+                label: response to oxidative stress
+              modifier: INCREASED
+            - preferred_term: generation of precursor metabolites and energy
+              term:
+                id: GO:0006091
+                label: generation of precursor metabolites and energy
+              modifier: DECREASED
+            locations:
+            - preferred_term: cerebral cortex
+              term:
+                id: UBERON:0000956
+                label: cerebral cortex
+            - preferred_term: basal ganglion
+              term:
+                id: UBERON:0002420
+                label: basal ganglion
+            - preferred_term: hippocampal formation
+              term:
+                id: UBERON:0002421
+                label: hippocampal formation
+            - preferred_term: brainstem
+              term:
+                id: UBERON:0002298
+                label: brainstem
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Neural Cell Death via Apoptosis and Autophagy
+        description: Energy failure and metabolite toxicity trigger apoptotic and autophagic injury programs
+          in neural cells and brain tissue.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - Mitochondrial respiratory stress and BCAA/KIC-induced neural cell death programs.
+      selected_evidence:
+        snippet: BCAA significantly increased the levels of Beclin-1, ATG7, and ATG5 in the cerebral cortex
+          of rats
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: DOI:10.1007/s11011-022-01109-y
+      reference_title: Branched-chain amino acids (BCAA) administration increases autophagy and the autophagic
+        pathway in brain tissue of rats submitted to a Maple Syrup Urine Disease (MSUD) protocol
+      evidence_source: MODEL_ORGANISM
+      explanation: Rat-model evidence supports BCAA-induced autophagy pathway activation in brain tissue.
+    first_seen_at: '2026-10-03T21:09:43.367470+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:43.367470+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:43.367470+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/1
+      reference: DOI:10.1007/s11011-022-01109-y
 assessments:
   ae8908241cc49d37ef631da8523f4cd61879c3e4272faf5687ab10ad2916afef:
     input_sha256: e171d896b5fe7902d86e655ae4f1e7048267aa5418da7cb20c61599959961e55
@@ -18800,3 +18952,205 @@ assessments:
       request_sha256: 09490e60e3308cc916d6c6edccb9a4171fa06c3fd1b604b961e5b46d7d77effa
       request_sha256s:
       - 09490e60e3308cc916d6c6edccb9a4171fa06c3fd1b604b961e5b46d7d77effa
+  4db973413a5f686a7601dfe6f757d3fa5bc8c34797e59706abf365a9d697d491:
+    input_sha256: b147a5fa69c562423be46c57965a7341c17255823a62ad4021e941848a7d9e94
+    configuration_sha256: 882f041c7e438ce11eed826dde25efe74b788ef34de5e4698dd454a210a69665
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:43.388183+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.56
+            MISMATCH: 0.05
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.71
+            MISMATCH: 0.12
+          confidence: 0.57
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.19
+            MISMATCH: 0.05
+          confidence: 0.64
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            PARTIAL: 0.2
+            MISMATCH: 0.0
+          confidence: 0.7
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.39999999999999997
+            MISMATCH: 0.35
+          confidence: 0.11
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.07
+            PARTIAL: 0.21
+          confidence: 0.57
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.04
+            PARTIAL: 0.17
+          confidence: 0.68
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.62
+            MISMATCH: 0.06
+          confidence: 0.43
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            PARTIAL: 0.33
+            MISMATCH: 0.04
+          confidence: 0.45
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            PARTIAL: 0.21
+            MISMATCH: 0.02
+          confidence: 0.64
+        /assertion/readouts/0/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.66
+            MISMATCH: 0.18
+          confidence: 0.48
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.52
+            MISMATCH: 0.12
+          confidence: 0.28
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.21
+            PARTIAL: 0.67
+          confidence: 0.52
+        /assertion/readouts/1/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.64
+            MISMATCH: 0.16
+          confidence: 0.46
+        /assertion/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.69
+            MISMATCH: 0.13
+          confidence: 0.53
+        /assertion/readouts/1/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.48
+            MISMATCH: 0.45
+          confidence: 0.22
+        /assertion/readouts/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.49
+            MISMATCH: 0.46
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17410
+        output_tokens: 839
+      elapsed_seconds: 0.4201
+      request_sha256: 3d9e844325a57ee361f37b0cf2bc5644bd3bdd14e15aae055c6f8effc3e76c74
+      request_sha256s:
+      - 3d9e844325a57ee361f37b0cf2bc5644bd3bdd14e15aae055c6f8effc3e76c74
+  2058bf2dc40e94e92839c9fd9e422447b7d1aed305e69260b627f4835a967936:
+    input_sha256: f1fd183bcb68f1ef98d69b9c4b40ff620a82bda6b15d8118321dfe9942c39a96
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:43.367470+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.08
+            PARTIAL: 0.81
+          confidence: 0.71
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.3
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.25
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.11
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.32
+            PARTIAL: 0.62
+          confidence: 0.44
+        /assertion/intermediate_mechanisms:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            MATCH: 0.22
+            PARTIAL: 0.72
+          confidence: 0.57
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41000000000000003
+            MATCH: 0.19
+            MISMATCH: 0.4
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7842
+        output_tokens: 324
+      elapsed_seconds: 0.2633
+      request_sha256: 407c8b19093e3306f7c9d320d7f1a06323cfd785bb6371d4ed96f5759dc7c9e2
+      request_sha256s:
+      - 407c8b19093e3306f7c9d320d7f1a06323cfd785bb6371d4ed96f5759dc7c9e2

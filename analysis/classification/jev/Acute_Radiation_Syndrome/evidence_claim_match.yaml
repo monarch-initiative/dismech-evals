@@ -10406,6 +10406,53 @@ inputs:
     - assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/0
       evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:36543843
+  c97f9d1b517388eb71303b3cecff80acd62d682375f61caa9f5097df816c3916:
+    claim:
+      about:
+        disease:
+          name: Acute Radiation Syndrome
+          disease_term:
+            preferred_term: acute radiation syndrome
+            term:
+              id: MONDO:0033938
+              label: acute radiation syndrome
+        context: []
+      assertion_type: ClinicalTrial
+      assertion:
+        name: NCT01742221
+        description: Safety and Tolerability of HemaMax™ (rHuIL-12) as Radiation Countermeasure. Safety/pharmacology
+          research in healthy volunteers; it does not test survival benefit in ARS casualties.
+        phase: PHASE_I
+        status: COMPLETED
+        notes: Registry status checked on 2026-09-21. Unknown status is not evidence of current recruitment.
+      selected_evidence:
+        snippet: This trial is designed to evaluate the safety, pharmacokinetics, and pharmacodynamics
+          of HemaMax in healthy male and female volunteers.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: clinicaltrials:NCT01742221
+      reference_title: A Phase 1b, Single-Dose, Randomized, Double-Blind, Placebo-Controlled Study to
+        Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of HemaMax™ (rHuIL-12)
+        in Healthy Subjects
+      evidence_source: HUMAN_CLINICAL
+      explanation: Registry description establishes the study purpose and population; it is not an efficacy
+        result.
+    first_seen_at: '2026-10-03T21:16:44.372366+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:16:44.372366+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:16:44.372366+00:00'
+    occurrences:
+    - assertion_path: /clinical_trials/1
+      evidence_path: /clinical_trials/1/evidence/0
+      reference: clinicaltrials:NCT01742221
 assessments:
   a9e3d59aba35aa98cc7a716545bc51875634c8fcc8b4416a7545dc238219f8b0:
     input_sha256: 399a085a4b59648d856af4c3068f517b7f17f43d8e82c4e3de2be188c7070bfc
@@ -22991,3 +23038,69 @@ assessments:
       request_sha256: 376cb4eb34b0ecd1e01d02d61e67713370a7fa0eb4aa62bee7f347ad2b6a9055
       request_sha256s:
       - 376cb4eb34b0ecd1e01d02d61e67713370a7fa0eb4aa62bee7f347ad2b6a9055
+  190ce1b62573922086d82399a1bace1c1d2defde267f5171a6fc5eb14cb75c33:
+    input_sha256: c97f9d1b517388eb71303b3cecff80acd62d682375f61caa9f5097df816c3916
+    configuration_sha256: 75516eb81e676484439a344ed7ebcd327f81b1e6a1285ccba6d7eea2e39207a6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:16:44.372366+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.26
+            MISMATCH: 0.44
+          confidence: 0.17
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.13
+            MISMATCH: 0.59
+          confidence: 0.39
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.08
+            MISMATCH: 0.74
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.36
+            MISMATCH: 0.26
+          confidence: 0.07
+        /assertion/phase:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.05
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.01
+            MISMATCH: 0.79
+          confidence: 0.69
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.01
+            MISMATCH: 0.85
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7151
+        output_tokens: 325
+      elapsed_seconds: 0.3337
+      request_sha256: af592a5403d6b475701ee4d3905c77b04a32c2cf419ff20d1999420757d484be
+      request_sha256s:
+      - af592a5403d6b475701ee4d3905c77b04a32c2cf419ff20d1999420757d484be

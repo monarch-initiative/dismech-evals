@@ -1722,6 +1722,60 @@ inputs:
     - assertion_path: /environmental/1
       evidence_path: /environmental/1/evidence/0
       reference: PMID:21307158
+  8f1f183d2422efeeff11c7b7cc1ac88407855867bbb634f4f3269e010ecb16ff:
+    claim:
+      about:
+        disease:
+          name: Colon Adenocarcinoma
+          disease_term:
+            preferred_term: colon adenocarcinoma
+            term:
+              id: MONDO:0002271
+              label: colon adenocarcinoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: EMT-Linked Invasive Dissemination
+        conforms_to: invasion_and_metastasis#Epithelial-Mesenchymal Transition Activation
+        description: Metastatic colorectal cancer cells detach from the primary epithelium, invade through
+          vascular and stromal barriers, and colonize the liver through a stepwise dissemination program
+          consistent with EMT-linked invasive plasticity.
+        biological_processes:
+        - preferred_term: epithelial to mesenchymal transition
+          modifier: INCREASED
+          term:
+            id: GO:0001837
+            label: epithelial to mesenchymal transition
+        - preferred_term: positive regulation of cell migration
+          modifier: INCREASED
+          term:
+            id: GO:0030335
+            label: positive regulation of cell migration
+      selected_evidence:
+        snippet: Metastasis of the liver from colorectal cancer represents the final stage of a multistep
+          biological process.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29201802
+      reference_title: Hepatic Metastasis from Colorectal Cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports a sequential detachment, invasion, and colonization program in metastatic
+        CRC that is consistent with EMT-linked dissemination.
+    first_seen_at: '2026-10-03T21:31:49.401074+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:31:49.401074+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:31:49.401074+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:29201802
 assessments:
   bf7c0308d73cb9924ff0e54d42da06f96e99b4f64755e0f955cefbd4a3444a9e:
     input_sha256: 05eb893cade4c599a3db796559fdc444fad005ce09ad90a9ae52d3e222f8372c
@@ -3873,3 +3927,97 @@ assessments:
       request_sha256: c9fb36926241f6b055451168ce275cfda4d97068da0d2326e1c655dccbf4bbf8
       request_sha256s:
       - c9fb36926241f6b055451168ce275cfda4d97068da0d2326e1c655dccbf4bbf8
+  5a871f7322216b8295af9fc8fd69a7f7a0e59f71d9cf0aeca97609f2848bc3c1:
+    input_sha256: 8f1f183d2422efeeff11c7b7cc1ac88407855867bbb634f4f3269e010ecb16ff
+    configuration_sha256: a666b6dada1eee8108e10e74bca5928b35dba8750219c002b8e6f8bd7a02d5b1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:31:49.401074+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.84
+            MATCH: 0.01
+            MISMATCH: 0.15
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.88
+            MISMATCH: 0.01
+          confidence: 0.82
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.04
+            MISMATCH: 0.36
+          confidence: 0.4
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.03
+            MISMATCH: 0.43
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.89
+            MATCH: 0.02
+            MISMATCH: 0.09
+          confidence: 0.83
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.01
+            MISMATCH: 0.58
+          confidence: 0.38
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.01
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.01
+            MISMATCH: 0.57
+          confidence: 0.36
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.05
+            MISMATCH: 0.46
+          confidence: 0.24
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.01
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.03
+            MISMATCH: 0.5
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11810
+        output_tokens: 564
+      elapsed_seconds: 0.2479
+      request_sha256: f6da312d409eac289cac84f106e3a88d3d037b91f6c41df6c5de86018e75ed8f
+      request_sha256s:
+      - f6da312d409eac289cac84f106e3a88d3d037b91f6c41df6c5de86018e75ed8f

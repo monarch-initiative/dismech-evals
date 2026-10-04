@@ -8791,6 +8791,64 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/2
       reference: PMID:41583548
+  e5015b35139d94a8d49d9fd03d3c50bf484f8c40a009851a0dea9d7d1fdec5c9:
+    claim:
+      about:
+        disease:
+          name: Factor XIII A Subunit Deficiency
+          disease_term:
+            preferred_term: Factor XIII A subunit deficiency
+            term:
+              id: MONDO:0013187
+              label: factor XIII, A subunit, deficiency of
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Fibrin clot solubility in urea or monochloroacetic acid
+        presence: ABNORMAL
+        biomarker_term:
+          preferred_term: fibrin clot solubility
+          term:
+            id: NCIT:C112277
+            label: Factor XIII Measurement
+        notes: 'The historical qualitative screen, retained here because it is still what most patients
+          in low-resource settings are offered, and because its asymmetry is a curated clinical fact:
+          a dissolved clot indicates severe deficiency, an intact clot excludes nothing. See the `definitions`
+          record "Insensitivity of the clot solubility screen" for the full statement. NCIT has no term
+          for the solubility test itself, so the generic Factor XIII Measurement term is bound and the
+          LOINC code carries the method.'
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:3241-7
+            label: Coagulation factor XIII coagulum dissolution at 24 hours [Presence] in Platelet poor
+              plasma by Coagulation assay
+          population: Patients with suspected factor XIII deficiency
+          notes: A presence/absence observation, so no numeric interval applies. The LOINC code is recorded
+            to identify the test; no bounds are given because the result is qualitative.
+      selected_evidence:
+        snippet: A positive result strongly suggests severe deficiency at very low activity levels (~1
+          to 5% depending on method); however, sensitivity is poor.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/3
+      evidence_path: /biochemical/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41583548
+      reference_title: 'Factor XIII Deficiency: A Review of Biology, Testing, and Treatment.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Source of the asymmetric interpretation recorded for this test.
+    first_seen_at: '2026-10-03T21:21:24.589499+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:24.589499+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:24.589499+00:00'
+    occurrences:
+    - assertion_path: /biochemical/3
+      evidence_path: /biochemical/3/evidence/0
+      reference: PMID:41583548
 assessments:
   7ffaa8332064326a32d5d50137f1a6fdc9ea833486c8fad11de903eaff509779:
     input_sha256: 341d23d6241e6b675cdeb262fb5e2d6900dc8c71e1923114615fd4abf9ee019d
@@ -20715,3 +20773,97 @@ assessments:
       request_sha256: e7da7df371b56653d6d72b3b2e090790667b83c653de41fd3b42c9071adc5be1
       request_sha256s:
       - e7da7df371b56653d6d72b3b2e090790667b83c653de41fd3b42c9071adc5be1
+  25b244df83debde93d4a93f64de89430b604626a53d15955b07047fcb8d5b890:
+    input_sha256: e5015b35139d94a8d49d9fd03d3c50bf484f8c40a009851a0dea9d7d1fdec5c9
+    configuration_sha256: cae88f30ff7812f88c89944e3a8fd2281f3051ca1f7c24e716c16a928de072cc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:24.589499+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.43
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.59
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.3
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.62
+            PARTIAL: 0.24
+          confidence: 0.43
+        /assertion/biomarker_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.3
+            PARTIAL: 0.36
+          confidence: 0.05
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.38
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.11
+            PARTIAL: 0.28
+          confidence: 0.42
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.33999999999999997
+            MATCH: 0.34
+            PARTIAL: 0.32
+          confidence: 0.02
+        /assertion/reference_ranges/0/population:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.21
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/reference_ranges/0/notes:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.42
+            PARTIAL: 0.38
+          confidence: 0.12
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11192
+        output_tokens: 533
+      elapsed_seconds: 0.2383
+      request_sha256: f28eb84b09f99525a535fd4d42b96f31f00ac4b9f3ea2642d46b0f0bf63066e8
+      request_sha256s:
+      - f28eb84b09f99525a535fd4d42b96f31f00ac4b9f3ea2642d46b0f0bf63066e8

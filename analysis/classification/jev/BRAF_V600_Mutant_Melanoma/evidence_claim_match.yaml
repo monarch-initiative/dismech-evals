@@ -5862,6 +5862,104 @@ inputs:
     - assertion_path: /classifications/icdo_morphology
       evidence_path: /classifications/icdo_morphology/evidence/0
       reference: PMID:39700658
+  4844a5a6378332d927085189eddd6467438f967cd8475731e1a42692974fc4ae:
+    claim:
+      about:
+        disease:
+          name: BRAF V600 Mutant Melanoma
+          disease_term:
+            preferred_term: cutaneous melanoma
+            term:
+              id: MONDO:0005012
+              label: cutaneous melanoma
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: BRAF p.Val600Glu
+        gene_term:
+          preferred_term: BRAF
+          term:
+            id: hgnc:1097
+            label: BRAF
+        association: Somatic Activating Driver Mutation
+        relationship_type: SOMATIC_DRIVER
+        variant_origin: SOMATIC
+        notes: BRAF c.1799T>A (p.Val600Glu) is the dominant codon-600 allele and has the most extensive
+          targeted-therapy evidence. Historical literature called the same residue V599E before sequence
+          numbering was standardized.
+      selected_evidence:
+        snippet: Among BRAF V600 mutations, 79%, 12%, 5%, and 4% were V600E, V600K, V600R, and V600M,
+          respectively.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22536370
+      reference_title: Routine multiplex mutational profiling of melanomas enables enrollment in genotype-driven
+        therapeutic trials.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The clinical testing cohort confirms dominance of the standardized V600E allele.
+    first_seen_at: '2026-10-03T22:33:03.938399+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:33:03.938399+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:33:03.938399+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:22536370
+  2677f88afeca96d82cf11d5d2f4d46b1f4ccc5b62e25d3cafaeb4917eabea799:
+    claim:
+      about:
+        disease:
+          name: BRAF V600 Mutant Melanoma
+          disease_term:
+            preferred_term: cutaneous melanoma
+            term:
+              id: MONDO:0005012
+              label: cutaneous melanoma
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_human_progression_model_fidelity
+        prompt: Which cooperating lesions and cell states are necessary and sufficient for BRAF V600-initiated
+          human melanocytes to become invasive and metastatic?
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        attaches_to:
+        - pathophysiology#PTEN-Loss and PI3K-AKT-mTOR Cooperation
+        rationale: Conditional mouse and zebrafish models establish multi-hit progression and provide
+          tractable systems, but engineered germline or synchronous driver combinations do not reproduce
+          the timing, UV background, clonal diversity, and immune history of every human tumor.
+      selected_evidence:
+        snippet: Engineered zebrafish melanomas show an overall low mutation burden.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24148783
+      reference_title: The genetic heterogeneity and mutational burden of engineered melanomas in zebrafish
+        models.
+      evidence_source: MODEL_ORGANISM
+      explanation: The model's low-burden, no-UV context exposes a clear mismatch with many human cutaneous
+        melanomas.
+    first_seen_at: '2026-10-03T22:33:03.969505+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:33:03.969505+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:33:03.969505+00:00'
+    occurrences:
+    - assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      reference: PMID:24148783
 assessments:
   67b2b2a2a0d32c8e9dd48da887244c30fd644cf85bb5aa57edf8a44728f60c26:
     input_sha256: f6ab292a0d95037dffc1118bcba5893f309daa92ee39280e57b360590e63aef6
@@ -13751,3 +13849,156 @@ assessments:
       request_sha256: c48ff94c64d493ebbb5bc9b41e7b338b1b89625121c94b624b2b1f36b77864be
       request_sha256s:
       - c48ff94c64d493ebbb5bc9b41e7b338b1b89625121c94b624b2b1f36b77864be
+  ffbd3fb18a35b673a7e4333418dff13305e74de1430073f8a9a4c17baa3eb58f:
+    input_sha256: 4844a5a6378332d927085189eddd6467438f967cd8475731e1a42692974fc4ae
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:33:03.938399+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            MATCH: 0.08
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.16
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.51
+            PARTIAL: 0.42
+          confidence: 0.26
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.7
+            PARTIAL: 0.21
+          confidence: 0.55
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.65
+            PARTIAL: 0.26
+          confidence: 0.47
+        /assertion/association:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.56
+            PARTIAL: 0.42
+          confidence: 0.34
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.25
+            PARTIAL: 0.59
+          confidence: 0.37
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.36
+            MATCH: 0.19
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.59
+            MATCH: 0.05
+            PARTIAL: 0.36
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9620
+        output_tokens: 419
+      elapsed_seconds: 0.3152
+      request_sha256: 1f73ec8c47694ba93ad8697b2ff4bbf9424ac75304a25a400443b84adf228864
+      request_sha256s:
+      - 1f73ec8c47694ba93ad8697b2ff4bbf9424ac75304a25a400443b84adf228864
+  5383acde342e7ad22158732c7fdedac0f93c9c815c47ccf398a63742d7c0ce2c:
+    input_sha256: 2677f88afeca96d82cf11d5d2f4d46b1f4ccc5b62e25d3cafaeb4917eabea799
+    configuration_sha256: 790c315aa71a7af449126bba4c0441520643c67e542693c58b87f5b69bbbcdc1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:33:03.969505+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.27
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.24
+            MATCH: 0.32
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.67
+            MATCH: 0.16
+            PARTIAL: 0.17
+          confidence: 0.51
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            MATCH: 0.17
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.66
+            MATCH: 0.19
+            PARTIAL: 0.15
+          confidence: 0.49
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.9
+            MATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.57
+            MATCH: 0.16
+            PARTIAL: 0.27
+          confidence: 0.36
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.21
+            PARTIAL: 0.45999999999999996
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8330
+        output_tokens: 372
+      elapsed_seconds: 0.4268
+      request_sha256: 979f7f1d8f8a4dc022e1ab8d47f8df52d853c698df02a23fb27622059ca6065f
+      request_sha256s:
+      - 979f7f1d8f8a4dc022e1ab8d47f8df52d853c698df02a23fb27622059ca6065f

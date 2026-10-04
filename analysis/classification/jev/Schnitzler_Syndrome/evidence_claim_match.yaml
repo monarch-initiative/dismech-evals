@@ -1880,6 +1880,47 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT01276522
+  885081f481042717d961dcf82afbc29656714c1b757d9d70c71981939d5c875c:
+    claim:
+      about:
+        disease:
+          name: Schnitzler Syndrome
+          disease_term:
+            preferred_term: Schnitzler syndrome
+            term:
+              id: MONDO:0018304
+              label: Schnitzler syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Monoclonal IgM Paraprotein
+        notes: A monoclonal IgM (rarely IgG) component on serum protein electrophoresis with immunofixation
+          is a mandatory laboratory feature, usually low-level and most commonly IgM kappa.
+      selected_evidence:
+        snippet: 'Monoclonal gammopathy was detected in all patients with a secretion level of 2.9-15.1
+          g/L: IgMk (n = 10, 64.7%)'
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38861148
+      reference_title: Schnitzler's Syndrome-Diagnostic Experience, Approaches to Therapy, and Patient
+        Management according to a Multicenter Russian Cohort.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the monoclonal IgM paraprotein, predominantly IgM kappa, in all cohort patients.
+    first_seen_at: '2026-10-03T21:10:07.072388+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:10:07.072388+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:10:07.072388+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:38861148
 assessments:
   99313e16aa5fba07f6c8b39574f2b92558fb6595cf430aa8700ff3a4b2de11eb:
     input_sha256: 5ac6583bb1c4f447cf335873e0f454ac386fa08243e9f08c8e76b3df2e92935a
@@ -4488,3 +4529,48 @@ assessments:
       request_sha256: 2d7e3323f8eedaf2710c787c33e5fcabea102977639b7cdf690bc2069d707f25
       request_sha256s:
       - 2d7e3323f8eedaf2710c787c33e5fcabea102977639b7cdf690bc2069d707f25
+  0f24dec89f7f125ca75d7310a2a94f21cf8833215fcd24b1bfea01202a7bf312:
+    input_sha256: 885081f481042717d961dcf82afbc29656714c1b757d9d70c71981939d5c875c
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:10:07.072388+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.48
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.34
+            PARTIAL: 0.62
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.37
+            PARTIAL: 0.61
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4296
+        output_tokens: 177
+      elapsed_seconds: 0.2672
+      request_sha256: 44d36b11b70fb5c0e9d298f4d04f22b6cb700887f7913a0c094b21975d64701b
+      request_sha256s:
+      - 44d36b11b70fb5c0e9d298f4d04f22b6cb700887f7913a0c094b21975d64701b

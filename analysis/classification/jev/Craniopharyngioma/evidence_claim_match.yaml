@@ -3322,6 +3322,55 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/0
       reference: clinicaltrials:NCT05286788
+  22f06dd505e3a7e72e45fb6965b9c1c1f14c6b64fff6bed0a47800530404578b:
+    claim:
+      about:
+        disease:
+          name: Craniopharyngioma
+          disease_term:
+            preferred_term: craniopharyngioma
+            term:
+              id: MONDO:0018907
+              label: craniopharyngioma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Brachytherapy for Cystic Craniopharyngioma
+        description: Intracystic or local brachytherapy is an alternative radiation-based strategy for
+          selected cystic craniopharyngiomas, with long-term progression-free-survival evidence from pooled
+          clinical trials.
+        therapeutic_modality: RADIOTHERAPY
+        treatment_term:
+          preferred_term: radiation therapy
+          term:
+            id: NCIT:C15313
+            label: Radiation Therapy
+      selected_evidence:
+        snippet: Brachytherapy has been indicated as an alternative option for treating cystic craniopharyngiomas
+          (CPs).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38790011
+      reference_title: 'Brachytherapy in craniopharyngiomas: a systematic review and meta-analysis of
+        long-term follow-up.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This systematic review and meta-analysis supports brachytherapy as an option for cystic
+        craniopharyngioma.
+    first_seen_at: '2026-10-03T21:20:01.888871+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:01.888871+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:01.888871+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: PMID:38790011
 assessments:
   43ca326d8a3832d8db3f75beb451eb5fa86d80af93b61eebb5f6d42d552ce560:
     input_sha256: 9e226d823297817e889dc31ac38702ca1b71b4b75c644d16a79ea315bde2e975
@@ -7845,3 +7894,69 @@ assessments:
       request_sha256: 93ac4f35f7dc54b923ede68650b6ad9350593ce892c7ee7219c3a267732f87a0
       request_sha256s:
       - 93ac4f35f7dc54b923ede68650b6ad9350593ce892c7ee7219c3a267732f87a0
+  49aea97c9a5ad9a829a632a73353182dc3e5a6381d027d0f152e201e26fd2cf7:
+    input_sha256: 22f06dd505e3a7e72e45fb6965b9c1c1f14c6b64fff6bed0a47800530404578b
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:01.888871+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.02
+            PARTIAL: 0.84
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.02
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.08
+            PARTIAL: 0.88
+          confidence: 0.81
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.91
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.14
+            PARTIAL: 0.4
+          confidence: 0.18
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.09
+            PARTIAL: 0.43
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7695
+        output_tokens: 324
+      elapsed_seconds: 0.3225
+      request_sha256: a6eee54ce28d2fb4d14670ad5ed36a10a3b471f6fd40ab5410d21756676d7614
+      request_sha256s:
+      - a6eee54ce28d2fb4d14670ad5ed36a10a3b471f6fd40ab5410d21756676d7614

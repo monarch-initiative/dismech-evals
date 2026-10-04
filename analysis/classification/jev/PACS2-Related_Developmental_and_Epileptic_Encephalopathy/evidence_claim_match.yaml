@@ -3149,6 +3149,64 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:29656858
+  841811c9197ea79e974154e50e533609a28eb436e0babc8a444c2c3c660ff32c:
+    claim:
+      about:
+        disease:
+          name: PACS2-Related Developmental and Epileptic Encephalopathy
+          disease_term:
+            preferred_term: developmental and epileptic encephalopathy, 66
+            term:
+              id: MONDO:0054845
+              label: developmental and epileptic encephalopathy, 66
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Pyridoxal Phosphate
+        description: 'Intravenous pyridoxal phosphate produced an initial seizure response in reported
+          cases, and seizures recurred when treatment was switched to oral vitamin B6. That pairing is
+          the clinically actionable part: it suggests responsiveness specific to the active cofactor rather
+          than to pyridoxine, and it is worth a trial early in a neonatal-onset encephalopathy where the
+          alternative is prolonged multi-agent empiricism. The evidence is a small number of reported
+          cases, not a trial.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: pyridoxal 5'-phosphate
+            term:
+              id: CHEBI:18405
+              label: pyridoxal 5'-phosphate
+      selected_evidence:
+        snippet: However, seizure recurrence occurred when the treatment was shifted to oral vitamin B6
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38540691
+      reference_title: Characteristics of Developmental and Epileptic Encephalopathy Associated with PACS2
+        p.Glu209Lys Pathogenic Variant-Our Experience and Systematic Review of the Literature.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Typed PARTIAL because it qualifies rather than supports the treatment: the response
+        did not persist on oral pyridoxine, which is what distinguishes a pyridoxal-phosphate-specific
+        effect from general vitamin B6 responsiveness and is also the reason the benefit cannot be called
+        durable.'
+    first_seen_at: '2026-10-03T21:25:25.874331+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:25.874331+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:25.874331+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:38540691
 assessments:
   c506e47b6ea8e04210c34c7d685f281c7256eb4c7937ba5277a598203af9688a:
     input_sha256: 1e5174aaccd7e5ef9ef93ecf4a592e5b0e5615fe7c174b05fd083f4790e58494
@@ -7356,3 +7414,83 @@ assessments:
       request_sha256: a2303e4f29207fe2289f55357bb4eb0e261e4792af078f2fd3e7140be060edd3
       request_sha256s:
       - a2303e4f29207fe2289f55357bb4eb0e261e4792af078f2fd3e7140be060edd3
+  dd8c377b39bd32867bc5994aa36ae5ea982079c5229e8a76d7151fed43ac0952:
+    input_sha256: 841811c9197ea79e974154e50e533609a28eb436e0babc8a444c2c3c660ff32c
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:25.874331+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MATCH: 0.21
+            MISMATCH: 0.06
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MATCH: 0.13
+            MISMATCH: 0.15
+          confidence: 0.58
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.47
+            MISMATCH: 0.14
+          confidence: 0.21
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.37
+            MISMATCH: 0.03
+          confidence: 0.4
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.38
+            MISMATCH: 0.33
+          confidence: 0.07
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.28
+            MISMATCH: 0.36
+          confidence: 0.04
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.25
+            MISMATCH: 0.32
+          confidence: 0.15
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.46
+            MISMATCH: 0.11
+          confidence: 0.18
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.42
+            MISMATCH: 0.13
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9792
+        output_tokens: 444
+      elapsed_seconds: 0.3024
+      request_sha256: 9c17fc6cd2d14eac1f859790444466083b13aee69380008050d615c41fd85ba8
+      request_sha256s:
+      - 9c17fc6cd2d14eac1f859790444466083b13aee69380008050d615c41fd85ba8

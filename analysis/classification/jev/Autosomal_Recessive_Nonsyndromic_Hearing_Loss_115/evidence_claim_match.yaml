@@ -2221,6 +2221,82 @@ inputs:
     - assertion_path: /external_assertions/0
       evidence_path: /external_assertions/0/evidence/0
       reference: PMID:30973865
+  8052906411d6817a47c625946f59a28f81fc3d14eb58e0a8c5cd058f2b3b6197:
+    claim:
+      about:
+        disease:
+          name: Autosomal Recessive Nonsyndromic Hearing Loss 115
+          disease_term:
+            preferred_term: autosomal recessive nonsyndromic hearing loss 115
+            term:
+              id: MONDO:0032762
+              label: hearing loss, autosomal recessive 115
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: SPNS2 Biallelic Loss of Function
+        biological_scale: MOLECULAR
+        description: 'Two damaged copies of SPNS2, which encodes a major facilitator superfamily transporter
+          that exports sphingosine-1-phosphate across the plasma membrane. The four reported human alleles
+          span two mutation classes: truncating changes that should abolish the protein (a frameshift,
+          p.Pro356Cysfs, and a nonsense allele, p.Trp302Ter) and in-frame changes that leave a full-length
+          protein (a single-codon deletion, p.Ser319del, and a missense substitution, p.Asp163Asn). No
+          patient allele has been assayed for transport activity; what exists is a structural study of
+          the transporter showing how pathogenic substitutions abolish export, which is an argument about
+          the mechanism class rather than about these four alleles.'
+        genes:
+        - preferred_term: SPNS2
+          term:
+            id: hgnc:26992
+            label: SPNS2
+        genetic_context:
+          genes:
+          - preferred_term: SPNS2
+            term:
+              id: hgnc:26992
+              label: SPNS2
+          allele_type: frameshift, nonsense, in-frame single-codon deletion and missense variants
+          variant_origin: GERMLINE
+          zygosity: COMPOUND_HETEROZYGOUS
+          functional_impact_category: LOSS_OF_FUNCTION
+          description: Both published probands are compound heterozygous; no homozygous family has been
+            reported, which is unusual for a DFNB entity and is why the zygosity slot carries a single
+            unambiguous value.
+          notes: 'LOSS_OF_FUNCTION is used for the block because FunctionalImpactEnum defines it as a
+            complete or partial reduction of normal gene product function, which covers the truncating
+            and the in-frame alleles alike. How much of that is measured differs by allele and should
+            not be flattened: for the truncating alleles loss is predicted, not demonstrated, and for
+            p.Ser319del and p.Asp163Asn the published support is in silico prediction plus absence from
+            population databases. The transport-ablating effect of pathogenic SPNS2 substitutions has
+            been shown structurally and in export assays, but for other residues.'
+      selected_evidence:
+        snippet: we identify how pathogenic mutations ablate the protein's export activity and thereby
+          lead to hearing loss
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39820269
+      reference_title: Transport and inhibition of the sphingosine-1-phosphate exporter SPNS2.
+      evidence_source: IN_VITRO
+      explanation: The structural and transport-assay demonstration that pathogenic SPNS2 substitutions
+        abolish export activity. Marked INDIRECT because the residues tested are not the four alleles
+        reported in DFNB115 patients, so this supports the mechanism class rather than these specific
+        variants.
+    first_seen_at: '2026-10-03T22:42:48.589868+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:42:48.589868+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:42:48.589868+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:39820269
 assessments:
   26dd970e9c7e163786f20db9f7e1027150cc77cd1451eb0bd4f07ef96a11b107:
     input_sha256: fec6facf395b2ed1996307807e8ac89af8e11ec4ea25f3fe6857925e237b876b
@@ -5283,3 +5359,125 @@ assessments:
       request_sha256: e3cdac4646d2d5bd4f2c4c0905d8dadba894cabbfe29e998d1353aa88e45df50
       request_sha256s:
       - e3cdac4646d2d5bd4f2c4c0905d8dadba894cabbfe29e998d1353aa88e45df50
+  2bd294c3ee67e8d7f5f31f27e877fa9e5a637e261df19cef8d474367454b8c41:
+    input_sha256: 8052906411d6817a47c625946f59a28f81fc3d14eb58e0a8c5cd058f2b3b6197
+    configuration_sha256: 325485649035f14c9de7f7fb2f59044c4c718cbcc00518c3dbbefd6b7da14d5f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:42:48.589868+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.07
+            PARTIAL: 0.83
+          confidence: 0.75
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.1
+            PARTIAL: 0.57
+          confidence: 0.36
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.09
+            PARTIAL: 0.65
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.09
+            PARTIAL: 0.8
+          confidence: 0.7
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.14
+            PARTIAL: 0.4
+          confidence: 0.2
+        /assertion/genes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.17
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/genetic_context/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.24
+            PARTIAL: 0.37
+          confidence: 0.09
+        /assertion/genetic_context/genes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.23
+            PARTIAL: 0.46
+          confidence: 0.18
+        /assertion/genetic_context/allele_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.58
+            PARTIAL: 0.39
+          confidence: 0.36
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.6799999999999999
+            PARTIAL: 0.3
+          confidence: 0.53
+        /assertion/genetic_context/zygosity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.84
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/genetic_context/functional_impact_category:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.03
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/genetic_context/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.68
+        /assertion/genetic_context/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.51
+            PARTIAL: 0.42
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15970
+        output_tokens: 739
+      elapsed_seconds: 0.2797
+      request_sha256: 8906f486fccf36db04ebfaf45342c511a49beff21d39f99f1817305ac44be8fe
+      request_sha256s:
+      - 8906f486fccf36db04ebfaf45342c511a49beff21d39f99f1817305ac44be8fe

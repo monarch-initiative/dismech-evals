@@ -6790,6 +6790,67 @@ inputs:
     - assertion_path: /progression/3
       evidence_path: /progression/3/evidence/2
       reference: PMID:22391998
+  06d2d70e4ef21f82fbf52b10219cf7daa84c8417e1ce0d885564f75a38f47982:
+    claim:
+      about:
+        disease:
+          name: D-2-Hydroxyglutaric Aciduria
+          disease_term:
+            preferred_term: D-2-hydroxyglutaric aciduria
+            term:
+              id: MONDO:0010924
+              label: D-2-hydroxyglutaric aciduria
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Impaired D-2-hydroxyglutarate clearance (type I)
+            description: 'Reduced D2HGDH activity impairs oxidation of D-2-HG back to alpha-ketoglutarate,
+              causing progressive accumulation of D-2-HG in urine, plasma, and CSF.
+
+              '
+            biological_processes:
+            - preferred_term: dicarboxylic acid metabolic process
+              term:
+                id: GO:0043648
+                label: dicarboxylic acid metabolic process
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Epigenetic dysregulation via alpha-KG-dependent dioxygenase inhibition
+        description: Accumulated D-2-HG can act as an alpha-KG antagonist and inhibit alpha-KG-dependent
+          dioxygenases.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        intermediate_mechanisms:
+        - D-2-HG accumulation
+        - alpha-KG antagonism
+      selected_evidence:
+        snippet: Here we demonstrate that 2-HG is a competitive inhibitor of multiple α-KG-dependent dioxygenases,
+          including histone demethylases and the TET family of 5-methlycytosine (5mC) hydroxylases.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:21251613
+      reference_title: Oncometabolite 2-hydroxyglutarate is a competitive inhibitor of alpha-ketoglutarate-dependent
+        dioxygenases.
+      evidence_source: IN_VITRO
+      explanation: Mechanistic cancer-cell and biochemical data support the D-2-HG alpha-KG-dependent
+        dioxygenase inhibition mechanism.
+    first_seen_at: '2026-10-03T21:32:06.896366+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:32:06.896366+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:32:06.896366+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/1
+      evidence_path: /pathophysiology/1/downstream/1/evidence/1
+      reference: PMID:21251613
 assessments:
   870c92e6d662fc5ce2dedf5733fd30332f21795ab844e558ef33aee503daaa84:
     input_sha256: f80d977801cbcde4be89fd63e74ea55a07c492bf18d614a2cc98ca4fbe388b53
@@ -14748,3 +14809,69 @@ assessments:
       request_sha256: 4d191e2fceed2c6809d2d17ad8040fa8064db05243912db281dd70d0b5f557ba
       request_sha256s:
       - 4d191e2fceed2c6809d2d17ad8040fa8064db05243912db281dd70d0b5f557ba
+  2ba84d4da323013f88e7851b78cb7bcd4531f6e911a92c432451a93d1af32113:
+    input_sha256: 06d2d70e4ef21f82fbf52b10219cf7daa84c8417e1ce0d885564f75a38f47982
+    configuration_sha256: f83bd4d66157b92ea5bebcbd4f15e955fd3f6b30d524806df985b430fabc4e25
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:32:06.896366+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            PARTIAL: 0.28
+            MISMATCH: 0.05
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.43
+            MISMATCH: 0.15
+          confidence: 0.15
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+          confidence: 0.8
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.12
+            MISMATCH: 0.01
+          confidence: 0.8
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+          confidence: 0.86
+        /assertion/intermediate_mechanisms:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            PARTIAL: 0.16
+            MISMATCH: 0.02
+          confidence: 0.73
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            PARTIAL: 0.21
+            MISMATCH: 0.32
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7493
+        output_tokens: 318
+      elapsed_seconds: 0.2908
+      request_sha256: aaf6d0ba2c61cc140e3afc71c6d5a7730f3c30bce868be1e49350e11bbb846c6
+      request_sha256s:
+      - aaf6d0ba2c61cc140e3afc71c6d5a7730f3c30bce868be1e49350e11bbb846c6

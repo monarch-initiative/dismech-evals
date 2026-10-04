@@ -2421,6 +2421,57 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/2/readouts/0
       evidence_path: /experimental_models/0/modeled_mechanisms/2/readouts/0/evidence/0
       reference: PMID:25807530
+  a8ae0eebdd348537c6d3fd0063a29aefd29929304fb3b5596d769eaebff97d65:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Defect Type 24
+          disease_term:
+            preferred_term: combined oxidative phosphorylation defect type 24
+            term:
+              id: MONDO:0014547
+              label: combined oxidative phosphorylation defect type 24
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal recessive inheritance
+        inheritance_term:
+          preferred_term: Autosomal recessive inheritance
+          term:
+            id: HP:0000007
+            label: Autosomal recessive inheritance
+        description: Biallelic NARS2 variants, homozygous in consanguineous families and compound heterozygous
+          elsewhere. The gene was found by homozygosity mapping combined with exome sequencing in a consanguineous
+          sibship.
+      selected_evidence:
+        snippet: Here we demonstrate association of variants in the mitochondrial asparaginyl-tRNA synthetase
+          NARS2 with human hearing loss and Leigh syndrome.
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25807530
+      reference_title: Mutations of human NARS2, encoding the mitochondrial asparaginyl-tRNA synthetase,
+        cause nonsyndromic deafness and Leigh syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The two poles of the phenotypic range in one sentence. The paper's allele-level sentence
+        states the homozygous and compound heterozygous configurations explicitly; it is not quoted here
+        because its variant nomenclature is bracketed and the reference validator strips bracketed spans
+        before matching, so quoting it would leave an unverifiable snippet. The alleles themselves are
+        recorded under genetic[].variants.
+    first_seen_at: '2026-10-03T21:49:59.251052+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:49:59.251052+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:49:59.251052+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/1
+      reference: PMID:25807530
 assessments:
   68000ae5ef270779330d7c49ca35e7c8f285619c3627ec51b675ad934e54b591:
     input_sha256: c0f7fdae78fe401c16b2f598cfee6e91de00bfbdef7cd024e7aa0c95db8e0307
@@ -5629,3 +5680,62 @@ assessments:
       request_sha256: 29be911f592ba3b666b0636ec8d3c8bbe7d49e0bc165a44e6e1ab0ce61d36049
       request_sha256s:
       - 29be911f592ba3b666b0636ec8d3c8bbe7d49e0bc165a44e6e1ab0ce61d36049
+  66e98fe7503e508c31982b678352719bca2037b0f6fa30a7deb33606ef6dd088:
+    input_sha256: a8ae0eebdd348537c6d3fd0063a29aefd29929304fb3b5596d769eaebff97d65
+    configuration_sha256: 5d7c76ef19e36af422cc1406292fc9f32966f1319cc72d7d30dfed7698ed6bdd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:49:59.251052+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.67
+            MISMATCH: 0.22
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.45999999999999996
+            MISMATCH: 0.08
+          confidence: 0.2
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.42
+            MISMATCH: 0.53
+          confidence: 0.29
+        /assertion/inheritance_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.47
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/inheritance_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.44
+            MISMATCH: 0.52
+          confidence: 0.27
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.41
+            MISMATCH: 0.55
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6304
+        output_tokens: 289
+      elapsed_seconds: 0.2621
+      request_sha256: eaff97f05b02f74145b026c59c4e14fef04c57195d489eed09f540c36e9a527e
+      request_sha256s:
+      - eaff97f05b02f74145b026c59c4e14fef04c57195d489eed09f540c36e9a527e

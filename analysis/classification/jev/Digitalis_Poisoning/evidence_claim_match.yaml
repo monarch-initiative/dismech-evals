@@ -3216,6 +3216,62 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:17054261
+  6631d5d0149248ca0df6d35ef8eae60f6af52e1fae68e019d3792828c448442e:
+    claim:
+      about:
+        disease:
+          name: Digitalis Poisoning
+          disease_term:
+            preferred_term: digitalis poisoning
+            term:
+              id: MONDO:0017863
+              label: digitalis poisoning
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: no_randomised_evidence_for_digoxin_itself
+        kind: KNOWLEDGE_GAP
+        prompt: Why is every randomised antidote trial for this poisoning in yellow oleander rather than
+          in digoxin, and does that evidence transfer?
+        attaches_to:
+        - treatments#Digoxin-Specific Antibody Fragments
+        - treatments#Multiple-Dose Activated Charcoal
+        rationale: Both randomised results this entry cites - charcoal on mortality, Fab on dysrhythmia
+          - come from yellow oleander self-poisoning in South Asia, where the case numbers are large enough
+          to run a trial and the antidote is too expensive to be standard. For pharmaceutical digoxin,
+          where the antidote is standard of care, the evidence is observational. The systematic review
+          states that no antidote studies in other cardenolides were identified at all. The transfer argument
+          is mechanistic - the same pump, the same chain - which is the sort of argument the rest of this
+          entry is built to make explicit rather than assume.
+      selected_evidence:
+        snippet: Given pharmacokinetic differences between individual cardenolides, the effect of antidotes
+          administered to patients with yellow oleander poisoning cannot be readily translated to those
+          of other cardenolides.
+        supports: REFUTE
+        directness: DIRECT
+    origin:
+      assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:17054261
+      reference_title: Antidotes for acute cardenolide (cardiac glycoside) poisoning.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Scoped to the transfer argument this discussion raises. The review the entry cites
+        for the yellow-oleander trials says in so many words that their results do not readily translate
+        to other cardenolides, which is the opposite of the mechanistic transfer argument, and is recorded
+        here rather than left out.
+    first_seen_at: '2026-10-03T22:49:11.061308+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:49:11.061308+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:49:11.061308+00:00'
+    occurrences:
+    - assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/1
+      reference: PMID:17054261
 assessments:
   e767a5f026a45f71efb1e8a671b58d33065bf3e523801926cd1d88dfb2a3b54b:
     input_sha256: ebb7c88d4bea4152e5d2aea8a2391c3208c80e0038b6b6bca485b7abbfd0af7e
@@ -7445,3 +7501,69 @@ assessments:
       request_sha256: d9bb90e7af9c7bc5ae0f56e4fecfdadb3dce9a08c43f0aae70086e570e0bc56e
       request_sha256s:
       - d9bb90e7af9c7bc5ae0f56e4fecfdadb3dce9a08c43f0aae70086e570e0bc56e
+  05e8bfe8e9f2f6444a861ce94473483fa91392d3db485e2317150ace6cf08016:
+    input_sha256: 6631d5d0149248ca0df6d35ef8eae60f6af52e1fae68e019d3792828c448442e
+    configuration_sha256: 0f5beb1cca27193c63578fed0caf713fdceebf6e9e8b7cf07363fb8775bd7547
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:49:11.061308+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.48
+            MISMATCH: 0.26
+          confidence: 0.21
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.37
+            MISMATCH: 0.25
+          confidence: 0.07
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.12
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.18
+            MISMATCH: 0.63
+          confidence: 0.45
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.51
+            MISMATCH: 0.16
+          confidence: 0.26
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.4
+            MISMATCH: 0.38
+          confidence: 0.09
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.48
+            MISMATCH: 0.26
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7509
+        output_tokens: 320
+      elapsed_seconds: 0.2995
+      request_sha256: fdd32af53ae9af019953de5dff2c373926a1d16e81bac047b4bccc1b206b439f
+      request_sha256s:
+      - fdd32af53ae9af019953de5dff2c373926a1d16e81bac047b4bccc1b206b439f

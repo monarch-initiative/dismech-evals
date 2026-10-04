@@ -5260,6 +5260,75 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:34625039
+  c30e6b14c80b240699ea9178443b8d1f0f496270704e7a4037a83f22ad45f77f:
+    claim:
+      about:
+        disease:
+          name: COG1-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: COG1-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012637
+              label: COG1-congenital disorder of glycosylation
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: Defective N- and O-glycosylation
+            conforms_to: congenital_disorder_of_glycosylation#Protein Hypoglycosylation
+            description: Disrupted Golgi trafficking impairs glycoprotein processing, producing a type
+              II CDG pattern with combined N-linked and O-linked glycosylation abnormalities.
+            biological_processes:
+            - preferred_term: protein N-linked glycosylation
+              modifier: DECREASED
+              term:
+                id: GO:0006487
+                label: protein N-linked glycosylation
+            - preferred_term: protein O-linked glycosylation
+              modifier: DECREASED
+              term:
+                id: GO:0006493
+                label: protein O-linked glycosylation
+            chemical_entities:
+            - preferred_term: N-glycan
+              modifier: ABNORMAL
+              term:
+                id: CHEBI:59520
+                label: N-glycan
+            - preferred_term: O-glycan
+              modifier: ABNORMAL
+              term:
+                id: CHEBI:59521
+                label: O-glycan
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Pulmonary Arterial Hypertension
+        description: Orphanet records pulmonary arterial hypertension as a frequent manifestation of COG1-CDG.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: HP:0002092 | Pulmonary arterial hypertension | Frequent (79-30%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/10
+      evidence_path: /pathophysiology/2/downstream/10/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: ORPHA:263508
+      reference_title: COG1-CDG
+      evidence_source: OTHER
+      explanation: Orphanet supports this distal phenotype in the COG1-CDG spectrum.
+    first_seen_at: '2026-10-03T22:32:06.138181+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:32:06.138181+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:32:06.138181+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/10
+      evidence_path: /pathophysiology/2/downstream/10/evidence/0
+      reference: ORPHA:263508
 assessments:
   5fa09ffe14af0527b3d814618b75d3efc219a8c7f17a72d41a27e8cda12651a4:
     input_sha256: 93e05e2957c9719daec7f49aa1b553c6c6b75d8dd27d5e78f0710776f1170383
@@ -12175,3 +12244,62 @@ assessments:
       request_sha256: db065f45ee3f391eb05f92e77e1cdd7eed1099a5fc12b917e700dae9d2b77047
       request_sha256s:
       - db065f45ee3f391eb05f92e77e1cdd7eed1099a5fc12b917e700dae9d2b77047
+  b648263845fe5a53695e2f8053605affc43777701790c988d6bcce70e15978ba:
+    input_sha256: c30e6b14c80b240699ea9178443b8d1f0f496270704e7a4037a83f22ad45f77f
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:32:06.138181+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.13
+            MATCH: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.42
+            MATCH: 0.23
+          confidence: 0.13
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.08
+            MATCH: 0.82
+          confidence: 0.74
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.13
+            MATCH: 0.63
+          confidence: 0.45
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.41
+            MATCH: 0.06
+          confidence: 0.28
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MISMATCH: 0.39
+            MATCH: 0.44
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6665
+        output_tokens: 272
+      elapsed_seconds: 0.2152
+      request_sha256: ab6282b9e86ad90011b9196f935fb08944068e0847c1cb4344bc7d68b6d74d4e
+      request_sha256s:
+      - ab6282b9e86ad90011b9196f935fb08944068e0847c1cb4344bc7d68b6d74d4e

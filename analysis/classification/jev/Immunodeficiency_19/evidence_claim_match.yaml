@@ -4811,6 +4811,67 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/2
       reference: PMID:21757226
+  0d855f562b03cf1dd0613507ef5d7ca4a1c118e1d29636a786f8c0514ffa271f:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 19
+          disease_term:
+            preferred_term: immunodeficiency 19
+            term:
+              id: MONDO:0014280
+              label: immunodeficiency 19
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_cd3d_arrest_stage_two_studies
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        prompt: Where exactly does thymocyte development arrest in human CD3delta deficiency - at the
+          pre-TCR checkpoint or at the intermediate single-positive stage just before the double-positive
+          transition?
+        attaches_to:
+        - pathophysiology#Arrest of Thymocyte Development
+        - pathophysiology#Failure of pre-TCR and TCR Complex Assembly
+        rationale: 'The two studies that examined CD3delta-deficient human thymic tissue do not agree
+          on the stage. The earlier one, on infant thymi, placed the block at pre-TCR expression from
+          reduced CD4 and CD8 message and protein; the later one, on fetal thymi, found abundant CD3epsilon-positive
+          CD4+ CD45RO- CD8- intermediate single-positive cells with strongly reduced proliferation, and
+          placed the block slightly later, at the ISP stage. The authors of the second study attribute
+          the difference to the tissue examined (infant versus fetal) and to the analysis method rather
+          than to a biological disagreement, and suggest that some pre-TCR-positive thymocytes may survive
+          to the ISP stage in the absence of CD3delta. A third reading exists: the transplant series,
+          summarising a biopsy and an autopsy, reports the arrest at the CD4/CD8 double-negative stage
+          - earlier than either primary study places it. No further human thymus has been examined since.
+          The distinction is not academic: it determines whether the failing signal is the pre-TCR survival
+          and proliferation signal or the subsequent progression signal, and the mouse cannot settle it
+          because its arrest is at a different checkpoint again.'
+      selected_evidence:
+        snippet: Thymic studies have shown that the defect in T-cell development occurs at the transition
+          between 'double-negative' and 'double-positive' thymocytes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16264327
+      reference_title: CD3 deficiencies.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The review's summary, which resolves the two studies into a single double-negative-to-double-positive
+        statement - a compression that is part of why the finer disagreement is easy to miss.
+    first_seen_at: '2026-10-03T21:19:14.817076+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:14.817076+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:14.817076+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      reference: PMID:16264327
 assessments:
   26ec407ae242a9a31cfb7200a3a1e83cf41cb2a0e3509cad675b2dfb58edbd67:
     input_sha256: 27b99603d48e3e2bc4abe8f8299d5e1af837a794ca379ace9eec0e72a3d147c2
@@ -10683,3 +10744,76 @@ assessments:
       request_sha256: 575e5b56d80459f8df2bcaa8788b245e14a864df1f29aac650369e6c3cae5deb
       request_sha256s:
       - 575e5b56d80459f8df2bcaa8788b245e14a864df1f29aac650369e6c3cae5deb
+  10c01ca492bc15e5c763e718937943947056151d80870e564a3fceac78c021be:
+    input_sha256: 0d855f562b03cf1dd0613507ef5d7ca4a1c118e1d29636a786f8c0514ffa271f
+    configuration_sha256: 0cc1f5b26da05df05194df920c2938c8f8dc5dd8898d2c6724fb4a40acf09259
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:14.817076+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.55
+            MISMATCH: 0.27
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.34
+            MISMATCH: 0.2
+          confidence: 0.19
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.12
+            MISMATCH: 0.83
+          confidence: 0.76
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.15
+            MISMATCH: 0.78
+          confidence: 0.66
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.05
+            MISMATCH: 0.94
+          confidence: 0.91
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.6
+            MISMATCH: 0.28
+          confidence: 0.39
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.43
+            MISMATCH: 0.19
+          confidence: 0.16
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.35
+            MISMATCH: 0.5
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8564
+        output_tokens: 371
+      elapsed_seconds: 0.3691
+      request_sha256: 2a517fe517e37d8c737491d9ffe9d7d6a8c3fb08311978445a27adcda23b86c3
+      request_sha256s:
+      - 2a517fe517e37d8c737491d9ffe9d7d6a8c3fb08311978445a27adcda23b86c3

@@ -4174,6 +4174,59 @@ inputs:
     - assertion_path: /differential_diagnoses/0
       evidence_path: /differential_diagnoses/0/evidence/0
       reference: PMID:39220754
+  700b193a6592e2495304adbc8a9752e7108905897a7b4aa852351100655e6d08:
+    claim:
+      about:
+        disease:
+          name: Neurodevelopmental Disorder with Poor Growth, Spastic Tetraplegia, and Hearing Loss
+          disease_term:
+            preferred_term: neurodevelopmental disorder with poor growth, spastic tetraplegia, and hearing
+              loss
+            term:
+              id: MONDO:0859296
+              label: neurodevelopmental disorder with poor growth, spastic tetraplegia, and hearing loss
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hearing Impairment
+        category: Neurosensory
+        description: Hearing loss, one of the three features that name the disorder. Deafness recurs across
+          the neurodevelopmental proteasomopathies - it is reported with PSMC3 and PSMD12 variants as
+          well - which is why the authors read it as a shared consequence of the class rather than a PSMC1-specific
+          finding.
+        phenotype_term:
+          preferred_term: Hearing loss
+          term:
+            id: HP:0000365
+            label: Hearing impairment
+        notes: '3/3 affected siblings. Left unwired: no source establishes a mechanism from proteasome
+          dysfunction to cochlear or retrocochlear pathology, and the audiological characterisation (conductive
+          vs sensorineural, onset, progression) is not reported.'
+      selected_evidence:
+        snippet: We now delineate an autosomal recessive syndrome of failure to thrive, severe developmental
+          delay and intellectual disability, spastic tetraplegia with central hypotonia, chorea, hearing
+          loss, micropenis and undescended testes, as well as mild elevation of liver enzymes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35861243
+      reference_title: PSMC1 variant causes a novel neurological syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names hearing loss as a defining feature.
+    first_seen_at: '2026-10-03T21:25:19.752024+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:19.752024+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:19.752024+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      reference: PMID:35861243
 assessments:
   b10652a7d3425ed7cf73811fc53b8023da18474109e3efe69e69634018ba5a83:
     input_sha256: 03b89b6205b1aeffa7c831fb0dcee4568d424131c2ccef960f62d22424871c94
@@ -9458,3 +9511,76 @@ assessments:
       request_sha256: 4b71c1eb08ed75e64e7b33dab44e9ddf0c15cc44eeb673cd7051178c3af13256
       request_sha256s:
       - 4b71c1eb08ed75e64e7b33dab44e9ddf0c15cc44eeb673cd7051178c3af13256
+  38fd555987c99ed0502865ec8f605ac1fdef0c9c9433e0ff7dc85a938ef5abc5:
+    input_sha256: 700b193a6592e2495304adbc8a9752e7108905897a7b4aa852351100655e6d08
+    configuration_sha256: cf3c4f029f78d75cd5ad71155dc6aeb0301249b857e37a346b00fd3a27a16cd1
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:19.752024+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.51
+            MISMATCH: 0.07
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.34
+            MISMATCH: 0.05
+          confidence: 0.42
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+          confidence: 0.82
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.3
+            MISMATCH: 0.18
+          confidence: 0.28
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.43
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            PARTIAL: 0.14
+            MISMATCH: 0.02
+          confidence: 0.77
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+          confidence: 0.85
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.6
+            MISMATCH: 0.12
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8315
+        output_tokens: 364
+      elapsed_seconds: 0.2047
+      request_sha256: b3571bf4418cc34c78aac5fc8b75049c959ff8f289c1cac755f20b99f934f864
+      request_sha256s:
+      - b3571bf4418cc34c78aac5fc8b75049c959ff8f289c1cac755f20b99f934f864

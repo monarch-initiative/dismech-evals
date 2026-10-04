@@ -2057,6 +2057,56 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/2
       reference: PMID:14579544
+  5f1f67f668fe9bd40c667885ee6673a98ce0d968413110bb8a25b2d60c871ec7:
+    claim:
+      about:
+        disease:
+          name: Drug-Induced Methemoglobinemia
+          disease_term:
+            preferred_term: drug-induced methemoglobinemia
+            term:
+              id: MONDO:0018740
+              label: drug-induced methemoglobinemia
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Hemolytic anemia
+        description: Seen with the higher methemoglobin levels, and with some oxidant chemicals it is
+          the greater danger. The source is explicit that not every feature of a poisoned patient belongs
+          to the methemoglobin.
+        phenotype_term:
+          preferred_term: Hemolytic anemia
+          term:
+            id: HP:0001878
+            label: Hemolytic anemia
+          temporality: ACUTE
+      selected_evidence:
+        snippet: Not all features observed in patients with methaemoglobinaemia are due to methaemoglobin
+          formation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:14579544
+      reference_title: Occupational methaemoglobinaemia. Mechanisms of production, features, diagnosis
+        and management including the use of methylene blue.
+      evidence_source: OTHER
+      explanation: Supports separating the haemolysis from the methemoglobin rather than treating it as
+        downstream of it. The source names chlorates as the example where the haemolysis is the greater
+        risk.
+    first_seen_at: '2026-10-03T21:20:03.741866+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:03.741866+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:03.741866+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:14579544
 assessments:
   b64193a7caee7df2f282eaf89ce021ebe3b6471b1d108e573b98c99be915e113:
     input_sha256: 8cb8781044e3d60a5a6ee7190e67988be75441990fc586cfec2c8bd27a949bfd
@@ -4719,3 +4769,69 @@ assessments:
       request_sha256: 1a8fe116c4af9f3c3afffbd655fe7e78e67368907a22bc66e022dcff1c6ff000
       request_sha256s:
       - 1a8fe116c4af9f3c3afffbd655fe7e78e67368907a22bc66e022dcff1c6ff000
+  4c2999aeca34a8a831fb05a973dc5628f0188cc752f3417feec1ccb3122f4c58:
+    input_sha256: 5f1f67f668fe9bd40c667885ee6673a98ce0d968413110bb8a25b2d60c871ec7
+    configuration_sha256: baac3f81959ea1a9b89ac4dfdc103dcf0f535ad278deb1f6d7871c3bbd915173
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:03.741866+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.54
+            MATCH: 0.11
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+            MATCH: 0.65
+          confidence: 0.47
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.6
+            MATCH: 0.05
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.37
+            MATCH: 0.19
+          confidence: 0.16
+        /assertion/phenotype_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.6
+            MATCH: 0.06
+          confidence: 0.4
+        /assertion/phenotype_term/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.61
+            MATCH: 0.06
+          confidence: 0.4
+        /assertion/phenotype_term/temporality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MISMATCH: 0.73
+            MATCH: 0.01
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7323
+        output_tokens: 339
+      elapsed_seconds: 0.2902
+      request_sha256: 975bf59536b18ec911a5c58c4d043aff099fad6ce6c9c5757b816518eedd5e8f
+      request_sha256s:
+      - 975bf59536b18ec911a5c58c4d043aff099fad6ce6c9c5757b816518eedd5e8f

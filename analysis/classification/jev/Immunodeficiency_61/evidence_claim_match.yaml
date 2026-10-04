@@ -3325,6 +3325,67 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:29636373
+  770451c4811fd18f8a6a1f919e15473ffbf7e1e22c5ef7ee9573869b8ec8374d:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 61
+          disease_term:
+            preferred_term: immunodeficiency 61
+            term:
+              id: MONDO:0010296
+              label: immunodeficiency 61
+        context:
+        - path: /treatments/0
+          value:
+            name: Immunoglobulin Replacement Therapy
+            description: The standard management of a primary antibody deficiency is to supply the antibody
+              the patient cannot make. No trial or case series has evaluated immunoglobulin replacement
+              in SH3KBP1 deficiency specifically - with two reported patients, none could exist - so this
+              is the class-level standard of care for inborn errors of immunity with impaired antibody
+              production, recorded as such rather than as disease-specific evidence.
+            action_category: THERAPEUTIC
+            therapeutic_modality: PROTEIN_REPLACEMENT
+            treatment_term:
+              preferred_term: intravenous immunoglobulin therapy
+              term:
+                id: NCIT:C121331
+                label: Intravenous Immunoglobulin Therapy
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Defective Antibody Production by Intrinsically Impaired B Cells
+        treatment_effect: BYPASSES
+        description: Replacement immunoglobulin substitutes for the antibody the patient's B cells fail
+          to produce. It bypasses the defect; it does not repair the signalling module, and it does not
+          restore the patient's own specific antibody responses.
+      selected_evidence:
+        snippet: The management part includes recommendations for immunoglobulin replacement, antibiotic
+          prophylaxis, hematopoietic stem cell transplantation, precision medicine, and quality-of-life
+          assessment.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:42208906
+      reference_title: 'Practice parameter for inborn errors of immunity: What is new in the 2025 update.'
+      evidence_source: OTHER
+      explanation: Establishes immunoglobulin replacement as a recommended management component for inborn
+        errors of immunity. Class-level evidence, cited as such.
+    first_seen_at: '2026-10-03T21:09:19.401007+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:19.401007+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:19.401007+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:42208906
 assessments:
   658bffbd603013f91dfc76ab48c988ddd9a33b7149e4fdde22498cb69badc853:
     input_sha256: fdd5a0b56318a803ddb7a260814e5f377eb050552f242687dc7e7264de63f584
@@ -7544,3 +7605,62 @@ assessments:
       request_sha256: 6502f6de40ade8e65401d0b20ec211406c88591be89acbcc4cf95b5b832037b4
       request_sha256s:
       - 6502f6de40ade8e65401d0b20ec211406c88591be89acbcc4cf95b5b832037b4
+  11d346cc9af5296561943dbc512581270737cc86d3992953431bf6944b55f14c:
+    input_sha256: 770451c4811fd18f8a6a1f919e15473ffbf7e1e22c5ef7ee9573869b8ec8374d
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:19.401007+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.09
+            PARTIAL: 0.57
+          confidence: 0.36
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.26
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.05
+            PARTIAL: 0.45
+          confidence: 0.24
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.4
+            MATCH: 0.06
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            MATCH: 0.02
+            PARTIAL: 0.36
+          confidence: 0.42
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.34
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6554
+        output_tokens: 277
+      elapsed_seconds: 0.3924
+      request_sha256: 68a17bfebcdf7919d3db56c986b40e95e6ad00f6ef46ef7595ec2ba645f7f7fa
+      request_sha256s:
+      - 68a17bfebcdf7919d3db56c986b40e95e6ad00f6ef46ef7595ec2ba645f7f7fa

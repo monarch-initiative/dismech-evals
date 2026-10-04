@@ -11861,6 +11861,133 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: url:https://push-zb.helmholtz-munich.de/deliver.php?id=40211
+  2dc1bdd6344b0ceb6c92219ced1845ad72219921a2b53e0291fcba593c171483:
+    claim:
+      about:
+        disease:
+          name: Acrofacial Dysostosis Cincinnati Type
+          disease_term:
+            preferred_term: acrofacial dysostosis Cincinnati type
+            term:
+              id: MONDO:0014651
+              label: acrofacial dysostosis Cincinnati type
+        context:
+        - path: /pathophysiology/11
+          value:
+            name: Depletion of Cranial Skeletal Precursors
+            biological_scale: CELLULAR
+            description: Loss and insufficient expansion of cranial neural crest-derived precursors reduce
+              the population that forms craniofacial cartilage and bone. This mechanism does not directly
+              explain mesoderm-derived limb malformations.
+            conforms_to: pol1_nucleolar_stress_neural_crest_apoptosis#Depletion of Neural-Crest-Derived
+              Craniofacial Skeletal Precursors
+            cell_types:
+            - preferred_term: neural crest cell
+              term:
+                id: CL:0011012
+                label: neural crest cell
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Mandibulofacial Dysostosis
+        description: Developmental models support reduced cranial precursor supply as a contributor to
+          human craniofacial malformations, with unmeasured tissue and allele-specific intermediates.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - pol1_nucleolar_stress_ncc_apoptosis
+        - pol1_p53_independent_arm
+      selected_evidence:
+        snippet: resulting in a deficiency of neural-crest-derived skeletal precursor cells and consequently
+          craniofacial anomalies.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/11/downstream/0
+      evidence_path: /pathophysiology/11/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/11
+    evidence_metadata:
+      reference: PMID:25913037
+      reference_title: Acrofacial Dysostosis, Cincinnati Type, a Mandibulofacial Dysostosis Syndrome with
+        Limb Anomalies, Is Caused by POLR1A Dysfunction.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: The fish model links early cell death with a smaller neural crest population.
+    first_seen_at: '2026-10-03T22:21:30.498029+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:30.498029+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:30.498029+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/11/downstream/0
+      evidence_path: /pathophysiology/11/downstream/0/evidence/0
+      reference: PMID:25913037
+  ab628d5149e2b97e50dd8c98c17f3d4161587b9b228474ac4a1113000ec532d7:
+    claim:
+      about:
+        disease:
+          name: Acrofacial Dysostosis Cincinnati Type
+          disease_term:
+            preferred_term: acrofacial dysostosis Cincinnati type
+            term:
+              id: MONDO:0014651
+              label: acrofacial dysostosis Cincinnati type
+        context:
+        - path: /animal_models/0
+          value:
+            name: polr1a mutant zebrafish with genetic tp53 suppression
+            species: Zebrafish
+            genotype: Homozygous polr1a hi3639Tg, with or without homozygous tp53 M214K
+            description: The homozygous insertional mutant models reduced Polr1a function. tp53 M214K
+              produces nonfunctional DNA-binding-domain protein; the paper abbreviates this as tp53 knockout,
+              but it is not a genomic deletion. Early apoptosis and morphology improve, while later cartilage
+              development and survival remain abnormal. Some double mutants survive to eight rather than
+              five days. This dose and developmental timing differ from heterozygous human disease.
+            publication: PMID:29750247
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Reduced Ribosome Availability
+        relationship: MEASURES
+        fidelity: MODERATE
+        description: Monosome and polysome profiles decrease.
+        limitations: Polysome profiling used pooled whole embryos at three days, not purified neural crest
+          cells.
+        readouts:
+        - name: Monosome and polysome abundance
+          target: Reduced Ribosome Availability
+          direction: DECREASED
+          interpretation: Monosome and polysome profiles decrease.
+      selected_evidence:
+        snippet: polr1a-/- mutants exhibit deficient 47S rRNA transcription, reduced monosomes and polysomes
+          and, consequently, defects in protein translation
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:29750247
+      reference_title: tp53-dependent and independent signaling underlies the pathogenesis and possible
+        prevention of Acrofacial Dysostosis-Cincinnati type.
+      evidence_source: MODEL_ORGANISM
+      quote_role: PRIMARY_RESULT
+      explanation: Fish mutant assays distinguish precursor-rRNA, ribosome profiles and translation readouts.
+    first_seen_at: '2026-10-03T22:21:33.046527+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:33.046527+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:33.046527+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
+      reference: PMID:29750247
 assessments:
   37797dbedb3f46f5da62d4a022becd0cf152c9f9739107e7e7ec10cd60ebed62:
     input_sha256: 25e144dd1cdcd20c746160f9d03b4dc68c3d48ce11c6dbf8fafe041f39d9cbf4
@@ -25665,3 +25792,170 @@ assessments:
       request_sha256: 887c021bacf8e8aa268cdfe42ecfd633f33e7588ba572815a0d2b6a7416fb21b
       request_sha256s:
       - 887c021bacf8e8aa268cdfe42ecfd633f33e7588ba572815a0d2b6a7416fb21b
+  68e452e4b62bbf6acdb6d8d55d766194855c7a023aa27271b2f99e61bdf711ca:
+    input_sha256: 2dc1bdd6344b0ceb6c92219ced1845ad72219921a2b53e0291fcba593c171483
+    configuration_sha256: 29e097b67f89bb679bfec30c8a272956cb7b1e20ac716cead21fa3a7363a1b4b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:30.498029+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.11
+            MISMATCH: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.04
+            MISMATCH: 0.76
+          confidence: 0.64
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.19
+            MISMATCH: 0.58
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.23
+            MISMATCH: 0.21
+          confidence: 0.34
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.41
+            MISMATCH: 0.11
+          confidence: 0.21
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.14
+            MISMATCH: 0.41
+          confidence: 0.18
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.34
+            MISMATCH: 0.35
+          confidence: 0.03
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7497
+        output_tokens: 330
+      elapsed_seconds: 0.3457
+      request_sha256: 8b2b7cb06a7de8a15e859e9d12be65956fef888813440ad90ee4e3d583eb50b9
+      request_sha256s:
+      - 8b2b7cb06a7de8a15e859e9d12be65956fef888813440ad90ee4e3d583eb50b9
+  89d31f06d865f4dea0a58e4967195740269a203176215e9690df85ff652f0706:
+    input_sha256: ab628d5149e2b97e50dd8c98c17f3d4161587b9b228474ac4a1113000ec532d7
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:33.046527+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.13
+            PARTIAL: 0.29
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.25
+            PARTIAL: 0.36
+          confidence: 0.09
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.93
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.02
+            PARTIAL: 0.23
+          confidence: 0.62
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.02
+            PARTIAL: 0.06
+          confidence: 0.87
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.46
+            PARTIAL: 0.34
+          confidence: 0.19
+        /assertion/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.93
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.19
+            PARTIAL: 0.15
+          confidence: 0.49
+        /assertion/readouts/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.91
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.13
+            PARTIAL: 0.35
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12527
+        output_tokens: 561
+      elapsed_seconds: 0.3517
+      request_sha256: 6316b4973744c0503e7a012c9be6903f48c8b5725f2869fd7dc9e3a28a57c2a0
+      request_sha256s:
+      - 6316b4973744c0503e7a012c9be6903f48c8b5725f2869fd7dc9e3a28a57c2a0

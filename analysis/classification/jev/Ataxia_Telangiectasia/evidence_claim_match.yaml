@@ -6649,6 +6649,1615 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:30420857
+  21cbb333d504554236add512e9582242acf7d969d1dfe46c0b533fe7df2ca169:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: ATM kinase deficiency and defective DNA-damage signaling
+            biological_scale: MOLECULAR
+            mechanism_confidence: ESTABLISHED
+            description: Biallelic pathogenic ATM variants reduce or abolish ATM kinase function. ATM
+              normally coordinates signaling after DNA double-strand breaks and oxidative or genotoxic
+              stress, including checkpoint activation and repair. Its deficiency is the established proximal
+              lesion; downstream tissue selectivity is not explained by the DNA-damage response alone.
+            genes:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            molecular_functions:
+            - preferred_term: protein serine/threonine kinase activity
+              term:
+                id: GO:0004674
+                label: protein serine/threonine kinase activity
+              modifier: DECREASED
+            biological_processes:
+            - preferred_term: DNA damage response
+              term:
+                id: GO:0006974
+                label: DNA damage response
+              modifier: DECREASED
+            - preferred_term: double-strand break repair
+              term:
+                id: GO:0006302
+                label: double-strand break repair
+              modifier: DECREASED
+            - preferred_term: cell cycle checkpoint signaling
+              term:
+                id: GO:0000075
+                label: cell cycle checkpoint signaling
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Telangiectasia
+        description: Telangiectasia belongs to the ATM-deficiency phenotype, but the causal tissue pathway
+          is unknown.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: 'sia or dilated, enlarged blood vessels in the absence of
+
+          the ATM protein is not yet known.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/4
+      evidence_path: /pathophysiology/0/downstream/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:27884168
+      reference_title: 'Ataxia telangiectasia: a review.'
+      evidence_source: OTHER
+      explanation: This explicitly justifies an unknown-intermediate edge rather than a speculative vascular
+        mechanism.
+    first_seen_at: '2026-10-03T22:21:56.483496+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:56.483496+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:56.483496+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/4
+      evidence_path: /pathophysiology/0/downstream/4/evidence/0
+      reference: PMID:27884168
+  11d147c63553ecc48c04edd02d1c140445c02151b5661e90ccf3b8900352b3a2:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context: []
+      assertion_type: ComputationalModel
+      assertion:
+        name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+        description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+          and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+          effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a physiological
+          simulation with an A-T disease arm created by setting ATM to zero and with separate manually
+          configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+        model_type: KINETIC
+        repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+        model_id: AT_ATM_ATR_forDR_v1.xml
+        model_format: SBML Level 2 Version 4 (XML)
+        model_software: COPASI 4.44 (Build 295)
+        publication: PMID:41285916
+        perturbations:
+        - preferred_term: ATM
+          term:
+            id: hgnc:795
+            label: ATM
+        variables:
+        - name: Active ATM
+          dataset_identifier: ATM_active
+          description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+        - name: DNA-damage burden
+          dataset_identifier: DNA_damage
+          description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+            NRF2, and autophagy repair routes.
+        - name: Active p53
+          dataset_identifier: p53_active
+          description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+        - name: Active NRF2
+          dataset_identifier: NRF2_active
+          description: Modeled NRF2 antioxidant-response state.
+        - name: Active autophagy
+          dataset_identifier: Autophagy_active
+          description: Modeled autophagy state, including spermidine-induced activation.
+        modeled_mechanisms:
+        - target: ATM kinase deficiency and defective DNA-damage signaling
+          relationship: PARTIALLY_RECAPITULATES
+          description: The disease arm directly removes ATM activity and follows the resulting ATR, checkpoint,
+            p53, and repair dynamics, thereby capturing a reduced molecular subset of the proximal A-T
+            mechanism.
+          fidelity: LOW
+          limitations: ATM loss is an investigator-set zero rather than an allele-explicit or patient-calibrated
+            state. The model does not represent residual ATM kinase activity, protein abundance, variant
+            A-T, genotype-dependent severity, or empirical A-T response data.
+          readouts:
+          - name: Active ATM
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            description: ATM is set to zero in the disease-layer simulation.
+            direction: DECREASED
+          - name: DNA-damage burden
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            description: DNA_damage accumulates and resolves slowly when ATM is absent.
+            direction: INCREASED
+          - name: Active p53
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            description: p53 activation is attenuated in the ATM-deficient arm.
+            direction: DECREASED
+        findings:
+        - statement: In the ATM-deficient arm, ATR becomes the principal pathway regulating the modeled
+            cellular response to DNA damage.
+        - statement: The spermidine arm predicts increased autophagy and lower DNA_damage, but this is
+            an unvalidated in-silico treatment response rather than evidence of clinical efficacy.
+        - statement: The omaveloxolone arm predicts gradual reduction of DNA_damage, again without experimental
+            A-T validation.
+        notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+          BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares CC0
+          while its record has no license field. Its versioned per-file endpoint provides the semantically
+          equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+          whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+          and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+          without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+          smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+          both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is deposited:
+          disease and drug scenarios, solver tasks, and expected figure outputs are not packaged as separate
+          configurations. Concentrations are qualitative and not calibrated to patient or cell data; the
+          paper''s nominal 20 mol/L drug settings must not be interpreted as clinical doses. Parameter
+          sensitivity, Lyapunov stability, and enrichment of the manually selected network test internal
+          behavior or consistency, not external predictive validity; moreover, the three reported Lyapunov
+          exponents sum to -0.06784821 rather than the stated -12.4979. The proposed spermidine-plus-HDAC4
+          synergy is inferred from separate intervention simulations rather than a deposited combination
+          run and still requires experimental testing. Although the artifact title and notes sometimes
+          say ATM/ATR-deficient A-T, the disease simulation removes ATM while retaining ATR as the compensatory
+          pathway.'
+      selected_evidence:
+        snippet: We developed a computational model of ATM-mediated signaling using ordinary differential
+          equations in COPASI, capturing key processes including DNA damage sensing, cell cycle regulation,
+          autophagy, and oxidative stress response.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0
+      evidence_path: /computational_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The primary paper defines the model type and represented processes.
+    first_seen_at: '2026-10-03T22:21:56.586230+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:56.586230+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:56.586230+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0
+      evidence_path: /computational_models/0/evidence/0
+      reference: PMID:41285916
+  8ebe724a06c94661800e90eadbb2e9a792dc9432a295ffbb65823b92d72b7c8d:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        relationship: PARTIALLY_RECAPITULATES
+        description: The disease arm directly removes ATM activity and follows the resulting ATR, checkpoint,
+          p53, and repair dynamics, thereby capturing a reduced molecular subset of the proximal A-T mechanism.
+        fidelity: LOW
+        limitations: ATM loss is an investigator-set zero rather than an allele-explicit or patient-calibrated
+          state. The model does not represent residual ATM kinase activity, protein abundance, variant
+          A-T, genotype-dependent severity, or empirical A-T response data.
+        readouts:
+        - name: Active ATM
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: ATM is set to zero in the disease-layer simulation.
+          direction: DECREASED
+        - name: DNA-damage burden
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: DNA_damage accumulates and resolves slowly when ATM is absent.
+          direction: INCREASED
+        - name: Active p53
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: p53 activation is attenuated in the ATM-deficient arm.
+          direction: DECREASED
+      selected_evidence:
+        snippet: The model simulates physiological, ATM-deficient, and drug-treated conditions to explore
+          repurposing strategies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/modeled_mechanisms/0
+      evidence_path: /computational_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The publication identifies ATM deficiency as the disease perturbation.
+    first_seen_at: '2026-10-03T22:21:59.886740+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:59.886740+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:59.886740+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/modeled_mechanisms/0
+      evidence_path: /computational_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:41285916
+  e1012e0883978eb08c3d69d53588ddbd99a89e5dcaa4bec76721bc67d9a9338c:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+        - path: /computational_models/0/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The disease arm directly removes ATM activity and follows the resulting ATR,
+              checkpoint, p53, and repair dynamics, thereby capturing a reduced molecular subset of the
+              proximal A-T mechanism.
+            fidelity: LOW
+            limitations: ATM loss is an investigator-set zero rather than an allele-explicit or patient-calibrated
+              state. The model does not represent residual ATM kinase activity, protein abundance, variant
+              A-T, genotype-dependent severity, or empirical A-T response data.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Active ATM
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: ATM is set to zero in the disease-layer simulation.
+        direction: DECREASED
+      selected_evidence:
+        snippet: Graphs a–c report the pathological response to DNA damage, respectively of ATM/ATR (a),
+          p53 (b), and involved treatment targets (c) dynamics, setting ATM = 0.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+      - /computational_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The disease-layer simulation explicitly removes ATM.
+    first_seen_at: '2026-10-03T22:21:59.888554+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:59.888554+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:59.888554+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:41285916
+  175c987de5fd516e0f1e7372e6eb0d8e788d3bea1b5bdd6e0a2392f92cf008bf:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+        - path: /computational_models/0/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The disease arm directly removes ATM activity and follows the resulting ATR,
+              checkpoint, p53, and repair dynamics, thereby capturing a reduced molecular subset of the
+              proximal A-T mechanism.
+            fidelity: LOW
+            limitations: ATM loss is an investigator-set zero rather than an allele-explicit or patient-calibrated
+              state. The model does not represent residual ATM kinase activity, protein abundance, variant
+              A-T, genotype-dependent severity, or empirical A-T response data.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Active p53
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: p53 activation is attenuated in the ATM-deficient arm.
+        direction: DECREASED
+      selected_evidence:
+        snippet: Activation of p53 is substantially reduced, accompanied by a relatively stronger increase
+          in p21 compared to pro-apoptotic proteins BAX and PUMA
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/2
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+      - /computational_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The simulation reports reduced p53 activation after ATM removal.
+    first_seen_at: '2026-10-03T22:22:01.018750+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:01.018750+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:01.018750+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/2
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/2/evidence/0
+      reference: PMID:41285916
+  5c34a4b0346bacf92fb23081f786352d4550db686e8ece571116398dcc99089a:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+        - path: /computational_models/0/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The disease arm directly removes ATM activity and follows the resulting ATR,
+              checkpoint, p53, and repair dynamics, thereby capturing a reduced molecular subset of the
+              proximal A-T mechanism.
+            fidelity: LOW
+            limitations: ATM loss is an investigator-set zero rather than an allele-explicit or patient-calibrated
+              state. The model does not represent residual ATM kinase activity, protein abundance, variant
+              A-T, genotype-dependent severity, or empirical A-T response data.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: DNA-damage burden
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: DNA_damage accumulates and resolves slowly when ATM is absent.
+        direction: INCREASED
+      selected_evidence:
+        snippet: In this scenario, DNA damage rate accumulates initially and subsequently shows a slow
+          decrease, highlighting the limited capacity of ATR to fully compensate for ATM loss
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/1
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+      - /computational_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The ATM-deficient simulation retains a larger, slowly resolving damage state.
+    first_seen_at: '2026-10-03T22:22:01.016176+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:01.016176+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:01.016176+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/modeled_mechanisms/0/readouts/1
+      evidence_path: /computational_models/0/modeled_mechanisms/0/readouts/1/evidence/0
+      reference: PMID:41285916
+  0d1cbd770d5ba5e44fcd33eec8563b1c81c80dfd08de1323f522626ce09fd398:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: In the ATM-deficient arm, ATR becomes the principal pathway regulating the modeled
+          cellular response to DNA damage.
+      selected_evidence:
+        snippet: In simulations representing ATM-deficient pathological conditions (Fig. 2), ATR signaling
+          emerges as the principal pathway regulating the cellular response to DNA damage.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/findings/0
+      evidence_path: /computational_models/0/findings/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The disease-layer time course identifies ATR as the main compensatory branch.
+    first_seen_at: '2026-10-03T22:22:02.179877+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:02.179877+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:02.179877+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/findings/0
+      evidence_path: /computational_models/0/findings/0/evidence/0
+      reference: PMID:41285916
+  9f97302a758417ef6f128830e66573e0c59146ac7bc7be2b6370950a190fe1fb:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: The spermidine arm predicts increased autophagy and lower DNA_damage, but this is an
+          unvalidated in-silico treatment response rather than evidence of clinical efficacy.
+      selected_evidence:
+        snippet: Spermidine treatment markedly activated autophagy, driving a decrease in DNA damage levels
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/findings/1
+      evidence_path: /computational_models/0/findings/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The model predicts activation of its autophagy state and reduction of its damage state.
+    first_seen_at: '2026-10-03T22:22:02.181198+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:02.181198+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:02.181198+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/findings/1
+      evidence_path: /computational_models/0/findings/1/evidence/0
+      reference: PMID:41285916
+  cf6f133ae364372bc0f95417ea37c3111d75e751af0b4130ea5ec95875939d4e:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/1
+          value:
+            name: ATM p.Ala2386Glu variant-structure predictions
+            description: 'Allele-specific structural analyses of homozygous ATM c.7157C>A (p.Ala2386Glu)
+              found in two brothers with variant A-T. Missense3D/PHYRE2 and DynaMut modeled the substitution
+              in the FAT-domain alpha-21 helix against wild-type cryo-EM template PDB 6K9L and produced
+              competing hypotheses: buried-charge structural destabilization or stabilization of the closed,
+              less-active ATM dimer. Patient lymphoblastoid-cell experiments favored the instability branch
+              while showing residual kinase function.'
+            model_type: STRUCTURAL_PREDICTION
+            model_software: Missense3D/PHYRE2; DynaMut; PyMOL
+            publication: PMID:34759960
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            notes: No mutant coordinates, prediction outputs, code, or reusable model archive were deposited;
+              PDB 6K9L is the wild-type experimental template, not the p.Ala2386Glu model. The template
+              resolution is 4.27 angstrom. The structural analysis is useful because it is allele-explicit
+              and experimentally checked, but it remains a one-family result and does not model the full
+              A-T spectrum.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        relationship: PARTIALLY_RECAPITULATES
+        description: The models connect one patient allele to altered ATM structure and reduced protein
+          stability, while patient-cell assays anchor the predicted defect to reduced ATM abundance and
+          residual checkpoint signaling.
+        fidelity: MODERATE
+        limitations: This is one missense allele from one consanguineous family and does not generalize
+          to truncating alleles or other ATM variants. The two prediction tools disagree mechanistically,
+          and the patient-cell experiments support instability but do not validate the competing closed-dimer
+          hypothesis.
+        readouts:
+        - name: Predicted ATM conformation and stability
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: Variant models predict either a stabilized inactive conformation or buried-charge
+            structural damage; the direction is therefore non-monotonic.
+          direction: ALTERED
+        - name: ATM-A2386E protein abundance
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: Patient lymphoblastoid cells contained approximately 23% and 33% of wild-type ATM
+            abundance.
+          direction: DECREASED
+        - name: CHK2 activation
+          target: ATM kinase deficiency and defective DNA-damage signaling
+          description: Camptothecin-induced CHK2 activation remained below wild type but was retained
+            at approximately 40% and 60% in the two patient cell lines.
+          direction: DECREASED
+      selected_evidence:
+        snippet: 'Structural analysis of ATM p. Ala2386Glu mutant protein was performed by two different
+          web services: Missense3D, which exploits PHYRE2 Protein Fold Recognition Server, and DynaMut.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/1/modeled_mechanisms/0
+      evidence_path: /computational_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/1
+    evidence_metadata:
+      reference: PMID:34759960
+      reference_title: Functional Classification of the ATM Variant c.7157C>A and In Vitro Effects of
+        Dexamethasone.
+      evidence_source: COMPUTATIONAL
+      explanation: The methods identify the allele-specific structural prediction workflow.
+    first_seen_at: '2026-10-03T22:22:03.416493+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:03.416493+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:03.416493+00:00'
+    occurrences:
+    - assertion_path: /computational_models/1/modeled_mechanisms/0
+      evidence_path: /computational_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:34759960
+  297952837dfd38db99e9aa998445b26430803546e3cabad10a9a6ac95fd41abb:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/0
+          value:
+            name: ATM/ATR DNA-damage-response and drug-repurposing ODE model
+            description: A single-compartment kinetic model of ATM/ATR-p53 signaling, DNA-damage production
+              and repair, HDAC4-PP2A regulation, NRF2-KEAP1 signaling, autophagy, and p53-dependent cell-fate
+              effectors. The deposited SBML contains 31 species and 40 reactions. The paper compares a
+              physiological simulation with an A-T disease arm created by setting ATM to zero and with
+              separate manually configured simulations of HDAC4 inhibition, omaveloxolone, and spermidine.
+            model_type: KINETIC
+            repository_url: https://github.com/francescopappalardo/ATM-ATR-DDR-DrugRepositioning-Model/tree/b8fe08557e7ba8d32a8168a53641a6c2b1e65bf2
+            model_id: AT_ATM_ATR_forDR_v1.xml
+            model_format: SBML Level 2 Version 4 (XML)
+            model_software: COPASI 4.44 (Build 295)
+            publication: PMID:41285916
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            variables:
+            - name: Active ATM
+              dataset_identifier: ATM_active
+              description: Active ATM kinase state; the A-T disease scenario sets ATM to zero.
+            - name: DNA-damage burden
+              dataset_identifier: DNA_damage
+              description: Aggregate damage state produced basally and removed by the modeled ATM, ATR-CHK1,
+                NRF2, and autophagy repair routes.
+            - name: Active p53
+              dataset_identifier: p53_active
+              description: Activated p53 downstream of ATM, ATR, and checkpoint signaling.
+            - name: Active NRF2
+              dataset_identifier: NRF2_active
+              description: Modeled NRF2 antioxidant-response state.
+            - name: Active autophagy
+              dataset_identifier: Autophagy_active
+              description: Modeled autophagy state, including spermidine-induced activation.
+            notes: 'The primary pinned GitHub source is GPL-3.0 (file SHA-256 33139fc6df3278e3bb8e2bf0878367a51653e2c44021541ee261061278f636d1).
+              BioModels accession MODEL2503190002 revision 2 is NON_CURATED; its OMEX metadata declares
+              CC0 while its record has no license field. Its versioned per-file endpoint provides the
+              semantically equivalent SBML (SHA-256 816d0fb1963f142859218e8473dffb9ac1a0a107a5f2988515541173ce399b56),
+              whereas the bulk archive currently contains a zero-byte SBML member. BioModels adds annotations
+              and reserializes the XML, accounting for the cross-source byte difference. Both files validated
+              without libSBML errors and ran finite time courses in COPASI and libRoadRunner during curator
+              smoke testing on 2026-08-20. The paper reports 32 molecular species and 41 reactions, whereas
+              both deposited artifacts contain 31 species and 40 reactions. Only one base SBML file is
+              deposited: disease and drug scenarios, solver tasks, and expected figure outputs are not
+              packaged as separate configurations. Concentrations are qualitative and not calibrated to
+              patient or cell data; the paper''s nominal 20 mol/L drug settings must not be interpreted
+              as clinical doses. Parameter sensitivity, Lyapunov stability, and enrichment of the manually
+              selected network test internal behavior or consistency, not external predictive validity;
+              moreover, the three reported Lyapunov exponents sum to -0.06784821 rather than the stated
+              -12.4979. The proposed spermidine-plus-HDAC4 synergy is inferred from separate intervention
+              simulations rather than a deposited combination run and still requires experimental testing.
+              Although the artifact title and notes sometimes say ATM/ATR-deficient A-T, the disease simulation
+              removes ATM while retaining ATR as the compensatory pathway.'
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: The omaveloxolone arm predicts gradual reduction of DNA_damage, again without experimental
+          A-T validation.
+      selected_evidence:
+        snippet: Treatment with omaveloxolone led to sustained activation of ATR signaling, resulting
+          in a gradual and consistent reduction of DNA damage
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0/findings/2
+      evidence_path: /computational_models/0/findings/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/0
+    evidence_metadata:
+      reference: PMID:41285916
+      reference_title: 'Computational modeling of ATM signaling: a predictive framework for drug repurposing
+        in ataxia-telangiectasia.'
+      evidence_source: COMPUTATIONAL
+      explanation: The drug-layer simulation predicts a falling aggregate damage state.
+    first_seen_at: '2026-10-03T22:22:03.415444+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:03.415444+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:03.415444+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0/findings/2
+      evidence_path: /computational_models/0/findings/2/evidence/0
+      reference: PMID:41285916
+  b0b1098a7742610d5c3b826d72358b69911f27ff1310ff669abf39fdaf8fd983:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/1
+          value:
+            name: ATM p.Ala2386Glu variant-structure predictions
+            description: 'Allele-specific structural analyses of homozygous ATM c.7157C>A (p.Ala2386Glu)
+              found in two brothers with variant A-T. Missense3D/PHYRE2 and DynaMut modeled the substitution
+              in the FAT-domain alpha-21 helix against wild-type cryo-EM template PDB 6K9L and produced
+              competing hypotheses: buried-charge structural destabilization or stabilization of the closed,
+              less-active ATM dimer. Patient lymphoblastoid-cell experiments favored the instability branch
+              while showing residual kinase function.'
+            model_type: STRUCTURAL_PREDICTION
+            model_software: Missense3D/PHYRE2; DynaMut; PyMOL
+            publication: PMID:34759960
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            notes: No mutant coordinates, prediction outputs, code, or reusable model archive were deposited;
+              PDB 6K9L is the wild-type experimental template, not the p.Ala2386Glu model. The template
+              resolution is 4.27 angstrom. The structural analysis is useful because it is allele-explicit
+              and experimentally checked, but it remains a one-family result and does not model the full
+              A-T spectrum.
+          role: ancestor
+        - path: /computational_models/1/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The models connect one patient allele to altered ATM structure and reduced protein
+              stability, while patient-cell assays anchor the predicted defect to reduced ATM abundance
+              and residual checkpoint signaling.
+            fidelity: MODERATE
+            limitations: This is one missense allele from one consanguineous family and does not generalize
+              to truncating alleles or other ATM variants. The two prediction tools disagree mechanistically,
+              and the patient-cell experiments support instability but do not validate the competing closed-dimer
+              hypothesis.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: ATM-A2386E protein abundance
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: Patient lymphoblastoid cells contained approximately 23% and 33% of wild-type ATM
+          abundance.
+        direction: DECREASED
+      selected_evidence:
+        snippet: ATM-A2386E protein expression is significantly lower than the WT-ATM protein (23 and
+          33% in the AT 1–54,000 and 1–54,001, respectively)
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/1
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/1
+      - /computational_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:34759960
+      reference_title: Functional Classification of the ATM Variant c.7157C>A and In Vitro Effects of
+        Dexamethasone.
+      evidence_source: IN_VITRO
+      explanation: Patient-derived cells validate reduced mutant-protein abundance.
+    first_seen_at: '2026-10-03T22:22:04.643864+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:04.643864+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:04.643864+00:00'
+    occurrences:
+    - assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/1
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/1/evidence/0
+      reference: PMID:34759960
+  cbba33001b07f850b27a2d24aadc6a1335be83de56115797e1878d0b6c43cfd4:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/1
+          value:
+            name: ATM p.Ala2386Glu variant-structure predictions
+            description: 'Allele-specific structural analyses of homozygous ATM c.7157C>A (p.Ala2386Glu)
+              found in two brothers with variant A-T. Missense3D/PHYRE2 and DynaMut modeled the substitution
+              in the FAT-domain alpha-21 helix against wild-type cryo-EM template PDB 6K9L and produced
+              competing hypotheses: buried-charge structural destabilization or stabilization of the closed,
+              less-active ATM dimer. Patient lymphoblastoid-cell experiments favored the instability branch
+              while showing residual kinase function.'
+            model_type: STRUCTURAL_PREDICTION
+            model_software: Missense3D/PHYRE2; DynaMut; PyMOL
+            publication: PMID:34759960
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            notes: No mutant coordinates, prediction outputs, code, or reusable model archive were deposited;
+              PDB 6K9L is the wild-type experimental template, not the p.Ala2386Glu model. The template
+              resolution is 4.27 angstrom. The structural analysis is useful because it is allele-explicit
+              and experimentally checked, but it remains a one-family result and does not model the full
+              A-T spectrum.
+          role: ancestor
+        - path: /computational_models/1/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The models connect one patient allele to altered ATM structure and reduced protein
+              stability, while patient-cell assays anchor the predicted defect to reduced ATM abundance
+              and residual checkpoint signaling.
+            fidelity: MODERATE
+            limitations: This is one missense allele from one consanguineous family and does not generalize
+              to truncating alleles or other ATM variants. The two prediction tools disagree mechanistically,
+              and the patient-cell experiments support instability but do not validate the competing closed-dimer
+              hypothesis.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Predicted ATM conformation and stability
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: Variant models predict either a stabilized inactive conformation or buried-charge
+          structural damage; the direction is therefore non-monotonic.
+        direction: ALTERED
+      selected_evidence:
+        snippet: 3D structural analyses suggested that the variant might be pathogenic due to either loss
+          of activity or to a structural damage affecting protein stability.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/1
+      - /computational_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:34759960
+      reference_title: Functional Classification of the ATM Variant c.7157C>A and In Vitro Effects of
+        Dexamethasone.
+      evidence_source: COMPUTATIONAL
+      explanation: The structural tools generated two distinct pathogenicity hypotheses.
+    first_seen_at: '2026-10-03T22:22:04.641657+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:04.641657+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:04.641657+00:00'
+    occurrences:
+    - assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:34759960
+  dc878949862b82b35b0bbcc0027a4afca3642a1536f3d8cbe477d0e923d18e6c:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/1
+          value:
+            name: ATM p.Ala2386Glu variant-structure predictions
+            description: 'Allele-specific structural analyses of homozygous ATM c.7157C>A (p.Ala2386Glu)
+              found in two brothers with variant A-T. Missense3D/PHYRE2 and DynaMut modeled the substitution
+              in the FAT-domain alpha-21 helix against wild-type cryo-EM template PDB 6K9L and produced
+              competing hypotheses: buried-charge structural destabilization or stabilization of the closed,
+              less-active ATM dimer. Patient lymphoblastoid-cell experiments favored the instability branch
+              while showing residual kinase function.'
+            model_type: STRUCTURAL_PREDICTION
+            model_software: Missense3D/PHYRE2; DynaMut; PyMOL
+            publication: PMID:34759960
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            notes: No mutant coordinates, prediction outputs, code, or reusable model archive were deposited;
+              PDB 6K9L is the wild-type experimental template, not the p.Ala2386Glu model. The template
+              resolution is 4.27 angstrom. The structural analysis is useful because it is allele-explicit
+              and experimentally checked, but it remains a one-family result and does not model the full
+              A-T spectrum.
+          role: ancestor
+        - path: /computational_models/1/modeled_mechanisms/0
+          value:
+            target: ATM kinase deficiency and defective DNA-damage signaling
+            relationship: PARTIALLY_RECAPITULATES
+            description: The models connect one patient allele to altered ATM structure and reduced protein
+              stability, while patient-cell assays anchor the predicted defect to reduced ATM abundance
+              and residual checkpoint signaling.
+            fidelity: MODERATE
+            limitations: This is one missense allele from one consanguineous family and does not generalize
+              to truncating alleles or other ATM variants. The two prediction tools disagree mechanistically,
+              and the patient-cell experiments support instability but do not validate the competing closed-dimer
+              hypothesis.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: CHK2 activation
+        target: ATM kinase deficiency and defective DNA-damage signaling
+        description: Camptothecin-induced CHK2 activation remained below wild type but was retained at
+          approximately 40% and 60% in the two patient cell lines.
+        direction: DECREASED
+      selected_evidence:
+        snippet: the percentage of activation in AT1-54000 and AT1-54001 LCLs is significantly lower than
+          the WT control (about 40 and 60%, respectively)
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/2
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/1
+      - /computational_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:34759960
+      reference_title: Functional Classification of the ATM Variant c.7157C>A and In Vitro Effects of
+        Dexamethasone.
+      evidence_source: IN_VITRO
+      explanation: A checkpoint readout confirms residual but reduced signaling in patient cells.
+    first_seen_at: '2026-10-03T22:22:05.930370+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:05.930370+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:05.930370+00:00'
+    occurrences:
+    - assertion_path: /computational_models/1/modeled_mechanisms/0/readouts/2
+      evidence_path: /computational_models/1/modeled_mechanisms/0/readouts/2/evidence/0
+      reference: PMID:34759960
+  71856072737b1dc907581a77f3ce7b97281dd7f082dc787f237e8cb5f3060c7f:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/1
+          value:
+            name: ATM p.Ala2386Glu variant-structure predictions
+            description: 'Allele-specific structural analyses of homozygous ATM c.7157C>A (p.Ala2386Glu)
+              found in two brothers with variant A-T. Missense3D/PHYRE2 and DynaMut modeled the substitution
+              in the FAT-domain alpha-21 helix against wild-type cryo-EM template PDB 6K9L and produced
+              competing hypotheses: buried-charge structural destabilization or stabilization of the closed,
+              less-active ATM dimer. Patient lymphoblastoid-cell experiments favored the instability branch
+              while showing residual kinase function.'
+            model_type: STRUCTURAL_PREDICTION
+            model_software: Missense3D/PHYRE2; DynaMut; PyMOL
+            publication: PMID:34759960
+            perturbations:
+            - preferred_term: ATM
+              term:
+                id: hgnc:795
+                label: ATM
+            notes: No mutant coordinates, prediction outputs, code, or reusable model archive were deposited;
+              PDB 6K9L is the wild-type experimental template, not the p.Ala2386Glu model. The template
+              resolution is 4.27 angstrom. The structural analysis is useful because it is allele-explicit
+              and experimentally checked, but it remains a one-family result and does not model the full
+              A-T spectrum.
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: Thermal-stability experiments favored Missense3D's protein-instability prediction over
+          DynaMut's closed-dimer loss-of-activity hypothesis.
+      selected_evidence:
+        snippet: Overall, these results agree with the Missense3D prediction of loss of stability due
+          to the introduction of a Glu residue
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/1/findings/0
+      evidence_path: /computational_models/1/findings/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/1
+    evidence_metadata:
+      reference: PMID:34759960
+      reference_title: Functional Classification of the ATM Variant c.7157C>A and In Vitro Effects of
+        Dexamethasone.
+      evidence_source: IN_VITRO
+      explanation: Patient-cell thermal testing corroborated only the instability branch.
+    first_seen_at: '2026-10-03T22:22:05.931661+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:05.931661+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:05.931661+00:00'
+    occurrences:
+    - assertion_path: /computational_models/1/findings/0
+      evidence_path: /computational_models/1/findings/0/evidence/0
+      reference: PMID:34759960
+  ead83b888121f2c2169446cb3e420a829e576f684043a3e557b727c74c92b076:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/2
+          value:
+            name: Normative diffusion-perfusion MRI autoencoder
+            description: A seven-layer, fully connected PyTorch autoencoder trained only on healthy pediatric
+              MRI features to detect individual deviations in A-T. Twenty inputs (13 regional diffusion/perfusion
+              features plus seven demographic and volume covariates) are compressed and 13 imaging features
+              are reconstructed. The paper reports a four-dimensional latent layer, whereas the released
+              notebook instantiates five latent units. One hundred controls were used for training and
+              validation, 10 controls for held-out testing, and 16 children with A-T for disease evaluation.
+            model_type: MACHINE_LEARNING
+            repository_url: https://github.com/stefanpsz/A-T_Autoencoder/commit/d14295ced27c4cbee3e22db966daed38c40f831e
+            model_id: Notebook/main.ipynb
+            model_format: Jupyter Notebook/CSV
+            model_software: Python/PyTorch (versions unpinned); scikit-learn; SHAP
+            publication: PMID:40880371
+            variables:
+            - name: Total MRI-feature reconstruction error
+              dataset_identifier: total reconstruction error
+              description: Per-subject mean-squared error across the 13 reconstructed imaging features;
+                group summaries report the median.
+            - name: Cerebellar gray-matter diffusion reconstruction error
+              dataset_identifier: CGM diffusion reconstruction error
+              description: Individual deviation in cerebellar gray-matter apparent diffusion coefficient.
+            - name: Cerebellar white-matter diffusion reconstruction error
+              dataset_identifier: CWM diffusion reconstruction error
+              description: Individual deviation in cerebellar white-matter apparent diffusion coefficient.
+            notes: The MIT-licensed repository is pinned at commit d14295ced27c4cbee3e22db966daed38c40f831e
+              and includes the training/test/A-T combined-feature CSV files plus the analysis notebook;
+              the feature data have no separate data-license file. It does not include trained weights,
+              a dependency manifest, or an environment lock. The notebook expects nine absent split CSV
+              files, saves and loads weights through an author's private Google Drive path, and omits
+              code that constructs several later analysis objects. Its formulas instantiate a five-unit
+              latent layer rather than the four-unit architecture stated in the paper. The committed artifact
+              is therefore not a self-contained replay of the published analysis. The 16-person A-T cohort
+              is small and has no external validation cohort; training controls are younger on average,
+              and exploratory clinical associations were not corrected for multiple testing. This is an
+              individualized anomaly detector, not a longitudinal patient digital twin.
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: A-T participants showed substantially higher total reconstruction error than held-out
+          controls, with the clearest anomalies in pallidal and caudate perfusion and cerebellar gray-
+          and white-matter diffusion.
+      selected_evidence:
+        snippet: Data was correctly reconstructed in controls but not in participants with A-T, who generally
+          showed significantly higher errors. This was especially true for pallidum and caudate perfusion,
+          as well as for CWM and CGM diffusion (Fig 3).
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/2/findings/0
+      evidence_path: /computational_models/2/findings/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/2
+    evidence_metadata:
+      reference: PMID:40880371
+      reference_title: Personalized MRI-based characterization of subcortical anomalies in Ataxia-Telangiectasia
+        using deep-learning.
+      evidence_source: COMPUTATIONAL
+      explanation: The autoencoder distinguished A-T imaging features from its healthy norm.
+    first_seen_at: '2026-10-03T22:22:08.515310+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:08.515310+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:08.515310+00:00'
+    occurrences:
+    - assertion_path: /computational_models/2/findings/0
+      evidence_path: /computational_models/2/findings/0/evidence/0
+      reference: PMID:40880371
+  2b840b6bbaa7444314c8b36fed0519b84524e0c00ba47a3513799db9e19a9321:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/2
+          value:
+            name: Normative diffusion-perfusion MRI autoencoder
+            description: A seven-layer, fully connected PyTorch autoencoder trained only on healthy pediatric
+              MRI features to detect individual deviations in A-T. Twenty inputs (13 regional diffusion/perfusion
+              features plus seven demographic and volume covariates) are compressed and 13 imaging features
+              are reconstructed. The paper reports a four-dimensional latent layer, whereas the released
+              notebook instantiates five latent units. One hundred controls were used for training and
+              validation, 10 controls for held-out testing, and 16 children with A-T for disease evaluation.
+            model_type: MACHINE_LEARNING
+            repository_url: https://github.com/stefanpsz/A-T_Autoencoder/commit/d14295ced27c4cbee3e22db966daed38c40f831e
+            model_id: Notebook/main.ipynb
+            model_format: Jupyter Notebook/CSV
+            model_software: Python/PyTorch (versions unpinned); scikit-learn; SHAP
+            publication: PMID:40880371
+            variables:
+            - name: Total MRI-feature reconstruction error
+              dataset_identifier: total reconstruction error
+              description: Per-subject mean-squared error across the 13 reconstructed imaging features;
+                group summaries report the median.
+            - name: Cerebellar gray-matter diffusion reconstruction error
+              dataset_identifier: CGM diffusion reconstruction error
+              description: Individual deviation in cerebellar gray-matter apparent diffusion coefficient.
+            - name: Cerebellar white-matter diffusion reconstruction error
+              dataset_identifier: CWM diffusion reconstruction error
+              description: Individual deviation in cerebellar white-matter apparent diffusion coefficient.
+            notes: The MIT-licensed repository is pinned at commit d14295ced27c4cbee3e22db966daed38c40f831e
+              and includes the training/test/A-T combined-feature CSV files plus the analysis notebook;
+              the feature data have no separate data-license file. It does not include trained weights,
+              a dependency manifest, or an environment lock. The notebook expects nine absent split CSV
+              files, saves and loads weights through an author's private Google Drive path, and omits
+              code that constructs several later analysis objects. Its formulas instantiate a five-unit
+              latent layer rather than the four-unit architecture stated in the paper. The committed artifact
+              is therefore not a self-contained replay of the published analysis. The 16-person A-T cohort
+              is small and has no external validation cohort; training controls are younger on average,
+              and exploratory clinical associations were not corrected for multiple testing. This is an
+              individualized anomaly detector, not a longitudinal patient digital twin.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Progressive cerebellar and peripheral neurodegeneration
+        relationship: MEASURES
+        description: Reconstruction error measures deviations in cerebellar and subcortical MRI diffusion/perfusion
+          features relative to a healthy normative model; it does not simulate the causal degeneration
+          process.
+        fidelity: MODERATE
+        limitations: The model measures cross-sectional brain-imaging anomalies only. It does not measure
+          peripheral nerves, neuronal loss directly, longitudinal progression, or treatment response,
+          and SHAP associations cannot establish causal inter-regional mechanisms.
+        readouts:
+        - name: Total MRI-feature reconstruction error
+          target: Progressive cerebellar and peripheral neurodegeneration
+          description: Median reconstruction error was 4.5 x 10^-3 in 16 A-T participants and 4.0 x 10^-4
+            in 10 held-out controls (P=1.5 x 10^-6).
+          direction: INCREASED
+      selected_evidence:
+        snippet: A normative deep autoencoder that reconstructs these features was trained on healthy
+          subjects.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/2/modeled_mechanisms/0
+      evidence_path: /computational_models/2/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/2
+    evidence_metadata:
+      reference: PMID:40880371
+      reference_title: Personalized MRI-based characterization of subcortical anomalies in Ataxia-Telangiectasia
+        using deep-learning.
+      evidence_source: COMPUTATIONAL
+      explanation: The primary paper defines the healthy-trained normative model.
+    first_seen_at: '2026-10-03T22:22:07.220837+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:07.220837+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:07.220837+00:00'
+    occurrences:
+    - assertion_path: /computational_models/2/modeled_mechanisms/0
+      evidence_path: /computational_models/2/modeled_mechanisms/0/evidence/0
+      reference: PMID:40880371
+  bd0a3d9b978275a5f7f9c8e7edf94f03a82c12737f5604b73bef2f081dba541c:
+    claim:
+      about:
+        disease:
+          name: Ataxia-telangiectasia
+          disease_term:
+            preferred_term: Ataxia-telangiectasia
+            term:
+              id: MONDO:0008840
+              label: ataxia telangiectasia
+        context:
+        - path: /computational_models/2
+          value:
+            name: Normative diffusion-perfusion MRI autoencoder
+            description: A seven-layer, fully connected PyTorch autoencoder trained only on healthy pediatric
+              MRI features to detect individual deviations in A-T. Twenty inputs (13 regional diffusion/perfusion
+              features plus seven demographic and volume covariates) are compressed and 13 imaging features
+              are reconstructed. The paper reports a four-dimensional latent layer, whereas the released
+              notebook instantiates five latent units. One hundred controls were used for training and
+              validation, 10 controls for held-out testing, and 16 children with A-T for disease evaluation.
+            model_type: MACHINE_LEARNING
+            repository_url: https://github.com/stefanpsz/A-T_Autoencoder/commit/d14295ced27c4cbee3e22db966daed38c40f831e
+            model_id: Notebook/main.ipynb
+            model_format: Jupyter Notebook/CSV
+            model_software: Python/PyTorch (versions unpinned); scikit-learn; SHAP
+            publication: PMID:40880371
+            variables:
+            - name: Total MRI-feature reconstruction error
+              dataset_identifier: total reconstruction error
+              description: Per-subject mean-squared error across the 13 reconstructed imaging features;
+                group summaries report the median.
+            - name: Cerebellar gray-matter diffusion reconstruction error
+              dataset_identifier: CGM diffusion reconstruction error
+              description: Individual deviation in cerebellar gray-matter apparent diffusion coefficient.
+            - name: Cerebellar white-matter diffusion reconstruction error
+              dataset_identifier: CWM diffusion reconstruction error
+              description: Individual deviation in cerebellar white-matter apparent diffusion coefficient.
+            notes: The MIT-licensed repository is pinned at commit d14295ced27c4cbee3e22db966daed38c40f831e
+              and includes the training/test/A-T combined-feature CSV files plus the analysis notebook;
+              the feature data have no separate data-license file. It does not include trained weights,
+              a dependency manifest, or an environment lock. The notebook expects nine absent split CSV
+              files, saves and loads weights through an author's private Google Drive path, and omits
+              code that constructs several later analysis objects. Its formulas instantiate a five-unit
+              latent layer rather than the four-unit architecture stated in the paper. The committed artifact
+              is therefore not a self-contained replay of the published analysis. The 16-person A-T cohort
+              is small and has no external validation cohort; training controls are younger on average,
+              and exploratory clinical associations were not corrected for multiple testing. This is an
+              individualized anomaly detector, not a longitudinal patient digital twin.
+          role: ancestor
+        - path: /computational_models/2/modeled_mechanisms/0
+          value:
+            target: Progressive cerebellar and peripheral neurodegeneration
+            relationship: MEASURES
+            description: Reconstruction error measures deviations in cerebellar and subcortical MRI diffusion/perfusion
+              features relative to a healthy normative model; it does not simulate the causal degeneration
+              process.
+            fidelity: MODERATE
+            limitations: The model measures cross-sectional brain-imaging anomalies only. It does not
+              measure peripheral nerves, neuronal loss directly, longitudinal progression, or treatment
+              response, and SHAP associations cannot establish causal inter-regional mechanisms.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Total MRI-feature reconstruction error
+        target: Progressive cerebellar and peripheral neurodegeneration
+        description: Median reconstruction error was 4.5 x 10^-3 in 16 A-T participants and 4.0 x 10^-4
+          in 10 held-out controls (P=1.5 x 10^-6).
+        direction: INCREASED
+      selected_evidence:
+        snippet: 'Overall, A-T participants had a median reconstruction error of 4.5 × 10 ⁻ ³ (range:
+          1.5 × 10 ⁻ ³, 1.2 × 10 ⁻ ²), compared to controls (4.0 × 10 ⁻ ⁴, range: 2.4 × 10 ⁻ ⁴, 1.9 ×
+          10 ⁻ ³), P = 1.5 × 10 ⁻ ⁶, Wilcoxon test (Fig 2C).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/2/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/2/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /computational_models/2
+      - /computational_models/2/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:40880371
+      reference_title: Personalized MRI-based characterization of subcortical anomalies in Ataxia-Telangiectasia
+        using deep-learning.
+      evidence_source: COMPUTATIONAL
+      explanation: The full-text result supplies the exact disease and held-out-control comparison.
+    first_seen_at: '2026-10-03T22:22:07.222498+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:22:07.222498+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:22:07.222498+00:00'
+    occurrences:
+    - assertion_path: /computational_models/2/modeled_mechanisms/0/readouts/0
+      evidence_path: /computational_models/2/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:40880371
 assessments:
   000d41eaec7557e4be1520fd0d095f555c9ee23d02df39581addd059056d189e:
     input_sha256: 6bf8228361f462c590797093fed668b9cf7c5c28f0a80e95edd80fcf2998bc91
@@ -15452,3 +17061,1566 @@ assessments:
       request_sha256: 8d71f360f084114a65b7afd33581834b59163497e7635bdcfa8d80a548383e17
       request_sha256s:
       - 8d71f360f084114a65b7afd33581834b59163497e7635bdcfa8d80a548383e17
+  aeea7884dc2c7d4ca162aa9fbe9ff252d2419fd2bd84fb57353a345fa428779c:
+    input_sha256: 21cbb333d504554236add512e9582242acf7d969d1dfe46c0b533fe7df2ca169
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:56.483496+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.09
+            MATCH: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.07
+            MATCH: 0.71
+          confidence: 0.56
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.11
+            MATCH: 0.49
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.07
+            MATCH: 0.46
+          confidence: 0.2
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+            MATCH: 0.91
+          confidence: 0.87
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.26
+            MATCH: 0.4
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6721
+        output_tokens: 269
+      elapsed_seconds: 0.2911
+      request_sha256: 7c78eab54d8c4e984f126ec9a9fdeb90e5392f62a459376aef3f9556f88a78c5
+      request_sha256s:
+      - 7c78eab54d8c4e984f126ec9a9fdeb90e5392f62a459376aef3f9556f88a78c5
+  552418fb8fb5d2a769111578f3a8209c1db2c906164056656811ed2bf8e5af66:
+    input_sha256: 11d147c63553ecc48c04edd02d1c140445c02151b5661e90ccf3b8900352b3a2
+    configuration_sha256: 15a7a1bc407eea809e1000ee4bf60b19d3aef624579181218a3537951521eb99
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:56.586230+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.3
+            MISMATCH: 0.07
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.37
+            MISMATCH: 0.08
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.49
+            MISMATCH: 0.09
+          confidence: 0.23
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.44
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/model_type:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.98
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/repository_url:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.1
+            MISMATCH: 0.71
+          confidence: 0.56
+        /assertion/model_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.04
+            MISMATCH: 0.77
+          confidence: 0.66
+        /assertion/model_format:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.08
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/model_software:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.65
+            PARTIAL: 0.18
+          confidence: 0.48
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.05
+            MISMATCH: 0.73
+          confidence: 0.6
+        /assertion/perturbations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.49
+            PARTIAL: 0.43
+          confidence: 0.24
+        /assertion/perturbations/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.55
+            MISMATCH: 0.06
+          confidence: 0.33
+        /assertion/variables/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.3
+            MISMATCH: 0.13
+          confidence: 0.35
+        /assertion/variables/0/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.09
+            MISMATCH: 0.5
+          confidence: 0.26
+        /assertion/variables/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.25
+            MISMATCH: 0.13
+          confidence: 0.43
+        /assertion/variables/1/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.55
+            MISMATCH: 0.09
+          confidence: 0.32
+        /assertion/variables/1/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.13
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/variables/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.28
+            MISMATCH: 0.07
+          confidence: 0.47
+        /assertion/variables/2/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.21
+            MISMATCH: 0.19
+          confidence: 0.4
+        /assertion/variables/2/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.11
+            MISMATCH: 0.49
+          confidence: 0.24
+        /assertion/variables/2/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.32
+            MISMATCH: 0.05
+          confidence: 0.44
+        /assertion/variables/3/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.3
+            MISMATCH: 0.16
+          confidence: 0.31
+        /assertion/variables/3/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.1
+            MISMATCH: 0.54
+          confidence: 0.3
+        /assertion/variables/3/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.37
+            MISMATCH: 0.08
+          confidence: 0.32
+        /assertion/variables/4/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.31
+            MISMATCH: 0.15
+          confidence: 0.3
+        /assertion/variables/4/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.08
+            MISMATCH: 0.59
+          confidence: 0.39
+        /assertion/variables/4/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.08
+            MISMATCH: 0.24
+          confidence: 0.52
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MATCH: 0.4
+            MISMATCH: 0.05
+          confidence: 0.33
+        /assertion/modeled_mechanisms/0/relationship:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.12
+            MISMATCH: 0.39
+          confidence: 0.23
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.71
+            MATCH: 0.18
+            MISMATCH: 0.11
+          confidence: 0.57
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MATCH: 0.11
+            MISMATCH: 0.35
+          confidence: 0.31
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.02
+            MISMATCH: 0.81
+          confidence: 0.72
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.17
+            MISMATCH: 0.32
+          confidence: 0.26
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.27
+            MISMATCH: 0.14
+          confidence: 0.38
+        /assertion/modeled_mechanisms/0/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.06
+            MISMATCH: 0.5
+          confidence: 0.24
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.08
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/modeled_mechanisms/0/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.13
+            MISMATCH: 0.38
+          confidence: 0.23
+        /assertion/modeled_mechanisms/0/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.17
+            MISMATCH: 0.27
+          confidence: 0.33
+        /assertion/modeled_mechanisms/0/readouts/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.06
+            MISMATCH: 0.43
+          confidence: 0.27
+        /assertion/modeled_mechanisms/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.1
+            MISMATCH: 0.48
+          confidence: 0.21
+        /assertion/modeled_mechanisms/0/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.12
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/modeled_mechanisms/0/readouts/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.15
+            MISMATCH: 0.27
+          confidence: 0.37
+        /assertion/modeled_mechanisms/0/readouts/2/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.02
+            MISMATCH: 0.54
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.6
+            MATCH: 0.03
+            PARTIAL: 0.37
+          confidence: 0.4
+        /assertion/findings/0/statement:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MATCH: 0.04
+            MISMATCH: 0.47
+          confidence: 0.23
+        /assertion/findings/1/statement:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MATCH: 0.07
+            MISMATCH: 0.46
+          confidence: 0.21
+        /assertion/findings/2/statement:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.05
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.07
+            MISMATCH: 0.63
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 48439
+        output_tokens: 2524
+      elapsed_seconds: 0.5153
+      request_sha256: d5b1ca1dbbd6ef3ad471abf8ba7e76836ab823626aa71741099145e21ee52d17
+      request_sha256s:
+      - d5b1ca1dbbd6ef3ad471abf8ba7e76836ab823626aa71741099145e21ee52d17
+  7a32936cafa4dd25700828721f557c78d31c3e64e87ec6f256d39ef5e96555a2:
+    input_sha256: 8ebe724a06c94661800e90eadbb2e9a792dc9432a295ffbb65823b92d72b7c8d
+    configuration_sha256: 55570110d6a4912818889ab71c8505b422e4d85e516c6029f93cacef3e5027c0
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:59.886740+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MISMATCH: 0.05
+            MATCH: 0.37
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.05
+            MATCH: 0.59
+          confidence: 0.38
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.06
+            MATCH: 0.51
+          confidence: 0.27
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.34
+            MATCH: 0.19
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.04
+            MATCH: 0.41
+          confidence: 0.34
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.16
+            MATCH: 0.3
+          confidence: 0.31
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.73
+            MATCH: 0.03
+          confidence: 0.59
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.12
+            MATCH: 0.38
+          confidence: 0.25
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.13
+            MATCH: 0.42
+          confidence: 0.17
+        /assertion/readouts/0/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.06
+            MATCH: 0.49
+          confidence: 0.23
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.28
+            MATCH: 0.24
+          confidence: 0.22
+        /assertion/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.31
+            MATCH: 0.09
+          confidence: 0.39
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.21
+            MATCH: 0.27
+          confidence: 0.29
+        /assertion/readouts/1/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.37
+            MATCH: 0.03
+          confidence: 0.39
+        /assertion/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.23
+            MATCH: 0.25
+          confidence: 0.28
+        /assertion/readouts/2/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.39
+            MATCH: 0.12
+          confidence: 0.24
+        /assertion/readouts/2/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.24
+            MATCH: 0.24
+          confidence: 0.28
+        /assertion/readouts/2/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.41
+            MATCH: 0.03
+          confidence: 0.34
+        /assertion/readouts/2/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.44
+            MATCH: 0.06
+          confidence: 0.25
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MISMATCH: 0.05
+            MATCH: 0.61
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 21296
+        output_tokens: 973
+      elapsed_seconds: 0.3841
+      request_sha256: d31b2bec7cd7517275150191647e39f3bb8a18a6a46c76853b59d32f078f83ee
+      request_sha256s:
+      - d31b2bec7cd7517275150191647e39f3bb8a18a6a46c76853b59d32f078f83ee
+  746e97f50454eae8f618765d80a8759138212b85eb8e47cfa06695e1f4c81831:
+    input_sha256: e1012e0883978eb08c3d69d53588ddbd99a89e5dcaa4bec76721bc67d9a9338c
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:59.888554+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+            MATCH: 0.91
+          confidence: 0.87
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.2
+            MATCH: 0.72
+          confidence: 0.58
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.04
+            MATCH: 0.91
+          confidence: 0.86
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.09
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.16
+            MATCH: 0.63
+          confidence: 0.44
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            PARTIAL: 0.13
+            MATCH: 0.8
+          confidence: 0.7
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.11
+            MATCH: 0.83
+          confidence: 0.75
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9474
+        output_tokens: 354
+      elapsed_seconds: 0.3454
+      request_sha256: 1869c0a5cee4eb6f1c517ddca64ad0e96fb583a34d79059b166a2b51d00a12b3
+      request_sha256s:
+      - 1869c0a5cee4eb6f1c517ddca64ad0e96fb583a34d79059b166a2b51d00a12b3
+  718c256e8f4d7286c1e215bfdf03c72af2c383a3c09863978b47962507ca045e:
+    input_sha256: 175c987de5fd516e0f1e7372e6eb0d8e788d3bea1b5bdd6e0a2392f92cf008bf
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:01.018750+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.25
+            MATCH: 0.69
+          confidence: 0.54
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.28
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.88
+            PARTIAL: 0.09
+          confidence: 0.82
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.13
+            MATCH: 0.82
+          confidence: 0.73
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.12
+            MATCH: 0.86
+          confidence: 0.79
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.21
+            PARTIAL: 0.12
+            MATCH: 0.67
+          confidence: 0.52
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+            MATCH: 0.59
+          confidence: 0.39
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.07
+            MATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9467
+        output_tokens: 354
+      elapsed_seconds: 0.2869
+      request_sha256: e01b62dbf9313073bedba5516da17358bd4345ab83795469955c6b2b52bc8b0c
+      request_sha256s:
+      - e01b62dbf9313073bedba5516da17358bd4345ab83795469955c6b2b52bc8b0c
+  8302b1687423a61ac87f63b168c8f2fdaa5a3d8dbd7f35b6ad24f4de7ae4e48d:
+    input_sha256: 5c34a4b0346bacf92fb23081f786352d4550db686e8ece571116398dcc99089a
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:01.016176+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.02
+            MATCH: 0.83
+          confidence: 0.75
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+            MATCH: 0.88
+          confidence: 0.81
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.03
+            MATCH: 0.9
+          confidence: 0.86
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MISMATCH: 0.02
+            MATCH: 0.89
+          confidence: 0.84
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.85
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.03
+            MATCH: 0.9
+          confidence: 0.85
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.05
+            MATCH: 0.73
+          confidence: 0.59
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.05
+            MATCH: 0.73
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9465
+        output_tokens: 354
+      elapsed_seconds: 0.2895
+      request_sha256: 07df0f04e5fc43a853019a8d9ea437f034d0dd7ef591f09b6565b059c4694793
+      request_sha256s:
+      - 07df0f04e5fc43a853019a8d9ea437f034d0dd7ef591f09b6565b059c4694793
+  b514d0c8db8b3b70e1e1c339a576eed5eee7d580a7b04bef2edc27bc7a6929bf:
+    input_sha256: 0d1cbd770d5ba5e44fcd33eec8563b1c81c80dfd08de1323f522626ce09fd398
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:02.179877+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.02
+            MATCH: 0.9
+          confidence: 0.85
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MISMATCH: 0.01
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+            MATCH: 0.92
+          confidence: 0.87
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MISMATCH: 0.09
+            MATCH: 0.77
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5390
+        output_tokens: 176
+      elapsed_seconds: 0.3002
+      request_sha256: dfee4dc1235cf6350bf3a88c9b6811fb529b64b103d4734da831e6bb1a3ce784
+      request_sha256s:
+      - dfee4dc1235cf6350bf3a88c9b6811fb529b64b103d4734da831e6bb1a3ce784
+  788573c48b0545a50d174c40ecdb3d7f62c0e88f51b51fa70ee45116ccac5952:
+    input_sha256: 9f97302a758417ef6f128830e66573e0c59146ac7bc7be2b6370950a190fe1fb
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:02.181198+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.48
+            MISMATCH: 0.13
+          confidence: 0.21
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            PARTIAL: 0.39
+            MISMATCH: 0.15
+          confidence: 0.19
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.35
+            MISMATCH: 0.1
+          confidence: 0.31
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.3
+            MISMATCH: 0.09
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5392
+        output_tokens: 177
+      elapsed_seconds: 0.3095
+      request_sha256: f4fe97f9296423754d78722ae8688f041b61e2523873da71190fb46281fe35e4
+      request_sha256s:
+      - f4fe97f9296423754d78722ae8688f041b61e2523873da71190fb46281fe35e4
+  c74d5593ba78ef15f485e8ba7bf257d83095f6e855a59429b95021e03713edca:
+    input_sha256: cf6f133ae364372bc0f95417ea37c3111d75e751af0b4130ea5ec95875939d4e
+    configuration_sha256: 55570110d6a4912818889ab71c8505b422e4d85e516c6029f93cacef3e5027c0
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:03.416493+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.16
+            MISMATCH: 0.19
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.55
+            MISMATCH: 0.08
+          confidence: 0.33
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.12
+            MISMATCH: 0.26
+          confidence: 0.43
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MATCH: 0.09
+            MISMATCH: 0.41
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.08
+            MISMATCH: 0.25
+          confidence: 0.51
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.2
+            MISMATCH: 0.21
+          confidence: 0.38
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.03
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.38
+            MISMATCH: 0.06
+          confidence: 0.33
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.2
+            MISMATCH: 0.19
+          confidence: 0.42
+        /assertion/readouts/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.17
+            MISMATCH: 0.17
+          confidence: 0.49
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MATCH: 0.02
+            MISMATCH: 0.23
+          confidence: 0.63
+        /assertion/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.18
+            MISMATCH: 0.23
+          confidence: 0.38
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.17
+            MISMATCH: 0.26
+          confidence: 0.36
+        /assertion/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.05
+            MISMATCH: 0.6
+          confidence: 0.4
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.03
+            MISMATCH: 0.58
+          confidence: 0.37
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.05
+            MISMATCH: 0.72
+          confidence: 0.59
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.17
+            MISMATCH: 0.43
+          confidence: 0.15
+        /assertion/readouts/2/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.03
+            MISMATCH: 0.78
+          confidence: 0.68
+        /assertion/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.06
+            MISMATCH: 0.64
+          confidence: 0.46
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.51
+            MATCH: 0.39
+            MISMATCH: 0.1
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 20652
+        output_tokens: 988
+      elapsed_seconds: 0.3164
+      request_sha256: b83f3e56c52f476b3727216f09fafd50305be95a1d726e11ad80c94f51c73192
+      request_sha256s:
+      - b83f3e56c52f476b3727216f09fafd50305be95a1d726e11ad80c94f51c73192
+  226e13db16b90c8ddb1b9dedf13b6b398ef762dfa7aaa3871b2c0fbb95d3f842:
+    input_sha256: 297952837dfd38db99e9aa998445b26430803546e3cabad10a9a6ac95fd41abb
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:03.415444+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.59
+            MISMATCH: 0.09
+          confidence: 0.39
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.49
+            MISMATCH: 0.11
+          confidence: 0.24
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.75
+            MISMATCH: 0.06
+          confidence: 0.63
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.66
+            MISMATCH: 0.08
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5382
+        output_tokens: 176
+      elapsed_seconds: 0.2442
+      request_sha256: 29ad38521267b31062a1f27d8455fee1d94170547b169d20889aad234c00657d
+      request_sha256s:
+      - 29ad38521267b31062a1f27d8455fee1d94170547b169d20889aad234c00657d
+  6451ecc319c0363350f76d23e9c6ffae20a9d953be4757171785a396d6d9561c:
+    input_sha256: b0b1098a7742610d5c3b826d72358b69911f27ff1310ff669abf39fdaf8fd983
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:04.643864+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+            MATCH: 0.93
+          confidence: 0.9
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.19
+            MATCH: 0.77
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.02
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.08
+            MATCH: 0.57
+          confidence: 0.35
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MISMATCH: 0.11
+            MATCH: 0.78
+          confidence: 0.67
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.22
+            MATCH: 0.68
+          confidence: 0.51
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.21
+            MATCH: 0.7
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8779
+        output_tokens: 354
+      elapsed_seconds: 0.2825
+      request_sha256: f76a9882bed1c6f14fedb21ecca3f93d200dc8a05bfec9fdaa21739a3e3f4a0a
+      request_sha256s:
+      - f76a9882bed1c6f14fedb21ecca3f93d200dc8a05bfec9fdaa21739a3e3f4a0a
+  49f6761d7ff3bfe62255264408189ab0b7106e2d8520e17f416ceb02fe4f1dcc:
+    input_sha256: cbba33001b07f850b27a2d24aadc6a1335be83de56115797e1878d0b6c43cfd4
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:04.641657+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.49
+            MISMATCH: 0.06
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.58
+            MISMATCH: 0.09
+          confidence: 0.36
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.61
+            MISMATCH: 0.03
+          confidence: 0.41
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.59
+            MISMATCH: 0.06
+          confidence: 0.37
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.54
+            MISMATCH: 0.05
+          confidence: 0.3
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.72
+            MATCH: 0.16
+            MISMATCH: 0.12
+          confidence: 0.59
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.53
+            MISMATCH: 0.08
+          confidence: 0.3
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.49
+            MISMATCH: 0.07
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8759
+        output_tokens: 355
+      elapsed_seconds: 0.2584
+      request_sha256: 7643b1205d74d960de4c3075f68b37134adce05206ff05363bd475f428b1aa9e
+      request_sha256s:
+      - 7643b1205d74d960de4c3075f68b37134adce05206ff05363bd475f428b1aa9e
+  0a5ec4eb02b6fafc9d4a185f65118348d0b70c818558077aa4ef47c5611e9ed5:
+    input_sha256: dc878949862b82b35b0bbcc0027a4afca3642a1536f3d8cbe477d0e923d18e6c
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:05.930370+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+            MATCH: 0.87
+          confidence: 0.8
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.18
+            MATCH: 0.76
+          confidence: 0.65
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.04
+            MATCH: 0.9299999999999999
+          confidence: 0.91
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.23
+            MATCH: 0.65
+          confidence: 0.48
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            PARTIAL: 0.13
+            MATCH: 0.7
+          confidence: 0.55
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.16
+            PARTIAL: 0.27
+            MATCH: 0.56
+          confidence: 0.35
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.14
+            PARTIAL: 0.27
+            MATCH: 0.59
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8776
+        output_tokens: 354
+      elapsed_seconds: 0.3055
+      request_sha256: bde4e4aefa5432293ac79b42406d1a0af8f815ada13e446168666e0e7e5c89d6
+      request_sha256s:
+      - bde4e4aefa5432293ac79b42406d1a0af8f815ada13e446168666e0e7e5c89d6
+  b422bcd50d8cd4b46c86f0f902a886f5bed4ffa9370705cdb1d1b7e5b429d38c:
+    input_sha256: 71856072737b1dc907581a77f3ce7b97281dd7f082dc787f237e8cb5f3060c7f
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:05.931661+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.41
+            MISMATCH: 0.15
+          confidence: 0.16
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.61
+            MISMATCH: 0.11
+          confidence: 0.42
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47000000000000003
+            PARTIAL: 0.38
+            MISMATCH: 0.15
+          confidence: 0.19
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.3
+            MISMATCH: 0.12
+          confidence: 0.36
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4664
+        output_tokens: 177
+      elapsed_seconds: 0.331
+      request_sha256: 51dbf715b278ded54eaba57bbfcff2d546e78bd9b576b7c0fdc5864300ef2731
+      request_sha256s:
+      - 51dbf715b278ded54eaba57bbfcff2d546e78bd9b576b7c0fdc5864300ef2731
+  5aec0f988ff4bdc6cf6e21aec9036782d3b7cce287a43ed3ca0a5d8368368ae7:
+    input_sha256: ead83b888121f2c2169446cb3e420a829e576f684043a3e557b727c74c92b076
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:08.515310+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.82
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.61
+            PARTIAL: 0.28
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5009
+        output_tokens: 176
+      elapsed_seconds: 0.258
+      request_sha256: 7f95306462bec6a021c0655f8c794e1f32c194c46de3391ba07ec63f131fdc66
+      request_sha256s:
+      - 7f95306462bec6a021c0655f8c794e1f32c194c46de3391ba07ec63f131fdc66
+  befc904c06ddecd76d85783eb3c89c8f56dcae896e60eba78e86e1ab9c967537:
+    input_sha256: 2b840b6bbaa7444314c8b36fed0519b84524e0c00ba47a3513799db9e19a9321
+    configuration_sha256: 37f4531f4b14c0d203ff86aaa7949790b099422363adaaea4a7e0ed0da664d7e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:07.220837+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MISMATCH: 0.24
+            MATCH: 0.15
+          confidence: 0.41
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.1
+            MATCH: 0.41
+          confidence: 0.24
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.38
+            MATCH: 0.12
+          confidence: 0.24
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.18
+            MATCH: 0.2
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.22
+            MATCH: 0.25
+          confidence: 0.3
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.31
+            MATCH: 0.22
+          confidence: 0.2
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.68
+            MATCH: 0.05
+          confidence: 0.53
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.28
+            MATCH: 0.26
+          confidence: 0.18
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.45
+            MATCH: 0.08
+          confidence: 0.21
+        /assertion/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.52
+            MATCH: 0.12
+          confidence: 0.27
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.27
+            MATCH: 0.21
+          confidence: 0.28
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.15
+            MATCH: 0.38
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13057
+        output_tokens: 573
+      elapsed_seconds: 0.2833
+      request_sha256: ea8f9d87c427b767096f6ab4c43a76171257c209f71b8b69dee110d276ca17ce
+      request_sha256s:
+      - ea8f9d87c427b767096f6ab4c43a76171257c209f71b8b69dee110d276ca17ce
+  6dfe2abb6f5910ca86d921cda53df5add24f59537f376eba8b3000103dff18b8:
+    input_sha256: bd0a3d9b978275a5f7f9c8e7edf94f03a82c12737f5604b73bef2f081dba541c
+    configuration_sha256: 07b9c89e766b6b602dde9119480b212ae1ee7da85a26bceee7519afb8385a293
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:22:07.222498+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            PARTIAL: 0.37
+            MISMATCH: 0.1
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+          confidence: 0.96
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            PARTIAL: 0.45
+            MISMATCH: 0.33
+          confidence: 0.18
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            PARTIAL: 0.08
+            MISMATCH: 0.03
+          confidence: 0.84
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.34
+            MISMATCH: 0.04
+          confidence: 0.43
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.29
+            MISMATCH: 0.13
+          confidence: 0.37
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            PARTIAL: 0.28
+            MISMATCH: 0.14
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9175
+        output_tokens: 355
+      elapsed_seconds: 0.2548
+      request_sha256: 7cccaf99ffa1f66f83db69e8cfc69e46be99ed525e18c0867b2b3439c3b54fcd
+      request_sha256s:
+      - 7cccaf99ffa1f66f83db69e8cfc69e46be99ed525e18c0867b2b3439c3b54fcd

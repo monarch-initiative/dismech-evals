@@ -1200,6 +1200,53 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/4
       reference: PPR:PPR1298352
+  ba205e5db697923eee5f655e3afad6db44052e8cd13f152fa66ff2d29dfde33b:
+    claim:
+      about:
+        disease:
+          name: Dementia with Lewy Bodies
+          disease_term:
+            preferred_term: Lewy body dementia
+            term:
+              id: MONDO:0007488
+              label: Lewy body dementia
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Cholinesterase Inhibitors
+        description: Cholinesterase inhibitors such as rivastigmine, donepezil, and galantamine are used
+          to manage cognitive symptoms in DLB. These medications address the cholinergic deficits present
+          in the disease and can provide mild symptomatic benefit for cognitive and behavioral symptoms.
+        treatment_term:
+          preferred_term: cholinesterase inhibitor therapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+      selected_evidence:
+        snippet: Clinical management of both disorders includes cholinesterase inhibitors, other pharmacologic
+          and nonpharmacologic strategies, but these have only a mild symptomatic effect.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29222591
+      reference_title: 'Dementia with Lewy bodies and Parkinson''s disease-dementia: current concepts
+        and controversies.'
+      explanation: This confirms that cholinesterase inhibitors are part of standard clinical management
+        for DLB, though they provide only mild symptomatic benefit.
+    first_seen_at: '2026-10-03T21:20:01.950842+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:01.950842+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:01.950842+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:29222591
 assessments:
   19941913dacaff4e66f8f7c1c0c2411426105484cca7d0e15d9c96692eaf2ae8:
     input_sha256: bdff2dde61220879caa04c459624ff99ea8270e451537203f97cce7bfbb1ebf8
@@ -2968,3 +3015,62 @@ assessments:
       request_sha256: 09dfa140e1dc82188cfe4b1d6b79e8b70baf796336ad2f4580c0b9ef96088351
       request_sha256s:
       - 09dfa140e1dc82188cfe4b1d6b79e8b70baf796336ad2f4580c0b9ef96088351
+  35d3753bc89ff06372307065b1a8b0a2affd95a0a3a386c383cf31cfea450fd9:
+    input_sha256: ba205e5db697923eee5f655e3afad6db44052e8cd13f152fa66ff2d29dfde33b
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:01.950842+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            PARTIAL: 0.48
+            MISMATCH: 0.03
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.62
+            MISMATCH: 0.04
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.26
+            MISMATCH: 0.02
+          confidence: 0.59
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.55
+            MISMATCH: 0.04
+          confidence: 0.31
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.26
+            MISMATCH: 0.02
+          confidence: 0.57
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.36
+            MISMATCH: 0.2
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6289
+        output_tokens: 275
+      elapsed_seconds: 0.2928
+      request_sha256: 07f6586771263a667234b2ddb5bfde629747284cff2b6774170ae6a80d9650fd
+      request_sha256s:
+      - 07f6586771263a667234b2ddb5bfde629747284cff2b6774170ae6a80d9650fd

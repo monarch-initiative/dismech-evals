@@ -4734,6 +4734,62 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: PMID:26572954
+  029ac02d0edfb8554e693035658116d6930f555c86175ee658966b0cacd6f283:
+    claim:
+      about:
+        disease:
+          name: CHST3-Related Skeletal Dysplasia
+          disease_term:
+            preferred_term: CHST3-related skeletal dysplasia
+            term:
+              id: MONDO:0007738
+              label: spondyloepiphyseal dysplasia with congenital joint dislocations
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cardiac Valve Connective Tissue Involvement
+        biological_scale: TISSUE
+        description: 'Dysplasia of the cardiac valve leaflets with mitral, tricuspid and/or aortic regurgitation
+          occurs in a minority of patients. Reported valve involvement is clinically minor; lethal cardiac
+          involvement has separately been reported in a CHST3 series without the responsible lesion being
+          specified, and it is that unattributed lethality — not the valve dysplasia itself — that motivates
+          echocardiographic surveillance. Valve leaflets are proteoglycan-rich connective tissue and the
+          C6ST-1 substrate (chondroitin-bearing proteoglycan) is a general connective-tissue constituent,
+          but CHST3-deficient valve tissue has never been examined directly, so the step from deficient
+          6-O-sulfation to valve dysplasia is uncharacterized.
+
+          '
+        locations:
+        - preferred_term: cardiac valve
+          term:
+            id: UBERON:0000946
+            label: cardiac valve
+      selected_evidence:
+        snippet: it reinforces that lethal cardiac involvement is a critical clinical finding of the disorder.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37183573
+      reference_title: 'CHST3-related skeletal dysplasia in 14 patients: Identification of 8 novel variants
+        and further expansion of the phenotypic spectrum.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents that cardiac involvement can be lethal, which motivates the echocardiographic
+        surveillance recommendation. The abstract does not name the lethal lesion, so this supports the
+        node as a surveillance target rather than establishing that valve dysplasia is the lethal lesion.
+    first_seen_at: '2026-10-03T22:34:44.190123+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:34:44.190123+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:34:44.190123+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/2
+      reference: PMID:37183573
 assessments:
   72d8e35a36eaa80885acd02c8d11b212cff3fadcb1d87d54bd5763bddbb2d79e:
     input_sha256: 4bb638a475a71a6acdc0169ccc2a63e5dd9c1b15e15b255fc80c131333a6ba2f
@@ -11295,3 +11351,69 @@ assessments:
       request_sha256: 79fbb44dc62ea3b7b591799ee08d24720becb7d8a747206ecc384432fb64b33c
       request_sha256s:
       - 79fbb44dc62ea3b7b591799ee08d24720becb7d8a747206ecc384432fb64b33c
+  4e2af0156c2387352895555d08f5bd7b9df1e48238e49f9852fca1abff7717af:
+    input_sha256: 029ac02d0edfb8554e693035658116d6930f555c86175ee658966b0cacd6f283
+    configuration_sha256: 7c033865f0fcfa3bd2d4cc6a440cb6a77f788b40ff2cff4b6f2affffe37eca87
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:34:44.190123+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.49
+            MATCH: 0.06
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.06
+            MATCH: 0.39
+          confidence: 0.33
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.64
+            MATCH: 0.09
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.35
+            MATCH: 0.34
+          confidence: 0.03
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.47000000000000003
+            MATCH: 0.11
+          confidence: 0.19
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.34
+            MATCH: 0.23
+          confidence: 0.13
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.34
+            MATCH: 0.21
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7716
+        output_tokens: 337
+      elapsed_seconds: 0.4917
+      request_sha256: f85df1e172a195cebefa7f224b23ca5a7a2a9929bc2e9191156ea7deea2d808d
+      request_sha256s:
+      - f85df1e172a195cebefa7f224b23ca5a7a2a9929bc2e9191156ea7deea2d808d

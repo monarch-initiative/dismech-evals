@@ -4130,6 +4130,55 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/0
       reference: PMID:36993809
+  9e0ca572e5f65d99d525444eb28c66ffabce66cf0fce889c8ca7ba14b04d5304:
+    claim:
+      about:
+        disease:
+          name: Bartter syndrome
+          disease_term:
+            preferred_term: Bartter syndrome
+            term:
+              id: MONDO:0015231
+              label: Bartter syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Prostaglandin E2 Overproduction
+        description: Hypokalemia and volume depletion stimulate renal prostaglandin E2 synthesis, which
+          further inhibits NaCl reabsorption in the TAL and stimulates renin release, creating a positive
+          feedback loop that amplifies salt wasting and electrolyte disturbances.
+        biological_processes:
+        - preferred_term: Prostaglandin biosynthetic process
+          term:
+            id: GO:0001516
+            label: prostaglandin biosynthetic process
+          modifier: INCREASED
+      selected_evidence:
+        snippet: This impaired entry of sodium and chloride into the macula densa increases the expression
+          of cyclooxygenase-2 (COX2) stimulating the renal production of prostaglandin E2 (PGE2), also
+          resulting in afferent arteriolar dilatation and activation of renin release by JGA.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30519073
+      reference_title: 'Bartter syndrome: causes, diagnosis, and treatment.'
+      evidence_source: OTHER
+      explanation: Review describes the COX2/PGE2 pathway activation in Bartter syndrome and its role
+        in amplifying RAAS activation.
+    first_seen_at: '2026-10-03T22:45:09.648704+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:45:09.648704+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:45:09.648704+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      reference: PMID:30519073
 assessments:
   16eff5e6868e8666401d38dd5268d4679365b8a5adef29a748f89a8e3c664624:
     input_sha256: c5cc46badad781c2991d50a0188096a5ecb8c2512f5287ea947870bc889ac070
@@ -9781,3 +9830,69 @@ assessments:
       request_sha256: 97a8c261fb135c771f0b5876666ad1ff23d7ad96202497fcc240b3e7adfbfa2b
       request_sha256s:
       - 97a8c261fb135c771f0b5876666ad1ff23d7ad96202497fcc240b3e7adfbfa2b
+  24cb0f8e917607cf706d4286750d149b70a4a8fefe0c88a7ba43ab34b58ce297:
+    input_sha256: 9e0ca572e5f65d99d525444eb28c66ffabce66cf0fce889c8ca7ba14b04d5304
+    configuration_sha256: e601bfc075801aae3629aeb678e06d6e66218bf6ea4d7ee28178f68041cba960
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:45:09.648704+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.33
+            PARTIAL: 0.65
+          confidence: 0.48
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.48
+            PARTIAL: 0.47
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.9400000000000001
+            PARTIAL: 0.06
+          confidence: 0.9
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.27
+            PARTIAL: 0.71
+          confidence: 0.57
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.98
+            PARTIAL: 0.02
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7570
+        output_tokens: 339
+      elapsed_seconds: 0.4205
+      request_sha256: 461344639ae1a0f4517696914df5de178b486ceabade4268e07be2c594890ee7
+      request_sha256s:
+      - 461344639ae1a0f4517696914df5de178b486ceabade4268e07be2c594890ee7

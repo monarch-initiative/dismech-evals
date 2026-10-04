@@ -4197,6 +4197,289 @@ inputs:
     - assertion_path: /genetic/8
       evidence_path: /genetic/8/evidence/0
       reference: DOI:10.7554/eLife.82811
+  f80db276b6ce3cf8a593f1a88142b5a0200d1f5b8c70bb5e513444e71986f26c:
+    claim:
+      about:
+        disease:
+          name: Dystroglycanopathy
+          disease_term:
+            preferred_term: dystroglycanopathy
+            term:
+              id: MONDO:0018276
+              label: muscular dystrophy-dystroglycanopathy
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_dystroglycanopathy_human_cobblestone_pmg_model_mismatch
+        prompt: Does the lissencephalic rodent dystroglycanopathy model (brain-selective dystroglycan
+          deletion, Pomgnt2-knockout), which faithfully reproduces the glia-limitans breach and neuroglial
+          overmigration that define the cobblestone mechanism, capture the graded human cobblestone-lissencephaly
+          spectrum (the Walker-Warburg syndrome to muscle-eye-brain to Fukuyama severity gradient and
+          the cobblestone/polymicrogyria overlap across a gyrencephalic cortex), or does that human-specific
+          phenotypic gradient require human iPSC-derived or gyrencephalic models to resolve?
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Neuronal Overmigration Through Breached Glial Limitans
+        - pathophysiology#Cobblestone Cortical Malformation
+        rationale: 'The core boundary-breach mechanism of cobblestone malformation is well modeled in
+          rodents: brain-selective dystroglycan-null and Pomgnt2-knockout mice reproduce pial basement-membrane
+          / glia-limitans discontinuity and neuroglial overmigration, so the model is valid for the pial-boundary
+          arm this node conforms to. What the mouse does not reproduce is the defining structure of the
+          human disease, its graded, gyrencephalic phenotype. Human cobblestone lissencephaly is a continuum
+          (Walker-Warburg syndrome, muscle-eye-brain disease, Fukuyama muscular dystrophy) spanning three
+          neuropathological subtypes with different degrees of overmigration and cortical-plate disorganization,
+          and at its milder end it overlaps with polymicrogyria, the very feature the module node "Cobblestone-Like
+          Cortical Malformation and PMG Overlap" captures. Because the rodent cortex is naturally lissencephalic
+          and lacks human gyral folding, the cobblestone-to-PMG gradient and the genotype/severity correlation
+          that distinguish the human subtypes cannot be assigned from the knockout and remain an open
+          human-model translational question.'
+        proposed_experiments:
+        - experiment_id: exp_dystroglycanopathy_human_cobblestone_pmg_gradient
+          name: Human iPSC cortical-organoid and gyrencephalic comparison of the cobblestone-to-PMG gradient
+          description: Test whether the graded human cobblestone-to-polymicrogyria phenotype requires
+            a gyrencephalic/human cortical context by comparing graded alpha-dystroglycan hypoglycosylation
+            (allelic POMT1/POMGNT1/LARGE series spanning the Walker-Warburg to muscle-eye-brain severity
+            range) in human iPSC-derived cortical organoids against the conventional lissencephalic mouse
+            knockout, and, where feasible, against a gyrencephalic ferret model, asking whether the degree
+            of glia-limitans breach and overmigration scales into the cobblestone versus polymicrogyria-overlap
+            range seen across the human subtypes.
+          experiment_type:
+            preferred_term: patient-derived cortical organoid and cross-species comparison experiment
+          model_systems:
+          - name: Human iPSC-derived cortical organoid with graded alpha-dystroglycan hypoglycosylation
+            description: Human cortical organoids carrying an allelic series of dystroglycanopathy gene
+              variants (POMT1, POMGNT1, LARGE) spanning the Walker-Warburg to muscle-eye-brain severity
+              range, with isogenic corrected controls.
+            experimental_model_type: ORGANOID
+            namo_type: namo:Organoid
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: cerebral cortex
+              term:
+                id: UBERON:0000956
+                label: cerebral cortex
+            cell_types:
+            - preferred_term: cortical radial glial cell
+              term:
+                id: CL:0013000
+                label: forebrain radial glial cell
+            - preferred_term: migrating cortical neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            conditions:
+            - dystroglycanopathy
+            - cobblestone lissencephaly
+            cell_source: Patient-derived or CRISPR-engineered human induced pluripotent stem cells
+            culture_system: Three-dimensional cortical organoids with live-imaging glia-limitans/overmigration
+              assays
+          perturbations:
+          - name: Graded alpha-dystroglycan hypoglycosylation allelic series
+            target: pathophysiology#Defective alpha-dystroglycan O-mannosyl glycosylation
+            genes:
+            - preferred_term: POMT1
+              term:
+                id: hgnc:9202
+                label: POMT1
+            description: Introduce an allelic series of dystroglycanopathy gene variants of graded severity
+              into an isogenic human iPSC background, with corrected controls.
+          readouts:
+          - name: Severity-scaled neuronal overmigration across the pial boundary
+            target: pathophysiology#Neuronal Overmigration Through Breached Glial Limitans
+            biological_processes:
+            - preferred_term: neuron migration
+              term:
+                id: GO:0001764
+                label: neuron migration
+              modifier: INCREASED
+            assays:
+            - preferred_term: live-cell imaging assay
+            direction: POSITIVE
+          - name: Cobblestone-versus-polymicrogyria cortical architecture
+            target: pathophysiology#Cobblestone Cortical Malformation
+            biological_processes:
+            - preferred_term: cerebral cortex development
+              term:
+                id: GO:0021987
+                label: cerebral cortex development
+              modifier: ABNORMAL
+            assays:
+            - preferred_term: histopathology assay
+            direction: NEGATIVE
+      selected_evidence:
+        snippet: brain-selective deletion of dystroglycan in mice is sufficient to cause CMD-like brain
+          malformations, including disarray of cerebral cortical layering, fusion of cerebral hemispheres
+          and cerebellar folia, and aberrant migration of granule cells.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12140559
+      reference_title: Deletion of brain dystroglycan recapitulates aspects of congenital muscular dystrophy.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes that the rodent knockout faithfully reproduces the cobblestone overmigration
+        / boundary-breach arm, so the model is valid for the core pial-boundary mechanism, which isolates
+        the absent human gyral severity gradient as the specific translational gap.
+    first_seen_at: '2026-10-03T21:18:31.558605+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:31.558605+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:31.558605+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:12140559
+  9bdc77d903c921581b199dd543a24041c63ed7b2e9e76f306cda743d498d7fa0:
+    claim:
+      about:
+        disease:
+          name: Dystroglycanopathy
+          disease_term:
+            preferred_term: dystroglycanopathy
+            term:
+              id: MONDO:0018276
+              label: muscular dystrophy-dystroglycanopathy
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_dystroglycanopathy_human_cobblestone_pmg_model_mismatch
+        prompt: Does the lissencephalic rodent dystroglycanopathy model (brain-selective dystroglycan
+          deletion, Pomgnt2-knockout), which faithfully reproduces the glia-limitans breach and neuroglial
+          overmigration that define the cobblestone mechanism, capture the graded human cobblestone-lissencephaly
+          spectrum (the Walker-Warburg syndrome to muscle-eye-brain to Fukuyama severity gradient and
+          the cobblestone/polymicrogyria overlap across a gyrencephalic cortex), or does that human-specific
+          phenotypic gradient require human iPSC-derived or gyrencephalic models to resolve?
+        kind: HUMAN_MODEL_MISMATCH
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Neuronal Overmigration Through Breached Glial Limitans
+        - pathophysiology#Cobblestone Cortical Malformation
+        rationale: 'The core boundary-breach mechanism of cobblestone malformation is well modeled in
+          rodents: brain-selective dystroglycan-null and Pomgnt2-knockout mice reproduce pial basement-membrane
+          / glia-limitans discontinuity and neuroglial overmigration, so the model is valid for the pial-boundary
+          arm this node conforms to. What the mouse does not reproduce is the defining structure of the
+          human disease, its graded, gyrencephalic phenotype. Human cobblestone lissencephaly is a continuum
+          (Walker-Warburg syndrome, muscle-eye-brain disease, Fukuyama muscular dystrophy) spanning three
+          neuropathological subtypes with different degrees of overmigration and cortical-plate disorganization,
+          and at its milder end it overlaps with polymicrogyria, the very feature the module node "Cobblestone-Like
+          Cortical Malformation and PMG Overlap" captures. Because the rodent cortex is naturally lissencephalic
+          and lacks human gyral folding, the cobblestone-to-PMG gradient and the genotype/severity correlation
+          that distinguish the human subtypes cannot be assigned from the knockout and remain an open
+          human-model translational question.'
+        proposed_experiments:
+        - experiment_id: exp_dystroglycanopathy_human_cobblestone_pmg_gradient
+          name: Human iPSC cortical-organoid and gyrencephalic comparison of the cobblestone-to-PMG gradient
+          description: Test whether the graded human cobblestone-to-polymicrogyria phenotype requires
+            a gyrencephalic/human cortical context by comparing graded alpha-dystroglycan hypoglycosylation
+            (allelic POMT1/POMGNT1/LARGE series spanning the Walker-Warburg to muscle-eye-brain severity
+            range) in human iPSC-derived cortical organoids against the conventional lissencephalic mouse
+            knockout, and, where feasible, against a gyrencephalic ferret model, asking whether the degree
+            of glia-limitans breach and overmigration scales into the cobblestone versus polymicrogyria-overlap
+            range seen across the human subtypes.
+          experiment_type:
+            preferred_term: patient-derived cortical organoid and cross-species comparison experiment
+          model_systems:
+          - name: Human iPSC-derived cortical organoid with graded alpha-dystroglycan hypoglycosylation
+            description: Human cortical organoids carrying an allelic series of dystroglycanopathy gene
+              variants (POMT1, POMGNT1, LARGE) spanning the Walker-Warburg to muscle-eye-brain severity
+              range, with isogenic corrected controls.
+            experimental_model_type: ORGANOID
+            namo_type: namo:Organoid
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: cerebral cortex
+              term:
+                id: UBERON:0000956
+                label: cerebral cortex
+            cell_types:
+            - preferred_term: cortical radial glial cell
+              term:
+                id: CL:0013000
+                label: forebrain radial glial cell
+            - preferred_term: migrating cortical neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            conditions:
+            - dystroglycanopathy
+            - cobblestone lissencephaly
+            cell_source: Patient-derived or CRISPR-engineered human induced pluripotent stem cells
+            culture_system: Three-dimensional cortical organoids with live-imaging glia-limitans/overmigration
+              assays
+          perturbations:
+          - name: Graded alpha-dystroglycan hypoglycosylation allelic series
+            target: pathophysiology#Defective alpha-dystroglycan O-mannosyl glycosylation
+            genes:
+            - preferred_term: POMT1
+              term:
+                id: hgnc:9202
+                label: POMT1
+            description: Introduce an allelic series of dystroglycanopathy gene variants of graded severity
+              into an isogenic human iPSC background, with corrected controls.
+          readouts:
+          - name: Severity-scaled neuronal overmigration across the pial boundary
+            target: pathophysiology#Neuronal Overmigration Through Breached Glial Limitans
+            biological_processes:
+            - preferred_term: neuron migration
+              term:
+                id: GO:0001764
+                label: neuron migration
+              modifier: INCREASED
+            assays:
+            - preferred_term: live-cell imaging assay
+            direction: POSITIVE
+          - name: Cobblestone-versus-polymicrogyria cortical architecture
+            target: pathophysiology#Cobblestone Cortical Malformation
+            biological_processes:
+            - preferred_term: cerebral cortex development
+              term:
+                id: GO:0021987
+                label: cerebral cortex development
+              modifier: ABNORMAL
+            assays:
+            - preferred_term: histopathology assay
+            direction: NEGATIVE
+      selected_evidence:
+        snippet: cobblestone lissencephaly encompasses three distinct subtypes of cortical malformations
+          with different degrees of neuroglial ectopia into the arachnoid space and cortical plate disorganization
+          regardless of gestational age.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22323514
+      reference_title: 'Cobblestone lissencephaly: neuropathological subtypes and correlations with genes
+        of dystroglycanopathies.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the graded human cobblestone spectrum (a Walker-Warburg / muscle-eye-brain
+        / Fukuyama continuum with polymicrogyria overlap at the mild end) that the uniformly lissencephalic
+        rodent cortex does not reproduce.
+    first_seen_at: '2026-10-03T21:18:31.560419+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:18:31.560419+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:18:31.560419+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      reference: PMID:22323514
 assessments:
   e7e3053ed62eb12300a0e55b6dea8a011af0af7ae980623b739a7c0b81ebb61c:
     input_sha256: a53b1a31b8fd4be852b59c1a178c70687538487cf77a4ec8959ba04bba438c55
@@ -9869,3 +10152,681 @@ assessments:
       request_sha256: 6c449ee1f435c4909d367e98a2d4ea40535eb88c5e30dd93b2dd8c0d7f37be77
       request_sha256s:
       - 6c449ee1f435c4909d367e98a2d4ea40535eb88c5e30dd93b2dd8c0d7f37be77
+  89f8654c488d2a79280d5049df86e1e03e52cfc0b4e88b7afd55de1bd729c5b3:
+    input_sha256: f80db276b6ce3cf8a593f1a88142b5a0200d1f5b8c70bb5e513444e71986f26c
+    configuration_sha256: 3c98bced36413b3b34f64f6f336ef867ce15645280e86d98112d01be1db3e4ba
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:31.558605+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.27
+            PARTIAL: 0.61
+          confidence: 0.41
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.87
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.49
+            MATCH: 0.25
+            PARTIAL: 0.26
+          confidence: 0.23
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.15
+            PARTIAL: 0.66
+          confidence: 0.5
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.43
+            MATCH: 0.34
+            PARTIAL: 0.23
+          confidence: 0.15
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.87
+            MATCH: 0.01
+            PARTIAL: 0.12
+          confidence: 0.81
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.08
+            MATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.24
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            MATCH: 0.1
+            PARTIAL: 0.2
+          confidence: 0.55
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            MATCH: 0.08
+            PARTIAL: 0.34
+          confidence: 0.37
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.06
+            PARTIAL: 0.44
+          confidence: 0.24
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.73
+            MATCH: 0.07
+            PARTIAL: 0.2
+          confidence: 0.6
+        /assertion/proposed_experiments/0/model_systems/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.04
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/proposed_experiments/0/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            MATCH: 0.04
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/proposed_experiments/0/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.13
+            PARTIAL: 0.09
+          confidence: 0.67
+        /assertion/proposed_experiments/0/model_systems/0/namo_type:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.81
+            MATCH: 0.11
+            PARTIAL: 0.08
+          confidence: 0.71
+        /assertion/proposed_experiments/0/model_systems/0/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            MATCH: 0.12
+            PARTIAL: 0.1
+          confidence: 0.67
+        /assertion/proposed_experiments/0/model_systems/0/organism/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            MATCH: 0.13
+            PARTIAL: 0.11
+          confidence: 0.64
+        /assertion/proposed_experiments/0/model_systems/0/tissue_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.28
+            MATCH: 0.39
+            PARTIAL: 0.33
+          confidence: 0.08
+        /assertion/proposed_experiments/0/model_systems/0/tissue_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.39
+            PARTIAL: 0.41
+          confidence: 0.12
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            MATCH: 0.07
+            PARTIAL: 0.25
+          confidence: 0.52
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            MATCH: 0.06
+            PARTIAL: 0.26
+          confidence: 0.52
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.19
+            PARTIAL: 0.39
+          confidence: 0.13
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.42
+            MATCH: 0.26
+            PARTIAL: 0.32
+          confidence: 0.13
+        /assertion/proposed_experiments/0/model_systems/0/conditions:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.18
+            MATCH: 0.45
+            PARTIAL: 0.37
+          confidence: 0.18
+        /assertion/proposed_experiments/0/model_systems/0/cell_source:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.94
+            MATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/proposed_experiments/0/model_systems/0/culture_system:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.95
+            MATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/proposed_experiments/0/perturbations/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.05
+            PARTIAL: 0.31
+          confidence: 0.45
+        /assertion/proposed_experiments/0/perturbations/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            MATCH: 0.24
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            MATCH: 0.2
+            PARTIAL: 0.27
+          confidence: 0.29
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.15
+            PARTIAL: 0.29
+          confidence: 0.34
+        /assertion/proposed_experiments/0/perturbations/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            MATCH: 0.04
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.17
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.16
+            MATCH: 0.26
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.31
+            PARTIAL: 0.58
+          confidence: 0.38
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.3
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.35
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/proposed_experiments/0/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            MATCH: 0.05
+            PARTIAL: 0.37
+          confidence: 0.38
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.06
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/proposed_experiments/0/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            MATCH: 0.05
+            PARTIAL: 0.33
+          confidence: 0.42
+        /assertion/proposed_experiments/0/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.23
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.13
+            MATCH: 0.31
+            PARTIAL: 0.56
+          confidence: 0.33
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.12
+            MATCH: 0.35
+            PARTIAL: 0.53
+          confidence: 0.28
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/proposed_experiments/0/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.5
+            MATCH: 0.11
+            PARTIAL: 0.39
+          confidence: 0.25
+        /assertion/proposed_experiments/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            MATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 47406
+        output_tokens: 2713
+      elapsed_seconds: 0.6888
+      request_sha256: 88260bc559ae7170193aac09ef09d0a8c32fbbc63cb40992ebc280a8ba93e5f3
+      request_sha256s:
+      - 88260bc559ae7170193aac09ef09d0a8c32fbbc63cb40992ebc280a8ba93e5f3
+  fb831fab59ca96dcc1b20f4a4cba1c88662639003356cffadbb9dd4abf799ce0:
+    input_sha256: 9bdc77d903c921581b199dd543a24041c63ed7b2e9e76f306cda743d498d7fa0
+    configuration_sha256: 3c98bced36413b3b34f64f6f336ef867ce15645280e86d98112d01be1db3e4ba
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:18:31.560419+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.07
+            PARTIAL: 0.54
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.03
+            PARTIAL: 0.12
+          confidence: 0.78
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.58
+            PARTIAL: 0.22
+          confidence: 0.36
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.14
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.43
+            PARTIAL: 0.22
+          confidence: 0.15
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.81
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.08
+            PARTIAL: 0.27
+          confidence: 0.47
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.22
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.58
+            PARTIAL: 0.26
+          confidence: 0.37
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.4
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.23
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.71
+            PARTIAL: 0.21
+          confidence: 0.57
+        /assertion/proposed_experiments/0/model_systems/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.39
+        /assertion/proposed_experiments/0/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.49
+            PARTIAL: 0.4
+          confidence: 0.23
+        /assertion/proposed_experiments/0/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.66
+            PARTIAL: 0.13
+          confidence: 0.5
+        /assertion/proposed_experiments/0/model_systems/0/namo_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.76
+            PARTIAL: 0.12
+          confidence: 0.64
+        /assertion/proposed_experiments/0/model_systems/0/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.51
+            PARTIAL: 0.21
+          confidence: 0.27
+        /assertion/proposed_experiments/0/model_systems/0/organism/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.55
+            PARTIAL: 0.22
+          confidence: 0.32
+        /assertion/proposed_experiments/0/model_systems/0/tissue_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.27
+            PARTIAL: 0.31
+          confidence: 0.13
+        /assertion/proposed_experiments/0/model_systems/0/tissue_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39999999999999997
+            MISMATCH: 0.21
+            PARTIAL: 0.39
+          confidence: 0.11
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.62
+            PARTIAL: 0.28
+          confidence: 0.44
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.59
+            PARTIAL: 0.3
+          confidence: 0.38
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.36
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.36
+            PARTIAL: 0.35
+          confidence: 0.05
+        /assertion/proposed_experiments/0/model_systems/0/conditions:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.06
+            PARTIAL: 0.34
+          confidence: 0.4
+        /assertion/proposed_experiments/0/model_systems/0/cell_source:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.84
+        /assertion/proposed_experiments/0/model_systems/0/culture_system:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.88
+            PARTIAL: 0.08
+          confidence: 0.82
+        /assertion/proposed_experiments/0/perturbations/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.38
+        /assertion/proposed_experiments/0/perturbations/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.54
+            PARTIAL: 0.27
+          confidence: 0.31
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.47
+            PARTIAL: 0.3
+          confidence: 0.21
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.59
+            PARTIAL: 0.28
+          confidence: 0.39
+        /assertion/proposed_experiments/0/perturbations/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.28
+          confidence: 0.5
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.18
+            PARTIAL: 0.59
+          confidence: 0.39
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.2
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.12
+            PARTIAL: 0.55
+          confidence: 0.32
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.19
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.13
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/proposed_experiments/0/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.75
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.39
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/proposed_experiments/0/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.16
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/proposed_experiments/0/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.1
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.08
+            PARTIAL: 0.53
+          confidence: 0.29
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.08
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.11
+            PARTIAL: 0.29
+          confidence: 0.39
+        /assertion/proposed_experiments/0/readouts/1/assays/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.28
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/proposed_experiments/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.69
+            PARTIAL: 0.29
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 47399
+        output_tokens: 2704
+      elapsed_seconds: 0.7294
+      request_sha256: 52e4b6d45d11f1a61a72e44819f2048bd1e4a6ac641ee88342ad5d1bcc9fea8a
+      request_sha256s:
+      - 52e4b6d45d11f1a61a72e44819f2048bd1e4a6ac641ee88342ad5d1bcc9fea8a

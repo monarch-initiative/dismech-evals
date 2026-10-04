@@ -5834,6 +5834,59 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:40585686
+  17b7267035691ee559ad446ca761dad46c370f2866bb05d8ee76903e8e541bdc:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Osteosclerosis Worth Type
+          disease_term:
+            preferred_term: autosomal dominant osteosclerosis, Worth type
+            term:
+              id: MONDO:0007764
+              label: autosomal dominant osteosclerosis, Worth type
+        context:
+        - path: /pathophysiology/7
+          value:
+            name: Reduced Intracranial Space
+            biological_scale: TISSUE
+            description: Cranial hyperostosis may reduce posterior fossa capacity or intracranial compliance,
+              with tonsillar herniation and raised pressure. This route is distinct from direct compression
+              of individual nerves in foramina.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Increased intracranial pressure
+        description: Reported pressure/crowding-related neurologic complication.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: In summary, neurological involvement may occur because of nerve tissue compression by
+          hyperostotic bone, cerebellar disturbances due to a reduction in size of the posterior cranial
+          fossa or tonsillar herniation, and chronic intracranial hypertension
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7/downstream/0
+      evidence_path: /pathophysiology/7/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/7
+    evidence_metadata:
+      reference: PMID:37659026
+      reference_title: 'LRP5 high bone mass (Worth-type autosomal dominant endosteal hyperostosis): case
+        report and historical review of the literature.'
+      evidence_source: OTHER
+      explanation: Distinguishes direct nerve compression from reduced posterior-fossa space and pressure-related
+        complications.
+      quote_role: REVIEW_SYNTHESIS
+    first_seen_at: '2026-10-03T22:42:48.448319+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:42:48.448319+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:42:48.448319+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7/downstream/0
+      evidence_path: /pathophysiology/7/downstream/0/evidence/0
+      reference: PMID:37659026
 assessments:
   ea536c90e0081aec2a817b905c0b61634b2cf188a4c8234ea9fd60b1556bc86a:
     input_sha256: 1a57ccaf8ef303006cda399e4c0e95125b67a5da83ae905973a99a4e7cbabe8d
@@ -13264,3 +13317,62 @@ assessments:
       request_sha256: efca5d64e3b9a611fccbcedf8a3d828a6337bd1142dccefc3d3921a4bae02963
       request_sha256s:
       - efca5d64e3b9a611fccbcedf8a3d828a6337bd1142dccefc3d3921a4bae02963
+  fb9e329c83652946823b338486bd9705655ba7c05881ec3fdd05897f750828b2:
+    input_sha256: 17b7267035691ee559ad446ca761dad46c370f2866bb05d8ee76903e8e541bdc
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:42:48.448319+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.19
+            MISMATCH: 0.02
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            PARTIAL: 0.39
+            MISMATCH: 0.06
+          confidence: 0.31
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9299999999999999
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            PARTIAL: 0.09
+            MISMATCH: 0.01
+          confidence: 0.85
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.31
+            MISMATCH: 0.36
+          confidence: 0.04
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            PARTIAL: 0.18
+            MISMATCH: 0.04
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6410
+        output_tokens: 271
+      elapsed_seconds: 0.1816
+      request_sha256: 29ca604870dbab15b865e3cae9a7a2e962ccfe8869d0f98eb9f0416a890fe36c
+      request_sha256s:
+      - 29ca604870dbab15b865e3cae9a7a2e962ccfe8869d0f98eb9f0416a890fe36c

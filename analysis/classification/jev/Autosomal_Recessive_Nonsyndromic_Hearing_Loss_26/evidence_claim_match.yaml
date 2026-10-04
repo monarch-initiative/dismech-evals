@@ -3127,6 +3127,81 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/3
       reference: PMID:29408807
+  4133c4a50aee33b3f5611346fcb58527a67045d7ce02be5f0ae71674b2e0bca1:
+    claim:
+      about:
+        disease:
+          name: Autosomal Recessive Nonsyndromic Hearing Loss 26
+          disease_term:
+            preferred_term: autosomal recessive nonsyndromic hearing loss 26
+            term:
+              id: MONDO:0011553
+              label: autosomal recessive nonsyndromic hearing loss 26
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: gab1 morpholino knockdown zebrafish with human mRNA rescue
+        species: Zebrafish
+        genotype: gab1 translation-blocking and splice-site morpholino knockdown
+        publication: PMID:29408807
+        description: A morpholino knockdown used as an in vivo assay for allele function rather than as
+          a disease model. Two independent morpholinos, plus p53 co-injection, give the same developmental
+          phenotype. Human GAB1 mRNA rescues; mRNA carrying p.Gly116Glu rescues only partially, which
+          is the in vivo demonstration that the allele is hypomorphic. Adding human METTL13 mRNA carrying
+          the suppressor allele significantly attenuates the phenotype, while wild-type METTL13 mRNA does
+          not.
+        genes:
+        - preferred_term: GAB1
+          term:
+            id: hgnc:4066
+            label: GAB1
+        - preferred_term: METTL13
+          term:
+            id: hgnc:24248
+            label: METTL13
+        modeled_mechanisms:
+        - target: GAB1 p.Gly116Glu Hypomorphic PH-Domain Variant
+          relationship: PARTIALLY_RECAPITULATES
+          fidelity: LOW
+          description: Establishes in a whole animal that p.Gly116Glu retains partial function and that
+            the METTL13 suppressor allele acts on the GAB1 lesion allele-specifically.
+          limitations: The scored phenotype is early embryonic development - eye formation, budding-stage
+            arrest, epiboly delay - not hearing, so the model tests allele function rather than the disease.
+            Morpholino knockdown is transient and not equivalent to the human homozygous missense state,
+            and the rescue is of a knockdown by exogenous human mRNA rather than of an engineered mutant
+            fish. No auditory or lateral-line readout was reported.
+          readouts:
+          - name: Morphant developmental phenotype class at the 10- to 12-somite stage
+            target: GAB1 p.Gly116Glu Hypomorphic PH-Domain Variant
+            direction: RESTORED
+            interpretation: Restored by wild-type human GAB1 mRNA and only partially by p.Gly116Glu mRNA;
+              separately attenuated by co-injecting suppressor-allele METTL13 mRNA but not wild-type METTL13
+              mRNA.
+      selected_evidence:
+        snippet: Thus, morphant developmental deficits appear to be specific to the knockdown of gab1
+          expression.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29408807
+      reference_title: Modifier variant of METTL13 suppresses human GAB1-associated profound deafness.
+      evidence_source: MODEL_ORGANISM
+      explanation: The authors' own conclusion that the assay reports on gab1 rather than on morpholino
+        toxicity, which is what licenses reading the rescue results.
+    first_seen_at: '2026-10-03T21:27:18.331310+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:27:18.331310+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:27:18.331310+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:29408807
 assessments:
   d740485d3eb1a09b3ae8af27e4c27b6e6c633bccf9782714de03d020fc870109:
     input_sha256: c68c132d8bfb733f5a26b2f62ce0f7255726f0beda0de26c0866b896cd4804e6
@@ -6911,3 +6986,160 @@ assessments:
       request_sha256: dc2fae9651224b9f06758f3ce4b6f29830f96686d7fe8703f8aad5aeb1d63bdc
       request_sha256s:
       - dc2fae9651224b9f06758f3ce4b6f29830f96686d7fe8703f8aad5aeb1d63bdc
+  ead6cc4fe6e9270ebb9fbf2bfa1a11411c3383c32432d97d997f4e440ff4c376:
+    input_sha256: 4133c4a50aee33b3f5611346fcb58527a67045d7ce02be5f0ae71674b2e0bca1
+    configuration_sha256: 6826ba2edd413e36b0c3aed25f05984c76423349224550f9740b36683b11aef9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:27:18.331310+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.86
+            PARTIAL: 0.11
+            MATCH: 0.03
+          confidence: 0.79
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.89
+            PARTIAL: 0.1
+            MATCH: 0.01
+          confidence: 0.84
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+            MATCH: 0.05
+          confidence: 0.67
+        /assertion/species:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            PARTIAL: 0.24
+            MATCH: 0.14
+          confidence: 0.43
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            PARTIAL: 0.4
+            MATCH: 0.08
+          confidence: 0.28
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.84
+            PARTIAL: 0.13
+            MATCH: 0.03
+          confidence: 0.77
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            PARTIAL: 0.39
+            MATCH: 0.17
+          confidence: 0.15
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.32
+            MATCH: 0.46
+          confidence: 0.19
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            PARTIAL: 0.33
+            MATCH: 0.4
+          confidence: 0.1
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            PARTIAL: 0.17
+            MATCH: 0.09
+          confidence: 0.6
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.85
+            PARTIAL: 0.11
+            MATCH: 0.04
+          confidence: 0.77
+        /assertion/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+            MATCH: 0.04
+          confidence: 0.62
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            PARTIAL: 0.2
+            MATCH: 0.1
+          confidence: 0.55
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.65
+            PARTIAL: 0.23
+            MATCH: 0.12
+          confidence: 0.47
+        /assertion/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+            MATCH: 0.03
+          confidence: 0.6
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+            MATCH: 0.02
+          confidence: 0.8
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+            MATCH: 0.09
+          confidence: 0.36
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+            MATCH: 0.04
+          confidence: 0.58
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+            MATCH: 0.06
+          confidence: 0.55
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+            MATCH: 0.02
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        input_tokens: 20462
+        output_tokens: 1059
+      elapsed_seconds: 0.3285
+      request_sha256: c54bde2d7b3f67ee1209aaf090baa4224dcc49426c91a87c49934ed9c3305cf8
+      request_sha256s:
+      - c54bde2d7b3f67ee1209aaf090baa4224dcc49426c91a87c49934ed9c3305cf8

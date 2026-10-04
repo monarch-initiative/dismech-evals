@@ -6492,6 +6492,57 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/2
       reference: PMID:34001203
+  a2f4a85c22148ba50f186810872dce51048d56895664b26235d0808cb727d590:
+    claim:
+      about:
+        disease:
+          name: Beta-Ketothiolase Deficiency
+          disease_term:
+            preferred_term: beta-ketothiolase deficiency
+            term:
+              id: MONDO:0008760
+              label: beta-ketothiolase deficiency
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Genetic counseling
+        description: 'Genetic counseling for affected families, including discussion of autosomal recessive
+          inheritance, recurrence risk (25%), and carrier testing for informative family members. Prenatal
+          diagnosis is available through molecular analysis of ACAT1.
+
+          '
+        treatment_term:
+          preferred_term: Genetic Counseling
+          term:
+            id: NCIT:C15240
+            label: Genetic Counseling
+      selected_evidence:
+        snippet: By identifying haplotype blocks, founder mutations, and novel pathogenic variants, researchers
+          can significantly improve diagnostic precision, enhance genetic counseling, and lay the groundwork
+          for developing targeted therapies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/5
+      evidence_path: /treatments/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40598206
+      reference_title: 'Molecular characterization, clinical phenotype, and neurological outcome of twelve
+        Palestinian children with beta-ketothiolase deficiency: report of two novel variants in the ACAT1
+        gene.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the role of genetic counseling in BKD management and family planning.
+    first_seen_at: '2026-10-03T21:28:34.115578+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:28:34.115578+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:28:34.115578+00:00'
+    occurrences:
+    - assertion_path: /treatments/5
+      evidence_path: /treatments/5/evidence/0
+      reference: PMID:40598206
 assessments:
   7f22310f6c189c44fae3805d59af0c8cf91ad680c273de21abd0daebccfe1d82:
     input_sha256: cf5d5e4f5daefedbaa66c3c1e73098fe9408c0f7652729e4e75062e581e8ee40
@@ -14413,3 +14464,62 @@ assessments:
       request_sha256: b658a828cb2743eb0067f1e8d358ce7562edb22c177564937ded60ea3171358e
       request_sha256s:
       - b658a828cb2743eb0067f1e8d358ce7562edb22c177564937ded60ea3171358e
+  5d731b68c1a06adeaf70176f40b1b6895d1ca878097d9739b03d134778129557:
+    input_sha256: a2f4a85c22148ba50f186810872dce51048d56895664b26235d0808cb727d590
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:28:34.115578+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.65
+            MISMATCH: 0.3
+          confidence: 0.48
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.55
+            MISMATCH: 0.42
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.42
+            MISMATCH: 0.08
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.62
+            MISMATCH: 0.36
+          confidence: 0.43
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.48
+            MISMATCH: 0.1
+          confidence: 0.22
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.53
+            MISMATCH: 0.11
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6274
+        output_tokens: 278
+      elapsed_seconds: 0.2612
+      request_sha256: 78d48ec0ca6eb125d49b1309ef6b018463bbc8e7abfc1a39e53aaae29df1a671
+      request_sha256s:
+      - 78d48ec0ca6eb125d49b1309ef6b018463bbc8e7abfc1a39e53aaae29df1a671

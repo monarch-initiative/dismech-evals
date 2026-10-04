@@ -4000,6 +4000,75 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/2
       reference: PMID:30459346
+  d70a7c594afadd6a0590c846772c0ca0a8363cee8fc3dbf280b4fb89f4be8ad6:
+    claim:
+      about:
+        disease:
+          name: Cone-rod dystrophy and hearing loss 2
+          disease_term:
+            preferred_term: cone-rod dystrophy and hearing loss 2
+            term:
+              id: MONDO:0020780
+              label: cone-rod dystrophy and hearing loss 2
+        context:
+        - path: /animal_models/4
+          value:
+            name: Cep250 global knockout mouse (retinal transcriptome and metabolome line)
+            species: Mouse
+            genotype: Cep250 null, homozygous (global knockout)
+            publication: PMID:37240188
+            description: A global Cep250-null line phenotyped from P90 to P180 with optical coherence
+              tomography, electroretinography, TUNEL, RNA sequencing and untargeted metabolomics. It is
+              where the candidate downstream death pathways come from - cGMP-PKG and MAPK signalling from
+              the transcriptomics, dysregulated arginine metabolism from the companion metabolomic study
+              on a global knockout from the same centre.
+          role: ancestor
+        - path: /animal_models/4/modeled_mechanisms/0
+          value:
+            target: Progressive Cone-Predominant Photoreceptor Degeneration
+            relationship: MEASURES
+            fidelity: MODERATE
+            description: Reads out the transcriptional and metabolic consequences of Cep250 loss in the
+              retina, implicating cGMP-PKG and MAPK signalling and arginine metabolism.
+            limitations: Pathway enrichment from bulk retinal RNA sequencing at a single timepoint is
+              hypothesis-generating; neither implicated pathway has been tested by intervention, and neither
+              has been examined in human retina. The a-wave falls more than the b-wave here, a photoreceptor-level
+              signature, but the model does not separate cones from rods the way the human phenotype does.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Outer nuclear layer and whole-retina thickness
+        target: Progressive Cone-Predominant Photoreceptor Degeneration
+        direction: DECREASED
+        interpretation: Structural confirmation of photoreceptor loss in the line the transcriptomics
+          was run on.
+      selected_evidence:
+        snippet: Compared with WT mice, the thickness of the ONL, IS/OS, and whole retina of Cep250 mice
+          was significantly reduced.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/4/modeled_mechanisms/0/readouts/1
+      evidence_path: /animal_models/4/modeled_mechanisms/0/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/4
+      - /animal_models/4/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:37240188
+      reference_title: RNA-Seq Analysis Reveals an Essential Role of the cGMP-PKG-MAPK Pathways in Retinal
+        Degeneration Caused by Cep250 Deficiency.
+      evidence_source: MODEL_ORGANISM
+      explanation: The structural measurement in this model.
+    first_seen_at: '2026-10-03T22:51:27.650493+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:51:27.650493+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:51:27.650493+00:00'
+    occurrences:
+    - assertion_path: /animal_models/4/modeled_mechanisms/0/readouts/1
+      evidence_path: /animal_models/4/modeled_mechanisms/0/readouts/1/evidence/0
+      reference: PMID:37240188
 assessments:
   c48109fd01de511820cb5a9f0672d2efa5b967a657d464a13047ddc38a94be30:
     input_sha256: 27516cafdf92e0a13ad2894caaee96bc18883283831a3da411632f67717393d5
@@ -9135,3 +9204,76 @@ assessments:
       request_sha256: 05fe9e854b9a969d59d6b6516e17f4bc210eb480b5c9cd0c3eb84305ba3b69dc
       request_sha256s:
       - 05fe9e854b9a969d59d6b6516e17f4bc210eb480b5c9cd0c3eb84305ba3b69dc
+  c898fb3f9daa41aad2e21ab48a56d9a28f79e1f174acbcce4e397ea05249bd63:
+    input_sha256: d70a7c594afadd6a0590c846772c0ca0a8363cee8fc3dbf280b4fb89f4be8ad6
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:51:27.650493+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.36
+            MISMATCH: 0.26
+          confidence: 0.07
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MATCH: 0.11
+            MISMATCH: 0.37
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.92
+            MISMATCH: 0.02
+          confidence: 0.88
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.49
+            MISMATCH: 0.18
+          confidence: 0.24
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.82
+            MISMATCH: 0.1
+          confidence: 0.72
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.84
+            MISMATCH: 0.03
+          confidence: 0.76
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.53
+            MISMATCH: 0.18
+          confidence: 0.3
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.53
+            MISMATCH: 0.18
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8643
+        output_tokens: 357
+      elapsed_seconds: 0.2122
+      request_sha256: 200e8771a1874a5b67ff480a229b908751cefb7e19da01d1c141ce239f82fdd4
+      request_sha256s:
+      - 200e8771a1874a5b67ff480a229b908751cefb7e19da01d1c141ce239f82fdd4

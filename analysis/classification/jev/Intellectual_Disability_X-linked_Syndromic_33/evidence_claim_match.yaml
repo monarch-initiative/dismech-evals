@@ -7558,6 +7558,64 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:38804708
+  285fff8c2175bbb70f81c1c9878e2f2b18aca9e2eb6fceca6a0a20943e21b253:
+    claim:
+      about:
+        disease:
+          name: Intellectual Disability, X-linked, Syndromic 33
+          disease_term:
+            preferred_term: TAF1 intellectual disability syndrome
+            term:
+              id: MONDO:0010500
+              label: intellectual disability, X-linked, syndromic 33
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: TFIID-Dependent Transcription Dysfunction
+        role: intermediate
+        biological_scale: MOLECULAR
+        description: 'TAF1 is the largest subunit of TFIID, which with TATA-binding protein and the other
+          TBP-associated factors nucleates the RNA polymerase II preinitiation complex at essentially
+          all pol II promoters. A TAF1 lesion therefore perturbs a general transcription function rather
+          than a single target pathway. The node is tagged DYSREGULATED rather than DECREASED because
+          it has two upstream lesions pushing in opposite directions — hypomorphic missense alleles reducing
+          TAF1 function and Xq13.1 duplications increasing TAF1 dosage — and because no study has measured
+          preinitiation complex assembly in patient material in either direction.
+
+          '
+        biological_processes:
+        - preferred_term: RNA polymerase II preinitiation complex assembly
+          term:
+            id: GO:0051123
+            label: RNA polymerase II preinitiation complex assembly
+          modifier: DYSREGULATED
+      selected_evidence:
+        snippet: TAF1 encodes the largest subunit of the basal transcription factor II D (TFIID), which
+          directs the assembly of the pol II preinitiation complex (Papai, Weil, & Schultz, 2011) and
+          is likely required for all pol II gene promoters
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31646703
+      reference_title: 'Missense variants in TAF1 and developmental phenotypes: challenges of determining
+        pathogenicity.'
+      evidence_source: OTHER
+      explanation: Establishes TAF1's role in preinitiation complex assembly and the generality of that
+        requirement.
+    first_seen_at: '2026-10-03T21:21:01.310425+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:21:01.310425+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:21:01.310425+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:31646703
 assessments:
   27b3ee779fefa1ecbb0d083715645f7cef059b580d702c5ea49082df2b0da401:
     input_sha256: 611e17d72ac302ea552aaa85f37af173575e50ea69c66e800cf8102fb4a86201
@@ -16290,3 +16348,83 @@ assessments:
       request_sha256: f89e1612ff7c1d4941ce231d3ac187a673b579001e4d120ca61b851b1de9db52
       request_sha256s:
       - f89e1612ff7c1d4941ce231d3ac187a673b579001e4d120ca61b851b1de9db52
+  d096cafebfb81af11e2121adc6c77ec8dc248b7b0669d44c0550bb5d27a719f8:
+    input_sha256: 285fff8c2175bbb70f81c1c9878e2f2b18aca9e2eb6fceca6a0a20943e21b253
+    configuration_sha256: 85d0e6763e59a50b4ad55b74b98ce30717231aadec8a72bef5f897873abffe61
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:21:01.310425+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.03
+            MATCH: 0.24
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.1
+            MATCH: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.03
+            MATCH: 0.59
+          confidence: 0.38
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.09
+            MATCH: 0.45
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MISMATCH: 0.01
+            MATCH: 0.96
+          confidence: 0.94
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.05
+            MATCH: 0.31
+          confidence: 0.46
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MISMATCH: 0.02
+            MATCH: 0.75
+          confidence: 0.62
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.04
+            MATCH: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.34
+            MATCH: 0.04
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10022
+        output_tokens: 432
+      elapsed_seconds: 0.3
+      request_sha256: f75cea28311c1dc1b36a3986b7d17a6b3922894ea491bd59b0943596c2ff93c3
+      request_sha256s:
+      - f75cea28311c1dc1b36a3986b7d17a6b3922894ea491bd59b0943596c2ff93c3

@@ -4412,6 +4412,53 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:35642996
+  479a7e3d561bf2577359cdcb880982a922bd661600b411d65ab8b9125c1c084e:
+    claim:
+      about:
+        disease:
+          name: Autosomal Recessive Ataxia Due to Ubiquinone Deficiency
+          disease_term:
+            preferred_term: autosomal recessive ataxia due to ubiquinone deficiency
+            term:
+              id: MONDO:0012784
+              label: autosomal recessive ataxia due to ubiquinone deficiency
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: COQ8A-Related Hyperkinetic Motor Circuit Dysfunction
+            description: COQ8A disease can involve motor circuits beyond the cerebellum, producing hyperkinetic
+              movement disorders such as dystonia and myoclonus.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Dystonia
+        description: Dystonia is a specific hyperkinetic manifestation of COQ8A disease.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: including dystonia and myoclonus as presenting symptoms
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/1
+      evidence_path: /pathophysiology/4/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: DOI:10.1002/ana.25751
+      reference_title: 'Clinico‐Genetic, Imaging and Molecular Delineation of <scp><i>COQ8A</i></scp>‐Ataxia:
+        A Multicenter Study of 59 Patients'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort directly names dystonia as a presenting symptom.
+    first_seen_at: '2026-10-03T21:27:02.980732+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:27:02.980732+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:27:02.980732+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/1
+      evidence_path: /pathophysiology/4/downstream/1/evidence/0
+      reference: DOI:10.1002/ana.25751
 assessments:
   42daca56372033b88a6ba85f888cbd54e058810a228a9beb76158661b629ed5b:
     input_sha256: 90c0bf2b8db6599edc6d5838e1343d6132943c666133db19e43b158a4b46d9f6
@@ -10169,3 +10216,62 @@ assessments:
       request_sha256: 568de82835e8d7c2a12ac835b452500ba655ac8dd332ed58298abbe5f2946699
       request_sha256s:
       - 568de82835e8d7c2a12ac835b452500ba655ac8dd332ed58298abbe5f2946699
+  ad41935a2b6e0d9f1f2a524580028cca0cbe31ff7d4d9df02179a37c9d003a04:
+    input_sha256: 479a7e3d561bf2577359cdcb880982a922bd661600b411d65ab8b9125c1c084e
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:27:02.980732+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.29
+            MISMATCH: 0.31
+          confidence: 0.1
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.31
+            MISMATCH: 0.3
+          confidence: 0.09
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.79
+            MISMATCH: 0.07
+          confidence: 0.68
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.44
+            MISMATCH: 0.15
+          confidence: 0.16
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.16
+            MISMATCH: 0.27
+          confidence: 0.36
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.58
+            MISMATCH: 0.18
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6358
+        output_tokens: 271
+      elapsed_seconds: 0.2734
+      request_sha256: fec988ead2b13a83bf0dac0c94c281b349950e7946468298b980a540dc4ca79a
+      request_sha256s:
+      - fec988ead2b13a83bf0dac0c94c281b349950e7946468298b980a540dc4ca79a

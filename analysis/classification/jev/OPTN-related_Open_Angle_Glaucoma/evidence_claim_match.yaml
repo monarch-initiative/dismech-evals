@@ -6756,6 +6756,233 @@ inputs:
     - assertion_path: /progression/2
       evidence_path: /progression/2/evidence/0
       reference: PMID:16043855
+  4d9ab5913e5e0517e153cb474f364b6d629d4fc0d517566c7cdc38828d8c0e3a:
+    claim:
+      about:
+        disease:
+          name: OPTN-related Open Angle Glaucoma
+          disease_term:
+            preferred_term: OPTN-related open angle glaucoma
+            term:
+              id: MONDO:0100553
+              label: OPTN-related open angle glaucoma
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: BAC E50K optineurin transgenic mouse (near-physiological expression)
+        species: Mouse
+        genotype: BAC transgenic human optineurin locus carrying E50K
+        publication: PMID:25818176
+        description: 'A bacterial artificial chromosome transgenic line carrying the human optineurin
+          locus with its own promoter, designed specifically to avoid the global overexpression that made
+          the earlier transgenic line degenerate panretinally. At 18 months, mutant animals show enhanced
+          axonal degeneration and reduced ganglion cell survival over the age-related decline seen in
+          non-transgenic controls, with visual evoked potentials revealing a specific contrast-sensitivity
+          deficit.
+
+          '
+        modeled_mechanisms:
+        - target: Retinal Ganglion Cell Apoptosis
+          relationship: PARTIALLY_RECAPITULATES
+          fidelity: MODERATE
+          description: 'Mutant optineurin expression accelerates ganglion cell and axon loss above the
+            age-related baseline at near-physiological expression levels.
+
+            '
+          limitations: 'The effect is an enhancement of an age-related decline that also occurs in controls
+            rather than a discrete disease phenotype, and it is detected only at 18 months, so the model
+            has a narrow window and a small dynamic range. Human transgene expression sits on an intact
+            mouse Optn background, so this is an overexpression-of-mutant rather than a true heterozygous
+            knock-in genotype.
+
+            '
+          readouts:
+          - name: Healthy optic nerve axon and retinal ganglion cell counts
+            target: Retinal Ganglion Cell Apoptosis
+            direction: DECREASED
+            interpretation: 'Mutant-specific excess loss of axons and ganglion cells over the age-matched
+              non-transgenic decline.
+
+              '
+          - name: Contrast sensitivity by visual evoked potential
+            target: Retinal Ganglion Cell Apoptosis
+            direction: DECREASED
+            interpretation: 'Functional correlate of ganglion cell loss in this model.
+
+              '
+      selected_evidence:
+        snippet: To gain mechanistic insights, we developed a novel mouse model based on a mutation in
+          human optineurin associated with hereditary, low-pressure POAG.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/2
+      evidence_path: /animal_models/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25818176
+      reference_title: Visual impairment in an optineurin mouse model of primary open-angle glaucoma.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Establishes the model and its design intent as a low-pressure POAG model.
+
+        '
+    first_seen_at: '2026-10-03T21:25:25.282681+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:25.282681+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:25.282681+00:00'
+    occurrences:
+    - assertion_path: /animal_models/2
+      evidence_path: /animal_models/2/evidence/0
+      reference: PMID:25818176
+  df2d2643aee724fedea8693727e159058027dfd438b3918f5812a6d9f78c28b7:
+    claim:
+      about:
+        disease:
+          name: OPTN-related Open Angle Glaucoma
+          disease_term:
+            preferred_term: OPTN-related open angle glaucoma
+            term:
+              id: MONDO:0100553
+              label: OPTN-related open angle glaucoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Autophagic Flux in Retinal Ganglion Cells
+        conforms_to: disabled_macroautophagy#Failure of Cytoplasmic Quality Control
+        biological_scale: CELLULAR
+        role: central_effector
+        description: 'Optineurin is a selective autophagy receptor: it binds polyubiquitinated cargo through
+          its ubiquitin-binding domain and delivers it to nascent autophagosomes through its LC3-interacting
+          region, and it links autophagosomes to lysosomes via myosin VI. Retinal ganglion cells express
+          optineurin highly and, as long-lived post-mitotic neurons with an exceptional axonal maintenance
+          burden, depend heavily on autophagic quality control. Mutant optineurin blocks flux through
+          this pathway. In OPTN(E50K) mice and in E50K-expressing retinal cells, LC3-II and p62/SQSTM1
+          both accumulate - the signature of a downstream block rather than reduced initiation - and undegraded
+          substrates including TDP-43 aggregate in the cytoplasm. In isogenic OPTN(E50K) human stem cell-derived
+          retinal ganglion cells the same lesion is accompanied by AMPK activation and reduced mTORC1
+          signalling, and mTOR-independent induction of autophagy restores neurite outgrowth, showing
+          the block is the proximate cause of the neurodegenerative phenotype rather than a bystander.
+          This node conforms to the `disabled_macroautophagy` module''s central effector: the failure
+          point here is selective cargo recognition by the receptor itself, not the core ATG machinery,
+          and it is genetic rather than age-associated, but the resulting loss of cytoplasmic quality
+          control is the conserved state that module models.
+
+          '
+        cell_types:
+        - preferred_term: Retinal Ganglion Cell
+          term:
+            id: CL:0000740
+            label: retinal ganglion cell
+        biological_processes:
+        - preferred_term: Macroautophagy
+          term:
+            id: GO:0016236
+            label: macroautophagy
+          modifier: DECREASED
+        - preferred_term: Autophagosome-Lysosome Fusion
+          term:
+            id: GO:0061909
+            label: autophagosome-lysosome fusion
+          modifier: DECREASED
+        - preferred_term: mTORC1 Signalling
+          term:
+            id: GO:0038202
+            label: TORC1 signaling
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Increased p62/SQSTM1 and LC3-II levels indicated that autophagic flux was inhibited and
+          contributed to TDP-43 aggregation in vivo and in vitro.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33723228
+      reference_title: The E50K optineurin mutation impacts autophagy-mediated degradation of TDP-43 and
+        leads to RGC apoptosis in vivo and in vitro.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Provides the direct flux measurement (LC3-II and p62 both up) behind the DECREASED
+        macroautophagy annotation, in an E50K knock-in mouse and in E50K-expressing retinal cells.
+
+        '
+    first_seen_at: '2026-10-03T21:25:23.187478+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:23.187478+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:23.187478+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/2
+      reference: PMID:33723228
+  4421f61d6c021eca38d1fce9ebe7499c8fbdd32666427fe410dbed9fabfd07b3:
+    claim:
+      about:
+        disease:
+          name: OPTN-related Open Angle Glaucoma
+          disease_term:
+            preferred_term: OPTN-related open angle glaucoma
+            term:
+              id: MONDO:0100553
+              label: OPTN-related open angle glaucoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Disrupted Rab8-Dependent Vesicle Trafficking
+        biological_scale: CELLULAR
+        role: modifier
+        description: 'Beyond autophagy, optineurin acts as an effector and adaptor for the Rab8 GTPase,
+          coupling Rab8 to myosin VI and to its GTPase-activating protein TBC1D17 to control Golgi-to-plasma-membrane
+          vesicle transport and transferrin receptor recycling. The E50K substitution disrupts the Optn-Rab8
+          interaction. This trafficking arm is curated as a modifier rather than a second central effector:
+          it is well demonstrated biochemically and in transgenic mouse retina, but the pathway from disturbed
+          vesicle transport to ganglion cell death is less directly evidenced than the autophagic route.
+
+          '
+        cell_types:
+        - preferred_term: Retinal Ganglion Cell
+          term:
+            id: CL:0000740
+            label: retinal ganglion cell
+        biological_processes:
+        - preferred_term: Intracellular Protein Transport
+          term:
+            id: GO:0006886
+            label: intracellular protein transport
+          modifier: DYSREGULATED
+      selected_evidence:
+        snippet: At the molecular level, introduction of the E50K mutation disrupts the interaction between
+          Optn and Rab8 GTPase, a protein involved in the regulation of vesicle transport from Golgi to
+          plasma membrane.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20388642
+      reference_title: Overexpression of optineurin E50K disrupts Rab8 interaction and leads to a progressive
+        retinal degeneration in mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Directly demonstrates loss of the Optn-Rab8 interaction as a consequence of E50K,
+        in the transgenic mouse study that first reported it.
+
+        '
+    first_seen_at: '2026-10-03T21:25:23.207700+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:23.207700+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:23.207700+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:20388642
 assessments:
   bb97eeaf64d271bdb06890f9f9f00be6b8e6cecede64392051f53964a7e4cb6a:
     input_sha256: 07e270b1498a2e26ebe2e546ff1af2f848006fa36430e642caa3ce991062d17b
@@ -15185,3 +15412,397 @@ assessments:
       request_sha256: da554c1381fd83294185b6d4455fa65f488c99fd2053c3e591b186303741a02d
       request_sha256s:
       - da554c1381fd83294185b6d4455fa65f488c99fd2053c3e591b186303741a02d
+  637f5f8a06e477ad860310de76299d8b51bff1d8c8d87fcbe52437bfae95dbc8:
+    input_sha256: 4d9ab5913e5e0517e153cb474f364b6d629d4fc0d517566c7cdc38828d8c0e3a
+    configuration_sha256: 57a4d299a7d0a28a1a37a378df4ffd01b4a41a610456f700cd281a60be7b4c0c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:25.282681+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.03
+            MATCH: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+            MATCH: 0.98
+          confidence: 0.97
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MISMATCH: 0.31
+            MATCH: 0.12
+          confidence: 0.37
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.05
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/genotype:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.27
+            MATCH: 0.1
+          confidence: 0.44
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MISMATCH: 0.63
+            MATCH: 0.06
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MISMATCH: 0.19
+            MATCH: 0.15
+          confidence: 0.49
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.31
+            MATCH: 0.16
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.42
+            MISMATCH: 0.43
+            MATCH: 0.15
+          confidence: 0.15
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.22
+            MATCH: 0.11
+          confidence: 0.51
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6799999999999999
+            MISMATCH: 0.25
+            MATCH: 0.07
+          confidence: 0.53
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.64
+            MATCH: 0.03
+          confidence: 0.45
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.43
+            MISMATCH: 0.51
+            MATCH: 0.06
+          confidence: 0.25
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.27
+            MATCH: 0.18
+          confidence: 0.32
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.48
+            MATCH: 0.08
+          confidence: 0.22
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.39
+            MATCH: 0.07
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.53
+            MATCH: 0.07
+          confidence: 0.31
+        /assertion/modeled_mechanisms/0/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.32
+            MATCH: 0.18
+          confidence: 0.26
+        /assertion/modeled_mechanisms/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.47
+            MATCH: 0.07
+          confidence: 0.2
+        /assertion/modeled_mechanisms/0/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.49
+            MATCH: 0.04
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 20369
+        output_tokens: 1074
+      elapsed_seconds: 0.3152
+      request_sha256: 9a2d0e8bec4f0b08977a60f41a7679e0bb16c757c2215b51043def9e570b86e9
+      request_sha256s:
+      - 9a2d0e8bec4f0b08977a60f41a7679e0bb16c757c2215b51043def9e570b86e9
+  c5757b2e3999532d78dc76cf1171275a264f745461dc21c3b80a4e3c75c4ada9:
+    input_sha256: df2d2643aee724fedea8693727e159058027dfd438b3918f5812a6d9f78c28b7
+    configuration_sha256: d6a7d4532c0c29b043eab7523ff5368717db0b861b268cab505048555ee27746
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:23.187478+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.35
+            MISMATCH: 0.05
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.2
+            MISMATCH: 0.1
+          confidence: 0.55
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.78
+            MISMATCH: 0.03
+          confidence: 0.68
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.16
+            MISMATCH: 0.25
+          confidence: 0.38
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.9
+            MISMATCH: 0.01
+          confidence: 0.85
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.31
+            MISMATCH: 0.07
+          confidence: 0.42
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.36
+            MISMATCH: 0.06
+          confidence: 0.38
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.31
+            MISMATCH: 0.12
+          confidence: 0.35
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.25
+            MISMATCH: 0.14
+          confidence: 0.41
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.86
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.86
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.95
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.29
+            MISMATCH: 0.12
+          confidence: 0.39
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.31
+            MISMATCH: 0.08
+          confidence: 0.4
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.66
+            MISMATCH: 0.11
+          confidence: 0.49
+        /assertion/biological_processes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.21
+            MISMATCH: 0.12
+          confidence: 0.49
+        /assertion/biological_processes/2/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.22
+            MISMATCH: 0.12
+          confidence: 0.49
+        /assertion/biological_processes/2/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.54
+            MISMATCH: 0.07
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19675
+        output_tokens: 908
+      elapsed_seconds: 0.4307
+      request_sha256: b6ab70da46ffff8865e019d41ccf9e23822261e16a2d1f67698c4f79fcc757b6
+      request_sha256s:
+      - b6ab70da46ffff8865e019d41ccf9e23822261e16a2d1f67698c4f79fcc757b6
+  c6e2b54e5faf78e9abe98acb029e23fd0836a7bf2b84a9d9bec119a14aab37f7:
+    input_sha256: 4421f61d6c021eca38d1fce9ebe7499c8fbdd32666427fe410dbed9fabfd07b3
+    configuration_sha256: dc813286f35644d9d8fe0c28f442fd030c328ee9aa93413108f36f764b2e2a5b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:23.207700+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.53
+            MISMATCH: 0.04
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.5
+            MISMATCH: 0.08
+          confidence: 0.25
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.23
+            MISMATCH: 0.03
+          confidence: 0.61
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.4
+            PARTIAL: 0.2
+            MISMATCH: 0.39999999999999997
+          confidence: 0.11
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.28
+            PARTIAL: 0.64
+          confidence: 0.45
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.46
+            MISMATCH: 0.04
+          confidence: 0.25
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.54
+            MISMATCH: 0.36
+          confidence: 0.31
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.45
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.19
+            MISMATCH: 0.02
+          confidence: 0.68
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.22
+            MISMATCH: 0.04
+          confidence: 0.62
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            PARTIAL: 0.24
+            MISMATCH: 0.02
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11985
+        output_tokens: 538
+      elapsed_seconds: 0.3994
+      request_sha256: 168c169de382c36296a741e19fcbac27b9fb207b0e9a45cd82effdf84f4d55f4
+      request_sha256s:
+      - 168c169de382c36296a741e19fcbac27b9fb207b0e9a45cd82effdf84f4d55f4

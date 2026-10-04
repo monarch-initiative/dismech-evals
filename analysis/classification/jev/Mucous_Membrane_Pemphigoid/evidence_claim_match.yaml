@@ -6771,6 +6771,109 @@ inputs:
     - assertion_path: /treatments/11
       evidence_path: /treatments/11/evidence/1
       reference: PMID:32905166
+  5e002a78278d7eb78405a12e5f3bcd927fff8adf1a81dee00aba5f557800576c:
+    claim:
+      about:
+        disease:
+          name: Mucous Membrane Pemphigoid
+          disease_term:
+            preferred_term: mucous membrane pemphigoid
+            term:
+              id: MONDO:0018746
+              label: mucous membrane pemphigoid
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Dipeptidyl Peptidase-4 Inhibitor (Gliptin) Exposure
+        description: In a French cohort of 313 MMP patients, 24 were taking a gliptin for type 2 diabetes
+          and 17 had an onset interval suggestive of or compatible with drug induction (vildagliptin,
+          sitagliptin or saxagliptin). Gliptin-associated MMP had more cutaneous and less oral involvement,
+          no IgA basement-membrane labelling and no anti-laminin 332 reactivity, and remitted more often
+          after drug withdrawal.
+        notes: exposure_term left unbound. `runoak -i sqlite:obo:ecto info "l~dipeptidyl"` returned only
+          ECTO:9002035 and ECTO:0900275 (exposure to EC 3.4.14.2 dipeptidyl-peptidase II inhibitor), a
+          different enzyme class; `l~EC 3.4.14.5` returned only CHEBI:68612 with no ECTO exposure term;
+          `l~gliptin` returned ECTO:9000698 exposure to sitagliptin, which names only one of the three
+          gliptins implicated; `l~vildagliptin` returned nothing.
+      selected_evidence:
+        snippet: 17 out of 24 gliptin-treated diabetic MMP patients had suggestive (≤12 weeks) or compatible
+          challenges. Complete remission at 1 year of follow-up was more frequent in the 11 dechallenged
+          patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29881377
+      reference_title: Gliptin Accountability in Mucous Membrane Pemphigoid Induction in 24 Out of 313
+        Patients.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Temporal association and better outcome after withdrawal support drug induction.
+    first_seen_at: '2026-10-03T21:19:51.086474+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:51.086474+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:51.086474+00:00'
+    occurrences:
+    - assertion_path: /environmental/0
+      evidence_path: /environmental/0/evidence/0
+      reference: PMID:29881377
+  34c622a1b1c36afd234fb13b92460e7c5c4056150adfa44f1198396b7c846b32:
+    claim:
+      about:
+        disease:
+          name: Mucous Membrane Pemphigoid
+          disease_term:
+            preferred_term: mucous membrane pemphigoid
+            term:
+              id: MONDO:0018746
+              label: mucous membrane pemphigoid
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Rituximab
+        description: Anti-CD20 B-cell depletion for severe or refractory MMP, typically with dapsone or
+          sulfasalazine and without other systemic immunosuppressants. Complete remission is slower than
+          in pemphigus and relapse is common.
+        therapeutic_modality: MONOCLONAL_ANTIBODY
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: rituximab
+            term:
+              id: NCIT:C1702
+              label: Rituximab
+      selected_evidence:
+        snippet: The occurrence of severe infections in patients receiving concomitant conventional immunosuppressants
+          supports using rituximab without other immunosuppressants.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21422323
+      reference_title: Rituximab for patients with refractory mucous membrane pemphigoid.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Two infection deaths occurred with concomitant immunosuppression, informing the monotherapy
+        approach.
+    first_seen_at: '2026-10-03T21:19:51.103021+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:51.103021+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:51.103021+00:00'
+    occurrences:
+    - assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/1
+      reference: PMID:21422323
 assessments:
   74b340b52b547e9129e22011639fcacac4766aaff624ebf493d3560205244b0d:
     input_sha256: 1a014209cf008c472b2d36377d880e4eaa10db61bd00332a4c7c86491311be70
@@ -15973,3 +16076,135 @@ assessments:
       request_sha256: 0c4ba0fcb50b8144cc78da22bf2642e6a695c7d39085751636c35b55cf3e7548
       request_sha256s:
       - 0c4ba0fcb50b8144cc78da22bf2642e6a695c7d39085751636c35b55cf3e7548
+  7fa1cbbcf7a452827a5881045e25646489da946550d6aa75d556f747280da552:
+    input_sha256: 5e002a78278d7eb78405a12e5f3bcd927fff8adf1a81dee00aba5f557800576c
+    configuration_sha256: da37de9e1ea82c1571c4d8463dc2f098cc014c6041a36d2d879e0a172b65881c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:51.086474+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            PARTIAL: 0.63
+            MISMATCH: 0.02
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            PARTIAL: 0.26
+            MISMATCH: 0.03
+          confidence: 0.56
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.48
+            MISMATCH: 0.02
+          confidence: 0.24
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.27
+            MISMATCH: 0.7
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5500
+        output_tokens: 223
+      elapsed_seconds: 0.3754
+      request_sha256: 7f873761bf69c36b1584e57cd60a01d1298875b83405c1e3d6627c8410a64f3a
+      request_sha256s:
+      - 7f873761bf69c36b1584e57cd60a01d1298875b83405c1e3d6627c8410a64f3a
+  786a799c04106c7338be7b4321d55b4524af77f8344897c8f95c2a6b6d5d5564:
+    input_sha256: 34c622a1b1c36afd234fb13b92460e7c5c4056150adfa44f1198396b7c846b32
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:51.103021+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.14
+            MISMATCH: 0.17
+          confidence: 0.53
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.19
+            MATCH: 0.19
+            PARTIAL: 0.62
+          confidence: 0.44
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.27
+            MATCH: 0.42
+            PARTIAL: 0.31
+          confidence: 0.13
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.23
+            MATCH: 0.25
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.71
+            MATCH: 0.16
+            PARTIAL: 0.13
+          confidence: 0.57
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            MATCH: 0.2
+            PARTIAL: 0.28
+          confidence: 0.28
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.45
+            MATCH: 0.2
+            PARTIAL: 0.35
+          confidence: 0.18
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.3
+            MATCH: 0.41
+            PARTIAL: 0.29
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.4
+            PARTIAL: 0.34
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9721
+        output_tokens: 448
+      elapsed_seconds: 0.4108
+      request_sha256: 5f3c587f639630f9b0b645819deee6de81d73d8a799f1bbdb790e3795ea67cda
+      request_sha256s:
+      - 5f3c587f639630f9b0b645819deee6de81d73d8a799f1bbdb790e3795ea67cda

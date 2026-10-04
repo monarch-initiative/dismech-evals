@@ -881,6 +881,59 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/0
       reference: PMID:34746432
+  ab72a06ab2ed11c3bf268b8dbd7cb465641e40963162b06bc26a8bb556425e2e:
+    claim:
+      about:
+        disease:
+          name: Cervical Artery Dissection
+          disease_term:
+            preferred_term: cervical artery dissection
+            term:
+              id: MONDO:0006061
+              label: cervical artery dissection
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Thromboembolism and Cerebral Ischemia
+        description: Damaged arterial endothelium and disturbed flow promote local thrombosis and embolization
+          to cerebral arteries.
+        cell_types:
+        - preferred_term: platelet
+          term:
+            id: CL:0000233
+            label: platelet
+        biological_processes:
+        - preferred_term: blood coagulation
+          term:
+            id: GO:0007596
+            label: blood coagulation
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Cervical artery dissection (CeAD) is the primary cause of ischemic stroke in young adults.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38791244
+      reference_title: Peripheral Blood Gene Expression Profiling Reveals Molecular Pathways Associated
+        with Cervical Artery Dissection.
+      evidence_source: HUMAN_CLINICAL
+      explanation: An independent transcriptomic study corroborates cervical artery dissection as a leading
+        cause of ischemic stroke in young adults, reinforcing the clinical importance of the thromboembolic
+        pathway.
+    first_seen_at: '2026-10-03T21:31:46.902769+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:31:46.902769+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:31:46.902769+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:38791244
 assessments:
   7379b7ecc71bb0195ba4082ef4527413fdeb312d2e20cec8c3a5d3bcfb2001a1:
     input_sha256: 4fc603271e210e12fdd30dec05e683ea09444f433e64b4e178ff0f85d43e555b
@@ -2116,3 +2169,83 @@ assessments:
       request_sha256: 3b22e0ca940bca34905d6931232c0fd5af267fc51da57c2962d11d74c4e911dc
       request_sha256s:
       - 3b22e0ca940bca34905d6931232c0fd5af267fc51da57c2962d11d74c4e911dc
+  ecc8f2b2a7694961136f55bea14e531df26f915b77d3cc02f87054f91343182f:
+    input_sha256: ab72a06ab2ed11c3bf268b8dbd7cb465641e40963162b06bc26a8bb556425e2e
+    configuration_sha256: 184bde79f591f5746fa9c7e60e96586474fd17618c9ec74803ce89969f765768
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:31:46.902769+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.72
+            MISMATCH: 0.26
+          confidence: 0.57
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.72
+            MISMATCH: 0.13
+          confidence: 0.58
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.49
+            MISMATCH: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            PARTIAL: 0.32
+            MISMATCH: 0.64
+          confidence: 0.47
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.29
+            MISMATCH: 0.69
+          confidence: 0.53
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.49
+            MISMATCH: 0.48
+          confidence: 0.24
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.42
+            MISMATCH: 0.56
+          confidence: 0.33
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.48
+            MISMATCH: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9487
+        output_tokens: 455
+      elapsed_seconds: 0.2897
+      request_sha256: 3e985549ea3a71fbd328f48f11cb13cc2fcd5ddddcdf3f0ecbe3b97f83057f6f
+      request_sha256s:
+      - 3e985549ea3a71fbd328f48f11cb13cc2fcd5ddddcdf3f0ecbe3b97f83057f6f

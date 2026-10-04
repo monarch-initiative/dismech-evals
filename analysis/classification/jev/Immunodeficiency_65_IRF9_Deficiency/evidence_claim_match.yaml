@@ -1,0 +1,3317 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Immunodeficiency_65_IRF9_Deficiency.yaml
+disease: Immunodeficiency 65 (IRF9 Deficiency)
+inventory:
+  source_sha256: d99f1a1fa5f695dcb145cb38e28f9bd6369c25de4d0844b33a72bd20153aec7b
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+  observed_at: '2026-10-04T00:01:03.986391+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  9bd15da010a777274dca57b378a31aa0ec1c00ba989a9b8d8f030931a34b526e:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal recessive inheritance
+        inheritance_term:
+          preferred_term: Autosomal recessive inheritance
+          term:
+            id: HP:0000007
+            label: Autosomal recessive inheritance
+        description: Both reported genotypes are homozygous, one in a consanguineous kindred. Heterozygous
+          carriers are unaffected.
+      selected_evidence:
+        snippet: She is homozygous for a loss-of-function IRF9 allele.
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the homozygous loss-of-function genotype in the index patient, consistent
+        with autosomal recessive inheritance.
+    first_seen_at: '2026-10-03T21:55:45.481014+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/0
+      reference: PMID:30143481
+  ad290df78b18efbcb9610c375bc463d8b431a6b1f228e948e6e731e2e91b5438:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context:
+        - path: /classifications
+          value: {}
+          role: ancestor
+      assertion_type: IUISAssignment
+      assertion:
+        classification_value: innate immunity defect
+        notes: 'IUIS 2022 phenotypic classification Table 6 (defects in intrinsic and innate immunity),
+          section 3 (Predisposition to Severe Viral Infection): the "IRF9 deficiency" row (IRF9, AR, OMIM
+          column 147574* - the IRF9 gene record), describing loss of IRF9- and ISGF3-dependent type I
+          and III interferon responses.'
+      selected_evidence:
+        snippet: IRF9 deficiency IRF9 AR 147574*
+        supports: SUPPORT
+    origin:
+      assertion_path: /classifications/iuis_category
+      evidence_path: /classifications/iuis_category/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /classifications
+    evidence_metadata:
+      reference: PMID:35748970
+      reference_title: 'Human Inborn Errors of Immunity: 2022 Update on the Classification from the International
+        Union of Immunological Societies Expert Committee.'
+      evidence_source: OTHER
+      explanation: The IRF9 row of IUIS 2022 Table 6, section 3 (Predisposition to Severe Viral Infection).
+        Quoted at the row-identity fragment because the typeset table text merges the affected-cells and
+        affected-function columns mid-word immediately after it ("cellsI RF9- and ISGF3-dependent"), corrupting
+        the remainder of the row.
+    first_seen_at: '2026-10-03T21:55:45.479715+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /classifications/iuis_category
+      evidence_path: /classifications/iuis_category/evidence/0
+      reference: PMID:35748970
+  175f122626200eaddc8c3a212063a55cc9cbe966a0a7caa8123201e875a517a7:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of ISGF3 Trimer Assembly
+        biological_scale: MOLECULAR
+        description: 'Without IRF9 the STAT1/STAT2/IRF9 trimer cannot form in response to type I interferon,
+          while STAT1 homodimers (gamma-activated factor, GAF) still assemble normally. This is the discriminating
+          molecular finding on functional testing and the reason the immunodeficiency is selective: the
+          type II interferon arm, which signals through GAF, is intact.'
+        protein_complexes:
+        - preferred_term: ISGF3 complex
+          term:
+            id: GO:0070721
+            label: ISGF3 complex
+          modifier: DECREASED
+        biological_processes:
+        - preferred_term: type I interferon-mediated signaling pathway
+          term:
+            id: GO:0060337
+            label: type I interferon-mediated signaling pathway
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Her cells activate gamma-activated factor (GAF) STAT1 homodimers but not IFN-stimulated
+          gene factor 3 (ISGF3) trimers (STAT1/STAT2/IRF9) in response to IFN-α2b.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: 'States precisely the selective defect this node models: GAF forms, ISGF3 does not.
+        Graded IN_VITRO because the complex-formation assay was performed on the patient''s cells.'
+    first_seen_at: '2026-10-03T21:55:46.223948+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:30143481
+  51245cd094d9f4dc251271f9ea86744fa2044f466355b2774f4f5e7d19c6d33a:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Biallelic IRF9 Loss of Function
+        biological_scale: MOLECULAR
+        description: Homozygous or compound heterozygous loss-of-function variants in IRF9 abolish functional
+          IRF9 protein. IRF9 is the DNA-binding component of ISGF3 and is not shared with any other interferon-responsive
+          complex, so its loss removes exactly one signalling arm rather than degrading interferon signalling
+          generally.
+        genes:
+        - preferred_term: IRF9
+          term:
+            id: hgnc:6131
+            label: IRF9
+        genetic_context:
+          functional_impact_category: LOSS_OF_FUNCTION
+          zygosity: HOMOZYGOUS
+          variant_origin: GERMLINE
+      selected_evidence:
+        snippet: We report a 5-yr-old child with severe pulmonary influenza at 2 yr. She is homozygous
+          for a loss-of-function IRF9 allele.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The founding case report establishing biallelic IRF9 loss of function as the cause
+        of this disease.
+    first_seen_at: '2026-10-03T21:55:46.222051+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:30143481
+  35c23d5900566215599e290a70d1ec2423d8d27a6b0b3f117c0356ec4dea11cf:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Narrowed Interferon-Stimulated Gene Induction
+        biological_scale: CELLULAR
+        description: 'The transcriptional response to type I interferon is much narrower than normal,
+          though not absent - a residual subset of interferon-stimulated gene transcripts is still induced.
+          That residue matters clinically: it is the most plausible reason the patient controls many common
+          viruses normally and fails only against particular ones, and it is why this entry does not model
+          the defect as an all-or-nothing loss of antiviral immunity.'
+        biological_processes:
+        - preferred_term: response to type I interferon
+          term:
+            id: GO:0034340
+            label: response to type I interferon
+          modifier: DECREASED
+      selected_evidence:
+        snippet: The transcriptome induced by IFN-α2b in the patient's cells is much narrower than that
+          of control cells; however, induction of a subset of IFN-stimulated gene transcripts remains
+          detectable.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: 'Supports both halves of this node: the transcriptional response is narrowed, and a
+        residual subset survives. The second clause is what the node''s clinical interpretation rests
+        on.'
+    first_seen_at: '2026-10-03T21:55:46.249486+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:30143481
+  a9763fb44cd9a041fc33e3e912324f3d68f67bbee8eab3bdee6d0618bf5c92fc:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Uncontrolled Replication of Respiratory Viruses
+        biological_scale: CELLULAR
+        description: Patient cells fail to restrict influenza A virus, parainfluenza virus and respiratory
+          syncytial virus in vitro, and the defect is rescued by wild-type IRF9 while silencing IRF9 in
+          control cells reproduces it. That reciprocal experiment is what makes this a causal claim rather
+          than an association.
+        biological_processes:
+        - preferred_term: defense response to virus
+          term:
+            id: GO:0051607
+            label: defense response to virus
+          modifier: DECREASED
+      selected_evidence:
+        snippet: In vitro, the patient's cells do not control three respiratory viruses, influenza A virus
+          (IAV), parainfluenza virus (PIV), and respiratory syncytial virus (RSV). These phenotypes are
+          rescued by wild-type IRF9, whereas silencing IRF9 expression in control cells increases viral
+          replication.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: Reports both the failure of viral control and the rescue-and-knockdown pair that establishes
+        IRF9 as the responsible factor.
+    first_seen_at: '2026-10-03T21:55:46.250189+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:30143481
+  7e4390cc675c8c1c84677629561df499c918c76eb6133216ab3f4ad12c929e77:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Severe Viral Pneumonitis
+        biological_scale: ORGANISM
+        description: 'The clinical endpoint of the antiviral arm: severe, sometimes life-threatening lower
+          respiratory tract viral disease, presenting in the index patient as influenza A pneumonitis
+          at two years of age. Notably the same child controlled respiratory viruses other than influenza
+          A in vivo, so the in-vitro failure against PIV and RSV did not translate into clinical disease
+          from those agents.'
+      selected_evidence:
+        snippet: However, the child has controlled various common viruses in vivo, including respiratory
+          viruses other than IAV. Our findings show that human IRF9- and ISGF3-dependent type I and III
+          IFN responsive pathways are essential for controlling IAV.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Records the in-vivo/in-vitro discordance this node describes, and the authors' narrower
+        conclusion that the pathway is essential specifically for influenza A control.
+    first_seen_at: '2026-10-03T21:55:46.406296+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:30143481
+  48cc9e8b85ac757087800cdf0c8fca13b9df44aaa2b0cbf82ade507583f6ffb7:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of USP18 Negative Feedback on Interferon Receptor Signalling
+        biological_scale: CELLULAR
+        description: ISGF3 loss suppresses but does not abrogate type I interferon receptor signalling.
+          Because USP18 and other negative regulators are themselves ISGF3-induced, their induction fails
+          and receptor signalling becomes abnormally prolonged. This is the mechanistic bridge to the
+          inflammatory arm and resolves what otherwise looks like a contradiction - a patient who cannot
+          mount an interferon response yet suffers interferon-driven inflammation.
+        biological_processes:
+        - preferred_term: negative regulation of type I interferon-mediated signaling pathway
+          term:
+            id: GO:0060339
+            label: negative regulation of type I interferon-mediated signaling pathway
+          modifier: DECREASED
+        - preferred_term: type I interferon-mediated signaling pathway
+          term:
+            id: GO:0060337
+            label: type I interferon-mediated signaling pathway
+          modifier: INCREASED
+        notes: The two process terms here say different things and are not in tension. GO:0060339 DECREASED
+          is the substantive claim - the brake fails, because USP18 and the other negative regulators
+          are themselves ISGF3-induced. GO:0060337 INCREASED records the consequence, that receptor-proximal
+          signalling therefore runs long. Binding the negative-regulation term directly is what makes
+          this coherent with the DECREASED modifier on GO:0060337 at the ISGF3 assembly node, where the
+          claim is about ISGF3-dependent transcription rather than about signalling duration.
+      selected_evidence:
+        snippet: Deficiency of any IFN-stimulated gene factor 3 component suppressed but did not abrogate
+          IFN-I receptor signaling, which was abnormally prolonged, in keeping with insufficient induction
+          of negative regulators such as ubiquitin-specific peptidase 18 (USP18).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35182547
+      reference_title: Aberrant inflammatory responses to type I interferon in STAT2 or IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: 'The direct statement of this node: signalling is suppressed but prolonged, and the
+        reason is failed induction of USP18. Graded IN_VITRO because the kinetics were measured in patient
+        primary cells and gene-edited iPSC-derived macrophages.'
+    first_seen_at: '2026-10-03T21:55:46.435349+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:35182547
+  02d21f47f7cbbb042af8ee01b7a3d39c1cdc0cb63fdc849b94e66367ba10792a:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Interferon-Gamma-Like Late Transcriptional Output
+        biological_scale: CELLULAR
+        description: In IRF9- or STAT2-deficient cells the late transcriptional response to type I interferon
+          comes to mimic the effect of interferon-gamma. This is a measured cellular switch, kept separate
+          from the clinical syndrome downstream so that the hedge in the literature sits on the edge it
+          actually qualifies rather than on the observation itself.
+        biological_processes:
+        - preferred_term: type I interferon-mediated signaling pathway
+          term:
+            id: GO:0060337
+            label: type I interferon-mediated signaling pathway
+          modifier: INCREASED
+      selected_evidence:
+        snippet: In cells lacking either STAT2 or IRF9, this late transcriptional response to IFN-α2b
+          mimicked the effect of IFN-γ.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35182547
+      reference_title: Aberrant inflammatory responses to type I interferon in STAT2 or IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: The measured transcriptional switch this node models, stated without hedging because
+        the measurement itself is not hedged.
+    first_seen_at: '2026-10-03T21:55:46.480445+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:35182547
+  763e288eea6d0b055e9ce2292b1d9f804e00e5a4865fe0dd96a51ba2fe9b49f8:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hyperinflammation and Haemophagocytic Lymphohistiocytosis
+        biological_scale: ORGANISM
+        description: The clinical inflammatory syndrome accompanying virus susceptibility. Modelled downstream
+          of the transcriptional switch rather than bundled with it, because the causal link between the
+          two is proposed rather than demonstrated - and that is a claim about this edge, not about either
+          node.
+        biological_processes:
+        - preferred_term: inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Inflammatory phenomena such as hyperinflammation or hemophagocytic lymphohistiocytosis
+          are a frequent yet paradoxical accompaniment to virus susceptibility in patients with impairment
+          of type I interferon (IFN-I) signaling caused by deficiency of signal transducer and activator
+          of transcription 2 (STAT2) or IFN regulatory factor 9 (IRF9).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35182547
+      reference_title: Aberrant inflammatory responses to type I interferon in STAT2 or IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes that the syndrome itself occurs in these patients, which is not hedged;
+        only its attribution to the transcriptional switch is.
+    first_seen_at: '2026-10-03T21:55:46.570873+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/1
+      reference: PMID:35182547
+  055f7ee5a90c0147320ff3568283955b4a8304a25d55f6cfbef6ff3723d48e95:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hyperinflammation and Haemophagocytic Lymphohistiocytosis
+        biological_scale: ORGANISM
+        description: The clinical inflammatory syndrome accompanying virus susceptibility. Modelled downstream
+          of the transcriptional switch rather than bundled with it, because the causal link between the
+          two is proposed rather than demonstrated - and that is a claim about this edge, not about either
+          node.
+        biological_processes:
+        - preferred_term: inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: Aberrant IFN-α receptor signaling in STAT2- and IRF9-deficient cells switches the transcriptional
+          output to a prolonged, IFN-γ-like response and likely contributes to clinically overt inflammation
+          in these individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35182547
+      reference_title: Aberrant inflammatory responses to type I interferon in STAT2 or IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: Graded PARTIAL because the authors write "likely contributes". Now that the transcriptional
+        switch and the clinical syndrome are separate nodes, this hedge attaches to the edge between them,
+        which is the claim that is actually uncertain.
+    first_seen_at: '2026-10-03T21:55:46.511623+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      reference: PMID:35182547
+  d0f4aaa91e9379236c9e8e4d67805f539cab91e1306ba6c11e40cf908f170955:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Severe Viral Pneumonia
+        category: Respiratory
+        description: Life-threatening lower respiratory tract viral infection, presenting in the index
+          patient as influenza A pneumonitis at two years of age requiring intensive care.
+        phenotype_term:
+          preferred_term: Pneumonia
+          term:
+            id: HP:0002090
+            label: Pneumonia
+          severity: SEVERE
+      selected_evidence:
+        snippet: We report a 5-yr-old child with severe pulmonary influenza at 2 yr.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The presenting phenotype in the index patient. No frequency is recorded because the
+        published cohort is a handful of kindreds.
+    first_seen_at: '2026-10-03T21:55:46.668215+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:30143481
+  f66bc74f7f20deeabc2723e8920765a4f6dfff4f94cd847474277c9a2e545141:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Haemophagocytosis and Hyperinflammation
+        category: Hematologic
+        description: Hyperinflammation and haemophagocytic lymphohistiocytosis occur alongside virus susceptibility.
+          Described as a frequent accompaniment in patients with impaired type I interferon signalling
+          from STAT2 or IRF9 deficiency.
+        phenotype_term:
+          preferred_term: Hemophagocytosis
+          term:
+            id: HP:0012156
+            label: Hemophagocytosis
+      selected_evidence:
+        snippet: Inflammatory phenomena such as hyperinflammation or hemophagocytic lymphohistiocytosis
+          are a frequent yet paradoxical accompaniment to virus susceptibility in patients with impairment
+          of type I interferon (IFN-I) signaling caused by deficiency of signal transducer and activator
+          of transcription 2 (STAT2) or IFN regulatory factor 9 (IRF9).
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35182547
+      reference_title: Aberrant inflammatory responses to type I interferon in STAT2 or IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States that the inflammatory phenotype accompanies virus susceptibility in IRF9 deficiency.
+        Note the sentence groups IRF9 with STAT2, so it is evidence for the class rather than for IRF9
+        alone.
+    first_seen_at: '2026-10-03T21:55:46.722263+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:35182547
+  223d445dbc7d77f6a572b42915d0e9518b22dd0a66ba8f752bb4f1a97244d735:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context:
+        - path: /genetic/0
+          value:
+            name: IRF9
+            relationship_type: CAUSATIVE
+            gene_term:
+              preferred_term: IRF9
+              term:
+                id: hgnc:6131
+                label: IRF9
+            notes: 'Gene identity is worth recording explicitly here. The deep-research report used to
+              curate this entry gave the gene as HGNC:6398; that CURIE is KPNA5. IRF9 is hgnc:6131, which
+              is also what the curation stub carried, and this entry uses the verified identifier.
+
+              Two loss-of-function alleles are reported, both homozygous. The index patient carries c.991G>A,
+              which alters the last nucleotide of exon 7; the second kindred, consanguineous, carries
+              the splice-donor variant c.577+1G>T, causing exon 5 skipping and a premature stop. Only
+              the first is quotable from a cached abstract, so only it carries an evidence item below;
+              the second is recorded here in prose rather than as an unsourced structured claim.'
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: c.991G>A
+        description: Homozygous in the index patient. Alters the last nucleotide of exon 7 and abolishes
+          ISGF3 activation and ISGF3-dependent interferon stimulated gene induction on stimulation with
+          IFN-alpha2.
+        clinical_significance: PATHOGENIC
+      selected_evidence:
+        snippet: We showed that the c.991G > A mutant IRF9 allele in the patient was loss-of-function,
+          resulting in a lack of both ISGF-3 activation and ISGF-3–dependent IFN stimulated gene (ISG)
+          induction following the stimulation of the patient's cells with IFN-α2
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:34702736
+      reference_title: Monoclonal antibody-mediated neutralization of SARS-CoV-2 in an IRF9-deficient
+        child.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names the variant and states its loss-of-function consequence at both the complex-assembly
+        and gene-induction levels.
+    first_seen_at: '2026-10-03T21:55:46.824916+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      reference: PMID:34702736
+  c280e31a68cf2eb6d1c406ec762d131a616e383e622c2b9992e52c42acae2be9:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: IRF9
+        relationship_type: CAUSATIVE
+        gene_term:
+          preferred_term: IRF9
+          term:
+            id: hgnc:6131
+            label: IRF9
+        notes: 'Gene identity is worth recording explicitly here. The deep-research report used to curate
+          this entry gave the gene as HGNC:6398; that CURIE is KPNA5. IRF9 is hgnc:6131, which is also
+          what the curation stub carried, and this entry uses the verified identifier.
+
+          Two loss-of-function alleles are reported, both homozygous. The index patient carries c.991G>A,
+          which alters the last nucleotide of exon 7; the second kindred, consanguineous, carries the
+          splice-donor variant c.577+1G>T, causing exon 5 skipping and a premature stop. Only the first
+          is quotable from a cached abstract, so only it carries an evidence item below; the second is
+          recorded here in prose rather than as an unsourced structured claim.'
+        inheritance:
+        - name: Autosomal recessive inheritance
+          inheritance_term:
+            preferred_term: Autosomal recessive inheritance
+            term:
+              id: HP:0000007
+              label: Autosomal recessive inheritance
+        variants:
+        - name: c.991G>A
+          description: Homozygous in the index patient. Alters the last nucleotide of exon 7 and abolishes
+            ISGF3 activation and ISGF3-dependent interferon stimulated gene induction on stimulation with
+            IFN-alpha2.
+          clinical_significance: PATHOGENIC
+      selected_evidence:
+        snippet: Our findings show that human IRF9- and ISGF3-dependent type I and III IFN responsive
+          pathways are essential for controlling IAV.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The authors' causal conclusion linking IRF9 loss to the failure of antiviral control
+        that defines this disease.
+    first_seen_at: '2026-10-03T21:55:46.823735+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:30143481
+  ee774aa77c5bc5e15a14a6b848f9e5d66d6b304ba9043bc1b8b9fc64d08b243d:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: irf9_mouse_type_ii_ifn_divergence
+        kind: HUMAN_MODEL_MISMATCH
+        prompt: Why is type II interferon signalling intact in human IRF9 deficiency but impaired in the
+          p48-null mouse, and does that divergence limit what the mouse can say about the human disease?
+        attaches_to:
+        - pathophysiology#Failure of ISGF3 Trimer Assembly
+        rationale: 'The selectivity of the human defect is this entry''s defining claim: patient cells
+          form STAT1 homodimers normally, so the gamma-activated factor arm that transduces type II interferon
+          still works, and the disease is an ISGF3 failure rather than a global interferon unresponsiveness.
+          The p48-null mouse does not reproduce that boundary - in the mouse, the antiviral state induced
+          by IFN-gamma is impaired too. Whether this reflects a species difference in how much type II
+          interferon signalling depends on p48, a difference between a constitutive germline null and
+          a hypomorphic human allele, or the difference between embryonic fibroblasts and the patient
+          cell types assayed, is not resolved. Until it is, the mouse supports the ISG-induction node
+          and cannot be used to argue about the selectivity.'
+        proposed_experiments:
+        - experiment_id: irf9_gaf_formation_across_species_and_cell_types
+          name: GAF formation and IFN-gamma-induced antiviral state in p48-null mouse and IRF9-null human
+            cells, matched by cell type
+          description: 'Assay STAT1 homodimer formation and the IFN-gamma-induced antiviral state side
+            by side in p48-null mouse embryonic fibroblasts, p48-null mouse cells of a type matched to
+            those assayed in patients, and IRF9-deficient human fibroblasts. The three-way comparison
+            separates the candidate explanations the rationale names: if the mouse defect persists across
+            cell types while the human one does not, it is a species difference; if it tracks cell type,
+            the original discrepancy is an artefact of comparing embryonic fibroblasts with patient cells.'
+          would_support:
+          - pathophysiology#Failure of ISGF3 Trimer Assembly
+          supporting_outcome:
+          - GAF formation and the IFN-gamma-induced antiviral state are intact in IRF9-null human cells
+            but impaired in p48-null mouse cells of the same type, establishing a genuine species difference
+            and confirming that the mouse cannot speak to the selectivity of the human defect.
+          refuting_outcome:
+          - The type II interferon defect in p48-null mouse cells disappears when a cell type matching
+            the human assays is used, indicating the divergence is a comparison artefact rather than a
+            species difference, and that the model may after all be informative about selectivity.
+      selected_evidence:
+        snippet: We show that p48 plays an essential role in both type I and type II IFN responses
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9078371
+      reference_title: Essential and non-redundant roles of p48 (ISGF3 gamma) and IRF-1 in both type I
+        and type II interferon responses, as revealed by gene targeting studies.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'The mouse half of the mismatch: p48 is required for both interferon responses in the
+        mouse.'
+    first_seen_at: '2026-10-03T21:55:46.935916+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:9078371
+  b37b72dda28f7f1db12af225010876a26a43a5ac73fe2fa28555f68d1fc38e40:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: irf9_mouse_type_ii_ifn_divergence
+        kind: HUMAN_MODEL_MISMATCH
+        prompt: Why is type II interferon signalling intact in human IRF9 deficiency but impaired in the
+          p48-null mouse, and does that divergence limit what the mouse can say about the human disease?
+        attaches_to:
+        - pathophysiology#Failure of ISGF3 Trimer Assembly
+        rationale: 'The selectivity of the human defect is this entry''s defining claim: patient cells
+          form STAT1 homodimers normally, so the gamma-activated factor arm that transduces type II interferon
+          still works, and the disease is an ISGF3 failure rather than a global interferon unresponsiveness.
+          The p48-null mouse does not reproduce that boundary - in the mouse, the antiviral state induced
+          by IFN-gamma is impaired too. Whether this reflects a species difference in how much type II
+          interferon signalling depends on p48, a difference between a constitutive germline null and
+          a hypomorphic human allele, or the difference between embryonic fibroblasts and the patient
+          cell types assayed, is not resolved. Until it is, the mouse supports the ISG-induction node
+          and cannot be used to argue about the selectivity.'
+        proposed_experiments:
+        - experiment_id: irf9_gaf_formation_across_species_and_cell_types
+          name: GAF formation and IFN-gamma-induced antiviral state in p48-null mouse and IRF9-null human
+            cells, matched by cell type
+          description: 'Assay STAT1 homodimer formation and the IFN-gamma-induced antiviral state side
+            by side in p48-null mouse embryonic fibroblasts, p48-null mouse cells of a type matched to
+            those assayed in patients, and IRF9-deficient human fibroblasts. The three-way comparison
+            separates the candidate explanations the rationale names: if the mouse defect persists across
+            cell types while the human one does not, it is a species difference; if it tracks cell type,
+            the original discrepancy is an artefact of comparing embryonic fibroblasts with patient cells.'
+          would_support:
+          - pathophysiology#Failure of ISGF3 Trimer Assembly
+          supporting_outcome:
+          - GAF formation and the IFN-gamma-induced antiviral state are intact in IRF9-null human cells
+            but impaired in p48-null mouse cells of the same type, establishing a genuine species difference
+            and confirming that the mouse cannot speak to the selectivity of the human defect.
+          refuting_outcome:
+          - The type II interferon defect in p48-null mouse cells disappears when a cell type matching
+            the human assays is used, indicating the divergence is a comparison artefact rather than a
+            species difference, and that the model may after all be informative about selectivity.
+      selected_evidence:
+        snippet: Her cells activate gamma-activated factor (GAF) STAT1 homodimers but not IFN-stimulated
+          gene factor 3 (ISGF3) trimers (STAT1/STAT2/IRF9) in response to IFN-α2b.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: 'The human half: GAF, the type II interferon transducer, forms normally in the patient''s
+        cells.'
+    first_seen_at: '2026-10-03T21:55:46.999488+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/1
+      reference: PMID:30143481
+  10d93bfd017134c652eb3cb8c3f3b1695e6f84ed1770fdbb68dcfc87d9c3a711:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: irf9_type_iii_ifn_contribution
+        kind: KNOWLEDGE_GAP
+        prompt: Does the type III interferon arm of the ISGF3 defect contribute independently to the IMD65
+          phenotype, or is the clinical disease entirely attributable to loss of type I interferon signalling?
+        attaches_to:
+        - pathophysiology#Failure of ISGF3 Trimer Assembly
+        rationale: IRF9 loss disables ISGF3 downstream of both the type I and the type III interferon
+          receptor, and the founding paper's conclusion names both pathways. But patients whose cells
+          cannot respond to type III interferons because of inherited IL10RB deficiency have no overt
+          viral disease, which argues that the type III arm is largely redundant in humans and that the
+          IMD65 phenotype is driven by the type I loss. The entry therefore does not model a separate
+          type III node, and this discussion records why that absence is a judgement rather than an oversight.
+      selected_evidence:
+        snippet: Patients with cells that do not respond to type III IFNs due to inherited IL10RB deficiency
+          display no overt viral disease
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38781720
+      reference_title: 'In search of a function for human type III interferons: insights from inherited
+        and acquired deficits.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The observation that motivates the gap: an isolated type III unresponsiveness produces
+        no viral phenotype, so the type III component of the ISGF3 defect cannot be assumed to contribute.'
+    first_seen_at: '2026-10-03T21:55:47.068191+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      reference: PMID:38781720
+  725ff5b76ddb260f55cfd73ac67f93c4731f852ad1ecdc49f2087946ff7419f5:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: irf9_type_iii_ifn_contribution
+        kind: KNOWLEDGE_GAP
+        prompt: Does the type III interferon arm of the ISGF3 defect contribute independently to the IMD65
+          phenotype, or is the clinical disease entirely attributable to loss of type I interferon signalling?
+        attaches_to:
+        - pathophysiology#Failure of ISGF3 Trimer Assembly
+        rationale: IRF9 loss disables ISGF3 downstream of both the type I and the type III interferon
+          receptor, and the founding paper's conclusion names both pathways. But patients whose cells
+          cannot respond to type III interferons because of inherited IL10RB deficiency have no overt
+          viral disease, which argues that the type III arm is largely redundant in humans and that the
+          IMD65 phenotype is driven by the type I loss. The entry therefore does not model a separate
+          type III node, and this discussion records why that absence is a judgement rather than an oversight.
+      selected_evidence:
+        snippet: Current findings thus suggest that type III IFNs are largely redundant in humans. The
+          essential functions of human type III IFNs, particularly in antiviral defenses, remain to be
+          discovered.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38781720
+      reference_title: 'In search of a function for human type III interferons: insights from inherited
+        and acquired deficits.'
+      evidence_source: OTHER
+      explanation: States both the redundancy conclusion and that the question remains open, which is
+        exactly the shape of this knowledge gap. Graded OTHER rather than HUMAN_CLINICAL because this
+        sentence is the review's own synthesis across many patient series, not an observation from one.
+    first_seen_at: '2026-10-03T21:55:47.145736+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      reference: PMID:38781720
+  88ba3dde4f4869dad2eafd8b2fe6e90ec08bdd1ed495c20dfa021ebc2bf8b8af:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Monoclonal Antibody Neutralization of SARS-CoV-2
+        description: 'Casirivimab and imdevimab given to the IRF9-deficient index patient on day 2 of
+          symptomatic SARS-CoV-2 infection, with viraemia and clinical manifestations resolving by days
+          3 and 4. This is the one published treatment success specific to this genotype, and it is mechanistically
+          the point of the entry: passive antibody neutralisation works precisely because it bypasses
+          ISGF3 entirely, in a patient for whom interferon therapy was predicted to fail.'
+        therapeutic_modality: MONOCLONAL_ANTIBODY
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: monoclonal antibody
+            term:
+              id: NCIT:C20401
+              label: Monoclonal Antibody
+      selected_evidence:
+        snippet: She was viremic on day 2 and received casirivimab and imdevimab. Her clinical manifestations
+          and viremia disappeared on days 3 and 4, respectively.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34702736
+      reference_title: Monoclonal antibody-mediated neutralization of SARS-CoV-2 in an IRF9-deficient
+        child.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The treatment and its observed effect in the index patient. This is a single case,
+        which is why no efficacy claim beyond this patient is made.
+    first_seen_at: '2026-10-03T21:55:47.228002+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:34702736
+  2f3f2cc5009462c17167c3519a50b2877bbe057366c069692db44732bbbe80a3:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Monoclonal Antibody Neutralization of SARS-CoV-2
+        description: 'Casirivimab and imdevimab given to the IRF9-deficient index patient on day 2 of
+          symptomatic SARS-CoV-2 infection, with viraemia and clinical manifestations resolving by days
+          3 and 4. This is the one published treatment success specific to this genotype, and it is mechanistically
+          the point of the entry: passive antibody neutralisation works precisely because it bypasses
+          ISGF3 entirely, in a patient for whom interferon therapy was predicted to fail.'
+        therapeutic_modality: MONOCLONAL_ANTIBODY
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: monoclonal antibody
+            term:
+              id: NCIT:C20401
+              label: Monoclonal Antibody
+      selected_evidence:
+        snippet: Antibody-mediated SARS-CoV-2 neutralization is, therefore, sufficient to overcome a deficiency
+          of antiviral IFNs.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34702736
+      reference_title: Monoclonal antibody-mediated neutralization of SARS-CoV-2 in an IRF9-deficient
+        child.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The authors' mechanistic conclusion, which is what makes this treatment informative
+        about the disease rather than only about the patient.
+    first_seen_at: '2026-10-03T21:55:47.328968+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:34702736
+  4c3d53c5cf71065bd928da00f1d38b86651eafd9e607c024569cb311ec670b9f:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: ISGF3 versus GAF Complex Formation Assay
+        description: 'The confirmatory functional test, and the one that discriminates IRF9 deficiency
+          from a general interferon-signalling defect: patient cells fail to form ISGF3 trimers in response
+          to type I interferon while forming STAT1 homodimers (GAF) normally. A defect that abolished
+          both would point elsewhere in the pathway.'
+      selected_evidence:
+        snippet: Her cells activate gamma-activated factor (GAF) STAT1 homodimers but not IFN-stimulated
+          gene factor 3 (ISGF3) trimers (STAT1/STAT2/IRF9) in response to IFN-α2b.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30143481
+      reference_title: Life-threatening influenza pneumonitis in a child with inherited IRF9 deficiency.
+      evidence_source: IN_VITRO
+      explanation: The discriminating result itself, which is what makes this a diagnostic test rather
+        than a research observation.
+    first_seen_at: '2026-10-03T21:55:47.514234+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:30143481
+  205dd88042121594d455ee2aab4a20332bd7ee7c6248f0fd68a55fef15611726:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Prophylactic Immunoglobulin Replacement
+        description: Intravenous immunoglobulin every three weeks, given to the index patient since her
+          influenza episode. Reported alongside annual influenza vaccination as having considerably improved
+          her clinical status, with no further severe viral illness. The two interventions were given
+          together, so neither can be credited alone.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: intravenous immunoglobulin therapy
+          term:
+            id: NCIT:C121331
+            label: Intravenous Immunoglobulin Therapy
+      selected_evidence:
+        snippet: She has since received prophylactic intravenous IgG every 3 wk and has been vaccinated
+          annually against influenza, which has considerably improved her clinical status, as she has
+          developed no other severe viral illness.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34702736
+      reference_title: Monoclonal antibody-mediated neutralization of SARS-CoV-2 in an IRF9-deficient
+        child.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Graded PARTIAL because the sentence attributes the improvement to immunoglobulin and
+        annual influenza vaccination together. Reading it as support for immunoglobulin alone would be
+        attributing a combined outcome to one arm of it, in a single patient.
+    first_seen_at: '2026-10-03T21:55:47.512875+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:34702736
+  69cd4b0798bf9e6a6abfe81b7d426af5ad1fed6282f523da5ac7d042774adc13:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context:
+        - path: /animal_models/0
+          value:
+            name: p48 (Irf9) knockout mouse
+            species: Mouse
+            genotype: p48 (Irf9) homozygous null by gene targeting
+            publication: PMID:9078371
+            description: Germline gene-targeted deletion of p48, the mouse IRF9 orthologue. Establishes
+              the non-redundancy of the factor, but diverges from the human disease in a way that matters
+              for how the entry can use it.
+          role: ancestor
+        - path: /animal_models/0/modeled_mechanisms/0
+          value:
+            target: Narrowed Interferon-Stimulated Gene Induction
+            relationship: PARTIALLY_RECAPITULATES
+            fidelity: MODERATE
+            description: Interferon-inducible gene activation and establishment of the antiviral state
+              are severely impaired, and ISRE-binding activity is absent in p48-null embryonic fibroblasts.
+            limitations: The mouse phenotype is broader than the human one. In p48-null mice the antiviral
+              state is impaired in response to IFN-gamma as well as IFN-alpha, whereas the human disease
+              is a selective ISGF3 defect with GAF-dependent type II interferon signalling intact. The
+              model therefore overstates the breadth of the human lesion, and should not be cited for
+              the selectivity that this entry treats as definitional.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: ISRE-binding activity in embryonic fibroblasts
+        target: Narrowed Interferon-Stimulated Gene Induction
+        direction: ABOLISHED
+        interpretation: Direct measure of the DNA-binding step that ISGF3 performs and that IRF9 is required
+          for.
+      selected_evidence:
+        snippet: activation of IFN-inducible genes and establishment of the antiviral state by IFN-alpha
+          or -gamma are both severely impaired, and ISRE-binding activities induced by both IFNs are absent
+          in the p48-negative embryonic fibroblasts (EFs)
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+      - /animal_models/0/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:9078371
+      reference_title: Essential and non-redundant roles of p48 (ISGF3 gamma) and IRF-1 in both type I
+        and type II interferon responses, as revealed by gene targeting studies.
+      evidence_source: MODEL_ORGANISM
+      explanation: Reports the abolished ISRE binding and impaired antiviral state. The same sentence
+        is also the source of the limitation recorded on this link, since it names IFN-gamma alongside
+        IFN-alpha.
+    first_seen_at: '2026-10-03T21:55:47.728791+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:9078371
+  bc617b5e54f351db3345ecf384d40799966cefc5e55219d377aa597635ea7167:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 65 (IRF9 Deficiency)
+          disease_term:
+            preferred_term: immunodeficiency 65, susceptibility to viral infections
+            term:
+              id: MONDO:0032848
+              label: immunodeficiency 65, susceptibility to viral infections
+        context:
+        - path: /animal_models/0
+          value:
+            name: p48 (Irf9) knockout mouse
+            species: Mouse
+            genotype: p48 (Irf9) homozygous null by gene targeting
+            publication: PMID:9078371
+            description: Germline gene-targeted deletion of p48, the mouse IRF9 orthologue. Establishes
+              the non-redundancy of the factor, but diverges from the human disease in a way that matters
+              for how the entry can use it.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Narrowed Interferon-Stimulated Gene Induction
+        relationship: PARTIALLY_RECAPITULATES
+        fidelity: MODERATE
+        description: Interferon-inducible gene activation and establishment of the antiviral state are
+          severely impaired, and ISRE-binding activity is absent in p48-null embryonic fibroblasts.
+        limitations: The mouse phenotype is broader than the human one. In p48-null mice the antiviral
+          state is impaired in response to IFN-gamma as well as IFN-alpha, whereas the human disease is
+          a selective ISGF3 defect with GAF-dependent type II interferon signalling intact. The model
+          therefore overstates the breadth of the human lesion, and should not be cited for the selectivity
+          that this entry treats as definitional.
+        readouts:
+        - name: ISRE-binding activity in embryonic fibroblasts
+          target: Narrowed Interferon-Stimulated Gene Induction
+          direction: ABOLISHED
+          interpretation: Direct measure of the DNA-binding step that ISGF3 performs and that IRF9 is
+            required for.
+      selected_evidence:
+        snippet: We show that p48 plays an essential role in both type I and type II IFN responses
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:9078371
+      reference_title: Essential and non-redundant roles of p48 (ISGF3 gamma) and IRF-1 in both type I
+        and type II interferon responses, as revealed by gene targeting studies.
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports treating the model as informative for the ISG-induction node, and simultaneously
+        states the divergence from human biology that the limitations field records.
+    first_seen_at: '2026-10-03T21:55:47.727562+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-04T00:01:03.986391+00:00'
+    active: true
+    active_as_of: '2026-10-04T00:01:03.986391+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:9078371
+assessments:
+  c40f177c1c06ffc3d1dbc28e2eedbd53b876a63f2e66d6f883959a30a5c655a9:
+    input_sha256: 9bd15da010a777274dca57b378a31aa0ec1c00ba989a9b8d8f030931a34b526e
+    configuration_sha256: 5d7c76ef19e36af422cc1406292fc9f32966f1319cc72d7d30dfed7698ed6bdd
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:45.481014+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.3
+            MISMATCH: 0.04
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MATCH: 0.29
+            MISMATCH: 0.06
+          confidence: 0.48
+        /assertion/inheritance_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.29
+            MISMATCH: 0.04
+          confidence: 0.51
+        /assertion/inheritance_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.27
+            MISMATCH: 0.05
+          confidence: 0.53
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.74
+            MATCH: 0.06
+            MISMATCH: 0.2
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6274
+        output_tokens: 280
+      elapsed_seconds: 0.2482
+      request_sha256: 680f2f0d4b8f9f2b6341a944c2e7e05463ce4b4f994d65eea5be351fad735235
+      request_sha256s:
+      - 680f2f0d4b8f9f2b6341a944c2e7e05463ce4b4f994d65eea5be351fad735235
+  bd05c0d668c0661af3ee0ea3ae21e11751f0330885844e6e73c075112fca3cb3:
+    input_sha256: ad290df78b18efbcb9610c375bc463d8b431a6b1f228e948e6e731e2e91b5438
+    configuration_sha256: d4e46c4f319d74cb45d5b4fcc014a2da577117d0bf25f3e88c2cbdf2b65c6fd8
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:45.479715+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.07
+            MATCH: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MISMATCH: 0.0
+            MATCH: 0.99
+          confidence: 0.99
+        /assertion/classification_value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.21
+            MATCH: 0.43
+          confidence: 0.14
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.23
+            MATCH: 0.29
+          confidence: 0.23
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.47
+            MISMATCH: 0.22
+            MATCH: 0.31
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5333
+        output_tokens: 224
+      elapsed_seconds: 0.2878
+      request_sha256: 22d07e24bd7789f52cd78fa1703af7d4f0189afac6e6be4a59136712bd5a2d48
+      request_sha256s:
+      - 22d07e24bd7789f52cd78fa1703af7d4f0189afac6e6be4a59136712bd5a2d48
+  54018b46391d36259100df04afdd0694d79c2c25c94e1954d4adca38bcb13aec:
+    input_sha256: 175f122626200eaddc8c3a212063a55cc9cbe966a0a7caa8123201e875a517a7
+    configuration_sha256: 47f6412862e4a31fbc7f6d2a0984a7563cdd7a6069275ef15586ba99ce395f01
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.223948+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.82
+            PARTIAL: 0.17
+          confidence: 0.73
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.5
+            PARTIAL: 0.45
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.98
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.72
+            PARTIAL: 0.27
+          confidence: 0.58
+        /assertion/protein_complexes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/protein_complexes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/protein_complexes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 1.0
+            PARTIAL: 0.0
+          confidence: 0.99
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.84
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.9
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12156
+        output_tokens: 540
+      elapsed_seconds: 0.162
+      request_sha256: 3be3101c596eae21a669de346e89757b9d2f38682f162e7be9b29e3df4ae03dd
+      request_sha256s:
+      - 3be3101c596eae21a669de346e89757b9d2f38682f162e7be9b29e3df4ae03dd
+  6d75ecb0f3796f00d15f2b4f2ab00a3fc37962515523a2977ea47c6a0af49c60:
+    input_sha256: 51245cd094d9f4dc251271f9ea86744fa2044f466355b2774f4f5e7d19c6d33a
+    configuration_sha256: 471a01ad6d146bb9cf8bed799a6ed052c5252961aab6d8631bcb82c0dcb0f0a9
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.222051+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.04
+            PARTIAL: 0.78
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.02
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.02
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.04
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.18
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+          confidence: 0.75
+        /assertion/genetic_context/functional_impact_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/genetic_context/zygosity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.04
+            PARTIAL: 0.0
+          confidence: 0.93
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.02
+            PARTIAL: 0.5
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10771
+        output_tokens: 472
+      elapsed_seconds: 0.1713
+      request_sha256: 522891dc2516f72f00088634dce23e338bdeb0d6c42d39eef3fe3087a25ed109
+      request_sha256s:
+      - 522891dc2516f72f00088634dce23e338bdeb0d6c42d39eef3fe3087a25ed109
+  d8b48b190f7af125d75b8cc8b9c9c9cfd85627712f9232042c8a2737ca17cf1d:
+    input_sha256: 35c23d5900566215599e290a70d1ec2423d8d27a6b0b3f117c0356ec4dea11cf
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.249486+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.04
+            PARTIAL: 0.44
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.04
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.05
+            PARTIAL: 0.55
+          confidence: 0.32
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8922
+        output_tokens: 386
+      elapsed_seconds: 0.1947
+      request_sha256: b93a710cc17fa6cff0c5487a795afe77675bb4bcb104a99599aed4f615664496
+      request_sha256s:
+      - b93a710cc17fa6cff0c5487a795afe77675bb4bcb104a99599aed4f615664496
+  62a31147f5201e93eaff78bee7d07e62e2cf5cff2b75dea1b2a3aea144b44c82:
+    input_sha256: a9763fb44cd9a041fc33e3e912324f3d68f67bbee8eab3bdee6d0618bf5c92fc
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.250189+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MISMATCH: 0.01
+            MATCH: 0.93
+          confidence: 0.89
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.04
+            MATCH: 0.6
+          confidence: 0.41
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.01
+            MATCH: 0.95
+          confidence: 0.92
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+            MATCH: 1.0
+          confidence: 0.99
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MISMATCH: 0.01
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MISMATCH: 0.01
+            MATCH: 0.97
+          confidence: 0.96
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MISMATCH: 0.02
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MISMATCH: 0.01
+            MATCH: 0.99
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8916
+        output_tokens: 384
+      elapsed_seconds: 0.2273
+      request_sha256: bdca78576d5da9bc6af376bed437bf5d906832d39c71d548f9e44c8a826f28f4
+      request_sha256s:
+      - bdca78576d5da9bc6af376bed437bf5d906832d39c71d548f9e44c8a826f28f4
+  e7a30dfdc2dd21b01fc583a5a8d451a02a1de9816617ca1fb07395ebbf7711e6:
+    input_sha256: 7e4390cc675c8c1c84677629561df499c918c76eb6133216ab3f4ad12c929e77
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.406296+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.1
+            MATCH: 0.25
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.92
+            MISMATCH: 0.01
+          confidence: 0.88
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.23
+            MATCH: 0.22
+          confidence: 0.32
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.16
+            MATCH: 0.65
+          confidence: 0.47
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MISMATCH: 0.13
+            MATCH: 0.25
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5668
+        output_tokens: 225
+      elapsed_seconds: 0.1309
+      request_sha256: db95df31905103654657d52f7877658163eef33c4a6e95a16c029e56ae7e711b
+      request_sha256s:
+      - db95df31905103654657d52f7877658163eef33c4a6e95a16c029e56ae7e711b
+  c30a13c5f754674377c1d52446d405bb756145dd90b1eda7e2c7d7dbf535124c:
+    input_sha256: 48cc9e8b85ac757087800cdf0c8fca13b9df44aaa2b0cbf82ade507583f6ffb7
+    configuration_sha256: 420f09ceda65bcca87f8d4df31930ecdb2cd520be75db30aed7238e0dc351ae6
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.435349+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.24
+            MATCH: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.5
+            MATCH: 0.42
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            PARTIAL: 0.13
+            MATCH: 0.84
+          confidence: 0.76
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+            MATCH: 0.97
+          confidence: 0.95
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+            MATCH: 0.82
+          confidence: 0.74
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+            MATCH: 0.91
+          confidence: 0.87
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+            MATCH: 0.87
+          confidence: 0.8
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+            MATCH: 0.94
+          confidence: 0.92
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+            MATCH: 0.85
+          confidence: 0.78
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.13
+            MATCH: 0.81
+          confidence: 0.71
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+            MATCH: 0.94
+          confidence: 0.91
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.1
+            PARTIAL: 0.47
+            MATCH: 0.43
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13248
+        output_tokens: 592
+      elapsed_seconds: 0.1898
+      request_sha256: 7b85d067d0e29c52f0d97d6e19e890659c29b3ef7102e9ed5eadd49f4a02ac3a
+      request_sha256s:
+      - 7b85d067d0e29c52f0d97d6e19e890659c29b3ef7102e9ed5eadd49f4a02ac3a
+  5bbd2b4939a543b2d864022032efb01e39e57fbe72dd7cfa2b73af4f9f3d0ef7:
+    input_sha256: 02d21f47f7cbbb042af8ee01b7a3d39c1cdc0cb63fdc849b94e66367ba10792a
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.480445+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            MATCH: 0.8
+            PARTIAL: 0.15
+          confidence: 0.7
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.9
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            MATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.52
+            PARTIAL: 0.28
+          confidence: 0.28
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.57
+            PARTIAL: 0.26
+          confidence: 0.36
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.32
+            MATCH: 0.3
+            PARTIAL: 0.38
+          confidence: 0.08
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8898
+        output_tokens: 385
+      elapsed_seconds: 0.1467
+      request_sha256: 2308482a929be864036e0a72e4deb9b7e2dd61ace347ea5a012038b184b2a8a3
+      request_sha256s:
+      - 2308482a929be864036e0a72e4deb9b7e2dd61ace347ea5a012038b184b2a8a3
+  f2a894105f7a2881daa0cc133176805dcd6bf353d216493e8ba94006326aca4d:
+    input_sha256: 763e288eea6d0b055e9ce2292b1d9f804e00e5a4865fe0dd96a51ba2fe9b49f8
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.570873+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.73
+            PARTIAL: 0.24
+          confidence: 0.6
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.98
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.17
+            MATCH: 0.41
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.98
+            PARTIAL: 0.02
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8922
+        output_tokens: 385
+      elapsed_seconds: 0.1488
+      request_sha256: 7564aee2e8b955a718c2cd4bc66f518a3f441efbcfabaf310f213db7911eba23
+      request_sha256s:
+      - 7564aee2e8b955a718c2cd4bc66f518a3f441efbcfabaf310f213db7911eba23
+  87aec9b792e7409dc2f881628861779b1830c40d619e923e5a9d1e9e8ffc5a4b:
+    input_sha256: 055f7ee5a90c0147320ff3568283955b4a8304a25d55f6cfbef6ff3723d48e95
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.511623+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.08
+            MISMATCH: 0.29
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.1
+            MATCH: 0.68
+            PARTIAL: 0.22
+          confidence: 0.52
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.06
+            MISMATCH: 0.37
+          confidence: 0.36
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.5599999999999999
+            MISMATCH: 0.16
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.31
+            MISMATCH: 0.11
+          confidence: 0.37
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.64
+            PARTIAL: 0.34
+          confidence: 0.46
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.66
+            MISMATCH: 0.03
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.74
+            MISMATCH: 0.01
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8887
+        output_tokens: 387
+      elapsed_seconds: 0.1567
+      request_sha256: 6c74ba474cf50916fafec9092570dbd57b3f29278f179d33931833adc45fdc75
+      request_sha256s:
+      - 6c74ba474cf50916fafec9092570dbd57b3f29278f179d33931833adc45fdc75
+  3b4a7a40baa9d61fcfe528c6b86d658646fd89e7388c8d3c4ce9f0b7343e7a6f:
+    input_sha256: d0f4aaa91e9379236c9e8e4d67805f539cab91e1306ba6c11e40cf908f170955
+    configuration_sha256: 74bb6d996b94d3766d1e0b72785aa50892a39b3e45455844b216826d4103ef7a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.668215+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            PARTIAL: 0.55
+            MISMATCH: 0.07
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.67
+            MISMATCH: 0.2
+          confidence: 0.5
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            PARTIAL: 0.3
+            MISMATCH: 0.03
+          confidence: 0.5
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.09
+            MISMATCH: 0.03
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.59
+            MISMATCH: 0.04
+          confidence: 0.38
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.1
+            MISMATCH: 0.02
+          confidence: 0.82
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            PARTIAL: 0.12
+            MISMATCH: 0.02
+          confidence: 0.8
+        /assertion/phenotype_term/severity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            PARTIAL: 0.02
+            MISMATCH: 0.0
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8175
+        output_tokens: 368
+      elapsed_seconds: 0.2092
+      request_sha256: 24a376c5aebc2d7b9c8063e856c05d904751ef9f0e851927ca401da5bea94417
+      request_sha256s:
+      - 24a376c5aebc2d7b9c8063e856c05d904751ef9f0e851927ca401da5bea94417
+  bc85632585b82a61a6d61d29c54d0b3db694881aecb691683d69f1344a875b02:
+    input_sha256: f66bc74f7f20deeabc2723e8920765a4f6dfff4f94cd847474277c9a2e545141
+    configuration_sha256: 95b7176d6de9a970a0af95e939106436877f1b62b6ff4eb6771c81c376118e34
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.722263+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            PARTIAL: 0.04
+            MISMATCH: 0.0
+          confidence: 0.94
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.01
+            MATCH: 0.99
+            MISMATCH: 0.0
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            PARTIAL: 0.06
+            MISMATCH: 0.0
+          confidence: 0.91
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MATCH: 0.64
+            MISMATCH: 0.15
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.03
+            MATCH: 0.97
+            MISMATCH: 0.0
+          confidence: 0.94
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            PARTIAL: 0.07
+            MISMATCH: 0.01
+          confidence: 0.89
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.94
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7307
+        output_tokens: 316
+      elapsed_seconds: 0.2102
+      request_sha256: 2d29f4aa1966d7c9e6486925873950798cf409cfc3eff4e6bfb8f3e7a61360ee
+      request_sha256s:
+      - 2d29f4aa1966d7c9e6486925873950798cf409cfc3eff4e6bfb8f3e7a61360ee
+  60d80a111fbef243d1db541c48d645a54cdf2848cd9ebdfd6c96a9d52ae70fe3:
+    input_sha256: 223d445dbc7d77f6a572b42915d0e9518b22dd0a66ba8f752bb4f1a97244d735
+    configuration_sha256: da035860f64fbda6c2c2e85cdfb613545f82c510d0309e7c3a964131000deb9e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.824916+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.51
+            MISMATCH: 0.04
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            PARTIAL: 0.37
+            MISMATCH: 0.09
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            PARTIAL: 0.03
+            MISMATCH: 0.02
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            PARTIAL: 0.52
+            MISMATCH: 0.03
+          confidence: 0.28
+        /assertion/clinical_significance:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            PARTIAL: 0.37
+            MISMATCH: 0.02
+          confidence: 0.41
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            PARTIAL: 0.34
+            MISMATCH: 0.23
+          confidence: 0.15
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6639
+        output_tokens: 269
+      elapsed_seconds: 0.1611
+      request_sha256: bf5b9d692c292a722f403ea79cd5138064c49e347eca9c365ccada7b6ff7f151
+      request_sha256s:
+      - bf5b9d692c292a722f403ea79cd5138064c49e347eca9c365ccada7b6ff7f151
+  67619c7a4d489783568610d4ebeb5972a3795a5aa8e94a8e7c29ca6ec0b1d9c3:
+    input_sha256: c280e31a68cf2eb6d1c406ec762d131a616e383e622c2b9992e52c42acae2be9
+    configuration_sha256: 7f9162e342d318a9f6a8030017e316bdf6bccff884c407cddc409ad5ac157d2e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.823735+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.68
+            MISMATCH: 0.07
+          confidence: 0.51
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            PARTIAL: 0.3
+            MISMATCH: 0.05
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            PARTIAL: 0.28
+            MISMATCH: 0.06
+          confidence: 0.48
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.64
+            MISMATCH: 0.11
+          confidence: 0.45
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            PARTIAL: 0.23
+            MISMATCH: 0.07
+          confidence: 0.56
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            PARTIAL: 0.25
+            MISMATCH: 0.07
+          confidence: 0.52
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.4
+            MISMATCH: 0.43
+          confidence: 0.13
+        /assertion/inheritance/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.11
+            MISMATCH: 0.88
+          confidence: 0.82
+        /assertion/inheritance/0/inheritance_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.13
+            MISMATCH: 0.86
+          confidence: 0.8
+        /assertion/inheritance/0/inheritance_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.1
+            MISMATCH: 0.89
+          confidence: 0.84
+        /assertion/variants/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.51
+            MISMATCH: 0.36
+          confidence: 0.27
+        /assertion/variants/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.73
+            MISMATCH: 0.15
+          confidence: 0.59
+        /assertion/variants/0/clinical_significance:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.72
+            MISMATCH: 0.19
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13697
+        output_tokens: 646
+      elapsed_seconds: 0.2207
+      request_sha256: 29eb5b57f9fa7518a3b77b61f41b811165fb143703f05f48759daef7c0f2f871
+      request_sha256s:
+      - 29eb5b57f9fa7518a3b77b61f41b811165fb143703f05f48759daef7c0f2f871
+  e5f30133c59c2e190b7433fb4dd6173ba70c2ecb213d3cf97d594ee46d80722e:
+    input_sha256: ee774aa77c5bc5e15a14a6b848f9e5d66d6b304ba9043bc1b8b9fc64d08b243d
+    configuration_sha256: 3aa567d617b71bf2b8c68cd825cdbdf086b270c5d49c29f06caa1b62b1c47033
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.935916+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.47
+            MATCH: 0.21
+          confidence: 0.21
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MISMATCH: 0.32
+            MATCH: 0.32
+          confidence: 0.04
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.61
+            MATCH: 0.21
+          confidence: 0.42
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MISMATCH: 0.58
+            MATCH: 0.22
+          confidence: 0.38
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.29
+            MATCH: 0.27
+          confidence: 0.16
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.39
+            MATCH: 0.29
+          confidence: 0.09
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.35
+            MISMATCH: 0.39
+            MATCH: 0.26
+          confidence: 0.08
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.59
+            MATCH: 0.16
+          confidence: 0.39
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.32
+            MATCH: 0.16
+          confidence: 0.27
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.44
+            MATCH: 0.12
+          confidence: 0.16
+        /assertion/proposed_experiments/0/would_support:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.25
+            MISMATCH: 0.6
+            MATCH: 0.15
+          confidence: 0.41
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.76
+            MATCH: 0.06
+          confidence: 0.64
+        /assertion/proposed_experiments/0/refuting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MISMATCH: 0.84
+            MATCH: 0.04
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13813
+        output_tokens: 661
+      elapsed_seconds: 0.2066
+      request_sha256: 09e8d79057025d2880fc1dc44ee19a485d7416706e94923042ec60a2e2ba5dda
+      request_sha256s:
+      - 09e8d79057025d2880fc1dc44ee19a485d7416706e94923042ec60a2e2ba5dda
+  fa953a4f3799082319a5360a747db9194d2bb95599a17673c3cf20a06989897e:
+    input_sha256: b37b72dda28f7f1db12af225010876a26a43a5ac73fe2fa28555f68d1fc38e40
+    configuration_sha256: 3aa567d617b71bf2b8c68cd825cdbdf086b270c5d49c29f06caa1b62b1c47033
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:46.999488+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.31
+            MISMATCH: 0.07
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.91
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.23
+            MISMATCH: 0.51
+          confidence: 0.27
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.28
+            MISMATCH: 0.46
+          confidence: 0.18
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.17
+            MISMATCH: 0.13
+          confidence: 0.55
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.85
+            MISMATCH: 0.03
+          confidence: 0.78
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.44
+            MATCH: 0.34
+            MISMATCH: 0.22
+          confidence: 0.16
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.21
+            MISMATCH: 0.49
+          confidence: 0.23
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45999999999999996
+            MATCH: 0.23
+            MISMATCH: 0.31
+          confidence: 0.2
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.2
+            MISMATCH: 0.23
+          confidence: 0.36
+        /assertion/proposed_experiments/0/would_support:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.45
+            MISMATCH: 0.19
+          confidence: 0.17
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.15
+            MISMATCH: 0.45
+          confidence: 0.17
+        /assertion/proposed_experiments/0/refuting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.18
+            MATCH: 0.09
+            MISMATCH: 0.73
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13849
+        output_tokens: 650
+      elapsed_seconds: 0.225
+      request_sha256: 0b576b041183337aaea2d1400ea3ba165f4a271bd76f4f4965b0687e62dca15e
+      request_sha256s:
+      - 0b576b041183337aaea2d1400ea3ba165f4a271bd76f4f4965b0687e62dca15e
+  138f25daf3124b7ad30fd4b907af361948d6f111b901f900135555937b00a7fd:
+    input_sha256: 10d93bfd017134c652eb3cb8c3f3b1695e6f84ed1770fdbb68dcfc87d9c3a711
+    configuration_sha256: 0f5beb1cca27193c63578fed0caf713fdceebf6e9e8b7cf07363fb8775bd7547
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.068191+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.39999999999999997
+            MISMATCH: 0.3
+          confidence: 0.11
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.22
+            MISMATCH: 0.63
+          confidence: 0.45
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.2
+            MISMATCH: 0.61
+          confidence: 0.41
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.21
+            MISMATCH: 0.51
+          confidence: 0.26
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            PARTIAL: 0.56
+            MISMATCH: 0.13
+          confidence: 0.34
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.26
+            MISMATCH: 0.44
+          confidence: 0.17
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.34
+            MISMATCH: 0.24
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7485
+        output_tokens: 327
+      elapsed_seconds: 0.2572
+      request_sha256: ca7ce8571dc9c777b654b0a800e6ad04d5ea309eca1f75447dd64b2df776fdd9
+      request_sha256s:
+      - ca7ce8571dc9c777b654b0a800e6ad04d5ea309eca1f75447dd64b2df776fdd9
+  452710b02cc3f3276d19f3fd4c4bc5234a99dd2570ee0203593159489b12cda8:
+    input_sha256: 725ff5b76ddb260f55cfd73ac67f93c4731f852ad1ecdc49f2087946ff7419f5
+    configuration_sha256: 0f5beb1cca27193c63578fed0caf713fdceebf6e9e8b7cf07363fb8775bd7547
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.145736+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.51
+            MISMATCH: 0.13
+          confidence: 0.27
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.21
+            MISMATCH: 0.37
+          confidence: 0.13
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.28
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.23
+            MATCH: 0.29
+            MISMATCH: 0.48
+          confidence: 0.22
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.27
+            MISMATCH: 0.06
+          confidence: 0.51
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.31
+            MISMATCH: 0.37
+          confidence: 0.05
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.41
+            MISMATCH: 0.14
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7497
+        output_tokens: 326
+      elapsed_seconds: 0.1801
+      request_sha256: 2d86a84455997c30fc28233ca0df192b390db2f308f7327fa074d8f299e7ebe2
+      request_sha256s:
+      - 2d86a84455997c30fc28233ca0df192b390db2f308f7327fa074d8f299e7ebe2
+  a99fa6009352b99555ebe178217d80614ba79dda2fdabec8d9dfa43d162d5b8d:
+    input_sha256: 88ba3dde4f4869dad2eafd8b2fe6e90ec08bdd1ed495c20dfa021ebc2bf8b8af
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.228002+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.05
+            PARTIAL: 0.65
+          confidence: 0.47
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.13
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.06
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.08
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.28
+            PARTIAL: 0.3
+          confidence: 0.14
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.19
+            PARTIAL: 0.31
+          confidence: 0.25
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+          confidence: 0.81
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9819
+        output_tokens: 439
+      elapsed_seconds: 0.1917
+      request_sha256: 96670fade62d465a46ef49c57a152b46846aa36ce64ef9e270412f5414c7c943
+      request_sha256s:
+      - 96670fade62d465a46ef49c57a152b46846aa36ce64ef9e270412f5414c7c943
+  29fa621925e69b2192d3cf74efdf482a4cd6accdc127d3dfc27f46f5bc8a522a:
+    input_sha256: 2f3f2cc5009462c17167c3519a50b2877bbe057366c069692db44732bbbe80a3
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.328968+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.26
+            MISMATCH: 0.08
+          confidence: 0.48
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5700000000000001
+            MATCH: 0.31
+            MISMATCH: 0.12
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.62
+            MISMATCH: 0.09
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.19
+            MISMATCH: 0.21
+          confidence: 0.4
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.04
+            MATCH: 0.95
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.32
+            MISMATCH: 0.32
+          confidence: 0.05
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.37
+            MISMATCH: 0.28
+          confidence: 0.07
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.09
+            MATCH: 0.89
+            MISMATCH: 0.02
+          confidence: 0.84
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.8
+            MISMATCH: 0.04
+          confidence: 0.69
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9809
+        output_tokens: 440
+      elapsed_seconds: 0.1813
+      request_sha256: e657ed2bf2762d370cc8cc0bdc470f66eaa4474d281b29c5b228360481523de3
+      request_sha256s:
+      - e657ed2bf2762d370cc8cc0bdc470f66eaa4474d281b29c5b228360481523de3
+  bf535b45826383269434024e5cd8f3f872d723d10c4e79a06e581fe0e1638720:
+    input_sha256: 4c3d53c5cf71065bd928da00f1d38b86651eafd9e607c024569cb311ec670b9f
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.514234+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            MATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.71
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.03
+            MATCH: 0.92
+            PARTIAL: 0.05
+          confidence: 0.88
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            MATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4369
+        output_tokens: 175
+      elapsed_seconds: 0.1931
+      request_sha256: 2bda6cdc45db51fef26de6cfb0312180a51d340d256730706fa40a85f2963cae
+      request_sha256s:
+      - 2bda6cdc45db51fef26de6cfb0312180a51d340d256730706fa40a85f2963cae
+  48ac71c010fec3fab9c21f1f7c072baf31ca44ff5aa65d2c882d66eaf82ea71e:
+    input_sha256: 205dd88042121594d455ee2aab4a20332bd7ee7c6248f0fd68a55fef15611726
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.512875+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MATCH: 0.37
+            MISMATCH: 0.04
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MATCH: 0.23
+            MISMATCH: 0.1
+          confidence: 0.5
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.24
+            MATCH: 0.74
+            MISMATCH: 0.02
+          confidence: 0.62
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.61
+            MISMATCH: 0.04
+          confidence: 0.42
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MATCH: 0.46
+            MISMATCH: 0.25
+          confidence: 0.19
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.87
+            MISMATCH: 0.01
+          confidence: 0.8
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.93
+            MISMATCH: 0.01
+          confidence: 0.89
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7758
+        output_tokens: 324
+      elapsed_seconds: 0.2114
+      request_sha256: 9599816d40a65f05480c78a45382b4bd489ab7b1f67d67430504b469cddc8975
+      request_sha256s:
+      - 9599816d40a65f05480c78a45382b4bd489ab7b1f67d67430504b469cddc8975
+  cba42c3a8e0bffb8f62a87c24d47c577552b6c32b107a48eadea2432ddb6912c:
+    input_sha256: 69cd4b0798bf9e6a6abfe81b7d426af5ad1fed6282f523da5ac7d042774adc13
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.728791+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.31
+            MISMATCH: 0.3
+          confidence: 0.09
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.21
+            MISMATCH: 0.38
+          confidence: 0.12
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MATCH: 0.85
+            MISMATCH: 0.07
+          confidence: 0.78
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.83
+            MISMATCH: 0.04
+          confidence: 0.75
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.85
+            MISMATCH: 0.1
+          confidence: 0.78
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.77
+            MISMATCH: 0.06
+          confidence: 0.67
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.62
+            MISMATCH: 0.13
+          confidence: 0.42
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.3
+            MATCH: 0.49
+            MISMATCH: 0.21
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8653
+        output_tokens: 357
+      elapsed_seconds: 0.2669
+      request_sha256: e0bcaf08570e4c442038e591c26be83cb359b4378133a6a632b843e2cb75897f
+      request_sha256s:
+      - e0bcaf08570e4c442038e591c26be83cb359b4378133a6a632b843e2cb75897f
+  b193a8549fa99cb7f83761a0b88dada6166b288ff6ce190675ce70bfb8117932:
+    input_sha256: bc617b5e54f351db3345ecf384d40799966cefc5e55219d377aa597635ea7167
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:55:47.727562+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.19
+            MISMATCH: 0.36
+          confidence: 0.18
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.28
+            MISMATCH: 0.33
+          confidence: 0.09
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.45
+            MISMATCH: 0.19
+          confidence: 0.19
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.3
+            MISMATCH: 0.37
+          confidence: 0.05
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.51
+            MISMATCH: 0.22
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.33
+            MISMATCH: 0.22
+          confidence: 0.17
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.19
+            MISMATCH: 0.5
+          confidence: 0.26
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.14
+            MISMATCH: 0.47
+          confidence: 0.2
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.43
+            MISMATCH: 0.14
+          confidence: 0.14
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.27
+            MISMATCH: 0.41
+          confidence: 0.12
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.39
+            MATCH: 0.25
+            MISMATCH: 0.36
+          confidence: 0.09
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.6
+            MISMATCH: 0.14
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12604
+        output_tokens: 575
+      elapsed_seconds: 0.3354
+      request_sha256: 3851e5a2f9f9cb340392ddc957c61d2cbe1055bf05b4064760a0f0d0454aabab
+      request_sha256s:
+      - 3851e5a2f9f9cb340392ddc957c61d2cbe1055bf05b4064760a0f0d0454aabab

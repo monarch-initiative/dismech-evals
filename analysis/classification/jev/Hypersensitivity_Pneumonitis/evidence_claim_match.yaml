@@ -1732,6 +1732,52 @@ inputs:
     - assertion_path: /clinical_trials/3
       evidence_path: /clinical_trials/3/evidence/0
       reference: clinicaltrials:NCT05626387
+  323da84c172c96d72624a57a72dcc6ff3a9506f08b27cbfd14ba3e2b01024790:
+    claim:
+      about:
+        disease:
+          name: Hypersensitivity pneumonitis
+          disease_term:
+            preferred_term: hypersensitivity pneumonitis
+            term:
+              id: MONDO:0017853
+              label: hypersensitivity pneumonitis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Repetitive inhaled antigen exposure and sensitization
+        description: Inhalation of environmental antigens such as bird proteins and fungal material in
+          susceptible individuals initiates immune sensitization and disease onset.
+        role: trigger
+        locations:
+        - preferred_term: lung
+          term:
+            id: UBERON:0002048
+            label: lung
+      selected_evidence:
+        snippet: Hypersensitivity pneumonitis (HP) is a complex syndrome caused by the inhalation of a
+          variety of antigens in susceptible and sensitized individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32764620
+      reference_title: Hypersensitivity pneumonitis.
+      evidence_source: OTHER
+      explanation: This sentence defines the initiating exposure-sensitization step in HP pathogenesis.
+    first_seen_at: '2026-10-03T21:09:16.340206+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:16.340206+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:16.340206+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:32764620
 assessments:
   ad6450c9d6dcb62a86e31d1357ffb23d694def70c508616275a0c1ba654f3606:
     input_sha256: 7d050b9f5c8449f7bb722d6c283e89d1c265c8f4be1c15aa1b756e80cb41ac0b
@@ -4042,3 +4088,69 @@ assessments:
       request_sha256: b3ef2be229f695173ff34f7cf1cd8c92608bb2188a35d806bd9c192bc7a4fb38
       request_sha256s:
       - b3ef2be229f695173ff34f7cf1cd8c92608bb2188a35d806bd9c192bc7a4fb38
+  cbda964b3cec269c7f492c39b7831561593333dfbdf9814cc4725528abb2ad84:
+    input_sha256: 323da84c172c96d72624a57a72dcc6ff3a9506f08b27cbfd14ba3e2b01024790
+    configuration_sha256: 1550d1cc576f802353b303e2cd811ba4bc43bb50b7f600a0de44b1f889d2902f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:16.340206+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.61
+            MISMATCH: 0.01
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.63
+            MISMATCH: 0.01
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.43
+            MISMATCH: 0.01
+          confidence: 0.33
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.76
+            MISMATCH: 0.02
+          confidence: 0.63
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.46
+            MATCH: 0.45999999999999996
+            MISMATCH: 0.08
+          confidence: 0.2
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.45
+            MISMATCH: 0.07
+          confidence: 0.21
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7316
+        output_tokens: 321
+      elapsed_seconds: 0.2575
+      request_sha256: 00fda8c1e2d7938d3170540f6664e0d6aa3c25a928a532e102dcec442d1b8b4c
+      request_sha256s:
+      - 00fda8c1e2d7938d3170540f6664e0d6aa3c25a928a532e102dcec442d1b8b4c

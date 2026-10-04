@@ -1874,6 +1874,71 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT04503213
+  07841ea971af6e9930f78a6b610e6ea7e2f5e1ec24c5df3b8898616c1131b431:
+    claim:
+      about:
+        disease:
+          name: Hereditary Diffuse Leukoencephalopathy with Spheroids
+          disease_term:
+            preferred_term: Hereditary diffuse leukoencephalopathy with spheroids
+            term:
+              id: MONDO:0800027
+              label: leukoencephalopathy, diffuse hereditary, with spheroids 1
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: White Matter Degeneration with Axonal Spheroids
+        description: 'As a primary microgliopathy, microglial dysfunction from impaired CSF1R signaling
+          drives white-matter neurodegeneration. Pathology shows primary axonopathy followed by demyelination,
+          with characteristic axonal spheroids and pigmented glia in affected cerebral white matter. In
+          the Csf1r+/- mouse model, microgliosis and microglial transcriptomic alterations indicative
+          of oxidative stress and demyelination are central, with elevated cerebral CSF-2 (GM-CSF) signaling
+          implicated; monoallelic CSF2 deletion rescues most deficits, and elevated CSF2 is confirmed
+          in human ALSP brains.
+
+          '
+        cell_types:
+        - preferred_term: microglial cell
+          term:
+            id: CL:0000129
+            label: microglial cell
+          modifier: ABNORMAL
+        - preferred_term: oligodendrocyte
+          term:
+            id: CL:0000128
+            label: oligodendrocyte
+        biological_processes:
+        - preferred_term: myelination
+          term:
+            id: GO:0042552
+            label: myelination
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Primary axonopathy followed by demyelination was suggested by pathology.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30429277
+      reference_title: 'CSF1R-related leukoencephalopathy: A major player in primary microgliopathies.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Describes the neuropathologic sequence of axonal degeneration preceding demyelination
+        in CSF1R-related leukoencephalopathy.
+
+        '
+    first_seen_at: '2026-10-03T21:19:00.959538+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:00.959538+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:00.959538+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:30429277
 assessments:
   f5d94193c1a0fd2085d31cfc593632c84b9a25c6af27ca549a640709b7d88930:
     input_sha256: 574db37629f2ce99bb6df1384f79413e69a8e4f3aa6a460d57663660cc36034a
@@ -4351,3 +4416,104 @@ assessments:
       request_sha256: 1bc5e128f7ad0bd517a2509cb337d402b92876ca034fed5c5f564732fddbfa35
       request_sha256s:
       - 1bc5e128f7ad0bd517a2509cb337d402b92876ca034fed5c5f564732fddbfa35
+  61a41e00c5979abea41a98d65eab5795ba803c7b80ed2d2468b898798d3da717:
+    input_sha256: 07841ea971af6e9930f78a6b610e6ea7e2f5e1ec24c5df3b8898616c1131b431
+    configuration_sha256: 93d148788f582f2cc2c7a0ad83934c4df354d47f31d81af8f3e0e54443a078cc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:00.959538+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            PARTIAL: 0.36
+            MISMATCH: 0.58
+          confidence: 0.38
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            PARTIAL: 0.39
+            MISMATCH: 0.42
+          confidence: 0.13
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.34
+            MISMATCH: 0.16
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.47
+            MISMATCH: 0.44
+          confidence: 0.21
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.15
+            MISMATCH: 0.82
+          confidence: 0.74
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            PARTIAL: 0.19
+            MISMATCH: 0.79
+          confidence: 0.68
+        /assertion/cell_types/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.21
+            MISMATCH: 0.76
+          confidence: 0.64
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.5
+            MISMATCH: 0.29
+          confidence: 0.25
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            PARTIAL: 0.45
+            MISMATCH: 0.35
+          confidence: 0.17
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            PARTIAL: 0.31
+            MISMATCH: 0.13
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.38
+            MISMATCH: 0.12
+          confidence: 0.25
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.45
+            MISMATCH: 0.14
+          confidence: 0.17
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12835
+        output_tokens: 606
+      elapsed_seconds: 0.4096
+      request_sha256: 4bf757d534dc17d146d5de1a08d028fd055bd06159976327a3bcc8406e190f35
+      request_sha256s:
+      - 4bf757d534dc17d146d5de1a08d028fd055bd06159976327a3bcc8406e190f35

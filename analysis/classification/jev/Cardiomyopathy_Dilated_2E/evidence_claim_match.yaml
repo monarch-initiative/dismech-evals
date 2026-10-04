@@ -1242,6 +1242,54 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:30384889
+  404a921011aa20934832165a3f76f16d9c740505f333eac22fa3db912371245d:
+    claim:
+      about:
+        disease:
+          name: Dilated Cardiomyopathy 2E
+          disease_term:
+            preferred_term: cardiomyopathy, dilated, 2E
+            term:
+              id: MONDO:0030366
+              label: cardiomyopathy, dilated, 2E
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Cardiac transplantation
+        description: 'Transplantation is a realistic endpoint in severe childhood-onset cardiomyopathy:
+          17 of 66 children in the Finnish countrywide cohort were transplanted. That figure is for the
+          cohort, not for JPH2 patients.'
+        therapeutic_modality: SURGERY
+        treatment_term:
+          preferred_term: cardiac transplantation
+          term:
+            id: NCIT:C15289
+            label: Organ Transplantation
+      selected_evidence:
+        snippet: Genetic diagnoses may suggest intervention strategies and predict prognosis, offering
+          valuable tools for prioritization of patients for transplantation versus conservative treatment.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30384889
+      reference_title: Genetic Basis of Severe Childhood-Onset Cardiomyopathies.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The authors' argument that the genetic diagnosis itself informs the transplant decision,
+        which is why molecular diagnosis is curated as consequential in a disease with no specific therapy.
+    first_seen_at: '2026-10-03T21:48:14.917384+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:48:14.917384+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:48:14.917384+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      reference: PMID:30384889
 assessments:
   1478bd3489fbc4eb1a99cedb8b8a80274fb3a5e5b2b188cb5e176e71afd0cc9b:
     input_sha256: cb21478a70e96f25b304c9b296a6b16d413e0c4cf4c23d70b039fa41056f3189
@@ -2845,3 +2893,69 @@ assessments:
       request_sha256: 987f6c4757ee2985aaa13397463a221a8f1b727056acbbd5a9ff058860bf191c
       request_sha256s:
       - 987f6c4757ee2985aaa13397463a221a8f1b727056acbbd5a9ff058860bf191c
+  1fd55b22a33defd8c3382a359ea24f9dd2cc4575c648b528c2cba7e3babc54a0:
+    input_sha256: 404a921011aa20934832165a3f76f16d9c740505f333eac22fa3db912371245d
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:48:14.917384+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.45
+            MISMATCH: 0.52
+            MATCH: 0.03
+          confidence: 0.27
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.43
+            MATCH: 0.01
+          confidence: 0.34
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.26
+            MATCH: 0.19
+          confidence: 0.33
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MISMATCH: 0.64
+            MATCH: 0.03
+          confidence: 0.45
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MISMATCH: 0.42
+            MATCH: 0.26
+          confidence: 0.13
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.21
+            MATCH: 0.27
+          confidence: 0.29
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5599999999999999
+            MISMATCH: 0.24
+            MATCH: 0.2
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7703
+        output_tokens: 335
+      elapsed_seconds: 0.293
+      request_sha256: ea56414550d9cf3c314cd0cba1df31855e10b28b1a5c705f701773428c4da28f
+      request_sha256s:
+      - ea56414550d9cf3c314cd0cba1df31855e10b28b1a5c705f701773428c4da28f

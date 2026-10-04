@@ -2723,6 +2723,142 @@ inputs:
     - assertion_path: /differential_diagnoses/1
       evidence_path: /differential_diagnoses/1/evidence/0
       reference: PMID:37126682
+  b4b95a279fe8e4c6236df5c1c12c9cdb57b4e157e4991905cceffe2d8a97223c:
+    claim:
+      about:
+        disease:
+          name: Dilated Cardiomyopathy 2J
+          disease_term:
+            preferred_term: cardiomyopathy, dilated, 2j
+            term:
+              id: MONDO:0957984
+              label: cardiomyopathy, dilated, 2j
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Biallelic FLII Variants
+        biological_scale: MOLECULAR
+        role: trigger
+        mechanism_confidence: ESTABLISHED
+        description: 'The initiating lesion. Four variants were found across the three families: one predicted
+          to introduce a premature stop codon, three missense changes at highly conserved residues. All
+          were absent from gnomAD or present at very low frequency in the heterozygous state.
+
+          The authors expected the mechanism to be hypomorphic rather than null, and that expectation
+          is load-bearing for the whole entry: complete loss of FLII function is embryonic-lethal in Drosophila,
+          zebrafish and mouse, so a viable human recessive disease has to involve alleles that leave some
+          protein working. The zebrafish modelling is built around that distinction, with the patient-mimicking
+          knock-ins compared against a pre-existing severe truncating line.'
+        genes:
+        - preferred_term: FLII
+          term:
+            id: hgnc:3750
+            label: FLII
+        genetic_context:
+          functional_impact_category: PARTIAL_LOSS_OF_FUNCTION
+          variant_origin: GERMLINE
+          description: Curated as partial rather than complete loss of function on the authors' own reasoning
+            - null FLII is embryonic-lethal across three model species, and these patients are alive with
+            a cardiac-restricted phenotype - and on the zebrafish result that the patient-mimicking alleles
+            give a milder phenotype than the severe truncating line. Note this is an inference about the
+            alleles' consequence, not a direct measurement of residual flightless-I protein in a patient.
+      selected_evidence:
+        snippet: Gene knockout of FLII homologs leads to embryonic lethality in Drosophila, zebrafish,
+          and mouse
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37561591
+      reference_title: Biallelic variants in FLII cause pediatric cardiomyopathy by disrupting cardiomyocyte
+        cell adhesion and myofibril organization.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Establishes that complete FLII loss is not survivable, which is the basis for reading
+        the patients'' alleles as hypomorphic. Indirect: it is a cross-species statement about null alleles,
+        not a measurement on these variants.'
+    first_seen_at: '2026-10-03T21:48:15.056562+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:48:15.056562+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:48:15.056562+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:37561591
+  6c49bcebf1baf67200ac3f5a29599bb98d767a101b4e711e0201609e8522d2b1:
+    claim:
+      about:
+        disease:
+          name: Dilated Cardiomyopathy 2J
+          disease_term:
+            preferred_term: cardiomyopathy, dilated, 2j
+            term:
+              id: MONDO:0957984
+              label: cardiomyopathy, dilated, 2j
+        context:
+        - path: /animal_models/0
+          value:
+            name: flii R1230C knock-in zebrafish (patient-mimicking missense)
+            species: Zebrafish
+            genotype: flii R1230C homozygous, the zebrafish equivalent of the patient allele p.(R1240C)
+            publication: PMID:37561591
+            description: 'CRISPR/Cas9 knock-in of the zebrafish residue corresponding to a patient''s
+              missense variant, plus a compound-heterozygous line pairing the equivalent of the second
+              family''s missense allele with a premature-stop allele. These animals were viable to adulthood
+              and morphologically normal at 120 hours post-fertilisation, which is itself the point: the
+              phenotype is cardiac and subtle, as a hypomorphic allele should be.'
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Myofibril Disorganization
+        relationship: RECAPITULATES
+        fidelity: HIGH
+        description: Transmission electron microscopy shows less densely packed, irregularly oriented
+          myofibrils and intercalated discs, in an animal carrying the knocked-in equivalent of a patient's
+          own allele.
+        limitations: Zebrafish ventricular myocardium is two-layered and lacks the compact wall thickness
+          and coronary circulation of a mammalian heart, so trabecular and wall-architecture findings
+          do not transfer to human anatomy one for one. The residue numbering also differs between species.
+        readouts:
+        - name: Myofibril and intercalated disc ultrastructure
+          target: Myofibril Disorganization
+          direction: ALTERED
+          interpretation: Loss of the dense, regular packing seen in wild-type larvae is the structural
+            correlate of this node.
+      selected_evidence:
+        snippet: We demonstrated that patient-specific FLII variants, when brought into the zebrafish
+          genome using CRISPR/Cas9 genome editing, resulted in the manifestation of key aspects of morphological
+          and functional abnormalities of the heart, as observed in our patients.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:37561591
+      reference_title: Biallelic variants in FLII cause pediatric cardiomyopathy by disrupting cardiomyocyte
+        cell adhesion and myofibril organization.
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports treating this line as informative for the patients' cardiac phenotype, which
+        is the claim the link makes.
+    first_seen_at: '2026-10-03T21:48:15.802922+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:48:15.802922+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:48:15.802922+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:37561591
 assessments:
   ddbc4071e752db139baed1dfe78834ef5996584e35243076bfc17a5143ccd817:
     input_sha256: 6c3b31c9d2bde55d7d303dd3166cf763a55f8e2328558703f5e6d3d91b6015ea
@@ -6240,3 +6376,205 @@ assessments:
       request_sha256: 4fa11c9d6cd8ca4e0ecf3d61ff363d74b150bed591b8f49a19c9a572cd214f20
       request_sha256s:
       - 4fa11c9d6cd8ca4e0ecf3d61ff363d74b150bed591b8f49a19c9a572cd214f20
+  bd3f7a61587201b6f1a1bea44a397aa205dbc7c9b0f68c418fccec3f1b701d3c:
+    input_sha256: b4b95a279fe8e4c6236df5c1c12c9cdb57b4e157e4991905cceffe2d8a97223c
+    configuration_sha256: 26eb2a0d3c97e3aa910bd7936231b54f07d0151692a554ceb928bbe073631dc2
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:48:15.056562+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.7
+            MATCH: 0.14
+            MISMATCH: 0.16
+          confidence: 0.55
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.32
+            MATCH: 0.06
+            MISMATCH: 0.62
+          confidence: 0.44
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.36
+            MATCH: 0.09
+            MISMATCH: 0.55
+          confidence: 0.33
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.25
+            MATCH: 0.38
+            MISMATCH: 0.37
+          confidence: 0.08
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.22
+            MISMATCH: 0.17
+          confidence: 0.42
+        /assertion/mechanism_confidence:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.01
+            MISMATCH: 0.51
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MATCH: 0.13
+            MISMATCH: 0.27
+          confidence: 0.41
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.34
+            MATCH: 0.36
+            MISMATCH: 0.3
+          confidence: 0.03
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.36
+            MISMATCH: 0.29
+          confidence: 0.03
+        /assertion/genetic_context/functional_impact_category:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.76
+            MATCH: 0.12
+            MISMATCH: 0.12
+          confidence: 0.64
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.13
+            MATCH: 0.01
+            MISMATCH: 0.86
+          confidence: 0.79
+        /assertion/genetic_context/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MATCH: 0.3
+            MISMATCH: 0.07
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12941
+        output_tokens: 577
+      elapsed_seconds: 0.3484
+      request_sha256: 2f56434a5f5b4a8298d037a88d19ffabdf22f4709e185945cadaf44c3724002f
+      request_sha256s:
+      - 2f56434a5f5b4a8298d037a88d19ffabdf22f4709e185945cadaf44c3724002f
+  68477bde6f54b38083171b78070231c5a63c8cdd85ef8875f2941454e072d7e0:
+    input_sha256: 6c49bcebf1baf67200ac3f5a29599bb98d767a101b4e711e0201609e8522d2b1
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:48:15.802922+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.08
+            MATCH: 0.37
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MISMATCH: 0.05
+            MATCH: 0.39
+          confidence: 0.34
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.52
+            MISMATCH: 0.1
+            MATCH: 0.38
+          confidence: 0.27
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MISMATCH: 0.37
+            MATCH: 0.26
+          confidence: 0.06
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.73
+            MISMATCH: 0.1
+            MATCH: 0.17
+          confidence: 0.59
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.64
+            MISMATCH: 0.13
+            MATCH: 0.23
+          confidence: 0.47
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.24
+            MISMATCH: 0.69
+            MATCH: 0.07
+          confidence: 0.54
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MISMATCH: 0.15
+            MATCH: 0.17
+          confidence: 0.51
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.55
+            MISMATCH: 0.12
+            MATCH: 0.33
+          confidence: 0.33
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.53
+            MISMATCH: 0.3
+            MATCH: 0.17
+          confidence: 0.29
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.59
+            MISMATCH: 0.2
+            MATCH: 0.21
+          confidence: 0.39
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.39
+            MISMATCH: 0.07
+            MATCH: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12652
+        output_tokens: 573
+      elapsed_seconds: 0.2634
+      request_sha256: cdd8067d02b5d175c842c281088071fe3da8ccb542e7fcdeae34e9d3bac332fe
+      request_sha256s:
+      - cdd8067d02b5d175c842c281088071fe3da8ccb542e7fcdeae34e9d3bac332fe

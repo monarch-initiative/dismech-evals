@@ -3906,6 +3906,92 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/1
       evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
       reference: PMID:32856704
+  461d3908bbbcfffbce9afa942a903bfba6db01159272ea78b4bb922501ac8597:
+    claim:
+      about:
+        disease:
+          name: Mucopolysaccharidosis type X
+          disease_term:
+            preferred_term: Mucopolysaccharidosis type X
+            term:
+              id: MONDO:0030524
+              label: mucopolysaccharidosis, type 10
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: ARSK glucuronate 2-sulfatase deficiency
+            conforms_to: lysosomal_substrate_accumulation#Lysosomal Hydrolase or Cofactor Deficiency
+            biological_scale: MOLECULAR
+            description: 'Biallelic loss-of-function variants in ARSK abolish or severely reduce the activity
+              of arylsulfatase K, the lysosomal sulfatase that removes the 2-O-sulfate group from 2-sulfoglucuronate.
+              Reported variants act through two distinct routes to the same end point. Nonsense alleles
+              (p.Leu187Ter, p.Tyr417Ter) yield no detectable protein, consistent with nonsense-mediated
+              decay. Missense alleles are catalytically dead while remaining stably expressed: p.Arg84Cys
+              disrupts the conserved sulfatase signature 80-CCPSR-84 that is required to convert the active-site
+              cysteine to formylglycine, and p.Ser356Tyr abolishes activity within the sulfatase domain
+              without destabilizing the protein. Because sulfatases show high substrate specificity and
+              no functional redundancy, no other human sulfatase compensates for the lost step.
+
+              Term-binding note: the molecular function below is bound to GO:0008484 (sulfuric ester hydrolase
+              activity), a broad parent, deliberately. GO has no term for glucuronate 2-O-sulfatase (glucuronate
+              2-sulfatase, GDS) activity, and no sibling sulfatase term fits - ARSK is specific for the
+              2-O-sulfate of 2-sulfoglucuronate and does not share substrates with the other lysosomal
+              sulfatases. Binding a narrower but wrong term would misstate the enzymology, so the accurate
+              parent is preferred over a manufactured match. A GO term request for the specific activity
+              is the way to improve this.'
+            genes:
+            - preferred_term: ARSK
+              term:
+                id: hgnc:25239
+                label: ARSK
+            molecular_functions:
+            - preferred_term: glucuronate 2-O-sulfatase activity
+              modifier: LOSS_OF_FUNCTION
+              term:
+                id: GO:0008484
+                label: sulfuric ester hydrolase activity
+            cellular_components:
+            - preferred_term: lysosome
+              term:
+                id: GO:0005764
+                label: lysosome
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Lysosomal accumulation of 2-O-sulfoglucuronate-capped GAG fragments
+        causal_link_type: DIRECT
+        description: With the 2-O-desulfation step blocked, exolytic degradation stalls at every chain
+          terminus bearing a 2-O-sulfated glucuronate, and the partially degraded fragments accumulate
+          in the lysosome.
+      selected_evidence:
+        snippet: Arsk-deficient mice show, in an organ-specific manner, a moderate accumulation of HS
+          and CS metabolites characterized by 2-O-sulfated glucuronate moieties at their non-reducing
+          ends.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:32856704
+      reference_title: Arylsulfatase K inactivation causes mucopolysaccharidosis due to deficient glucuronate
+        desulfation of heparan and chondroitin sulfate.
+      evidence_source: MODEL_ORGANISM
+      explanation: Directly demonstrates that loss of ARSK causes accumulation of GAG metabolites capped
+        by the very modification ARSK removes, establishing the causal link from enzyme loss to substrate
+        storage.
+    first_seen_at: '2026-10-03T21:19:48.854777+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:48.854777+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:48.854777+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:32856704
 assessments:
   adc00539323083e60f2a9ae41d4e39b2cf619833c06f3bebc7d06c845ca54226:
     input_sha256: 9adf22e058e3a249fe18c4e25b2c76dd36d7e2379a7ac9ab937363b826b7b655
@@ -9382,3 +9468,62 @@ assessments:
       request_sha256: da1b5896b611c9838ab1c3c1ef6074591923f7d7985b7a2b1fe1c6cb44424ebd
       request_sha256s:
       - da1b5896b611c9838ab1c3c1ef6074591923f7d7985b7a2b1fe1c6cb44424ebd
+  b2b60d576ece12de8e2d41a33576436f4dc8e3a8c1f5917eb89a5253884aabed:
+    input_sha256: 461d3908bbbcfffbce9afa942a903bfba6db01159272ea78b4bb922501ac8597
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:48.854777+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.44
+            MISMATCH: 0.1
+            MATCH: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.17
+            MATCH: 0.54
+          confidence: 0.3
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MISMATCH: 0.03
+            MATCH: 0.69
+          confidence: 0.53
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.05
+            MATCH: 0.55
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.54
+            MISMATCH: 0.04
+            MATCH: 0.42
+          confidence: 0.32
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MISMATCH: 0.17
+            MATCH: 0.5599999999999999
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6995
+        output_tokens: 269
+      elapsed_seconds: 0.3781
+      request_sha256: 726983a086970166867344caa5951476ac0ad7182868da5ee9f50fc57e0e06c5
+      request_sha256s:
+      - 726983a086970166867344caa5951476ac0ad7182868da5ee9f50fc57e0e06c5

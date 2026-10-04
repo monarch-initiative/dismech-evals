@@ -2992,6 +2992,58 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/0
       reference: PMID:36609186
+  74a42306326c75ea2cb369dd6c33b5af13cb7904a54bb3a5e321d8127ea47133:
+    claim:
+      about:
+        disease:
+          name: Twin to Twin Transfusion Syndrome
+          disease_term:
+            preferred_term: twin to twin transfusion syndrome
+            term:
+              id: MONDO:0019805
+              label: twin to twin transfusion syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Fetoscopic laser photocoagulation
+        description: 'The primary treatment for TTTS diagnosed at 16-26 weeks. A fetoscope is introduced
+          into the recipient sac under ultrasound guidance and a laser is used to coagulate all placental
+          vascular anastomoses connecting the two fetal circulations. The Solomon technique (dichorionization)
+          involves coagulating the entire vascular equator to reduce the risk of recurrent TTTS and twin
+          anemia-polycythemia sequence (TAPS). High-volume centers report up to 70% double survival and
+          at least one survivor in over 90% of cases.
+
+          '
+        treatment_term:
+          preferred_term: Laser ablation for twin twin transfusion syndrome
+          term:
+            id: NCIT:C111241
+            label: Laser Ablation
+      selected_evidence:
+        snippet: High volume centers report up to 70% double survival and at least one survivor in >90%.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30850326
+      reference_title: Update on twin-to-twin transfusion syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Documents the excellent outcomes achievable at high-volume fetal therapy centers.
+
+        '
+    first_seen_at: '2026-10-03T21:23:18.330089+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:23:18.330089+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:23:18.330089+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      reference: PMID:30850326
 assessments:
   5ca80f930998ceb113e287d0b347688c0adb80107df860bf0c1b0bcd40876eaf:
     input_sha256: 9fd466da9df179d31fd3bc9a5e5f6bd26e5b057c8afd7ea41ba8a059ba78fa91
@@ -6549,3 +6601,62 @@ assessments:
       request_sha256: 79955d66906f7371bffff631fee9fedcc7aca8bb5de350b71abc7738df9c1c96
       request_sha256s:
       - 79955d66906f7371bffff631fee9fedcc7aca8bb5de350b71abc7738df9c1c96
+  55c88e760a50e7050fe261a191036bd4607f8a136a5561b9e8c47d40e1a50cd4:
+    input_sha256: 74a42306326c75ea2cb369dd6c33b5af13cb7904a54bb3a5e321d8127ea47133
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:23:18.330089+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.76
+            MATCH: 0.2
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.37
+            MATCH: 0.57
+          confidence: 0.36
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.48
+            PARTIAL: 0.37
+            MATCH: 0.15
+          confidence: 0.23
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            MATCH: 0.24
+            PARTIAL: 0.65
+          confidence: 0.47
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.37
+            PARTIAL: 0.39
+            MATCH: 0.24
+          confidence: 0.09
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            PARTIAL: 0.4
+            MATCH: 0.26
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6355
+        output_tokens: 280
+      elapsed_seconds: 0.1891
+      request_sha256: d6429a1dd00a716d94492dc123d2d7cb1d86ddcede6ba2edfaa57031b7c3fc20
+      request_sha256s:
+      - d6429a1dd00a716d94492dc123d2d7cb1d86ddcede6ba2edfaa57031b7c3fc20

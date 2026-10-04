@@ -18530,6 +18530,201 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: PMID:24213915
+  d4ba11e8a9c61c59d67da9ef6f65110631782049991994aee60aa0891a895b66:
+    claim:
+      about:
+        disease:
+          name: Primary_Ciliary_Dyskinesia
+          disease_term:
+            preferred_term: primary ciliary dyskinesia
+            term:
+              id: MONDO:0016575
+              label: primary ciliary dyskinesia
+        context:
+        - path: /pathophysiology/14
+          value:
+            name: Randomized Organ Laterality
+            description: Disrupted asymmetric developmental signaling permits normal situs, complete mirror-image
+              situs or discordant situs across organs. Human cohort distributions are not a strict binary
+              50:50 coin flip, and genotype composition and diagnostic ascertainment affect estimates.
+              Situs inversus totalis itself should not be encoded as the cause of heterotaxy-associated
+              heart defects or intestinal malrotation. The precise flow/signaling basis for discordant
+              organ outcomes remains unresolved.
+            locations:
+            - preferred_term: embryo
+              term:
+                id: UBERON:0000922
+                label: embryo
+            biological_scale: ORGANISM
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Abnormal Heart Morphology
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        description: Discordant laterality can include congenital cardiac or vascular malformations; these
+          are not an obligatory consequence of complete mirror-image situs.
+      selected_evidence:
+        snippet: Twelve patients with heterotaxy had cardiac and/or vascular abnormalities, and most (8
+          of 12 patients) had complex congenital heart disease.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/14/downstream/1
+      evidence_path: /pathophysiology/14/downstream/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/14
+    evidence_metadata:
+      reference: PMID:17515466
+      reference_title: Congenital heart disease and other heterotaxic defects in a large cohort of patients
+        with primary ciliary dyskinesia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The older 337-person PCD cohort directly documents cardiac/vascular malformations within
+        its heterotaxy subset; this is not a population-wide cardiac frequency.
+    first_seen_at: '2026-10-03T21:22:46.242941+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:22:46.242941+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:22:46.242941+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/14/downstream/1
+      evidence_path: /pathophysiology/14/downstream/1/evidence/0
+      reference: PMID:17515466
+  3cd728676b22facb8ea93e13055a251606acf1b920327524ae49019a02e442b2:
+    claim:
+      about:
+        disease:
+          name: Primary_Ciliary_Dyskinesia
+          disease_term:
+            preferred_term: primary ciliary dyskinesia
+            term:
+              id: MONDO:0016575
+              label: primary ciliary dyskinesia
+        context:
+        - path: /animal_models/3
+          value:
+            name: Xenopus embryonic epidermis foxi1e ionocyte-depletion model
+            species: Xenopus laevis
+            genotype: Morpholino knockdown of foxi1e, depleting ionocytes from the embryonic epidermis
+            category: Non-cell-autonomous perturbation of multiciliated cell development
+            publication: PMID:21183475
+            description: Frog embryonic skin contains multiciliated, mucus-secreting and foxi1e-dependent
+              ionocyte-like cells. Depleting ionocytes leaves multiciliated cells with fewer and aberrantly
+              beating cilia. The reduced count concerns cilia per cell, not disappearance of the multiciliated
+              cell population. This non-cell-autonomous epithelial perturbation is a surrogate-system
+              finding, not a model of a human PCD genotype.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Ciliary Dysfunction
+        relationship: PERTURBS
+        fidelity: LOW
+        description: Produces fewer cilia per multiciliated cell and abnormal ciliary beating by depleting
+          a neighboring epidermal cell type.
+        limitations: No PCD gene is involved and no PCD genotype is modelled — the perturbation is of
+          ionocyte development, and the ciliary phenotype is a secondary consequence. Frog embryonic epidermis
+          is a surrogate for airway epithelium rather than the tissue itself, and FOXI1 has not been implicated
+          in human PCD. Treat this as evidence about the cellular architecture that mucociliary function
+          depends on, not as a disease model.
+        readouts:
+        - name: Cilia per multiciliated cell after foxi1e knockdown
+          target: Ciliary Dysfunction
+          direction: DECREASED
+          interpretation: Cilia per cell decrease after ionocyte depletion; abnormal beating is also observed.
+            This is not evidence for a reduced number of multiciliated cells.
+      selected_evidence:
+        snippet: These results reveal a newly identified role for ionocytes and suggest that the frog
+          embryonic skin is a model system that is particularly suited to studying the interactions of
+          different cell types in mucociliary, as well as in secretory and transporting, epithelia.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/3/modeled_mechanisms/0
+      evidence_path: /animal_models/3/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/3
+    evidence_metadata:
+      reference: PMID:21183475
+      reference_title: 'Embryonic frog epidermis: a model for the study of cell-cell interactions in the
+        development of mucociliary disease.'
+      evidence_source: MODEL_ORGANISM
+      explanation: The authors present the system as suited to studying cell-cell interactions in mucociliary
+        epithelia, which is the level at which this link is informative for PCD.
+    first_seen_at: '2026-10-03T21:22:48.562933+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:22:48.562933+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:22:48.562933+00:00'
+    occurrences:
+    - assertion_path: /animal_models/3/modeled_mechanisms/0
+      evidence_path: /animal_models/3/modeled_mechanisms/0/evidence/0
+      reference: PMID:21183475
+  ab227f81751ff56091f99d5dfaefdd132b2e7da601b17e49cf4597f725b788e8:
+    claim:
+      about:
+        disease:
+          name: Primary_Ciliary_Dyskinesia
+          disease_term:
+            preferred_term: primary ciliary dyskinesia
+            term:
+              id: MONDO:0016575
+              label: primary ciliary dyskinesia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Proteostasis Stress and Secretory Cell-Fate Switching
+        mechanism_confidence: PROVISIONAL
+        description: In CCDC39/CCDC40-deficient airway cells, destabilization of the axonemal network
+          activates quality-control pathways and shifts multiciliated cells toward mucus-producing cells.
+          Normal CCDC39 transgene expression reversed the measured phenotypes in CCDC39-variant cells.
+          This is a demonstrated cellular phenotype, while its quantitative contribution to patient lung-function
+          decline remains unresolved.
+        genes:
+        - preferred_term: CCDC39
+          term:
+            id: hgnc:25244
+            label: CCDC39
+        - preferred_term: CCDC40
+          term:
+            id: hgnc:26090
+            label: CCDC40
+        cell_types:
+        - preferred_term: respiratory tract multiciliated cell
+          term:
+            id: CL:4030034
+            label: respiratory tract multiciliated cell
+        locations:
+        - preferred_term: respiratory tract epithelium
+          term:
+            id: UBERON:0004802
+            label: respiratory tract epithelium
+        biological_scale: CELLULAR
+      selected_evidence:
+        snippet: In CCDC39 variant cells, these phenotypes were reversed through expression of a normal
+          CCDC39 transgene.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39879322
+      reference_title: Undocking of an extensive ciliary network induces proteostasis and cell fate switching
+        resulting in severe primary ciliary dyskinesia.
+      evidence_source: IN_VITRO
+      explanation: Genetic rescue supports causality for cellular phenotypes, not yet clinical rescue.
+    first_seen_at: '2026-10-03T21:22:46.167045+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:22:46.167045+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:22:46.167045+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/1
+      reference: PMID:39879322
 assessments:
   5e2227c4c98bb595fdd16731df17b7d05396667d799127df0f29bc880746c010:
     input_sha256: 9ca1a988b4301f260b23e5a210ebc6d92bf5c0c656a7c9b2a825dc5f24ae1b31
@@ -44548,3 +44743,278 @@ assessments:
       request_sha256: c88c49a58c02bc31470a9be15c5b9fdd528190ccb5f54d1eb0908464e1b1052e
       request_sha256s:
       - c88c49a58c02bc31470a9be15c5b9fdd528190ccb5f54d1eb0908464e1b1052e
+  8fa70eb968819c88cc52f9bf691060f09c0511fef43aff755a23ea633b650efc:
+    input_sha256: d4ba11e8a9c61c59d67da9ef6f65110631782049991994aee60aa0891a895b66
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:22:46.242941+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.38
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.44
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.14
+            PARTIAL: 0.33
+          confidence: 0.29
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.33
+            PARTIAL: 0.5599999999999999
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.21
+            PARTIAL: 0.53
+          confidence: 0.29
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.37
+            PARTIAL: 0.44
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6503
+        output_tokens: 275
+      elapsed_seconds: 0.294
+      request_sha256: b89aeb1162188cb04bb0ba41733424437eca09f1b45925f3a608f9dc449afcf0
+      request_sha256s:
+      - b89aeb1162188cb04bb0ba41733424437eca09f1b45925f3a608f9dc449afcf0
+  8d4c7bd64c70c5aeffdc2c9d953e0a3ee1344b61e93b708e3e07e25463c99365:
+    input_sha256: 3cd728676b22facb8ea93e13055a251606acf1b920327524ae49019a02e442b2
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:22:48.562933+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+            MATCH: 0.04
+          confidence: 0.74
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.94
+            PARTIAL: 0.06
+            MATCH: 0.0
+          confidence: 0.91
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.35
+            MATCH: 0.12
+          confidence: 0.29
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.84
+            PARTIAL: 0.12
+            MATCH: 0.04
+          confidence: 0.75
+        /assertion/fidelity:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.29
+            MATCH: 0.3
+          confidence: 0.12
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.69
+            PARTIAL: 0.24
+            MATCH: 0.07
+          confidence: 0.54
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.63
+            PARTIAL: 0.31
+            MATCH: 0.06
+          confidence: 0.43
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            PARTIAL: 0.21
+            MATCH: 0.04
+          confidence: 0.63
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.52
+            PARTIAL: 0.36
+            MATCH: 0.12
+          confidence: 0.28
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+            MATCH: 0.05
+          confidence: 0.56
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            PARTIAL: 0.21
+            MATCH: 0.03
+          confidence: 0.64
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.53
+            PARTIAL: 0.31
+            MATCH: 0.16
+          confidence: 0.29
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12696
+        output_tokens: 594
+      elapsed_seconds: 0.2334
+      request_sha256: 8de225b3b1cbc4e88aed01c159bec55d75c24c0e0e6c3c7a6e4dc1ffd432ce5e
+      request_sha256s:
+      - 8de225b3b1cbc4e88aed01c159bec55d75c24c0e0e6c3c7a6e4dc1ffd432ce5e
+  b436aef0ea406397128c71e9106648774d6481a7568c2a6ef2020c7649c2a23e:
+    input_sha256: ab227f81751ff56091f99d5dfaefdd132b2e7da601b17e49cf4597f725b788e8
+    configuration_sha256: 542e9b08177413d3a4733b23f414ac41cb45b3be041c79fa0a8fe6d5de2e98b7
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:22:46.167045+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            PARTIAL: 0.65
+            MISMATCH: 0.1
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            PARTIAL: 0.55
+            MISMATCH: 0.08
+          confidence: 0.33
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.43
+            MISMATCH: 0.46
+          confidence: 0.19
+        /assertion/mechanism_confidence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.55
+            MISMATCH: 0.11
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.61
+            MISMATCH: 0.07
+          confidence: 0.41
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            PARTIAL: 0.16
+            MISMATCH: 0.08
+          confidence: 0.63
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            PARTIAL: 0.16
+            MISMATCH: 0.05
+          confidence: 0.69
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.27
+            MISMATCH: 0.62
+          confidence: 0.42
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.09
+            MISMATCH: 0.53
+          confidence: 0.31
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            PARTIAL: 0.56
+            MISMATCH: 0.16
+          confidence: 0.34
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.57
+            MATCH: 0.23
+            MISMATCH: 0.2
+          confidence: 0.36
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.54
+            MISMATCH: 0.28
+          confidence: 0.32
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.59
+            MISMATCH: 0.3
+          confidence: 0.39
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            PARTIAL: 0.22
+            MISMATCH: 0.06
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14629
+        output_tokens: 683
+      elapsed_seconds: 0.2233
+      request_sha256: a86f48eeb26186c6c20485e0a8d688a03f2b565ee17d8650c038eab614c23527
+      request_sha256s:
+      - a86f48eeb26186c6c20485e0a8d688a03f2b565ee17d8650c038eab614c23527

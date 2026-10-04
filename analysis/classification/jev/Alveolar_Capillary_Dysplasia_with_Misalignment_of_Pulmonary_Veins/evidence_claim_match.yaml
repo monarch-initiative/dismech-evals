@@ -2783,6 +2783,58 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/2
       reference: PMID:35649494
+  5b41366f7fb28e359c6902da4f8e516af64122af6bd5b26677783778dc732ac3:
+    claim:
+      about:
+        disease:
+          name: Alveolar capillary dysplasia with misalignment of pulmonary veins
+          disease_term:
+            preferred_term: alveolar capillary dysplasia with misalignment of pulmonary veins
+            term:
+              id: MONDO:0009934
+              label: alveolar capillary dysplasia with misalignment of pulmonary veins
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Idiopathic pulmonary arterial hypertension
+        description: The differential that matters most in practice. ACDMPV presents as severe neonatal
+          pulmonary hypertension refractory to vasodilators, which is exactly how idiopathic pulmonary
+          hypertension looks at the bedside, and because confirmation requires lung biopsy or autopsy
+          the misattribution both delays diagnosis and hides cases from incidence estimates.
+        disease_term:
+          preferred_term: idiopathic pulmonary arterial hypertension
+          term:
+            id: MONDO:0001999
+            label: idiopathic pulmonary arterial hypertension
+        distinguishing_features:
+        - Misaligned pulmonary veins and a deficient, malpositioned alveolar capillary bed on lung histology
+        - A pathogenic FOXF1 coding variant or 16q24.1 deletion spanning the gene or its upstream enhancer
+        - Associated gastrointestinal, cardiovascular or urogenital malformations in up to 80% of cases
+      selected_evidence:
+        snippet: it is likely that ACD/MPV is underdiagnosed and sometimes misdiagnosed as idiopathic
+          PH due to the lack of autopsies
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30058937
+      reference_title: 'Alveolar capillary dysplasia with misalignment of the pulmonary veins: clinical,
+        histological, and genetic aspects.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the misdiagnosis directly and its effect on ascertainment.
+    first_seen_at: '2026-10-03T22:21:43.236040+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:21:43.236040+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:21:43.236040+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      reference: PMID:30058937
 assessments:
   a348ec8abd82e138811b2adfa4d416b6042cfd3286a1c81be055606b3cda0814:
     input_sha256: d6e1b8b1f6e9f13d976ea431ec87064492322b9b7aa552e3b9d029931c69bcd2
@@ -6648,3 +6700,69 @@ assessments:
       request_sha256: 885ae2c2112a0aa4808fd810c51e14575df365541191f78415373f432aa82633
       request_sha256s:
       - 885ae2c2112a0aa4808fd810c51e14575df365541191f78415373f432aa82633
+  097014cf9b5078d3072c0312f4d036984c5225248d3a8abbb3e70ef8749c45c5:
+    input_sha256: 5b41366f7fb28e359c6902da4f8e516af64122af6bd5b26677783778dc732ac3
+    configuration_sha256: 82218847b001daff2a248127edc3a2b73029d848b93db738bb341db117e93f88
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:21:43.236040+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.03
+            PARTIAL: 0.58
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.09
+            PARTIAL: 0.12
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.05
+            PARTIAL: 0.58
+          confidence: 0.36
+        /assertion/disease_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.11
+            PARTIAL: 0.13
+          confidence: 0.64
+        /assertion/disease_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.13
+            PARTIAL: 0.18
+          confidence: 0.53
+        /assertion/distinguishing_features:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.87
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7383
+        output_tokens: 326
+      elapsed_seconds: 0.2199
+      request_sha256: 3f8156b9f60e6915ed531ef9bd63d49e45e23a175f045114d08033dd6095646d
+      request_sha256s:
+      - 3f8156b9f60e6915ed531ef9bd63d49e45e23a175f045114d08033dd6095646d

@@ -7386,6 +7386,64 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/2
       reference: PMID:37286550
+  4e8ed82fe8fa81c897bca5c1d301b954f5a5d810d106e442e7f405ae65455f85:
+    claim:
+      about:
+        disease:
+          name: Resistance to Thyroid Hormone Alpha
+          disease_term:
+            preferred_term: resistance to thyroid hormone alpha
+            term:
+              id: MONDO:0013757
+              label: congenital nongoitrous hypothyroidism 6
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Skeletal Maturation
+        biological_scale: TISSUE
+        description: TR-alpha1 is the receptor through which thyroid hormone drives growth plate chondrocyte
+          maturation and ossification. With T3 target genes silenced, endochondral ossification and bone
+          age lag, the epiphyses are dysgenetic, dentition and fontanelle closure are delayed, and head
+          circumference is relatively increased - the cluster reported clinically as skeletal dysplasia
+          with macrocephaly.
+        mechanism_confidence: ESTABLISHED
+        cell_types:
+        - preferred_term: growth plate chondrocyte
+          term:
+            id: CL:1000217
+            label: growth plate cartilage chondrocyte
+        biological_processes:
+        - preferred_term: endochondral ossification at the growth plate
+          modifier: DECREASED
+          term:
+            id: GO:0001958
+            label: endochondral ossification
+      selected_evidence:
+        snippet: Clinical features include dysmorphic facies, skeletal dysplasia (macrocephaly, epiphyseal
+          dysgenesis), growth retardation, constipation, dyspraxia and intellectual deficit.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26303090
+      reference_title: Resistance to thyroid hormone due to defective thyroid receptor alpha.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Groups macrocephaly and epiphyseal dysgenesis together as the skeletal dysplasia of
+        RTH-alpha, which is why this node carries both as downstream consequences rather than splitting
+        them.
+    first_seen_at: '2026-10-03T21:20:07.468231+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:07.468231+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:07.468231+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:26303090
 assessments:
   d14175fdc5dc491850ff91a65f437c913628ea4f90c33b3b9d7bce885427bc6a:
     input_sha256: 9667c85d0ec7c235de8dfbe78d44ea29f8154f3759aa988a4c25234e7f41a314
@@ -17443,3 +17501,97 @@ assessments:
       request_sha256: dd3373d5523a4066cadaa9fa8a59c7aa608b44d181be18d4f8c66c8dfa29ba51
       request_sha256s:
       - dd3373d5523a4066cadaa9fa8a59c7aa608b44d181be18d4f8c66c8dfa29ba51
+  ba23251ef47bc535164239ec46adf5428525b17aad6d28ad0620bcf6057fc806:
+    input_sha256: 4e8ed82fe8fa81c897bca5c1d301b954f5a5d810d106e442e7f405ae65455f85
+    configuration_sha256: 933326447c5625b17a7192a617cedbf3e77379617e0da3c9b0de5290db02b519
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:07.468231+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.04
+            MATCH: 0.29
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MISMATCH: 0.07
+            MATCH: 0.55
+          confidence: 0.32
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MISMATCH: 0.02
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.15
+            MISMATCH: 0.05
+            MATCH: 0.8
+          confidence: 0.71
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.67
+            MISMATCH: 0.05
+            MATCH: 0.28
+          confidence: 0.52
+        /assertion/mechanism_confidence:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.44
+            MATCH: 0.07
+          confidence: 0.23
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.37
+            MATCH: 0.14
+          confidence: 0.23
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.46
+            MISMATCH: 0.39
+            MATCH: 0.15
+          confidence: 0.18
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.08
+            MATCH: 0.27
+          confidence: 0.48
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.63
+            MISMATCH: 0.08
+            MATCH: 0.29
+          confidence: 0.45
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.65
+            MISMATCH: 0.12
+            MATCH: 0.23
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11929
+        output_tokens: 540
+      elapsed_seconds: 0.4429
+      request_sha256: 453b0b453958a99b287168a7fb6ecaee89608e5594e2c9b50ac98338b2eb5844
+      request_sha256s:
+      - 453b0b453958a99b287168a7fb6ecaee89608e5594e2c9b50ac98338b2eb5844

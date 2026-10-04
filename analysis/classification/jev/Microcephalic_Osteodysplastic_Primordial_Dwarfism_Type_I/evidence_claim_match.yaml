@@ -3629,6 +3629,65 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/1
       reference: PMID:36802443
+  e0cad46af114ba9ce1d815bbf432b1a6853b471fa5534ae9245e1ede2a5f9602:
+    claim:
+      about:
+        disease:
+          name: Microcephalic Osteodysplastic Primordial Dwarfism Type I
+          disease_term:
+            preferred_term: microcephalic osteodysplastic primordial dwarfism type I
+            term:
+              id: MONDO:0008871
+              label: microcephalic osteodysplastic primordial dwarfism type I
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Defective U12-Type Minor Intron Splicing
+        description: 'The functional consequence is selective mis-splicing of U12-type (minor) introns,
+          present in roughly 700 human genes, while U2-dependent (major) intron splicing is unaffected.
+          The defect is selective at the level of splicing rather than expression: transcriptomic analysis
+          of TALS patient-derived cells shows distinct U12-type intron splicing profiles versus controls
+          but largely unchanged mRNA levels. The specificity of the lesion is demonstrated by rescue —
+          introducing wild-type U4atac into MOPD I cells restores U12-dependent splicing.'
+        biological_scale: MOLECULAR
+        cell_types:
+        - preferred_term: skin fibroblast
+          term:
+            id: CL:0002620
+            label: skin fibroblast
+        biological_processes:
+        - preferred_term: mRNA splicing, via spliceosome
+          term:
+            id: GO:0000398
+            label: mRNA splicing, via spliceosome
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Concerning RNU4ATAC-mutated patients, we show that as expected, they display distinct
+          U12-type intron splicing profiles compared to controls, but that rather unexpectedly mRNA expression
+          levels are mostly unchanged.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31175170
+      reference_title: New insights into minor splicing-a transcriptomic analysis of cells derived from
+        TALS patients.
+      evidence_source: IN_VITRO
+      explanation: Transcriptome-wide characterization showing the lesion is at the level of splicing
+        rather than transcript abundance.
+    first_seen_at: '2026-10-03T21:09:45.233500+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:09:45.233500+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:09:45.233500+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/2
+      reference: PMID:31175170
 assessments:
   8ff220462e70aac792fd62859a8e365dd7ac1b72d3ebc1c4a6bfe751692abc65:
     input_sha256: 753a33c2caa00803b7e7d568f990a33625bcb7c3e2ba81c2921b5ff24f838773
@@ -8716,3 +8775,90 @@ assessments:
       request_sha256: 63046fc69809d34b8d15e790264a3f623b39f379b0b9d8b883929e477bba3ea2
       request_sha256s:
       - 63046fc69809d34b8d15e790264a3f623b39f379b0b9d8b883929e477bba3ea2
+  c0c0a2c70d867e46bbb2354db39cf906595babdb0234d3d6721bde676e59efba:
+    input_sha256: e0cad46af114ba9ce1d815bbf432b1a6853b471fa5534ae9245e1ede2a5f9602
+    configuration_sha256: 36d31bdca7b7061761ae13ed0d14c55b690bf4fe28d87743e300cca55df9ab27
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:09:45.233500+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.04
+            MATCH: 0.47
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.21
+            MISMATCH: 0.05
+            MATCH: 0.74
+          confidence: 0.61
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.18
+            MISMATCH: 0.03
+            MATCH: 0.79
+          confidence: 0.69
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.48
+            MISMATCH: 0.01
+            MATCH: 0.51
+          confidence: 0.26
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MISMATCH: 0.02
+            MATCH: 0.91
+          confidence: 0.86
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.49
+            MISMATCH: 0.44
+            MATCH: 0.07
+          confidence: 0.23
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.6
+            MISMATCH: 0.34
+            MATCH: 0.06
+          confidence: 0.4
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MISMATCH: 0.07
+            MATCH: 0.53
+          confidence: 0.3
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.29
+            MISMATCH: 0.04
+            MATCH: 0.67
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.08
+            PARTIAL: 0.46
+            MATCH: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10964
+        output_tokens: 488
+      elapsed_seconds: 0.3085
+      request_sha256: 8b50ecedc8c7bb43bc504084c93acfa4881ec730b973533987205c62252ca14f
+      request_sha256s:
+      - 8b50ecedc8c7bb43bc504084c93acfa4881ec730b973533987205c62252ca14f

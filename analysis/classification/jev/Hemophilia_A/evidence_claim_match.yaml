@@ -2797,6 +2797,81 @@ inputs:
     - assertion_path: /treatments/6
       evidence_path: /treatments/6/evidence/0
       reference: PMID:35294811
+  d506568bfd233f6f9faa274b05a7000162ee247f9092c74f59f144443d1d42b2:
+    claim:
+      about:
+        disease:
+          name: Hemophilia A
+          disease_term:
+            preferred_term: hemophilia A
+            term:
+              id: MONDO:0010602
+              label: hemophilia A
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_hemophilia_a_severity_discordance_predictors
+        prompt: What determines why more than one in ten people with severe hemophilia A bleed mildly
+          despite factor VIII below 1 IU/dL, and can that be predicted before the bleeding phenotype declares
+          itself?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - mechanistic_hypotheses#canonical_f8_deficiency_intrinsic_coagulation_model
+        - pathophysiology#Impaired Thrombin Generation
+        rationale: 'The canonical model treats factor VIII activity as the rate-limiting quantity, yet
+          a substantial minority of patients at the bottom of the range do not bleed as the model predicts.
+          Individual candidate explanations exist and each has some support: co-inherited prothrombotic
+          variants such as the PROC allele curated on the hypothesis above, factor V Leiden, the state
+          of the TAFI pathway, and global thrombin generation parameters. None has been combined into
+          a validated predictor, and no prospective cohort has tested whether such a score changes prophylaxis
+          intensity safely. This matters clinically because the alternative is treating every severe patient
+          at the intensity the worst bleeders need.'
+        proposed_experiments:
+        - experiment_id: exp_hemophilia_a_bleeding_modifier_gwas
+          name: Genome-wide modifier study of bleeding phenotype in severe hemophilia A
+          description: Recruit severe hemophilia A patients with factor VIII below 1 IU/dL from international
+            registries, phenotype them by treatment-adjusted annualized bleeding rate, and test genome-wide
+            association against the extremes of the bleeding distribution, with thrombophilia panel status
+            and thrombin generation parameters carried as covariates.
+          would_support:
+          - mechanistic_hypotheses#canonical_f8_deficiency_intrinsic_coagulation_model
+          supporting_outcome:
+          - Reproducible modifier loci in anticoagulant or fibrinolytic pathway genes would confirm that
+            residual hemostatic balance, rather than factor VIII level alone, sets clinical severity.
+          refuting_outcome:
+          - Absence of any replicable modifier signal at adequate power would leave unmeasured factor
+            VIII activity, treatment adherence, or joint status as the more likely explanations for the
+            discordance.
+      selected_evidence:
+        snippet: Quantitation of FVIII levels <1 IU/dl is a challenge due to the detection limits of traditional
+          one-stage activated partial thromboplastin time, two-stage chromogenic assay, and tissue factor-initiated
+          thrombin generation assay (TF-TGA), impeding a precise characterization of the bleeding phenotype
+          in severe hemophilia patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41846404
+      reference_title: FIXa-triggered thrombin generation correlates with FVIII levels less than 1% in
+        reconstituted plasma mimicking samples obtained from patients with severe hemophilia A.
+      evidence_source: OTHER
+      explanation: 'States the measurement obstacle that keeps the gap open: the routine assays cannot
+        resolve factor VIII below 1 IU/dL, so the very range in which the discordance sits is the range
+        that is hardest to quantify.'
+    first_seen_at: '2026-10-03T21:20:34.940168+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:34.940168+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:34.940168+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:41846404
 assessments:
   d0be13db1c024c02561f212060e88bb75a95eda7b332c370b544d93a3495ac0b:
     input_sha256: e43e535baa09a124403ab76cc980e81eee818381655741f4eaae2970cc7fb0b1
@@ -6454,3 +6529,118 @@ assessments:
       request_sha256: d28c45c53599520991dc81c0668c5414566b9df9952d8ab4b3180c5550dd78a6
       request_sha256s:
       - d28c45c53599520991dc81c0668c5414566b9df9952d8ab4b3180c5550dd78a6
+  8eeecf35ebe374623d7ce6e8f62e3f1d1be1a40c001830ad40767dae45336681:
+    input_sha256: d506568bfd233f6f9faa274b05a7000162ee247f9092c74f59f144443d1d42b2
+    configuration_sha256: 81cc4e8b7b4dabb6220c65d8c01823c70bb8bb0a3f380dd79c7d477e718a4859
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:34.940168+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.14
+            MATCH: 0.23
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.0
+            MATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.76
+            MATCH: 0.09
+            PARTIAL: 0.15
+          confidence: 0.64
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            MATCH: 0.07
+            PARTIAL: 0.71
+          confidence: 0.55
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.17
+            PARTIAL: 0.22
+          confidence: 0.42
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.89
+            MATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.26
+            MATCH: 0.35
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.44
+            MATCH: 0.08
+            PARTIAL: 0.48
+          confidence: 0.23
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            MATCH: 0.14
+            PARTIAL: 0.24
+          confidence: 0.43
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.56
+            MATCH: 0.09
+            PARTIAL: 0.35
+          confidence: 0.33
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.39
+            MATCH: 0.07
+            PARTIAL: 0.54
+          confidence: 0.32
+        /assertion/proposed_experiments/0/would_support:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.61
+            MATCH: 0.08
+            PARTIAL: 0.31
+          confidence: 0.42
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.75
+            MATCH: 0.02
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/proposed_experiments/0/refuting_outcome:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            MATCH: 0.04
+            PARTIAL: 0.32
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14645
+        output_tokens: 702
+      elapsed_seconds: 0.329
+      request_sha256: 32919cdcf5404218399c9d2d872e7f209f6cb5f547cf356c36739cdde470de3a
+      request_sha256s:
+      - 32919cdcf5404218399c9d2d872e7f209f6cb5f547cf356c36739cdde470de3a

@@ -6930,6 +6930,73 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/0
       reference: PMID:21392394
+  39bba99aadc79c9199bdacef3289e2ee6c5148f3edd4b63b7ee284e0ed4d2f7b:
+    claim:
+      about:
+        disease:
+          name: Peroxisome Biogenesis Disorder 5B
+          disease_term:
+            preferred_term: peroxisome biogenesis disorder 5B
+            term:
+              id: MONDO:0013933
+              label: peroxisome biogenesis disorder 5B
+        context:
+        - path: /has_subtypes/1
+          value:
+            name: NALD-IRD
+            display_name: Neonatal adrenoleukodystrophy / infantile Refsum disease presentation
+            description: 'The older phenotype labels for the intermediate and mild bands of the Zellweger
+              spectrum: progressive peroxisomal failure with sensory loss, liver disease and developmental
+              delay, without the congenital malformations of classic Zellweger syndrome. At the PEX2 locus
+              this presentation rests on individually reported patients - the infantile Refsum disease
+              patient carrying E55K opposite a nonsense allele, and the mildly affected homozygous W223X
+              patient in the four-patient complementation group 10 series - rather than on any assembled
+              cohort.'
+            genes:
+            - preferred_term: PEX2
+              term:
+                id: hgnc:9717
+                label: PEX2
+          role: subtype
+      assertion_type: Phenotype
+      assertion:
+        category: Neurologic
+        name: Hypotonia
+        subtype: NALD-IRD
+        description: Hypotonia, which GeneReviews calls typical for the band together with developmental
+          delay. It is absent from the PEX2 ataxic patients, whose early milestones were normal, which
+          is the distinction between the two subtypes of this entry.
+        phenotype_term:
+          preferred_term: Hypotonia
+          term:
+            id: HP:0001252
+            label: Hypotonia
+      selected_evidence:
+        snippet: While hypotonia and developmental delays are typical, intellect can be normal.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/19
+      evidence_path: /phenotypes/19/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/1
+    evidence_metadata:
+      reference: PMID:20301621
+      reference_title: Zellweger Spectrum Disorder.
+      evidence_source: OTHER
+      explanation: 'GeneReviews'' statement for the intermediate and milder band, quoted whole so the
+        qualifier travels with the claim: hypotonia and delay are typical, and preserved intellect is
+        still compatible with the diagnosis.'
+    first_seen_at: '2026-10-03T21:25:31.735098+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:25:31.735098+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:25:31.735098+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/19
+      evidence_path: /phenotypes/19/evidence/0
+      reference: PMID:20301621
 assessments:
   856700ea6c696b3d081a56a139489761df3e382189bd3ab698669d2095d44b0f:
     input_sha256: 1acaaf2cb22595c2d6c7730b624b7a05b872fcc6ea8e6bc0357a0187f6026c48
@@ -15473,3 +15540,83 @@ assessments:
       request_sha256: ed2d5ecc52009058cc6c7e0b53358cf6738559af889da076a753c2ce2e3049b3
       request_sha256s:
       - ed2d5ecc52009058cc6c7e0b53358cf6738559af889da076a753c2ce2e3049b3
+  17932cfd00cf7a8f9b6f1c9195d80d57a46ea96ff829692aefb0501663359928:
+    input_sha256: 39bba99aadc79c9199bdacef3289e2ee6c5148f3edd4b63b7ee284e0ed4d2f7b
+    configuration_sha256: 688b775c846d695a780f2f298b42d4827a1064b85e1fc9b00ef3f7f73e573f8a
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:25:31.735098+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.67
+            MISMATCH: 0.06
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.43
+            MATCH: 0.45
+            MISMATCH: 0.12
+          confidence: 0.18
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.74
+            MISMATCH: 0.09
+          confidence: 0.61
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.87
+            MISMATCH: 0.02
+          confidence: 0.8
+        /assertion/subtype:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.28
+            MATCH: 0.6
+            MISMATCH: 0.12
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.41
+            MATCH: 0.21
+            MISMATCH: 0.38
+          confidence: 0.12
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.88
+            MISMATCH: 0.02
+          confidence: 0.82
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.11
+            MATCH: 0.86
+            MISMATCH: 0.03
+          confidence: 0.8
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.37
+            MISMATCH: 0.23
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9348
+        output_tokens: 407
+      elapsed_seconds: 0.34
+      request_sha256: b5533b6d91720ea6d4a5786dc5f74620ea9c4d8c046b7d464ea949c288727d54
+      request_sha256s:
+      - b5533b6d91720ea6d4a5786dc5f74620ea9c4d8c046b7d464ea949c288727d54

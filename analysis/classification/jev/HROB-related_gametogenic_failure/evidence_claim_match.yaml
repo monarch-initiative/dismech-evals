@@ -1394,6 +1394,59 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/1
       reference: PMID:38105698
+  99f6a14e10900c9c3427e0df315b84fe1946444a7a948731d83524d778a734c1:
+    claim:
+      about:
+        disease:
+          name: HROB-related gametogenic failure
+          disease_term:
+            preferred_term: HROB-related gametogenic failure
+            term:
+              id: MONDO:0971176
+              label: ovarian dysgenesis 11
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Ovarian follicle depletion and primary ovarian insufficiency
+        conforms_to: meiotic_prophase_failure#Ovarian Follicle Depletion and Primary Ovarian Insufficiency
+        description: Loss of oocytes during meiotic progression depletes the ovarian reserve, presenting
+          clinically as primary ovarian insufficiency, ovarian dysgenesis, and hypergonadotropic hypogonadism
+          in 46,XX individuals.
+        cell_types:
+        - preferred_term: oocyte
+          term:
+            id: CL:0000023
+            label: oocyte
+        biological_processes:
+        - preferred_term: female gamete generation
+          term:
+            id: GO:0007292
+            label: female gamete generation
+          modifier: DECREASED
+      selected_evidence:
+        snippet: both girls were diagnosed with primary ovarian insufficiency.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38105698
+      reference_title: Genetic analysis of novel pathogenic gene HROB in a family with primary ovarian
+        insufficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This independently confirms primary ovarian insufficiency in a second HROB family.
+    first_seen_at: '2026-10-03T21:20:30.034939+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:30.034939+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:30.034939+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:38105698
 assessments:
   a1421c16fffce89277d443df84b59dc186f55eae1420a2e6baaf37e06920fef0:
     input_sha256: 3aeb11136c940e00121072b7d23b6255117154298d91b09ad918dc25918b3f55
@@ -3275,3 +3328,90 @@ assessments:
       request_sha256: 66143b8ef3844869668daaf078767d626c40b95bf1d101fc5ebf187cd54d14fa
       request_sha256s:
       - 66143b8ef3844869668daaf078767d626c40b95bf1d101fc5ebf187cd54d14fa
+  1053ff7dfc01494e8ac9a22dc153d6c13bdc1d86c01806a2f1808d09db945e6d:
+    input_sha256: 99f6a14e10900c9c3427e0df315b84fe1946444a7a948731d83524d778a734c1
+    configuration_sha256: 670d18b1fb51162e9d8b160f637502efd48591510409cfbdec963f8420aa91bc
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:30.034939+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            PARTIAL: 0.69
+            MISMATCH: 0.07
+          confidence: 0.54
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            PARTIAL: 0.67
+            MISMATCH: 0.1
+          confidence: 0.5
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            PARTIAL: 0.55
+            MISMATCH: 0.04
+          confidence: 0.32
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            PARTIAL: 0.43
+            MISMATCH: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            PARTIAL: 0.79
+            MISMATCH: 0.06
+          confidence: 0.69
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            PARTIAL: 0.58
+            MISMATCH: 0.12
+          confidence: 0.37
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.54
+            MISMATCH: 0.28
+          confidence: 0.32
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            PARTIAL: 0.65
+            MISMATCH: 0.09
+          confidence: 0.48
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.67
+            MISMATCH: 0.15
+          confidence: 0.5
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            PARTIAL: 0.45
+            MISMATCH: 0.05
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10573
+        output_tokens: 493
+      elapsed_seconds: 0.2343
+      request_sha256: 866ab07118477c16303c0be73081a66cb2ade56c91dda171a3e3d18b02e0013e
+      request_sha256s:
+      - 866ab07118477c16303c0be73081a66cb2ade56c91dda171a3e3d18b02e0013e

@@ -3035,6 +3035,66 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/0
       evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
       reference: PMID:25192047
+  702af1fa9f63d6902350c59ccc2f1f05235e365a4ac9949502e7661acb46cc59:
+    claim:
+      about:
+        disease:
+          name: Congenital Myasthenic Syndrome 7
+          disease_term:
+            preferred_term: congenital myasthenic syndrome 7
+            term:
+              id: MONDO:0014468
+              label: congenital myasthenic syndrome 7
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Oral Salbutamol
+        description: 'A beta-2 adrenergic agonist that is standard symptomatic treatment in several congenital
+          myasthenic syndromes and, in animal studies, remodels the endplate. It is curated here for a
+          negative result: in a 12-month open trial of motor neuropathies with neuromuscular junction
+          dysfunction, including SYT2, it produced no clear benefit on motor function and no clear change
+          in neurophysiological parameters, with significant off-target beta-adrenergic side effects.
+          The one positive signal was patient-reported fatigue. Albuterol was also ineffective in the
+          separately reported recessive case. It is not a recommended treatment for CMS7 on current evidence.'
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: salbutamol
+            term:
+              id: CHEBI:2549
+              label: albuterol
+      selected_evidence:
+        snippet: No clear benefit on motor function was seen following the administration of 12 months
+          of oral salbutamol; however, there was a significant improvement in patient reported fatigue.
+        supports: REFUTE
+        directness: INDIRECT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36869887
+      reference_title: 'Neuromuscular junction involvement in inherited motor neuropathies: genetic heterogeneity
+        and effect of oral salbutamol treatment.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Recorded as REFUTE against salbutamol as an effective treatment here. Graded INDIRECT
+        because the cohort was motor neuropathies with NMJ dysfunction as a group, of which SYT2 was one
+        genotype among several, so the result is not SYT2-specific.
+    first_seen_at: '2026-10-03T21:45:51.812574+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:45:51.812574+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:45:51.812574+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:36869887
 assessments:
   8fbd43516b41301394221ac16caf45dc296ec05568b2273569e18c4747b1d7cc:
     input_sha256: af0500218e55873133f5bb40e07952eed3159988d7efa5ba53430c24bf75bd59
@@ -7318,3 +7378,83 @@ assessments:
       request_sha256: 0541a1410c100b5506cb47c7a3c57c29f785b11f179f4d8146d87a69365852ee
       request_sha256s:
       - 0541a1410c100b5506cb47c7a3c57c29f785b11f179f4d8146d87a69365852ee
+  4e8ab24e07dba4ed16237968164193ab91c0109f2ad5e3106f53b49743cff372:
+    input_sha256: 702af1fa9f63d6902350c59ccc2f1f05235e365a4ac9949502e7661acb46cc59
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:45:51.812574+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.27
+            MATCH: 0.11
+            MISMATCH: 0.62
+          confidence: 0.44
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.33
+            MATCH: 0.03
+            MISMATCH: 0.64
+          confidence: 0.47
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MATCH: 0.51
+            MISMATCH: 0.3
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.45
+            MATCH: 0.17
+            MISMATCH: 0.38
+          confidence: 0.17
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.22
+            MATCH: 0.55
+            MISMATCH: 0.23
+          confidence: 0.33
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            PARTIAL: 0.34
+            MISMATCH: 0.38
+          confidence: 0.07
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.35
+            MATCH: 0.31
+            MISMATCH: 0.34
+          confidence: 0.02
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            PARTIAL: 0.18
+            MISMATCH: 0.2
+          confidence: 0.43
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.16
+            MATCH: 0.69
+            MISMATCH: 0.15
+          confidence: 0.54
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9830
+        output_tokens: 447
+      elapsed_seconds: 0.2914
+      request_sha256: 972f0eba7be14bbd4e50535c04a830674cc235c93b3863c1ffdaefea751ea420
+      request_sha256s:
+      - 972f0eba7be14bbd4e50535c04a830674cc235c93b3863c1ffdaefea751ea420

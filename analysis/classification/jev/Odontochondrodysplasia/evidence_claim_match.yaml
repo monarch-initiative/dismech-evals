@@ -2761,6 +2761,55 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:30728324
+  7fc4aae430e017ddaeafdc1eca19280041b35060e0e12f276fcbca60f3a6b392:
+    claim:
+      about:
+        disease:
+          name: Odontochondrodysplasia
+          disease_term:
+            preferred_term: odontochondrodysplasia
+            term:
+              id: MONDO:0100325
+              label: odontochondrodysplasia 1
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Radiographic and Dental Recognition
+        results: Vertebral and metaphyseal changes with defective dentine.
+        diagnosis_term:
+          preferred_term: X-ray imaging
+          term:
+            id: NCIT:C38101
+            label: X-Ray Imaging
+        description: The combination of platyspondyly with coronal clefts, metaphyseal irregularity, mesomelic
+          shortening, and dentinogenesis imperfecta is distinctive enough to direct testing. Because the
+          radiographic gestalt overlaps the skeletal ciliopathies — thoracic dystrophy, brachydactyly
+          with cone-shaped epiphyses, a trident pelvis — a ciliopathy panel is a common first and unrewarding
+          step.
+      selected_evidence:
+        snippet: radiographic features of ACG1A and ODCD are characteristic of skeletal ciliopathies
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30728324
+      reference_title: Hypomorphic mutations of TRIP11 cause odontochondrodysplasia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Explains why ODCD is mistaken for a skeletal ciliopathy on imaging, the main diagnostic
+        pitfall.
+    first_seen_at: '2026-10-03T21:19:59.817240+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:59.817240+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:59.817240+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:30728324
 assessments:
   89e34e572b6c00adde2f7aed9dcf4943e54296c2e80ed7c58e7f94eff24e19db:
     input_sha256: d139e737a7ed2f30e3345650c4e0323118c959a208f2879f8e61016777ba3738
@@ -6565,3 +6614,69 @@ assessments:
       request_sha256: a25f311411a1265f12b8c0dda0a43c6c3a6453f00078fcfbbf5a96579c8329ab
       request_sha256s:
       - a25f311411a1265f12b8c0dda0a43c6c3a6453f00078fcfbbf5a96579c8329ab
+  ef541645b071cb31a1bfbfd30772645327f555d264e621baeb8dcb6b45c2a3c0:
+    input_sha256: 7fc4aae430e017ddaeafdc1eca19280041b35060e0e12f276fcbca60f3a6b392
+    configuration_sha256: 6f6cfddb63b6baaf0e7821754eed4e920d44e5cdf070eb7f755c672b39079949
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:59.817240+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            PARTIAL: 0.49
+            MISMATCH: 0.17
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            PARTIAL: 0.11
+            MISMATCH: 0.01
+          confidence: 0.81
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            PARTIAL: 0.43
+            MISMATCH: 0.24
+          confidence: 0.14
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            PARTIAL: 0.49
+            MISMATCH: 0.41
+          confidence: 0.23
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.36
+            PARTIAL: 0.31
+            MISMATCH: 0.33
+          confidence: 0.03
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            PARTIAL: 0.24
+            MISMATCH: 0.55
+          confidence: 0.32
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            PARTIAL: 0.59
+            MISMATCH: 0.12
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7271
+        output_tokens: 325
+      elapsed_seconds: 0.3528
+      request_sha256: 7e0dd56513bcc0dab32a0136ccc9fa51afe41bc143beefb697e368242547d3af
+      request_sha256s:
+      - 7e0dd56513bcc0dab32a0136ccc9fa51afe41bc143beefb697e368242547d3af

@@ -1039,6 +1039,47 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:37376687
+  572c71f2437630a6ba6a3b1c5c3f8110a11a1221701196851342c526bac0e0af:
+    claim:
+      about:
+        disease:
+          name: Hepatitis E
+          disease_term:
+            preferred_term: hepatitis E virus infection
+            term:
+              id: MONDO:0005788
+              label: hepatitis E virus infection
+        context: []
+      assertion_type: Transmission
+      assertion:
+        name: Waterborne Faecal-Oral Transmission (Genotypes 1 and 2)
+        description: Genotypes 1 and 2 spread by the faecal-oral route through contaminated water, producing
+          large epidemics in settings with inadequate sanitation.
+      selected_evidence:
+        snippet: Genotype 1 and genotype 2 are common in developing countries and are transmitted by contaminated
+          water from a fecal-oral route.
+        supports: SUPPORT
+    origin:
+      assertion_path: /transmission/0
+      evidence_path: /transmission/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37376687
+      reference_title: 'Hepatitis E Virus Infections: Epidemiology, Genetic Diversity, and Clinical Considerations.'
+      evidence_source: OTHER
+      explanation: Documents the transmission route for the human-restricted genotypes. Evidence source
+        is OTHER because this is a review.
+    first_seen_at: '2026-10-03T21:20:35.012233+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:35.012233+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:35.012233+00:00'
+    occurrences:
+    - assertion_path: /transmission/0
+      evidence_path: /transmission/0/evidence/0
+      reference: PMID:37376687
 assessments:
   0f6a90c4bad9ad57fc2621478906c72c1600882c32520194fc0a3e5ed42d7bbd:
     input_sha256: 6f448540cf1dae8bf9736e6bff14394a6a147c57cb91cb4d4c5649b5e9631b3f
@@ -2402,3 +2443,48 @@ assessments:
       request_sha256: 8cbc29c5a87ef4a1281bc6e61ef801fc70dc447d041191ee0c9a577bc5d39774
       request_sha256s:
       - 8cbc29c5a87ef4a1281bc6e61ef801fc70dc447d041191ee0c9a577bc5d39774
+  4fcd71f99f12cc9e700718c746ab27f2b1a4c086e52479e8c06091cde26601da:
+    input_sha256: 572c71f2437630a6ba6a3b1c5c3f8110a11a1221701196851342c526bac0e0af
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:35.012233+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.5
+            MISMATCH: 0.01
+            MATCH: 0.49
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.08
+            MISMATCH: 0.01
+            MATCH: 0.91
+          confidence: 0.87
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.19
+            MISMATCH: 0.01
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.75
+            MISMATCH: 0.02
+            MATCH: 0.23
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4276
+        output_tokens: 177
+      elapsed_seconds: 0.2455
+      request_sha256: 7cf790be4c9e017ed4302b891c54aeb1ce0bfe8a92c161da9c3960c8151b9437
+      request_sha256s:
+      - 7cf790be4c9e017ed4302b891c54aeb1ce0bfe8a92c161da9c3960c8151b9437

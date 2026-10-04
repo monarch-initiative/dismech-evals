@@ -3932,6 +3932,168 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:26189817
+  83402db703e9956cbcde06296aadbc30f9616c1c654c369dc31b4fe7b71451a4:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Defect Type 26
+          disease_term:
+            preferred_term: combined oxidative phosphorylation defect type 26
+            term:
+              id: MONDO:0014684
+              label: combined oxidative phosphorylation defect type 26
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Combined Respiratory Chain Complex Deficiency
+        description: 'Because every mtDNA-encoded subunit passes through the same translational bottleneck,
+          the enzymology in muscle shows several complexes affected together rather than one. In the founding
+          individuals this took the form of a marked histochemical and biochemical cytochrome c oxidase
+          deficiency with a complex III defect in one, and decreased complex IV with borderline-low complex
+          I in the other.
+
+          This node is where the literature disagrees, and the entry does not resolve the disagreement
+          - see the CONTROVERSY discussion. The 2022 neuropathy series found normal respiratory-chain
+          activity in the skeletal muscle of all three of its patients bar a mild complex I decrease in
+          one, despite giant mitochondria on morphology.'
+        biological_scale: CELLULAR
+        biological_processes:
+        - preferred_term: oxidative phosphorylation
+          modifier: DECREASED
+          term:
+            id: GO:0006119
+            label: oxidative phosphorylation
+      selected_evidence:
+        snippet: Both affected individuals presented with lactic acidosis and evidence of multiple mitochondrial
+          respiratory-chain-complex deficiencies in skeletal muscle
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26189817
+      reference_title: TRMT5 Mutations Cause a Defect in Post-transcriptional Modification of Mitochondrial
+        tRNA Associated with Multiple Respiratory-Chain Deficiencies.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The defining biochemical phenotype, in both founding individuals.
+    first_seen_at: '2026-10-03T22:51:25.376026+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:51:25.376026+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:51:25.376026+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:26189817
+  3a79877503946b239bdbf63e0392fdbb1d1f34843f630f707683b38975b2b595:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Defect Type 26
+          disease_term:
+            preferred_term: combined oxidative phosphorylation defect type 26
+            term:
+              id: MONDO:0014684
+              label: combined oxidative phosphorylation defect type 26
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: coxpd26_respiratory_chain_deficiency_not_obligate
+        kind: CONTROVERSY
+        status: OPEN
+        prompt: The disorder is named for a combined oxidative phosphorylation deficiency, but the largest
+          published patient group had normal skeletal-muscle respiratory-chain activity. Is the biochemical
+          defect the disease, or one variable consequence of it?
+        attaches_to:
+        - pathophysiology#Combined Respiratory Chain Complex Deficiency
+        - diagnosis#Respiratory Chain Enzymology in Skeletal Muscle
+        - histopathology#Proliferation of giant mitochondria in skeletal muscle
+        - disease#Combined Oxidative Phosphorylation Defect Type 26
+        rationale: 'Well-conducted reports disagree about the disorder''s defining feature, and the disagreement
+          is not reconciled anywhere in the literature cited here. It is not an even split: of the three
+          reports with muscle enzymology, two find it abnormal and one does not.
+
+          The founding report defines COXPD26 by "multiple mitochondrial respiratory-chain-complex deficiencies
+          in skeletal muscle" in both of its individuals, with cytochrome c oxidase deficiency and a complex
+          III defect in one and decreased complex IV with borderline-low complex I in the other. The Chinese
+          case report, published the same year as the series below, independently found reduced respiratory-chain
+          complex enzyme activities on muscle biopsy in its patient - a third patient group, and a second
+          report on that side.
+
+          The 2022 neuropathy series studied respiratory-chain complex activity in the muscle of all three
+          of its index patients and found it normal in two, with a mild complex I decrease in the third
+          - and it found this despite proliferation of giant mitochondria in the same tissue, which is
+          itself a morphological marker of mitochondrial disease. So the structural signal was present
+          and the enzymatic signal was not.
+
+          Several readings are open and this entry does not choose between them. Note that a 2-versus-1
+          split is still a real disagreement and not a majority verdict - the 2022 series is the largest
+          single patient group of the three, so counting reports and counting patients do not point the
+          same way. The third report is also incomplete on the axis that matters most: it could not measure
+          COX activity, and COX is the complex the founding report found most affected, so it establishes
+          abnormal enzymology without establishing which complexes. The 2022 patients'' shared missense
+          allele p.Ile222Thr may destabilise tRNA binding rather than abolish catalysis, leaving enough
+          residual m1G37 to keep enzymology in range while still causing disease in the most vulnerable
+          tissue - which would make the neuropathy the sensitive readout and the muscle biochemistry an
+          insensitive one. Or the assay may be at fault: the founding report''s own data show the m1G37
+          deficit is tissue-specific, and nothing guarantees that a frozen-muscle enzyme panel is the
+          tissue and the readout where a translation defect shows up. Or the biochemical phenotype may
+          be genuinely variable between patients.
+
+          What would settle it is not available: nobody has measured m1G37 modification in the 2022 patients''
+          muscle. That is the missing link between the two reports, and it is a single assay the founding
+          group already established.
+
+          Practical consequence, recorded in the diagnosis section: normal muscle respiratory-chain enzymology
+          does not exclude COXPD26.'
+        proposed_experiments:
+        - experiment_id: exp_coxpd26_m1g37_in_neuropathy_patients
+          name: m1G37 modification assay on muscle RNA from TRMT5 patients with normal enzymology
+          description: Run the founding report's RT primer-extension assay across G37 of mt-tRNA-Leu(CUN)
+            on stored skeletal-muscle RNA from the three patients whose respiratory-chain enzymology was
+            normal, alongside the founding patients as positive controls. This is the one measurement
+            that would say whether the two reports describe one disease with a variable biochemical readout
+            or two different degrees of enzyme deficiency.
+          would_support:
+          - pathophysiology#m1G37 Hypomodification of Mitochondrial tRNA
+          - pathophysiology#Combined Respiratory Chain Complex Deficiency
+          supporting_outcome:
+          - Muscle m1G37 is clearly hypomodified in the neuropathy patients despite normal enzymology,
+            showing that the modification defect is the constant feature and the respiratory-chain deficiency
+            a variable downstream consequence - and that the modification assay, not the enzyme panel,
+            is the diagnostic test.
+          refuting_outcome:
+          - Muscle m1G37 is near-normal in those patients, indicating their alleles retain substantial
+            activity and that their neuropathy is driven by something other than the mechanism curated
+            here.
+      selected_evidence:
+        snippet: Both affected individuals presented with lactic acidosis and evidence of multiple mitochondrial
+          respiratory-chain-complex deficiencies in skeletal muscle
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26189817
+      reference_title: TRMT5 Mutations Cause a Defect in Post-transcriptional Modification of Mitochondrial
+        tRNA Associated with Multiple Respiratory-Chain Deficiencies.
+      evidence_source: HUMAN_CLINICAL
+      explanation: One side of the disagreement - the defining biochemical feature as first described.
+    first_seen_at: '2026-10-03T22:51:27.074873+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T22:51:27.074873+00:00'
+    active: true
+    active_as_of: '2026-10-03T22:51:27.074873+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:26189817
 assessments:
   7a4edce9c844556c6e85d772dc6c02a3ec04c8a9c7a5f98297fc71727aaf252a:
     input_sha256: 7179197409c4cedce10691ba03e5ff8590daafaf996b0c9bef6ff51aa5b0e951
@@ -8960,3 +9122,191 @@ assessments:
       request_sha256: 67f74d79a4629587354dcc03cbc4d3c61c250544c98f4b06ba5433042179e01a
       request_sha256s:
       - 67f74d79a4629587354dcc03cbc4d3c61c250544c98f4b06ba5433042179e01a
+  44e7a9325923e414494c5bb7ab180da78b04ebbae2b30b59a1c7cea9d5d7321d:
+    input_sha256: 83402db703e9956cbcde06296aadbc30f9616c1c654c369dc31b4fe7b71451a4
+    configuration_sha256: 35929a79fb6855df2b9aeda9e3c9da8cdf3ab973ee719abcd5a67d309b0957d5
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:51:25.376026+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.04
+            PARTIAL: 0.46
+            MATCH: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.62
+            MATCH: 0.32
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.16
+            MATCH: 0.83
+          confidence: 0.75
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.44
+            MATCH: 0.44
+          confidence: 0.17
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.12
+            PARTIAL: 0.18
+            MATCH: 0.7
+          confidence: 0.55
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+            MATCH: 0.8
+          confidence: 0.7
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+            MATCH: 0.89
+          confidence: 0.83
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+            MATCH: 0.74
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8954
+        output_tokens: 385
+      elapsed_seconds: 0.2515
+      request_sha256: 71f6d9384df40c3857f2d26c29d493406f2dba920f32c173692595801d2bff10
+      request_sha256s:
+      - 71f6d9384df40c3857f2d26c29d493406f2dba920f32c173692595801d2bff10
+  df04101dcae4e6fe687eceb4edd0ae23974ec2a1c07080f02487537230fc3f6b:
+    input_sha256: 3a79877503946b239bdbf63e0392fdbb1d1f34843f630f707683b38975b2b595
+    configuration_sha256: 42364ddc2723deda701b28ff8ba5e049cda4f9aeb9c6175d1a336967e4abdb33
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T22:51:27.074873+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.42
+            MATCH: 0.44
+            MISMATCH: 0.14
+          confidence: 0.16
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.69
+            MISMATCH: 0.05
+          confidence: 0.54
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.14
+            MATCH: 0.14
+            MISMATCH: 0.72
+          confidence: 0.57
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.17
+            MATCH: 0.11
+            MISMATCH: 0.72
+          confidence: 0.58
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.01
+            MISMATCH: 0.93
+          confidence: 0.9
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.56
+            MATCH: 0.28
+            MISMATCH: 0.16
+          confidence: 0.34
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.51
+            MISMATCH: 0.09
+          confidence: 0.28
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.2
+            MISMATCH: 0.4
+          confidence: 0.11
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.2
+            MATCH: 0.16
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.26
+            MATCH: 0.08
+            MISMATCH: 0.66
+          confidence: 0.49
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.4
+            MATCH: 0.12
+            MISMATCH: 0.48
+          confidence: 0.21
+        /assertion/proposed_experiments/0/would_support:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.37
+            MATCH: 0.21
+            MISMATCH: 0.42
+          confidence: 0.13
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.12
+            MATCH: 0.06
+            MISMATCH: 0.82
+          confidence: 0.73
+        /assertion/proposed_experiments/0/refuting_outcome:
+          label: MISMATCH
+          probabilities:
+            PARTIAL: 0.06
+            MATCH: 0.04
+            MISMATCH: 0.9
+          confidence: 0.84
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15161
+        output_tokens: 702
+      elapsed_seconds: 0.2702
+      request_sha256: e94081292b06c8efd00e47fd7dabba9b816299c6ecee73ea097d0618918acb51
+      request_sha256s:
+      - e94081292b06c8efd00e47fd7dabba9b816299c6ecee73ea097d0618918acb51

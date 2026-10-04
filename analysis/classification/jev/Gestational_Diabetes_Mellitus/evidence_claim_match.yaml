@@ -1800,6 +1800,57 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:18463375
+  e133315f4092ab44d16597a4c654e3784d46936ea7c7644fa6b9c838c67cb07a:
+    claim:
+      about:
+        disease:
+          name: Gestational Diabetes Mellitus
+          disease_term:
+            preferred_term: gestational diabetes
+            term:
+              id: MONDO:0005406
+              label: gestational diabetes
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: GLIS3
+        gene_term:
+          preferred_term: GLIS3
+          term:
+            id: hgnc:28510
+            label: GLIS3
+        association: Susceptibility (two independent common variants)
+        relationship_type: SUSCEPTIBILITY
+        variant_origin: GERMLINE
+        notes: Two independent signals (rs10814916, rs7041847) were identified. GLIS3 is a beta-cell transcription
+          factor required for insulin gene transcription and beta-cell mass, consistent with the study's
+          own reading that these loci act through beta-cell function.
+      selected_evidence:
+        snippet: we identified eight variants associated with GDM, namely rs7957197 (HNF1A), rs10814916
+          (GLIS3), rs3802177 (SLC30A8), rs9379084 (RREB1), rs34872471 (TCF7L2), rs7903146 (TCF7L2), rs11787792
+          (GPSM1) and rs7041847 (GLIS3)
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29947923
+      reference_title: 'Genetic variants of gestational diabetes mellitus: a study of 112 SNPs among 8722
+        women in two independent populations.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names both GLIS3 variants among the eight newly identified GDM associations.
+    first_seen_at: '2026-10-03T21:20:27.943257+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:20:27.943257+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:20:27.943257+00:00'
+    occurrences:
+    - assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/0
+      reference: PMID:29947923
 assessments:
   567f9fa0bc9f548e738648003b7f074496c734256a6d8333ff0b5d71bd5e26f3:
     input_sha256: d267ebe88dd407cb95f814ee1a422b68c5738d15bec19a1b58ebedae224744cc
@@ -4318,3 +4369,83 @@ assessments:
       request_sha256: 2c73cbc9c962ca3bd32750478a28b811e62383e200db7860d55734f02a01281f
       request_sha256s:
       - 2c73cbc9c962ca3bd32750478a28b811e62383e200db7860d55734f02a01281f
+  51475ad018ba4b4321dd8c22b46980f1a7cc36a63ff899f6b3dedef0cca31006:
+    input_sha256: e133315f4092ab44d16597a4c654e3784d46936ea7c7644fa6b9c838c67cb07a
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:20:27.943257+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.38
+            MATCH: 0.6
+            MISMATCH: 0.02
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.0
+            MATCH: 1.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.05
+            MATCH: 0.94
+            MISMATCH: 0.01
+          confidence: 0.92
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.07
+            MATCH: 0.92
+            MISMATCH: 0.01
+          confidence: 0.87
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.1
+            MATCH: 0.89
+            MISMATCH: 0.01
+          confidence: 0.83
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.31
+            MATCH: 0.67
+            MISMATCH: 0.02
+          confidence: 0.51
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            PARTIAL: 0.02
+            MATCH: 0.98
+            MISMATCH: 0.0
+          confidence: 0.97
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.66
+            MATCH: 0.27
+            MISMATCH: 0.07
+          confidence: 0.48
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.61
+            MATCH: 0.15
+            MISMATCH: 0.24
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9692
+        output_tokens: 411
+      elapsed_seconds: 0.2509
+      request_sha256: ee1f4b30b79cea5b33d41dbd9982137fd82088a6324a7cce0850f7bb45c4a341
+      request_sha256s:
+      - ee1f4b30b79cea5b33d41dbd9982137fd82088a6324a7cce0850f7bb45c4a341

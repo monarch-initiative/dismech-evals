@@ -3545,6 +3545,56 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/0
       reference: clinicaltrials:NCT07415252
+  b15666c948575625ec2b2069fdc45ad48ba0ca3a6e57c41ad7623c6bccba7cc9:
+    claim:
+      about:
+        disease:
+          name: Chickenpox
+          disease_term:
+            preferred_term: chickenpox
+            term:
+              id: MONDO:0005700
+              label: chickenpox
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Vesicular exanthem
+        description: 'Generalized pruritic vesicular rash with centripetal distribution, typically appearing
+          first on the trunk and spreading to the face and extremities. Lesions appear in successive crops
+          over 3-5 days, with simultaneous presence of macules, papules, vesicles, and crusts.
+
+          '
+        frequency: VERY_FREQUENT
+        phenotype_term:
+          preferred_term: Vesicular eruption
+          term:
+            id: HP:0033697
+            label: Vesicular eruption
+      selected_evidence:
+        snippet: Varicella-Zoster virus (VZV) is a pathogenic human alpha herpes virus that causes varicella
+          (chicken pox) as a primary infection
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37632006
+      reference_title: The Spectrum of Neurological Manifestations of Varicella-Zoster Virus Reactivation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Review confirming vesicular exanthem as the defining clinical feature of primary VZV
+        infection (chickenpox).
+    first_seen_at: '2026-10-03T21:49:54.723431+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:49:54.723431+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:49:54.723431+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:37632006
 assessments:
   9d7813c8a32376cfbb040ef69b4470b712798ea141ef915321a95a98e8cee953:
     input_sha256: bf8a55960437c166f4eb55481129ef0592cac909ef187ae51e366aa332340da0
@@ -7905,3 +7955,69 @@ assessments:
       request_sha256: c470d49cc3a2dc8d73b2b7a6189ba79ec6daedcddc3389e17f27af17595d645e
       request_sha256s:
       - c470d49cc3a2dc8d73b2b7a6189ba79ec6daedcddc3389e17f27af17595d645e
+  85ec17af62ec9ea1c0628256871b5a443c6f9e8ae50dde7a925cc77b778d6fe3:
+    input_sha256: b15666c948575625ec2b2069fdc45ad48ba0ca3a6e57c41ad7623c6bccba7cc9
+    configuration_sha256: 10c70640f1d1de6c7344d0d5fa02b54d7b6aef339741b0dcfcc51627e317abb5
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:49:54.723431+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            PARTIAL: 0.64
+            MISMATCH: 0.25
+          confidence: 0.45
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            PARTIAL: 0.0
+            MISMATCH: 0.0
+          confidence: 0.99
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.39
+            MISMATCH: 0.45
+          confidence: 0.17
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            PARTIAL: 0.24
+            MISMATCH: 0.75
+          confidence: 0.63
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            PARTIAL: 0.28
+            MISMATCH: 0.69
+          confidence: 0.53
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.43
+            MISMATCH: 0.41
+          confidence: 0.16
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            PARTIAL: 0.44
+            MISMATCH: 0.39
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7316
+        output_tokens: 330
+      elapsed_seconds: 0.4406
+      request_sha256: d351c4e067c0badb433bcde5c774549d117f32e3e56e0f1e2ae28401c0da7c1d
+      request_sha256s:
+      - d351c4e067c0badb433bcde5c774549d117f32e3e56e0f1e2ae28401c0da7c1d

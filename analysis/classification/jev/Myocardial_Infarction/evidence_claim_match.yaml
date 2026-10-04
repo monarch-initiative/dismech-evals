@@ -4448,6 +4448,314 @@ inputs:
     - assertion_path: /datasets/7
       evidence_path: /datasets/7/evidence/0
       reference: GEO:GSE113871
+  710fd1bc2ff33a0dccb4612e079e2ab40eec52dca4e8d875362245157c29d4bc:
+    claim:
+      about:
+        disease:
+          name: Myocardial Infarction
+          disease_term:
+            preferred_term: myocardial infarction
+            term:
+              id: MONDO:0005068
+              label: myocardial infarction
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Ischemia-Reperfusion Injury
+        description: 'Restoration of coronary blood flow (by primary PCI or fibrinolysis) is essential
+          to salvage ischemic myocardium but paradoxically inflicts additional damage — myocardial ischemia-reperfusion
+          injury (MIRI) — that can account for up to half of the final infarct size. Reperfusion drives
+          a burst of reactive oxygen species, cytosolic and mitochondrial calcium overload, and sustained
+          opening of the mitochondrial permeability transition pore (MPTP) with collapse of the mitochondrial
+          membrane potential and cessation of ATP production, together with endothelial dysfunction, NLRP3
+          inflammasome activation, and multiple regulated cell-death programs (apoptosis, necroptosis,
+          pyroptosis, ferroptosis) and dysregulated autophagy.
+
+          '
+        cell_types:
+        - preferred_term: cardiac muscle cell
+          term:
+            id: CL:0000746
+            label: cardiac muscle cell
+        - preferred_term: coronary endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        biological_processes:
+        - preferred_term: response to oxidative stress
+          term:
+            id: GO:0006979
+            label: response to oxidative stress
+          modifier: INCREASED
+        - preferred_term: intracellular calcium ion homeostasis
+          term:
+            id: GO:0006874
+            label: intracellular calcium ion homeostasis
+          modifier: DYSREGULATED
+        locations:
+        - preferred_term: myocardium
+          term:
+            id: UBERON:0002349
+            label: myocardium
+      selected_evidence:
+        snippet: underscoring its potential to contribute substantially to the final infarct size, up
+          to 50%.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/4
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/biomedicines12040802
+      reference_title: 'Myocardial Ischemia–Reperfusion Injury: Unraveling Pathophysiology, Clinical Manifestations,
+        and Emerging Prevention Strategies.'
+      evidence_source: OTHER
+      explanation: Independent review corroborating that MIRI can contribute up to 50% of the final infarct
+        size.
+    first_seen_at: '2026-10-03T21:19:55.526624+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:55.526624+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:55.526624+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/4
+      reference: DOI:10.3390/biomedicines12040802
+  9dc053566c11eac04f3550efd880d4d106b8cb74a23f95811e38e43b9107aba5:
+    claim:
+      about:
+        disease:
+          name: Myocardial Infarction
+          disease_term:
+            preferred_term: myocardial infarction
+            term:
+              id: MONDO:0005068
+              label: myocardial infarction
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Elevated cardiac troponin
+        presence: Elevated
+        context: 'A rise and/or fall of high-sensitivity cardiac troponin (cTnI or cTnT) above the 99th-percentile
+          upper reference limit, in a clinical context of ischemia, is the biomarker cornerstone of the
+          Fourth Universal Definition of MI; troponin is the most sensitive/specific marker for acute
+          myocardial injury.
+
+          '
+        notes: 'Sensitivity and mechanistic specificity diverge here. The 99th-centile threshold detects
+          troponin release from any cause of cardiomyocyte injury, so widening hs-cTn testing enlarges
+          the myocardial-injury pool faster than the type 1 MI pool: in a whole-population registry the
+          diagnostic yield among tested emergency-department patients fell from 73 to 47 per 1000 between
+          2014 and 2024 as testing extended to lower-risk patients (PPR:PPR1272216, a preprint), while
+          a cluster-randomised trial found only about a third of patients reclassified by the assay had
+          type 1 MI (PMID:30170853). See the `definitions` entry for the ascertainment consequences. The
+          73-to-47 figures are deliberately NOT curated as `prevalence:` records: they are a test-positivity
+          yield inside a clinician-selected denominator, so encoding them as `rate_per_100000` / `prevalence_class`
+          would present roughly 25-30x the true adult population MI incidence to any consumer reading
+          those slots, and the caveat would survive only in prose.'
+        readouts:
+        - target: Myocardial Ischemia and Cardiomyocyte Death
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'Troponin reaches the circulation only when cardiomyocyte membrane integrity
+            is lost, so a rise and fall above the 99th centile measures the cardiomyocyte-death step.
+            It is sensitive for that step but not specific to the type 1 atherothrombotic route, as this
+            entry''s evidence records.
+
+            '
+      selected_evidence:
+        snippet: use of the high-sensitivity assay reclassified one in six patients with myocardial injury,
+          but only a third of these patients had a diagnosis of type 1 myocardial infarction, and the
+          incidence of subsequent myocardial infarction or cardiovascular death at 1 year was unchanged.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30170853
+      reference_title: 'High-sensitivity troponin in the evaluation of patients with suspected acute coronary
+        syndrome: a stepped-wedge, cluster-randomised controlled trial.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Qualifies the marker: a troponin rise above the 99th centile is sensitive for cardiomyocyte
+        injury but not specific for the type 1 atherothrombotic mechanism this entry models, so a positive
+        result is not itself evidence of plaque rupture.'
+    first_seen_at: '2026-10-03T21:19:55.553148+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:55.553148+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:55.553148+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:30170853
+  c513af5fd5430f050ff9d7b151843e5d270409f3b7c4c2d7804b6fe5ca11ad2a:
+    claim:
+      about:
+        disease:
+          name: Myocardial Infarction
+          disease_term:
+            preferred_term: myocardial infarction
+            term:
+              id: MONDO:0005068
+              label: myocardial infarction
+        context:
+        - path: /treatments/1
+          value:
+            name: Antiplatelet and Antithrombotic Therapy
+            description: 'Antiplatelet agents and anticoagulants to limit coronary thrombus propagation,
+              plus secondary-prevention statins.
+
+              '
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Coronary Atherothrombosis
+        treatment_effect: INHIBITS
+        description: 'Antiplatelet agents and anticoagulants limit propagation of thrombus on the disrupted
+          plaque and reduce re-occlusion after reperfusion; the secondary-prevention statin component
+          acts on the underlying atheroma.
+
+          '
+      selected_evidence:
+        snippet: advances in antiplatelet agents and anticoagulants, and greater use of secondary prevention
+          strategies such as statins.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:27502078
+      reference_title: Acute myocardial infarction.
+      evidence_source: OTHER
+      explanation: Identifies antiplatelet agents, anticoagulants, and statins as pillars of pharmacological
+        AMI management.
+    first_seen_at: '2026-10-03T21:19:57.005272+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:57.005272+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:57.005272+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:27502078
+  f7467fcd8786af2f9ef32dd6febefa702250678770608e823420337e1ef0d8f0:
+    claim:
+      about:
+        disease:
+          name: Myocardial Infarction
+          disease_term:
+            preferred_term: myocardial infarction
+            term:
+              id: MONDO:0005068
+              label: myocardial infarction
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Myocardial infarct border-zone-on-a-chip
+            description: 'A microphysiological system that imposes a controlled oxygen gradient across
+              engineered human cardiac tissue, isolating the border zone as an experimental variable in
+              its own right. The comparison that matters is not injured-versus-healthy but graded-versus-uniform:
+              tissue under a gradient behaves differently from tissue held at uniform normoxia or uniform
+              hypoxia, so the spatial gradient is itself a pathogenic factor rather than a confounder
+              to be averaged away.'
+            experimental_model_type: ORGAN_ON_CHIP
+            namo_type: namo:OrganOnChip
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: myocardium
+              term:
+                id: UBERON:0002349
+                label: myocardium
+            cell_types:
+            - preferred_term: cardiac muscle cell
+              term:
+                id: CL:0000746
+                label: cardiac muscle cell
+            conditions:
+            - imposed oxygen gradient spanning normoxia to hypoxia
+            - uniform normoxia and uniform hypoxia comparator arms
+            cell_source: Stem-cell-derived human cardiomyocytes in engineered cardiac tissue
+            culture_system: Microfluidic device with spatially controlled oxygenation across the tissue,
+              read out by calcium imaging, contractile-stress measurement and RNA sequencing
+            publication: PMID:36475790
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Myocardial Ischemia and Cardiomyocyte Death
+        relationship: PARTIALLY_RECAPITULATES
+        fidelity: MODERATE
+        model_scale: TISSUE
+        description: Reproduces the electromechanical dysfunction of border-zone myocardium and attributes
+          it specifically to the oxygen gradient.
+        limitations: The chip models the oxygen gradient and its functional consequences, not the cardiomyocyte
+          necrosis of the infarct core; there is no coronary circulation and no thrombotic trigger.
+        divergences:
+        - divergence_type: CAUSE_UNREPRESENTED
+          materiality: QUALIFYING
+          description: The oxygen gradient is imposed by the device's gas control rather than arising
+            from an occluded coronary artery, so the gradient is an experimental input and not a consequence
+            of the disease lesion.
+        - divergence_type: BOUNDARY_OMISSION
+          materiality: QUALIFYING
+          description: The chip spans the gradient itself; the necrotic infarct core that the gradient
+            borders in vivo is not part of the construct.
+        readouts:
+        - name: Calcium release, reuptake and propagation kinetics
+          target: Myocardial Ischemia and Cardiomyocyte Death
+          direction: ALTERED
+          interpretation: Delayed rather than simply reduced, so the readout is a change in kinetics;
+            this is the conduction substrate for post-infarction arrhythmia.
+        - name: Diastolic and peak systolic stress
+          target: Myocardial Ischemia and Cardiomyocyte Death
+          direction: DECREASED
+          interpretation: Contractile failure of gradient-exposed tissue, the in vitro analogue of the
+            reduced force generation reported for border-zone myocardium.
+      selected_evidence:
+        snippet: we engineered a microphysiological system to controllably expose engineered cardiac tissue
+          to an oxygen gradient that mimics the border zone and measured the effects of the gradient on
+          electromechanical function and the transcriptome
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36475790
+      reference_title: A myocardial infarct border-zone-on-a-chip demonstrates distinct regulation of
+        cardiac tissue function by an oxygen gradient.
+      evidence_source: IN_VITRO
+      explanation: Describes the model and the border-zone mechanism it is built to interrogate.
+    first_seen_at: '2026-10-03T21:19:57.025002+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:57.025002+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:57.025002+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:36475790
 assessments:
   a43bf4ad888d09ced5e6aee46ed6e54b0cfff4a61ba317444c2ef0da56f9e11e:
     input_sha256: 38f1b41e603671702bfbe5d76a8087a7197fef01c7b293106c14ec94a96060d7
@@ -10362,3 +10670,463 @@ assessments:
       request_sha256: b2e31f6d042bb5813354d8a4e59ce4b234225a8cc17bb74ae6bf3b20c898564d
       request_sha256s:
       - b2e31f6d042bb5813354d8a4e59ce4b234225a8cc17bb74ae6bf3b20c898564d
+  0c0ca0355dc9ce6ec902d829f54354e249dc754dbf8a88ba15ee94aae5c1aad2:
+    input_sha256: 710fd1bc2ff33a0dccb4612e079e2ab40eec52dca4e8d875362245157c29d4bc
+    configuration_sha256: b8a8e795fa9abe03ea830c9db04227b0aeec6db6f2a88335287eb328a9cc4f4f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:55.526624+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            PARTIAL: 0.64
+            MISMATCH: 0.04
+          confidence: 0.47
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            PARTIAL: 0.11
+            MISMATCH: 0.02
+          confidence: 0.81
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            PARTIAL: 0.4
+            MISMATCH: 0.18
+          confidence: 0.13
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            PARTIAL: 0.58
+            MISMATCH: 0.03
+          confidence: 0.37
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            PARTIAL: 0.48
+            MISMATCH: 0.34
+          confidence: 0.22
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            PARTIAL: 0.42
+            MISMATCH: 0.42
+          confidence: 0.13
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.29
+            MISMATCH: 0.66
+          confidence: 0.48
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            PARTIAL: 0.31
+            MISMATCH: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            PARTIAL: 0.32
+            MISMATCH: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.36
+            MISMATCH: 0.5700000000000001
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            PARTIAL: 0.38
+            MISMATCH: 0.5
+          confidence: 0.26
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.25
+            MISMATCH: 0.67
+          confidence: 0.51
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            PARTIAL: 0.28
+            MISMATCH: 0.65
+          confidence: 0.47
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            PARTIAL: 0.36
+            MISMATCH: 0.56
+          confidence: 0.34
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            PARTIAL: 0.45
+            MISMATCH: 0.11
+          confidence: 0.17
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            PARTIAL: 0.39
+            MISMATCH: 0.09
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16838
+        output_tokens: 830
+      elapsed_seconds: 0.4682
+      request_sha256: b5defb898a033b55d0cb62d4b046c9bbf866ac3c76dffab52bbf77bf49ae8009
+      request_sha256s:
+      - b5defb898a033b55d0cb62d4b046c9bbf866ac3c76dffab52bbf77bf49ae8009
+  1b42f4ba35eaed69a368b1443c73d783c1cb6ef2e3ec8b3c81436580476a51b1:
+    input_sha256: 9dc053566c11eac04f3550efd880d4d106b8cb74a23f95811e38e43b9107aba5
+    configuration_sha256: b22f5bef70743add93dacd3064d61b2be843a4e9880053f55ebcd9de3dfdd079
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:55.553148+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.06
+            PARTIAL: 0.46
+            MATCH: 0.48
+          confidence: 0.21
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+            MATCH: 0.92
+          confidence: 0.89
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.19
+            PARTIAL: 0.37
+            MATCH: 0.44
+          confidence: 0.16
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.22
+            PARTIAL: 0.47
+            MATCH: 0.31
+          confidence: 0.21
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.25
+            PARTIAL: 0.31
+            MATCH: 0.44
+          confidence: 0.15
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.13
+            PARTIAL: 0.42
+            MATCH: 0.45
+          confidence: 0.18
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.18
+            PARTIAL: 0.46
+            MATCH: 0.36
+          confidence: 0.19
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.34
+            MATCH: 0.55
+          confidence: 0.32
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            PARTIAL: 0.34
+            MATCH: 0.57
+          confidence: 0.36
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.05
+            PARTIAL: 0.19
+            MATCH: 0.76
+          confidence: 0.64
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.45
+            MATCH: 0.44
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11673
+        output_tokens: 519
+      elapsed_seconds: 0.4927
+      request_sha256: a027d4942bfeff845aed381db72cd7da808d142a0a3d3abfaa335b7fadc509b4
+      request_sha256s:
+      - a027d4942bfeff845aed381db72cd7da808d142a0a3d3abfaa335b7fadc509b4
+  003b1cafc045133372bf945a54499ea206a29527d0a762de7564351f7bf53b8a:
+    input_sha256: c513af5fd5430f050ff9d7b151843e5d270409f3b7c4c2d7804b6fe5ca11ad2a
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:57.005272+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.77
+            MATCH: 0.14
+            MISMATCH: 0.09
+          confidence: 0.65
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.58
+            MATCH: 0.34
+            MISMATCH: 0.08
+          confidence: 0.36
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.62
+            MATCH: 0.2
+            MISMATCH: 0.18
+          confidence: 0.43
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.68
+            MATCH: 0.16
+            MISMATCH: 0.16
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.81
+            MATCH: 0.04
+            MISMATCH: 0.14
+          confidence: 0.72
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            PARTIAL: 0.48
+            MATCH: 0.46
+            MISMATCH: 0.06
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6440
+        output_tokens: 273
+      elapsed_seconds: 0.2938
+      request_sha256: caac2371f9781df32464cbfa0eab23189eeb94b2411fbad837e1b8fc71b3047a
+      request_sha256s:
+      - caac2371f9781df32464cbfa0eab23189eeb94b2411fbad837e1b8fc71b3047a
+  003c35e2c885eaddb7f5c56668b1680b905675ae5eb4040083d72a5ca5221f1b:
+    input_sha256: f7467fcd8786af2f9ef32dd6febefa702250678770608e823420337e1ef0d8f0
+    configuration_sha256: d9476069ecda23c8b7519fb903e5cc16a51bb50c964857d5326ad95188d0ef96
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:57.025002+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.1
+            PARTIAL: 0.59
+          confidence: 0.39
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.07
+            PARTIAL: 0.47
+          confidence: 0.21
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.11
+            PARTIAL: 0.41
+          confidence: 0.22
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.45
+            PARTIAL: 0.32
+          confidence: 0.17
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.02
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.03
+            PARTIAL: 0.46
+          confidence: 0.26
+        /assertion/limitations:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.39
+            PARTIAL: 0.45
+          confidence: 0.17
+        /assertion/divergences/0/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.1
+            PARTIAL: 0.14
+          confidence: 0.64
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.08
+            PARTIAL: 0.34
+          confidence: 0.37
+        /assertion/divergences/0/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.1
+            PARTIAL: 0.29
+          confidence: 0.4
+        /assertion/divergences/1/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.14
+            PARTIAL: 0.26
+          confidence: 0.41
+        /assertion/divergences/1/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.1
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/divergences/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.32
+            PARTIAL: 0.43
+          confidence: 0.15
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.07
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.31
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.25
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.3
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/readouts/1/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.12
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.45
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/readouts/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.25
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.08
+            PARTIAL: 0.27
+          confidence: 0.47
+      model: jev-1.13.0
+      usage:
+        input_tokens: 25481
+        output_tokens: 1127
+      elapsed_seconds: 0.4269
+      request_sha256: c12942edcca17748c15bd8a06131fb21bdec5140aed8fd70b7128932d221a9f1
+      request_sha256s:
+      - c12942edcca17748c15bd8a06131fb21bdec5140aed8fd70b7128932d221a9f1

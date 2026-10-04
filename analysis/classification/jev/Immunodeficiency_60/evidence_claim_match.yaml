@@ -5978,6 +5978,87 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: CGGV:assertion_2473560a-6e5c-4342-a6e2-c89e37f4cc71-2023-02-21T180000.000Z
+  76c1129c86d00b3d5decdbdfbe1f7095c196e2ef765749ed7dd94d846bbe1702:
+    claim:
+      about:
+        disease:
+          name: Immunodeficiency 60
+          disease_term:
+            preferred_term: immunodeficiency 60
+            term:
+              id: MONDO:0032723
+              label: immunodeficiency 60
+        context:
+        - path: /animal_models/0
+          value:
+            name: Bach2-heterozygous mouse (BRIDA report)
+            species: Mouse
+            genotype: Bach2 heterozygous (Bach2+/-)
+            publication: PMID:28530713
+            description: The dose-matched model. Because BRIDA is a haploinsufficiency, a heterozygous
+              mouse rather than a knockout is the construct that reproduces the human genetic state, and
+              the founding report shows it produces analogous lymphocyte defects.
+            notes: 'Same line as the three model entries below, and no longer an open question: the founding
+              report''s methods state that its Bach2 animals "were generated and housed as previously
+              described", citing the study curated here as PMID:23728300. So this heterozygote and the
+              heterozygote in that study are one line, characterized twice. They are two experiments and
+              not two independent observations of the line - do not count them as replication of each
+              other.'
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: BACH2 Haploinsufficiency
+        relationship: RECAPITULATES
+        fidelity: HIGH
+        description: Heterozygous loss in mouse reproduces the molecular state of heterozygous loss in
+          humans - reduced Bach2 message and protein with de-repressed Prdm1 - which is what licenses
+          reading mouse Bach2 dosage biology onto this disorder.
+        limitations: 'The mouse is normal until it is challenged. Bulk CD4+, CD8+, B-cell and plasma-cell
+          numbers are unchanged in unimmunized animals, whereas the patients have a progressive T-cell
+          lymphopenia, so the heterozygote does not model the resting human phenotype and its informative
+          readouts all come from immunization or from subset gating rather than from counts.
+
+          Keeping the dose-match versus dose-dependence distinction this entry draws: dose match is a
+          property of the construct, and every heterozygote here has it by construction. Dose dependence
+          is a demonstrated graded response, and it needs a genotype comparison. This model now has both
+          - the full text compares Bach2+/- against wild-type for message, protein, Prdm1, and the immunization
+          readouts - which is why the fidelity here is HIGH rather than the MODERATE that the abstract-only
+          record supported.'
+        readouts:
+        - name: Bach2 message and protein in heterozygous animals
+          target: BACH2 Haploinsufficiency
+          direction: DECREASED
+          interpretation: The gene-dosage lesion itself, confirmed at both message and protein level.
+        - name: Resting lymphocyte subset counts in heterozygous animals
+          target: BACH2 Haploinsufficiency
+          direction: UNCHANGED
+          interpretation: 'A negative result, kept because it bounds the model: halving Bach2 does not
+            by itself deplete the lymphoid compartments in an unchallenged animal.'
+      selected_evidence:
+        snippet: We observed analogous lymphocyte defects in Bach2-heterozygous mice.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:28530713
+      reference_title: BACH2 immunodeficiency illustrates an association between super-enhancers and haploinsufficiency.
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports treating the heterozygous mouse as informative for the human haploinsufficient
+        state.
+    first_seen_at: '2026-10-03T21:19:16.517979+00:00'
+    first_seen_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    last_seen_at: '2026-10-03T21:19:16.517979+00:00'
+    active: true
+    active_as_of: '2026-10-03T21:19:16.517979+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/0
+      evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:28530713
 assessments:
   16d274ca778d9625cabe5c5f9da84d1c10deb51846e81d534f0d1a21eba9d817:
     input_sha256: 4c8f4bd1182f49085d3f2464dc36054e73c4687dea6700001c4365cc3cc1bab8
@@ -13602,3 +13683,132 @@ assessments:
       request_sha256: f1267c751dd1fb22cdb870472f1128eb5ef4232dfdfb7ba8a88aa9214a686157
       request_sha256s:
       - f1267c751dd1fb22cdb870472f1128eb5ef4232dfdfb7ba8a88aa9214a686157
+  c60e85dee66e39e9353335137053e2cc96b9595caefa373920127562c114c2c3:
+    input_sha256: 76c1129c86d00b3d5decdbdfbe1f7095c196e2ef765749ed7dd94d846bbe1702
+    configuration_sha256: 4c1c354da74e08eb9c626ad37c3b053f65a1b6dc00cbf939d21dfa7495fffc87
+    model: jev-1.13.0
+    assessment_source_revision: 19a31ae9e75be9102caeb32e2125aefeea29f45d
+    status: assessed
+    assessed_at: '2026-10-03T21:19:16.517979+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            MATCH: 0.2
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.2
+            PARTIAL: 0.42
+            MATCH: 0.38
+          confidence: 0.13
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.15
+            PARTIAL: 0.35
+            MATCH: 0.5
+          confidence: 0.26
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.47
+            PARTIAL: 0.33
+            MATCH: 0.2
+          confidence: 0.21
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.11
+            PARTIAL: 0.79
+            MATCH: 0.1
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.34
+            MATCH: 0.06
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.64
+            PARTIAL: 0.34
+            MATCH: 0.02
+          confidence: 0.46
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+            MATCH: 0.04
+          confidence: 0.52
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.33
+            PARTIAL: 0.45
+            MATCH: 0.22
+          confidence: 0.17
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.44
+            PARTIAL: 0.41
+            MATCH: 0.15
+          confidence: 0.17
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.46
+            PARTIAL: 0.42
+            MATCH: 0.12
+          confidence: 0.19
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.65
+            PARTIAL: 0.3
+            MATCH: 0.05
+          confidence: 0.47
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MISMATCH: 0.41
+            PARTIAL: 0.42
+            MATCH: 0.17
+          confidence: 0.14
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.58
+            PARTIAL: 0.36
+            MATCH: 0.06
+          confidence: 0.37
+        /assertion/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MISMATCH: 0.62
+            MATCH: 0.05
+            PARTIAL: 0.33
+          confidence: 0.42
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MISMATCH: 0.09
+            MATCH: 0.55
+            PARTIAL: 0.36
+          confidence: 0.32
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16747
+        output_tokens: 788
+      elapsed_seconds: 0.4021
+      request_sha256: 768f48658a8478d49d4bdc0749af0ac733a1d36affe46ae40b21ad7021e5512d
+      request_sha256s:
+      - 768f48658a8478d49d4bdc0749af0ac733a1d36affe46ae40b21ad7021e5512d

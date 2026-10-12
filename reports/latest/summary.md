@@ -2,7 +2,7 @@
 
 # Jev claim/evidence audit
 
-3305 entries; 279713 assertion/evidence pairs; 156260 assessed (156260 reused); 73601 API/unassessed errors; 48 invalid inputs.
+3365 entries; 286924 assertion/evidence pairs; 154810 assessed (154810 reused); 81241 API/unassessed errors; 319 invalid inputs.
 
 Model judgments prioritize recuration; they are not curated labels or measures of disease-entry truth.
 PARTIAL means incomplete, weak, mixed or uncertain snippet support. Missing evidence and failed requests have no model label.
@@ -13,23 +13,23 @@ Full reports: `entries.csv`, `aspects.csv`; provenance and exact inputs: `manife
 
 | Entry | Assertions with MISMATCH | Assertions with PARTIAL | Assessed pairs |
 | --- | ---: | ---: | ---: |
-| Fanconi_Anemia | 124 | 209 | 296 |
 | BRPF1-Related Intellectual Disability | 117 | 205 | 329 |
-| Wilson Disease | 114 | 203 | 333 |
-| Cystic Fibrosis | 99 | 134 | 229 |
-| Primary_Ciliary_Dyskinesia | 99 | 167 | 281 |
-| Amyotrophic Lateral Sclerosis | 97 | 149 | 310 |
-| CHD8-Related Neurodevelopmental Disorder with Overgrowth | 91 | 131 | 211 |
-| MELAS Syndrome | 90 | 184 | 338 |
+| Wilson Disease | 105 | 197 | 307 |
+| Fanconi_Anemia | 93 | 186 | 263 |
 | Autosomal Recessive Spinocerebellar Ataxia 16 | 89 | 142 | 233 |
-| Autosomal Dominant Hypercholesterolemia 3 | 87 | 126 | 198 |
+| Primary_Ciliary_Dyskinesia | 88 | 154 | 253 |
+| Amyotrophic Lateral Sclerosis | 87 | 142 | 295 |
 | Noonan Syndrome | 85 | 162 | 298 |
 | Genetic Developmental and Epileptic Encephalopathy | 84 | 145 | 266 |
+| CHD8-Related Neurodevelopmental Disorder with Overgrowth | 84 | 126 | 196 |
 | Androgen Insensitivity Syndrome | 81 | 105 | 232 |
 | Autosomal Agammaglobulinemia | 80 | 170 | 239 |
 | Biliary Atresia | 78 | 134 | 210 |
-| Diabetes mellitus | 76 | 123 | 229 |
+| Autosomal Dominant Hypercholesterolemia 3 | 76 | 113 | 166 |
+| Diabetes mellitus | 75 | 119 | 217 |
 | CDK19-Related Disorder | 74 | 112 | 143 |
 | Autoimmune Pancreatitis | 73 | 127 | 225 |
 | Berardinelli-Seip Congenital Lipodystrophy | 73 | 126 | 230 |
 | Angelman Syndrome | 73 | 133 | 216 |
+| Achondroplasia | 72 | 126 | 219 |
+| Huntington Disease | 72 | 130 | 303 |

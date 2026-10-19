@@ -19690,6 +19690,63 @@ inputs:
     - assertion_path: /differential_diagnoses/2
       evidence_path: /differential_diagnoses/2/evidence/0
       reference: PMID:27710244
+  44fae4d1d5dc0e8a81f8c9fb96dc89b8df3d78dbdbbeea4a939cb1775f28d574:
+    claim:
+      about:
+        disease:
+          name: Berardinelli-Seip Congenital Lipodystrophy
+          disease_term:
+            preferred_term: Berardinelli-Seip congenital lipodystrophy
+            term:
+              id: MONDO:0018883
+              label: Berardinelli-Seip congenital lipodystrophy
+        context:
+        - path: /pathophysiology/12
+          value:
+            name: Severe insulin resistance
+            description: Insulin action is severely impaired. Compensatory hyperinsulinemia may initially
+              preserve glucose tolerance; diabetes develops when compensation is inadequate. Lipid and
+              leptin pathways contribute through incompletely resolved intermediates.
+            biological_processes:
+            - preferred_term: insulin receptor signaling pathway
+              term:
+                id: GO:0008286
+                label: insulin receptor signaling pathway
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Irregular menstruation
+        description: Insulin resistance and hyperandrogenism contribute to female reproductive manifestations;
+          the individual mediators are incompletely established.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: Insulin resistance is suspected to be the main cause of excessive ovarian androgen production
+          in these patients.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/12/downstream/6
+      evidence_path: /pathophysiology/12/downstream/6/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/12
+    evidence_metadata:
+      reference: PMID:26239609
+      reference_title: Congenital generalized lipodystrophies--new insights into metabolic dysfunction.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Proposed disease-level mechanism, not direct proof of each reproductive consequence.
+      quote_role: REVIEW_SYNTHESIS
+    first_seen_at: '2026-10-19T16:55:07.536898+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:55:07.536898+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:55:07.536898+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/12/downstream/6
+      evidence_path: /pathophysiology/12/downstream/6/evidence/1
+      reference: PMID:26239609
 assessments:
   83beb37cd6c3e3958ed9b0c07006d6ebe1785182ca9eab7ce1b7ea366b252eeb:
     input_sha256: b0e609bfc846fe0f32f0ea4f18c8f83c35990f4c0f94291569ead799ff42306e
@@ -43372,3 +43429,62 @@ assessments:
       request_sha256: f3cda65571c860fbcd80f395c165330486bdea34250a59a213665b8e8498679a
       request_sha256s:
       - f3cda65571c860fbcd80f395c165330486bdea34250a59a213665b8e8498679a
+  759192854aa0964a53e01b8d918d1ffa5a7f5ea35cb1de68ff8651739caae019:
+    input_sha256: 44fae4d1d5dc0e8a81f8c9fb96dc89b8df3d78dbdbbeea4a939cb1775f28d574
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:55:07.536898+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.03
+            PARTIAL: 0.63
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.08
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.1
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.04
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.02
+            PARTIAL: 0.34
+          confidence: 0.46
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.26
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6468
+        output_tokens: 272
+      elapsed_seconds: 0.1948
+      request_sha256: 2ddfcf641f4884ea9cbdee1e65cdb5ab8ec5f5ef865f73978008a2467288c8df
+      request_sha256s:
+      - 2ddfcf641f4884ea9cbdee1e65cdb5ab8ec5f5ef865f73978008a2467288c8df

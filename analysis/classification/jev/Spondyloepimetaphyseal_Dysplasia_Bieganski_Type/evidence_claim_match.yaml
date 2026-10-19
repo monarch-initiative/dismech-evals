@@ -2731,6 +2731,55 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:36136119
+  df4a3dd5bc5418ff2e141fabd50ff7df8fa809dbce2fab4feac50313f5abb0b6:
+    claim:
+      about:
+        disease:
+          name: Spondyloepimetaphyseal Dysplasia Bieganski Type
+          disease_term:
+            preferred_term: spondyloepimetaphyseal dysplasia, Bieganski type
+            term:
+              id: MONDO:0010275
+              label: spondyloepimetaphyseal dysplasia, Bieganski type
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        name: Joint Hypermobility
+        description: Joint laxity is reported as part of the broader Liberfarb syndrome phenotype; this
+          is mapped to the current HPO term for joint hypermobility.
+        phenotype_term:
+          preferred_term: Joint laxity
+          term:
+            id: HP:0001382
+            label: Joint hypermobility
+      selected_evidence:
+        snippet: Liberfarb syndrome is an extremely rare mitochondrial multisystem disorder, recently
+          described and characterized by early-onset retinal degeneration and sensorineural hearing loss,
+          spondyloepimetaphyseal dysplasia, joint laxity, short stature, microcephaly, developmental delay
+          and intellectual disability, but clinical variability has been observed.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36136119
+      reference_title: 'Brain imaging findings in Liberfarb syndrome: hypomyelination and optic nerve
+        and cerebellar atrophy.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The abstract lists joint laxity among characteristic features; OAK showed HP:0001388
+        is obsolete and HP:0001382 has exact synonym "Joint laxity".
+    first_seen_at: '2026-10-19T16:50:47.066341+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:47.066341+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:47.066341+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/3
+      evidence_path: /phenotypes/3/evidence/0
+      reference: PMID:36136119
 assessments:
   8b58c9bc78836473a53f0783e6ff00e7c9b69dbd853cf229d3fbe645ad4b4526:
     input_sha256: c90560f71ba79a8482737723dfbe28ce02dc5e483d5b61a591fb226cd8b2200c
@@ -6021,3 +6070,62 @@ assessments:
       request_sha256: 4ba8f2f87fc669aa7958e868d34a73c36ed7bcf49cea17ac468bb458ea9c4d7a
       request_sha256s:
       - 4ba8f2f87fc669aa7958e868d34a73c36ed7bcf49cea17ac468bb458ea9c4d7a
+  a98c0569b9c75a53ec0bd83ee95bbd93d845693fa205bf784d46a10cc70b8fd7:
+    input_sha256: df4a3dd5bc5418ff2e141fabd50ff7df8fa809dbce2fab4feac50313f5abb0b6
+    configuration_sha256: 12096020dd289973e231cd474ee99938bc664f76c0040bd860db188368d31715
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:47.066341+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.73
+            PARTIAL: 0.18
+          confidence: 0.59
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.64
+            PARTIAL: 0.25
+          confidence: 0.46
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.42
+            PARTIAL: 0.2
+          confidence: 0.13
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.36
+            PARTIAL: 0.25
+          confidence: 0.09
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.19
+            PARTIAL: 0.1
+          confidence: 0.56
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.37
+            PARTIAL: 0.18
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6335
+        output_tokens: 282
+      elapsed_seconds: 0.4239
+      request_sha256: 1da5d4a2646799fd5f9a2db679ab994ce54acb763002c8d8c54159c779e8d4b1
+      request_sha256s:
+      - 1da5d4a2646799fd5f9a2db679ab994ce54acb763002c8d8c54159c779e8d4b1

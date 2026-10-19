@@ -5187,6 +5187,68 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/2/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/2/readouts/0/evidence/0
       reference: PMID:42576387
+  e94bc2574839ccde9ee74590d4969ae9aa466c899897cb4aafad698c0aee4ba4:
+    claim:
+      about:
+        disease:
+          name: Sanfilippo syndrome
+          disease_term:
+            preferred_term: Sanfilippo syndrome
+            term:
+              id: MONDO:0018937
+              label: mucopolysaccharidosis type 3
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Progressive central neurodegeneration
+            conforms_to: mps_gag_storage#Progressive Central Neurodegeneration
+            description: The shared clinical trajectory across Sanfilippo syndrome is progressive central
+              nervous system degeneration with worsening cognition, regression, and later premature death.
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            locations:
+            - preferred_term: brain
+              term:
+                id: UBERON:0000955
+                label: brain
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Autism
+        description: Autism-spectrum manifestations are part of the neurologic and behavioral output of
+          progressive Sanfilippo CNS disease.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Mucopolysaccharidosis type III (MPS III) is a multisystem lysosomal storage disease characterized
+          by progressive central nervous system degeneration manifest as severe intellectual disability
+          (ID), developmental regression, and other neurologic manifestations including autism spectrum
+          disorder (ASD), behavioral problems, and sleep disturbances.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/3
+      evidence_path: /pathophysiology/4/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:31536183
+      reference_title: Mucopolysaccharidosis Type III.
+      evidence_source: OTHER
+      explanation: GeneReviews explicitly includes autism spectrum disorder among the manifestations of
+        progressive CNS degeneration.
+    first_seen_at: '2026-10-19T16:50:37.241179+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:37.241179+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:37.241179+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/3
+      evidence_path: /pathophysiology/4/downstream/3/evidence/0
+      reference: PMID:31536183
 assessments:
   5ceb40ad2dbd10d24121f8fe1c5d743c34f489230b3ae7eb82429acd6cf02bb6:
     input_sha256: 1a1b78da786adc67271e5aa2c624042e1270a732cdca2a51a6319993fc3396d3
@@ -11749,3 +11811,62 @@ assessments:
       request_sha256: 16815fb6e4614359db9d875a7ee352c73e34c915017421cb8f8694c69e956012
       request_sha256s:
       - 16815fb6e4614359db9d875a7ee352c73e34c915017421cb8f8694c69e956012
+  ab582cedd6c35f5554c8db8cfc95c2e94eb10902320dd484132c3da441d5bdfd:
+    input_sha256: e94bc2574839ccde9ee74590d4969ae9aa466c899897cb4aafad698c0aee4ba4
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:37.241179+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.23
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.09
+            PARTIAL: 0.11
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6509
+        output_tokens: 268
+      elapsed_seconds: 0.2271
+      request_sha256: f10dcb8e8316bbeea0314df49bd0d97f13b5626c80483f19ed5d53ca93a8d44f
+      request_sha256s:
+      - f10dcb8e8316bbeea0314df49bd0d97f13b5626c80483f19ed5d53ca93a8d44f

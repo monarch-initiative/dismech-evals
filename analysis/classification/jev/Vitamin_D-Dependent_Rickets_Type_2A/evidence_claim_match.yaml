@@ -4190,6 +4190,77 @@ inputs:
     - assertion_path: /biochemical/1
       evidence_path: /biochemical/1/evidence/0
       reference: PMID:38872968
+  844dc46c2f4ac93e2ab9312f05555425c9a347e00517a5fdede71a90527d75bb:
+    claim:
+      about:
+        disease:
+          name: Vitamin D-Dependent Rickets Type 2A
+          disease_term:
+            preferred_term: vitamin D-dependent rickets, type 2A
+            term:
+              id: MONDO:0010186
+              label: vitamin D-dependent rickets, type 2A
+        context:
+        - path: /treatments/0
+          value:
+            name: High-Dose Active Vitamin D Plus Oral Calcium for Residual Responders
+            description: Patients with residual VDR responsiveness, particularly some non-truncating ligand-binding-domain
+              variants and milder presentations without alopecia, may respond to supraphysiologic calcitriol
+              or alfacalcidol together with oral calcium. Biochemical response, growth, and radiographic
+              healing guide continued use; response cannot be inferred from alopecia alone.
+            action_category: THERAPEUTIC
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: calcitriol
+                term:
+                  id: CHEBI:17823
+                  label: calcitriol
+              - preferred_term: alfacalcidol
+                term:
+                  id: CHEBI:31186
+                  label: alfacalcidol
+              - preferred_term: calcium(2+)
+                term:
+                  id: CHEBI:29108
+                  label: calcium(2+)
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Impaired VDR-Regulated Transcription
+        treatment_effect: MODULATES
+        description: Supraphysiologic active vitamin D can increase signaling through a receptor with
+          residual function.
+      selected_evidence:
+        snippet: High-dose calcitriol therapy resulted in progressive biochemical improvement and catch-up
+          growth.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:42438800
+      reference_title: A case of vitamin D-dependent rickets type 2A presenting with hypophosphatemia
+        without hypocalcemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Genetically confirmed p.R343C VDDR2A responded clinically and biochemically, disproving
+        universal calcitriol nonresponse.
+    first_seen_at: '2026-10-19T16:50:24.291664+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:24.291664+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:24.291664+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:42438800
 assessments:
   35ad24b4aacd3723d230b8cd00b70af2f4fc45a77e1863326bdeddadd8ca28b2:
     input_sha256: 2849a4ac09436b4b256dd01b86109f68c20d00298888f9ee2c6cc9e9b8288b49
@@ -10227,3 +10298,62 @@ assessments:
       request_sha256: b948d2d2de2df02da18b080cb91802ac305ce7c0b676abdf1a8e7fecb14d44e3
       request_sha256s:
       - b948d2d2de2df02da18b080cb91802ac305ce7c0b676abdf1a8e7fecb14d44e3
+  bcd0487edb66ed5de10a69969458f1e3610377736a7a4766715b80c979eb4303:
+    input_sha256: 844dc46c2f4ac93e2ab9312f05555425c9a347e00517a5fdede71a90527d75bb
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:24.291664+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.08
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.03
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.12
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.07
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.12
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.09
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6630
+        output_tokens: 273
+      elapsed_seconds: 0.2798
+      request_sha256: c2fe56508977253f38a0d7e251cd20088a9dffa580915b06da657c2f471558de
+      request_sha256s:
+      - c2fe56508977253f38a0d7e251cd20088a9dffa580915b06da657c2f471558de

@@ -7832,6 +7832,486 @@ inputs:
     - assertion_path: /phenotypes/9
       evidence_path: /phenotypes/9/evidence/0
       reference: PMID:22919404
+  d0d2ec348d0b8cdaa10e564d3ebb306a5dbde1ecc6fa8fc6278230ce1e199893:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: HCV RNA
+        presence: Detected during active infection
+        loinc_term:
+          id: LOINC:104721-6
+          label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+        notes: A Monarch KG search found no method-less quantitative HCV RNA code for serum or plasma,
+          and no LOINC Part for HCV RNA, so loinc_term binds the quantitative code in international units
+          per volume whose method is the generic molecular genetics method rather than a specific amplification
+          or probe method.
+        context: Qualitative or quantitative HCV RNA establishes current infection and quantitative levels
+          guide treatment monitoring, but a single positive result does not by itself establish recent
+          acquisition.
+        readouts:
+        - target: HCV genome replication and early viremia
+          relationship: READOUT_OF
+          direction: PRESENT_ABSENT
+          endpoint_context: DIAGNOSTIC
+          interpretation: Detectable circulating HCV RNA reports active viremia.
+      selected_evidence:
+        snippet: Tests for HCV RNA are valuable in distinguishing between active and resolved infection,
+          but the presence of HCV RNA does not distinguish between acute and chronic hepatitis C
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30927209
+      reference_title: Importance of Hepatitis C Virus RNA Testing in Patients with Suspected Drug-Induced
+        Liver Injury.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports the use and limitation of HCV RNA as a biomarker.
+    first_seen_at: '2026-10-19T16:43:48.446058+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:48.446058+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:48.446058+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:30927209
+  9951247a490a6599658e8560d4b8328e87180c85b732f816a67709da02da891a:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context:
+        - path: /biochemical/0
+          value:
+            name: HCV RNA
+            presence: Detected during active infection
+            loinc_term:
+              id: LOINC:104721-6
+              label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+            notes: A Monarch KG search found no method-less quantitative HCV RNA code for serum or plasma,
+              and no LOINC Part for HCV RNA, so loinc_term binds the quantitative code in international
+              units per volume whose method is the generic molecular genetics method rather than a specific
+              amplification or probe method.
+            context: Qualitative or quantitative HCV RNA establishes current infection and quantitative
+              levels guide treatment monitoring, but a single positive result does not by itself establish
+              recent acquisition.
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: HCV genome replication and early viremia
+        relationship: READOUT_OF
+        direction: PRESENT_ABSENT
+        endpoint_context: DIAGNOSTIC
+        interpretation: Detectable circulating HCV RNA reports active viremia.
+      selected_evidence:
+        snippet: HCV-ribonucleic acid (RNA) was detectable at presentation in 26 (86.7%) patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: PMID:23481134
+      reference_title: 'Clinical characteristics, spontaneous clearance and treatment outcome of acute
+        hepatitis C: a single tertiary center experience.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports HCV RNA as a viremia readout in newly acquired infection.
+    first_seen_at: '2026-10-19T16:43:48.446781+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:48.446781+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:48.446781+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      reference: PMID:23481134
+  3d8653c51604562507b1ca2d4da5daf957a9e297a180916f2631165f471294ce:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Combined HCV RNA and anti-HCV testing with evidence of recent acquisition
+        description: Acute infection is best supported by HCV RNA during the antibody-negative window,
+          documented anti-HCV seroconversion, de novo RNA detection, or RNA loss during untreated recovery.
+          RNA or antibody at one time point cannot by itself reliably distinguish acute from chronic infection.
+        diagnosis_term:
+          preferred_term: diagnostic procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+        results: Current HCV RNA plus a documented recent negative result, seroconversion, or compatible
+          longitudinal course supports acute HCV.
+        measurements:
+        - preferred_term: anti-HCV
+          term:
+            id: LOINC:16128-1
+            label: Hepatitis C virus Ab [Presence] in Serum
+        - preferred_term: HCV RNA
+          term:
+            id: LOINC:104721-6
+            label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+      selected_evidence:
+        snippet: Thus, reliable diagnosis of acute hepatitis C usually requires testing at two time points
+          demonstrating seroconversion to anti-HCV reactivity, de novo development of HCV RNA, or loss
+          of HCV RNA during recovery.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30927209
+      reference_title: Importance of Hepatitis C Virus RNA Testing in Patients with Suspected Drug-Induced
+        Liver Injury.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports longitudinal antibody/RNA evidence for recent infection.
+    first_seen_at: '2026-10-19T16:43:48.912430+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:48.912430+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:48.912430+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:30927209
+  017135459570efb20ea5c2acd4283e47705422bba0badda3be31b111be61106e:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Anti-HCV Antibodies
+        presence: Negative before seroconversion or positive after seroconversion
+        loinc_term:
+          id: LOINC:16128-1
+          label: Hepatitis C virus Ab [Presence] in Serum
+        notes: A Monarch KG search found no LOINC Part for HCV antibody, so loinc_term binds the method-less
+          serum presence code.
+        context: Anti-HCV may be absent early and, once present, cannot distinguish active, resolved,
+          acute, or chronic infection without RNA results and longitudinal context.
+      selected_evidence:
+        snippet: Anti-HCV antibodies are usually used to exclude acute hepatitis C in a patient with acute
+          liver injury, but it does not distinguish between acute, chronic or resolved hepatitis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30927209
+      reference_title: Importance of Hepatitis C Virus RNA Testing in Patients with Suspected Drug-Induced
+        Liver Injury.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports the interpretive limitation of anti-HCV antibody.
+    first_seen_at: '2026-10-19T16:43:48.907312+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:48.907312+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:48.907312+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:30927209
+  dbc074ddfb55e138ec5ded4288b2d1d334a989d3fe065fa85ca8d81fcf053d9a:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Anti-HCV screening with reflex HCV RNA testing
+        description: 'Hepatitis C testing begins with an antibody (anti-HCV) assay. A nonreactive result
+          in an immunocompetent person without hepatitis C risks needs no further testing. A reactive
+          result indicates current infection, past resolved infection or a false positive, and is followed
+          by nucleic acid testing for HCV RNA: detected RNA indicates current infection, and RNA not detected
+          indicates resolved infection or a false-positive antibody result. CDC encourages reflex RNA
+          testing on the same specimen in the laboratory.'
+        diagnosis_term:
+          preferred_term: laboratory testing
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        results: Anti-HCV reactive with HCV RNA detected establishes current infection; anti-HCV reactive
+          with HCV RNA not detected indicates no current infection.
+        measurements:
+        - preferred_term: anti-HCV
+          term:
+            id: LOINC:16128-1
+            label: Hepatitis C virus Ab [Presence] in Serum
+        - preferred_term: HCV RNA
+          term:
+            id: LOINC:104721-6
+            label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+        notes: 'Anti-HCV binds the method-less serum presence code. A Monarch KG search found no method-less
+          HCV RNA code for serum or plasma, so the RNA step binds the quantitative code whose method is
+          the generic molecular genetics method; the step itself asks only whether RNA is detected. No
+          band is recorded: both steps of the sequence are read as detected or not detected, and the CDC
+          recommendations cited here define no quantitative RNA threshold for diagnosis.'
+      selected_evidence:
+        snippet: Hepatitis C testing should be initiated with a U.S. Food and Drug Administration (FDA)-approved
+          anti-HCV test. Persons who test anti-HCV positive are either currently infected or had past
+          infection that has resolved naturally or with treatment. Immunocompetent persons without hepatitis
+          C risks who test anti-HCV negative are not infected and require no further testing.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32271723
+      reference_title: CDC Recommendations for Hepatitis C Screening Among Adults - United States, 2020.
+      evidence_source: OTHER
+      explanation: The CDC recommendations make the antibody test the first step and state what a negative
+        and a positive antibody result mean.
+    first_seen_at: '2026-10-19T16:43:50.151694+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:50.151694+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:50.151694+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      reference: PMID:32271723
+  fa4cfcdf63bfab23cce84396b3d08cac3c09c8d8ce3220fd7fa103659c0751a4:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Serial HCV RNA assessment
+        description: Repeat HCV RNA assessment is important when timing is uncertain because untreated
+          viremia may fluctuate and a transient decline does not establish spontaneous clearance.
+        diagnosis_term:
+          preferred_term: diagnostic procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+        results: Persistent, recurrent, or cleared RNA across serial measurements resolves uncertainty
+          that remains after a single result.
+        measurements:
+        - preferred_term: HCV RNA
+          term:
+            id: LOINC:104721-6
+            label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+      selected_evidence:
+        snippet: The latter group included a significant proportion of 'fluctuating' progressors (37.5%),
+          in whom a fall followed by a rise (>1 log₁₀) in viraemia was observed.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21139063
+      reference_title: Predicting spontaneous clearance of acute hepatitis C virus in a large cohort of
+        HIV-1-infected men.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports serial rather than single-point interpretation of viremia, with
+        the cohort context stated in progression.
+    first_seen_at: '2026-10-19T16:43:50.150365+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:50.150365+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:50.150365+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:21139063
+  e626eda53a6a8bbde28f1ffa432dcbd8fa5c1ef8ef9f6eebc591c92b4a4e4d3e:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Anti-HCV screening with reflex HCV RNA testing
+        description: 'Hepatitis C testing begins with an antibody (anti-HCV) assay. A nonreactive result
+          in an immunocompetent person without hepatitis C risks needs no further testing. A reactive
+          result indicates current infection, past resolved infection or a false positive, and is followed
+          by nucleic acid testing for HCV RNA: detected RNA indicates current infection, and RNA not detected
+          indicates resolved infection or a false-positive antibody result. CDC encourages reflex RNA
+          testing on the same specimen in the laboratory.'
+        diagnosis_term:
+          preferred_term: laboratory testing
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        results: Anti-HCV reactive with HCV RNA detected establishes current infection; anti-HCV reactive
+          with HCV RNA not detected indicates no current infection.
+        measurements:
+        - preferred_term: anti-HCV
+          term:
+            id: LOINC:16128-1
+            label: Hepatitis C virus Ab [Presence] in Serum
+        - preferred_term: HCV RNA
+          term:
+            id: LOINC:104721-6
+            label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+        notes: 'Anti-HCV binds the method-less serum presence code. A Monarch KG search found no method-less
+          HCV RNA code for serum or plasma, so the RNA step binds the quantitative code whose method is
+          the generic molecular genetics method; the step itself asks only whether RNA is detected. No
+          band is recorded: both steps of the sequence are read as detected or not detected, and the CDC
+          recommendations cited here define no quantitative RNA threshold for diagnosis.'
+      selected_evidence:
+        snippet: Persons testing anti-HCV positive should have follow-up testing with an FDA-approved
+          nucleic acid test (NAT) for detection of HCV RNA. NAT for HCV RNA detection determines viremia
+          and current HCV infection. Persons who test anti-HCV positive but HCV RNA negative do not have
+          current HCV infection. CDC encourages use of reflex HCV RNA testing, in which specimens testing
+          anti-HCV positive undergo HCV RNA testing immediately and automatically in the laboratory, using
+          the same sample from which the anti-HCV test was conducted.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32271723
+      reference_title: CDC Recommendations for Hepatitis C Screening Among Adults - United States, 2020.
+      evidence_source: OTHER
+      explanation: States the RNA step after a positive antibody result, its interpretation, and the reflex-testing
+        recommendation.
+    first_seen_at: '2026-10-19T16:43:51.411703+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:51.411703+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:51.411703+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/1
+      reference: PMID:32271723
+  f9daf153ba2694a59db1539d0111cbc11e0a60ae2c054166ab3ea52085087ebb:
+    claim:
+      about:
+        disease:
+          name: Hepatitis C
+          disease_term:
+            preferred_term: hepatitis C virus infection
+            term:
+              id: MONDO:0005231
+              label: hepatitis C virus infection
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Anti-HCV screening with reflex HCV RNA testing
+        description: 'Hepatitis C testing begins with an antibody (anti-HCV) assay. A nonreactive result
+          in an immunocompetent person without hepatitis C risks needs no further testing. A reactive
+          result indicates current infection, past resolved infection or a false positive, and is followed
+          by nucleic acid testing for HCV RNA: detected RNA indicates current infection, and RNA not detected
+          indicates resolved infection or a false-positive antibody result. CDC encourages reflex RNA
+          testing on the same specimen in the laboratory.'
+        diagnosis_term:
+          preferred_term: laboratory testing
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        results: Anti-HCV reactive with HCV RNA detected establishes current infection; anti-HCV reactive
+          with HCV RNA not detected indicates no current infection.
+        measurements:
+        - preferred_term: anti-HCV
+          term:
+            id: LOINC:16128-1
+            label: Hepatitis C virus Ab [Presence] in Serum
+        - preferred_term: HCV RNA
+          term:
+            id: LOINC:104721-6
+            label: Hepatitis C virus RNA [Units/volume] in Serum or Plasma by Molecular genetics method
+        notes: 'Anti-HCV binds the method-less serum presence code. A Monarch KG search found no method-less
+          HCV RNA code for serum or plasma, so the RNA step binds the quantitative code whose method is
+          the generic molecular genetics method; the step itself asks only whether RNA is detected. No
+          band is recorded: both steps of the sequence are read as detected or not detected, and the CDC
+          recommendations cited here define no quantitative RNA threshold for diagnosis.'
+      selected_evidence:
+        snippet: 'A nonreactive HCV antibody result indicates no HCV antibody detected. A reactive result
+          indicates one of the following: 1) current HCV infection, 2) past HCV infection that has resolved,
+          or 3) false positivity. A reactive result should be followed by NAT for HCV RNA. If HCV RNA
+          is detected, that indicates current HCV infection. If HCV RNA is not detected, that indicates
+          either past, resolved HCV infection, or false HCV antibody positivity.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23657112
+      reference_title: 'Testing for HCV infection: an update of guidance for clinicians and laboratorians.'
+      evidence_source: OTHER
+      explanation: The CDC testing guidance gives the interpretation of each antibody and RNA outcome.
+    first_seen_at: '2026-10-19T16:43:51.413453+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:51.413453+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:51.413453+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/2
+      reference: PMID:23657112
 assessments:
   bfffc297d5b0d6257f645b90f016fdd0ce79cd7a92b5aacf41eec73a73d14f89:
     input_sha256: 74fd79ab164ff3f1bc1947c35a7b05de0063b514fcc5df71ce857fe8edf14dc7
@@ -17292,3 +17772,734 @@ assessments:
       request_sha256: 9e8c5177776307a0c58f197379febb7ac6e931fde9630885d4720d457c44e075
       request_sha256s:
       - 9e8c5177776307a0c58f197379febb7ac6e931fde9630885d4720d457c44e075
+  64186835fe81fdd6e1ef0cdf90d6390b3bcb6023e4d4ebb0114bb399fc93583f:
+    input_sha256: d0d2ec348d0b8cdaa10e564d3ebb306a5dbde1ecc6fa8fc6278230ce1e199893
+    configuration_sha256: 327d4b440f6c5c568d33a9b87c18e7b28b573bc4b7cc8141b519eb07d2ba9fa9
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:48.446058+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.04
+            PARTIAL: 0.32
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.08
+            PARTIAL: 0.15
+          confidence: 0.66
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.6799999999999999
+            PARTIAL: 0.26
+          confidence: 0.52
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.29
+            PARTIAL: 0.33
+          confidence: 0.07
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.76
+            PARTIAL: 0.2
+          confidence: 0.64
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.31
+            PARTIAL: 0.23
+          confidence: 0.19
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/readouts/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13253
+        output_tokens: 618
+      elapsed_seconds: 0.285
+      request_sha256: 9b54a6b3b0f0452a7ba49537f649779d90a51a666cf25813db76197bd301147b
+      request_sha256s:
+      - 9b54a6b3b0f0452a7ba49537f649779d90a51a666cf25813db76197bd301147b
+  e1ce05ae0ba3acedf567fce7c930568dd7509215bf2c0902060bde25464082e5:
+    input_sha256: 9951247a490a6599658e8560d4b8328e87180c85b732f816a67709da02da891a
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:48.446781+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.03
+            PARTIAL: 0.45
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.02
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.04
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.07
+            PARTIAL: 0.35
+          confidence: 0.37
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.07
+            PARTIAL: 0.3
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8596
+        output_tokens: 361
+      elapsed_seconds: 0.3101
+      request_sha256: 2bae14c6de2d45a67fd6abfc1f181b6c90585eb80bd087b5160ffb7e85357a36
+      request_sha256s:
+      - 2bae14c6de2d45a67fd6abfc1f181b6c90585eb80bd087b5160ffb7e85357a36
+  28c7f79bcbe5a5a532306e45becfcb88d0720b97b506e9eb9a2dbf205babe009:
+    input_sha256: 3d8653c51604562507b1ca2d4da5daf957a9e297a180916f2631165f471294ce
+    configuration_sha256: 898cb08d687d52fbfc92d5bd06f1de7b7bfdf36e487c212da9b49e564565fc2c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:48.912430+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.01
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.21
+            PARTIAL: 0.26
+          confidence: 0.3
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.23
+            PARTIAL: 0.25
+          confidence: 0.28
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.05
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.06
+            PARTIAL: 0.13
+          confidence: 0.72
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11266
+        output_tokens: 522
+      elapsed_seconds: 0.2603
+      request_sha256: dff28d8bc21f5a96aad94f434bb74d5ce38b20f1a4f5e586e30e583702c3dafc
+      request_sha256s:
+      - dff28d8bc21f5a96aad94f434bb74d5ce38b20f1a4f5e586e30e583702c3dafc
+  2708b1facf99221602eea466c1cf8ef8643451e6951ee6115fd9c5cb157a3f1e:
+    input_sha256: 017135459570efb20ea5c2acd4283e47705422bba0badda3be31b111be61106e
+    configuration_sha256: 87efc262a5a2dc891e70b6e76a82dae561a164c708de86d9d1501a949716f2de
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:48.907312+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.05
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.19
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.64
+            PARTIAL: 0.26
+          confidence: 0.46
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.28
+            PARTIAL: 0.21
+          confidence: 0.27
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.23
+            PARTIAL: 0.33
+          confidence: 0.16
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.22
+            PARTIAL: 0.37
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8114
+        output_tokens: 362
+      elapsed_seconds: 0.2442
+      request_sha256: 0457a1e9b7784d0beaeaa3a0c249e83d1e1aece0a64dbab5dee3b3160b702d45
+      request_sha256s:
+      - 0457a1e9b7784d0beaeaa3a0c249e83d1e1aece0a64dbab5dee3b3160b702d45
+  4914a8cffc1e73b835b0303ce30c50be41ecbcb0e8da8cd37325a1348bc8253b:
+    input_sha256: dbc074ddfb55e138ec5ded4288b2d1d334a989d3fe065fa85ca8d81fcf053d9a
+    configuration_sha256: 4d2a54079da7edab08c744648a35074828017262d91836a526525841ee7849c6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:50.151694+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.03
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.06
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.04
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.17
+            PARTIAL: 0.38
+          confidence: 0.18
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.14
+            PARTIAL: 0.34
+          confidence: 0.28
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.17
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.06
+            PARTIAL: 0.16
+          confidence: 0.67
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.27
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/measurements/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.4
+            PARTIAL: 0.39
+          confidence: 0.1
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12371
+        output_tokens: 575
+      elapsed_seconds: 0.34
+      request_sha256: 97b249ffe4cf59abb798c1750087ea17abbe34a7eb929f57f1979b0750a5ba04
+      request_sha256s:
+      - 97b249ffe4cf59abb798c1750087ea17abbe34a7eb929f57f1979b0750a5ba04
+  6eae64f17feefddd8eda54723421ec34581aa5dc77b0c5133d1bb36ccd69f595:
+    input_sha256: fa4cfcdf63bfab23cce84396b3d08cac3c09c8d8ce3220fd7fa103659c0751a4
+    configuration_sha256: 7ac7e54b8b9f93b9116bdf372a11dca43a71b58fe6bbce8a4be3a5bc8460233a
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:50.150365+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.04
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.01
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.16
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.02
+            PARTIAL: 0.43
+          confidence: 0.33
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.32
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.29
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.06
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.08
+            PARTIAL: 0.24
+          confidence: 0.52
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.1
+            PARTIAL: 0.29
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9235
+        output_tokens: 425
+      elapsed_seconds: 0.2623
+      request_sha256: 8f2d2795b04d45ffefed97413903dd4bdb8791182a6c480c2a2333ac98a4c9c6
+      request_sha256s:
+      - 8f2d2795b04d45ffefed97413903dd4bdb8791182a6c480c2a2333ac98a4c9c6
+  b67550453c326e1a279d520ffe9b75e0975ac1941a915635d907112679712b27:
+    input_sha256: e626eda53a6a8bbde28f1ffa432dcbd8fa5c1ef8ef9f6eebc591c92b4a4e4d3e
+    configuration_sha256: 4d2a54079da7edab08c744648a35074828017262d91836a526525841ee7849c6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:51.411703+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.09
+            PARTIAL: 0.15
+          confidence: 0.64
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.09
+            PARTIAL: 0.11
+          confidence: 0.7
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.08
+            PARTIAL: 0.13
+          confidence: 0.69
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.11
+            PARTIAL: 0.2
+          confidence: 0.53
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.18
+            PARTIAL: 0.38
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12407
+        output_tokens: 566
+      elapsed_seconds: 0.2418
+      request_sha256: 6f0cd3cf1511c2eac56750ff8cb499b55c96395d882ca461556c1969d9c69d3b
+      request_sha256s:
+      - 6f0cd3cf1511c2eac56750ff8cb499b55c96395d882ca461556c1969d9c69d3b
+  abb4a2b5bd20d12dfd27fb520e28fdad4cfe3646049785daa91a1b14049f5fee:
+    input_sha256: f9daf153ba2694a59db1539d0111cbc11e0a60ae2c054166ab3ea52085087ebb
+    configuration_sha256: 4d2a54079da7edab08c744648a35074828017262d91836a526525841ee7849c6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:51.413453+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.03
+            PARTIAL: 0.13
+          confidence: 0.76
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.01
+            PARTIAL: 0.17
+          confidence: 0.73
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.15
+            PARTIAL: 0.18
+          confidence: 0.51
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.11
+            PARTIAL: 0.16
+          confidence: 0.59
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.07
+            PARTIAL: 0.12
+          confidence: 0.72
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.06
+            PARTIAL: 0.12
+          confidence: 0.73
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.14
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.27
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12399
+        output_tokens: 567
+      elapsed_seconds: 0.3064
+      request_sha256: 14e8c0fb99248d96c96565184628daa4a232c5cc870512adbddc2261f6891d7c
+      request_sha256s:
+      - 14e8c0fb99248d96c96565184628daa4a232c5cc870512adbddc2261f6891d7c

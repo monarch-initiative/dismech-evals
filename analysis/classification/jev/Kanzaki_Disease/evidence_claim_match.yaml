@@ -788,6 +788,53 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/0
       reference: PMID:31890708
+  89100294b84f41c4b98d241a6cb482c5711e6faa92866c90093628760a36d0bc:
+    claim:
+      about:
+        disease:
+          name: Kanzaki Disease
+          disease_term:
+            preferred_term: alpha-N-acetylgalactosaminidase deficiency type 2
+            term:
+              id: MONDO:0012222
+              label: alpha-N-acetylgalactosaminidase deficiency type 2
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: NAGA pathogenic variants
+        gene_term:
+          preferred_term: NAGA
+          term:
+            id: hgnc:7631
+            label: NAGA
+        association: Causative
+        relationship_type: CAUSATIVE
+        variant_origin: GERMLINE
+        notes: Biallelic loss-of-function NAGA variants cause Kanzaki disease; the nonsense variant c.577G>T
+          (p.Glu193*) has been confirmed in an adult Kanzaki patient.
+      selected_evidence:
+        snippet: an apparently homozygous c.577G>T (p.Glu193*) mutation in the NAGA gene
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31890708
+      reference_title: A New Case of Schindler Disease.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies a confirmed pathogenic NAGA variant in Kanzaki disease.
+    first_seen_at: '2026-10-19T16:47:58.445008+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:47:58.445008+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:47:58.445008+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:31890708
 assessments:
   a1e78fa328d3bad1b089c5cdb52b10831e78453a892d38b7e57bf48b1e562a7d:
     input_sha256: 0796266af971e403ad70c29ffcc1fa175e1a332280aa37e3e8ec1ba532b44cab
@@ -1869,3 +1916,83 @@ assessments:
       request_sha256: c5b9d19194131a179210d88d69e74f51fce7b39b9184ab43f10ea93ff8226d81
       request_sha256s:
       - c5b9d19194131a179210d88d69e74f51fce7b39b9184ab43f10ea93ff8226d81
+  660ca64d882257e75393be41a62939119705834586b1a313fa3a6df96c92cc75:
+    input_sha256: 89100294b84f41c4b98d241a6cb482c5711e6faa92866c90093628760a36d0bc
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:47:58.445008+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.03
+            PARTIAL: 0.63
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.1
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.04
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+          confidence: 0.31
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.02
+            PARTIAL: 0.39
+          confidence: 0.38
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.03
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.04
+            PARTIAL: 0.74
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9584
+        output_tokens: 413
+      elapsed_seconds: 0.2561
+      request_sha256: c45c7d77dcaca9accac3322b164e4b72d7c00ec7064f258b325353d8fa29563e
+      request_sha256s:
+      - c45c7d77dcaca9accac3322b164e4b72d7c00ec7064f258b325353d8fa29563e

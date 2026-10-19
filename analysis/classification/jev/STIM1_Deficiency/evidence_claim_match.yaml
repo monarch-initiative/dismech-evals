@@ -3738,6 +3738,67 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/0
       reference: PMID:19420366
+  9dc0c4a79186e5180f936a695dfef834a837f21239e3937bc14169b690832527:
+    claim:
+      about:
+        disease:
+          name: STIM1 Deficiency
+          disease_term:
+            preferred_term: combined immunodeficiency due to STIM1 deficiency
+            term:
+              id: MONDO:0013008
+              label: combined immunodeficiency due to STIM1 deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Defective Enamel Mineralization
+        biological_scale: TISSUE
+        description: 'Ameloblasts secrete the enamel matrix and supply the calcium that mineralizes it,
+          and they depend on store-operated calcium entry to do so. In mice lacking STIM1 and STIM2 in
+          enamel cells the enamel is hypomineralized, thinner and mechanically weak, the ameloblasts lose
+          their ruffled border, and the cells show ER stress and mitochondrial dysfunction. In patients
+          the result is a generalized developmental enamel defect, and because the requirement persists
+          after birth the later erupting permanent teeth are affected too, including in patients who survive
+          the immunodeficiency.
+
+          '
+        biological_processes:
+        - preferred_term: enamel mineralization
+          modifier: DECREASED
+          term:
+            id: GO:0070166
+            label: enamel mineralization
+        cell_types:
+        - preferred_term: ameloblast
+          term:
+            id: CL:0000059
+            label: ameloblast
+      selected_evidence:
+        snippet: She also had a defect in enamel dentition, which became apparent in the first years of
+          life.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/13
+      evidence_path: /pathophysiology/13/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19420366
+      reference_title: STIM1 mutation associated with a syndrome of immunodeficiency and autoimmunity.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The human enamel phenotype in the founding kindred, and its early onset.
+
+        '
+    first_seen_at: '2026-10-19T16:49:15.501129+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:49:15.501129+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:49:15.501129+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/13
+      evidence_path: /pathophysiology/13/evidence/1
+      reference: PMID:19420366
 assessments:
   26fe1690c5a7e81d64c533a1bbc270f28529136d4107944325f5ea8d8967957a:
     input_sha256: 2e8b75eaadff521bdb38e90a8e74e412aa06c79d3cccd6088fabc7ca2ea4512e
@@ -8821,3 +8882,90 @@ assessments:
       request_sha256: b3b96ed933d9c0a9b174836be4b9715b5e9fcce63cb2b6c5f9d4820d9de72a21
       request_sha256s:
       - b3b96ed933d9c0a9b174836be4b9715b5e9fcce63cb2b6c5f9d4820d9de72a21
+  0deebfcf4d6598ee993e1ab5c05566df1f0a375b8ddb9ff2020b8981e68d710b:
+    input_sha256: 9dc0c4a79186e5180f936a695dfef834a837f21239e3937bc14169b690832527
+    configuration_sha256: 5df2df607763c891bc2cd26ec549a4254e1b3a93f98747228ee3d600f3d26dac
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:49:15.501129+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.04
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.09
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.03
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.09
+            PARTIAL: 0.28
+          confidence: 0.45
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.12
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.06
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.04
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.07
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.36
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.49
+            PARTIAL: 0.46
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10902
+        output_tokens: 494
+      elapsed_seconds: 0.3305
+      request_sha256: 0257649cf612c77dc919277fed56f9a94bed68d11fcf8d2e380a60602c2b1f3c
+      request_sha256s:
+      - 0257649cf612c77dc919277fed56f9a94bed68d11fcf8d2e380a60602c2b1f3c

@@ -10844,6 +10844,50 @@ inputs:
     - assertion_path: /pathophysiology/5/downstream/1
       evidence_path: /pathophysiology/5/downstream/1/evidence/0
       reference: url:https://www.ncbi.nlm.nih.gov/sites/books/NBK1162/
+  f9d457ce2573b3ec3bc07b218777cd4b436af4b5933c4088741a06983ff96427:
+    claim:
+      about:
+        disease:
+          name: Attenuated Mucopolysaccharidosis Type I
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: inflammatory_therapy_evidence_is_not_attenuated_specific
+        rationale: A small adalimumab crossover pilot in the tissue review enrolled one post-transplant
+          Hurler patient and one patient with attenuated MPS II. It did not demonstrate treatment efficacy
+          in attenuated MPS I. Parent-reported pain and some range-of-motion findings favored active treatment,
+          but another pain measure, walking distance and handgrip did not improve, one family was effectively
+          unblinded and safety follow-up was short. This supports further research rather than routine
+          anti-TNF care or a proven human TLR4-to-TNF causal cascade.
+        prompt: Does anti-inflammatory treatment benefit attenuated MPS I beyond existing care?
+        kind: INTERPRETATION
+        status: OPEN
+      selected_evidence:
+        snippet: 'We found comparable changes of 13° and 28° in the participant with MPS type IH (Subject
+          #1), who had been previously treated with hematopoietic stem cell transplantation, over just
+          16 weeks of treatment with adalimumab.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:28119823
+      reference_title: Pilot study of the safety and effect of adalimumab on pain, physical function,
+        and musculoskeletal disease in mucopolysaccharidosis types I and II.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: The MPS I participant had severe Hurler disease, not attenuated MPS I.
+    first_seen_at: '2026-10-19T16:37:24.288768+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:37:24.288768+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:37:24.288768+00:00'
+    occurrences:
+    - assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      reference: PMID:28119823
 assessments:
   28c341b767b29fe305cb5e2834916438d2b17430b1b65c1b2816289bc79edba9:
     input_sha256: 006ba8a78c87abbbf1dc4188707cea9d87ea38c41041e54d86603993f91f96a9
@@ -25604,3 +25648,69 @@ assessments:
       request_sha256: 4eded80e6f2086204bea34eaff90bd3458d940150134285828c966a5cbccf73b
       request_sha256s:
       - 4eded80e6f2086204bea34eaff90bd3458d940150134285828c966a5cbccf73b
+  9d1a7483525edc01d14ef2bc8de83994f1397b603f22aacc683640c02236711a:
+    input_sha256: f9d457ce2573b3ec3bc07b218777cd4b436af4b5933c4088741a06983ff96427
+    configuration_sha256: 7833291a9575ce5ac359f42d4ce1ac5959fc57a1ce9fc81611dcab161785dfd1
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:37:24.288768+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.35
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.12
+            PARTIAL: 0.18
+          confidence: 0.55
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.47000000000000003
+            PARTIAL: 0.31
+          confidence: 0.21
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.37
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.14
+            PARTIAL: 0.79
+          confidence: 0.69
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.44
+            PARTIAL: 0.33
+          confidence: 0.16
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.78
+            PARTIAL: 0.21
+          confidence: 0.67
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7237
+        output_tokens: 322
+      elapsed_seconds: 0.3105
+      request_sha256: 7edb186ce984431031d26a74e562c6ff8515add0f48f57bdc9dcf4efcafa08bb
+      request_sha256s:
+      - 7edb186ce984431031d26a74e562c6ff8515add0f48f57bdc9dcf4efcafa08bb

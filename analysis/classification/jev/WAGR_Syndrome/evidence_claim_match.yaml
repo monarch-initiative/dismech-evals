@@ -7906,6 +7906,64 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:23517654
+  1f214f298fd457314fb83b85072191b22ae60814315625e52ffcc768f0a59c32:
+    claim:
+      about:
+        disease:
+          name: WAGR Syndrome
+          disease_term:
+            preferred_term: WAGR syndrome
+            term:
+              id: MONDO:0008681
+              label: WAGR syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: 11p13 contiguous-gene deletion
+            description: 'WAGR syndrome results from a heterozygous, variably sized interstitial deletion
+              at chromosome 11p13 that simultaneously removes multiple contiguous genes, obligately including
+              WT1 and PAX6. Because the deletion is the unifying lesion, the specific genes lost (and
+              therefore the clinical features) depend on deletion extent; larger deletions reaching BDNF
+              produce the WAGRO obesity subphenotype.
+
+              '
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Obstructive sleep apnea
+        description: 'Obstructive sleep apnea is part of the expanded respiratory phenotype, but the relative
+          roles of airway structure, obesity, and other deletion effects are unresolved.
+
+          '
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: additional common issues included apnea, asthma, and obstructive sleep apnea (OSA)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/17
+      evidence_path: /pathophysiology/0/downstream/17/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:34970513
+      reference_title: 'Results From the WAGR Syndrome Patient Registry: Characterization of WAGR Spectrum
+        and Recommendations for Care Management.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Registry evidence supports the respiratory outcome; the edge does not choose among
+        competing anatomic and cardiometabolic intermediates.
+
+        '
+    first_seen_at: '2026-10-19T16:51:13.284496+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:51:13.284496+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:51:13.284496+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/17
+      evidence_path: /pathophysiology/0/downstream/17/evidence/0
+      reference: PMID:34970513
 assessments:
   8a3d8e948a51aae9b7707c06595983ccfd6f3cc7c3c853a677b8f566523d2448:
     input_sha256: 7ccba31c171657fc9ca05730af1d45d7ea8878565648c2f20008702d9f8f1c3a
@@ -16767,3 +16825,62 @@ assessments:
       request_sha256: fd84f879b021a15063db5b1a11f1827ec0006599683b39613e865fd6a84f14d1
       request_sha256s:
       - fd84f879b021a15063db5b1a11f1827ec0006599683b39613e865fd6a84f14d1
+  f0e7a40d2a54479b41084accfeaff6a49d91b99423224d9d03250b32075f390d:
+    input_sha256: 1f214f298fd457314fb83b85072191b22ae60814315625e52ffcc768f0a59c32
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:51:13.284496+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.03
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.19
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.02
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.11
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.19
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.27
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6407
+        output_tokens: 273
+      elapsed_seconds: 0.3052
+      request_sha256: 3b467866c496dc52acdd2b9ec388f7d182e5e758edf5dd57353e13f72b8ceb36
+      request_sha256s:
+      - 3b467866c496dc52acdd2b9ec388f7d182e5e758edf5dd57353e13f72b8ceb36

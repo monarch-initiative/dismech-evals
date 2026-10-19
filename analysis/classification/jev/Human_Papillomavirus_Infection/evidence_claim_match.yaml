@@ -1495,6 +1495,68 @@ inputs:
     - assertion_path: /treatments/7
       evidence_path: /treatments/7/evidence/0
       reference: PMID:40143250
+  b6a0fc1b3c53ab7e31b04abda4e8fd4bd9c8cb8ff754cc8116664bf64447ffdb:
+    claim:
+      about:
+        disease:
+          name: Human Papillomavirus Infection
+          disease_term:
+            preferred_term: human papillomavirus infection
+            term:
+              id: MONDO:0005161
+              label: human papilloma virus infection
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: High-Risk Persistence and Transformation
+        conforms_to: viral_oncogenesis#Host Tumor Suppressor Inactivation and Signaling Hijack
+        description: Persistent high-risk HPV infection can deregulate E6/E7 expression (often accompanying
+          genome integration and loss of E2 repression), driving p53 degradation and pRB inactivation,
+          G1/S checkpoint override, genomic instability, and progression through intraepithelial neoplasia
+          toward invasive carcinoma. In this entry the transformation program is summarized as the bridge
+          to the dedicated HPV-associated cancer entries.
+        cell_types:
+        - preferred_term: Keratinocyte
+          term:
+            id: CL:0000312
+            label: keratinocyte
+        biological_processes:
+        - preferred_term: Viral genome integration into host DNA
+          term:
+            id: GO:0044826
+            label: viral genome integration into host DNA
+          modifier: INCREASED
+        - preferred_term: Perturbation of host G1/S checkpoint
+          term:
+            id: GO:0039645
+            label: symbiont-mediated perturbation of host cell cycle G1/S transition checkpoint
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The E6 protein causes degradation of p53 leading to impaired cellular stress response.
+          In contrast, the E7 protein impairs the activity of retinoblastoma protein (pRb) resulting in
+          continuous cell cycle propagation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40216282
+      reference_title: Novel therapeutic strategies for targeting E6 and E7 oncoproteins in cervical cancer.
+      evidence_source: OTHER
+      explanation: Provides the E6/E7 mechanism (p53 degradation, pRb inactivation, cell-cycle override)
+        that underlies high-risk transformation.
+    first_seen_at: '2026-10-19T16:59:15.784358+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:15.784358+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:15.784358+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:40216282
 assessments:
   6e7f9819d0e2dd98517d98b3e1c6c674136ab950d53ce77a29dcfb2d4d77d361:
     input_sha256: 32fd4d348cbbb2c874f2f69644f58caa23b14c627c5c0a433ccba0634a426208
@@ -3649,3 +3711,111 @@ assessments:
       request_sha256: 277f9defe8c62a21c8cd78b2cf355c062409c6facc712ce0d65fbe128cc45a2b
       request_sha256s:
       - 277f9defe8c62a21c8cd78b2cf355c062409c6facc712ce0d65fbe128cc45a2b
+  ca51e35e870cb6a6a555159660bb38dfbff7a9bef817e6ae605913a90f9aa551:
+    input_sha256: b6a0fc1b3c53ab7e31b04abda4e8fd4bd9c8cb8ff754cc8116664bf64447ffdb
+    configuration_sha256: 7d962a301cdc98d733334ff872241e4542ba140319942c5bfb2b4a2a6e2d041c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:15.784358+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.02
+            PARTIAL: 0.77
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.06
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.12
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.01
+            PARTIAL: 0.78
+          confidence: 0.67
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.18
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.21
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.78
+            PARTIAL: 0.21
+          confidence: 0.67
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.79
+            PARTIAL: 0.2
+          confidence: 0.69
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.59
+            PARTIAL: 0.4
+          confidence: 0.38
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6900000000000001
+            MISMATCH: 0.07
+            PARTIAL: 0.24
+          confidence: 0.54
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.06
+            PARTIAL: 0.23
+          confidence: 0.56
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.08
+            PARTIAL: 0.25
+          confidence: 0.51
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13876
+        output_tokens: 658
+      elapsed_seconds: 0.4196
+      request_sha256: 11ff3a05762a986811d09633bc8fa1e1037ab3a323d7e0ca96164e09714616f6
+      request_sha256s:
+      - 11ff3a05762a986811d09633bc8fa1e1037ab3a323d7e0ca96164e09714616f6

@@ -13725,6 +13725,83 @@ inputs:
     - assertion_path: /differential_diagnoses/0
       evidence_path: /differential_diagnoses/0/evidence/24
       reference: PMID:29850266
+  9f5cecebaf95393966c4eb998a5256ffdbc9be60c6a9dc4a305afbdbb70c456f:
+    claim:
+      about:
+        disease:
+          name: Brugada syndrome
+          disease_term:
+            preferred_term: Brugada syndrome
+            term:
+              id: MONDO:0015263
+              label: Brugada syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: SCN3B variants
+        association: Disputed
+        relationship_type: DISPUTED
+        features: 'SCN3B encodes the auxiliary beta-3 subunit of the cardiac voltage-gated sodium channel
+          and is the gene behind the numbered series term Brugada syndrome 7 (MONDO:0013146). The association
+          rests principally on two variants: L10P, reported in a single American proband, and V110I, found
+          in 3 of 178 SCN5A-negative Japanese patients. Both were reported to impair cytoplasmic trafficking
+          of Nav1.5 and reduce sodium current in transfected cells, converging on the same depolarization-reserve
+          node this entry already curates for SCN5A. A third variant, T138del, was reported in 2025 with
+          preserved beta-3 surface expression and preserved Nav1.5 interaction but reduced peak current,
+          so reduced sodium current rather than mistrafficking is the common thread. The gene-disease
+          claim nonetheless failed reappraisal: no report provided informative segregation data, and both
+          of the originally implicated variants were subsequently found at a heterozygosity frequency
+          of about 1 in 2500 in public population databases, which the ClinGen Brugada gene-validity reappraisal
+          judged to be at or above the population prevalence of Brugada syndrome and therefore incompatible
+          with a highly penetrant monogenic causal role. That reappraisal reclassified SCN3B, with 19
+          other curated Brugada genes, as disputed. Two further observations point the same way: L10P,
+          the original Brugada allele, was independently reported in a lone atrial fibrillation cohort.
+          The in vivo evidence, by contrast, cuts toward the mechanism rather than against it: the Scn3b-null
+          mouse has reduced peak sodium current in ventricular myocytes and inducible ventricular tachycardia,
+          which its authors describe as resembling Scn5a heterozygous hearts, alongside sinoatrial and
+          atrioventricular conduction disease. What that model cannot settle is the human allele question,
+          since it is a homozygous null while the reported patient variants are heterozygous. SCN3B is
+          therefore curated as part of the disputed non-SCN5A heterogeneity rather than as a validated
+          monogenic cause: the mechanism is plausible and supported in vivo, and the specific reported
+          alleles are what fail. ClinGen has since gone further than the 2018 reappraisal: its Hereditary
+          Cardiovascular Disease Gene Curation Expert Panel classified SCN3B for Brugada syndrome as refuted
+          in December 2025, not merely disputed. This record keeps `relationship_type: DISPUTED` because
+          that enum has no refuted value, and the refutation is stated here and carried by the ClinGen
+          evidence item below.'
+        gene_term:
+          preferred_term: SCN3B
+          term:
+            id: hgnc:20665
+            label: SCN3B
+      selected_evidence:
+        snippet: Biotinylation, co-immunoprecipitation and surface cross-linking experiments identified
+          normal β3 surface expression and interaction with NaV1.5. Electrophysiological analysis identified
+          reduced peak current and channel availability.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/6
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39761910
+      reference_title: 'A novel SCN3B in-frame codon deletion in a Brugada syndrome patient: Implications
+        for disrupted Na(V)1.5 function.'
+      evidence_source: IN_VITRO
+      explanation: A third reported variant whose loss of function does not act through mistrafficking,
+        which is why the shared mechanism across SCN3B variants is stated here as reduced sodium current
+        rather than impaired trafficking.
+    first_seen_at: '2026-10-19T16:38:18.618788+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:38:18.618788+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:38:18.618788+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/6
+      reference: PMID:39761910
 assessments:
   aa3ab356a008883bc5abcd92709697f53568789aa0d0e02bcc4539ea8f70a1d1:
     input_sha256: 395c96abe65dbf901a18198dc81e286a4d306816d31a86742ca9af5b84df2363
@@ -27603,3 +27680,76 @@ assessments:
       request_sha256: cca7995add99a1ddf80d048d584e3c1bbcaaf8f7f43dbf1ee7644fe657e66470
       request_sha256s:
       - cca7995add99a1ddf80d048d584e3c1bbcaaf8f7f43dbf1ee7644fe657e66470
+  500bdb97d2cbdc10a27e01e9247c7ef168c475d5673cec7fdbe46ef5727fb261:
+    input_sha256: 9f5cecebaf95393966c4eb998a5256ffdbc9be60c6a9dc4a305afbdbb70c456f
+    configuration_sha256: 821d8dc62782e9abeb10fd06236a0ecd2e695f2531cf5e495dc1cd94de9264de
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:38:18.618788+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.31
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.26
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.25
+            PARTIAL: 0.34
+          confidence: 0.11
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.43
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.42
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/features:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.14
+            PARTIAL: 0.37
+          confidence: 0.23
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.24
+            PARTIAL: 0.36
+          confidence: 0.1
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.24
+            PARTIAL: 0.37
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9110
+        output_tokens: 366
+      elapsed_seconds: 0.3167
+      request_sha256: 5977ed8c763b3d430949c1d4db776f6399a48e0c71b5debbafa0cce1e4a37b7b
+      request_sha256s:
+      - 5977ed8c763b3d430949c1d4db776f6399a48e0c71b5debbafa0cce1e4a37b7b

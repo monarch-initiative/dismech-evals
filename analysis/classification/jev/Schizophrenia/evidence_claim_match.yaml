@@ -10980,6 +10980,203 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/1
       reference: PMID:41233083
+  667a9c1a2a583b47b97b1df723660f019278ac05d3c8eb028c9fbdb37ec0f585:
+    claim:
+      about:
+        disease:
+          name: Schizophrenia
+          disease_term:
+            preferred_term: schizophrenia
+            term:
+              id: MONDO:0005090
+              label: schizophrenia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Positive and Negative Syndrome Scale (PANSS)
+        presence: Clinician-rated scale for the typological and dimensional assessment of schizophrenia
+          symptoms, used to grade symptom severity; a systematic review of its measurement properties
+          calls it the most widely used tool for assessing the symptoms of schizophrenia. It is a severity
+          measure, not a diagnostic test.
+        notes: No LOINC code is bound because LOINC carries no PANSS code. The Monarch KG LOINC search
+          returned nothing for "PANSS", "positive and negative syndrome scale", "BPRS" or "Brief psychiatric
+          rating scale"; "schizophrenia" returned only a PhenX schizophrenia protocol panel, Minimum Data
+          Set items and family-history items. No LOINC 2.83 Long Common Name (the Tuva Project release
+          pinned in data/loinc/MANIFEST.yaml) contains PANSS, Positive and Negative Syndrome, BPRS or
+          Brief Psychiatric Rating. With no LOINC score code there is nothing to key a severity band on,
+          so no reference range is recorded. The diagnosis_term is the NCIT term for the PANSS, which
+          is reachable from Clinical Intervention or Procedure. The instrument's items are not reproduced
+          in this entry.
+        diagnosis_term:
+          preferred_term: PANSS
+          term:
+            id: NCIT:C124712
+            label: Positive and Negative Syndrome Scale Clinical Classification
+      selected_evidence:
+        snippet: We report on the development and initial standardization of the Positive and Negative
+          Syndrome Scale (PANSS) for typological and dimensional assessment.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:3616518
+      reference_title: The positive and negative syndrome scale (PANSS) for schizophrenia.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: The development paper establishes the PANSS as a standardized instrument for assessing
+        schizophrenia symptoms.
+    first_seen_at: '2026-10-19T17:02:34.389092+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:02:34.389092+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:02:34.389092+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:3616518
+  25515257a6befc2efa882ba0d838b634866e577610cdb31fdb42cffcf92ecce2:
+    claim:
+      about:
+        disease:
+          name: Schizophrenia
+          disease_term:
+            preferred_term: schizophrenia
+            term:
+              id: MONDO:0005090
+              label: schizophrenia
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_schizophrenia_glutamate_pharmacology_translation
+        prompt: Do the failed phase 3 trials of glutamate-modulating drugs mean that the glutamatergic
+          target is wrong in schizophrenia, or that the trials enrolled patients unselected for a glutamatergic
+          abnormality?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Abnormality of Glutamergic Signaling
+        - mechanistic_hypotheses#canonical_dopamine_glutamate_neurodevelopmental_model
+        rationale: 'This entry curates glutamatergic dysfunction as an established pathophysiological
+          component while the therapeutic prediction that follows from it has repeatedly failed: an mGluR2/3
+          agonist and a GlyT1 inhibitor both missed their primary endpoints in large placebo-controlled
+          trials. The gap is that neither programme tested the mechanistic prediction directly. Enrolment
+          was by clinical diagnosis, not by a glutamatergic biomarker, and target engagement was not uniformly
+          demonstrated, so a null result in an unselected population cannot separate a wrong target from
+          the wrong patients. Nothing here licenses the stronger reading that trial failure refutes glutamate
+          pathophysiology as a class; it bounds the therapeutic prediction for the specific agents, doses,
+          endpoints, and populations that were studied.'
+        proposed_experiments:
+        - experiment_id: exp_schizophrenia_biomarker_stratified_glutamate_trial
+          name: Biomarker-stratified glutamate-modulator trial
+          description: Randomize first-episode psychosis patients to a glutamate-modulating agent or placebo
+            after stratifying on baseline hippocampal glutamate and glutamine by magnetic resonance spectroscopy,
+            with SV2A PET as a secondary synaptic-density measure, and test the treatment-by-stratum interaction
+            rather than the unstratified main effect.
+          experiment_type:
+            preferred_term: biomarker-stratified randomized controlled trial
+          would_support:
+          - pathophysiology#Abnormality of Glutamergic Signaling
+          supporting_outcome:
+          - Patients in the elevated-glutamate stratum improve relative to placebo while patients with
+            normal baseline glutamate do not, indicating that the earlier null results reflect an unselected
+            population rather than an invalid target.
+          refuting_outcome:
+          - No benefit in either stratum despite demonstrated target engagement, indicating that the glutamatergic
+            abnormality is not a tractable therapeutic target in established illness.
+          decision_criterion: A significant treatment-by-stratum interaction on the primary symptom or
+            cognition endpoint, with target engagement independently confirmed.
+      selected_evidence:
+        snippet: Neither LY2140023 dose showed significant improvement compared to placebo on PANSS total
+          in either population
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/4
+      evidence_path: /discussions/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25539791
+      reference_title: A Double-Blind, Placebo-Controlled Comparator Study of LY2140023 monohydrate in
+        patients with schizophrenia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents one half of the gap. Pomaglumetad, a selective mGluR2/3 agonist, failed on
+        PANSS total in 1013 patients while risperidone separated from placebo in the same trial, so the
+        null result is not attributable to an insensitive study. Patients were enrolled on clinical criteria,
+        not on a glutamatergic biomarker.
+    first_seen_at: '2026-10-19T17:02:35.834556+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:02:35.834556+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:02:35.834556+00:00'
+    occurrences:
+    - assertion_path: /discussions/4
+      evidence_path: /discussions/4/evidence/0
+      reference: PMID:25539791
+  3e34a287b6c0ff4b51de3d82701bbdc8b4eb6962f29925a2e8324db1a10db3ee:
+    claim:
+      about:
+        disease:
+          name: Schizophrenia
+          disease_term:
+            preferred_term: schizophrenia
+            term:
+              id: MONDO:0005090
+              label: schizophrenia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Positive and Negative Syndrome Scale (PANSS)
+        presence: Clinician-rated scale for the typological and dimensional assessment of schizophrenia
+          symptoms, used to grade symptom severity; a systematic review of its measurement properties
+          calls it the most widely used tool for assessing the symptoms of schizophrenia. It is a severity
+          measure, not a diagnostic test.
+        notes: No LOINC code is bound because LOINC carries no PANSS code. The Monarch KG LOINC search
+          returned nothing for "PANSS", "positive and negative syndrome scale", "BPRS" or "Brief psychiatric
+          rating scale"; "schizophrenia" returned only a PhenX schizophrenia protocol panel, Minimum Data
+          Set items and family-history items. No LOINC 2.83 Long Common Name (the Tuva Project release
+          pinned in data/loinc/MANIFEST.yaml) contains PANSS, Positive and Negative Syndrome, BPRS or
+          Brief Psychiatric Rating. With no LOINC score code there is nothing to key a severity band on,
+          so no reference range is recorded. The diagnosis_term is the NCIT term for the PANSS, which
+          is reachable from Clinical Intervention or Procedure. The instrument's items are not reproduced
+          in this entry.
+        diagnosis_term:
+          preferred_term: PANSS
+          term:
+            id: NCIT:C124712
+            label: Positive and Negative Syndrome Scale Clinical Classification
+      selected_evidence:
+        snippet: Although the PANSS is the standard scale for schizophrenia symptom severity, its shortcomings
+          regarding fundamental psychometric domains and practical applicability warrant the development
+          of new scales for which appropriate methods should be applied from the start.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40255437
+      reference_title: COSMIN systematic review and meta-analysis of the measurement properties of the
+        Positive and Negative Syndrome Scale (PANSS).
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: A systematic review identifies the PANSS as the standard severity scale while recording
+        its psychometric limitations.
+    first_seen_at: '2026-10-19T17:02:35.822196+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:02:35.822196+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:02:35.822196+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:40255437
 assessments:
   680df0f85299891f9914f6926d8ba695e40d258f3a69709cca35a8fc1f9bc965:
     input_sha256: d2654372ec203a603e4a4c9470d55d6d587320a80df04ed104e3f887e6651f8d
@@ -25658,3 +25855,264 @@ assessments:
       request_sha256: cad37bcd8421d93da02a8c50073fe780e5b184460bda4a7c8da64476324aaf54
       request_sha256s:
       - cad37bcd8421d93da02a8c50073fe780e5b184460bda4a7c8da64476324aaf54
+  9ee55d1f74582e1eafa2d489a4e14e7d6cd1e90d994df30497f60539b76c5cee:
+    input_sha256: 667a9c1a2a583b47b97b1df723660f019278ac05d3c8eb028c9fbdb37ec0f585
+    configuration_sha256: f69ab2bece65b174cb39aa067e68c96e216526acea7c7c2ff5f0285e627a7902
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:02:34.389092+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.19
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.15
+            PARTIAL: 0.37
+          confidence: 0.22
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.06
+            PARTIAL: 0.08
+          confidence: 0.79
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.15
+            PARTIAL: 0.24
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7402
+        output_tokens: 323
+      elapsed_seconds: 0.2912
+      request_sha256: 9dd1748f88c9f73599495c15d3146f8a6b0df44cd68e896cd9ae575037b8a48c
+      request_sha256s:
+      - 9dd1748f88c9f73599495c15d3146f8a6b0df44cd68e896cd9ae575037b8a48c
+  4d46f296639218042d7bfd5992bec1cc25e5bffa816a95ee560dab9a5efacb77:
+    input_sha256: 25515257a6befc2efa882ba0d838b634866e577610cdb31fdb42cffcf92ecce2
+    configuration_sha256: a4cf2efe8b6eb008ab168f2cc780b0980c43a06004367c37751bf89f42d0eecd
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:02:35.834556+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.07
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.67
+            PARTIAL: 0.19
+          confidence: 0.51
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.05
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.55
+            PARTIAL: 0.23
+          confidence: 0.33
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.36
+            PARTIAL: 0.3
+          confidence: 0.04
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.29
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.24
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.73
+            PARTIAL: 0.2
+          confidence: 0.59
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.53
+            PARTIAL: 0.34
+          confidence: 0.3
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.57
+            PARTIAL: 0.36
+          confidence: 0.35
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.77
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/proposed_experiments/0/would_support:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.66
+            PARTIAL: 0.24
+          confidence: 0.49
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/proposed_experiments/0/refuting_outcome:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16681
+        output_tokens: 823
+      elapsed_seconds: 0.6547
+      request_sha256: 50070ad8d0804473571a42906b845270af69bea88aec5cdf181cdbfc8fd2ed6a
+      request_sha256s:
+      - 50070ad8d0804473571a42906b845270af69bea88aec5cdf181cdbfc8fd2ed6a
+  28b88976237b6168208d46875f1ef678430e20cd81d73059cb6710d0a2e202a8:
+    input_sha256: 3e34a287b6c0ff4b51de3d82701bbdc8b4eb6962f29925a2e8324db1a10db3ee
+    configuration_sha256: f69ab2bece65b174cb39aa067e68c96e216526acea7c7c2ff5f0285e627a7902
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:02:35.822196+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.33999999999999997
+            PARTIAL: 0.34
+          confidence: 0.01
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.11
+            PARTIAL: 0.13
+          confidence: 0.64
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.19
+            PARTIAL: 0.24
+          confidence: 0.35
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.21
+            PARTIAL: 0.22
+          confidence: 0.35
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.32
+            PARTIAL: 0.27
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7417
+        output_tokens: 325
+      elapsed_seconds: 0.3565
+      request_sha256: 5a3fe4ba274646bee36202da3826eb4a938ed6e6261e8af45bb9844e9b462502
+      request_sha256s:
+      - 5a3fe4ba274646bee36202da3826eb4a938ed6e6261e8af45bb9844e9b462502

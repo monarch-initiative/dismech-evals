@@ -5662,6 +5662,128 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:12404107
+  10350f1e0df53eb611fb826f60393f46b7981039e26ac75a38184ebc892d4989:
+    claim:
+      about:
+        disease:
+          name: Hypertrophic Cardiomyopathy 10
+          disease_term:
+            preferred_term: hypertrophic cardiomyopathy 10
+            term:
+              id: MONDO:0012112
+              label: hypertrophic cardiomyopathy 10
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Tg-R58Q transgenic mouse (ventricular RLC R58Q)
+        species: Mouse
+        genotype: Transgenic expression of human ventricular myosin regulatory light chain carrying R58Q
+        description: The workhorse model of malignant MYL2 disease. It is the system in which the RLC
+          phosphorylation deficit, the super-relaxed state shift, the diastolic abnormality, and the slow-twitch
+          skeletal muscle deficit were each demonstrated. Its most useful property is that it is routinely
+          studied alongside a Tg-N47K line carrying a milder RLC allele, so findings can be attributed
+          to the malignant variant rather than to RLC transgenesis.
+        genes:
+        - preferred_term: MYL2
+          term:
+            id: hgnc:7583
+            label: MYL2
+        publication: PMID:19150977
+        modeled_mechanisms:
+        - target: Reduced RLC Ser15 Phosphorylation
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          model_scale: MOLECULAR
+          description: Reduced in situ RLC phosphorylation is measured in the ventricles of this line
+            and not in the comparison line carrying a milder allele.
+          limitations: Fidelity is MODERATE rather than HIGH because the corresponding measurement has
+            not been made in human MYL2-R58Q myocardium, so the deficit is established in mouse and inferred
+            for the patient. The line is also transgenic rather than knock-in, so expression level is
+            not the human heterozygous dose.
+          readouts:
+          - name: In situ ventricular RLC phosphorylation
+            target: Reduced RLC Ser15 Phosphorylation
+            direction: DECREASED
+            interpretation: The molecular deficit this node records, measured directly.
+        - target: Diastolic Dysfunction, Heart Failure and Arrhythmic Risk
+          relationship: PARTIALLY_RECAPITULATES
+          fidelity: MODERATE
+          model_scale: ORGANISM
+          description: Echocardiography shows altered diastolic transmitral velocities and deceleration
+            time in this line specifically, which is the diastolic half of the node.
+          limitations: PARTIALLY_RECAPITULATES because the node also carries heart failure and arrhythmic
+            death, and this model was characterised for diastolic function and haemodynamics rather than
+            for arrhythmic events or survival. Mouse diastolic indices at mouse heart rates are also not
+            directly comparable with the human echocardiographic measurements the node's clinical claim
+            rests on.
+          readouts:
+          - name: Transmitral velocities and deceleration time
+            target: Diastolic Dysfunction, Heart Failure and Arrhythmic Risk
+            direction: ALTERED
+            interpretation: Echocardiographic correlate of impaired ventricular filling.
+        - target: Slow-Twitch Skeletal Muscle Contractile Deficit
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          model_scale: TISSUE
+          description: Soleus, a slow-twitch muscle, shows the same force deficit as ventricular papillary
+            muscle in these animals, which is the cardioskeletal reach the node claims.
+          limitations: The transgene is cardiac-restricted, so the mutant light chain is absent from soleus
+            and this line cannot establish cell-autonomous action of the allele in skeletal muscle — the
+            soleus deficit here must reach that muscle by some systemic route. That is the most material
+            limitation of this link, and the paper states it explicitly. Separately, the human counterpart
+            is documented as skeletal muscle abnormality in pedigrees rather than as a force measurement,
+            so the mouse gives the quantitative deficit while the human evidence gives only its presence.
+          divergences:
+          - divergence_type: BOUNDARY_OMISSION
+            materiality: INVALIDATING
+            description: 'Skeletal-muscle expression of the mutant light chain is outside the model: the
+              transgene is driven in heart only. The node concerns a tissue in which this model deliberately
+              does not express the lesion, so the model cannot speak to local action there.'
+          readouts:
+          - name: Skinned soleus and ventricular papillary muscle force
+            target: Slow-Twitch Skeletal Muscle Contractile Deficit
+            direction: DECREASED
+            interpretation: Contractile deficit shared by ventricle and slow-twitch skeletal muscle.
+        - target: Impaired Lever-Arm Function and Myofilament Calcium Sensitization
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          model_scale: TISSUE
+          description: 'Skinned papillary muscle from this line reproduces both halves of the node: increased
+            myofilament calcium sensitivity with reduced cooperativity, and slowed cross-bridge kinetics.'
+          limitations: Fidelity is MODERATE rather than HIGH because the line is transgenic rather than
+            knock-in, so mutant incorporation is not the human heterozygous dose, and the measurements
+            are in skinned fibres at controlled calcium rather than in an intact working myocardium.
+          readouts:
+          - name: Tension-pCa relationship in skinned papillary muscle
+            target: Impaired Lever-Arm Function and Myofilament Calcium Sensitization
+            direction: INCREASED
+            interpretation: Increased calcium sensitivity of force with reduced cooperativity, the myofilament
+              half of the node.
+      selected_evidence:
+        snippet: demonstrating the slower cross-bridge kinetics
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23727233
+      reference_title: Diversity and similarity of motor function and cross-bridge kinetics in papillary
+        muscles of transgenic mice carrying myosin regulatory light chain mutations D166V and R58Q.
+      evidence_source: MODEL_ORGANISM
+      explanation: 'Supports treating this line as informative for the sarcomeric nodes generally: it
+        reproduces the cross-bridge kinetic slowing of the human allele in mouse papillary muscle.'
+    first_seen_at: '2026-10-19T16:59:35.399324+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:35.399324+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:35.399324+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:23727233
 assessments:
   ce07b2d9740fb5368b7b4004889760de97e63832a0074437af4509c561731de1:
     input_sha256: 368ff50a1e71bb53bcb483e3dd8ebc2d3eb3b9d5bcb97f59d2404ee30cb864f5
@@ -12617,3 +12739,384 @@ assessments:
       request_sha256: 742ea8966d10cf87ca03e524ffd2d040f1af72df9eddcacde7bb7b37dc89c780
       request_sha256s:
       - 742ea8966d10cf87ca03e524ffd2d040f1af72df9eddcacde7bb7b37dc89c780
+  be480a741f7d9430f1b9bc9ca0d0a47a41efa45b2e9b80d8d566ea6ee5146bc8:
+    input_sha256: 10350f1e0df53eb611fb826f60393f46b7981039e26ac75a38184ebc892d4989
+    configuration_sha256: 1fd19fce4c31d763caf9775b6cfb6f68a383201adc2111cf108a4ce7f67afce0
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:35.399324+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.15
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.2
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.71
+            PARTIAL: 0.21
+          confidence: 0.56
+        /assertion/species:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.65
+            PARTIAL: 0.25
+          confidence: 0.48
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.3
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.58
+            PARTIAL: 0.25
+          confidence: 0.37
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.4
+            PARTIAL: 0.34
+          confidence: 0.1
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.6799999999999999
+            PARTIAL: 0.2
+          confidence: 0.52
+        /assertion/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.82
+            PARTIAL: 0.13
+          confidence: 0.73
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.55
+            PARTIAL: 0.2
+          confidence: 0.33
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.47
+            PARTIAL: 0.39
+          confidence: 0.2
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.26
+            PARTIAL: 0.23
+          confidence: 0.27
+        /assertion/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.69
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.81
+            PARTIAL: 0.14
+          confidence: 0.72
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.7
+            PARTIAL: 0.21
+          confidence: 0.55
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.8
+            PARTIAL: 0.12
+          confidence: 0.7
+        /assertion/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.57
+            PARTIAL: 0.33
+          confidence: 0.35
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.53
+            PARTIAL: 0.28
+          confidence: 0.3
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.4
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.52
+            PARTIAL: 0.19
+          confidence: 0.28
+        /assertion/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/modeled_mechanisms/1/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.85
+            PARTIAL: 0.12
+          confidence: 0.77
+        /assertion/modeled_mechanisms/1/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.62
+            PARTIAL: 0.27
+          confidence: 0.43
+        /assertion/modeled_mechanisms/1/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.56
+            PARTIAL: 0.4
+          confidence: 0.34
+        /assertion/modeled_mechanisms/1/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.78
+            PARTIAL: 0.12
+          confidence: 0.67
+        /assertion/modeled_mechanisms/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.75
+            PARTIAL: 0.23
+          confidence: 0.62
+        /assertion/modeled_mechanisms/2/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.61
+            PARTIAL: 0.29
+          confidence: 0.41
+        /assertion/modeled_mechanisms/2/fidelity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.42
+            PARTIAL: 0.41
+          confidence: 0.13
+        /assertion/modeled_mechanisms/2/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.52
+            PARTIAL: 0.21
+          confidence: 0.28
+        /assertion/modeled_mechanisms/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/modeled_mechanisms/2/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/modeled_mechanisms/2/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.7
+            PARTIAL: 0.13
+          confidence: 0.55
+        /assertion/modeled_mechanisms/2/divergences/0/materiality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.59
+            PARTIAL: 0.22
+          confidence: 0.38
+        /assertion/modeled_mechanisms/2/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/modeled_mechanisms/2/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/modeled_mechanisms/2/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/modeled_mechanisms/2/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.5599999999999999
+            PARTIAL: 0.4
+          confidence: 0.34
+        /assertion/modeled_mechanisms/2/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.81
+            PARTIAL: 0.12
+          confidence: 0.72
+        /assertion/modeled_mechanisms/3/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.74
+            PARTIAL: 0.16
+          confidence: 0.61
+        /assertion/modeled_mechanisms/3/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.67
+            PARTIAL: 0.17
+          confidence: 0.51
+        /assertion/modeled_mechanisms/3/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.39
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/modeled_mechanisms/3/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.29
+            PARTIAL: 0.21
+          confidence: 0.25
+        /assertion/modeled_mechanisms/3/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.67
+            PARTIAL: 0.23
+          confidence: 0.51
+        /assertion/modeled_mechanisms/3/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/modeled_mechanisms/3/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.67
+            PARTIAL: 0.21
+          confidence: 0.51
+        /assertion/modeled_mechanisms/3/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.67
+            PARTIAL: 0.22
+          confidence: 0.51
+        /assertion/modeled_mechanisms/3/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.53
+            PARTIAL: 0.31
+          confidence: 0.3
+        /assertion/modeled_mechanisms/3/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.71
+            PARTIAL: 0.18
+          confidence: 0.56
+      model: jev-1.13.0
+      usage:
+        input_tokens: 54980
+        output_tokens: 2932
+      elapsed_seconds: 0.5081
+      request_sha256: a7e74732f04cd78b652ed40345edf9e711d076c6638793973f613588ebd1d12d
+      request_sha256s:
+      - a7e74732f04cd78b652ed40345edf9e711d076c6638793973f613588ebd1d12d

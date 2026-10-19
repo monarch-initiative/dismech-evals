@@ -2604,6 +2604,54 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:41786071
+  63fd03e1a4061da897dada1f203393500e462064b5f3cd9f761f3e94e8eaddb0:
+    claim:
+      about:
+        disease:
+          name: High Altitude Pulmonary Edema
+          disease_term:
+            preferred_term: high altitude pulmonary edema
+            term:
+              id: MONDO:0031257
+              label: high altitude pulmonary edema
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Pulmonary Edema
+        description: Non-cardiogenic, high-permeability pulmonary edema, patchy on imaging, developing
+          2-4 days after arrival at altitude.
+        phenotype_term:
+          preferred_term: Pulmonary edema
+          term:
+            id: HP:0100598
+            label: Pulmonary edema
+          temporality: ACUTE
+        frequency: OBLIGATE
+      selected_evidence:
+        snippet: 'BACKGROUND: High-altitude pulmonary edema (HAPE) is characterized by severe pulmonary
+          hypertension and bronchoalveolar lavage fluid changes indicative of inflammation.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11319198
+      reference_title: High-altitude pulmonary edema is initially caused by an increase in capillary pressure.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms pulmonary edema as the defining feature of the syndrome.
+    first_seen_at: '2026-10-19T16:59:08.007955+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:08.007955+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:08.007955+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:11319198
 assessments:
   26cbaf782c79a2cd1c098332050f1e6195ec0226d913cd7c337d59031846f12a:
     input_sha256: 9b6ba88f58dee2508b68d7663a70608f81a370ee4faeb573441ab8a7a51f3c1c
@@ -6003,3 +6051,83 @@ assessments:
       request_sha256: 5e7fda3b485bbcbafc5735b322aa2b16546d1d48b7641c43c1b66bc07955e01f
       request_sha256s:
       - 5e7fda3b485bbcbafc5735b322aa2b16546d1d48b7641c43c1b66bc07955e01f
+  e58eea577625e3687cd73ca3d2d20c91ca3b17d15745ecc4a1bacf8469e0c986:
+    input_sha256: 63fd03e1a4061da897dada1f203393500e462064b5f3cd9f761f3e94e8eaddb0
+    configuration_sha256: abc7df4820f5c367ed820643603bdba113f93bd9f4a8ec97b4c323944bc2baa5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:08.007955+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.07
+            PARTIAL: 0.83
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.12
+            PARTIAL: 0.31
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.06
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.46
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.05
+            PARTIAL: 0.37
+          confidence: 0.37
+        /assertion/phenotype_term/temporality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.22
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/frequency:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.47
+            PARTIAL: 0.46
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9281
+        output_tokens: 417
+      elapsed_seconds: 0.2896
+      request_sha256: fce2231a2fa8248d968e8a18181ba5e5d64aa45af6b046e913a3882db5d66c1e
+      request_sha256s:
+      - fce2231a2fa8248d968e8a18181ba5e5d64aa45af6b046e913a3882db5d66c1e

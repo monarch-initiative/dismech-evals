@@ -6951,6 +6951,719 @@ inputs:
     - assertion_path: /progression/0
       evidence_path: /progression/0/evidence/0
       reference: PMID:42324336
+  dd4744b6233b27f49fce0947f49348fa706a12597d8edf0cee7c8bbd78966c4a:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: 'In 2007, the Dutch newborn screening (NBS) program was expanded to include C5-OH as
+          a marker to screen for three inborn errors of metabolism (IEMs): 3-methylcrotonyl-CoA carboxylase
+          deficiency (3-MCCD), 3-hydroxy-3-methylglutaryl-CoA lyase deficiency (HMGCLD) and holocarboxylase
+          synthetase deficiency (HLCSD).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40937535
+      reference_title: 'Evaluation of Newborn Screening for Diseases Using C5-OH as a Marker: Systematic
+        Review of the Literature and Evaluation of 17 Years of C5-OH Screening in the Netherlands.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents C5-OH as the shared dried-blood-spot marker for three disorders, which is
+        why the measurement is described as not specific to HLCS deficiency.
+    first_seen_at: '2026-10-19T16:59:11.267208+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:11.267208+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:11.267208+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:40937535
+  c476d58f4be271688e5874ce758e9341650883c3b3c43e58a98435d9f15924bd:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: 3-Hydroxyisovalerylcarnitine (C5-OH)
+        presence: INCREASED
+        readouts:
+        - target: Impaired leucine catabolism
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'Increased C5-OH acylcarnitine reports impaired 3-methylcrotonyl-CoA carboxylase-dependent
+            leucine catabolism.
+
+            '
+        context: 'C5-OH is an acylcarnitine marker reported in HLCS deficiency. In a 28-patient cohort,
+          C5-OH was increased in blood along with urinary organic acid abnormalities.
+
+          '
+        loinc_term:
+          id: LOINC:LP19309-1
+          label: 3-Hydroxyisovalerylcarnitine (C5-OH)
+        notes: Described as a blood acylcarnitine marker without naming a specimen, so loinc_term binds
+          the specimen-agnostic LOINC Part; the dried-blood-spot quantitative code and its cut-off sit
+          on the newborn-screening diagnosis row.
+      selected_evidence:
+        snippet: The concentration of 3-hydroxyisovalerylcarnitine (C5-OH) in blood and pyruvate, 3-hydroxypropionate,
+          methylcitric acid, 3-hydroxyvaleric acid, 3-methylcrotonylglycine in urine were increased greatly
+          among affected individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36890565
+      reference_title: Clinical, biochemical, and genetic analysis of 28 Chinese patients with holocarboxylase
+        synthetase deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly documents elevated C5-OH in HLCS deficiency patients.
+    first_seen_at: '2026-10-19T16:59:11.240579+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:11.240579+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:11.240579+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:36890565
+  b08638136f139573c15dd67a306a8d7b4f3990139defbf87cc3ef221b5fc3efb:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: Strikingly, there was notable overlap between C5-OH concentrations of true and false
+          positive cases.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40937535
+      reference_title: 'Evaluation of Newborn Screening for Diseases Using C5-OH as a Marker: Systematic
+        Review of the Literature and Evaluation of 17 Years of C5-OH Screening in the Netherlands.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports treating any C5-OH cut-off as a recall trigger rather than a diagnostic threshold.
+    first_seen_at: '2026-10-19T16:59:11.268450+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:11.268450+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:11.268450+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:40937535
+  1e0d761c2c80c65b6f0160fcd96f28832a2596ad36e6b3c86142bd59167a5675:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: The blood levels of acylcarnitines, including C5-OH, propionylcarnitine (C3), and acetylcarnitine
+          (C2) were detected by tandem mass spectrometry (MS/MS; Applied Biosystems, API 4000, California,
+          United State) on dried blood spots
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36890565
+      reference_title: Clinical, biochemical, and genetic analysis of 28 Chinese patients with holocarboxylase
+        synthetase deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Describes the dried-blood-spot acylcarnitine measurements read for this disease.
+    first_seen_at: '2026-10-19T16:59:11.967827+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:11.967827+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:11.967827+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      reference: PMID:36890565
+  a408eb5c10cac35ca53cc13cb8dee7f6cb475ba1ffe1e8e0e2e5f2ec389edff1:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: The patient (P24) from our study was missed on newborn screening
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/4
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36890565
+      reference_title: Clinical, biochemical, and genetic analysis of 28 Chinese patients with holocarboxylase
+        synthetase deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents a screen-negative case in the cohort, the basis for stating that screening
+        can miss cases.
+    first_seen_at: '2026-10-19T16:59:13.518872+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:13.518872+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:13.518872+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/4
+      reference: PMID:36890565
+  72d1d89c84682b788468d4b00c96210ffdfd58ae34830b15cb18537ae3f4c550:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: The ratios of C3/C2 and C5-OH/C3 were calculated at the same time.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36890565
+      reference_title: Clinical, biochemical, and genetic analysis of 28 Chinese patients with holocarboxylase
+        synthetase deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the two ratios read alongside C5-OH.
+    first_seen_at: '2026-10-19T16:59:13.514731+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:13.514731+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:13.514731+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/3
+      reference: PMID:36890565
+  01b29ddf5007f2a96fa46f72c412c94d4370002b16c2adf32eba2bbd51a2dc31:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: HLCS deficiency was diagnosed by the analysis of biochemical metabolites including increased
+          levels of blood C5-OH and urine lactic acid, pyruvate, 3-hydroxypropionate, methylcitric acid,
+          3-hydroxyvaleric acid, 3-methylcrotonylglycine
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/5
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36890565
+      reference_title: Clinical, biochemical, and genetic analysis of 28 Chinese patients with holocarboxylase
+        synthetase deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the confirmatory urine organic-acid pattern that follows a positive C5-OH
+        screen; the same sentence goes on to name molecular analysis of HLCS, split across a hyphenated
+        line break in the cached text.
+    first_seen_at: '2026-10-19T16:59:13.522527+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:13.522527+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:13.522527+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/5
+      reference: PMID:36890565
+  185f2126055a970f01cb50cce5a64c5a236f3a3f24a1633c16ce3b12d3b9c700:
+    claim:
+      about:
+        disease:
+          name: Holocarboxylase Synthetase Deficiency
+          disease_term:
+            preferred_term: holocarboxylase synthetase deficiency
+            term:
+              id: MONDO:0009666
+              label: holocarboxylase synthetase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn screening for elevated C5-OH
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        description: 'Tandem mass spectrometry on the dried blood spot reports 3-hydroxyisovalerylcarnitine
+          (C5-OH), read with propionylcarnitine (C3) and the C3/C2 and C5-OH/C3 ratios. The C5-OH signal
+          is shared: programmes use the same marker for 3-methylcrotonyl-CoA carboxylase deficiency and
+          3-hydroxy-3-methylglutaryl-CoA lyase deficiency, and for beta-ketothiolase deficiency, so no
+          C5-OH result is specific to this disease; which disorder a true positive is becomes clear on
+          urine organic acids (the multiple-carboxylase pattern of 3-hydroxypropionate, methylcitrate,
+          3-methylcrotonylglycine and lactate) and molecular testing. Screening can miss cases.'
+        results: Elevated C5-OH is a recall signal; the multiple-carboxylase urine organic-acid pattern
+          and HLCS variants establish the diagnosis.
+        measurements:
+        - preferred_term: 3-hydroxyisovalerylcarnitine (C5-OH), DBS
+          term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:50106-4
+            label: 3-Hydroxyisovalerylcarnitine (C5-OH) [Moles/volume] in DBS
+          unit: umol/L
+          population: Shanghai Xinhua Hospital newborn-screening centre, China (28-patient HLCS cohort,
+            2006-2021), with the same 0.6 µmol/L threshold stated as the cut-off by a Chinese MS/MS neonatal-screening
+            series of C5-OH recalls
+          notes: The HLCS cohort paper reports a dried-blood-spot C5-OH reference range of 0.06-0.6 µmol/L
+            (the first column of its Table 2, next to C3, C3/C2 and C5-OH/C3) and states that every patient's
+            C5-OH was far beyond the cutoff; it does not say whether a value of exactly 0.6 is recalled.
+            A Chinese MS/MS neonatal-screening series of infants recalled for high C5-OH states its threshold
+            as "cut-off <0.6 µmol/L", so values below 0.6 are negative there; the half-open band places
+            exactly 0.6 in the positive band. Both sources fix the abnormal direction as high. The cohort
+            paper also reads the C5-OH/C3 ratio; a Monarch KG search for "3-Hydroxyisovalerylcarnitine
+            (C5-OH)/Propionylcarnitine (C3)" and "C5-OH/C3 molar ratio DBS" returned no code, and the
+            search index is known to miss codes, so the ratio is not bound and this records what the search
+            returned rather than that LOINC lacks it.
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 0.6
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 0.6
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Recall for urine organic acids and, where the multiple-carboxylase pattern
+              appears, HLCS sequencing with a biotin trial; a positive C5-OH is also produced by 3-methylcrotonyl-CoA
+              carboxylase deficiency (including maternal), HMGCL deficiency and beta-ketothiolase deficiency.
+        notes: The measurement binds the method-less quantitative DBS code; the specimen is intrinsic
+          to a newborn screen, so the DBS code is the test's identity here. No earlier diagnosis row existed
+          in this entry, so this row is the first; the confirmatory urine organic-acid and molecular work-up
+          is described in the treatments and progression sections and is not given a row by this change.
+      selected_evidence:
+        snippet: Five diseases were diagnosed, including 28 cases with multiple carboxylase deficiency
+          (MCD, 32.9%), 29 cases with 3-methylcrotonyl-coenzymeAcarboxylasedeficiency (MCCD, 34.1%), 4
+          cases with 3-methylglutaconic acid (3-MGA, 4.7%), 7 cases with 3-hydroxy-3-methylglutaric acid
+          (3-HMG, 8.2%), and 17 cases with beta-ketothiolase deficiency (BKD, 20.0%).
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/6
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37994125
+      reference_title: '[Analysis of disease spectrum for abnormal 3-hydroxyisovalerylcarnitine metabolism
+        identified through newborn screening and clinical diagnosis].'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Places multiple carboxylase deficiency among the disorders diagnosed after an abnormal
+        C5-OH result in a Shanghai screening and clinical series, alongside the other C5-OH disorders.
+    first_seen_at: '2026-10-19T16:59:14.035618+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:14.035618+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:14.035618+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/6
+      reference: PMID:37994125
 assessments:
   630924f32ff057bdef093e6b9b711cdbdb79cdd5b3a928a71cf2c51601ad7bcb:
     input_sha256: 9b5e79c7311108bc2927b37c8f77b50f3436adf2a7e21a29b790eca86918554a
@@ -15388,3 +16101,1406 @@ assessments:
       request_sha256: 440c485c3e6cd62fe54e25fe666f2edfc9b03516007d81c45c622ac7a5de5738
       request_sha256s:
       - 440c485c3e6cd62fe54e25fe666f2edfc9b03516007d81c45c622ac7a5de5738
+  8fdca25bff3c2ea8fe22b9892ffc0fb935ecc11c938a312b058d00ba0cf2a8fb:
+    input_sha256: dd4744b6233b27f49fce0947f49348fa706a12597d8edf0cee7c8bbd78966c4a
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:11.267208+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.05
+            PARTIAL: 0.33
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.11
+            PARTIAL: 0.21
+          confidence: 0.52
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.05
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.08
+            PARTIAL: 0.2
+          confidence: 0.58
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.1
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.19
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.15
+            PARTIAL: 0.3
+          confidence: 0.33
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.15
+            PARTIAL: 0.3
+          confidence: 0.33
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.64
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.66
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.69
+            PARTIAL: 0.21
+          confidence: 0.53
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.17
+            PARTIAL: 0.39
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.76
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.75
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.46
+            PARTIAL: 0.32
+          confidence: 0.19
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.12
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.34
+            PARTIAL: 0.36
+          confidence: 0.04
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24577
+        output_tokens: 1262
+      elapsed_seconds: 0.5026
+      request_sha256: 8b9e101d42cb5f24beb89a766d434dd48daad52b24256650da65b0ce8e24531f
+      request_sha256s:
+      - 8b9e101d42cb5f24beb89a766d434dd48daad52b24256650da65b0ce8e24531f
+  e63a3de342a418aaa0def415c77ac787046e75bf206fade6935d872c74de72bf:
+    input_sha256: c476d58f4be271688e5874ce758e9341650883c3b3c43e58a98435d9f15924bd
+    configuration_sha256: d44bb946baf6a1bcc0932a1ad040c1cba6da019368fe0f21621c2bde0a9b4b18
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:11.240579+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.04
+            PARTIAL: 0.27
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.04
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.13
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.03
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.03
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.12
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.18
+            PARTIAL: 0.37
+          confidence: 0.18
+        /assertion/loinc_term/id:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.34
+            PARTIAL: 0.35
+          confidence: 0.02
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.06
+            PARTIAL: 0.07
+          confidence: 0.8
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.25
+            PARTIAL: 0.51
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13347
+        output_tokens: 615
+      elapsed_seconds: 0.2107
+      request_sha256: bbe003cab8819b8ab999f8e65224e7385aaf8e112e1184078a3f478d52f0c943
+      request_sha256s:
+      - bbe003cab8819b8ab999f8e65224e7385aaf8e112e1184078a3f478d52f0c943
+  c285cbdabe30aee488d6734f2599eab6f4cdd69556126e3990c9d480fb7865c4:
+    input_sha256: b08638136f139573c15dd67a306a8d7b4f3990139defbf87cc3ef221b5fc3efb
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:11.268450+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.1
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.19
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.19
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.25
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.15
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.07
+            PARTIAL: 0.3
+          confidence: 0.45
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.19
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.33
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.29
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.62
+            PARTIAL: 0.23
+          confidence: 0.43
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.41
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.45
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.26
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.42
+            PARTIAL: 0.4
+          confidence: 0.13
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.14
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.39999999999999997
+            PARTIAL: 0.37
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24497
+        output_tokens: 1269
+      elapsed_seconds: 0.4753
+      request_sha256: f46d64014d3dcb8be8a6017e635d725d15355e7875ee92a440d450d539250dae
+      request_sha256s:
+      - f46d64014d3dcb8be8a6017e635d725d15355e7875ee92a440d450d539250dae
+  dc274f22ef367a8cab13b73d0429d7421b072c06943337720598c57bbac48eb4:
+    input_sha256: 1e0d761c2c80c65b6f0160fcd96f28832a2596ad36e6b3c86142bd59167a5675
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:11.967827+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.16
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.23
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.1
+            PARTIAL: 0.38
+          confidence: 0.28
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.14
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.22
+            PARTIAL: 0.5599999999999999
+          confidence: 0.34
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.35
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.24
+            PARTIAL: 0.34
+          confidence: 0.13
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.45
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.75
+            PARTIAL: 0.24
+          confidence: 0.62
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.49
+            PARTIAL: 0.43
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.59
+            PARTIAL: 0.38
+          confidence: 0.38
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.58
+            PARTIAL: 0.36
+          confidence: 0.37
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.47
+            PARTIAL: 0.42
+          confidence: 0.2
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.76
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.55
+            PARTIAL: 0.37
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.51
+            PARTIAL: 0.38
+          confidence: 0.27
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.63
+            PARTIAL: 0.34
+          confidence: 0.45
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.35
+            PARTIAL: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24547
+        output_tokens: 1267
+      elapsed_seconds: 0.3361
+      request_sha256: 5b300a7c8fe819e031ce0b9b740667c2b8211c8ea77bd0f9112dae0c5c3ac1d9
+      request_sha256s:
+      - 5b300a7c8fe819e031ce0b9b740667c2b8211c8ea77bd0f9112dae0c5c3ac1d9
+  ee9c5d7b0211924507fcbb72e51d398fcb865672a007ebac65169e1c40ffe6ce:
+    input_sha256: a408eb5c10cac35ca53cc13cb8dee7f6cb475ba1ffe1e8e0e2e5f2ec389edff1
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:13.518872+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.06
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.28
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.17
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.21
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.07
+            PARTIAL: 0.39
+          confidence: 0.31
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.17
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.54
+            PARTIAL: 0.36
+          confidence: 0.31
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.52
+            PARTIAL: 0.38
+          confidence: 0.28
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.82
+            PARTIAL: 0.13
+          confidence: 0.73
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.45
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.52
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.67
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.69
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.86
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.47
+            PARTIAL: 0.39
+          confidence: 0.2
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.53
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.46
+            PARTIAL: 0.45
+          confidence: 0.19
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.23
+            PARTIAL: 0.44
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24491
+        output_tokens: 1277
+      elapsed_seconds: 0.3223
+      request_sha256: 598924888b9fe9d258ccfffb7ae5b33deced3a3ab634b801340e38d2b1f813a4
+      request_sha256s:
+      - 598924888b9fe9d258ccfffb7ae5b33deced3a3ab634b801340e38d2b1f813a4
+  34a28b0af9d6ba74d4c86d86e33f2e265e2bf01a043d6f5070dc97fa4efbf205:
+    input_sha256: 72d1d89c84682b788468d4b00c96210ffdfd58ae34830b15cb18537ae3f4c550
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:13.514731+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.42
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.51
+            PARTIAL: 0.44
+          confidence: 0.27
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.5
+            PARTIAL: 0.33
+          confidence: 0.25
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.54
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.37
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/results:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.67
+            PARTIAL: 0.28
+          confidence: 0.51
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.5599999999999999
+            PARTIAL: 0.29
+          confidence: 0.34
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.56
+            PARTIAL: 0.3
+          confidence: 0.34
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.78
+            PARTIAL: 0.14
+          confidence: 0.67
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.88
+            PARTIAL: 0.09
+          confidence: 0.82
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.67
+            PARTIAL: 0.28
+          confidence: 0.51
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.77
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.87
+            PARTIAL: 0.1
+          confidence: 0.8
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.8
+            PARTIAL: 0.15
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.66
+            PARTIAL: 0.27
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24497
+        output_tokens: 1290
+      elapsed_seconds: 0.3044
+      request_sha256: 02ec46abe6243ffbbcc8d0a3682e693f130ad44bd5b0d6e1ff41b249647414ae
+      request_sha256s:
+      - 02ec46abe6243ffbbcc8d0a3682e693f130ad44bd5b0d6e1ff41b249647414ae
+  909c75096703920d18be993dae7ca67d0421e187541a0e5c721e435e97d543d3:
+    input_sha256: 01b29ddf5007f2a96fa46f72c412c94d4370002b16c2adf32eba2bbd51a2dc31
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:13.522527+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.04
+            PARTIAL: 0.38
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5599999999999999
+            MISMATCH: 0.17
+            PARTIAL: 0.27
+          confidence: 0.34
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.1
+            PARTIAL: 0.28
+          confidence: 0.43
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.17
+            PARTIAL: 0.32
+          confidence: 0.27
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.12
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.05
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.05
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.04
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.59
+            PARTIAL: 0.28
+          confidence: 0.38
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.3
+            PARTIAL: 0.26
+          confidence: 0.16
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.67
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.65
+            PARTIAL: 0.25
+          confidence: 0.48
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.71
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.51
+            PARTIAL: 0.32
+          confidence: 0.27
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.23
+            PARTIAL: 0.36
+          confidence: 0.11
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.6799999999999999
+            PARTIAL: 0.26
+          confidence: 0.52
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.18
+            PARTIAL: 0.32
+          confidence: 0.25
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.15
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.32
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24545
+        output_tokens: 1253
+      elapsed_seconds: 0.3503
+      request_sha256: 62404e37a74e1ebc27556b9713fd430dc49a8602782490f697a48a2504f7a507
+      request_sha256s:
+      - 62404e37a74e1ebc27556b9713fd430dc49a8602782490f697a48a2504f7a507
+  a51008534ef1efd3ce4aee9ec44a83ec976540d566e9fe8ce43abd9bee9a352f:
+    input_sha256: 185f2126055a970f01cb50cce5a64c5a236f3a3f24a1633c16ce3b12d3b9c700
+    configuration_sha256: 73237f94ef76160837d6ed182f664446035062414acf2404cd66483282a4dc8c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:14.035618+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.13
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.03
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.36
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.23
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.3
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.24
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.27
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.5
+            PARTIAL: 0.31
+          confidence: 0.25
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.42
+            PARTIAL: 0.38
+          confidence: 0.13
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.82
+            PARTIAL: 0.13
+          confidence: 0.73
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.5
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.77
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.82
+            PARTIAL: 0.13
+          confidence: 0.73
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.49
+            PARTIAL: 0.38
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.84
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.59
+            PARTIAL: 0.27
+          confidence: 0.38
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.34
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.55
+            PARTIAL: 0.35
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24613
+        output_tokens: 1277
+      elapsed_seconds: 0.314
+      request_sha256: 483fe9f5ec120c3ef8f6cddb567f3a2a4ddc47f4100916e5ad324e74b413014c
+      request_sha256s:
+      - 483fe9f5ec120c3ef8f6cddb567f3a2a4ddc47f4100916e5ad324e74b413014c

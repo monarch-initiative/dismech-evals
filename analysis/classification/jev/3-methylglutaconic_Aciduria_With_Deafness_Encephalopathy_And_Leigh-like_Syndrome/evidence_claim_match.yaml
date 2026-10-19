@@ -17883,6 +17883,57 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:39596578
+  1aefc212c4205a163a4ecc9f835bbe6fb94f0f1ae345683e0d139bbe54591984:
+    claim:
+      about:
+        disease:
+          name: 3-methylglutaconic_Aciduria_With_Deafness_Encephalopathy_And_Leigh-like_Syndrome
+          disease_term:
+            preferred_term: 3-methylglutaconic aciduria with deafness, encephalopathy, and Leigh-like
+              syndrome
+            term:
+              id: MONDO:0013875
+              label: 3-methylglutaconic aciduria with deafness, encephalopathy, and Leigh-like syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: serac1_pathway_relationship
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        prompt: How do SERAC1-dependent lipid remodeling and serine transport contribute to human disease?
+        attaches_to:
+        - pathophysiology#Impaired Phosphatidylglycerol Remodeling
+        - mechanistic_hypotheses#serine_transport_mtdna
+        rationale: Patient fibroblast lipid rescue and experimental serine/nucleotide rescue support complementary
+          roles. ER-mitochondria contact-site and outer-membrane localization are not mutually exclusive.
+          Their relationship and tissue-specific contributions remain uncertain; normal clinical mtDNA
+          or respiratory assays do not exclude disease.
+      selected_evidence:
+        snippet: Complementation of patient fibroblasts with wild-type human SERAC1 by lentiviral infection
+          led to a decrease and partial normalization of the mean ratio of phosphatidylglycerol-34:1 to
+          phosphatidylglycerol-36:1
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22683713
+      reference_title: Mutations in the phospholipid remodeling gene SERAC1 impair mitochondrial function
+        and intracellular cholesterol trafficking and cause dystonia and deafness.
+      evidence_source: IN_VITRO
+      explanation: Wild-type complementation partially rescues the patient-cell lipid ratio.
+    first_seen_at: '2026-10-19T16:36:15.338658+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:36:15.338658+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:36:15.338658+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:22683713
 assessments:
   edaee08c501fc52a3375344dce3f9be64373a703dd662849e7afd736ec18cf25:
     input_sha256: 19e4a3347bda68b7cedecafc96707947a5c6991e4213f0093d367fee0c18c021
@@ -40813,3 +40864,76 @@ assessments:
       request_sha256: cbadba36f53f783f9f904fb010c873f35ec86705240dc6ef799db810799599c8
       request_sha256s:
       - cbadba36f53f783f9f904fb010c873f35ec86705240dc6ef799db810799599c8
+  e0cd2a022fb6cbabd87cab06db8f0ac22abcc9b1da271abd662e60940d945109:
+    input_sha256: 1aefc212c4205a163a4ecc9f835bbe6fb94f0f1ae345683e0d139bbe54591984
+    configuration_sha256: 0cc1f5b26da05df05194df920c2938c8f8dc5dd8898d2c6724fb4a40acf09259
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:36:15.338658+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.33
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.39
+            PARTIAL: 0.32
+          confidence: 0.09
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.56
+            PARTIAL: 0.26
+          confidence: 0.34
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.45
+            PARTIAL: 0.29
+          confidence: 0.18
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.17
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.16
+            PARTIAL: 0.32
+          confidence: 0.28
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.37
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8434
+        output_tokens: 371
+      elapsed_seconds: 0.398
+      request_sha256: 6e735f07c6cad372c0a131a14c1396ea717ca984315c15fb2dad293e2092753f
+      request_sha256s:
+      - 6e735f07c6cad372c0a131a14c1396ea717ca984315c15fb2dad293e2092753f

@@ -8172,6 +8172,132 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/1
       reference: PMID:31463572
+  cd19f4ff340e73bdaea8d6a12a66d0d66038a1a413eb910118c17dc34d5db08e:
+    claim:
+      about:
+        disease:
+          name: MSTO1-Related Mitochondrial Myopathy
+          disease_term:
+            preferred_term: mitochondrial myopathy-cerebellar ataxia-pigmentary retinopathy syndrome
+            term:
+              id: MONDO:0044714
+              label: mitochondrial myopathy-cerebellar ataxia-pigmentary retinopathy syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: msto1-mechanism-ordering
+        kind: EMERGING_HYPOTHESIS
+        status: OPEN
+        prompt: Is impaired mitochondrial fusion the primary consequence of losing MSTO1, or is it downstream
+          of a cytosolic proteostasis defect, or of a direct effect on mtDNA replication through RAD51?
+        rationale: 'Three accounts of MSTO1''s molecular function are now on the table and they make different
+          predictions. The canonical fusion-first model, in place since 2017, is supported by rescue kinetics
+          in patient fibroblasts and by analogy with MFN2 and OPA1, but has never demonstrated the connecting
+          steps in MSTO1 cells and leaves the protein without a defined molecular activity. The 2026 TRiC
+          model gives it one - chaperonin assembly factor - and its temporal-ordering experiment directly
+          contradicts the canonical ordering, with TRiC falling at day two and mitochondria fragmenting
+          only at day six; but it is an unreviewed preprint from one laboratory, and the TRiC substrate
+          that connects proteostasis to the organelle is unidentified since tubulin and actin were excluded.
+          The 2026 RAD51 model would explain mtDNA depletion without a fusion intermediate, but it is
+          entirely in cancer cell systems. The three are not mutually exclusive and the entry models all
+          three as separate hypothesis groups rather than picking one. Which is correct determines what
+          a therapeutic target would even be: the fusion machinery, the chaperonin system, or mtDNA replication.'
+        attaches_to:
+        - pathophysiology#Loss of Cytosolic MSTO1 Protein
+        - pathophysiology#Failure of TRiC Chaperonin Assembly
+        - pathophysiology#Unrestrained RAD51 Binding to Mitochondrial DNA
+        proposed_experiments:
+        - experiment_id: msto1-tric-replication-in-patient-cells
+          name: Independent replication of the TRiC assembly result in patient fibroblasts
+          description: Measure TRiC/CCT subunit levels and assembly intermediates in the established panel
+            of MSTO1 patient fibroblast lines in a second laboratory, with peer review, before the proteostasis
+            model is treated as more than a lead.
+        - experiment_id: msto1-tric-substrate-screen
+          name: Identify the TRiC substrate that links proteostasis to mitochondrial morphology
+          description: Screen TRiC substrates for one whose depletion reproduces mitochondrial fragmentation,
+            given that tubulin and actin were explicitly excluded, to supply the missing intermediate
+            in the proteostasis model.
+        - experiment_id: msto1-rad51-in-patient-fibroblasts
+          name: Test the MSTO1-RAD51 interaction in patient rather than cancer cells
+          description: Assay mitochondrial RAD51 occupancy on mtDNA in MSTO1 patient fibroblasts and ask
+            whether inhibiting mitochondrial RAD51 rescues mtDNA content, which would establish whether
+            the RAD51 route operates in the human disease.
+      selected_evidence:
+        snippet: Using rapid depletion of MSTO1, we found that mitochondrial fragmentation appears only
+          after six days.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42539026
+      reference_title: MSTO1 functions as a TRiC assembly factor linking cytosolic proteostasis to mitochondrial
+        function.
+      evidence_source: IN_VITRO
+      explanation: The kinetic observation that puts the canonical ordering in question.
+    first_seen_at: '2026-10-19T17:00:21.093572+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:00:21.093572+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:00:21.093572+00:00'
+    occurrences:
+    - assertion_path: /discussions/3
+      evidence_path: /discussions/3/evidence/0
+      reference: PMID:42539026
+  00f935ba2bcf54f013718ad9dd836507c29bffdccf540faad6b725ef4ec85ce7:
+    claim:
+      about:
+        disease:
+          name: MSTO1-Related Mitochondrial Myopathy
+          disease_term:
+            preferred_term: mitochondrial myopathy-cerebellar ataxia-pigmentary retinopathy syndrome
+            term:
+              id: MONDO:0044714
+              label: mitochondrial myopathy-cerebellar ataxia-pigmentary retinopathy syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Normal blood lactate and normal respiratory chain enzyme activities
+        presence: Normal
+        notes: 'The standard mitochondrial biochemical screen is normal in most patients. Lactate is not
+          elevated, respiratory chain complex activities in muscle homogenate are normal or near normal,
+          and fibroblast respiration is normal. This is the opposite of what a clinician expects in a
+          disease that has been proposed to belong among the mtDNA depletion syndromes, and it is the
+          main reason these patients were historically not identified through metabolic pathways. The
+          2026 adult-onset case is the exception, with reduced membrane potential and respiratory capacity.
+
+          Curated as a normal-result biomarker because the negative result carries diagnostic information
+          - it must not be used to exclude the diagnosis. No LOINC-coded reference range is attached because
+          the sources report qualitative normality rather than an interval.'
+      selected_evidence:
+        snippet: 'Our biochemical analyses were not indicative of a mitochondrial disorder: patients showed
+          normal lactate levels, and hardly any defect of MRC complex activities or cell respiration'
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28544275
+      reference_title: Recessive mutations in MSTO1 cause mitochondrial dynamics impairment, leading to
+        myopathy and ataxia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The direct statement that the mitochondrial biochemical workup is uninformative in
+        this disorder.
+    first_seen_at: '2026-10-19T17:00:21.066608+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:00:21.066608+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:00:21.066608+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:28544275
 assessments:
   50561b642a013c8cd60930e24aa4471fd12db177c53ad2a1bf078c2954c38023:
     input_sha256: 7036a23cf5448b53db493df3e578ff2c4b765431614822ff5c9d391ca18d2e51
@@ -19320,3 +19446,191 @@ assessments:
       request_sha256: 32908ca482f19eb3acb69b746a08f28bb979ef1301592706225480d53da3ffb2
       request_sha256s:
       - 32908ca482f19eb3acb69b746a08f28bb979ef1301592706225480d53da3ffb2
+  96f826180e21540b74bf49900fc328f822fc8bb050f8dd629a98fae5aa79af48:
+    input_sha256: cd19f4ff340e73bdaea8d6a12a66d0d66038a1a413eb910118c17dc34d5db08e
+    configuration_sha256: 3edbfc3495a1938b576f12fccdbd64dcb739e1d370c4b7a4b3b5705aa075f9b4
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:00:21.093572+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.07
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.07
+            PARTIAL: 0.39
+          confidence: 0.31
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.64
+            PARTIAL: 0.15
+          confidence: 0.46
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.66
+            PARTIAL: 0.17
+          confidence: 0.49
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.41
+            PARTIAL: 0.35
+          confidence: 0.11
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.18
+            PARTIAL: 0.37
+          confidence: 0.18
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.42
+            PARTIAL: 0.36
+          confidence: 0.13
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.34
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.5700000000000001
+            PARTIAL: 0.36
+          confidence: 0.36
+        /assertion/proposed_experiments/1/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.41
+            PARTIAL: 0.34
+          confidence: 0.11
+        /assertion/proposed_experiments/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.42
+            PARTIAL: 0.39
+          confidence: 0.13
+        /assertion/proposed_experiments/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.53
+            PARTIAL: 0.36
+          confidence: 0.3
+        /assertion/proposed_experiments/2/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.56
+            PARTIAL: 0.29
+          confidence: 0.34
+        /assertion/proposed_experiments/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.59
+            PARTIAL: 0.29
+          confidence: 0.38
+        /assertion/proposed_experiments/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.57
+            PARTIAL: 0.33
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17396
+        output_tokens: 860
+      elapsed_seconds: 0.3327
+      request_sha256: e28c49859e79817e53f0e0e4609d6952f1defad8b08a42397ddb1998c189dbda
+      request_sha256s:
+      - e28c49859e79817e53f0e0e4609d6952f1defad8b08a42397ddb1998c189dbda
+  098a06c56e52e709fb971aad193d108167e338fa29611ea2cbbcc2c7f49c2d26:
+    input_sha256: 00f935ba2bcf54f013718ad9dd836507c29bffdccf540faad6b725ef4ec85ce7
+    configuration_sha256: 9bc019e4a1eead984ae2e3fcdf3e6f9d7226fea665b268555cf4d6debca31b30
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:00:21.066608+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.05
+            PARTIAL: 0.24
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.09
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.09
+            PARTIAL: 0.49
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5379
+        output_tokens: 221
+      elapsed_seconds: 0.1985
+      request_sha256: fb17e3dd03d939d3acb7a8d16ccf0e057cd5c47f87a9c7471cc80648243d4805
+      request_sha256s:
+      - fb17e3dd03d939d3acb7a8d16ccf0e057cd5c47f87a9c7471cc80648243d4805

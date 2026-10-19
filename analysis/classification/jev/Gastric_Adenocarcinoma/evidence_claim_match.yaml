@@ -7811,6 +7811,60 @@ inputs:
     - assertion_path: /classifications/icdo_morphology
       evidence_path: /classifications/icdo_morphology/evidence/0
       reference: PMID:39023829
+  b23d3af7f3e001813b5aea83286348aca738a16d3c7aa9d1ddbb408f35f603e6:
+    claim:
+      about:
+        disease:
+          name: Gastric Adenocarcinoma
+          disease_term:
+            preferred_term: gastric adenocarcinoma
+            term:
+              id: MONDO:0005036
+              label: gastric adenocarcinoma
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: GS
+        subtype_frequency: 20% of the TCGA cohort (n=295)
+        display_name: Genomically stable gastric adenocarcinoma (TCGA)
+        classification: molecular_tcga
+        description: '20% of the TCGA cohort. Tumours lacking both aneuploidy and hypermutation. Enriched
+          for - but, importantly, not synonymous with - the diffuse Lauren histology, and characterised
+          by RHOA mutation or CLDN18-ARHGAP fusion. This class is the clearest illustration of why the
+          Lauren and TCGA axes must be kept separate: TCGA describes GS as enriched for the diffuse variant,
+          an association rather than an identity.'
+        genes:
+        - preferred_term: RHOA
+          term:
+            id: hgnc:667
+            label: RHOA
+        - preferred_term: CLDN18
+          term:
+            id: hgnc:2039
+            label: CLDN18
+      selected_evidence:
+        snippet: those termed genomically stable (20%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/5
+      evidence_path: /has_subtypes/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25079317
+      reference_title: Comprehensive molecular characterization of gastric adenocarcinoma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies the genomically stable class at 20% of the TCGA cohort.
+    first_seen_at: '2026-10-19T17:02:15.772788+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:02:15.772788+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:02:15.772788+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/5
+      evidence_path: /has_subtypes/5/evidence/1
+      reference: PMID:25079317
 assessments:
   d51c1aadc3edc9d55bdce90544f51aba342165ff1540f394213073b62a5a4539:
     input_sha256: d297638bfdd1258019d6b0eefe82c1a9a65e9991a59c0716c3480fdbaa2f625d
@@ -18900,3 +18954,97 @@ assessments:
       request_sha256: 064e7c50d3cee0f0218d6411ef44e179101795507a1c1b47c193f58a4ae63765
       request_sha256s:
       - 064e7c50d3cee0f0218d6411ef44e179101795507a1c1b47c193f58a4ae63765
+  016e9bfdb8990e3db639652c569aebe9d93ccccb89b82fc143e7adcb6169e5a3:
+    input_sha256: b23d3af7f3e001813b5aea83286348aca738a16d3c7aa9d1ddbb408f35f603e6
+    configuration_sha256: e53cfd3bd7b51840864eba1b94a32404dc6e0888f3c4a48102d1f3af08233789
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:02:15.772788+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.04
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.01
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.13
+            PARTIAL: 0.29
+          confidence: 0.37
+        /assertion/subtype_frequency:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/display_name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.18
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/classification:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.29
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.25
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.49
+            PARTIAL: 0.34
+          confidence: 0.23
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.51
+            PARTIAL: 0.34
+          confidence: 0.27
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.51
+            PARTIAL: 0.36
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11328
+        output_tokens: 523
+      elapsed_seconds: 0.2827
+      request_sha256: 71c3945395a22e6c266b558f11101ea0d807a8be0afa36aa74beb28d07d1017c
+      request_sha256s:
+      - 71c3945395a22e6c266b558f11101ea0d807a8be0afa36aa74beb28d07d1017c

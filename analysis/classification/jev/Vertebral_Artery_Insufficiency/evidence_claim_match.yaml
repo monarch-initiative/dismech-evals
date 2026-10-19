@@ -4283,6 +4283,65 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT03201432
+  fb92e5069ea4888ec1bc3368b9a656d0ab456026b188145622eecbb7d64f3889:
+    claim:
+      about:
+        disease:
+          name: Vertebral Artery Insufficiency
+          disease_term:
+            preferred_term: vertebral artery insufficiency
+            term:
+              id: MONDO:0001631
+              label: vertebral artery insufficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Atherosclerotic vertebral artery stenosis
+        description: Atherosclerotic narrowing of extracranial or intracranial vertebral arteries is a
+          major substrate for symptomatic vertebrobasilar disease. Percentage stenosis alone does not
+          predict vertebral flow loss; severe bilateral or tandem disease, a small residual lumen, contralateral
+          occlusion or hypoplasia, and limited collateral reserve can create hemodynamic compromise.
+        biological_scale: TISSUE
+        locations:
+        - preferred_term: vertebral artery
+          term:
+            id: UBERON:0001535
+            label: vertebral artery
+        cell_types:
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+        - preferred_term: vascular smooth muscle cell
+          term:
+            id: CL:0000192
+            label: smooth muscle cell
+      selected_evidence:
+        snippet: Over one-third of ischaemic strokes occur in the posterior circulation, and a leading
+          cause is atherosclerotic vertebrobasilar disease.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21050408
+      reference_title: 'Vertebrobasilar Flow Evaluation and Risk of Transient Ischaemic Attack and Stroke
+        study (VERiTAS): rationale and design.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This identifies atherosclerotic disease encompassing vertebral lesions as a leading
+        posterior-circulation ischemic stroke cause.
+    first_seen_at: '2026-10-19T16:50:20.672875+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:20.672875+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:20.672875+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:21050408
 assessments:
   9866d6657dcf17d294bb72a147c3dd7c719d09b87ceb95258774f2b83fe3b6f9:
     input_sha256: f1d046fc7ac349422fdf5cd7aa3c1d4d2bf640097aa6519662ab989a6ca0416c
@@ -9621,3 +9680,97 @@ assessments:
       request_sha256: 45fa8a2f7d66b6ce2a0b9fa675f498952701c025986703130b806bf5f0d69bb1
       request_sha256s:
       - 45fa8a2f7d66b6ce2a0b9fa675f498952701c025986703130b806bf5f0d69bb1
+  068a1ef0a83e84e926670d8c9bf94ec77d5eda8e19a491a1a62b6ba85a21d994:
+    input_sha256: fb92e5069ea4888ec1bc3368b9a656d0ab456026b188145622eecbb7d64f3889
+    configuration_sha256: 3b0c3a1dd5c22c206f53c6b28c5868cf70463a672716c0d69df0ffe18be45a5e
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:20.672875+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.05
+            PARTIAL: 0.85
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.06
+            PARTIAL: 0.37
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.06
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.11
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.24
+            PARTIAL: 0.37
+          confidence: 0.09
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+          confidence: 0.38
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.08
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11594
+        output_tokens: 536
+      elapsed_seconds: 0.2081
+      request_sha256: 65d69cfdc4400c0ce22a9070a899d5df73d3743ffdddd08dacfa40e49ee8a4d2
+      request_sha256s:
+      - 65d69cfdc4400c0ce22a9070a899d5df73d3743ffdddd08dacfa40e49ee8a4d2

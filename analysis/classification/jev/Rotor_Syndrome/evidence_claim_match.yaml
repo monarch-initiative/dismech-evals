@@ -975,6 +975,65 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/1
       reference: PMID:35860851
+  b767fd0d414653794f9aa3ef426f72380c7a7f18459872e67a67ab0a54976e96:
+    claim:
+      about:
+        disease:
+          name: Rotor Syndrome
+          disease_term:
+            preferred_term: Rotor syndrome
+            term:
+              id: MONDO:0009379
+              label: Rotor syndrome
+        context:
+        - path: /biochemical/1
+          value:
+            name: Urinary Coproporphyrin
+            presence: INCREASED
+            context: 'Classically, total urinary coproporphyrin excretion is increased two- to five-fold
+              in Rotor syndrome with isomer I usually below 75-80% of the total - the pattern that historically
+              distinguished it from Dubin-Johnson syndrome, where total excretion is normal but isomer
+              I exceeds 80%. This discriminator is not reliable in individual patients: a genetically
+              confirmed Rotor case has been reported with normal total coproporphyrin and 86% isomer I,
+              a profile that reads as Dubin-Johnson syndrome. Molecular testing, not coproporphyrin analysis,
+              establishes the diagnosis.'
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Combined OATP1B1 and OATP1B3 Deficiency
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: Altered coproporphyrin handling reports loss of OATP-dependent organic anion uptake,
+          but the isomer pattern overlaps with Dubin-Johnson syndrome often enough that it cannot stand
+          alone.
+      selected_evidence:
+        snippet: Total urinary coproporphyrin was normal with predominance of isomer I (86% of total urinary
+          coproporphyrin output).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1/readouts/0
+      evidence_path: /biochemical/1/readouts/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/1
+    evidence_metadata:
+      reference: PMID:36157610
+      reference_title: Rotor Syndrome Presenting as Dubin-Johnson Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Marked PARTIAL because it refutes the reliability of this readout in individual patients:
+        these values are the Dubin-Johnson pattern, yet the patient had genetically confirmed Rotor syndrome.
+        Evidence source is HUMAN_CLINICAL because this is a measurement in a reported patient.'
+    first_seen_at: '2026-10-19T17:01:44.449605+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:44.449605+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:44.449605+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1/readouts/0
+      evidence_path: /biochemical/1/readouts/0/evidence/1
+      reference: PMID:36157610
 assessments:
   a859de54c862de61643114ea94d1e3417cc3f599b5c77a48376115226d6934f6:
     input_sha256: 036c0d4928d3273c4669c0c34e5a6f172cbbd3f5ef5f8d14c087cf35e7598be9
@@ -2399,3 +2458,76 @@ assessments:
       request_sha256: 5ede729049ff8c97b3bd514348eb70e20265095431fc87f8033191996e2f25f8
       request_sha256s:
       - 5ede729049ff8c97b3bd514348eb70e20265095431fc87f8033191996e2f25f8
+  1412009f158721e02060316ca8ce1ba672b2c1fffb97b06dff639c731abbb913:
+    input_sha256: b767fd0d414653794f9aa3ef426f72380c7a7f18459872e67a67ab0a54976e96
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:44.449605+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.17
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.23
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.25
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.08
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.17
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.06
+            PARTIAL: 0.43
+          confidence: 0.27
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.07
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.18
+            PARTIAL: 0.45
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8600
+        output_tokens: 366
+      elapsed_seconds: 0.3097
+      request_sha256: 1342c024703c8d80a5a976d0e8eb11097fdad0e14a12d3ed05b0be9c8097a505
+      request_sha256s:
+      - 1342c024703c8d80a5a976d0e8eb11097fdad0e14a12d3ed05b0be9c8097a505

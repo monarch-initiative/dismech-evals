@@ -15113,6 +15113,733 @@ inputs:
     - assertion_path: /clinical_trials/4
       evidence_path: /clinical_trials/4/evidence/0
       reference: PMID:32078813
+  6be982d1863e0c806ae65c2bef5d5187044752cfc98dbb8264cfc0b23de8f61e:
+    claim:
+      about:
+        disease:
+          name: Ewing Sarcoma
+          disease_term:
+            preferred_term: Ewing sarcoma
+            term:
+              id: MONDO:0012817
+              label: Ewing sarcoma
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_ewing_cell_of_origin_context
+        prompt: Which human progenitor state is truly permissive for EWS-FLI1 transformation, and what
+          chromatin or differentiation-state features distinguish transforming early mesenchymal or neural
+          crest-like cells from non-transforming MSC states?
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        attaches_to:
+        - pathophysiology#Permissive Progenitor Cell State
+        - pathophysiology#IGF-1/YAP1 Developmental Cooperation
+        - pathophysiology#GGAA Microsatellite Germline Susceptibility Architecture
+        - pathophysiology#EWS-FLI1 Fusion Oncogene
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        rationale: 'Neural crest-derived cells, bone marrow-derived MSCs, pediatric MSCs, adult MSCs,
+          and 2025 embryonic MSC models support overlapping but not identical origin hypotheses. The unresolved
+          mechanism is not simply whether EWS-FLI1 can alter transcription, but which developmental chromatin
+          state lets GGAA enhancer rewiring become transforming rather than toxic, senescent, or differentiation-inducing.
+          IGF-1/YAP1 signaling and germline GGAA repeat architecture now provide concrete cooperating
+          mechanisms, but neither yet defines the full permissive human progenitor state. The fusion can
+          pioneer previously closed GGAA sites, so pre-existing accessibility at all repeats
+
+          is not a necessary criterion for permissiveness. Adult diagnosis does not by itself date the
+          initiating event. YAP1 opposition to fusion transcription is not equivalent to tumor suppression
+          in established Ewing sarcoma.'
+        proposed_experiments:
+        - experiment_id: exp_ewing_isogenic_developmental_context_panel
+          name: Isogenic developmental-context EWS-FLI1 induction panel
+          description: Build an inducible or safe-harbor knock-in EWS-FLI1 panel across hPSC-derived migratory
+            neural crest cells, early mesenchymal progenitors, osteochondral progenitors, pediatric MSCs,
+            and adult MSCs. Measure the same fusion dose and timing across lineages, then compare enhancer
+            activation, differentiation blockade, DNA-damage state, senescence, and xenograft or organoid
+            tumorigenicity.
+          experiment_type:
+            preferred_term: isogenic stem-cell transformation assay
+          model_systems:
+          - name: hPSC-derived neural crest and early mesenchymal progenitor panel
+            description: Genome-engineered human pluripotent stem cell derivatives with matched EWS-FLI1
+              induction across candidate Ewing sarcoma cells of origin.
+            experimental_model_type: IPSC_DERIVED_MODEL
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            cell_types:
+            - preferred_term: migratory neural crest cell
+              term:
+                id: CL:0000333
+                label: migratory neural crest cell
+            - preferred_term: early mesenchymal stem cell
+              term:
+                id: CL:0000134
+                label: mesenchymal stem cell
+            publication: PMID:41136396
+            modeled_mechanisms:
+            - target: Permissive Progenitor Cell State
+              description: Tests whether early developmental context permits EWS-FLI1 transformation.
+            - target: GGAA Microsatellite Enhancer Reprogramming
+              description: Measures whether the same fusion activates different GGAA enhancer programs
+                by cell state.
+          perturbations:
+          - name: Inducible EWS-FLI1 expression
+            target: pathophysiology#EWS-FLI1 Fusion Oncogene
+            description: 'Express matched EWS-FLI1 at controlled dose and timing across candidate progenitor
+              states.
+
+              '
+            genes:
+            - preferred_term: EWSR1
+              term:
+                id: hgnc:3508
+                label: EWSR1
+            - preferred_term: FLI1
+              term:
+                id: hgnc:3749
+                label: FLI1
+          - name: Pubertal IGF-1/YAP1 modulation
+            target: pathophysiology#IGF-1/YAP1 Developmental Cooperation
+            description: 'Add pubertal-range IGF-1 exposure and YAP1/TEAD inhibition or knockout arms
+              to determine whether the cooperating signal is conserved in human progenitors.
+
+              '
+            genes:
+            - preferred_term: IGF1
+              term:
+                id: hgnc:5464
+                label: IGF1
+            - preferred_term: YAP1
+              term:
+                id: hgnc:16262
+                label: YAP1
+          readouts:
+          - name: GGAA enhancer activation by developmental state
+            target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+            description: 'Compare EWS-FLI1 occupancy, chromatin accessibility, and H3K27ac gain at endogenous
+              GGAA microsatellites.
+
+              '
+            biological_processes:
+            - preferred_term: chromatin remodeling
+              term:
+                id: GO:0006338
+                label: chromatin remodeling
+            assays:
+            - preferred_term: single-cell ATAC-seq
+            - preferred_term: CUT&Tag
+            - preferred_term: single-cell RNA-seq
+            direction: POSITIVE
+          - name: Transformation and differentiation blockade
+            target: pathophysiology#Blocked Differentiation
+            description: 'Measure loss of mesenchymal/osteochondral differentiation capacity, acquisition
+              of Ewing-like transcription, senescence avoidance, and tumor formation in permissive contexts.
+
+              '
+            biological_processes:
+            - preferred_term: mesenchymal cell differentiation
+              term:
+                id: GO:0048762
+                label: mesenchymal cell differentiation
+            assays:
+            - preferred_term: differentiation assay
+            - preferred_term: xenograft tumorigenicity assay
+            direction: NEGATIVE
+          controls:
+          - name: Isogenic uninduced progenitor controls
+            description: Same genetic background and differentiation state without EWS-FLI1 induction.
+          - name: Nonpermissive adult MSC comparator
+            description: Mature MSC context expected to show incomplete transformation or toxicity.
+          - name: Fusion knockdown or degron rescue
+            description: Acute EWS-FLI1 withdrawal after Ewing-like state acquisition.
+          decision_criterion: 'The cell-of-origin model is prioritized when a specific progenitor state
+            reproducibly shows EWS-FLI1-dependent GGAA enhancer activation, Ewing-like core regulatory
+            circuitry, differentiation blockade, and tumorigenicity while closely related states fail
+            one or more of those criteria. Do not require every successful enhancer to be open before
+            fusion expression: measure both baseline and induced accessibility. Distinguish developmental
+            transformation from maintenance and growth of established tumors.'
+          would_support:
+          - pathophysiology#Permissive Progenitor Cell State
+          - pathophysiology#IGF-1/YAP1 Developmental Cooperation
+          - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          - pathophysiology#Blocked Differentiation
+          would_refute:
+          - pathophysiology#Permissive Progenitor Cell State
+      selected_evidence:
+        snippet: We identified 50 microsatellite alleles at 6p25.1 and observed that EwS-affected individuals
+          had longer alleles (>135 bp) with more GGAA repeats.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36787739
+      reference_title: Targeted long-read sequencing of the Ewing sarcoma 6p25.1 susceptibility locus
+        identifies germline-somatic interactions with EWSR1-FLI1 binding.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports inherited GGAA architecture as part of the permissive-context gap.
+    first_seen_at: '2026-10-19T16:58:15.446950+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:58:15.446950+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:58:15.446950+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/2
+      reference: PMID:36787739
+  aad2f13fc508c3304924a96455eea2e7e14671919a87b8baa1457c7f50a4f7fd:
+    claim:
+      about:
+        disease:
+          name: Ewing Sarcoma
+          disease_term:
+            preferred_term: Ewing sarcoma
+            term:
+              id: MONDO:0012817
+              label: Ewing sarcoma
+        context:
+        - path: /discussions/1
+          value:
+            discussion_id: gap_ewing_ggaa_enhancer_grammar
+            prompt: What GGAA microsatellite grammar and cofactor context make EWS-FLI1 binding oncogenic,
+              and why do ETV6, BAF, and STAG2/cohesin perturbations produce different enhancer and differentiation
+              outcomes?
+            kind: KNOWLEDGE_GAP
+            status: OPEN
+            attaches_to:
+            - pathophysiology#EWS-FLI1 Chromatin Hub Dynamics
+            - pathophysiology#BAF Complex Retargeting
+            - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+            - pathophysiology#ETV6 GGAA Counter-Regulation
+            - pathophysiology#GGAA Microsatellite Germline Susceptibility Architecture
+            - pathophysiology#STAG2-Modified Enhancer State
+            rationale: EWS-FLI1 binds GGAA repeats, but binding alone does not explain why some microsatellites
+              become oncogenic enhancers, why germline repeat length at EGR2 and RREB1 changes susceptibility,
+              why ETV6 antagonism can redirect occupancy toward differentiation, or why STAG2 loss selectively
+              amplifies multimeric GGAA enhancer programs. This gap is the enhancer-grammar layer of the
+              pathograph, now spanning DNA sequence, hub dosage, native ETS competition, and cohesin state.
+          role: ancestor
+      assertion_type: Experiment
+      assertion:
+        experiment_id: exp_ewing_endogenous_ggaa_saturation_editing
+        name: Endogenous GGAA enhancer grammar saturation editing
+        description: Use multiplex prime/base editing or CRISPR replacement to vary repeat length, repeat
+          purity, flanking ETS motifs, and local chromatin context at endogenous EWS-FLI1-bound GGAA microsatellites.
+          Combine these edits with acute BAF, ETV6, and STAG2 perturbations to quantify how enhancer grammar
+          and cofactor state determine transcriptional output.
+        experiment_type:
+          preferred_term: pooled endogenous enhancer saturation editing experiment
+        model_systems:
+        - name: Ewing sarcoma cell-line and early progenitor enhancer-editing panel
+          description: EWS-FLI1-positive Ewing sarcoma cell lines plus permissive progenitor models with
+            editable endogenous GGAA microsatellite enhancers.
+          experimental_model_type: CELL_LINE
+          organism:
+            preferred_term: human
+            term:
+              id: NCBITaxon:9606
+              label: Homo sapiens
+          publication: PMID:41950086
+          modeled_mechanisms:
+          - target: GGAA Microsatellite Enhancer Reprogramming
+            description: Tests enhancer sequence grammar required for de novo enhancer function.
+          - target: STAG2-Modified Enhancer State
+            description: Tests how STAG2 loss changes enhancer grammar dependence.
+        perturbations:
+        - name: GGAA microsatellite sequence editing
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Edit endogenous EWS-FLI1-bound GGAA repeats across short, intermediate, and long
+            repeat classes, including susceptibility alleles at EGR2 and RREB1.
+
+            '
+          genes:
+          - preferred_term: EGR2
+            term:
+              id: hgnc:3239
+              label: EGR2
+          - preferred_term: RREB1
+            term:
+              id: hgnc:10449
+              label: RREB1
+        - name: ETV6, STAG2, and BAF cofactor perturbation
+          target: pathophysiology#BAF Complex Retargeting
+          description: 'Combine enhancer edits with degron, CRISPRi, or knockout perturbations of ETV6,
+            STAG2, and BAF complex activity.
+
+            '
+          genes:
+          - preferred_term: ETV6
+            term:
+              id: hgnc:3495
+              label: ETV6
+          - preferred_term: STAG2
+            term:
+              id: hgnc:11355
+              label: STAG2
+        readouts:
+        - name: Enhancer occupancy and activity
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Quantify EWS-FLI1 occupancy, BAF recruitment, chromatin accessibility, H3K27ac,
+            enhancer-promoter contact, and target-gene transcription for each edited enhancer allele.
+
+            '
+          biological_processes:
+          - preferred_term: regulation of gene expression
+            term:
+              id: GO:0010468
+              label: regulation of gene expression
+          assays:
+          - preferred_term: CUT&Tag
+          - preferred_term: ATAC-seq
+          - preferred_term: HiChIP
+          - preferred_term: single-cell RNA-seq
+          direction: POSITIVE
+        - name: Differentiation versus proliferation outcome
+          target: pathophysiology#Core Regulatory Circuitry Activation
+          description: 'Determine whether edited enhancer states reinforce Ewing core regulatory circuitry,
+            drive mesenchymal differentiation, or reduce tumor cell growth.
+
+            '
+          biological_processes:
+          - preferred_term: cell population proliferation
+            term:
+              id: GO:0008283
+              label: cell population proliferation
+          assays:
+          - preferred_term: pooled growth screen
+          - preferred_term: differentiation marker profiling
+          direction: POSITIVE
+        controls:
+        - name: Synonymous non-GGAA neutral edits
+          description: Editing controls matched for guide delivery and repair outcome.
+        - name: EWS-FLI1 degron withdrawal
+          description: Fusion-dependence control for edited enhancer activity.
+        decision_criterion: A causal enhancer-grammar rule is supported when endogenous repeat edits produce
+          predictable EWS-FLI1 occupancy, BAF recruitment, enhancer-promoter contact, and transcriptional
+          changes that reverse with fusion withdrawal and change coherently under ETV6 or STAG2 perturbation.
+        would_support:
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        - pathophysiology#BAF Complex Retargeting
+        - pathophysiology#STAG2-Modified Enhancer State
+        would_refute:
+        - pathophysiology#STAG2-Modified Enhancer State
+      selected_evidence:
+        snippet: Using biochemical assays and epigenomics, we show that ETV6 competes with EWS-FLI1 for
+          binding to select DNA elements enriched for short GGAA repeat sequences.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1/proposed_experiments/0
+      evidence_path: /discussions/1/proposed_experiments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /discussions/1
+    evidence_metadata:
+      reference: PMID:36658219
+      reference_title: ETV6 dependency in Ewing sarcoma by antagonism of EWS-FLI1-mediated enhancer activation.
+      evidence_source: IN_VITRO
+      explanation: Supports testing ETV6 as an enhancer-grammar modifier.
+    first_seen_at: '2026-10-19T16:58:17.324266+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:58:17.324266+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:58:17.324266+00:00'
+    occurrences:
+    - assertion_path: /discussions/1/proposed_experiments/0
+      evidence_path: /discussions/1/proposed_experiments/0/evidence/0
+      reference: PMID:36658219
+  16e581d0b321d01cccc888eded4a0bd76c8651f00dc6f8e1e8e20a03b57ce2a7:
+    claim:
+      about:
+        disease:
+          name: Ewing Sarcoma
+          disease_term:
+            preferred_term: Ewing sarcoma
+            term:
+              id: MONDO:0012817
+              label: Ewing sarcoma
+        context:
+        - path: /discussions/2
+          value:
+            discussion_id: gap_ewing_chromatin_reversal_screen
+            prompt: Which EWS-FLI1-dependent chromatin-accessibility states are causal tumor dependencies
+              rather than passenger signatures, and can an automated high-throughput chromatin assay distinguish
+              therapeutically useful chromatin reversal from nonspecific cytotoxicity?
+            kind: KNOWLEDGE_GAP
+            status: OPEN
+            attaches_to:
+            - pathophysiology#EWS-FLI1 Fusion Oncogene
+            - pathophysiology#EWS-FLI1 Chromatin Hub Dynamics
+            - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+            - pathophysiology#ETV6 GGAA Counter-Regulation
+            - pathophysiology#NuRD-LSD1 Transcriptional Repression
+            - pathophysiology#Core Regulatory Circuitry Activation
+            rationale: 'Ian Davis lab work showed that EWS-FLI1 retargets chromatin, creates nucleosome-depleted
+              enhancer states, and can be assayed with automated high-throughput FAIRE. However, the therapeutic
+              interpretation remains unresolved: a compound or degrader that reduces an Ewing chromatin
+              signature could act by direct fusion-pathway reversal, by ETV6 or NuRD/HDAC/LSD1 modifier
+              biology, by reduced EWS-FLI1 expression, or by general toxicity. A mechanism-resolved chromatin
+              perturbation screen would convert this chromatin phenotype into a decision rule for prioritizing
+              causal nodes and cloud-lab-ready follow-up experiments.'
+          role: ancestor
+      assertion_type: Experiment
+      assertion:
+        experiment_id: exp_ewing_automated_chromatin_reversal_screen
+        name: Automated EWS-FLI1 chromatin-reversal perturbation screen
+        description: Run an automated plate-based chromatin-accessibility screen in Ewing sarcoma models
+          using HT-FAIRE, ATAC-qPCR, or low-input ATAC-seq readouts at sentinel EWS-FLI1 GGAA enhancers,
+          ETV6-competed short GGAA elements, and repressed mesenchymal enhancers. Screen annotated epigenetic
+          compounds, targeted degraders, kinase/chemical-probe libraries, and EWS-FLI1 or ETV6 perturbation
+          controls, then triage hits by matched viability, fusion expression, enhancer activity, and transcriptional
+          rescue.
+        experiment_type:
+          preferred_term: automated high-throughput chromatin-accessibility perturbation screen
+        model_systems:
+        - name: Ewing sarcoma chromatin-accessibility screening panel
+          description: EWS-FLI1-positive Ewing sarcoma cell lines with sentinel GGAA enhancers and matched
+            orthogonal chromatin, expression, and viability assays.
+          experimental_model_type: CELL_LINE
+          organism:
+            preferred_term: human
+            term:
+              id: NCBITaxon:9606
+              label: Homo sapiens
+          publication: PMID:26929321
+          modeled_mechanisms:
+          - target: GGAA Microsatellite Enhancer Reprogramming
+            description: Measures whether perturbations reverse fusion-dependent nucleosome depletion
+              at GGAA enhancers.
+          - target: ETV6 GGAA Counter-Regulation
+            description: Tests whether ETV6-directed perturbation produces a separable short-GGAA enhancer
+              state.
+          - target: NuRD-LSD1 Transcriptional Repression
+            description: Tests whether chromatin-repressive modifiers drive rescue of lineage or tumor-suppressive
+              enhancers.
+        perturbations:
+        - name: Epigenetic compound and degrader library
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Apply annotated epigenetic inhibitors, targeted degraders, and chemical probe
+            libraries with dose and time gradients suitable for automated liquid handling.
+
+            '
+        - name: EWS-FLI1 and ETV6 perturbation controls
+          target: pathophysiology#EWS-FLI1 Fusion Oncogene
+          description: 'Include acute fusion knockdown or degron withdrawal, ETV6 degradation or knockdown,
+            and vehicle controls to calibrate chromatin-reversal directionality.
+
+            '
+          genes:
+          - preferred_term: EWSR1
+            term:
+              id: hgnc:3508
+              label: EWSR1
+          - preferred_term: FLI1
+            term:
+              id: hgnc:3749
+              label: FLI1
+          - preferred_term: ETV6
+            term:
+              id: hgnc:3495
+              label: ETV6
+        readouts:
+        - name: Sentinel chromatin-accessibility reversal
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Quantify accessibility at EWS-FLI1-activated GGAA enhancers, ETV6- competed short
+            GGAA elements, and fusion-repressed mesenchymal enhancers.
+
+            '
+          biological_processes:
+          - preferred_term: chromatin remodeling
+            term:
+              id: GO:0006338
+              label: chromatin remodeling
+          assays:
+          - preferred_term: HT-FAIRE
+          - preferred_term: ATAC-qPCR
+          - preferred_term: low-input ATAC-seq
+          direction: NEGATIVE
+        - name: Mechanism-resolved transcriptional rescue
+          target: pathophysiology#Core Regulatory Circuitry Activation
+          description: 'Pair chromatin hits with targeted RNA-seq or Perturb-seq to determine whether
+            KLF15/TCF4/NKX2-2 circuitry, mesenchymal differentiation genes, EWS-FLI1 abundance, or generic
+            stress pathways explain the response.
+
+            '
+          biological_processes:
+          - preferred_term: regulation of gene expression
+            term:
+              id: GO:0010468
+              label: regulation of gene expression
+          assays:
+          - preferred_term: targeted RNA-seq
+          - preferred_term: Perturb-seq
+          - preferred_term: immunoblotting
+          direction: NEGATIVE
+        - name: Growth and toxicity separation
+          target: pathophysiology#Tumor Cell Proliferation and Survival
+          description: 'Measure viability, apoptosis, and clonogenic growth in the same dose and time
+            grid to separate mechanism-specific chromatin reversal from nonspecific cytotoxicity.
+
+            '
+          biological_processes:
+          - preferred_term: cell population proliferation
+            term:
+              id: GO:0008283
+              label: cell population proliferation
+          assays:
+          - preferred_term: viability assay
+          - preferred_term: apoptosis assay
+          - preferred_term: clonogenic survival assay
+          direction: NEGATIVE
+        controls:
+        - name: EWS-FLI1 knockdown positive control
+          description: Calibrates the expected chromatin-accessibility direction for true fusion-pathway
+            reversal.
+        - name: Short-exposure viability control
+          description: Flags compounds whose chromatin signal is secondary to acute cell loss or global
+            toxicity.
+        - name: Non-Ewing sarcoma comparator cells
+          description: Tests whether hits reverse a Ewing-specific chromatin state rather than general
+            chromatin accessibility.
+        decision_criterion: A chromatin-reversal hit is prioritized when it reproducibly shifts sentinel
+          EWS-FLI1 accessibility and transcription toward the fusion- withdrawal state at concentrations
+          and times that precede broad cytotoxicity, and when the response maps to a declared mechanism
+          node such as ETV6 competition, NuRD/HDAC/LSD1 repression, or EWS-FLI1 dosage.
+        would_support:
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        - pathophysiology#ETV6 GGAA Counter-Regulation
+        - pathophysiology#NuRD-LSD1 Transcriptional Repression
+        - pathophysiology#Tumor Cell Proliferation and Survival
+        would_refute:
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        - pathophysiology#ETV6 GGAA Counter-Regulation
+      selected_evidence:
+        snippet: After demonstrating the validity and robustness of this approach, we applied this method
+          to screen an epigenetically targeted small molecule library by evaluating regions of aberrant
+          nucleosome depletion mediated by EWSR1-FLI1, the chimeric transcription factor critical for
+          the bone and soft tissue tumor Ewing sarcoma.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/2/proposed_experiments/0
+      evidence_path: /discussions/2/proposed_experiments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /discussions/2
+    evidence_metadata:
+      reference: PMID:26929321
+      reference_title: High-throughput small molecule screen identifies inhibitors of aberrant chromatin
+        accessibility.
+      evidence_source: IN_VITRO
+      explanation: Supports using EWS-FLI1-dependent accessibility regions as the primary assay signal.
+    first_seen_at: '2026-10-19T16:58:17.384477+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:58:17.384477+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:58:17.384477+00:00'
+    occurrences:
+    - assertion_path: /discussions/2/proposed_experiments/0
+      evidence_path: /discussions/2/proposed_experiments/0/evidence/1
+      reference: PMID:26929321
+  eb73d52ebd6d585d215afb790862a38c64f106ab64cd64985a56369d2016586b:
+    claim:
+      about:
+        disease:
+          name: Ewing Sarcoma
+          disease_term:
+            preferred_term: Ewing sarcoma
+            term:
+              id: MONDO:0012817
+              label: Ewing sarcoma
+        context:
+        - path: /discussions/2
+          value:
+            discussion_id: gap_ewing_chromatin_reversal_screen
+            prompt: Which EWS-FLI1-dependent chromatin-accessibility states are causal tumor dependencies
+              rather than passenger signatures, and can an automated high-throughput chromatin assay distinguish
+              therapeutically useful chromatin reversal from nonspecific cytotoxicity?
+            kind: KNOWLEDGE_GAP
+            status: OPEN
+            attaches_to:
+            - pathophysiology#EWS-FLI1 Fusion Oncogene
+            - pathophysiology#EWS-FLI1 Chromatin Hub Dynamics
+            - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+            - pathophysiology#ETV6 GGAA Counter-Regulation
+            - pathophysiology#NuRD-LSD1 Transcriptional Repression
+            - pathophysiology#Core Regulatory Circuitry Activation
+            rationale: 'Ian Davis lab work showed that EWS-FLI1 retargets chromatin, creates nucleosome-depleted
+              enhancer states, and can be assayed with automated high-throughput FAIRE. However, the therapeutic
+              interpretation remains unresolved: a compound or degrader that reduces an Ewing chromatin
+              signature could act by direct fusion-pathway reversal, by ETV6 or NuRD/HDAC/LSD1 modifier
+              biology, by reduced EWS-FLI1 expression, or by general toxicity. A mechanism-resolved chromatin
+              perturbation screen would convert this chromatin phenotype into a decision rule for prioritizing
+              causal nodes and cloud-lab-ready follow-up experiments.'
+          role: ancestor
+      assertion_type: Experiment
+      assertion:
+        experiment_id: exp_ewing_automated_chromatin_reversal_screen
+        name: Automated EWS-FLI1 chromatin-reversal perturbation screen
+        description: Run an automated plate-based chromatin-accessibility screen in Ewing sarcoma models
+          using HT-FAIRE, ATAC-qPCR, or low-input ATAC-seq readouts at sentinel EWS-FLI1 GGAA enhancers,
+          ETV6-competed short GGAA elements, and repressed mesenchymal enhancers. Screen annotated epigenetic
+          compounds, targeted degraders, kinase/chemical-probe libraries, and EWS-FLI1 or ETV6 perturbation
+          controls, then triage hits by matched viability, fusion expression, enhancer activity, and transcriptional
+          rescue.
+        experiment_type:
+          preferred_term: automated high-throughput chromatin-accessibility perturbation screen
+        model_systems:
+        - name: Ewing sarcoma chromatin-accessibility screening panel
+          description: EWS-FLI1-positive Ewing sarcoma cell lines with sentinel GGAA enhancers and matched
+            orthogonal chromatin, expression, and viability assays.
+          experimental_model_type: CELL_LINE
+          organism:
+            preferred_term: human
+            term:
+              id: NCBITaxon:9606
+              label: Homo sapiens
+          publication: PMID:26929321
+          modeled_mechanisms:
+          - target: GGAA Microsatellite Enhancer Reprogramming
+            description: Measures whether perturbations reverse fusion-dependent nucleosome depletion
+              at GGAA enhancers.
+          - target: ETV6 GGAA Counter-Regulation
+            description: Tests whether ETV6-directed perturbation produces a separable short-GGAA enhancer
+              state.
+          - target: NuRD-LSD1 Transcriptional Repression
+            description: Tests whether chromatin-repressive modifiers drive rescue of lineage or tumor-suppressive
+              enhancers.
+        perturbations:
+        - name: Epigenetic compound and degrader library
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Apply annotated epigenetic inhibitors, targeted degraders, and chemical probe
+            libraries with dose and time gradients suitable for automated liquid handling.
+
+            '
+        - name: EWS-FLI1 and ETV6 perturbation controls
+          target: pathophysiology#EWS-FLI1 Fusion Oncogene
+          description: 'Include acute fusion knockdown or degron withdrawal, ETV6 degradation or knockdown,
+            and vehicle controls to calibrate chromatin-reversal directionality.
+
+            '
+          genes:
+          - preferred_term: EWSR1
+            term:
+              id: hgnc:3508
+              label: EWSR1
+          - preferred_term: FLI1
+            term:
+              id: hgnc:3749
+              label: FLI1
+          - preferred_term: ETV6
+            term:
+              id: hgnc:3495
+              label: ETV6
+        readouts:
+        - name: Sentinel chromatin-accessibility reversal
+          target: pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+          description: 'Quantify accessibility at EWS-FLI1-activated GGAA enhancers, ETV6- competed short
+            GGAA elements, and fusion-repressed mesenchymal enhancers.
+
+            '
+          biological_processes:
+          - preferred_term: chromatin remodeling
+            term:
+              id: GO:0006338
+              label: chromatin remodeling
+          assays:
+          - preferred_term: HT-FAIRE
+          - preferred_term: ATAC-qPCR
+          - preferred_term: low-input ATAC-seq
+          direction: NEGATIVE
+        - name: Mechanism-resolved transcriptional rescue
+          target: pathophysiology#Core Regulatory Circuitry Activation
+          description: 'Pair chromatin hits with targeted RNA-seq or Perturb-seq to determine whether
+            KLF15/TCF4/NKX2-2 circuitry, mesenchymal differentiation genes, EWS-FLI1 abundance, or generic
+            stress pathways explain the response.
+
+            '
+          biological_processes:
+          - preferred_term: regulation of gene expression
+            term:
+              id: GO:0010468
+              label: regulation of gene expression
+          assays:
+          - preferred_term: targeted RNA-seq
+          - preferred_term: Perturb-seq
+          - preferred_term: immunoblotting
+          direction: NEGATIVE
+        - name: Growth and toxicity separation
+          target: pathophysiology#Tumor Cell Proliferation and Survival
+          description: 'Measure viability, apoptosis, and clonogenic growth in the same dose and time
+            grid to separate mechanism-specific chromatin reversal from nonspecific cytotoxicity.
+
+            '
+          biological_processes:
+          - preferred_term: cell population proliferation
+            term:
+              id: GO:0008283
+              label: cell population proliferation
+          assays:
+          - preferred_term: viability assay
+          - preferred_term: apoptosis assay
+          - preferred_term: clonogenic survival assay
+          direction: NEGATIVE
+        controls:
+        - name: EWS-FLI1 knockdown positive control
+          description: Calibrates the expected chromatin-accessibility direction for true fusion-pathway
+            reversal.
+        - name: Short-exposure viability control
+          description: Flags compounds whose chromatin signal is secondary to acute cell loss or global
+            toxicity.
+        - name: Non-Ewing sarcoma comparator cells
+          description: Tests whether hits reverse a Ewing-specific chromatin state rather than general
+            chromatin accessibility.
+        decision_criterion: A chromatin-reversal hit is prioritized when it reproducibly shifts sentinel
+          EWS-FLI1 accessibility and transcription toward the fusion- withdrawal state at concentrations
+          and times that precede broad cytotoxicity, and when the response maps to a declared mechanism
+          node such as ETV6 competition, NuRD/HDAC/LSD1 repression, or EWS-FLI1 dosage.
+        would_support:
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        - pathophysiology#ETV6 GGAA Counter-Regulation
+        - pathophysiology#NuRD-LSD1 Transcriptional Repression
+        - pathophysiology#Tumor Cell Proliferation and Survival
+        would_refute:
+        - pathophysiology#GGAA Microsatellite Enhancer Reprogramming
+        - pathophysiology#ETV6 GGAA Counter-Regulation
+      selected_evidence:
+        snippet: To explore whether chromatin accessibility could serve as a platform for small molecule
+          screening, we adapted formaldehyde-assisted isolation of regulatory elements (FAIRE), a chemical
+          method to enrich for nucleosome-depleted genomic regions, as a high-throughput, automated assay.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/2/proposed_experiments/0
+      evidence_path: /discussions/2/proposed_experiments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /discussions/2
+    evidence_metadata:
+      reference: PMID:26929321
+      reference_title: High-throughput small molecule screen identifies inhibitors of aberrant chromatin
+        accessibility.
+      evidence_source: IN_VITRO
+      explanation: Supports the feasibility of automated chromatin-accessibility screening in this disease
+        context.
+    first_seen_at: '2026-10-19T16:58:17.371685+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:58:17.371685+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:58:17.371685+00:00'
+    occurrences:
+    - assertion_path: /discussions/2/proposed_experiments/0
+      evidence_path: /discussions/2/proposed_experiments/0/evidence/0
+      reference: PMID:26929321
 assessments:
   61b207157487bb3fe9e676a6062718ff8554b5159b33347fc247039eb6f46310:
     input_sha256: 9bf5800ce92f09aac4da2879171700a94b773dcab60b4b80a8dfa5e659052f7b
@@ -42156,3 +42883,1866 @@ assessments:
       request_sha256: d56a50b135308c004a9d0ced4e4f54e3241d96e73acb0d65ad5fec2f964a026c
       request_sha256s:
       - d56a50b135308c004a9d0ced4e4f54e3241d96e73acb0d65ad5fec2f964a026c
+  32ec7ad8e1cd71cfb30162734033f2d53e37a934578dde06d753d2df8bd145ec:
+    input_sha256: 6be982d1863e0c806ae65c2bef5d5187044752cfc98dbb8264cfc0b23de8f61e
+    configuration_sha256: 33bbd1a280842e561b86912267a8be9fcb99c4b5fcf6c6d791e40c9246bb9602
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:58:15.446950+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.17
+            PARTIAL: 0.38
+          confidence: 0.18
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.74
+            PARTIAL: 0.13
+          confidence: 0.61
+        /assertion/prompt:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.74
+            PARTIAL: 0.1
+          confidence: 0.61
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.93
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.19
+            PARTIAL: 0.36
+          confidence: 0.18
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.42
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.75
+            PARTIAL: 0.11
+          confidence: 0.62
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.79
+            PARTIAL: 0.16
+          confidence: 0.69
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/proposed_experiments/0/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/proposed_experiments/0/model_systems/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.78
+            PARTIAL: 0.16
+          confidence: 0.67
+        /assertion/proposed_experiments/0/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.88
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/proposed_experiments/0/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.85
+            PARTIAL: 0.05
+          confidence: 0.77
+        /assertion/proposed_experiments/0/model_systems/0/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.51
+            PARTIAL: 0.24
+          confidence: 0.27
+        /assertion/proposed_experiments/0/model_systems/0/organism/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.37
+            PARTIAL: 0.3
+          confidence: 0.06
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.76
+            PARTIAL: 0.17
+          confidence: 0.64
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.79
+            PARTIAL: 0.16
+          confidence: 0.69
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.77
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/proposed_experiments/0/model_systems/0/cell_types/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.73
+            PARTIAL: 0.2
+          confidence: 0.59
+        /assertion/proposed_experiments/0/model_systems/0/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/proposed_experiments/0/model_systems/0/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.75
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/proposed_experiments/0/model_systems/0/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.78
+            PARTIAL: 0.18
+          confidence: 0.67
+        /assertion/proposed_experiments/0/model_systems/0/modeled_mechanisms/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.33
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/proposed_experiments/0/model_systems/0/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.5
+            PARTIAL: 0.42
+          confidence: 0.25
+        /assertion/proposed_experiments/0/perturbations/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/proposed_experiments/0/perturbations/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.81
+            PARTIAL: 0.12
+          confidence: 0.72
+        /assertion/proposed_experiments/0/perturbations/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.66
+            PARTIAL: 0.17
+          confidence: 0.49
+        /assertion/proposed_experiments/0/perturbations/0/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.66
+            PARTIAL: 0.18
+          confidence: 0.49
+        /assertion/proposed_experiments/0/perturbations/0/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.73
+            PARTIAL: 0.15
+          confidence: 0.59
+        /assertion/proposed_experiments/0/perturbations/0/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.74
+            PARTIAL: 0.15
+          confidence: 0.61
+        /assertion/proposed_experiments/0/perturbations/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/proposed_experiments/0/perturbations/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/proposed_experiments/0/perturbations/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/proposed_experiments/0/perturbations/1/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.83
+            PARTIAL: 0.1
+          confidence: 0.74
+        /assertion/proposed_experiments/0/perturbations/1/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.87
+            PARTIAL: 0.08
+          confidence: 0.8
+        /assertion/proposed_experiments/0/perturbations/1/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.86
+            PARTIAL: 0.07
+          confidence: 0.79
+        /assertion/proposed_experiments/0/perturbations/1/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.88
+            PARTIAL: 0.07
+          confidence: 0.82
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/proposed_experiments/0/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.77
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/proposed_experiments/0/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/proposed_experiments/0/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/proposed_experiments/0/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.87
+            PARTIAL: 0.1
+          confidence: 0.8
+        /assertion/proposed_experiments/0/readouts/0/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.57
+            PARTIAL: 0.37
+          confidence: 0.35
+        /assertion/proposed_experiments/0/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/proposed_experiments/0/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/proposed_experiments/0/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/proposed_experiments/0/readouts/1/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/proposed_experiments/0/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.94
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/proposed_experiments/0/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.9
+            PARTIAL: 0.07
+          confidence: 0.85
+        /assertion/proposed_experiments/0/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/proposed_experiments/0/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.9
+            PARTIAL: 0.06
+          confidence: 0.85
+        /assertion/proposed_experiments/0/controls/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/proposed_experiments/0/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/proposed_experiments/0/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/proposed_experiments/0/controls/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/proposed_experiments/0/controls/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/proposed_experiments/0/would_support:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.64
+            PARTIAL: 0.27
+          confidence: 0.46
+        /assertion/proposed_experiments/0/would_refute:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.85
+            PARTIAL: 0.12
+          confidence: 0.77
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3989
+        input_tokens: 68954
+      elapsed_seconds: 0.7381
+      request_sha256: 6784b4f7447bfec48216101db684edc9e626d39f7ea06f71e090f1fc43c09c07
+      request_sha256s:
+      - bebd535d9149edf5d707c17950ce61615bab1ad0a895f5e0d2fd5fa6294b137f
+      - be230053e725ec23568125a4755c69c7cabda69060adb0c4a2e2d78a9d5c96aa
+  6fd66bd2df8982618fdc9bf04c6c775a1849cc67f5d5ba003926b05636bdec6f:
+    input_sha256: aad2f13fc508c3304924a96455eea2e7e14671919a87b8baa1457c7f50a4f7fd
+    configuration_sha256: 77a6de602d283b7fadb5b1780e1f99fc9059188905ede9b5da0f9a8f86ffd74a
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:58:17.324266+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.12
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.66
+            PARTIAL: 0.21
+          confidence: 0.49
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.66
+            PARTIAL: 0.23
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/experiment_type/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/model_systems/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.45
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/model_systems/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.61
+            PARTIAL: 0.35
+          confidence: 0.41
+        /assertion/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.71
+            PARTIAL: 0.16
+          confidence: 0.56
+        /assertion/model_systems/0/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.54
+            PARTIAL: 0.33
+          confidence: 0.31
+        /assertion/model_systems/0/organism/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.52
+            PARTIAL: 0.38
+          confidence: 0.28
+        /assertion/model_systems/0/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.58
+        /assertion/model_systems/0/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.26
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/model_systems/0/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.4
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/model_systems/0/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/model_systems/0/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/perturbations/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.53
+            PARTIAL: 0.37
+          confidence: 0.3
+        /assertion/perturbations/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.39
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/perturbations/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/perturbations/0/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.65
+            PARTIAL: 0.24
+          confidence: 0.48
+        /assertion/perturbations/0/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.5599999999999999
+            PARTIAL: 0.33
+          confidence: 0.34
+        /assertion/perturbations/0/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.69
+            PARTIAL: 0.2
+          confidence: 0.53
+        /assertion/perturbations/0/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.6
+            PARTIAL: 0.29
+          confidence: 0.4
+        /assertion/perturbations/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.34
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/perturbations/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.2
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/perturbations/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.29
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/perturbations/1/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.1
+            PARTIAL: 0.2
+          confidence: 0.55
+        /assertion/perturbations/1/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.15
+            PARTIAL: 0.26
+          confidence: 0.38
+        /assertion/perturbations/1/genes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.17
+            PARTIAL: 0.24
+          confidence: 0.38
+        /assertion/perturbations/1/genes/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.28
+            PARTIAL: 0.27
+          confidence: 0.18
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.35
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.18
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/readouts/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.46
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.12
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.1
+            PARTIAL: 0.44
+          confidence: 0.19
+        /assertion/readouts/0/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+          confidence: 0.4
+        /assertion/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.77
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/readouts/0/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.69
+        /assertion/readouts/0/assays/3/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.41
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/readouts/1/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/readouts/1/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.63
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.69
+        /assertion/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.54
+            PARTIAL: 0.43
+          confidence: 0.31
+        /assertion/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/controls/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/decision_criterion:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.48
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/would_support:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.23
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/would_refute:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.07
+            PARTIAL: 0.43
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 56249
+        output_tokens: 3022
+      elapsed_seconds: 0.4834
+      request_sha256: 4c8e70d80615d64e544419d5879bf41336eee0ef7912ee78bd00148d63d116ec
+      request_sha256s:
+      - 4c8e70d80615d64e544419d5879bf41336eee0ef7912ee78bd00148d63d116ec
+  8fb09504f24c1ffd853e8bcacb014c599cf44ca8d9bfc01255fc7c910ac123a2:
+    input_sha256: 16e581d0b321d01cccc888eded4a0bd76c8651f00dc6f8e1e8e20a03b57ce2a7
+    configuration_sha256: ecd9d2637d575b2cd5a30c0dc0cbf931a3df161a83d01d4d03991a7345fcd3b5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:58:17.384477+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.02
+            PARTIAL: 0.42
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/experiment_id:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.35
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.02
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/experiment_type/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.03
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/model_systems/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.04
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/model_systems/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.05
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/model_systems/0/experimental_model_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.3
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/model_systems/0/organism/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.12
+            PARTIAL: 0.39
+          confidence: 0.23
+        /assertion/model_systems/0/organism/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.12
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/model_systems/0/publication:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.23
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/model_systems/0/modeled_mechanisms/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.01
+            PARTIAL: 0.22
+          confidence: 0.66
+        /assertion/model_systems/0/modeled_mechanisms/0/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.01
+            PARTIAL: 0.26
+          confidence: 0.59
+        /assertion/model_systems/0/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.59
+            PARTIAL: 0.36
+          confidence: 0.38
+        /assertion/model_systems/0/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.51
+            PARTIAL: 0.46
+          confidence: 0.27
+        /assertion/model_systems/0/modeled_mechanisms/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.59
+            PARTIAL: 0.37
+          confidence: 0.38
+        /assertion/model_systems/0/modeled_mechanisms/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.57
+            PARTIAL: 0.4
+          confidence: 0.35
+        /assertion/perturbations/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/perturbations/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/perturbations/0/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.04
+            PARTIAL: 0.45
+          confidence: 0.27
+        /assertion/perturbations/1/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.15
+            PARTIAL: 0.34
+          confidence: 0.27
+        /assertion/perturbations/1/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.1
+            PARTIAL: 0.41
+          confidence: 0.23
+        /assertion/perturbations/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.39
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/perturbations/1/genes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.23
+            PARTIAL: 0.41000000000000003
+          confidence: 0.12
+        /assertion/perturbations/1/genes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.27
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/perturbations/1/genes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.24
+            PARTIAL: 0.37
+          confidence: 0.09
+        /assertion/perturbations/1/genes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.25
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/perturbations/1/genes/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.29
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/perturbations/1/genes/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.25
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.02
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/readouts/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.03
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.03
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.03
+            PARTIAL: 0.28
+          confidence: 0.53
+        /assertion/readouts/0/assays/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.07
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/readouts/0/assays/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/0/assays/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.41
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.14
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.49
+            PARTIAL: 0.42
+          confidence: 0.23
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.47
+            PARTIAL: 0.45
+          confidence: 0.2
+        /assertion/readouts/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.48
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/1/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.24
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/1/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.14
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.55
+            PARTIAL: 0.38
+          confidence: 0.33
+        /assertion/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/readouts/1/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.65
+            PARTIAL: 0.31
+          confidence: 0.48
+        /assertion/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.38
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.48
+            PARTIAL: 0.39
+          confidence: 0.22
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.51
+            PARTIAL: 0.4
+          confidence: 0.27
+        /assertion/readouts/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.52
+            PARTIAL: 0.42
+          confidence: 0.28
+        /assertion/readouts/2/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.33
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/readouts/2/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.23
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/readouts/2/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.44
+            PARTIAL: 0.42
+          confidence: 0.16
+        /assertion/readouts/2/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/readouts/2/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/readouts/2/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.43
+            PARTIAL: 0.45999999999999996
+          confidence: 0.19
+        /assertion/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.46
+            PARTIAL: 0.43
+          confidence: 0.19
+        /assertion/controls/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.41
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.55
+            PARTIAL: 0.37
+          confidence: 0.33
+        /assertion/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.56
+            PARTIAL: 0.38
+          confidence: 0.34
+        /assertion/controls/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.63
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/controls/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.6799999999999999
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/decision_criterion:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.25
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/would_support:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.05
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/would_refute:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.27
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6799999999999999
+            MISMATCH: 0.04
+            PARTIAL: 0.28
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3591
+        input_tokens: 70067
+      elapsed_seconds: 0.8475
+      request_sha256: 672aaadba5d9e212371d9e263304247b7aa0a6d23d97204f0fe32f960d78ae18
+      request_sha256s:
+      - de9dd4cd6f7da6657b167d32c3f9da801358d83c0afc4eb3223f7a6599f8e02c
+      - f6e66c03cacc8255afcb65f6ea8f72235bbeff7bcb68457ab6dcaabc27233460
+  6f775e7e6fa2d29a67040e2d844cc8b04580ed7de2b135e52b8c07e8b99ec897:
+    input_sha256: eb73d52ebd6d585d215afb790862a38c64f106ab64cd64985a56369d2016586b
+    configuration_sha256: ecd9d2637d575b2cd5a30c0dc0cbf931a3df161a83d01d4d03991a7345fcd3b5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:58:17.371685+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.1
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.14
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.45
+            PARTIAL: 0.34
+          confidence: 0.18
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5700000000000001
+            MISMATCH: 0.08
+            PARTIAL: 0.35
+          confidence: 0.36
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.03
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/experiment_type/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.02
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/model_systems/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.17
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/model_systems/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.18
+            PARTIAL: 0.73
+          confidence: 0.59
+        /assertion/model_systems/0/experimental_model_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.43
+            PARTIAL: 0.35
+          confidence: 0.14
+        /assertion/model_systems/0/organism/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.37
+            PARTIAL: 0.45999999999999996
+          confidence: 0.19
+        /assertion/model_systems/0/organism/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.32
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/model_systems/0/publication:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.24
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/model_systems/0/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.07
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/model_systems/0/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.07
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/model_systems/0/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/model_systems/0/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.64
+            PARTIAL: 0.34
+          confidence: 0.46
+        /assertion/model_systems/0/modeled_mechanisms/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/model_systems/0/modeled_mechanisms/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.6900000000000001
+            PARTIAL: 0.3
+          confidence: 0.54
+        /assertion/perturbations/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.27
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/perturbations/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.1
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/perturbations/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.15
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/perturbations/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.39
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/perturbations/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.47
+            PARTIAL: 0.4
+          confidence: 0.2
+        /assertion/perturbations/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.57
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/perturbations/1/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+        /assertion/perturbations/1/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/perturbations/1/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.55
+            PARTIAL: 0.31
+          confidence: 0.33
+        /assertion/perturbations/1/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.55
+            PARTIAL: 0.36
+          confidence: 0.33
+        /assertion/perturbations/1/genes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.62
+            PARTIAL: 0.27
+          confidence: 0.43
+        /assertion/perturbations/1/genes/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.05
+            PARTIAL: 0.42
+          confidence: 0.3
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.07
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/readouts/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.09
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.04
+            PARTIAL: 0.33
+          confidence: 0.45
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.05
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/readouts/0/assays/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/readouts/0/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.45
+        /assertion/readouts/0/assays/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.37
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.43
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.57
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/readouts/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.6
+            PARTIAL: 0.37
+          confidence: 0.4
+        /assertion/readouts/1/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.33
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/readouts/1/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.36
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/readouts/1/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.51
+            PARTIAL: 0.29
+          confidence: 0.27
+        /assertion/readouts/1/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.68
+            PARTIAL: 0.29
+          confidence: 0.52
+        /assertion/readouts/1/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.73
+            PARTIAL: 0.24
+          confidence: 0.59
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.58
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/readouts/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.63
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/readouts/2/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.48
+            PARTIAL: 0.35
+          confidence: 0.22
+        /assertion/readouts/2/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.42
+            PARTIAL: 0.37
+          confidence: 0.13
+        /assertion/readouts/2/assays/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.51
+            PARTIAL: 0.31
+          confidence: 0.27
+        /assertion/readouts/2/assays/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/readouts/2/assays/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.63
+            PARTIAL: 0.34
+          confidence: 0.45
+        /assertion/controls/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/controls/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.5599999999999999
+            PARTIAL: 0.38
+          confidence: 0.34
+        /assertion/controls/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+          confidence: 0.37
+        /assertion/controls/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.6
+            PARTIAL: 0.34
+          confidence: 0.4
+        /assertion/controls/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/controls/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.69
+            PARTIAL: 0.27
+          confidence: 0.53
+        /assertion/decision_criterion:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.37
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/would_support:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.12
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/would_refute:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.47
+            PARTIAL: 0.45999999999999996
+          confidence: 0.2
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.07
+            PARTIAL: 0.51
+          confidence: 0.27
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3639
+        input_tokens: 70045
+      elapsed_seconds: 0.8729
+      request_sha256: b6461c7832e0859a0148ac3c6cf113fd71e74739c7b6e721457f2fca9fb2ecda
+      request_sha256s:
+      - 11178fb5939a08343f74046b2a72c2b273afae0a52fe6e9d91091e58df2ae362
+      - efd6168cd22caf6bcec5765cec2819a6321fa1e66ed90ed10d9e0da392ac9b52

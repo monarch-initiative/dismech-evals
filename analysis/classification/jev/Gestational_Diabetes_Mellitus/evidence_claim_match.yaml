@@ -1851,6 +1851,661 @@ inputs:
     - assertion_path: /genetic/3
       evidence_path: /genetic/3/evidence/0
       reference: PMID:29947923
+  2e3d88b563ee9415fc273843d0c4f9200e00190f2c429246fbcb811efc8bed04:
+    claim:
+      about:
+        disease:
+          name: Gestational Diabetes Mellitus
+          disease_term:
+            preferred_term: gestational diabetes
+            term:
+              id: MONDO:0005406
+              label: gestational diabetes
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Oral glucose tolerance test
+        description: 'The OGTT is the usual diagnostic test for GDM and is the operational definition
+          of the disease: it measures the maternal hyperglycaemia node directly, and the diagnosis is
+          made by applying a glucose threshold to a continuously distributed measurement. The thresholds
+          are conventional rather than natural and differ between guidelines, which is why the threshold-versus-continuum
+          question is curated as an open discussion on this entry rather than settled here.'
+        diagnosis_term:
+          preferred_term: oral glucose tolerance test
+          term:
+            id: NCIT:C45946
+            label: Glucose Tolerance Test
+        presence: Diagnostic
+        markers: Venous plasma glucose, fasting and post-load
+        measurements:
+        - preferred_term: fasting plasma glucose (mmol/L)
+          term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+        - preferred_term: 1-h plasma glucose after 75 g oral glucose (mmol/L)
+          term:
+            id: LOINC:51597-3
+            label: Glucose [Moles/volume] in Serum or Plasma --1 hour post 75 g glucose PO
+        - preferred_term: 2-h plasma glucose after 75 g oral glucose (mmol/L)
+          term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "FPG | 5.1 | 92 | 8.3", the columns
+            being mmol/l, mg/dl and the cumulative percentage of the HAPO cohort at or above the threshold.
+            One or more values at or above threshold makes the diagnosis. The upper band comes from the
+            same report''s Table 2: "Overt diabetes if fasting plasma glucose ≥7.0 mmol/l (126 mg/dl)".
+            Half-open bands, so the GDM band is [5.1, 7.0).'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 5.1
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 5.1
+            upper_bound: 7.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single fasting value in this band is diagnostic of GDM under the IADPSG
+              one-step criteria.
+          - name: Overt diabetes in pregnancy
+            lower_bound: 7.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Classified by IADPSG as overt diabetes in pregnancy rather than GDM; treated
+              and followed up as pre-existing diabetes.
+        - loinc_term:
+            id: LOINC:51597-3
+            label: Glucose [Moles/volume] in Serum or Plasma --1 hour post 75 g glucose PO
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "1-h plasma glucose | 10.0 | 180
+            | 14.0" (mmol/l, mg/dl, cumulative percentage of the HAPO cohort at or above threshold). The
+            NICE 2015 criteria have no 1-h threshold, so no NICE range is recorded for this measurement.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 10.0
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 10.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single 1-h value at or above threshold is diagnostic of GDM under the IADPSG
+              one-step criteria.
+        - loinc_term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "2-h plasma glucose | 8.5 | 153
+            | 16.1" (mmol/l, mg/dl, cumulative percentage of the HAPO cohort at or above threshold).'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single 2-h value at or above threshold is diagnostic of GDM under the IADPSG
+              one-step criteria.
+        - loinc_term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: NICE 2015 criteria (75-g OGTT)
+          notes: 'Source phrasing: "The NICE-2015 diagnostic criteria (75 g oral glucose tolerance test
+            (OGTT) 0 h ≥5.6 mmol/L; 2 h ≥7.8 mmol/L)". The PubMed search NICE[ti] AND pregnancy[ti] AND
+            diabetes[ti] returned the 2008 NICE CG63 summary but no publication of the 2015 guideline
+            itself, so the criteria are quoted from a clinical-biochemistry review that states them; the
+            review is a synthesis, not the defining document.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 5.6
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 5.6
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A fasting value at or above 5.6 mmol/L is diagnostic of GDM under the NICE
+              2015 criteria.
+        - loinc_term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+          unit: mmol/L
+          population: NICE 2015 criteria (75-g OGTT)
+          notes: 'Source phrasing: "The NICE-2015 diagnostic criteria (75 g oral glucose tolerance test
+            (OGTT) 0 h ≥5.6 mmol/L; 2 h ≥7.8 mmol/L)". Quoted from a review, as for the NICE fasting range.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 7.8
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 7.8
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A 2-h value at or above 7.8 mmol/L is diagnostic of GDM under the NICE 2015
+              criteria.
+        notes: The three measurements are bound to the molar (mmol/L) codes because the two criterion
+          sets recorded here state their thresholds in mmol/L (the IADPSG table gives mmol/l first with
+          mg/dl alongside; NICE uses mmol/L only). The mass-concentration siblings are LOINC:1558-6, LOINC:1507-3
+          and LOINC:1518-0, the first and last of which are bound on the Type_2_Diabetes_Mellitus entry
+          for the ADA criteria stated in mg/dL. The 1-h sample has no NICE threshold. The Carpenter-Coustan
+          thresholds apply to the 100-g three-hour test and are on the separate row below.
+      selected_evidence:
+        snippet: Diagnosis is usually performed using an oral glucose tolerance test (OGTT), although
+          a non-fasting, glucose challenge test (GCT) is used in some parts of the world to screen women
+          for those requiring a full OGTT.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31296866
+      reference_title: Gestational diabetes mellitus.
+      evidence_source: OTHER
+      explanation: Names the OGTT as the usual diagnostic test for GDM. The review states the testing
+        modality only; it reports no diagnostic accuracy and does not specify the glucose thresholds,
+        which are carried as per-criterion reference ranges on this row.
+    first_seen_at: '2026-10-19T16:45:15.194114+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:45:15.194114+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:45:15.194114+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:31296866
+  36eb19d7e825b2967284f6dff1b1203df0b4eb9229be3a5a9c1eb828453655de:
+    claim:
+      about:
+        disease:
+          name: Gestational Diabetes Mellitus
+          disease_term:
+            preferred_term: gestational diabetes
+            term:
+              id: MONDO:0005406
+              label: gestational diabetes
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: 100-g three-hour oral glucose tolerance test (two-step approach)
+        description: 'The diagnostic step of the two-step approach: women who screen positive on the non-fasting
+          50-g glucose challenge test proceed to a 100-g three-hour OGTT, read against the Carpenter-Coustan
+          thresholds derived from O''Sullivan and Mahan. Two or more venous plasma values at or above
+          threshold make the diagnosis, which is the structural difference from the one-abnormal-value
+          IADPSG rule on the 75-g test.'
+        diagnosis_term:
+          preferred_term: 100-g three-hour oral glucose tolerance test
+          term:
+            id: NCIT:C45946
+            label: Glucose Tolerance Test
+        presence: Diagnostic
+        measurements:
+        - preferred_term: fasting plasma glucose (mg/dL)
+          term:
+            id: LOINC:1558-6
+            label: Fasting glucose [Mass/volume] in Serum or Plasma
+        - preferred_term: 1-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1501-6
+            label: Glucose [Mass/volume] in Serum or Plasma --1 hour post 100 g glucose PO
+        - preferred_term: 2-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1514-9
+            label: Glucose [Mass/volume] in Serum or Plasma --2 hours post 100 g glucose PO
+        - preferred_term: 3-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1530-5
+            label: Glucose [Mass/volume] in Serum or Plasma --3 hours post 100 g glucose PO
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:1558-6
+            label: Fasting glucose [Mass/volume] in Serum or Plasma
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "Fasting | 95 | 5.3"
+            (mg/dl, mmol/l) under the 100-g glucose load. The same table lists an alternative 75-g load
+            with identical fasting, 1-h and 2-h values, which the ADA text says is "not as well validated
+            as the 100-g OGTT"; that variant is not recorded as a range. Diagnosis requires two or more
+            values at or above threshold, so a single value in the upper band is not itself diagnostic.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 95.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 95.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1501-6
+            label: Glucose [Mass/volume] in Serum or Plasma --1 hour post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "1-h | 180 | 10.0"
+            (mg/dl, mmol/l) under the 100-g glucose load.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 180.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 180.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1514-9
+            label: Glucose [Mass/volume] in Serum or Plasma --2 hours post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "2-h | 155 | 8.6"
+            (mg/dl, mmol/l) under the 100-g glucose load.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 155.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 155.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1530-5
+            label: Glucose [Mass/volume] in Serum or Plasma --3 hours post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "3-h | 140 | 7.8"
+            (mg/dl, mmol/l) under the 100-g glucose load. The 3-h sample exists only on the 100-g test.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 140.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 140.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        notes: The four measurements are bound to the mass-concentration (mg/dL) codes because the Carpenter-Coustan
+          thresholds are stated in mg/dL, with mmol/L given alongside. NCIT has no term distinguishing
+          the 100-g from the 75-g test, so the parent Glucose Tolerance Test term is reused and the load
+          and duration are carried in preferred_term. The ADA 2010 Table 4 rows quoted as snippets are
+          pipe-delimited table rows; the fasting, 1-h and 2-h row texts each appear twice in that table
+          (once under the 100-g load and once under the alternative 75-g load), with the same values in
+          both.
+      selected_evidence:
+        snippet: The older “two-step” approach with a 50-g (nonfasting) screen followed by a 100-g OGTT
+          for those who screen positive based on the work of Carpenter-Coustan’s interpretation of the
+          older O’Sullivan and Mahan (190) criteria.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39651986
+      reference_title: '2. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes-2025.'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The current ADA Standards describing the two-step strategy whose diagnostic step is
+        the 100-g OGTT read against Carpenter-Coustan thresholds.
+    first_seen_at: '2026-10-19T16:45:15.638967+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:45:15.638967+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:45:15.638967+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:39651986
+  e5f116ea7c9c557b0f36f7c187bc632cc26dbfdebfebba4312b4fd6bd28fe616:
+    claim:
+      about:
+        disease:
+          name: Gestational Diabetes Mellitus
+          disease_term:
+            preferred_term: gestational diabetes
+            term:
+              id: MONDO:0005406
+              label: gestational diabetes
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Oral glucose tolerance test
+        description: 'The OGTT is the usual diagnostic test for GDM and is the operational definition
+          of the disease: it measures the maternal hyperglycaemia node directly, and the diagnosis is
+          made by applying a glucose threshold to a continuously distributed measurement. The thresholds
+          are conventional rather than natural and differ between guidelines, which is why the threshold-versus-continuum
+          question is curated as an open discussion on this entry rather than settled here.'
+        diagnosis_term:
+          preferred_term: oral glucose tolerance test
+          term:
+            id: NCIT:C45946
+            label: Glucose Tolerance Test
+        presence: Diagnostic
+        markers: Venous plasma glucose, fasting and post-load
+        measurements:
+        - preferred_term: fasting plasma glucose (mmol/L)
+          term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+        - preferred_term: 1-h plasma glucose after 75 g oral glucose (mmol/L)
+          term:
+            id: LOINC:51597-3
+            label: Glucose [Moles/volume] in Serum or Plasma --1 hour post 75 g glucose PO
+        - preferred_term: 2-h plasma glucose after 75 g oral glucose (mmol/L)
+          term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "FPG | 5.1 | 92 | 8.3", the columns
+            being mmol/l, mg/dl and the cumulative percentage of the HAPO cohort at or above the threshold.
+            One or more values at or above threshold makes the diagnosis. The upper band comes from the
+            same report''s Table 2: "Overt diabetes if fasting plasma glucose ≥7.0 mmol/l (126 mg/dl)".
+            Half-open bands, so the GDM band is [5.1, 7.0).'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 5.1
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 5.1
+            upper_bound: 7.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single fasting value in this band is diagnostic of GDM under the IADPSG
+              one-step criteria.
+          - name: Overt diabetes in pregnancy
+            lower_bound: 7.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Classified by IADPSG as overt diabetes in pregnancy rather than GDM; treated
+              and followed up as pre-existing diabetes.
+        - loinc_term:
+            id: LOINC:51597-3
+            label: Glucose [Moles/volume] in Serum or Plasma --1 hour post 75 g glucose PO
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "1-h plasma glucose | 10.0 | 180
+            | 14.0" (mmol/l, mg/dl, cumulative percentage of the HAPO cohort at or above threshold). The
+            NICE 2015 criteria have no 1-h threshold, so no NICE range is recorded for this measurement.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 10.0
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 10.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single 1-h value at or above threshold is diagnostic of GDM under the IADPSG
+              one-step criteria.
+        - loinc_term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+          unit: mmol/L
+          population: IADPSG consensus criteria, 2010 (one-step 75-g OGTT at 24-28 weeks of gestation)
+          notes: 'Source phrasing, from Table 1 of the IADPSG report: "2-h plasma glucose | 8.5 | 153
+            | 16.1" (mmol/l, mg/dl, cumulative percentage of the HAPO cohort at or above threshold).'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A single 2-h value at or above threshold is diagnostic of GDM under the IADPSG
+              one-step criteria.
+        - loinc_term:
+            id: LOINC:14771-0
+            label: Fasting glucose [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: NICE 2015 criteria (75-g OGTT)
+          notes: 'Source phrasing: "The NICE-2015 diagnostic criteria (75 g oral glucose tolerance test
+            (OGTT) 0 h ≥5.6 mmol/L; 2 h ≥7.8 mmol/L)". The PubMed search NICE[ti] AND pregnancy[ti] AND
+            diabetes[ti] returned the 2008 NICE CG63 summary but no publication of the 2015 guideline
+            itself, so the criteria are quoted from a clinical-biochemistry review that states them; the
+            review is a synthesis, not the defining document.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 5.6
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 5.6
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A fasting value at or above 5.6 mmol/L is diagnostic of GDM under the NICE
+              2015 criteria.
+        - loinc_term:
+            id: LOINC:14995-5
+            label: Glucose [Moles/volume] in Serum or Plasma --2 hours post 75 g glucose PO
+          unit: mmol/L
+          population: NICE 2015 criteria (75-g OGTT)
+          notes: 'Source phrasing: "The NICE-2015 diagnostic criteria (75 g oral glucose tolerance test
+            (OGTT) 0 h ≥5.6 mmol/L; 2 h ≥7.8 mmol/L)". Quoted from a review, as for the NICE fasting range.'
+          interpretation_bands:
+          - name: Normal
+            upper_bound: 7.8
+            unit: mmol/L
+            abnormal_flag: NORMAL
+          - name: Gestational diabetes mellitus
+            lower_bound: 7.8
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: A 2-h value at or above 7.8 mmol/L is diagnostic of GDM under the NICE 2015
+              criteria.
+        notes: The three measurements are bound to the molar (mmol/L) codes because the two criterion
+          sets recorded here state their thresholds in mmol/L (the IADPSG table gives mmol/l first with
+          mg/dl alongside; NICE uses mmol/L only). The mass-concentration siblings are LOINC:1558-6, LOINC:1507-3
+          and LOINC:1518-0, the first and last of which are bound on the Type_2_Diabetes_Mellitus entry
+          for the ADA criteria stated in mg/dL. The 1-h sample has no NICE threshold. The Carpenter-Coustan
+          thresholds apply to the 100-g three-hour test and are on the separate row below.
+      selected_evidence:
+        snippet: '2-h 75-g OGTT: perform after overnight fast on all women not previously found to have
+          overt diabetes or GDM during testing earlier in this pregnancy'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20190296
+      reference_title: International association of diabetes and pregnancy study groups recommendations
+        on the diagnosis and classification of hyperglycemia in pregnancy.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The IADPSG strategy statement that the 75-g 2-h OGTT at 24-28 weeks is the diagnostic
+        test, which is the measurement set bound on this row.
+    first_seen_at: '2026-10-19T16:45:15.196721+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:45:15.196721+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:45:15.196721+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:20190296
+  a2ce1daf716288059ebdc006e29c20837966fa8a0eceaba7bca6e54322559dce:
+    claim:
+      about:
+        disease:
+          name: Gestational Diabetes Mellitus
+          disease_term:
+            preferred_term: gestational diabetes
+            term:
+              id: MONDO:0005406
+              label: gestational diabetes
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: 100-g three-hour oral glucose tolerance test (two-step approach)
+        description: 'The diagnostic step of the two-step approach: women who screen positive on the non-fasting
+          50-g glucose challenge test proceed to a 100-g three-hour OGTT, read against the Carpenter-Coustan
+          thresholds derived from O''Sullivan and Mahan. Two or more venous plasma values at or above
+          threshold make the diagnosis, which is the structural difference from the one-abnormal-value
+          IADPSG rule on the 75-g test.'
+        diagnosis_term:
+          preferred_term: 100-g three-hour oral glucose tolerance test
+          term:
+            id: NCIT:C45946
+            label: Glucose Tolerance Test
+        presence: Diagnostic
+        measurements:
+        - preferred_term: fasting plasma glucose (mg/dL)
+          term:
+            id: LOINC:1558-6
+            label: Fasting glucose [Mass/volume] in Serum or Plasma
+        - preferred_term: 1-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1501-6
+            label: Glucose [Mass/volume] in Serum or Plasma --1 hour post 100 g glucose PO
+        - preferred_term: 2-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1514-9
+            label: Glucose [Mass/volume] in Serum or Plasma --2 hours post 100 g glucose PO
+        - preferred_term: 3-h plasma glucose after 100 g oral glucose (mg/dL)
+          term:
+            id: LOINC:1530-5
+            label: Glucose [Mass/volume] in Serum or Plasma --3 hours post 100 g glucose PO
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:1558-6
+            label: Fasting glucose [Mass/volume] in Serum or Plasma
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "Fasting | 95 | 5.3"
+            (mg/dl, mmol/l) under the 100-g glucose load. The same table lists an alternative 75-g load
+            with identical fasting, 1-h and 2-h values, which the ADA text says is "not as well validated
+            as the 100-g OGTT"; that variant is not recorded as a range. Diagnosis requires two or more
+            values at or above threshold, so a single value in the upper band is not itself diagnostic.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 95.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 95.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1501-6
+            label: Glucose [Mass/volume] in Serum or Plasma --1 hour post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "1-h | 180 | 10.0"
+            (mg/dl, mmol/l) under the 100-g glucose load.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 180.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 180.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1514-9
+            label: Glucose [Mass/volume] in Serum or Plasma --2 hours post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "2-h | 155 | 8.6"
+            (mg/dl, mmol/l) under the 100-g glucose load.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 155.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 155.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        - loinc_term:
+            id: LOINC:1530-5
+            label: Glucose [Mass/volume] in Serum or Plasma --3 hours post 100 g glucose PO
+          unit: mg/dL
+          population: Carpenter-Coustan criteria for the 100-g OGTT, as tabulated by the ADA in 2010
+          notes: 'Source phrasing, from Table 4 of the ADA 2010 position statement: "3-h | 140 | 7.8"
+            (mg/dl, mmol/l) under the 100-g glucose load. The 3-h sample exists only on the 100-g test.'
+          interpretation_bands:
+          - name: Below threshold
+            upper_bound: 140.0
+            unit: mg/dL
+            abnormal_flag: NORMAL
+          - name: At or above Carpenter-Coustan threshold
+            lower_bound: 140.0
+            unit: mg/dL
+            abnormal_flag: HIGH
+            interpretation: One of the two or more abnormal values required for a GDM diagnosis on the
+              100-g test.
+        notes: The four measurements are bound to the mass-concentration (mg/dL) codes because the Carpenter-Coustan
+          thresholds are stated in mg/dL, with mmol/L given alongside. NCIT has no term distinguishing
+          the 100-g from the 75-g test, so the parent Glucose Tolerance Test term is reused and the load
+          and duration are carried in preferred_term. The ADA 2010 Table 4 rows quoted as snippets are
+          pipe-delimited table rows; the fasting, 1-h and 2-h row texts each appear twice in that table
+          (once under the 100-g load and once under the alternative 75-g load), with the same values in
+          both.
+      selected_evidence:
+        snippet: With either approach, the diagnosis of GDM is based on an OGTT.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20042775
+      reference_title: Diagnosis and classification of diabetes mellitus.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: States that the two-step screen ends in an OGTT, which is the test bound on this row.
+    first_seen_at: '2026-10-19T16:45:15.640848+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:45:15.640848+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:45:15.640848+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:20042775
 assessments:
   567f9fa0bc9f548e738648003b7f074496c734256a6d8333ff0b5d71bd5e26f3:
     input_sha256: d267ebe88dd407cb95f814ee1a422b68c5738d15bec19a1b58ebedae224744cc
@@ -4449,3 +5104,2357 @@ assessments:
       request_sha256: ee1f4b30b79cea5b33d41dbd9982137fd82088a6324a7cce0850f7bb45c4a341
       request_sha256s:
       - ee1f4b30b79cea5b33d41dbd9982137fd82088a6324a7cce0850f7bb45c4a341
+  38032b311a189b333372563f88e09ce4e1e3b273be6804edbd69cb3f3aac4e55:
+    input_sha256: 2e3d88b563ee9415fc273843d0c4f9200e00190f2c429246fbcb811efc8bed04
+    configuration_sha256: 1a2ee20c28d3986b9b0426b9ea89a1fa1c7157b0d030e81f7802b7d0f8080e48
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:45:15.194114+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.72
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.09
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/markers:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.43
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.34
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.45
+            PARTIAL: 0.41
+          confidence: 0.18
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.29
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.33
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.26
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/measurements/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.24
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.68
+            PARTIAL: 0.23
+          confidence: 0.52
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.6
+            PARTIAL: 0.24
+          confidence: 0.4
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.59
+            PARTIAL: 0.35
+          confidence: 0.38
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.76
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.67
+            PARTIAL: 0.26
+          confidence: 0.51
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.29
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.74
+            PARTIAL: 0.25
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/1/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.49
+            PARTIAL: 0.41
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/2/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/reference_ranges/0/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/2/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/reference_ranges/0/interpretation_bands/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.62
+            PARTIAL: 0.26
+          confidence: 0.43
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.37
+            PARTIAL: 0.3
+          confidence: 0.06
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.49
+            PARTIAL: 0.38
+          confidence: 0.23
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.54
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.28
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.53
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.69
+            PARTIAL: 0.26
+          confidence: 0.53
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.59
+            PARTIAL: 0.31
+          confidence: 0.38
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.59
+            PARTIAL: 0.36
+          confidence: 0.38
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.66
+            PARTIAL: 0.22
+          confidence: 0.49
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.38
+            PARTIAL: 0.32
+          confidence: 0.07
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.45
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.51
+            PARTIAL: 0.36
+          confidence: 0.27
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.54
+            PARTIAL: 0.34
+          confidence: 0.31
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.68
+            PARTIAL: 0.24
+          confidence: 0.52
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.33
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.54
+            PARTIAL: 0.38
+          confidence: 0.31
+        /assertion/reference_ranges/2/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.49
+            PARTIAL: 0.42
+          confidence: 0.23
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.6
+            PARTIAL: 0.26
+          confidence: 0.4
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.54
+            PARTIAL: 0.26
+          confidence: 0.31
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/reference_ranges/3/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.49
+            PARTIAL: 0.37
+          confidence: 0.23
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.55
+            PARTIAL: 0.33
+          confidence: 0.33
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.71
+            PARTIAL: 0.22
+          confidence: 0.56
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.41
+            PARTIAL: 0.35
+          confidence: 0.11
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.56
+            PARTIAL: 0.35
+          confidence: 0.34
+        /assertion/reference_ranges/3/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.56
+            PARTIAL: 0.35
+          confidence: 0.34
+        /assertion/reference_ranges/4/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.61
+            PARTIAL: 0.3
+          confidence: 0.41
+        /assertion/reference_ranges/4/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.49
+            PARTIAL: 0.3
+          confidence: 0.23
+        /assertion/reference_ranges/4/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/reference_ranges/4/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.58
+            PARTIAL: 0.36
+          confidence: 0.37
+        /assertion/reference_ranges/4/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/reference_ranges/4/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.6
+            PARTIAL: 0.31
+          confidence: 0.4
+        /assertion/reference_ranges/4/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/reference_ranges/4/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/4/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.67
+            PARTIAL: 0.26
+          confidence: 0.51
+        /assertion/reference_ranges/4/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.32
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/reference_ranges/4/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/reference_ranges/4/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.69
+            PARTIAL: 0.26
+          confidence: 0.53
+        /assertion/reference_ranges/4/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.54
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/reference_ranges/4/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.43
+            PARTIAL: 0.41
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        output_tokens: 5085
+        input_tokens: 93015
+      elapsed_seconds: 0.8031
+      request_sha256: 9dbe976c4f4306ed5e561fa0a2bc3463c7a4dd21ad9764d1022843fdabcac997
+      request_sha256s:
+      - 0314dc36832235e166b2897d97851fa5b2e0917a7c0573be08b91ced1669a522
+      - c4ca9a1fb0975a688e26da142190138be36880aee200b927308ebcc4e6bda8f7
+  fa8b1f112f9539ab921a172ebb98a942ca7a62be514f1e5cd8c8e92a0782760b:
+    input_sha256: 36eb19d7e825b2967284f6dff1b1203df0b4eb9229be3a5a9c1eb828453655de
+    configuration_sha256: d548e01fe18bf8ee9dd12151c783dae8b5a33ff819d9e2f5faef54aa078d1024
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:45:15.638967+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.05
+            PARTIAL: 0.45
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.06
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.04
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.06
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.07
+            PARTIAL: 0.24
+          confidence: 0.53
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.3
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.32
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.11
+            PARTIAL: 0.33
+          confidence: 0.34
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.23
+            PARTIAL: 0.36
+          confidence: 0.11
+        /assertion/measurements/2/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.09
+            PARTIAL: 0.3
+          confidence: 0.41
+        /assertion/measurements/2/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.2
+            PARTIAL: 0.35
+          confidence: 0.18
+        /assertion/measurements/3/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.11
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/measurements/3/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.21
+            PARTIAL: 0.35
+          confidence: 0.16
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.61
+            PARTIAL: 0.29
+          confidence: 0.41
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.53
+            PARTIAL: 0.25
+          confidence: 0.3
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+          confidence: 0.37
+        /assertion/reference_ranges/0/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.12
+            PARTIAL: 0.36
+          confidence: 0.28
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.33
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.47
+            PARTIAL: 0.39
+          confidence: 0.2
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.65
+            PARTIAL: 0.32
+          confidence: 0.48
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.51
+            PARTIAL: 0.37
+          confidence: 0.27
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.16
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.53
+            PARTIAL: 0.41
+          confidence: 0.3
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.37
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.29
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.56
+            PARTIAL: 0.28
+          confidence: 0.34
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.36
+            PARTIAL: 0.33
+          confidence: 0.04
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.57
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/reference_ranges/1/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.11
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/reference_ranges/1/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.34
+            PARTIAL: 0.41000000000000003
+          confidence: 0.12
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.42
+            PARTIAL: 0.35
+          confidence: 0.13
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.61
+            PARTIAL: 0.34
+          confidence: 0.41
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.63
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.53
+            PARTIAL: 0.34
+          confidence: 0.3
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.37
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.63
+            PARTIAL: 0.31
+          confidence: 0.45
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.37
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.29
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.47
+            PARTIAL: 0.31
+          confidence: 0.2
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.31
+            PARTIAL: 0.35
+          confidence: 0.02
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.55
+            PARTIAL: 0.33
+          confidence: 0.33
+        /assertion/reference_ranges/2/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.13
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/reference_ranges/2/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.28
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.45
+            PARTIAL: 0.35
+          confidence: 0.18
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.45
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.32
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+          confidence: 0.3
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.61
+            PARTIAL: 0.31
+          confidence: 0.41
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.45
+            PARTIAL: 0.39
+          confidence: 0.18
+        /assertion/reference_ranges/2/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.26
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.55
+            PARTIAL: 0.3
+          confidence: 0.33
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.4
+            PARTIAL: 0.35
+          confidence: 0.1
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.53
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/reference_ranges/3/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.23
+        /assertion/reference_ranges/3/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.31
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.57
+            PARTIAL: 0.3
+          confidence: 0.35
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.54
+            PARTIAL: 0.32
+          confidence: 0.31
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.5
+            PARTIAL: 0.33
+          confidence: 0.25
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.58
+            PARTIAL: 0.36
+          confidence: 0.37
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.64
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.4
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/reference_ranges/3/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.27
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.29
+            PARTIAL: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3938
+        input_tokens: 74008
+      elapsed_seconds: 0.7106
+      request_sha256: 368b24a443146bb6a647393f141b9f09e7ffda994e8048dd195d9ee35c4b5a1f
+      request_sha256s:
+      - 81dee5a61c33d728c342de65829f289054eb15fb626fa9d36f9b0f0ab828f62f
+      - 6460594512b38b52206890d08dfb54e3ce985b5fa1579dd937619e98b6343a79
+  ec370a8ffc343d8406158d3cd992e947b3e888cb991f15084fc0172fb8d4e422:
+    input_sha256: e5f116ea7c9c557b0f36f7c187bc632cc26dbfdebfebba4312b4fd6bd28fe616
+    configuration_sha256: 1a2ee20c28d3986b9b0426b9ea89a1fa1c7157b0d030e81f7802b7d0f8080e48
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:45:15.196721+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.06
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.21
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.08
+            PARTIAL: 0.3
+          confidence: 0.43
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.05
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/markers:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.54
+            PARTIAL: 0.41
+          confidence: 0.31
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.31
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.37
+            PARTIAL: 0.39999999999999997
+          confidence: 0.1
+        /assertion/measurements/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.43
+            PARTIAL: 0.38
+          confidence: 0.14
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.33
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.18
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/measurements/2/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.14
+            PARTIAL: 0.33
+          confidence: 0.3
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.56
+            PARTIAL: 0.29
+          confidence: 0.34
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.55
+            PARTIAL: 0.26
+          confidence: 0.33
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/reference_ranges/0/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.45
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.78
+            PARTIAL: 0.21
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.59
+            PARTIAL: 0.31
+          confidence: 0.38
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.36
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.69
+            PARTIAL: 0.29
+          confidence: 0.53
+        /assertion/reference_ranges/0/interpretation_bands/1/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.41
+            PARTIAL: 0.36
+          confidence: 0.11
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.54
+            PARTIAL: 0.41
+          confidence: 0.31
+        /assertion/reference_ranges/0/interpretation_bands/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/2/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/2/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+        /assertion/reference_ranges/0/interpretation_bands/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.6
+            PARTIAL: 0.23
+          confidence: 0.4
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.5
+            PARTIAL: 0.26
+          confidence: 0.25
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.41
+        /assertion/reference_ranges/1/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.43
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.63
+            PARTIAL: 0.31
+          confidence: 0.45
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.39
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.62
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.45
+            PARTIAL: 0.36
+          confidence: 0.18
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.51
+            PARTIAL: 0.41
+          confidence: 0.27
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.46
+            PARTIAL: 0.26
+          confidence: 0.19
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.38
+            PARTIAL: 0.28
+          confidence: 0.07
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/reference_ranges/2/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.38
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.4
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.61
+            PARTIAL: 0.31
+          confidence: 0.41
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.73
+            PARTIAL: 0.24
+          confidence: 0.59
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.66
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.24
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.67
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.59
+            PARTIAL: 0.3
+          confidence: 0.38
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.44
+            PARTIAL: 0.39
+          confidence: 0.16
+        /assertion/reference_ranges/2/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+          confidence: 0.3
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.42
+            PARTIAL: 0.29
+          confidence: 0.13
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.44
+            PARTIAL: 0.27
+          confidence: 0.16
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.49
+            PARTIAL: 0.35
+          confidence: 0.23
+        /assertion/reference_ranges/3/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.34
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.51
+            PARTIAL: 0.37
+          confidence: 0.27
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+          confidence: 0.37
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.6
+            PARTIAL: 0.28
+          confidence: 0.4
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.31
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.61
+            PARTIAL: 0.31
+          confidence: 0.41
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.42
+            PARTIAL: 0.35
+          confidence: 0.13
+        /assertion/reference_ranges/3/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.42
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/4/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.6
+            PARTIAL: 0.26
+          confidence: 0.4
+        /assertion/reference_ranges/4/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.52
+            PARTIAL: 0.25
+          confidence: 0.28
+        /assertion/reference_ranges/4/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.48
+            PARTIAL: 0.36
+          confidence: 0.22
+        /assertion/reference_ranges/4/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.4
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/4/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/reference_ranges/4/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.68
+            PARTIAL: 0.26
+          confidence: 0.52
+        /assertion/reference_ranges/4/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.82
+            PARTIAL: 0.17
+          confidence: 0.73
+        /assertion/reference_ranges/4/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.68
+            PARTIAL: 0.25
+          confidence: 0.52
+        /assertion/reference_ranges/4/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.65
+            PARTIAL: 0.27
+          confidence: 0.48
+        /assertion/reference_ranges/4/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.31
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/4/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/4/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.66
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/reference_ranges/4/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.48
+            PARTIAL: 0.35
+          confidence: 0.22
+        /assertion/reference_ranges/4/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.49
+            PARTIAL: 0.37
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        output_tokens: 5071
+        input_tokens: 92981
+      elapsed_seconds: 0.8269
+      request_sha256: 100687460f1dcc992772e03976f667a75def3d448962ad88ab0bf56c7e9643c7
+      request_sha256s:
+      - 1aa9ca69bf2d97c28ecd4155ded9438f926a17694ec652be9c697bfe45fb3444
+      - 20bc8b4c48d695c4905b72d94382cfa7099cfd6d872ba78aa8521a313d4b66e6
+  ab6eb89ce340c887904cfa903dd1d87ae0873e3749d0a2857654695505ac875e:
+    input_sha256: a2ce1daf716288059ebdc006e29c20837966fa8a0eceaba7bca6e54322559dce
+    configuration_sha256: d548e01fe18bf8ee9dd12151c783dae8b5a33ff819d9e2f5faef54aa078d1024
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:45:15.640848+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.06
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.95
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.3
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.17
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.18
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.08
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.04
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.35
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.34
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.29
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.3
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/measurements/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.28
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/measurements/3/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.31
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/measurements/3/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.29
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.63
+            PARTIAL: 0.29
+          confidence: 0.45
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.57
+            PARTIAL: 0.28
+          confidence: 0.35
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.6
+            PARTIAL: 0.34
+          confidence: 0.4
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.5
+            PARTIAL: 0.44
+          confidence: 0.25
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.64
+            PARTIAL: 0.25
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.51
+            PARTIAL: 0.36
+          confidence: 0.27
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.3
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.64
+            PARTIAL: 0.27
+          confidence: 0.46
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.56
+            PARTIAL: 0.27
+          confidence: 0.34
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.64
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.56
+            PARTIAL: 0.35
+          confidence: 0.34
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.46
+            PARTIAL: 0.41
+          confidence: 0.19
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.62
+            PARTIAL: 0.28
+          confidence: 0.43
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.47
+            PARTIAL: 0.41
+          confidence: 0.2
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.53
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.71
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.53
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.32
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.63
+            PARTIAL: 0.28
+          confidence: 0.45
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.52
+            PARTIAL: 0.32
+          confidence: 0.28
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.69
+            PARTIAL: 0.24
+          confidence: 0.53
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.45
+            PARTIAL: 0.38
+          confidence: 0.18
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+          confidence: 0.37
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.74
+            PARTIAL: 0.21
+          confidence: 0.61
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.54
+            PARTIAL: 0.32
+          confidence: 0.31
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.54
+            PARTIAL: 0.33
+          confidence: 0.31
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.73
+            PARTIAL: 0.22
+          confidence: 0.59
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.51
+            PARTIAL: 0.33
+          confidence: 0.27
+        /assertion/reference_ranges/2/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.32
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.61
+            PARTIAL: 0.25
+          confidence: 0.41
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/3/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.55
+            PARTIAL: 0.37
+          confidence: 0.33
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.46
+            PARTIAL: 0.38
+          confidence: 0.19
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.63
+            PARTIAL: 0.29
+          confidence: 0.45
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.73
+            PARTIAL: 0.22
+          confidence: 0.59
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.6
+            PARTIAL: 0.28
+          confidence: 0.4
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.55
+            PARTIAL: 0.33
+          confidence: 0.33
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.68
+            PARTIAL: 0.29
+          confidence: 0.52
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.54
+            PARTIAL: 0.34
+          confidence: 0.31
+        /assertion/reference_ranges/3/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.33
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.45
+            PARTIAL: 0.41
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3984
+        input_tokens: 73914
+      elapsed_seconds: 0.7504
+      request_sha256: 9db7a3fca26d140de0b360c1e8a4d50845d67a063280e7ce91ed58cf9a447839
+      request_sha256s:
+      - f37bd9a923be9fd94bf79f1f56cd6e4150d9d22d72a515bd03fd12ea28f87bf3
+      - 79710a2c8be217b90f902f67bf5c219773a5aa3fecb6e25a6ca74ecf92964dc0

@@ -7913,6 +7913,173 @@ inputs:
     - assertion_path: /animal_models/1
       evidence_path: /animal_models/1/evidence/2
       reference: PMID:41234066
+  44e6393ba6bf9e9e473d5b7b94d94ebc7093178f8b0d47e134b6c8fe4d037ec8:
+    claim:
+      about:
+        disease:
+          name: IREB2-Related Neurodegeneration
+          disease_term:
+            preferred_term: neurodegeneration, early-onset, with choreoathetoid movements and microcytic
+              anemia
+            term:
+              id: MONDO:0032758
+              label: neurodegeneration, early-onset, with choreoathetoid movements and microcytic anemia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Absence or Accelerated Degradation of IRP2 Protein
+        biological_scale: MOLECULAR
+        description: 'The abundance arm of the lesion. In the index patient, whose two alleles are nonsense,
+          patient-derived lymphoblasts contained no IRP2, attributed by the authors to nonsense-mediated
+          decay of the transcript. In the fourth patient the mechanism is different and better resolved:
+          the p.Asp826Val allele reduced IRP2 protein by roughly 70% when expressed in SH-SY5Y neuroblastoma
+          cells, and the loss was reversed by the proteasome inhibitor MG-132. That the lesion is post-transcriptional
+          was established in a separate experiment and a separate material - RT-qPCR on the patient''s
+          own peripheral blood mononuclear cells showed no appreciable alteration of IREB2 at the mRNA
+          level, which the authors used to exclude the splicing abnormality proposed for earlier patients.
+          Structural modelling places residue 826 close to the surface through which IRP2 is recognised
+          by FBXL5.
+
+          That is the physiological degradation route being hijacked. In an iron-replete and oxygen-replete
+          cell, the SCF-FBXL5 ubiquitin ligase binds IRP2, polyubiquitinates it and delivers it to the
+          proteasome; FBXL5''s substrate-binding domain carries an oxygen-responsive [2Fe2S] cluster that
+          organises the loop which grips IRP2, and the same interaction sterically prises IRP2 off its
+          IRE. A variant that makes IRP2 a better or constitutively available FBXL5 substrate therefore
+          removes the protein by the cell''s own quality-control machinery rather than by any defect in
+          folding per se - which is why proteasome inhibition restores it.'
+        genes:
+        - preferred_term: IREB2
+          term:
+            id: hgnc:6115
+            label: IREB2
+        biological_processes:
+        - preferred_term: proteasomal degradation of IRP2
+          modifier: INCREASED
+          term:
+            id: GO:0043161
+            label: proteasome-mediated ubiquitin-dependent protein catabolic process
+        - preferred_term: polyubiquitination of IRP2 by SCF-FBXL5
+          modifier: INCREASED
+          term:
+            id: GO:0000209
+            label: protein polyubiquitination
+        - preferred_term: nonsense-mediated decay of nonsense-allele IREB2 transcripts
+          modifier: INCREASED
+          term:
+            id: GO:0000184
+            label: nuclear-transcribed mRNA catabolic process, nonsense-mediated decay
+        protein_complexes:
+        - preferred_term: SCF-FBXL5 ubiquitin ligase complex
+          term:
+            id: GO:0019005
+            label: SCF ubiquitin ligase complex
+        cell_types:
+        - preferred_term: patient-derived lymphoblasts
+          term:
+            id: CL:0017005
+            label: lymphoblast
+        notes: The two routes to absent protein are not equivalent for therapy. A nonsense-mediated decay
+          genotype leaves nothing to stabilise, whereas a degradation-prone missense genotype leaves a
+          protein that pharmacological stabilisation could in principle rescue - the MG-132 experiment
+          is a proof of principle for that idea and nothing more, since MG-132 is a research tool compound
+          with no therapeutic application. The 70% figure and the MG-132 rescue are properties of an overexpression
+          system in a neuroblastoma line, not measurements in patient neurons.
+      selected_evidence:
+        snippet: Cellular studies utilizing patient-derived lymphoblasts demonstrated a complete loss
+          of IRP2 expression in the first case
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39587636
+      reference_title: Novel biallelic variants in IREB2 cause an early-onset neurodegenerative disorder
+        in a Chinese pedigree.
+      evidence_source: IN_VITRO
+      explanation: Confirms in a second publication that the index patient's nonsense genotype produces
+        complete absence of the protein.
+    first_seen_at: '2026-10-19T16:59:37.882732+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:37.882732+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:37.882732+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:39587636
+  38238cf475dd6829d62616de236597a6c607ef89795b3f53e3895046223a6f39:
+    claim:
+      about:
+        disease:
+          name: IREB2-Related Neurodegeneration
+          disease_term:
+            preferred_term: neurodegeneration, early-onset, with choreoathetoid movements and microcytic
+              anemia
+            term:
+              id: MONDO:0032758
+              label: neurodegeneration, early-onset, with choreoathetoid movements and microcytic anemia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of IRP1 to Compensate
+        biological_scale: MOLECULAR
+        description: 'A paralogue exists and does not rescue, and understanding why is what makes a single-gene
+          lesion in a two-gene system disease-causing. IRP1 is bifunctional: with an intact [4Fe-4S] cluster
+          it is cytosolic aconitase, and only in the apo form does it bind IREs. In intact animal tissues
+          most IRP1 is the aconitase form, and - the decisive observation - its RNA-binding activity does
+          not increase on a low-iron diet that is sufficient to activate IRP2. The small RNA-binding fraction
+          of IRP1 is essentially insensitive to cellular iron status. The relationship is asymmetric:
+          IRP2 can compensate for the loss of IRP1 by increasing its binding activity, so Irp1-null mice
+          misregulate iron only in kidney and brown fat, whereas Irp2-null mice misregulate target proteins
+          in every tissue. IRP2 dominates post-transcriptional iron regulation in mammals, and its loss
+          is therefore not buffered.
+
+          This asymmetry is also the entry point for the only mechanism-directed therapy tested in vivo.
+          Feeding Irp2-null mice the nitroxide Tempol disassembles the IRP1 iron-sulfur cluster, converting
+          latent aconitase into active IRE-binding protein, which restabilises the TfR1 transcript and
+          represses ferritin synthesis - and markedly attenuates the neuromuscular disease. The therapeutic
+          logic is to unmask a redundancy the cell does not normally use.'
+        biological_processes:
+        - preferred_term: iron-sulfur cluster assembly in IRP1
+          term:
+            id: GO:0016226
+            label: iron-sulfur cluster assembly
+        molecular_functions:
+        - preferred_term: cytosolic aconitase activity of IRP1
+          modifier: INCREASED
+          term:
+            id: GO:0003994
+            label: aconitate hydratase activity
+      selected_evidence:
+        snippet: We suggest that Tempol protected IRP2(-/-) mice by disassembling the cytosolic iron-sulfur
+          cluster of IRP1 and activating IRE binding activity, which stabilized the TfR1 transcript, repressed
+          ferritin synthesis, and partially restored normal cellular iron homeostasis in the brain.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18685102
+      reference_title: Tempol-mediated activation of latent iron regulatory protein activity prevents
+        symptoms of neurodegenerative disease in IRP2 knockout mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: Demonstrates that the latent IRP1 reserve can be recruited pharmacologically, which
+        both confirms the compensation failure and defines a therapeutic strategy.
+    first_seen_at: '2026-10-19T16:59:39.601715+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:39.601715+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:39.601715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/3
+      reference: PMID:18685102
 assessments:
   3a716de127c9c2a5432ffceb1d8c034dc9f3f8dd06f01f4a5d66ef9677668763:
     input_sha256: 6175da174199a9dd1a1c2d02df399d2624eb02aaace67092a4519578b87010fd
@@ -19201,3 +19368,254 @@ assessments:
       request_sha256: 5c972f963fb96e4cc2d93bea06bfaaa5f0c87dd59039de5be068c87811812337
       request_sha256s:
       - 5c972f963fb96e4cc2d93bea06bfaaa5f0c87dd59039de5be068c87811812337
+  0c6031ccb50fb7a4b0df9daa5dc55f985028866c8c9244c2920b1c5018d8858a:
+    input_sha256: 44e6393ba6bf9e9e473d5b7b94d94ebc7093178f8b0d47e134b6c8fe4d037ec8
+    configuration_sha256: 212c9eda7c072a1ff9118792398e621967b03adf085c9f7b7a0e6037d5473df6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:37.882732+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.05
+            PARTIAL: 0.63
+          confidence: 0.45
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.07
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.04
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.09
+            PARTIAL: 0.1
+          confidence: 0.72
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.04
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.15
+            PARTIAL: 0.27
+          confidence: 0.37
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.2
+            PARTIAL: 0.35
+          confidence: 0.18
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.39
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.39
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.39
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.45
+            PARTIAL: 0.41
+          confidence: 0.18
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.43
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.48
+            PARTIAL: 0.43
+          confidence: 0.22
+        /assertion/biological_processes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.62
+            PARTIAL: 0.35
+          confidence: 0.43
+        /assertion/biological_processes/2/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.42
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/biological_processes/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/protein_complexes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/protein_complexes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.67
+            PARTIAL: 0.31
+          confidence: 0.51
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.39
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 22705
+        output_tokens: 1082
+      elapsed_seconds: 0.2401
+      request_sha256: 78eba31b7cda1308e20b99c9d3d70901395bdca1fe294c6bf4ef30b170bdaae0
+      request_sha256s:
+      - 78eba31b7cda1308e20b99c9d3d70901395bdca1fe294c6bf4ef30b170bdaae0
+  1758dae9bacff29c3f78cd6ffaaf7102fa8bb0d52e8a0a092ac36c219fbb0f7f:
+    input_sha256: 38238cf475dd6829d62616de236597a6c607ef89795b3f53e3895046223a6f39
+    configuration_sha256: fc760855d9a02ece90a1a593cf7fb580853740cf4b9e626187e8cf452de1a3a6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:39.601715+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.26
+            PARTIAL: 0.35
+          confidence: 0.09
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.33
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.16
+            PARTIAL: 0.35
+          confidence: 0.23
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.13
+            PARTIAL: 0.39
+          confidence: 0.22
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.26
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.27
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.67
+            PARTIAL: 0.19
+          confidence: 0.51
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.5
+            PARTIAL: 0.22
+          confidence: 0.25
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.76
+            PARTIAL: 0.17
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11180
+        output_tokens: 495
+      elapsed_seconds: 0.2687
+      request_sha256: 56372d93ca94849090ff085755318fa0c6ea5bd2d0478dc0795ea3705d13487e
+      request_sha256s:
+      - 56372d93ca94849090ff085755318fa0c6ea5bd2d0478dc0795ea3705d13487e

@@ -4133,6 +4133,269 @@ inputs:
     - assertion_path: /environmental/1
       evidence_path: /environmental/1/evidence/0
       reference: PMID:7555168
+  3006c90e58589b5badd54aa7058ddcaebcbb44ca2127b1fd58dbc5a3826cd3e4:
+    claim:
+      about:
+        disease:
+          name: Bronchiectasis
+          disease_term:
+            preferred_term: bronchiectasis
+            term:
+              id: MONDO:0004822
+              label: bronchiectasis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Pulmonary Function Test
+        description: 'Pulmonary function testing characterizes airflow obstruction and supports severity
+          assessment, but it does not establish the structural diagnosis. FEV1 as a percentage of predicted
+          is the lung-function component of both multidimensional severity scores: the Bronchiectasis
+          Severity Index (BSI) selected it as the most discriminatory lung-function measure for mortality
+          and hospital admission, and the FACED score dichotomises it at a 50% cut-off for its F component.'
+        diagnosis_term:
+          preferred_term: pulmonary function testing
+          term:
+            id: NCIT:C38081
+            label: Pulmonary Function Test
+        measurements:
+        - preferred_term: FEV1 percent predicted
+          term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+          unit: '%'
+          population: FACED score derivation and validation cohorts, 2014 (non-cystic fibrosis bronchiectasis)
+          notes: The abstract states the F component as "forced expiratory volume in 1 s % predicted (F,
+            cut-off 50%, maximum value 2 points)" and does not say in its own text which side of the cut-off
+            scores the points or on which side a value of exactly 50% falls; the bands partition the scale
+            at the stated cut-off, and the lower stratum is flagged as the abnormal one because the score
+            classifies severity by prognosis and the component's points are a severity contribution. Read
+            the band names as the two F strata, not as a statement of the points each receives. The BSI
+            derivation paper (PMID:24328736, full text cached without its tables) names FEV1 below 30%
+            predicted as an independent predictor of hospital admission but its multi-stratum FEV1 point
+            table is not in the cached prose, so no BSI bands are recorded.
+          interpretation_bands:
+          - name: FACED F component, FEV1 below the 50% cut-off
+            upper_bound: 50.0
+            unit: '%'
+            abnormal_flag: LOW
+            interpretation: Lower FEV1 stratum of the FACED F component; the component contributes up
+              to 2 of the score's 7 points.
+          - name: FACED F component, FEV1 at or above the 50% cut-off
+            lower_bound: 50.0
+            unit: '%'
+            abnormal_flag: NORMAL
+            interpretation: Upper FEV1 stratum of the FACED F component. NORMAL here means the component
+              is not contributing to severity, not that the value sits in a population reference interval,
+              which this row does not record.
+        notes: Identity is bound at the method-less code for FEV1 as measured over predicted (LOINC:20152-5),
+          the form both severity scores use; the FEV1 volume and the FEV1/FVC ratio are not bound because
+          neither score grades on them.
+      selected_evidence:
+        snippet: Based on the Youden index, FEV1 % predicted was most discriminatory for mortality and
+          hospital admissions and was used for subsequent analyses of lung function.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24328736
+      reference_title: The bronchiectasis severity index. An international derivation and validation study.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: The BSI derivation selected FEV1 percent predicted over the ratio and FVC as its lung-function
+        measure, which is why that quantity is the measurement bound on this row.
+    first_seen_at: '2026-10-19T16:39:46.080742+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:39:46.080742+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:39:46.080742+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:24328736
+  b5e85728168f2435548794e38e28419320d1438f415a42476336056115696950:
+    claim:
+      about:
+        disease:
+          name: Bronchiectasis
+          disease_term:
+            preferred_term: bronchiectasis
+            term:
+              id: MONDO:0004822
+              label: bronchiectasis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Pulmonary Function Test
+        description: 'Pulmonary function testing characterizes airflow obstruction and supports severity
+          assessment, but it does not establish the structural diagnosis. FEV1 as a percentage of predicted
+          is the lung-function component of both multidimensional severity scores: the Bronchiectasis
+          Severity Index (BSI) selected it as the most discriminatory lung-function measure for mortality
+          and hospital admission, and the FACED score dichotomises it at a 50% cut-off for its F component.'
+        diagnosis_term:
+          preferred_term: pulmonary function testing
+          term:
+            id: NCIT:C38081
+            label: Pulmonary Function Test
+        measurements:
+        - preferred_term: FEV1 percent predicted
+          term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+          unit: '%'
+          population: FACED score derivation and validation cohorts, 2014 (non-cystic fibrosis bronchiectasis)
+          notes: The abstract states the F component as "forced expiratory volume in 1 s % predicted (F,
+            cut-off 50%, maximum value 2 points)" and does not say in its own text which side of the cut-off
+            scores the points or on which side a value of exactly 50% falls; the bands partition the scale
+            at the stated cut-off, and the lower stratum is flagged as the abnormal one because the score
+            classifies severity by prognosis and the component's points are a severity contribution. Read
+            the band names as the two F strata, not as a statement of the points each receives. The BSI
+            derivation paper (PMID:24328736, full text cached without its tables) names FEV1 below 30%
+            predicted as an independent predictor of hospital admission but its multi-stratum FEV1 point
+            table is not in the cached prose, so no BSI bands are recorded.
+          interpretation_bands:
+          - name: FACED F component, FEV1 below the 50% cut-off
+            upper_bound: 50.0
+            unit: '%'
+            abnormal_flag: LOW
+            interpretation: Lower FEV1 stratum of the FACED F component; the component contributes up
+              to 2 of the score's 7 points.
+          - name: FACED F component, FEV1 at or above the 50% cut-off
+            lower_bound: 50.0
+            unit: '%'
+            abnormal_flag: NORMAL
+            interpretation: Upper FEV1 stratum of the FACED F component. NORMAL here means the component
+              is not contributing to severity, not that the value sits in a population reference interval,
+              which this row does not record.
+        notes: Identity is bound at the method-less code for FEV1 as measured over predicted (LOINC:20152-5),
+          the form both severity scores use; the FEV1 volume and the FEV1/FVC ratio are not bound because
+          neither score grades on them.
+      selected_evidence:
+        snippet: Independent of this, Medical Research Council dyspnea score, FEV1 less than 30% predicted,
+          and colonization with P. aeruginosa or other organisms were independent predictors of hospital
+          admissions.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24328736
+      reference_title: The bronchiectasis severity index. An international derivation and validation study.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: The one FEV1 threshold the BSI paper states in its prose; recorded as evidence that
+        FEV1 percent predicted carries a severity threshold in that score, with the full BSI point table
+        left unbanded as the range notes explain.
+    first_seen_at: '2026-10-19T16:39:46.082173+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:39:46.082173+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:39:46.082173+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:24328736
+  b544ec95ea587b3230a553c3d2354d0b3d9398c548f07c94dc2e4f922ad7c74e:
+    claim:
+      about:
+        disease:
+          name: Bronchiectasis
+          disease_term:
+            preferred_term: bronchiectasis
+            term:
+              id: MONDO:0004822
+              label: bronchiectasis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Pulmonary Function Test
+        description: 'Pulmonary function testing characterizes airflow obstruction and supports severity
+          assessment, but it does not establish the structural diagnosis. FEV1 as a percentage of predicted
+          is the lung-function component of both multidimensional severity scores: the Bronchiectasis
+          Severity Index (BSI) selected it as the most discriminatory lung-function measure for mortality
+          and hospital admission, and the FACED score dichotomises it at a 50% cut-off for its F component.'
+        diagnosis_term:
+          preferred_term: pulmonary function testing
+          term:
+            id: NCIT:C38081
+            label: Pulmonary Function Test
+        measurements:
+        - preferred_term: FEV1 percent predicted
+          term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:20152-5
+            label: FEV1 measured/predicted
+          unit: '%'
+          population: FACED score derivation and validation cohorts, 2014 (non-cystic fibrosis bronchiectasis)
+          notes: The abstract states the F component as "forced expiratory volume in 1 s % predicted (F,
+            cut-off 50%, maximum value 2 points)" and does not say in its own text which side of the cut-off
+            scores the points or on which side a value of exactly 50% falls; the bands partition the scale
+            at the stated cut-off, and the lower stratum is flagged as the abnormal one because the score
+            classifies severity by prognosis and the component's points are a severity contribution. Read
+            the band names as the two F strata, not as a statement of the points each receives. The BSI
+            derivation paper (PMID:24328736, full text cached without its tables) names FEV1 below 30%
+            predicted as an independent predictor of hospital admission but its multi-stratum FEV1 point
+            table is not in the cached prose, so no BSI bands are recorded.
+          interpretation_bands:
+          - name: FACED F component, FEV1 below the 50% cut-off
+            upper_bound: 50.0
+            unit: '%'
+            abnormal_flag: LOW
+            interpretation: Lower FEV1 stratum of the FACED F component; the component contributes up
+              to 2 of the score's 7 points.
+          - name: FACED F component, FEV1 at or above the 50% cut-off
+            lower_bound: 50.0
+            unit: '%'
+            abnormal_flag: NORMAL
+            interpretation: Upper FEV1 stratum of the FACED F component. NORMAL here means the component
+              is not contributing to severity, not that the value sits in a population reference interval,
+              which this row does not record.
+        notes: Identity is bound at the method-less code for FEV1 as measured over predicted (LOINC:20152-5),
+          the form both severity scores use; the FEV1 volume and the FEV1/FVC ratio are not bound because
+          neither score grades on them.
+      selected_evidence:
+        snippet: Pulmonary function studies documented airway obstruction to be present in 54% of the
+          lifetime nonsmokers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7555168
+      reference_title: Clinical, pathophysiologic, and microbiologic characterization of bronchiectasis
+        in an aging cohort.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort shows that pulmonary function testing identifies airflow obstruction in
+        a substantial bronchiectasis subgroup.
+    first_seen_at: '2026-10-19T16:39:49.020126+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:39:49.020126+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:39:49.020126+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/2
+      reference: PMID:7555168
 assessments:
   9d3f85b95da2d1bb37a86b5dd7f095bf6e0849c2a70d2ee780b596cbf1c3e67e:
     input_sha256: 14b326122ed90e5e2c690a2f53370927927ee967cd1fb933424c345f92468596
@@ -9397,3 +9660,558 @@ assessments:
       request_sha256: 3e26a7680e80b43be890321aaf5ce7afe9ef71934b49eb636b3bb1de693076fa
       request_sha256s:
       - 3e26a7680e80b43be890321aaf5ce7afe9ef71934b49eb636b3bb1de693076fa
+  63ada1ae22c69666777ccc8e925f09c2f135c9ffb9d67fe6d42732223fb55d99:
+    input_sha256: 3006c90e58589b5badd54aa7058ddcaebcbb44ca2127b1fd58dbc5a3826cd3e4
+    configuration_sha256: e5787ebb023848b935bfb78343cdab45e52096f6114d5535040709aca22b03f5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:39:46.080742+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.19
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.12
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.3
+            PARTIAL: 0.32
+          confidence: 0.07
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.15
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.27
+            PARTIAL: 0.33
+          confidence: 0.1
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.28
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.05
+            PARTIAL: 0.21
+          confidence: 0.61
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.07
+            PARTIAL: 0.23
+          confidence: 0.55
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.5
+            PARTIAL: 0.28
+          confidence: 0.25
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.29
+            PARTIAL: 0.25
+          confidence: 0.19
+        /assertion/reference_ranges/0/unit:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.27
+            PARTIAL: 0.36
+          confidence: 0.06
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.57
+            PARTIAL: 0.4
+          confidence: 0.35
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.24
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.48
+            PARTIAL: 0.42
+          confidence: 0.22
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.55
+            PARTIAL: 0.39
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.18
+            PARTIAL: 0.35
+          confidence: 0.2
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.49
+            PARTIAL: 0.4
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.32
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.5
+            PARTIAL: 0.4
+          confidence: 0.25
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.45999999999999996
+            PARTIAL: 0.43
+          confidence: 0.19
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.3
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.47
+            PARTIAL: 0.46
+          confidence: 0.2
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.17
+            PARTIAL: 0.41
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24248
+        output_tokens: 1271
+      elapsed_seconds: 0.3354
+      request_sha256: 130b01a372509cf648622953c6bfe21271e680f61ebea7e1badd8d88663fb38a
+      request_sha256s:
+      - 130b01a372509cf648622953c6bfe21271e680f61ebea7e1badd8d88663fb38a
+  00aed22621f7f911c99c4280b442daa6e2639776c269212463a2ef9d7e00aa4e:
+    input_sha256: b5e85728168f2435548794e38e28419320d1438f415a42476336056115696950
+    configuration_sha256: e5787ebb023848b935bfb78343cdab45e52096f6114d5535040709aca22b03f5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:39:46.082173+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.22
+            PARTIAL: 0.51
+          confidence: 0.27
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5599999999999999
+            MISMATCH: 0.07
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.51
+            PARTIAL: 0.28
+          confidence: 0.27
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.44
+            PARTIAL: 0.41
+          confidence: 0.16
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.51
+            PARTIAL: 0.31
+          confidence: 0.27
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.46
+            PARTIAL: 0.36
+          confidence: 0.19
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.09
+            PARTIAL: 0.36
+          confidence: 0.33
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.1
+            PARTIAL: 0.36
+          confidence: 0.31
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.54
+            PARTIAL: 0.26
+          confidence: 0.31
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.32
+            PARTIAL: 0.24
+          confidence: 0.16
+        /assertion/reference_ranges/0/unit:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.27
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.55
+            PARTIAL: 0.41
+          confidence: 0.33
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.13
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.29
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.26
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.45
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.35
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.61
+            PARTIAL: 0.34
+          confidence: 0.41
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.32
+            PARTIAL: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24261
+        output_tokens: 1283
+      elapsed_seconds: 0.4108
+      request_sha256: 41e38631a10678d8d2de3baa3b2318936a413eb395abdf20d15c7a8ed23aa342
+      request_sha256s:
+      - 41e38631a10678d8d2de3baa3b2318936a413eb395abdf20d15c7a8ed23aa342
+  aaa15753bf44768f8e35e30db2d9ebb798ce4c0e0625cf8861359a07b5f919a0:
+    input_sha256: b544ec95ea587b3230a553c3d2354d0b3d9398c548f07c94dc2e4f922ad7c74e
+    configuration_sha256: e5787ebb023848b935bfb78343cdab45e52096f6114d5535040709aca22b03f5
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:39:49.020126+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.4
+            PARTIAL: 0.45999999999999996
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.2
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.32
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.64
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.31
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.36
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.33
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.72
+            PARTIAL: 0.17
+          confidence: 0.58
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.66
+            PARTIAL: 0.18
+          confidence: 0.49
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.65
+            PARTIAL: 0.26
+          confidence: 0.48
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.81
+            PARTIAL: 0.18
+          confidence: 0.72
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.86
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.79
+            PARTIAL: 0.16
+          confidence: 0.69
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.69
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.68
+            PARTIAL: 0.25
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 24242
+        output_tokens: 1295
+      elapsed_seconds: 0.3043
+      request_sha256: 6361610bf0613d2e68389cf408c52c91b0281311aedc488e0577d8498f8b15b2
+      request_sha256s:
+      - 6361610bf0613d2e68389cf408c52c91b0281311aedc488e0577d8498f8b15b2

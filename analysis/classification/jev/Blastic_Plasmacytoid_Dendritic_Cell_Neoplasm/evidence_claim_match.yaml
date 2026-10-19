@@ -16984,6 +16984,57 @@ inputs:
     - assertion_path: /mechanistic_hypotheses/1
       evidence_path: /mechanistic_hypotheses/1/evidence/0
       reference: PMID:31846142
+  82f68be3a33fbcb813f3337f93d58ed14bdd315ad9dbaa1c1ce6716a40d893be:
+    claim:
+      about:
+        disease:
+          name: Blastic Plasmacytoid Dendritic Cell Neoplasm
+          disease_term:
+            preferred_term: blastic plasmacytoid dendritic cell neoplasm
+            term:
+              id: MONDO:0019467
+              label: CD4+/CD56+ hematodermic neoplasm
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: IRF7 Intron Retention and Impaired Induction
+        description: ZRSR2-mutant BPDCN retains the weak fourth intron of IRF7 and fails to increase IRF7
+          protein normally after TLR stimulation. IRF7 is not a U12-intron-containing transcript. Missplicing
+          in SRSF2- and SF3B1-mutant cases indicates that this defect is not restricted to ZRSR2.
+        biological_scale: MOLECULAR
+        cell_types:
+        - preferred_term: plasmacytoid dendritic cell
+          term:
+            id: CL:0000784
+            label: plasmacytoid dendritic cell
+      selected_evidence:
+        snippet: Wild-type intronless IRF7, which would not require ZRSR2 for splicing, restored LPS-induced
+          growth arrest in ZRSR2-mutant cells, whereas inactive IRF7 did not (Supplementary Fig. S5D).
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/25
+      evidence_path: /pathophysiology/25/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34615655
+      reference_title: Sex-Biased ZRSR2 Mutations in Myeloid Malignancies Impair Plasmacytoid Dendritic
+        Cell Activation and Apoptosis.
+      evidence_source: IN_VITRO
+      explanation: Endogenous-locus intronless IRF7 rescue links the splicing defect to the impaired stimulated
+        growth response.
+      quote_role: PRIMARY_RESULT
+    first_seen_at: '2026-10-19T16:57:23.373398+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:57:23.373398+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:57:23.373398+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/25
+      evidence_path: /pathophysiology/25/evidence/1
+      reference: PMID:34615655
 assessments:
   09954f747a2b55039648a729a6304e64d1622c1b8b55f73894a1d4815609dc6f:
     input_sha256: 3ffb64e308d0c1cc296c863e0006f76865ef806a9ff25d0aed003f97dc9d7612
@@ -38079,3 +38130,69 @@ assessments:
       request_sha256: 2430b7d3d67dfc207593f014eb615e48be7acdc9fe88f69731670d988ba14c4d
       request_sha256s:
       - 2430b7d3d67dfc207593f014eb615e48be7acdc9fe88f69731670d988ba14c4d
+  3dc08671da0b15fe53afdf7136f7a8d29c1cd4985eb87b6ce3e6b0e851d72100:
+    input_sha256: 82f68be3a33fbcb813f3337f93d58ed14bdd315ad9dbaa1c1ce6716a40d893be
+    configuration_sha256: 87bb0756a877864253c4c79dfa96471d9cd466d64af8929f5d275ac7e81e75a8
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:57:23.373398+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.07
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.1
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.1
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.08
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.13
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.13
+            PARTIAL: 0.45999999999999996
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7692
+        output_tokens: 327
+      elapsed_seconds: 0.4282
+      request_sha256: 5d0e52c62d8a972fe7373ba253a2d30fa14707b8b43e7c4786b98139fca40bc4
+      request_sha256s:
+      - 5d0e52c62d8a972fe7373ba253a2d30fa14707b8b43e7c4786b98139fca40bc4

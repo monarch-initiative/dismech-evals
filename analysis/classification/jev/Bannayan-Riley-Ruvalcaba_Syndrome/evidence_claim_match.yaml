@@ -16434,6 +16434,282 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/3
       reference: PMID:40478255
+  c3bc3615fc14a492a65d32206fb0901104245261eeb9eb3d4ffc7c486433079e:
+    claim:
+      about:
+        disease:
+          name: Bannayan-Riley-Ruvalcaba Syndrome
+          disease_term:
+            preferred_term: Bannayan-Riley-Ruvalcaba syndrome
+            term:
+              id: MONDO:0007924
+              label: Bannayan-Riley-Ruvalcaba syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: mTOR Overactivity
+        conforms_to: mtorc1_hyperactivation#Constitutive mTORC1 Hyperactivation
+        biological_scale: MOLECULAR
+        description: Excess mTOR signaling contributes to abnormal cell growth and provides the rationale
+          for trials of mTOR inhibitors in PHTS.
+        biological_processes:
+        - preferred_term: mTOR signaling
+          term:
+            id: GO:0031929
+            label: TOR signaling
+          modifier: INCREASED
+      selected_evidence:
+        snippet: In PHTS, loss of PTEN function leads to disinhibition of the PI3K (phosphatidylinositol-4,5-bisphosphate
+          3-kinase)-AKT–mTOR pathway
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35594551
+      reference_title: A randomized controlled trial of everolimus for neurocognitive symptoms in PTEN
+        hamartoma tumor syndrome.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: BACKGROUND
+      explanation: The trial introduction summarizes established PHTS signaling biology; the clinical
+        trial did not itself measure this molecular chain.
+    first_seen_at: '2026-10-19T16:56:55.597643+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:56:55.597643+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:56:55.597643+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:35594551
+  7a520a134788b543188452bc864b13f50c220f9bc72b1292841e1ceb76479fea:
+    claim:
+      about:
+        disease:
+          name: Bannayan-Riley-Ruvalcaba Syndrome
+          disease_term:
+            preferred_term: Bannayan-Riley-Ruvalcaba syndrome
+            term:
+              id: MONDO:0007924
+              label: Bannayan-Riley-Ruvalcaba syndrome
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: mTOR Overactivity
+            conforms_to: mtorc1_hyperactivation#Constitutive mTORC1 Hyperactivation
+            biological_scale: MOLECULAR
+            description: Excess mTOR signaling contributes to abnormal cell growth and provides the rationale
+              for trials of mTOR inhibitors in PHTS.
+            biological_processes:
+            - preferred_term: mTOR signaling
+              term:
+                id: GO:0031929
+                label: TOR signaling
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hamartomatous Tissue Overgrowth
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: Increased growth signaling contributes to hamartomatous overgrowth, with tissue-specific
+          and potentially additional genetic events incompletely defined.
+      selected_evidence:
+        snippet: mTOR overactivity leads to enhanced cell growth, underlying the increased risk for cancer
+          and abnormal tissue growth seen in PHTS
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:35594551
+      reference_title: A randomized controlled trial of everolimus for neurocognitive symptoms in PTEN
+        hamartoma tumor syndrome.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: BACKGROUND
+      explanation: This mechanistic rationale is background synthesis in the clinical trial, not a trial
+        efficacy result.
+    first_seen_at: '2026-10-19T16:56:55.599034+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:56:55.599034+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:56:55.599034+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:35594551
+  e39105079ff0b7cc27c14d3648b18e14cee26d415b056ef5959324365e7ce06d:
+    claim:
+      about:
+        disease:
+          name: Bannayan-Riley-Ruvalcaba Syndrome
+          disease_term:
+            preferred_term: Bannayan-Riley-Ruvalcaba syndrome
+            term:
+              id: MONDO:0007924
+              label: Bannayan-Riley-Ruvalcaba syndrome
+        context: []
+      assertion_type: MechanisticHypothesis
+      assertion:
+        hypothesis_group_id: canonical_pi3k_akt_mtor
+        hypothesis_label: Canonical PI3K-AKT-mTOR dose-sensitive overgrowth
+        status: CANONICAL
+        description: PTEN lipid-phosphatase loss increases PIP3-dependent AKT signaling and downstream
+          mTOR activity, contributing to abnormal growth. This is a central mechanism in PTEN-positive
+          BRRS, but does not establish a single causal route for every clinical feature or explain all
+          PTEN-negative presentations.
+      selected_evidence:
+        snippet: Purified recombinant PTEN catalyzed dephosphorylation of PtdIns(3,4,5)P3, specifically
+          at position 3 on the inositol ring.
+        supports: SUPPORT
+    origin:
+      assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9593664
+      reference_title: The tumor suppressor, PTEN/MMAC1, dephosphorylates the lipid second messenger,
+        phosphatidylinositol 3,4,5-trisphosphate.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Biochemical assays establish the direct PIP3 3-phosphatase activity of PTEN.
+    first_seen_at: '2026-10-19T16:56:55.568814+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:56:55.568814+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:56:55.568814+00:00'
+    occurrences:
+    - assertion_path: /mechanistic_hypotheses/0
+      evidence_path: /mechanistic_hypotheses/0/evidence/0
+      reference: PMID:9593664
+  0024e95f15f5e4c6b72bdf709ab54b0df1aa43ffab77506cb3fff6dbf40c1aea:
+    claim:
+      about:
+        disease:
+          name: Bannayan-Riley-Ruvalcaba Syndrome
+          disease_term:
+            preferred_term: Bannayan-Riley-Ruvalcaba syndrome
+            term:
+              id: MONDO:0007924
+              label: Bannayan-Riley-Ruvalcaba syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hamartomatous Tissue Overgrowth
+        conforms_to: mtorc1_hyperactivation#Hamartomatous Overgrowth and Dysplastic Lesion Formation
+        biological_scale: TISSUE
+        description: 'Unrestrained growth signaling produces hamartomas: benign, disorganized overgrowths
+          composed of cell types native to the tissue of origin. In BRRS this is expressed predominantly
+          as hamartomatous polyps distributed throughout the gastrointestinal tract, subcutaneous and
+          visceral lipomas, and vascular lesions, and it is the substrate for the syndrome''s structural
+          burden in childhood.'
+        cell_types:
+        - preferred_term: adipocyte
+          term:
+            id: CL:0000136
+            label: adipocyte
+        - preferred_term: intestinal epithelial cell
+          term:
+            id: CL:0002563
+            label: intestinal epithelial cell
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+      selected_evidence:
+        snippet: BRRS is a congenital disorder characterized by macrocephaly, intestinal hamartomatous
+          polyposis, lipomas, and pigmented macules of the glans penis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301661
+      reference_title: PTEN Hamartoma Tumor Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The GeneReviews definition of BRRS, confirming hamartomatous polyposis and lipomas
+        as defining tissue-level manifestations.
+      quote_role: REVIEW_SYNTHESIS
+    first_seen_at: '2026-10-19T16:57:00.884544+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:57:00.884544+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:57:00.884544+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/1
+      reference: PMID:20301661
+  1ff575dee5826ac93842a21882273ebc034d910d9a8217870550602c760a1a4c:
+    claim:
+      about:
+        disease:
+          name: Bannayan-Riley-Ruvalcaba Syndrome
+          disease_term:
+            preferred_term: Bannayan-Riley-Ruvalcaba syndrome
+            term:
+              id: MONDO:0007924
+              label: Bannayan-Riley-Ruvalcaba syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hamartomatous Tissue Overgrowth
+        conforms_to: mtorc1_hyperactivation#Hamartomatous Overgrowth and Dysplastic Lesion Formation
+        biological_scale: TISSUE
+        description: 'Unrestrained growth signaling produces hamartomas: benign, disorganized overgrowths
+          composed of cell types native to the tissue of origin. In BRRS this is expressed predominantly
+          as hamartomatous polyps distributed throughout the gastrointestinal tract, subcutaneous and
+          visceral lipomas, and vascular lesions, and it is the substrate for the syndrome''s structural
+          burden in childhood.'
+        cell_types:
+        - preferred_term: adipocyte
+          term:
+            id: CL:0000136
+            label: adipocyte
+        - preferred_term: intestinal epithelial cell
+          term:
+            id: CL:0002563
+            label: intestinal epithelial cell
+        - preferred_term: endothelial cell
+          term:
+            id: CL:0000115
+            label: endothelial cell
+      selected_evidence:
+        snippet: Bannayan-Riley-Ruvalcaba syndrome is a congenital syndrome with characteristic features
+          of macrocephaly, cognitive and motor dysfunction, subcutaneous and visceral lipomas and hemangiomas,
+          and intestinal juvenile polyposis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9352843
+      reference_title: Localization of the Bannayan-Riley-Ruvalcaba syndrome gene to chromosome 10q23.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Enumerates the hamartomatous tissue lesions (lipomas, hemangiomas, intestinal polyposis)
+        that constitute this overgrowth node in BRRS.
+    first_seen_at: '2026-10-19T16:56:56.896447+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:56:56.896447+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:56:56.896447+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:9352843
 assessments:
   edcb590f6563a1fcc5c7b07fb2b6bad78e17e6cd116b181584e7f91b3b408167:
     input_sha256: ef52a1c1d308fadf793f324bfa30255e480a7945ac40722758880fd687888d9e
@@ -37522,3 +37798,403 @@ assessments:
       request_sha256: 2aadc6de5f58023970141a0c5c6973f29c18a326604982e6107d738134512fa7
       request_sha256s:
       - 2aadc6de5f58023970141a0c5c6973f29c18a326604982e6107d738134512fa7
+  8b57735a1285e80ec7c32bf8188263f1291bbfe821a17fc8be45d2ae4bde69c3:
+    input_sha256: c3bc3615fc14a492a65d32206fb0901104245261eeb9eb3d4ffc7c486433079e
+    configuration_sha256: 397d7046cfa60382fdc55368d70c88b45b9d6f4b008c35f407d3dde6f449bcfb
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:56:55.597643+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.13
+            PARTIAL: 0.33
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.15
+            PARTIAL: 0.27
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.04
+            PARTIAL: 0.2
+          confidence: 0.64
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.2
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+          confidence: 0.85
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.15
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9899
+        output_tokens: 431
+      elapsed_seconds: 0.2245
+      request_sha256: 8d1f0bb05ab10b66f1283e33bb4eb40c602a1eb05ce15cdd7b4f193dee6ef605
+      request_sha256s:
+      - 8d1f0bb05ab10b66f1283e33bb4eb40c602a1eb05ce15cdd7b4f193dee6ef605
+  7c72799f2e43dbdeafd76f479527a696afd72008aef06e907752f6f535be8a20:
+    input_sha256: 7a520a134788b543188452bc864b13f50c220f9bc72b1292841e1ceb76479fea
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:56:55.599034+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+          confidence: 0.25
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.22
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+          confidence: 0.66
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.15
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.06
+            PARTIAL: 0.43
+          confidence: 0.27
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.12
+            PARTIAL: 0.27
+          confidence: 0.41
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6482
+        output_tokens: 270
+      elapsed_seconds: 0.2332
+      request_sha256: 0801f6e1d0b505c2eb2704dc219547b80f38ebd0d95b4e236367f877647a3b22
+      request_sha256s:
+      - 0801f6e1d0b505c2eb2704dc219547b80f38ebd0d95b4e236367f877647a3b22
+  ce864381c0ea7b0e1ef19c040fe81e7ebf2df39a006489b6751a80a8c725f02b:
+    input_sha256: e39105079ff0b7cc27c14d3648b18e14cee26d415b056ef5959324365e7ce06d
+    configuration_sha256: 714b67187fe4437deb350ea74de232ecde3fb2eadedc787659a8d9da0abaa4c4
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:56:55.568814+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.1
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.35
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/hypothesis_group_id:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47000000000000003
+            MISMATCH: 0.11
+            PARTIAL: 0.42
+          confidence: 0.21
+        /assertion/hypothesis_label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.12
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.08
+            PARTIAL: 0.72
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6265
+        output_tokens: 277
+      elapsed_seconds: 0.2009
+      request_sha256: 912088347f83f5a056959878c0121d568b1724318e8a0532dd0fbf9d0021716b
+      request_sha256s:
+      - 912088347f83f5a056959878c0121d568b1724318e8a0532dd0fbf9d0021716b
+  52d6642314edf640fd7164bfb8b591e0865fcdb7fd75dc4bd8b70abe1bad53dd:
+    input_sha256: 0024e95f15f5e4c6b72bdf709ab54b0df1aa43ffab77506cb3fff6dbf40c1aea
+    configuration_sha256: 15150850fe3774d4630b9903650475721b180990ce791919b81dc401091e7244
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:57:00.884544+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.05
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.32
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.02
+            PARTIAL: 0.06
+          confidence: 0.88
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.03
+            PARTIAL: 0.78
+          confidence: 0.67
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.06
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.12
+            PARTIAL: 0.39
+          confidence: 0.23
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.09
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.09
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/cell_types/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.35
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/cell_types/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.37
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12675
+        output_tokens: 574
+      elapsed_seconds: 0.2416
+      request_sha256: 016f4707a37042e8e65044f53890bd7c00b7fd882f281d4f8d33eebfb6d71543
+      request_sha256s:
+      - 016f4707a37042e8e65044f53890bd7c00b7fd882f281d4f8d33eebfb6d71543
+  be54e2a9ab8c62fbc3b6cd99e69f657ee9261c0e12fde08d129612634a04efbf:
+    input_sha256: 1ff575dee5826ac93842a21882273ebc034d910d9a8217870550602c760a1a4c
+    configuration_sha256: 15150850fe3774d4630b9903650475721b180990ce791919b81dc401091e7244
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:56:56.896447+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.04
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.05
+            PARTIAL: 0.37
+          confidence: 0.37
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.35
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.03
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.08
+            PARTIAL: 0.38
+          confidence: 0.31
+        /assertion/cell_types/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.09
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/cell_types/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.08
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/cell_types/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.16
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/cell_types/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.18
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12688
+        output_tokens: 574
+      elapsed_seconds: 0.206
+      request_sha256: cd754993f801eddbbfd157c879e9a00d4f0a29a969b3b7e4d5a4bf010f3290cb
+      request_sha256s:
+      - cd754993f801eddbbfd157c879e9a00d4f0a29a969b3b7e4d5a4bf010f3290cb

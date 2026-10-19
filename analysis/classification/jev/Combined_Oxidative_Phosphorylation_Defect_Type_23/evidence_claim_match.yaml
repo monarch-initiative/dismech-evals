@@ -3920,6 +3920,95 @@ inputs:
     - assertion_path: /pathophysiology/7
       evidence_path: /pathophysiology/7/evidence/1
       reference: PMID:38327089
+  b916c1af97a1012fcfe4db923777cba90ee8e790547a97b5738b240c48552fdc:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Defect Type 23
+          disease_term:
+            preferred_term: combined oxidative phosphorylation defect type 23
+            term:
+              id: MONDO:0014525
+              label: combined oxidative phosphorylation defect type 23
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: coxpd23_vs_mto1_same_reaction_two_diseases
+        kind: OPEN_QUESTION
+        status: OPEN
+        attaches_to:
+        - pathophysiology#GTPBP3-Specific Metabolic Reprogramming
+        - pathophysiology#Thalamic and Brainstem Injury
+        prompt: Why are GTPBP3 and MTO1 deficiency not the same disease, given that the two proteins catalyse
+          the same modification?
+        rationale: 'They should be the same disease and they nearly are. GTPBP3 and MTO1 form a complex
+          and install one modification on five mitochondrial tRNAs; both deficiencies present as infantile
+          hypertrophic cardiomyopathy with lactic acidosis, and the standard advice is that they are separated
+          by sequencing rather than by phenotype. dismech curates them as separate entries, and MTO1_Deficiency
+          lists this disease as its closest differential.
+
+          Two asymmetries are nonetheless on record. The clinical one comes from the founding GTPBP3 series:
+          in contrast to MTO1 patients, most GTPBP3 patients developed neurological symptoms with thalamic,
+          putaminal and brainstem MRI involvement resembling Leigh syndrome. The cellular one is sharper
+          and more surprising. MTO1-deficient fibroblasts inactivate AMPK, down-regulate UCP2 and PPAR-gamma
+          and activate HIF-1; GTPBP3-depleted cells do the exact opposite on all four. The authors of
+          that study draw the obvious conclusion - that one of the two proteins must do something besides
+          tRNA modification - and stop there.
+
+          What remains open is which protein, and what the something is. The candidates are not equally
+          testable: an additional GTPBP3 function, an additional MTO1 function, or a difference in how
+          the two partial complexes behave when one subunit is missing rather than an extra function in
+          either. A cytoplasm-localised GTPBP3 isoform has been described and called an unknown potential
+          noncanonical function, which is at least a place to look. Until that is resolved, the clinical
+          difference between the two entities has no mechanistic explanation, and this entry does not
+          offer one.'
+        proposed_experiments:
+        - experiment_id: exp_coxpd23_reciprocal_reprogramming
+          name: Test whether the reprogramming difference survives complementation
+          description: Express wild-type GTPBP3 in MTO1-deficient cells and wild-type MTO1 in GTPBP3-deficient
+            cells, and read out AMPK phosphorylation, UCP2, PPAR-gamma and HIF-1 in each. If the axis
+            is driven by an extra function of one protein, only that protein's own complementation should
+            normalise it, and cross-complementation should not. If instead the difference arises from
+            how the residual partial complex behaves, both should partially normalise. The experiment
+            distinguishes the two accounts without needing to identify the extra function first.
+          readouts:
+          - name: HIF-PPAR-gamma-UCP2-AMPK axis state after complementation
+            target: pathophysiology#GTPBP3-Specific Metabolic Reprogramming
+            direction: RESTORED
+            interpretation: Normalisation only on same-gene complementation would support an additional
+              function in one protein; partial normalisation in both directions would support a complex-level
+              explanation instead.
+          would_support:
+          - pathophysiology#GTPBP3-Specific Metabolic Reprogramming
+          supporting_outcome:
+          - Gene-specific normalisation of the axis would establish that the divergence is a property
+            of the individual protein rather than of the partial complex.
+      selected_evidence:
+        snippet: Therefore, the HIF-PPARγ-UCP2-AMPK axis is operating differently in MTO1- and GTPBP3-defective
+          cells, which strongly suggests that one of these proteins has an additional role, besides mitochondrial-tRNA
+          modification.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29348686
+      reference_title: Defects in the mitochondrial-tRNA modification enzymes MTO1 and GTPBP3 promote
+        different metabolic reprogramming through a HIF-PPARγ-UCP2-AMPK axis.
+      evidence_source: IN_VITRO
+      explanation: The open question in the words of the study that raised it, with its own hedge attached.
+    first_seen_at: '2026-10-19T16:45:31.051450+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:45:31.051450+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:45:31.051450+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:29348686
 assessments:
   ef581deed64e2b7a8d005b35a640df471ea4df160be695d38a86438aa8e9acfc:
     input_sha256: a6d75bd993fddf1b8f408dd6312befaed9cb3d350eea778a34c155e837960cb0
@@ -9393,3 +9482,139 @@ assessments:
       request_sha256: 7cf222236231efd8ca6323d5d95f68f65622767ce3ef951c5450937631e5f4a0
       request_sha256s:
       - 7cf222236231efd8ca6323d5d95f68f65622767ce3ef951c5450937631e5f4a0
+  56df4d1a70ce80b035ebb7786a5c361ec08d00e2a8f163a8caf8e44ab013deb0:
+    input_sha256: b916c1af97a1012fcfe4db923777cba90ee8e790547a97b5738b240c48552fdc
+    configuration_sha256: 3af11b99a1c4efd77ddfbd25986b09d90a5cb2c9727df77961f5fc0ed70c59ea
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:45:31.051450+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.1
+            PARTIAL: 0.21
+          confidence: 0.53
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.67
+            PARTIAL: 0.17
+          confidence: 0.51
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.68
+            PARTIAL: 0.17
+          confidence: 0.52
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.21
+            PARTIAL: 0.24
+          confidence: 0.33
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/rationale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.08
+            PARTIAL: 0.31
+          confidence: 0.41
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.57
+            PARTIAL: 0.24
+          confidence: 0.35
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.36
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.22
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/proposed_experiments/0/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.2
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/proposed_experiments/0/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.05
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/proposed_experiments/0/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.35
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/proposed_experiments/0/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.36
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/proposed_experiments/0/would_support:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.28
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/proposed_experiments/0/supporting_outcome:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.52
+            PARTIAL: 0.34
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17902
+        output_tokens: 868
+      elapsed_seconds: 0.3962
+      request_sha256: 2e43067368f23e1e3194c149fd6303ea7cacde8a648cbd5614ec1a32e1d2a5e7
+      request_sha256s:
+      - 2e43067368f23e1e3194c149fd6303ea7cacde8a648cbd5614ec1a32e1d2a5e7

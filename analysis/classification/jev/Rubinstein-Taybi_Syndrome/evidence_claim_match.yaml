@@ -3124,6 +3124,62 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/0
       reference: PMID:20301699
+  26c7de329d688128c7c217f42d2ae1bbdca1228ad9b2ffe190d219ecc2f22c2b:
+    claim:
+      about:
+        disease:
+          name: Rubinstein-Taybi Syndrome
+          disease_term:
+            preferred_term: Rubinstein-Taybi syndrome
+            term:
+              id: MONDO:0019188
+              label: Rubinstein-Taybi syndrome
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: RSTS2
+        genes:
+        - preferred_term: EP300
+          term:
+            id: hgnc:3373
+            label: EP300
+        display_name: Rubinstein-Taybi syndrome type 2 (EP300)
+        description: 'A less common form caused by heterozygous pathogenic variants in EP300, accounting
+          for 8-11% of cases in the 2024 international consensus statement. EP300-related RSTS tends to
+          be associated with milder intellectual disability, and some individuals have normal intellect.
+
+          '
+        subtype_term:
+          preferred_term: Rubinstein-Taybi syndrome due to EP300 haploinsufficiency
+          term:
+            id: MONDO:0013364
+            label: Rubinstein-Taybi syndrome due to EP300 haploinsufficiency
+      selected_evidence:
+        snippet: Some individuals with EP300-related RSTS have normal intellect.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301699
+      reference_title: Rubinstein-Taybi Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'GeneReviews notes that EP300-related RSTS can present with milder cognitive involvement,
+        distinguishing it from the CREBBP type.
+
+        '
+    first_seen_at: '2026-10-19T16:50:16.989410+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:16.989410+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:16.989410+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/1
+      evidence_path: /has_subtypes/1/evidence/1
+      reference: PMID:20301699
 assessments:
   41ac423bcf4755963e93e497ebe104dfc19fdd3dcb180150c71bebf3f81e6cbe:
     input_sha256: 67e5098700da8a9f1a4333654ba7e0be2314edf770446a4b8c300978c5d08d85
@@ -7418,3 +7474,83 @@ assessments:
       request_sha256: d3f53e4de85dcd627b612451b632168ba408fc30cb73ee0870970ad35d2dafeb
       request_sha256s:
       - d3f53e4de85dcd627b612451b632168ba408fc30cb73ee0870970ad35d2dafeb
+  fad83cfd5cc780268e9c68fe372fb5179ce2eddbe6ab49fe89248805604ff531:
+    input_sha256: 26c7de329d688128c7c217f42d2ae1bbdca1228ad9b2ffe190d219ecc2f22c2b
+    configuration_sha256: 86a246ab61fbefd50a27b513c3df3e7a3c40377cde05406ed68d6830aa55d768
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:16.989410+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.05
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9299999999999999
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.43
+            PARTIAL: 0.27
+          confidence: 0.14
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.21
+            PARTIAL: 0.23
+          confidence: 0.34
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.27
+            PARTIAL: 0.34
+          confidence: 0.09
+        /assertion/display_name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.53
+            PARTIAL: 0.22
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.04
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/subtype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.34
+            PARTIAL: 0.32
+          confidence: 0.01
+        /assertion/subtype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.26
+            PARTIAL: 0.36
+          confidence: 0.07
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9289
+        output_tokens: 423
+      elapsed_seconds: 0.3628
+      request_sha256: de0628a1250c2ec8cb13b115f8faaec7420158d80aa279862d1158d13120187e
+      request_sha256s:
+      - de0628a1250c2ec8cb13b115f8faaec7420158d80aa279862d1158d13120187e

@@ -15461,6 +15461,199 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: PMID:12023326
+  9382519693a08e7cca20e8c2d9b9b218b5d1ab77d158b71c0b47802ce42c210c:
+    claim:
+      about:
+        disease:
+          name: Familial Hemiplegic Migraine
+          disease_term:
+            preferred_term: familial hemiplegic migraine
+            term:
+              id: MONDO:0000700
+              label: familial hemiplegic migraine
+        context:
+        - path: /pathophysiology/6
+          value:
+            name: Facilitated Cortical Spreading Depolarization
+            biological_scale: TISSUE
+            description: A propagating wave of neuronal and glial depolarization followed by depression
+              of cortical activity is facilitated in models of FHM1, FHM2 and FHM3. Reduced triggering
+              threshold is an assay readout of this susceptibility. FHM1/FHM2 models also show faster
+              propagation, whereas the L1649Q FHM3 model did not show increased in vivo propagation speed.
+              CSD is the leading explanation of aura, with human FHM translation remaining indirect.
+            biological_processes:
+            - preferred_term: cortical spreading depolarization
+              term:
+                id: GO:0051899
+                label: membrane depolarization
+              modifier: INCREASED
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            - preferred_term: astrocyte
+              term:
+                id: CL:0000127
+                label: astrocyte
+            locations:
+            - preferred_term: neocortex
+              term:
+                id: UBERON:0001950
+                label: neocortex
+            notes: The three classical subtypes converge on facilitated CSD through distinct cellular
+              routes. This does not establish a glutamate-dependent initiation mechanism in FHM3 or a
+              complete CSD pathway for PRRT2-FHM.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Scotoma During Aura
+        description: The cortical aura model attributes this focal aura manifestation to propagating depolarization
+          and subsequent suppression in the relevant cortical network. Translation from experimental CSD
+          to spontaneous human FHM remains indirect.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - cortical_aura
+      selected_evidence:
+        snippet: Visual disturbances can include scotoma (blind spots), photopsia (flashing lights), fortification
+          spectra (zigzag pattern), and diplopia (double vision).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6/downstream/5
+      evidence_path: /pathophysiology/6/downstream/5/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/6
+    evidence_metadata:
+      reference: url:https://www.ncbi.nlm.nih.gov/books/NBK1388/
+      reference_title: Familial Hemiplegic Migraine - GeneReviews® - NCBI Bookshelf
+      evidence_source: HUMAN_CLINICAL
+      explanation: This clinical source establishes the particular aura component. Paired with the CSD
+        hypothesis above, it supports the qualified cortical attribution; it is not independent experimental
+        evidence of CSD during this symptom.
+    first_seen_at: '2026-10-19T17:01:13.625428+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:13.625428+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:13.625428+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6/downstream/5
+      evidence_path: /pathophysiology/6/downstream/5/evidence/1
+      reference: url:https://www.ncbi.nlm.nih.gov/books/NBK1388/
+  9a91429852ca71cf5a3e660356d4c92dca81a44c21b253a0c1f1e65115fb73be:
+    claim:
+      about:
+        disease:
+          name: Familial Hemiplegic Migraine
+          disease_term:
+            preferred_term: familial hemiplegic migraine
+            term:
+              id: MONDO:0000700
+              label: familial hemiplegic migraine
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Neurological
+        name: Reversible Hemiparesis During Aura
+        description: Fully reversible unilateral motor weakness during the aura, obligatory for the diagnosis
+          and the feature that separates FHM from other migraine with aura.
+        diagnostic: true
+        phenotype_term:
+          preferred_term: Hemiparesis
+          term:
+            id: HP:0001269
+            label: Hemiparesis
+          temporality: TRANSIENT
+      selected_evidence:
+        snippet: in whom the aura includes fully reversible motor weakness and visual, sensory, or language
+          symptoms
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301562
+      reference_title: Familial Hemiplegic Migraine.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The diagnostic criterion establishing reversible motor weakness as obligatory.
+    first_seen_at: '2026-10-19T17:01:15.324952+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:15.324952+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:15.324952+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:20301562
+  13e83caada25efcb9a03428d184f4d7ac860aed03e482e5fd965fab75de54f63:
+    claim:
+      about:
+        disease:
+          name: Familial Hemiplegic Migraine
+          disease_term:
+            preferred_term: familial hemiplegic migraine
+            term:
+              id: MONDO:0000700
+              label: familial hemiplegic migraine
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_fhm_shared_csd_convergence
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        prompt: Do the three FHM genes lower the cortical spreading depression threshold through one shared
+          final mechanism, or through separate routes that happen to converge on the same clinical outcome?
+        attaches_to:
+        - pathophysiology#Facilitated Cortical Spreading Depolarization
+        - pathophysiology#Increased Cortical Glutamatergic Excitability
+        - pathophysiology#Cortical Interneuron Hyperactivity
+        rationale: 'FHM1 and FHM2 have experimentally supported glutamatergic routes to CSD; the W887R/+
+          clearance deficit is directly measured in the 2016 study. FHM3 differs: acute activation experiments
+          and the L1649Q knock-in support interneuron spiking and potassium accumulation without requiring
+          glutamatergic synaptic transmission for initiation. A universal quantitative threshold-setting
+          mechanism across the three subtypes remains unresolved, and these data do not establish the
+          PRRT2 route.'
+        proposed_experiments:
+        - experiment_id: exp_fhm_cross_subtype_csd_threshold
+          name: Cross-subtype comparison of CSD threshold determinants
+          description: Measure CSD threshold together with extracellular K+ and glutamate transients in
+            FHM1 (CACNA1A), FHM2 (ATP1A2) and FHM3 (SCN1A) knock-in cortex under one protocol, then test
+            whether blocking glutamatergic transmission or buffering extracellular K+ abolishes the threshold
+            shift in each. A K+ manipulation that rescues all three, where glutamatergic blockade rescues
+            only FHM1 and FHM2, would establish extracellular K+ as the shared final common path rather
+            than glutamate.
+      selected_evidence:
+        snippet: Using ceftriaxone treatment of FHM2 mutants and partial inhibition of glutamate transporters
+          in wild-type mice, we obtain evidence that defective glutamate clearance can account for most
+          of the facilitation of CSD initiation in FHM2-knockin mice
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27354390
+      reference_title: Defective glutamate and K+ clearance by cortical astrocytes in familial hemiplegic
+        migraine type 2.
+      evidence_source: IN_VITRO
+      explanation: CSD recordings in cortical slices after mutant-mouse treatment or transporter inhibition
+        support a causal clearance contribution. Ceftriaxone produced only a small rescue and did not
+        restore perisynaptic astrocytic transporter density; this is not evidence of clinical drug efficacy.
+    first_seen_at: '2026-10-19T17:01:15.471322+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:15.471322+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:15.471322+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:27354390
 assessments:
   554f139f5f905229feffef3de19763235b82a7730a8f8f4789e092085037c9fa:
     input_sha256: 8ca5e7df2caab0b0fb92754bafee952db4b970935b1e3647ec11739a52224ce1
@@ -35237,3 +35430,243 @@ assessments:
       request_sha256: b49a1e399a4a7caca1d41b6d02f29a32bd406d2222ed1d94802f4e5ea7feade9
       request_sha256s:
       - b49a1e399a4a7caca1d41b6d02f29a32bd406d2222ed1d94802f4e5ea7feade9
+  8343eb92f2b36c856525a749451f63c83ff01b3c67981f2932447d2a989975ee:
+    input_sha256: 9382519693a08e7cca20e8c2d9b9b218b5d1ab77d158b71c0b47802ce42c210c
+    configuration_sha256: 29e097b67f89bb679bfec30c8a272956cb7b1e20ac716cead21fa3a7363a1b4b
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:13.625428+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.38
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.32
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.13
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.46
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.43
+            PARTIAL: 0.42
+          confidence: 0.14
+        /assertion/hypothesis_groups:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.49
+            PARTIAL: 0.34
+          confidence: 0.23
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.28
+            PARTIAL: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7709
+        output_tokens: 326
+      elapsed_seconds: 0.3223
+      request_sha256: 4e7dcc74e1958471afd1002bf9e683b2d7e23a3ad9d5aa22fbd492cb4dd71e94
+      request_sha256s:
+      - 4e7dcc74e1958471afd1002bf9e683b2d7e23a3ad9d5aa22fbd492cb4dd71e94
+  fc60d7d5e5632ed1359684e166b4f4b4fd2c08b1c48df3b2b7a2567e20a4b662:
+    input_sha256: 9a91429852ca71cf5a3e660356d4c92dca81a44c21b253a0c1f1e65115fb73be
+    configuration_sha256: 1d95b2089c220418570380f5460eeca6e6bed1b4c7a20f4bf70858d6b5c3be7c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:15.324952+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.03
+            PARTIAL: 0.48
+          confidence: 0.23
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.04
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.18
+            PARTIAL: 0.3
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.01
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.13
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/diagnostic:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.13
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/phenotype_term/temporality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9184
+        output_tokens: 414
+      elapsed_seconds: 0.3453
+      request_sha256: c4e5c9db313359203e83bde41f834bae1309b21c6158273f4340da287aead658
+      request_sha256s:
+      - c4e5c9db313359203e83bde41f834bae1309b21c6158273f4340da287aead658
+  6278e90da6d54b6e91319be12efbeef2d23a1e991c79dfaa6202735585b43ccb:
+    input_sha256: 13e83caada25efcb9a03428d184f4d7ac860aed03e482e5fd965fab75de54f63
+    configuration_sha256: fad4432e00a388b6bd09270cfb49cd34c6c869339bd2e9117d8ac9f4fac471e9
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:15.471322+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.05
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.64
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.68
+            PARTIAL: 0.16
+          confidence: 0.52
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.06
+            PARTIAL: 0.85
+          confidence: 0.77
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.14
+            PARTIAL: 0.37
+          confidence: 0.23
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.28
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.58
+            PARTIAL: 0.33
+          confidence: 0.37
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.44
+            PARTIAL: 0.47000000000000003
+          confidence: 0.21
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.23
+            PARTIAL: 0.73
+          confidence: 0.59
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11484
+        output_tokens: 528
+      elapsed_seconds: 0.5169
+      request_sha256: 14ec43f7e2a2f77f94536db13e98c329ab67e99935e661b2efae4e5d7c2b075c
+      request_sha256s:
+      - 14ec43f7e2a2f77f94536db13e98c329ab67e99935e661b2efae4e5d7c2b075c

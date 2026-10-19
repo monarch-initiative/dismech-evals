@@ -5902,6 +5902,124 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/1
       reference: PMID:39233552
+  e91470f0d02c390bb30e983104e874e00dbeeea48432cdca211d95ffb45df8e4:
+    claim:
+      about:
+        disease:
+          name: Visceral Heterotaxy 9
+          disease_term:
+            preferred_term: heterotaxy, visceral, 9, autosomal, with male infertility
+            term:
+              id: MONDO:0030070
+              label: heterotaxy, visceral, 9, autosomal, with male infertility
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Assisted reproduction (intracytoplasmic sperm injection)
+        description: ICSI is the conventional approach to severe oligoasthenoteratozoospermia. In the
+          single reported MNS1-deficient couple, three ICSI cycles all failed to achieve pregnancy, so
+          ICSI should not be presented to affected men as reliably effective.
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: intracytoplasmic sperm injection
+          term:
+            id: NCIT:C185482
+            label: Intracytoplasmic Sperm Injection
+        target_phenotypes:
+        - preferred_term: Male infertility
+          term:
+            id: HP:0003251
+            label: Male infertility
+      selected_evidence:
+        snippet: A total of three intracytoplasmic sperm injection cycles were carried out for the proband's
+          wife, but they all failed to lead to a successful pregnancy.
+        supports: REFUTE
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33037173
+      reference_title: A novel homozygous frameshift mutation in MNS1 associated with severe oligoasthenoteratozoospermia
+        in humans.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'A negative therapeutic result: three ICSI cycles in the only reported MNS1-deficient
+        couple did not achieve pregnancy. Recorded as REFUTE against the implicit claim that ICSI reliably
+        rescues fertility in this disorder. This is a single couple, so it constrains rather than settles
+        the question.'
+    first_seen_at: '2026-10-19T16:50:21.442509+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:21.442509+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:21.442509+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:33037173
+  454e848d5656aa2fe3ac16fdb71b69b8e5fc7335fe64636039c096d992b20985:
+    claim:
+      about:
+        disease:
+          name: Visceral Heterotaxy 9
+          disease_term:
+            preferred_term: heterotaxy, visceral, 9, autosomal, with male infertility
+            term:
+              id: MONDO:0030070
+              label: heterotaxy, visceral, 9, autosomal, with male infertility
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: mns1_hydrocephalus_model_mismatch
+        kind: HUMAN_MODEL_MISMATCH
+        attaches_to:
+        - pathophysiology#Nodal Cilia Motility Failure at the Left-Right Organizer
+        prompt: Mns1-null mice develop hydrocephalus, a canonical consequence of ependymal motile cilia
+          dysfunction, yet hydrocephalus has not been reported in any MNS1-deficient human. Is the ependymal
+          arm of MNS1 function genuinely absent in humans, or has it simply not been looked for?
+        rationale: 'Ependymal cilia use the same axonemal machinery as nodal and respiratory cilia, so
+          an MNS1-dependent ependymal phenotype is mechanistically expected. Its absence from the human
+          literature could reflect a true species difference (mouse aqueductal geometry makes murine hydrocephalus
+          far more sensitive to ciliary dysfunction than the human equivalent), ascertainment bias (affected
+          individuals are ascertained through cardiology and fertility clinics, not neurology, and brain
+          imaging is not routinely reported), or the small size of the published cohort. This is a model-fidelity
+          question rather than a plain absence of evidence: the evidence exists in mouse and its translational
+          validity to human disease is what is uncertain.'
+        status: OPEN
+        proposed_experiments:
+        - experiment_id: mns1_prospective_neuroimaging
+          name: Prospective neuroimaging of MNS1-deficient individuals
+          description: Obtain brain MRI with ventricular volumetry in every genetically confirmed MNS1-deficient
+            individual, and report ependymal ciliary function where post-mortem or surgical tissue is
+            available. This distinguishes a genuine species difference from a reporting gap; a negative
+            imaging series across the known cohort would itself be a substantive human result.
+          decision_criterion: Ventriculomegaly in a meaningful fraction of the imaged cohort would establish
+            the ependymal arm in humans; normal ventricular volumes across the full known cohort would
+            establish the mouse hydrocephalus phenotype as species-specific.
+      selected_evidence:
+        snippet: In addition, MNS1-deficient mice display situs inversus and hydrocephalus.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22396656
+      reference_title: MNS1 is essential for spermiogenesis and motile ciliary functions in mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: The mouse phenotype that has no reported human counterpart.
+    first_seen_at: '2026-10-19T16:50:23.483683+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:23.483683+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:23.483683+00:00'
+    occurrences:
+    - assertion_path: /discussions/2
+      evidence_path: /discussions/2/evidence/0
+      reference: PMID:22396656
 assessments:
   fa1fbf3150740b01e06bcd2676f20634a0560665a5aed2526f7d9794cf89cd44:
     input_sha256: 1919f65684edccfb111632056b30a8cb4dc565fb9980fff569f41f1381ba71b2
@@ -13212,3 +13330,184 @@ assessments:
       request_sha256: 15de45e3a6646d7ec52e5aaa9cda5c53e11b707e409b04776b558dd02a53d990
       request_sha256s:
       - 15de45e3a6646d7ec52e5aaa9cda5c53e11b707e409b04776b558dd02a53d990
+  08c988bbc40339e103be396b406f360db218baea4b3e9d6b3a8f049d7609632a:
+    input_sha256: e91470f0d02c390bb30e983104e874e00dbeeea48432cdca211d95ffb45df8e4
+    configuration_sha256: fefbd43b1dee592a005eaf917a4721b578427e760151e146c8496eaf519b0931
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:21.442509+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.32
+            PARTIAL: 0.35
+          confidence: 0.02
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.33
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.25
+            PARTIAL: 0.2
+          confidence: 0.33
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.24
+            PARTIAL: 0.32
+          confidence: 0.16
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.51
+            PARTIAL: 0.2
+          confidence: 0.27
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.23
+            PARTIAL: 0.23
+          confidence: 0.31
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.27
+            PARTIAL: 0.23
+          confidence: 0.25
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.23
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.25
+            PARTIAL: 0.45
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9731
+        output_tokens: 435
+      elapsed_seconds: 0.3458
+      request_sha256: b5c063bc88909fe3ffb5460cea71d4398bf83cdc873f3eb9dee0b512e600d729
+      request_sha256s:
+      - b5c063bc88909fe3ffb5460cea71d4398bf83cdc873f3eb9dee0b512e600d729
+  9a7e36ab6fe721051956b9dd2dbe7c2d500b4c9a64946b4115186fb55afd91a6:
+    input_sha256: 454e848d5656aa2fe3ac16fdb71b69b8e5fc7335fe64636039c096d992b20985
+    configuration_sha256: 2503ac54dfb7f96889c899d9ce53cbe06de0b5125b1e862bc4aef246f274ced9
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:23.483683+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.42
+            PARTIAL: 0.37
+          confidence: 0.13
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.38
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.72
+            PARTIAL: 0.17
+          confidence: 0.58
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.67
+            PARTIAL: 0.16
+          confidence: 0.51
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.27
+            PARTIAL: 0.36
+          confidence: 0.06
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.33
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.37
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.73
+            PARTIAL: 0.18
+          confidence: 0.59
+        /assertion/proposed_experiments/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.65
+            PARTIAL: 0.27
+          confidence: 0.48
+        /assertion/proposed_experiments/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/proposed_experiments/0/decision_criterion:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12482
+        output_tokens: 594
+      elapsed_seconds: 0.3263
+      request_sha256: 5b451c80a02b9e79e6682e12c0571318fee54f56b5764560627fa403cbf0f066
+      request_sha256s:
+      - 5b451c80a02b9e79e6682e12c0571318fee54f56b5764560627fa403cbf0f066

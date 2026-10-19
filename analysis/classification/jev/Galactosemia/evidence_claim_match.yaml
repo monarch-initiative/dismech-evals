@@ -5513,6 +5513,462 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT03838016
+  0b72a10576039da456b4864ceb43dbcc541530cb5132b08c2b7c49f535c82ef7:
+    claim:
+      about:
+        disease:
+          name: Galactosemia
+          disease_term:
+            preferred_term: galactosemia
+            term:
+              id: MONDO:0018116
+              label: galactosemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn Screening
+        description: Dried-blood-spot screening measures GALT enzyme activity and total galactose (galactose
+          plus galactose-1-phosphate, released by hydrolysis), in either order as first and second tier
+          depending on the programme. Low GALT activity identifies classic and clinical-variant galactosemia;
+          total galactose also rises in galactokinase and epimerase deficiencies.
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        measurements:
+        - preferred_term: GALT enzyme activity, DBS
+          term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+        - preferred_term: total galactose (galactose + galactose-1-phosphate), DBS
+          term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". GALT is the second tier behind total galactose in this programme; the limit
+            was set from a 4,421-sample suitability study in which GALT activity ranged between <20 and
+            250 U/L. The "<20" rule matches the half-open band exactly.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 20.0
+            unit: U/L
+            abnormal_flag: LOW
+            interpretation: Referral for confirmatory erythrocyte GALT activity, galactose-1-phosphate
+              and GALT genotyping.
+          - name: Screen negative
+            lower_bound: 20.0
+            unit: U/L
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". The measurand is total galactose (TGAL); see the diagnosis notes on the code.
+            The source states ">600", so exactly 600 is negative there; the half-open band places exactly
+            600 in the positive band. The programme concluded that a TGAL limit low enough to capture
+            GALE and GALM deficiencies produced more false positives, and recommended treating those as
+            non-target conditions.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 600.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 600.0
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Triggers second-tier GALT activity on the same spot.
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/dL
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The abstract gives the cut-off value
+            without the inequality; GALT deficiency is low activity, so results below the value are the
+            positive side. Note the unit: 2.0 U/dL is numerically 20 U/L, the same figure as the Victorian
+            limit on a different assay.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 2.0
+            unit: U/dL
+            abnormal_flag: LOW
+          - name: Screen negative
+            lower_bound: 2.0
+            unit: U/dL
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The measurand is total galactose (TGAL).
+            The abstract gives the value without the inequality; galactose accumulates in the disease,
+            so results above the value are the positive side.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: HIGH
+        notes: 'Newborn screening detects most infants with classic galactosemia and enables early dietary
+          treatment before severe neonatal injury develops.
+
+          On the total-galactose code: the Monarch KG serves no DBS code whose component is the galactose
+          plus galactose-1-phosphate sum. Searches run against the KG ClinicalMeasurement index on 2026-10-06
+          were "Galactose DBS", "Galactose-1-phosphate DBS", "Galactose+Galactose 1 phosphate", "Galactose.total"
+          and "total galactose"; the DBS codes returned were LOINC:54084-9 / LOINC:54085-6 (Galactose,
+          mass and moles per volume), LOINC:40842-7 (Galactose 1 phosphate, mass/volume) and the GALT
+          activity and presence codes. LOINC:54085-6 is bound with the measurand carried in preferred_term;
+          the two reference ranges keyed on it are total-galactose decision limits and should be read
+          as such.
+
+          '
+      selected_evidence:
+        snippet: Virtually 100% of infants with classic galactosemia or clinical variant galactosemia
+          can be detected in newborn screening programs that include testing for galactosemia in their
+          panel.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301691
+      reference_title: Classic Galactosemia and Clinical Variant Galactosemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: This directly supports newborn screening as a highly effective case-finding approach
+        for classic galactosemia.
+    first_seen_at: '2026-10-19T16:43:41.850814+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:41.850814+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:41.850814+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:20301691
+  8fc83c54d72853197f71c384ddfc7ead008a66d652c3b2251975a3fab6f7fac2:
+    claim:
+      about:
+        disease:
+          name: Galactosemia
+          disease_term:
+            preferred_term: galactosemia
+            term:
+              id: MONDO:0018116
+              label: galactosemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn Screening
+        description: Dried-blood-spot screening measures GALT enzyme activity and total galactose (galactose
+          plus galactose-1-phosphate, released by hydrolysis), in either order as first and second tier
+          depending on the programme. Low GALT activity identifies classic and clinical-variant galactosemia;
+          total galactose also rises in galactokinase and epimerase deficiencies.
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        measurements:
+        - preferred_term: GALT enzyme activity, DBS
+          term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+        - preferred_term: total galactose (galactose + galactose-1-phosphate), DBS
+          term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". GALT is the second tier behind total galactose in this programme; the limit
+            was set from a 4,421-sample suitability study in which GALT activity ranged between <20 and
+            250 U/L. The "<20" rule matches the half-open band exactly.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 20.0
+            unit: U/L
+            abnormal_flag: LOW
+            interpretation: Referral for confirmatory erythrocyte GALT activity, galactose-1-phosphate
+              and GALT genotyping.
+          - name: Screen negative
+            lower_bound: 20.0
+            unit: U/L
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". The measurand is total galactose (TGAL); see the diagnosis notes on the code.
+            The source states ">600", so exactly 600 is negative there; the half-open band places exactly
+            600 in the positive band. The programme concluded that a TGAL limit low enough to capture
+            GALE and GALM deficiencies produced more false positives, and recommended treating those as
+            non-target conditions.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 600.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 600.0
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Triggers second-tier GALT activity on the same spot.
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/dL
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The abstract gives the cut-off value
+            without the inequality; GALT deficiency is low activity, so results below the value are the
+            positive side. Note the unit: 2.0 U/dL is numerically 20 U/L, the same figure as the Victorian
+            limit on a different assay.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 2.0
+            unit: U/dL
+            abnormal_flag: LOW
+          - name: Screen negative
+            lower_bound: 2.0
+            unit: U/dL
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The measurand is total galactose (TGAL).
+            The abstract gives the value without the inequality; galactose accumulates in the disease,
+            so results above the value are the positive side.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: HIGH
+        notes: 'Newborn screening detects most infants with classic galactosemia and enables early dietary
+          treatment before severe neonatal injury develops.
+
+          On the total-galactose code: the Monarch KG serves no DBS code whose component is the galactose
+          plus galactose-1-phosphate sum. Searches run against the KG ClinicalMeasurement index on 2026-10-06
+          were "Galactose DBS", "Galactose-1-phosphate DBS", "Galactose+Galactose 1 phosphate", "Galactose.total"
+          and "total galactose"; the DBS codes returned were LOINC:54084-9 / LOINC:54085-6 (Galactose,
+          mass and moles per volume), LOINC:40842-7 (Galactose 1 phosphate, mass/volume) and the GALT
+          activity and presence codes. LOINC:54085-6 is bound with the measurand carried in preferred_term;
+          the two reference ranges keyed on it are total-galactose decision limits and should be read
+          as such.
+
+          '
+      selected_evidence:
+        snippet: first-tier total galactose (TGAL) quantification and second-tier GALT semi-quantitative
+          analysis was performed using 3.2 mm DBS punches and a Genetic Screening Processor.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42126257
+      reference_title: 'Optimising newborn screening for galactosaemia: reclassifying GALE and GALM deficiencies
+        as non-target conditions to improve specificity.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Shows the tier order reversed relative to GALT-first programmes, which is why neither
+        analyte is recorded as the single primary marker.
+    first_seen_at: '2026-10-19T16:43:44.469817+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:44.469817+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:44.469817+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      reference: PMID:42126257
+  36e080e5a54c707dbeb99864473a0f9beabb48e823d52d49d1754bbb0ee254b3:
+    claim:
+      about:
+        disease:
+          name: Galactosemia
+          disease_term:
+            preferred_term: galactosemia
+            term:
+              id: MONDO:0018116
+              label: galactosemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Newborn Screening
+        description: Dried-blood-spot screening measures GALT enzyme activity and total galactose (galactose
+          plus galactose-1-phosphate, released by hydrolysis), in either order as first and second tier
+          depending on the programme. Low GALT activity identifies classic and clinical-variant galactosemia;
+          total galactose also rises in galactokinase and epimerase deficiencies.
+        diagnosis_term:
+          preferred_term: newborn screening
+          term:
+            id: NCIT:C81178
+            label: Newborn Screening
+        measurements:
+        - preferred_term: GALT enzyme activity, DBS
+          term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+        - preferred_term: total galactose (galactose + galactose-1-phosphate), DBS
+          term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". GALT is the second tier behind total galactose in this programme; the limit
+            was set from a 4,421-sample suitability study in which GALT activity ranged between <20 and
+            250 U/L. The "<20" rule matches the half-open band exactly.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 20.0
+            unit: U/L
+            abnormal_flag: LOW
+            interpretation: Referral for confirmatory erythrocyte GALT activity, galactose-1-phosphate
+              and GALT genotyping.
+          - name: Screen negative
+            lower_bound: 20.0
+            unit: U/L
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, Victoria (Australia) programme, decision limits set in the implementation
+            study
+          notes: 'Verbatim: "Clinical decision limits were established at >600 μmol/L for TGAL and <20
+            U/L for GALT". The measurand is total galactose (TGAL); see the diagnosis notes on the code.
+            The source states ">600", so exactly 600 is negative there; the half-open band places exactly
+            600 in the positive band. The programme concluded that a TGAL limit low enough to capture
+            GALE and GALM deficiencies produced more false positives, and recommended treating those as
+            non-target conditions.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 600.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 600.0
+            unit: umol/L
+            abnormal_flag: HIGH
+            interpretation: Triggers second-tier GALT activity on the same spot.
+        - loinc_term:
+            id: LOINC:42906-8
+            label: Galactose 1 phosphate uridyl transferase [Enzymatic activity/volume] in DBS
+          unit: U/dL
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The abstract gives the cut-off value
+            without the inequality; GALT deficiency is low activity, so results below the value are the
+            positive side. Note the unit: 2.0 U/dL is numerically 20 U/L, the same figure as the Victorian
+            limit on a different assay.'
+          interpretation_bands:
+          - name: Screen positive
+            upper_bound: 2.0
+            unit: U/dL
+            abnormal_flag: LOW
+          - name: Screen negative
+            lower_bound: 2.0
+            unit: U/dL
+            abnormal_flag: NORMAL
+        - loinc_term:
+            id: LOINC:54085-6
+            label: Galactose [Moles/volume] in DBS
+          unit: umol/L
+          population: newborn screening, the Netherlands, cut-offs in force from July 2015 (GSP assay)
+          notes: 'Verbatim: "adjusting the COVs for GALT to 2.0 U/dl and TGAL to 1,100 μmol/l improved
+            specificity of screening for classical galactosemia". The measurand is total galactose (TGAL).
+            The abstract gives the value without the inequality; galactose accumulates in the disease,
+            so results above the value are the positive side.'
+          interpretation_bands:
+          - name: Screen negative
+            upper_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: NORMAL
+          - name: Screen positive
+            lower_bound: 1100.0
+            unit: umol/L
+            abnormal_flag: HIGH
+        notes: 'Newborn screening detects most infants with classic galactosemia and enables early dietary
+          treatment before severe neonatal injury develops.
+
+          On the total-galactose code: the Monarch KG serves no DBS code whose component is the galactose
+          plus galactose-1-phosphate sum. Searches run against the KG ClinicalMeasurement index on 2026-10-06
+          were "Galactose DBS", "Galactose-1-phosphate DBS", "Galactose+Galactose 1 phosphate", "Galactose.total"
+          and "total galactose"; the DBS codes returned were LOINC:54084-9 / LOINC:54085-6 (Galactose,
+          mass and moles per volume), LOINC:40842-7 (Galactose 1 phosphate, mass/volume) and the GALT
+          activity and presence codes. LOINC:54085-6 is bound with the measurand carried in preferred_term;
+          the two reference ranges keyed on it are total-galactose decision limits and should be read
+          as such.
+
+          '
+      selected_evidence:
+        snippet: Newborn screening for classical galactosemia in the Netherlands is performed by five
+          laboratories and is based on the measurement of galactose 1-phosphate-uridyltransferase (GALT)
+          activity and total galactose (TGAL) in heel prick blood spots.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27207469
+      reference_title: Establishing New Cut-Off Limits for Galactose 1-Phosphate-Uridyltransferase Deficiency
+        for the Dutch Newborn Screening Programme.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names the two dried-blood-spot analytes the measurements bind.
+    first_seen_at: '2026-10-19T16:43:44.467471+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:43:44.467471+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:43:44.467471+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:27207469
 assessments:
   72a88c96742fa043c939c3f1646c83fe9e348b6fe7eb0258249c6205be48df14:
     input_sha256: 295e82a4e8bc248e264e96026c729239fbf919a798e0ddfff12f05917f8245d3
@@ -12330,3 +12786,1419 @@ assessments:
       request_sha256: 97aa281ed435504153add339adad798d25d69776ec2aac7baef4079c236bfeda
       request_sha256s:
       - 97aa281ed435504153add339adad798d25d69776ec2aac7baef4079c236bfeda
+  3a690290adb3cfe6f36ad6dcce85ffd9cdf0a9c6746b88689d7ca1da59a76ffd:
+    input_sha256: 0b72a10576039da456b4864ceb43dbcc541530cb5132b08c2b7c49f535c82ef7
+    configuration_sha256: 95921af2a4f2c33ced24e41c0197baf7a0c9edecca9deba410c47baeea2849b1
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:41.850814+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.07
+            PARTIAL: 0.22
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.18
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+          confidence: 0.66
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.08
+            PARTIAL: 0.21
+          confidence: 0.56
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.22
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.22
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/measurements/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.46
+            PARTIAL: 0.35
+          confidence: 0.19
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.27
+            PARTIAL: 0.47000000000000003
+          confidence: 0.21
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.74
+            PARTIAL: 0.19
+          confidence: 0.61
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.61
+            PARTIAL: 0.27
+          confidence: 0.41
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.57
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.43
+            PARTIAL: 0.42
+          confidence: 0.14
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.85
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.65
+            PARTIAL: 0.23
+          confidence: 0.48
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.65
+            PARTIAL: 0.31
+          confidence: 0.48
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.62
+            PARTIAL: 0.26
+          confidence: 0.43
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.68
+            PARTIAL: 0.18
+          confidence: 0.52
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.73
+            PARTIAL: 0.19
+          confidence: 0.59
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.52
+            PARTIAL: 0.25
+          confidence: 0.28
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.57
+            PARTIAL: 0.32
+          confidence: 0.35
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.85
+            PARTIAL: 0.12
+          confidence: 0.77
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.7
+            PARTIAL: 0.18
+          confidence: 0.55
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.63
+            PARTIAL: 0.27
+          confidence: 0.45
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.78
+            PARTIAL: 0.18
+          confidence: 0.67
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.81
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.69
+            PARTIAL: 0.2
+          confidence: 0.53
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.71
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.76
+            PARTIAL: 0.17
+          confidence: 0.64
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.63
+            PARTIAL: 0.22
+          confidence: 0.45
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.69
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.58
+            PARTIAL: 0.34
+          confidence: 0.37
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.62
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.84
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.68
+            PARTIAL: 0.19
+          confidence: 0.52
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.58
+            PARTIAL: 0.3
+          confidence: 0.37
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.79
+            PARTIAL: 0.17
+          confidence: 0.69
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.74
+            PARTIAL: 0.17
+          confidence: 0.61
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.64
+            PARTIAL: 0.19
+          confidence: 0.46
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/reference_ranges/3/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.68
+            PARTIAL: 0.29
+          confidence: 0.52
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.59
+            PARTIAL: 0.31
+          confidence: 0.38
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.36
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.87
+            PARTIAL: 0.1
+          confidence: 0.8
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.68
+            PARTIAL: 0.2
+          confidence: 0.52
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.55
+            PARTIAL: 0.29
+          confidence: 0.33
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.72
+            PARTIAL: 0.19
+          confidence: 0.58
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.17
+            PARTIAL: 0.41
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 64712
+        output_tokens: 3606
+      elapsed_seconds: 0.566
+      request_sha256: 41e43d56370c8f4c78092e9a9f17f05f27b3c2ef43699fc41886ed6b56091d80
+      request_sha256s:
+      - 41e43d56370c8f4c78092e9a9f17f05f27b3c2ef43699fc41886ed6b56091d80
+  3b5c61f62b88f089079fb0209664df5d4d5c3698c99c0060de898a187bcca52a:
+    input_sha256: 8fc83c54d72853197f71c384ddfc7ead008a66d652c3b2251975a3fab6f7fac2
+    configuration_sha256: 95921af2a4f2c33ced24e41c0197baf7a0c9edecca9deba410c47baeea2849b1
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:44.469817+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.07
+            PARTIAL: 0.42
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.03
+            PARTIAL: 0.13
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.04
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.03
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.06
+            PARTIAL: 0.31
+          confidence: 0.45
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.09
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.11
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.28
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/reference_ranges/0/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.44
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.35
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.72
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.59
+            PARTIAL: 0.34
+          confidence: 0.38
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.45
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.51
+            PARTIAL: 0.39
+          confidence: 0.27
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.62
+            PARTIAL: 0.3
+          confidence: 0.43
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.45
+            PARTIAL: 0.38
+          confidence: 0.18
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.33
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.64
+            PARTIAL: 0.33
+          confidence: 0.46
+        /assertion/reference_ranges/1/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.43
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.49
+            PARTIAL: 0.38
+          confidence: 0.23
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.7
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.53
+            PARTIAL: 0.37
+          confidence: 0.3
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.6
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.5
+            PARTIAL: 0.34
+          confidence: 0.25
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.4
+            PARTIAL: 0.32
+          confidence: 0.1
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.51
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.67
+            PARTIAL: 0.28
+          confidence: 0.51
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.56
+            PARTIAL: 0.36
+          confidence: 0.34
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.56
+            PARTIAL: 0.35
+          confidence: 0.34
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.46
+            PARTIAL: 0.43
+          confidence: 0.19
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.69
+            PARTIAL: 0.27
+          confidence: 0.53
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.57
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.56
+            PARTIAL: 0.32
+          confidence: 0.34
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.49
+            PARTIAL: 0.31
+          confidence: 0.23
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.73
+            PARTIAL: 0.24
+          confidence: 0.59
+        /assertion/reference_ranges/3/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.41
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.39
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.68
+            PARTIAL: 0.29
+          confidence: 0.52
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.54
+            PARTIAL: 0.34
+          confidence: 0.31
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.52
+            PARTIAL: 0.41
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 64710
+        output_tokens: 3595
+      elapsed_seconds: 0.4203
+      request_sha256: e116ed6a1c642b89e05c9d550bad7e012ea415565baae12159f235bcfc80bc6d
+      request_sha256s:
+      - e116ed6a1c642b89e05c9d550bad7e012ea415565baae12159f235bcfc80bc6d
+  a811b6f6c1d241c7227cdce30eeece74fc090a4777c14fa4d551b01e27eb5b65:
+    input_sha256: 36e080e5a54c707dbeb99864473a0f9beabb48e823d52d49d1754bbb0ee254b3
+    configuration_sha256: 95921af2a4f2c33ced24e41c0197baf7a0c9edecca9deba410c47baeea2849b1
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:43:44.467471+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.03
+            PARTIAL: 0.43
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.05
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.07
+            PARTIAL: 0.21
+          confidence: 0.58
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.08
+            PARTIAL: 0.23
+          confidence: 0.53
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.11
+            PARTIAL: 0.38
+          confidence: 0.27
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.16
+            PARTIAL: 0.41
+          confidence: 0.14
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.51
+            PARTIAL: 0.32
+          confidence: 0.27
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.21
+            PARTIAL: 0.26
+          confidence: 0.3
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.67
+            PARTIAL: 0.3
+          confidence: 0.51
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.65
+            PARTIAL: 0.32
+          confidence: 0.48
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.4
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.64
+            PARTIAL: 0.33
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.42
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.58
+            PARTIAL: 0.38
+          confidence: 0.37
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.44
+            PARTIAL: 0.4
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.51
+            PARTIAL: 0.34
+          confidence: 0.27
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.47
+            PARTIAL: 0.33
+          confidence: 0.2
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.28
+            PARTIAL: 0.33
+          confidence: 0.09
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.68
+            PARTIAL: 0.23
+          confidence: 0.52
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.48
+            PARTIAL: 0.41
+          confidence: 0.22
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.54
+            PARTIAL: 0.36
+          confidence: 0.31
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.45
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.49
+            PARTIAL: 0.36
+          confidence: 0.23
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.52
+            PARTIAL: 0.34
+          confidence: 0.28
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.62
+            PARTIAL: 0.32
+          confidence: 0.43
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.65
+            PARTIAL: 0.28
+          confidence: 0.48
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.47
+            PARTIAL: 0.33
+          confidence: 0.2
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.5700000000000001
+            PARTIAL: 0.36
+          confidence: 0.36
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.43
+            PARTIAL: 0.32
+          confidence: 0.14
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.27
+            PARTIAL: 0.29
+          confidence: 0.16
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.62
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/reference_ranges/2/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.13
+            PARTIAL: 0.25
+          confidence: 0.43
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.49
+            PARTIAL: 0.36
+          confidence: 0.23
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.48
+            PARTIAL: 0.36
+          confidence: 0.22
+        /assertion/reference_ranges/2/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.58
+            PARTIAL: 0.35
+          confidence: 0.37
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.53
+            PARTIAL: 0.33
+          confidence: 0.3
+        /assertion/reference_ranges/2/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.49
+            PARTIAL: 0.34
+          confidence: 0.23
+        /assertion/reference_ranges/2/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/reference_ranges/2/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.49
+            PARTIAL: 0.39
+          confidence: 0.23
+        /assertion/reference_ranges/2/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.4
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.32
+            PARTIAL: 0.33999999999999997
+          confidence: 0.01
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.2
+            PARTIAL: 0.25
+          confidence: 0.33
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.62
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/reference_ranges/3/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.05
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/reference_ranges/3/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.36
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.25
+            PARTIAL: 0.47000000000000003
+          confidence: 0.21
+        /assertion/reference_ranges/3/interpretation_bands/0/upper_bound:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.35
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.46
+            PARTIAL: 0.43
+          confidence: 0.19
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.3
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/3/interpretation_bands/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.34
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/reference_ranges/3/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.45
+            PARTIAL: 0.42
+          confidence: 0.18
+        /assertion/reference_ranges/3/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.57
+            PARTIAL: 0.36
+          confidence: 0.35
+        /assertion/reference_ranges/3/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.44
+            PARTIAL: 0.39
+          confidence: 0.16
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.36
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 64728
+        output_tokens: 3567
+      elapsed_seconds: 0.4214
+      request_sha256: 41fdadefa2e247f6f12be80ecf2c18f672b3098ff25f7a368cc5ed03e0d80b59
+      request_sha256s:
+      - 41fdadefa2e247f6f12be80ecf2c18f672b3098ff25f7a368cc5ed03e0d80b59

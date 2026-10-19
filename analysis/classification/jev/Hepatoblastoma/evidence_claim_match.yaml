@@ -2645,6 +2645,65 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/1
       reference: PMID:34441025
+  f28d3b2381da15ba51479666ac8829a6ab04be285f59cc32a051d230677095ee:
+    claim:
+      about:
+        disease:
+          name: Hepatoblastoma
+          disease_term:
+            preferred_term: hepatoblastoma
+            term:
+              id: MONDO:0018666
+              label: hepatoblastoma
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Fetal Hepatic Progenitor State Maintenance
+        description: Hepatoblastoma retains hepatic progenitor and fetal liver programs rather than completing
+          normal hepatocytic differentiation, aligning the tumor with an immature developmental state.
+        cell_types:
+        - preferred_term: hepatoblast
+          term:
+            id: CL:0005026
+            label: hepatoblast
+        biological_processes:
+        - preferred_term: cell differentiation
+          modifier: DECREASED
+          term:
+            id: GO:0030154
+            label: cell differentiation
+        locations:
+        - preferred_term: liver
+          term:
+            id: UBERON:0002107
+            label: liver
+      selected_evidence:
+        snippet: 'Our analysis of 88 clinically annotated HBs revealed three risk-stratifying molecular
+          subtypes that are characterized by differential activation of hepatic progenitor cell markers
+          and metabolic pathways:'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27775819
+      reference_title: Genomic analysis of hepatoblastoma identifies distinct molecular and prognostic
+        subgroups.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports persistence of hepatic progenitor-state programs across clinically relevant
+        hepatoblastoma subgroups.
+    first_seen_at: '2026-10-19T16:58:47.820127+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:58:47.820127+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:58:47.820127+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:27775819
 assessments:
   cfc389f5ae6c431f189ecc193992c172982d52a47d515cfc8dac33e3b6908983:
     input_sha256: eb9fe77c4aa1ab9e358b6231ac9e431bfe99a4f35aa7c7e0644bed7bf47ddb41
@@ -5993,3 +6052,97 @@ assessments:
       request_sha256: 0ef72f2f1a9bea8ec73d5cc87cd855fff20e3c2ae9ee7c06164e50214d3b2b27
       request_sha256s:
       - 0ef72f2f1a9bea8ec73d5cc87cd855fff20e3c2ae9ee7c06164e50214d3b2b27
+  c4d792b07f768d96aeb93a7a70e548eaba52e9f8dcca5560325f89f0e6aa8ff7:
+    input_sha256: f28d3b2381da15ba51479666ac8829a6ab04be285f59cc32a051d230677095ee
+    configuration_sha256: dab5492809318622eeb0cc0ac3f5efacf2cfa707e54c92879132b86903c2d76b
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:58:47.820127+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.02
+            PARTIAL: 0.8
+          confidence: 0.7
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.02
+            PARTIAL: 0.6799999999999999
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.01
+            PARTIAL: 0.81
+          confidence: 0.72
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.02
+            PARTIAL: 0.45
+          confidence: 0.3
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.04
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.05
+            PARTIAL: 0.8
+          confidence: 0.7
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.07
+            PARTIAL: 0.87
+          confidence: 0.8
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.06
+            PARTIAL: 0.79
+          confidence: 0.69
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.45
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11491
+        output_tokens: 544
+      elapsed_seconds: 0.3251
+      request_sha256: 15256513ded9ca7430cac667118c43f48b1391f9aea552810e57a1e8fd5008ae
+      request_sha256s:
+      - 15256513ded9ca7430cac667118c43f48b1391f9aea552810e57a1e8fd5008ae

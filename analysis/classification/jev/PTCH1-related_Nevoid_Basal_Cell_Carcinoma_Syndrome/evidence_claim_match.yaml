@@ -1331,6 +1331,66 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/0
       reference: PMID:33860896
+  37c9c20efc5ab92483026fd1d00fda6183fa5aeb17c26094fdae90388a80fabd:
+    claim:
+      about:
+        disease:
+          name: PTCH1-related nevoid basal cell carcinoma syndrome
+          disease_term:
+            preferred_term: basal cell nevus syndrome 1
+            term:
+              id: MONDO:0958174
+              label: basal cell nevus syndrome 1
+        context:
+        - path: /environmental/0
+          value:
+            name: Ultraviolet Radiation
+            exposure_term:
+              preferred_term: exposure to ultraviolet radiation
+              term:
+                id: ECTO:0000006
+                label: exposure to ultraviolet radiation
+            description: UV exposure accelerates the appearance and multiplicity of basal cell carcinomas.
+          role: ancestor
+      assertion_type: EnvironmentalMechanismTarget
+      assertion:
+        target: PTCH1 Loss with SMO Disinhibition
+        environmental_effect: EXACERBATES
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+        description: Sun exposure adds somatic damage on top of an already-inherited first hit, increasing
+          tumour burden without being necessary for the syndrome. EXACERBATES rather than TRIGGERS because
+          this node bundles the germline variant with its somatic second hit, and ultraviolet light can
+          only act on the somatic half.
+      selected_evidence:
+        snippet: p53 and PTCH mutations were detected at a frequency of 33 and 40%, respectively, and
+          the mutations were predominantly UV-signature transition, C-->T transitions at dipyrimidine
+          sites and CC-->TT tandem mutations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /environmental/0
+    evidence_metadata:
+      reference: PMID:12007715
+      reference_title: 'Mutations of the p53 and PTCH gene in basal cell carcinomas: UV mutation signature
+        and strand bias.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: PTCH mutations recovered from basal cell carcinomas carry the C to T and CC to TT changes
+        at dipyrimidine sites that only ultraviolet light produces, so ultraviolet exposure is the mutagen
+        inactivating the gene. The series is sporadic disease; the inference here is that the same mutagenic
+        route supplies the somatic hit in germline carriers.
+    first_seen_at: '2026-10-19T17:01:27.728808+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:27.728808+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:27.728808+00:00'
+    occurrences:
+    - assertion_path: /environmental/0/influences_mechanisms/0
+      evidence_path: /environmental/0/influences_mechanisms/0/evidence/0
+      reference: PMID:12007715
 assessments:
   319aa8152850b55c4dc2f91c8ac378540a51fd51d853b88db1d876a8b4322e9b:
     input_sha256: 069c91d6087cb539209c7519aaa1040cfd07281f053ce11c131d583259ea95d4
@@ -3233,3 +3293,69 @@ assessments:
       request_sha256: 06fbb155b1bade46531def0494e772aa4cace1f44d0a406d36e5822535b4bab3
       request_sha256s:
       - 06fbb155b1bade46531def0494e772aa4cace1f44d0a406d36e5822535b4bab3
+  7c006413157e17a90ef6132c0fd373d58f09376196cb44af233a3cb1d772653b:
+    input_sha256: 37c9c20efc5ab92483026fd1d00fda6183fa5aeb17c26094fdae90388a80fabd
+    configuration_sha256: 5556d06d121a1beeb1362f24c9ffdd547e64e016fe1d2f440777bde1dab2f651
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:27.728808+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.05
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.11
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.07
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/environmental_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.23
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.06
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.13
+            PARTIAL: 0.77
+          confidence: 0.66
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45999999999999996
+            MISMATCH: 0.11
+            PARTIAL: 0.43
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7627
+        output_tokens: 320
+      elapsed_seconds: 0.2072
+      request_sha256: e28f3d0549c9177759e86c58e3ebb076106b25f5ac6a702135400bac04edb5d9
+      request_sha256s:
+      - e28f3d0549c9177759e86c58e3ebb076106b25f5ac6a702135400bac04edb5d9

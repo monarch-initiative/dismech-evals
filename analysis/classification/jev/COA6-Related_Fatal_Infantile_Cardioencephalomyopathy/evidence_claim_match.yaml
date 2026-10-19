@@ -8198,6 +8198,74 @@ inputs:
     - assertion_path: /diagnosis/1
       evidence_path: /diagnosis/1/evidence/1
       reference: PMID:26160915
+  35ef5030c86142547d8176c9c040e3356abe17f836b2f0c254a43bb26944a91b:
+    claim:
+      about:
+        disease:
+          name: COA6-Related Fatal Infantile Cardioencephalomyopathy
+          disease_term:
+            preferred_term: COA6-related fatal infantile cardioencephalomyopathy (CEMCOX4/MC4DN13)
+            term:
+              id: MONDO:0014668
+              label: cardioencephalomyopathy, fatal infantile, due to cytochrome c oxidase deficiency
+                4
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Impaired CuA Metallation of COX2
+            biological_scale: MOLECULAR
+            description: COA6 dysfunction compromises maturation of the binuclear CuA centre of COX2.
+              COA6 interacts with newly synthesized COX2 and copper-delivery proteins. Reconstitution
+              studies support transfer of Cu(I) from SCO1 to reduced COX2; the degree of failed metallation
+              has not been directly quantified in the reported patient myocardium.
+            molecular_functions:
+            - preferred_term: copper ion binding
+              modifier: DECREASED
+              term:
+                id: GO:0005507
+                label: copper ion binding
+            chemical_entities:
+            - preferred_term: copper(1+)
+              term:
+                id: CHEBI:49552
+                label: copper(1+)
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: COX2 Destabilization
+        causal_link_type: DIRECT
+        description: Defective maturation is associated with reduced COX2 stability in experimental systems;
+          the kinetics vary with the model and assay.
+      selected_evidence:
+        snippet: Absence of COA6 leads to fast turnover of newly synthesized COX2 and a concomitant reduction
+          in cytochrome c oxidase levels.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:25959673
+      reference_title: Cooperation between COA6 and SCO2 in COX2 maturation during cytochrome c oxidase
+        assembly links two mitochondrial cardiomyopathies.
+      evidence_source: MODEL_ORGANISM
+      explanation: The 2015 full text measures rapid turnover of newly synthesized Cox2 in coa6-deleted
+        yeast. It supports this mechanism without establishing identical turnover kinetics in every patient
+        cell line.
+      quote_role: PRIMARY_RESULT
+    first_seen_at: '2026-10-19T16:38:46.178409+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:38:46.178409+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:38:46.178409+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:25959673
 assessments:
   a0dab2790d7c14456068f8278ff510b6f58b48a7ca358c0e868845bef91fde7c:
     input_sha256: 7c2bd925481681d0a812f5f44a716004e9c97e9ae6c93bb996d6f0e3f684e2d3
@@ -19713,3 +19781,62 @@ assessments:
       request_sha256: 37a79bd05740ba229656e6dc6d93ae2dbc3f4c6360d2459ad650da7aa68a693a
       request_sha256s:
       - 37a79bd05740ba229656e6dc6d93ae2dbc3f4c6360d2459ad650da7aa68a693a
+  5ab909accbd8ca55e9cdc71ef9d1118c2d3cac7ee62f40655cb53ffdcfad3967:
+    input_sha256: 35ef5030c86142547d8176c9c040e3356abe17f836b2f0c254a43bb26944a91b
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:38:46.178409+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.07
+            PARTIAL: 0.49
+          confidence: 0.23
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.11
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.04
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.04
+            PARTIAL: 0.44
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.04
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.18
+            PARTIAL: 0.49
+          confidence: 0.23
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6602
+        output_tokens: 272
+      elapsed_seconds: 0.2173
+      request_sha256: e5bdf3690a4b24b061a3fdc3ea1adfeb26a3baab2a550e22f35f4f8575c569c0
+      request_sha256s:
+      - e5bdf3690a4b24b061a3fdc3ea1adfeb26a3baab2a550e22f35f4f8575c569c0

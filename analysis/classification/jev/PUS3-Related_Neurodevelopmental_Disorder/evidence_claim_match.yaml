@@ -5353,6 +5353,58 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:27055666
+  6c7a0785b7c51558f68e2bea69d0f7a5fca5020ffca25c3231ffad3b8440ebb6:
+    claim:
+      about:
+        disease:
+          name: PUS3-Related Neurodevelopmental Disorder
+          disease_term:
+            preferred_term: PUS3-related neurodevelopmental disorder (NEDMIGS)
+            term:
+              id: MONDO:0014886
+              label: severe growth deficiency-strabismus-extensive dermal melanocytosis-intellectual disability
+                syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: tRNA pseudouridine assay for variant interpretation
+        description: Measuring PUS3-dependent pseudouridine in patient-derived cells is the direct functional
+          readout of the enzyme defect and is the assay that resolves a PUS3 variant of uncertain significance.
+          It is essential for missense alleles, because p.Tyr71Cys demonstrates that a variant can look
+          catalytically normal in a purified enzyme assay while being a functional null in the cell -
+          so protein-level and pseudouridine-level measurement in patient cells, not in vitro catalysis,
+          is the informative test. This remains a research-level assay rather than routine diagnostics.
+        diagnosis_term:
+          preferred_term: molecular analysis
+          term:
+            id: NCIT:C19770
+            label: Molecular Analysis
+      selected_evidence:
+        snippet: Consistent with the known role of Pus3 in isomerizing uracil to pseudouridine at positions
+          38 and 39 in tRNA, we found a significant reduction in this post-transcriptional modification
+          of tRNA in patient cells.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27055666
+      reference_title: A homozygous truncating mutation in PUS3 expands the role of tRNA modification
+        in normal cognition.
+      evidence_source: IN_VITRO
+      explanation: The original demonstration of the assay applied to patient-derived cells.
+    first_seen_at: '2026-10-19T17:01:28.541814+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:28.541814+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:28.541814+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/2
+      reference: PMID:27055666
 assessments:
   098b8d7e43e218648759d33e86e1278f4a3685a629f18b292094f4c3ef47a044:
     input_sha256: 95ec83e99fc0c74f6f00fec12dfb4c404d5e3929d3a37cdd5e73162b6ad5b60b
@@ -12362,3 +12414,62 @@ assessments:
       request_sha256: 12c927faade21e0e83f67c842af555141ee82ab3c41cf86e9b742fcce5275c8b
       request_sha256s:
       - 12c927faade21e0e83f67c842af555141ee82ab3c41cf86e9b742fcce5275c8b
+  cc1e7478e3d12e272482524a722890c81e436019bcef3b2842effdd3dcc59b84:
+    input_sha256: 6c7a0785b7c51558f68e2bea69d0f7a5fca5020ffca25c3231ffad3b8440ebb6
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:28.541814+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.07
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.13
+            PARTIAL: 0.37
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.07
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.2
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.19
+            PARTIAL: 0.34
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6412
+        output_tokens: 278
+      elapsed_seconds: 0.2122
+      request_sha256: ee28303144c375c015c2e925d04f12ba207ca52da50d682de2e699d882ac7efd
+      request_sha256s:
+      - ee28303144c375c015c2e925d04f12ba207ca52da50d682de2e699d882ac7efd

@@ -636,6 +636,180 @@ inputs:
     - assertion_path: /phenotypes/5
       evidence_path: /phenotypes/5/evidence/0
       reference: PMID:39753114
+  0538a06ac5c1bbe1b4afb3c9d3cfde196de6d9b1e9bea0387180e1b7ee345eef:
+    claim:
+      about:
+        disease:
+          name: EEFSEC Deficiency
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: EEFSEC pathogenic variants
+        gene_term:
+          preferred_term: EEFSEC
+          term:
+            id: hgnc:24614
+            label: EEFSEC
+        association: Loss-of-function
+        relationship_type: CAUSATIVE
+        variant_origin: GERMLINE
+        presence: Positive
+        notes: Biallelic EEFSEC variants reduce activity of the specialized elongation factor required
+          for Sec-tRNA delivery during selenoprotein translation.
+      selected_evidence:
+        snippet: Exome or genome sequencing identified six different bi-allelic EEFSEC variants in nine
+          individuals from eight unrelated families.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:39753114
+      reference_title: 'EEFSEC deficiency: A selenopathy with early-onset neurodegeneration.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports biallelic EEFSEC variants as the causal genetic basis.
+    first_seen_at: '2026-10-19T16:44:44.158588+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:44:44.158588+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:44:44.158588+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:39753114
+  4814d9361763fd9b4ef56379e60a4a3b4475b9a6796ec6562d735ad2b09e5f7e:
+    claim:
+      about:
+        disease:
+          name: EEFSEC Deficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: EEFSEC-dependent Sec-tRNA elongation defect
+        description: EEFSEC/eEFSec is the specialized translation elongation factor that promotes selenocysteine
+          incorporation into selenoproteins. Pathogenic variants impair this elongation-stage Sec-tRNA
+          delivery mechanism.
+        genes:
+        - preferred_term: EEFSEC
+          term:
+            id: hgnc:24614
+            label: EEFSEC
+        molecular_functions:
+        - preferred_term: selenocysteine-specific translation elongation factor activity
+          term:
+            id: GO:0003746
+            label: translation elongation factor activity
+          modifier: DECREASED
+        biological_processes:
+        - preferred_term: translational elongation
+          term:
+            id: GO:0006414
+            label: translational elongation
+          modifier: DECREASED
+        - preferred_term: selenocysteine incorporation
+          term:
+            id: GO:0001514
+            label: selenocysteine incorporation
+          modifier: DECREASED
+        chemical_entities:
+        - preferred_term: selenocysteine
+          term:
+            id: CHEBI:9093
+            label: selenocysteine
+      selected_evidence:
+        snippet: A specialized translation elongation factor, eEFSec in eukaryotes and SelB in prokaryotes,
+          promotes selenocysteine incorporation into selenoproteins by a still poorly understood mechanism.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:27708257
+      reference_title: Crystal structures of the human elongation factor eEFSec suggest a non-canonical
+        mechanism for selenocysteine incorporation.
+      evidence_source: IN_VITRO
+      explanation: Defines the elongation-factor role of eEFSec in selenocysteine incorporation.
+    first_seen_at: '2026-10-19T16:44:44.878746+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:44:44.878746+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:44:44.878746+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:27708257
+  6911e1800092f1d7d9f966450ad73343007473aae19ed844dde226ef6afcd496:
+    claim:
+      about:
+        disease:
+          name: EEFSEC Deficiency
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: EEFSEC-dependent Sec-tRNA elongation defect
+            description: EEFSEC/eEFSec is the specialized translation elongation factor that promotes
+              selenocysteine incorporation into selenoproteins. Pathogenic variants impair this elongation-stage
+              Sec-tRNA delivery mechanism.
+            genes:
+            - preferred_term: EEFSEC
+              term:
+                id: hgnc:24614
+                label: EEFSEC
+            molecular_functions:
+            - preferred_term: selenocysteine-specific translation elongation factor activity
+              term:
+                id: GO:0003746
+                label: translation elongation factor activity
+              modifier: DECREASED
+            biological_processes:
+            - preferred_term: translational elongation
+              term:
+                id: GO:0006414
+                label: translational elongation
+              modifier: DECREASED
+            - preferred_term: selenocysteine incorporation
+              term:
+                id: GO:0001514
+                label: selenocysteine incorporation
+              modifier: DECREASED
+            chemical_entities:
+            - preferred_term: selenocysteine
+              term:
+                id: CHEBI:9093
+                label: selenocysteine
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Reduced fibroblast selenoprotein levels
+        description: Reduced EEFSEC function lowers cellular selenoprotein levels.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: leading to lower levels of selenoproteins in fibroblasts.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:39753114
+      reference_title: 'EEFSEC deficiency: A selenopathy with early-onset neurodegeneration.'
+      evidence_source: IN_VITRO
+      explanation: Supports reduced cellular selenoprotein levels downstream of EEFSEC dysfunction.
+    first_seen_at: '2026-10-19T16:44:44.884217+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:44:44.884217+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:44:44.884217+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:39753114
 assessments:
   e0385bd6fef3908920b630040403a602777cf033c35ce322362c575f6445f3dd:
     input_sha256: 30841684a95c3ae61607f5ba320ccbdc4e29a577e3ab450e3d50d7fa12f97be2
@@ -1596,3 +1770,285 @@ assessments:
       request_sha256: ed9c4d74b4c0f6d05d67281d6e9c95972e603247a1c44057cc7d741c49be724a
       request_sha256s:
       - ed9c4d74b4c0f6d05d67281d6e9c95972e603247a1c44057cc7d741c49be724a
+  33aba5ab5a9769d71b520e268259ecd73d5b6036b35796244312ac2272eb401c:
+    input_sha256: 0538a06ac5c1bbe1b4afb3c9d3cfde196de6d9b1e9bea0387180e1b7ee345eef
+    configuration_sha256: ee68114d443ec14ff7291aca90f2a9bce957c9fded5a505a52e114626281a2df
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:44:44.158588+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.03
+            PARTIAL: 0.73
+          confidence: 0.59
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.08
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.04
+            PARTIAL: 0.31
+          confidence: 0.48
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.06
+            PARTIAL: 0.19
+          confidence: 0.62
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.13
+            PARTIAL: 0.76
+          confidence: 0.64
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.02
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.02
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.02
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.32
+            PARTIAL: 0.65
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10435
+        output_tokens: 460
+      elapsed_seconds: 0.3798
+      request_sha256: 793fa4c39dc7b426bc7d3e06b7de21c39b6f01227a2001ce93656b3e4f664519
+      request_sha256s:
+      - 793fa4c39dc7b426bc7d3e06b7de21c39b6f01227a2001ce93656b3e4f664519
+  cf9d80f6636025f9a3f1f510787cb3c3c7d1fc25a1a23c340dee6800c6e1e03e:
+    input_sha256: 4814d9361763fd9b4ef56379e60a4a3b4475b9a6796ec6562d735ad2b09e5f7e
+    configuration_sha256: 9d7d0e81b095103075e1bf11944970c0fc28b1428d91b0d3f14c58640db45c1a
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:44:44.878746+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.1
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.18
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.06
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.04
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.06
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.16
+            PARTIAL: 0.39
+          confidence: 0.18
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.22
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.17
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.28
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.23
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.16
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.24
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.21
+            PARTIAL: 0.61
+          confidence: 0.41
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.13
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.28
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/chemical_entities/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.03
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/chemical_entities/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.06
+            PARTIAL: 0.23
+          confidence: 0.56
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17918
+        output_tokens: 865
+      elapsed_seconds: 0.4521
+      request_sha256: 88dff6c2b73f6993510a17ce4f82ba7ba1b23f5c61d9523eaf23b0942a3a9a0c
+      request_sha256s:
+      - 88dff6c2b73f6993510a17ce4f82ba7ba1b23f5c61d9523eaf23b0942a3a9a0c
+  87603d38e23ad24efb88f621f5fd4be5d6c282089d3513408ba8dae6973a4888:
+    input_sha256: 6911e1800092f1d7d9f966450ad73343007473aae19ed844dde226ef6afcd496
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:44:44.884217+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.14
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.04
+            PARTIAL: 0.27
+          confidence: 0.53
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.24
+            PARTIAL: 0.23
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6605
+        output_tokens: 269
+      elapsed_seconds: 0.3437
+      request_sha256: af709987dd12bdf8c51fd83a25179a91925a38b7525fac04286f65b47eaf069d
+      request_sha256s:
+      - af709987dd12bdf8c51fd83a25179a91925a38b7525fac04286f65b47eaf069d

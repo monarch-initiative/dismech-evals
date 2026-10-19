@@ -2590,6 +2590,57 @@ inputs:
     - assertion_path: /animal_models/0
       evidence_path: /animal_models/0/evidence/0
       reference: PMID:32663239
+  03e84948b569cf8f17fcacea21aa69e2079b8fd335e2c480d6711fbfaa7a31fc:
+    claim:
+      about:
+        disease:
+          name: Quebec Platelet Disorder
+          disease_term:
+            preferred_term: Quebec platelet disorder
+            term:
+              id: MONDO:0011136
+              label: Quebec platelet disorder
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Platelet Urokinase Plasminogen Activator Measurement
+        description: The biochemical test that defines affected status. Platelet uPA is markedly increased
+          while plasma and urinary uPA are normal, so the assay must be run on platelets rather than on
+          plasma. In the founder-family study, affected and unaffected status was assigned on this assay
+          together with fibrinogen degradation, which is why the resulting bleeding frequencies are anchored
+          to a biochemical rather than a clinical definition.
+        diagnosis_term:
+          preferred_term: platelet urokinase plasminogen activator assay
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+      selected_evidence:
+        snippet: The diagnosis of Quebec Platelet Disorder was confirmed by urokinase-specific Western
+          blots.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18791940
+      reference_title: The value of proteomics for the diagnosis of a platelet-related bleeding disorder.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: A worked diagnostic case in which urokinase-specific Western blotting was the confirmatory
+        step.
+    first_seen_at: '2026-10-19T17:01:38.902806+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:38.902806+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:38.902806+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:18791940
 assessments:
   a7b5ceaf26c54bca775eced27a45894e9c7951cda549a57d5f40d4fc1a91d6a3:
     input_sha256: d4a08f868cf2be9b4b78a24f26bea191d233567ea00461fc3cd3b375b7403a3a
@@ -5736,3 +5787,62 @@ assessments:
       request_sha256: 786f9ad8d7c2c926825c271a3ee3097b1549e1e8caf7f8a5281bfcd855901a4f
       request_sha256s:
       - 786f9ad8d7c2c926825c271a3ee3097b1549e1e8caf7f8a5281bfcd855901a4f
+  36bc9e33dee15482c30e88843ea2d00940258b31e2a517c30c5624d61aa32602:
+    input_sha256: 03e84948b569cf8f17fcacea21aa69e2079b8fd335e2c480d6711fbfaa7a31fc
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:38.902806+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.08
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.15
+            PARTIAL: 0.41
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.32
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.11
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.2
+            PARTIAL: 0.42
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6320
+        output_tokens: 279
+      elapsed_seconds: 0.4544
+      request_sha256: 0fbab42b58d9d309fcbc958403b07d097eb3f758c6a66c02184d77f7e11916b1
+      request_sha256s:
+      - 0fbab42b58d9d309fcbc958403b07d097eb3f758c6a66c02184d77f7e11916b1

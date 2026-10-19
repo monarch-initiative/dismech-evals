@@ -11533,6 +11533,57 @@ inputs:
     - assertion_path: /environmental/2/influences_mechanisms/0
       evidence_path: /environmental/2/influences_mechanisms/0/evidence/0
       reference: PMID:33751033
+  63003fefcee73b61b562aec9cd6a97023364cd7261420346f806ac820d1680ef:
+    claim:
+      about:
+        disease:
+          name: IgG4-Related Disease
+          disease_term:
+            preferred_term: IgG4-related disease
+            term:
+              id: MONDO:0017287
+              label: immunoglobulin G4-related sclerosing disease
+        context:
+        - path: /pathophysiology/22
+          value:
+            name: Renal Parenchymal Fibroinflammatory Injury
+            description: Tubulointerstitial inflammation with IgG4-rich plasma cells and fibrosis can
+              impair intrinsic renal function. Membranous nephropathy occurs in a subset and may coexist.
+              Hypocomplementemia is associated, but the reviewed evidence does not establish a single
+              complement-mediated causal route for all renal injury.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Renal Insufficiency
+        description: Organ-localized fibroinflammation produces this clinical manifestation or complication.
+        causal_link_type: INDIRECT_KNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: tubulointerstitial nephritis with abundant IgG4+ plasma cells was the most common finding
+          (n = 14; 93.3%), and 4 (26.7%) patients had membranous nephropathy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/22/downstream/0
+      evidence_path: /pathophysiology/22/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/22
+    evidence_metadata:
+      reference: PMID:30596168
+      reference_title: Clinical Manifestations and Long-term Outcomes of IgG4-Related Kidney and Retroperitoneal
+        Involvement in a United Kingdom IgG4-Related Disease Cohort.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Renal biopsy findings concern the selected 15-biopsy renal cohort, not the prevalence
+        in all IgG4-RD.
+    first_seen_at: '2026-10-19T16:59:41.053828+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:41.053828+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:41.053828+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/22/downstream/0
+      evidence_path: /pathophysiology/22/downstream/0/evidence/0
+      reference: PMID:30596168
 assessments:
   6cd482df9ed9b40ad4f8d97dacc816c633bd57fd618e0f45ab015b30811d6d2e:
     input_sha256: 752ddcf9a2a4f010c330b1cfd0f1a471c6cff42b3765a829ba63386e3abd4b59
@@ -26746,3 +26797,62 @@ assessments:
       request_sha256: 417b3051aabf2b63abc6ef993a781e707a3e650d4d4c610d8e5b976bd6f8cd30
       request_sha256s:
       - 417b3051aabf2b63abc6ef993a781e707a3e650d4d4c610d8e5b976bd6f8cd30
+  3fbcda122f9b3b33445cefb2e3fff373e2e6b68c9770c4472c19ee49c7f3cedd:
+    input_sha256: 63003fefcee73b61b562aec9cd6a97023364cd7261420346f806ac820d1680ef
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:41.053828+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.05
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.03
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.16
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.08
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.05
+            PARTIAL: 0.45
+          confidence: 0.25
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6422
+        output_tokens: 271
+      elapsed_seconds: 0.1617
+      request_sha256: 4c17af891f872eac5347f2e8b8428e45b816337519e103b1fe3599498bc2b40b
+      request_sha256s:
+      - 4c17af891f872eac5347f2e8b8428e45b816337519e103b1fe3599498bc2b40b

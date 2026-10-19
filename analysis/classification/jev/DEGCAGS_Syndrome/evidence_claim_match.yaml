@@ -8959,6 +8959,62 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/2
       reference: PMID:39424669
+  b92ea61b495d6e1f89c6a58cabfad00d72552884ab3933d1160ce76295b9b1dc:
+    claim:
+      about:
+        disease:
+          name: DEGCAGS Syndrome
+          disease_term:
+            preferred_term: DEGCAGS syndrome
+            term:
+              id: MONDO:0859181
+              label: DEGCAGS syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: DEGCAGS blood DNA methylation episignature
+        presence: PRESENT
+        context: Peripheral-blood genome-wide DNA methylation biomarker used to screen for, diagnose and
+          classify ZNF699 variants; established as a diagnostic classifier, not as a causal mediator or
+          severity marker.
+        cell_types:
+        - preferred_term: peripheral blood leukocyte
+          term:
+            id: CL:0000738
+            label: leukocyte
+        readouts:
+        - target: Biallelic ZNF699 Loss of Function
+          relationship: READOUT_OF
+          direction: PRESENT_ABSENT
+          endpoint_context: DIAGNOSTIC
+        notes: Recorded under biochemical as a biomarker, in parallel with the pathophysiology node that
+          carries the same observation as a candidate mechanism. The biomarker claim is established; the
+          mechanistic one is the entry's open hypothesis.
+      selected_evidence:
+        snippet: a high confidence match with an methylation variant pathogenicity (MVP) of 0.891 was
+          found for the episignature associated with DEGCAGS
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42534679
+      reference_title: A novel ZNF699 mutation in a patient with DEGCAGS syndrome and severe B cell depletion.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Independent diagnostic use, resolving a KRAB-domain missense VUS that exome analysis
+        had twice missed.
+    first_seen_at: '2026-10-19T17:02:50.842438+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:02:50.842438+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:02:50.842438+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:42534679
 assessments:
   cbdee7ac14296aff87d093288680e3fd0f4695fac21d9533a30e9f26ac2afb3b:
     input_sha256: 6241871c3a28156391ce36ed6912bd004631e254accbbde5e7c7c6b2058ac0cf
@@ -21707,3 +21763,104 @@ assessments:
       request_sha256: 76a9bcedf8ebcb4a6c863730d03457b4626b3ae8328efad89be8a8dadfb26884
       request_sha256s:
       - 76a9bcedf8ebcb4a6c863730d03457b4626b3ae8328efad89be8a8dadfb26884
+  3d80c1df8f36d58a3e59964b495e53c80fb7b8f99f30838b634533cff6e23417:
+    input_sha256: b92ea61b495d6e1f89c6a58cabfad00d72552884ab3933d1160ce76295b9b1dc
+    configuration_sha256: 3a89150f9e3946c6ccabc6e067050eebfeaf1c2475eff3581c3cd97ed80db59c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:02:50.842438+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.02
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.01
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.33
+            PARTIAL: 0.29
+          confidence: 0.07
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.5
+            PARTIAL: 0.41
+          confidence: 0.25
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.43
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.21
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.02
+            PARTIAL: 0.25
+          confidence: 0.59
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.04
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.05
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.48
+            PARTIAL: 0.4
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12341
+        output_tokens: 573
+      elapsed_seconds: 0.2135
+      request_sha256: d647e105403ca6ebd58a7b459cec9079cd8a12bf0b5f0175bf35ed3074c90848
+      request_sha256s:
+      - d647e105403ca6ebd58a7b459cec9079cd8a12bf0b5f0175bf35ed3074c90848

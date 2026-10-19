@@ -5353,6 +5353,58 @@ inputs:
     - assertion_path: /treatments/2/target_mechanisms/0
       evidence_path: /treatments/2/target_mechanisms/0/evidence/0
       reference: PMID:31884868
+  749ae2eac05809333410f952dd0e052a62ec7cad0a4308acc5f78f26f83da532:
+    claim:
+      about:
+        disease:
+          name: Juvenile Neuronal Ceroid Lipofuscinosis
+          disease_term:
+            preferred_term: juvenile neuronal ceroid lipofuscinosis
+            term:
+              id: MONDO:0019262
+              label: juvenile neuronal ceroid lipofuscinosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Cerliponase alfa for the TPP1/CLN2 branch
+        description: 'Intracerebroventricular recombinant human TPP1 enzyme replacement targets the proximal
+          enzyme lesion in CLN2 disease and slows motor-language decline. The efficacy trial summarized
+          by the source focused on late-infantile CLN2, not a juvenile-onset-stratified cohort; use for
+          atypical juvenile CLN2 therefore requires genotype confirmation and specialist assessment rather
+          than extrapolation to every juvenile NCL branch.
+
+          '
+        therapeutic_modality: PROTEIN_REPLACEMENT
+        treatment_term:
+          preferred_term: enzyme replacement therapy
+          term:
+            id: NCIT:C16221
+            label: Protein Replacement Therapy
+      selected_evidence:
+        snippet: Cerliponase alfa is the first therapy for neuronal ceroid lipofuscinosis type 2 that
+          targets the disease etiology.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31884868
+      reference_title: 'Review of Cerliponase Alfa: Recombinant Human Enzyme Replacement Therapy for Late-Infantile
+        Neuronal Ceroid Lipofuscinosis Type 2.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports the etiologic, branch-specific treatment classification.
+    first_seen_at: '2026-10-19T16:59:47.937779+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:59:47.937779+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:59:47.937779+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      reference: PMID:31884868
 assessments:
   b8a99d625236dd13614a19d09ac59495ee45748f26007325177930062579d505:
     input_sha256: 37f99af6e0effa3316a4e37250f17d15fe9b40539290c19e47040595a4e73b98
@@ -11953,3 +12005,69 @@ assessments:
       request_sha256: f69e8e634b6c528a4f7b348e934157b4e875c15b64d7b908c35975da812a19e9
       request_sha256s:
       - f69e8e634b6c528a4f7b348e934157b4e875c15b64d7b908c35975da812a19e9
+  91d5fde5ad592491be6ec2ea22e42269450d38a4163ca80bd164f5efc287528f:
+    input_sha256: 749ae2eac05809333410f952dd0e052a62ec7cad0a4308acc5f78f26f83da532
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:59:47.937779+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.49
+            PARTIAL: 0.48
+          confidence: 0.23
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.15
+            PARTIAL: 0.39
+          confidence: 0.19
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.55
+            PARTIAL: 0.43
+          confidence: 0.33
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.03
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.07
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.12
+            PARTIAL: 0.44
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7767
+        output_tokens: 332
+      elapsed_seconds: 0.3734
+      request_sha256: 923f09e81ac0af17ad3923319bdc215ffdc8c7cef59224a4d71391f1e3bf9ede
+      request_sha256s:
+      - 923f09e81ac0af17ad3923319bdc215ffdc8c7cef59224a4d71391f1e3bf9ede

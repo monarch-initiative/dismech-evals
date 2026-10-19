@@ -9368,6 +9368,78 @@ inputs:
     - assertion_path: /mechanistic_hypotheses/0
       evidence_path: /mechanistic_hypotheses/0/evidence/0
       reference: PMID:24596149
+  fa2ad4fe475ab858868e4dac72be9540a99029e3a610494c3336fa73dd19ee9a:
+    claim:
+      about:
+        disease:
+          name: Biliary, Renal, Neurologic, and Skeletal Syndrome
+          disease_term:
+            preferred_term: biliary, renal, neurologic, and skeletal syndrome
+            term:
+              id: MONDO:0859191
+              label: biliary, renal, neurologic, and skeletal syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: TTC26 functional impairment
+            description: Biallelic TTC26/IFT56 variants impair a core component of IFT-B. Splice, missense
+              and truncating alleles can differ in residual function; complete absence of the protein
+              is not established for every patient. IFT56 contributes to selective protein trafficking
+              and signaling rather than simply determining whether all cilia form.
+            biological_scale: MOLECULAR
+            genes:
+            - preferred_term: TTC26
+              term:
+                id: hgnc:21882
+                label: TTC26
+            genetic_context:
+              variant_origin: GERMLINE
+              functional_impact_category: LOSS_OF_FUNCTION
+              description: Disease-associated biallelic genotypes include homozygous and compound-heterozygous
+                alleles. Functional effects are allele-dependent.
+            cellular_components:
+            - preferred_term: cilium
+              term:
+                id: GO:0005929
+                label: cilium
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Motile Cilia Beat Dysfunction
+        description: Experimental TTC26 perturbation impairs ciliary motility; the human contribution
+          is provisional.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        hypothesis_groups:
+        - MOTILE_CILIA_HYDROCEPHALUS
+      selected_evidence:
+        snippet: Knockdown of TTC26/DYF13 in zebrafish embryos or mutation of TTC26/DYF13 in C. reinhardtii,
+          produced short cilia with abnormal motility.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/3
+      evidence_path: /pathophysiology/0/downstream/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:24596149
+      reference_title: TTC26/DYF13 is an intraflagellar transport protein required for transport of motility-related
+        proteins into flagella.
+      evidence_source: MODEL_ORGANISM
+      explanation: Motility dysfunction is demonstrated in experimental organisms, not directly measured
+        in BRENS ependymal cells.
+      quote_role: PRIMARY_RESULT
+    first_seen_at: '2026-10-19T16:38:41.635497+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:38:41.635497+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:38:41.635497+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/3
+      evidence_path: /pathophysiology/0/downstream/3/evidence/0
+      reference: PMID:24596149
 assessments:
   c7c0df8eb0aee065fe98cd738be663bf8f6822bbfea480bd49e7d5d7ba18c570:
     input_sha256: 3ef30d4a1b81ab3fbd7d11b54f53eb85052ce632598657be4765422aa4d86e84
@@ -20821,3 +20893,69 @@ assessments:
       request_sha256: 955e1d6fad1f8e065dca1656cd8431f8184fc190187ea03d5307b553c35057ec
       request_sha256s:
       - 955e1d6fad1f8e065dca1656cd8431f8184fc190187ea03d5307b553c35057ec
+  e7d944ed3304e13a2a5ba37fce1942e5b7c3c318e85c2b866d65ca7082993d19:
+    input_sha256: fa2ad4fe475ab858868e4dac72be9540a99029e3a610494c3336fa73dd19ee9a
+    configuration_sha256: 29e097b67f89bb679bfec30c8a272956cb7b1e20ac716cead21fa3a7363a1b4b
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:38:41.635497+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.13
+            PARTIAL: 0.67
+          confidence: 0.51
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.43
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.06
+            PARTIAL: 0.38
+          confidence: 0.34
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.04
+            PARTIAL: 0.45
+          confidence: 0.27
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.03
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.19
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.21
+            PARTIAL: 0.43
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7603
+        output_tokens: 320
+      elapsed_seconds: 0.4335
+      request_sha256: 8fae206e15a3447dd6a705973e4f70619c16896e7d0c78829b0a383f8cc78ca3
+      request_sha256s:
+      - 8fae206e15a3447dd6a705973e4f70619c16896e7d0c78829b0a383f8cc78ca3

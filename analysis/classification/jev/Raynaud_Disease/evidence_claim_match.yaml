@@ -1766,6 +1766,63 @@ inputs:
     - assertion_path: /treatments/5
       evidence_path: /treatments/5/evidence/0
       reference: PMID:39040029
+  c89d4dc7f99d6f01c3aeb420e121dcf94ecdfbf60a848f6a847a386562ab85eb:
+    claim:
+      about:
+        disease:
+          name: Raynaud Disease
+          disease_term:
+            preferred_term: Raynaud disease
+            term:
+              id: MONDO:0008364
+              label: Raynaud disease
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Intravascular and Platelet Abnormalities
+        description: 'Platelet activation and release of thromboxane A2 and serotonin contribute to vasospasm.
+          Altered coagulation and fibrinolysis pathways and increased blood viscosity further impair microvascular
+          flow during episodes. Gene ontology analysis identifies enrichment in negative regulation of
+          fibrinolysis and complement/coagulation cascades among RP-associated genes.
+
+          '
+        cell_types:
+        - preferred_term: Platelet
+          term:
+            id: CL:0000233
+            label: platelet
+        biological_processes:
+        - preferred_term: Platelet Activation
+          term:
+            id: GO:0030168
+            label: platelet activation
+      selected_evidence:
+        snippet: A significant enrichment by gene ontology enrichment analysis was detected in a subset
+          of genes involved in biological processes including cellular response to luteinizing hormone
+          stimulus, negative regulation of fibrinolysis, negative regulation of smooth muscle cell apoptotic
+          process, plasminogen activation
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1515/tjb-2023-0197
+      reference_title: Determination of molecular pathways and gene ontology of genes associated with
+        Raynaud’s phenomenon
+      explanation: GO analysis of RP-associated genes shows enrichment in coagulation/fibrinolysis pathways
+        relevant to intravascular abnormalities.
+    first_seen_at: '2026-10-19T16:50:14.816824+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:14.816824+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:14.816824+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: DOI:10.1515/tjb-2023-0197
 assessments:
   bd72340c389d067170b0b4005ba8ecfefc61664bc0eb112d3f8e0241d6d44af6:
     input_sha256: e8e3d02c8fb278316cc543fc6f16ac968d5afa0e06912996b5a2c0b2ec1e72e9
@@ -4183,3 +4240,76 @@ assessments:
       request_sha256: 6a79d613f4b33369d108f1dc3d20597aa644f9a7ed71f3401ccfbee03078a070
       request_sha256s:
       - 6a79d613f4b33369d108f1dc3d20597aa644f9a7ed71f3401ccfbee03078a070
+  327cb6750333a560bf08ad15388f4aaf80ca26c881887f8b9c4a4740225a6b72:
+    input_sha256: c89d4dc7f99d6f01c3aeb420e121dcf94ecdfbf60a848f6a847a386562ab85eb
+    configuration_sha256: be52176d10cf94ec278db06727fb24440327baa3d5318e589c83ffa3aafb82fa
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:14.816824+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.12
+            PARTIAL: 0.8200000000000001
+          confidence: 0.73
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.11
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.19
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.16
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.59
+            PARTIAL: 0.3
+          confidence: 0.38
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.5
+            PARTIAL: 0.33
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.61
+            PARTIAL: 0.35
+          confidence: 0.41
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8316
+        output_tokens: 399
+      elapsed_seconds: 0.3792
+      request_sha256: ac36f86430d1b99408bfc05b59a6f27d0d0dd6a6e0ef9a3cb3ea04159f0db520
+      request_sha256s:
+      - ac36f86430d1b99408bfc05b59a6f27d0d0dd6a6e0ef9a3cb3ea04159f0db520

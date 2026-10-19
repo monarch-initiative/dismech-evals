@@ -918,6 +918,57 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:24658002
+  8e08bf0b37a2ad69952b4c1dd8a43658a4617ece8041bcb94e5340c3a3c5b2da:
+    claim:
+      about:
+        disease:
+          name: Rhabdoid Tumor Predisposition Syndrome 2
+          disease_term:
+            preferred_term: rhabdoid tumor predisposition syndrome 2
+            term:
+              id: MONDO:0013224
+              label: rhabdoid tumor predisposition syndrome 2
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Germline SMARCA4 Loss-of-Function
+        conforms_to: germline_two_hit_tumor_predisposition#Constitutional First-Hit Tumor Suppressor Inactivation
+        biological_scale: MOLECULAR
+        description: A heterozygous germline loss-of-function SMARCA4 allele removes one copy of the catalytic
+          ATPase subunit of the BAF complex in every cell.
+        genes:
+        - preferred_term: SMARCA4
+          term:
+            id: hgnc:11100
+            label: SMARCA4
+      selected_evidence:
+        snippet: We identified inactivation of another member of the SWI/SNF chromatin-remodeling complex,
+          its ATPase subunit SMARCA4 (also known as BRG1), due to a SMARCA4/BRG1 germline mutation and
+          loss of heterozygosity by uniparental disomy in the tumor cells of two sisters with rhabdoid
+          tumors lacking SMARCB1 mutations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20137775
+      reference_title: Germline nonsense mutation and somatic inactivation of SMARCA4/BRG1 in a family
+        with rhabdoid tumor predisposition syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The original description of RTPS2, establishing germline SMARCA4 as a rhabdoid predisposition
+        gene distinct from SMARCB1.
+    first_seen_at: '2026-10-19T17:01:40.792997+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:40.792997+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:40.792997+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:20137775
 assessments:
   aaaffc7caf4f5ad8a499e6024521191214167fcb18d58c7016a9630a18d36ee0:
     input_sha256: 97c4bff326290a26fde3dddb1c851b3adfc19582986de0a5c95bd82c328738eb
@@ -2117,3 +2168,76 @@ assessments:
       request_sha256: 531f1d193b5b138c780d32f862ce9f70641d301fa3f24f76f865ee455b044a22
       request_sha256s:
       - 531f1d193b5b138c780d32f862ce9f70641d301fa3f24f76f865ee455b044a22
+  9ebb96a6baeb2dfff0487920b02a59a27a62ab2fc8b99f46bfc18eaff41880c5:
+    input_sha256: 8e08bf0b37a2ad69952b4c1dd8a43658a4617ece8041bcb94e5340c3a3c5b2da
+    configuration_sha256: 8cd5805053c7fd464fbc346c4811371c040740d9dd118e97571c4d2d8300a8b6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:40.792997+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.69
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.01
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.19
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.04
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.95
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8725
+        output_tokens: 366
+      elapsed_seconds: 0.2698
+      request_sha256: 4e21a1acca5447288f38da7436ba9c7b1945952f9a8384105244d4976c408c34
+      request_sha256s:
+      - 4e21a1acca5447288f38da7436ba9c7b1945952f9a8384105244d4976c408c34

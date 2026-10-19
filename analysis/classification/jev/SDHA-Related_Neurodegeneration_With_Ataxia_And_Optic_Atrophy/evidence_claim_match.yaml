@@ -5427,6 +5427,97 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:33960148
+  db1b657f930b29629b5060bce9a61a37227916fcf48cf6ef4cd53d941aadf432:
+    claim:
+      about:
+        disease:
+          name: SDHA-Related Neurodegeneration With Ataxia and Optic Atrophy
+          disease_term:
+            preferred_term: neurodegeneration with ataxia and late-onset optic atrophy
+            term:
+              id: MONDO:0031006
+              label: neurodegeneration with ataxia and late-onset optic atrophy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Catalytically Inert SDHA Subunit Competing for Complex II Assembly
+        biological_scale: MOLECULAR
+        description: 'This is the node that explains why the disease is dominant. Complex II is a heterotetramer
+          containing exactly one copy of the flavoprotein subunit alongside the iron-sulfur subunit and
+          the two transmembrane anchors, so every assembled complex commits to one SDHA molecule and there
+          is no second copy to compensate. If the mutant subunit is still expressed and still competent
+          to bind FAD non-covalently, it can be incorporated into complexes that are then structurally
+          complete but catalytically dead, and it competes with the wild-type subunit for the available
+          assembly slots. On that model a heterozygote loses close to half of total succinate dehydrogenase
+          activity while retaining a full complement of assembled complex, which is precisely the biochemical
+          picture reported in the founding family: an approximately 50% enzyme deficit accompanied by
+          an apparent overexpression of the 70-kDa flavoprotein subunit whose membrane-associated amount
+          was nonetheless normal.
+
+          The alternative reading, simple haploinsufficiency, would predict the same 50% activity but
+          is hard to reconcile with the population genetics. Heterozygous SDHA loss-of-function alleles
+          are carried without neurodegeneration by the parents of children with recessive complex II deficiency
+          and by members of tumour-predisposition families. The dominant-negative model accounts for that
+          asymmetry; haploinsufficiency does not.'
+        genes:
+        - preferred_term: SDHA
+          term:
+            id: hgnc:10680
+            label: SDHA
+        protein_complexes:
+        - preferred_term: respiratory chain complex II
+          modifier: ABNORMAL
+          term:
+            id: GO:0045273
+            label: respiratory chain complex II (succinate dehydrogenase)
+        biological_processes:
+        - preferred_term: mitochondrial respiratory chain complex II assembly
+          modifier: ABNORMAL
+          term:
+            id: GO:0034553
+            label: mitochondrial respiratory chain complex II assembly
+        mechanism_confidence: HYPOTHETICAL
+        notes: 'Marked HYPOTHETICAL. Nothing yet distinguishes dominant-negative subunit competition from
+          simple haploinsufficiency for either NDAXOA allele in a heterozygous setting. The nearest datum
+          is PMID:39321216, which measured p.Arg451Cys in a human SDHA-knockout background and found it
+          amorphic while retaining high SDHA protein abundance (read from Figure 2 of the PMC11611653
+          full text, retrieved 2026-08-01; references_cache/PMID_39321216.md is abstract-only and names
+          no individual variant, so this is a full-text derivation and not a snippet-verifiable claim).
+          That establishes the mutant subunit is stable rather than degraded, which is a precondition
+          for competition, but it cannot demonstrate competition: the assay contains no wild-type subunit
+          for the mutant to compete with. What is still absent is allele-specific quantification of assembled
+          complex in a heterozygote, any isotopic or tag-based measurement of the mutant-to-wild-type
+          ratio within assembled complex II, and a heterozygous knock-in model. The node is retained because
+          the discrimination is clinically consequential, not because it is settled; the reasoning against
+          haploinsufficiency rests on the observation that heterozygous SDHA null carriers are neurologically
+          well, which is an inference from the recessive and tumour literature rather than a controlled
+          comparison. The corresponding open question is recorded as a discussion.'
+      selected_evidence:
+        snippet: Complex II is comprised of two hydrophilic proteins, flavoprotein (Fp) and iron-sulfur
+          protein (Ip), and two transmembrane proteins (CybL and CybS), as well as prosthetic groups required
+          for electron transfer from succinate to ubiquinone.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15989954
+      reference_title: Crystal structure of mitochondrial respiratory membrane protein complex II.
+      evidence_source: IN_VITRO
+      explanation: 'Fixes the stoichiometry that makes the dominant-negative argument possible: one flavoprotein
+        subunit per complex, with no redundant copy to compensate for an inert one.'
+    first_seen_at: '2026-10-19T16:50:17.807323+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:17.807323+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:17.807323+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:15989954
 assessments:
   37ad11319158dfa72e918968b74fa851b86ee51a1cd39dbe4f7e42bbd3223c0f:
     input_sha256: 43d07dae3da82fe6f479587649c9fa8c7e31dc821b711233864d44b3a2350cbd
@@ -12539,3 +12630,125 @@ assessments:
       request_sha256: 0a7cd60eb84b3de13e463da837f0374a943871ca45738ae47720146a776f443e
       request_sha256s:
       - 0a7cd60eb84b3de13e463da837f0374a943871ca45738ae47720146a776f443e
+  67ad7da69c72771b1662f0933e5f0303b26cf3f273f9fff8fbd48800c3675633:
+    input_sha256: db1b657f930b29629b5060bce9a61a37227916fcf48cf6ef4cd53d941aadf432
+    configuration_sha256: ad2f19802e339c35e4ec2aa9928ea97e7eba0dfaf3bb902776861c5f06f432e6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:17.807323+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.31
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.48
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.06
+            PARTIAL: 0.1
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.18
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/genes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.34
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.41
+            PARTIAL: 0.36
+          confidence: 0.11
+        /assertion/protein_complexes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.28
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/protein_complexes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.57
+            PARTIAL: 0.36
+          confidence: 0.35
+        /assertion/protein_complexes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.4
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.53
+            PARTIAL: 0.42
+          confidence: 0.3
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.69
+            PARTIAL: 0.29
+          confidence: 0.53
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.57
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/mechanism_confidence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.58
+            PARTIAL: 0.21
+          confidence: 0.37
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16689
+        output_tokens: 762
+      elapsed_seconds: 0.3972
+      request_sha256: 6f1f7b45c40cf4e99c74d1662b6fe6903a244424742a0576b47b9d8b8923818c
+      request_sha256s:
+      - 6f1f7b45c40cf4e99c74d1662b6fe6903a244424742a0576b47b9d8b8923818c

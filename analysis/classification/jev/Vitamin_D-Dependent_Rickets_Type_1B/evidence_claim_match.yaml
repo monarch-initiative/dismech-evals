@@ -4502,6 +4502,64 @@ inputs:
     - assertion_path: /biochemical/1
       evidence_path: /biochemical/1/evidence/2
       reference: PMID:32430692
+  5c3dff55310375de40984de30c8bd0036fe8dcdcb2a29d2cfdbe55f570327798:
+    claim:
+      about:
+        disease:
+          name: Vitamin D-Dependent Rickets Type 1B
+          disease_term:
+            preferred_term: vitamin D hydroxylation-deficient rickets, type 1B
+            term:
+              id: MONDO:0010810
+              label: vitamin D hydroxylation-deficient rickets, type 1B
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Hepatic 25-Hydroxylase Deficiency
+        description: CYP2R1 is the principal microsomal enzyme that hydroxylates carbon 25 of vitamin
+          D in the liver, the first of the two activation steps. Disease variants reduce or abolish CYP2R1-dependent
+          activity, so ingested or cutaneously synthesized vitamin D is converted inefficiently to 25-hydroxyvitamin
+          D. Partially active alleles retain some conversion in vitro, while alternative 25-hydroxylases
+          are a proposed additional source; consequently 25-hydroxyvitamin D is markedly reduced but calcitriol
+          need not be.
+        role: trigger
+        biological_scale: MOLECULAR
+        genes:
+        - preferred_term: CYP2R1
+          term:
+            id: hgnc:20580
+            label: CYP2R1
+        molecular_functions:
+        - preferred_term: Vitamin D 25-Hydroxylase Activity
+          term:
+            id: GO:0030343
+            label: vitamin D 25-hydroxylase activity
+          modifier: LOSS_OF_FUNCTION
+      selected_evidence:
+        snippet: in vitro studies showed that K242N and L99P had markedly reduced or complete loss of
+          25-hydroxylase activity, respectively
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25942481
+      reference_title: CYP2R1 Mutations Impair Generation of 25-hydroxyvitamin D and Cause an Atypical
+        Form of Vitamin D Deficiency.
+      evidence_source: IN_VITRO
+      explanation: Confirms loss of 25-hydroxylase activity for a second independent allele.
+    first_seen_at: '2026-10-19T16:50:23.791627+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:50:23.791627+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:50:23.791627+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:25942481
 assessments:
   24fef5ff748660b3e08c7dd1f061f6f9859b234c4e2ef339224f09bca6f69b44:
     input_sha256: d591501fdc856b3f8f986dabe3be584ac8ce31f2fd1b92aefbf3e7fa05d947cf
@@ -10190,3 +10248,97 @@ assessments:
       request_sha256: 93f12c398dbb1bf8b33335297a54cc942d7ec2e2e51e29830b595795e3c38726
       request_sha256s:
       - 93f12c398dbb1bf8b33335297a54cc942d7ec2e2e51e29830b595795e3c38726
+  b1170dc9e8e4047189885bb40bbad8fdef72cea809aff5404c790c52e808cb70:
+    input_sha256: 5c3dff55310375de40984de30c8bd0036fe8dcdcb2a29d2cfdbe55f570327798
+    configuration_sha256: ba5bdc441e8b2d52a6476fcef1064ae5b66fee046f6b52140df01b7a15005e19
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:50:23.791627+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.36
+            PARTIAL: 0.35
+          confidence: 0.04
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.41
+            PARTIAL: 0.4
+          confidence: 0.11
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.22
+            PARTIAL: 0.22
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.05
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.14
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.14
+            PARTIAL: 0.25
+          confidence: 0.41
+        /assertion/genes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.22
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.03
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.04
+            PARTIAL: 0.06
+          confidence: 0.85
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11982
+        output_tokens: 526
+      elapsed_seconds: 0.254
+      request_sha256: 5fe6bd273e2c90d1ba4e4ea5dff5acd1ae3b5fed28ab2397e391a1cf131c1887
+      request_sha256s:
+      - 5fe6bd273e2c90d1ba4e4ea5dff5acd1ae3b5fed28ab2397e391a1cf131c1887

@@ -5398,6 +5398,60 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/4
       evidence_path: /experimental_models/0/modeled_mechanisms/4/evidence/0
       reference: PMID:40754287
+  0dfbc177ffe42f643b229127afbba22fdf1b47753fb2ae4c49b970f1991c6206:
+    claim:
+      about:
+        disease:
+          name: Liver Cirrhosis
+          disease_term:
+            preferred_term: cirrhosis of liver
+            term:
+              id: MONDO:0005155
+              label: cirrhosis of liver
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: ATP7B
+        gene_term:
+          preferred_term: ATP7B
+          term:
+            id: hgnc:870
+            label: ATP7B
+        association: Causative of Wilson disease, one of several etiologies of cirrhosis
+        relationship_type: RISK_FACTOR
+        variant_origin: GERMLINE
+        notes: 'Biallelic germline ATP7B variants cause Wilson disease, which is curated separately (Wilsons_Disease).
+          Relative to cirrhosis as a whole the relationship is typed RISK_FACTOR rather than CAUSATIVE:
+          Wilson disease accounts for a small fraction of cirrhosis, and not every patient with Wilson
+          disease develops cirrhosis (hepatic presentations also include acute liver failure and persistently
+          abnormal liver tests).'
+      selected_evidence:
+        snippet: Four patients presented with acute liver failure, four with persistently elevated liver
+          function tests, and two with decompensated cirrhosis
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:30576569
+      reference_title: 'Hepatic manifestations of Wilson''s disease: 12-year experience in a Swiss tertiary
+        referral centre.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: In an adult hepatic Wilson disease series, decompensated cirrhosis was one presentation
+        among several, supporting ATP7B as a cause of cirrhosis in a subset of carriers of biallelic variants
+        rather than a sufficient cause of cirrhosis.
+    first_seen_at: '2026-10-19T17:00:14.420120+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:00:14.420120+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:00:14.420120+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      reference: PMID:30576569
 assessments:
   bf956a42abad263414f68c0b60b133a2cc6bb25b639c6caaa29413fb5e26f0b7:
     input_sha256: c8ef66cd40ef1188c42ef391dcfac3f8fe6df7752bac4da3b0935980cfb5e033
@@ -12051,3 +12105,83 @@ assessments:
       request_sha256: 88730fab35c1ca898a645a02feec12002963bc704595fc1ff5420914ccf539e7
       request_sha256s:
       - 88730fab35c1ca898a645a02feec12002963bc704595fc1ff5420914ccf539e7
+  005d84a5917a28fa665fa83bdf771b8305dfbd7b95ef64597079a7e1962f6990:
+    input_sha256: 0dfbc177ffe42f643b229127afbba22fdf1b47753fb2ae4c49b970f1991c6206
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:00:14.420120+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.07
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.52
+            PARTIAL: 0.34
+          confidence: 0.28
+        /assertion/gene_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.39
+            PARTIAL: 0.37
+          confidence: 0.09
+        /assertion/gene_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.07
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.14
+            PARTIAL: 0.42
+          confidence: 0.16
+        /assertion/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.61
+            PARTIAL: 0.36
+          confidence: 0.41
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.13
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9630
+        output_tokens: 424
+      elapsed_seconds: 0.453
+      request_sha256: e398cf6bdb63ec746d5844e90c063b298c97d6438a9486f9d25a5b226c21d074
+      request_sha256s:
+      - e398cf6bdb63ec746d5844e90c063b298c97d6438a9486f9d25a5b226c21d074

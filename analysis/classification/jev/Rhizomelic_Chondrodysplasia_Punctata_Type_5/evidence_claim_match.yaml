@@ -1746,6 +1746,328 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/0
       reference: PMID:26220973
+  8d26257d36e029f8a8b7fe7ea88cf25dbde18cfd4fd95bc3315db658480e8229:
+    claim:
+      about:
+        disease:
+          name: Rhizomelic Chondrodysplasia Punctata Type 5
+          disease_term:
+            preferred_term: rhizomelic chondrodysplasia punctata type 5
+            term:
+              id: MONDO:0014743
+              label: rhizomelic chondrodysplasia punctata type 5
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of the PEX5 Long Isoform
+        biological_scale: MOLECULAR
+        description: PEX5 is transcribed as two isoforms. Both PEX5L and PEX5S recognize PTS1-tagged cargo,
+          but only PEX5L serves as the co-receptor for PEX7-mediated import of PTS2-tagged cargo. The
+          RCDP5 frameshift lies in exon 9, which is present only in the long transcript, so it removes
+          PEX5L and leaves PEX5S intact. This is the whole mechanism of the disorder and the reason it
+          is not a Zellweger spectrum disorder.
+        genetic_context:
+          functional_impact_category: LOSS_OF_FUNCTION
+          variant_origin: GERMLINE
+          zygosity: HOMOZYGOUS
+          gene:
+            preferred_term: PEX5
+            term:
+              id: hgnc:9719
+              label: PEX5
+          description: 'Homozygous frameshift in the PEX5L-specific exon 9 in all four reported patients
+            from two independent families. The functional impact is isoform-selective rather than whole-gene:
+            PEX5S is unaffected, which is why PTS1 import is preserved.'
+        molecular_functions:
+        - preferred_term: PEX5L PTS2 co-receptor (cargo carrier) activity
+          modifier: DECREASED
+          term:
+            id: GO:0140597
+            label: protein carrier activity
+        biological_processes:
+        - preferred_term: protein import into peroxisome matrix
+          modifier: DECREASED
+          term:
+            id: GO:0016558
+            label: protein import into peroxisome matrix
+      selected_evidence:
+        snippet: PEX5 encodes two isoforms, PEX5L and PEX5S, and we show that the c.722dupA mutation,
+          located in the PEX5L-specific exon 9, results in loss of PEX5L only.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26220973
+      reference_title: A novel type of rhizomelic chondrodysplasia punctata, RCDP5, is caused by loss
+        of the PEX5 long isoform.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the isoform-selective consequence of the variant.
+    first_seen_at: '2026-10-19T17:01:40.930973+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:40.930973+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:40.930973+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:26220973
+  3c178756d19b196fa9f8f2551782174e6984842936872d4598d02757a5fad9fe:
+    claim:
+      about:
+        disease:
+          name: Rhizomelic Chondrodysplasia Punctata Type 5
+          disease_term:
+            preferred_term: rhizomelic chondrodysplasia punctata type 5
+            term:
+              id: MONDO:0014743
+              label: rhizomelic chondrodysplasia punctata type 5
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Loss of the PEX5 Long Isoform
+            biological_scale: MOLECULAR
+            description: PEX5 is transcribed as two isoforms. Both PEX5L and PEX5S recognize PTS1-tagged
+              cargo, but only PEX5L serves as the co-receptor for PEX7-mediated import of PTS2-tagged
+              cargo. The RCDP5 frameshift lies in exon 9, which is present only in the long transcript,
+              so it removes PEX5L and leaves PEX5S intact. This is the whole mechanism of the disorder
+              and the reason it is not a Zellweger spectrum disorder.
+            genetic_context:
+              functional_impact_category: LOSS_OF_FUNCTION
+              variant_origin: GERMLINE
+              zygosity: HOMOZYGOUS
+              gene:
+                preferred_term: PEX5
+                term:
+                  id: hgnc:9719
+                  label: PEX5
+              description: 'Homozygous frameshift in the PEX5L-specific exon 9 in all four reported patients
+                from two independent families. The functional impact is isoform-selective rather than
+                whole-gene: PEX5S is unaffected, which is why PTS1 import is preserved.'
+            molecular_functions:
+            - preferred_term: PEX5L PTS2 co-receptor (cargo carrier) activity
+              modifier: DECREASED
+              term:
+                id: GO:0140597
+                label: protein carrier activity
+            biological_processes:
+            - preferred_term: protein import into peroxisome matrix
+              modifier: DECREASED
+              term:
+                id: GO:0016558
+                label: protein import into peroxisome matrix
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Selective PTS2 Import Failure
+        description: With PEX5L gone, PEX7 has no co-receptor, so PTS2-tagged cargo is not delivered into
+          the peroxisomal matrix, while PTS1 import proceeds through the surviving short isoform.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Both PEX5 isoforms recognize PTS1-tagged proteins, but PEX5L is also a co-receptor for
+          PTS2-tagged proteins.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:26220973
+      reference_title: A novel type of rhizomelic chondrodysplasia punctata, RCDP5, is caused by loss
+        of the PEX5 long isoform.
+      evidence_source: IN_VITRO
+      explanation: The division of labour between the isoforms is what makes the import failure selective.
+    first_seen_at: '2026-10-19T17:01:41.711584+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:41.711584+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:41.711584+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:26220973
+  345a2999513ac26a0f4155b82b9347e00763eace872397d63db588bace905b68:
+    claim:
+      about:
+        disease:
+          name: Rhizomelic Chondrodysplasia Punctata Type 5
+          disease_term:
+            preferred_term: rhizomelic chondrodysplasia punctata type 5
+            term:
+              id: MONDO:0014743
+              label: rhizomelic chondrodysplasia punctata type 5
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of the PEX5 Long Isoform
+        biological_scale: MOLECULAR
+        description: PEX5 is transcribed as two isoforms. Both PEX5L and PEX5S recognize PTS1-tagged cargo,
+          but only PEX5L serves as the co-receptor for PEX7-mediated import of PTS2-tagged cargo. The
+          RCDP5 frameshift lies in exon 9, which is present only in the long transcript, so it removes
+          PEX5L and leaves PEX5S intact. This is the whole mechanism of the disorder and the reason it
+          is not a Zellweger spectrum disorder.
+        genetic_context:
+          functional_impact_category: LOSS_OF_FUNCTION
+          variant_origin: GERMLINE
+          zygosity: HOMOZYGOUS
+          gene:
+            preferred_term: PEX5
+            term:
+              id: hgnc:9719
+              label: PEX5
+          description: 'Homozygous frameshift in the PEX5L-specific exon 9 in all four reported patients
+            from two independent families. The functional impact is isoform-selective rather than whole-gene:
+            PEX5S is unaffected, which is why PTS1 import is preserved.'
+        molecular_functions:
+        - preferred_term: PEX5L PTS2 co-receptor (cargo carrier) activity
+          modifier: DECREASED
+          term:
+            id: GO:0140597
+            label: protein carrier activity
+        biological_processes:
+        - preferred_term: protein import into peroxisome matrix
+          modifier: DECREASED
+          term:
+            id: GO:0016558
+            label: protein import into peroxisome matrix
+      selected_evidence:
+        snippet: We demonstrate that PEX5L expression restores the import of PTS2-tagged proteins in patient
+          fibroblasts.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26220973
+      reference_title: A novel type of rhizomelic chondrodysplasia punctata, RCDP5, is caused by loss
+        of the PEX5 long isoform.
+      evidence_source: IN_VITRO
+      explanation: Complementation of patient fibroblasts with PEX5L restores the defective function,
+        establishing causation rather than association.
+    first_seen_at: '2026-10-19T17:01:41.710325+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:41.710325+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:41.710325+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/1
+      reference: PMID:26220973
+  e2bf6d38652bff6b446a25444606ca9e5e7fb329de3cbd579da424a73823f307:
+    claim:
+      about:
+        disease:
+          name: Rhizomelic Chondrodysplasia Punctata Type 5
+          disease_term:
+            preferred_term: rhizomelic chondrodysplasia punctata type 5
+            term:
+              id: MONDO:0014743
+              label: rhizomelic chondrodysplasia punctata type 5
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PEX5
+        relationship_type: CAUSATIVE
+        variant_origin: GERMLINE
+        presence: Present
+        gene_term:
+          preferred_term: PEX5
+          term:
+            id: hgnc:9719
+            label: PEX5
+        notes: PEX5 is the striking case of one gene giving two unrelated diseases according to which
+          isoform an allele affects. Variants hitting both isoforms remove PTS1 import and cause a Zellweger
+          spectrum disorder; the exon 9 variant hits only PEX5L, leaves PTS1 import intact, and causes
+          RCDP5. Any diagnostic strategy that does not cover exon 9 specifically will miss this entity
+          in a patient whose biochemistry looks like RCDP1.
+      selected_evidence:
+        snippet: Mutations in PEX5 or 12 other PEX genes cause peroxisome biogenesis disorders, collectively
+          named the Zellweger spectrum disorders (ZSDs), whereas mutations in PEX7 cause rhizomelic chondrodysplasia
+          punctata type 1 (RCDP1).
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26220973
+      reference_title: A novel type of rhizomelic chondrodysplasia punctata, RCDP5, is caused by loss
+        of the PEX5 long isoform.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the pre-existing gene-disease assignments that RCDP5 complicates, since it places
+        PEX5 on both sides of that division.
+    first_seen_at: '2026-10-19T17:01:42.068983+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:42.068983+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:42.068983+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:26220973
+  1d360a18cfcfd7035e5baf83fff3703b640d102f798e8eb36373d3b359e74a2d:
+    claim:
+      about:
+        disease:
+          name: Rhizomelic Chondrodysplasia Punctata Type 5
+          disease_term:
+            preferred_term: rhizomelic chondrodysplasia punctata type 5
+            term:
+              id: MONDO:0014743
+              label: rhizomelic chondrodysplasia punctata type 5
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: PEX5
+        relationship_type: CAUSATIVE
+        variant_origin: GERMLINE
+        presence: Present
+        gene_term:
+          preferred_term: PEX5
+          term:
+            id: hgnc:9719
+            label: PEX5
+        notes: PEX5 is the striking case of one gene giving two unrelated diseases according to which
+          isoform an allele affects. Variants hitting both isoforms remove PTS1 import and cause a Zellweger
+          spectrum disorder; the exon 9 variant hits only PEX5L, leaves PTS1 import intact, and causes
+          RCDP5. Any diagnostic strategy that does not cover exon 9 specifically will miss this entity
+          in a patient whose biochemistry looks like RCDP1.
+      selected_evidence:
+        snippet: Previous patients with PEX5 mutations had ZSD, mainly due to deficient import of PTS1-tagged
+          proteins.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26220973
+      reference_title: A novel type of rhizomelic chondrodysplasia punctata, RCDP5, is caused by loss
+        of the PEX5 long isoform.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the contrasting PEX5 phenotype and the import defect that produces it.
+    first_seen_at: '2026-10-19T17:01:42.066920+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T17:01:42.066920+00:00'
+    active: true
+    active_as_of: '2026-10-19T17:01:42.066920+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:26220973
 assessments:
   57fd09b9a6eb6a29ce281bb848a3e6c96103f51c0f6bdb1774149056b8c3e7e1:
     input_sha256: 36d123288d67eef38860ce2189954082dc35b8009ea9017849e14136f6ba5925
@@ -4044,3 +4366,494 @@ assessments:
       request_sha256: 8e84148df5a1d2bea56eac601e5d540a07bbc4126aa97f36bee23f48dbcad6e6
       request_sha256s:
       - 8e84148df5a1d2bea56eac601e5d540a07bbc4126aa97f36bee23f48dbcad6e6
+  5113c7b89cfacdba35a3c0eecec5d80b189d5a6b4fb54a40f06e207cc903d283:
+    input_sha256: 8d26257d36e029f8a8b7fe7ea88cf25dbde18cfd4fd95bc3315db658480e8229
+    configuration_sha256: b0a7612d8d92f49d7240e06864111365b0f9509f9f2559158e01deb9a75e8db3
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:40.930973+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.04
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.14
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.04
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/genetic_context/functional_impact_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/genetic_context/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.19
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/genetic_context/zygosity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.31
+            PARTIAL: 0.63
+          confidence: 0.45
+        /assertion/genetic_context/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/genetic_context/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+          confidence: 0.8
+        /assertion/genetic_context/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.04
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.23
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.14
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.1
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.07
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.14
+            PARTIAL: 0.66
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18316
+        output_tokens: 844
+      elapsed_seconds: 0.3461
+      request_sha256: 363087db0bdad277446d478c50aba3851e5e8f9acc71df46cd7dccb829d02767
+      request_sha256s:
+      - 363087db0bdad277446d478c50aba3851e5e8f9acc71df46cd7dccb829d02767
+  241642734cc493e4be6fab204cb390c82a2ae7196c224bae32f6b913a33a8007:
+    input_sha256: 3c178756d19b196fa9f8f2551782174e6984842936872d4598d02757a5fad9fe
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:41.711584+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.04
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.29
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.02
+            PARTIAL: 0.29
+          confidence: 0.53
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.02
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.04
+            PARTIAL: 0.25
+          confidence: 0.56
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.1
+            PARTIAL: 0.33
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6825
+        output_tokens: 271
+      elapsed_seconds: 0.2097
+      request_sha256: 63775179f300995f125c6460da0e82b0f332a667a068d9a949895f9a370f4dfc
+      request_sha256s:
+      - 63775179f300995f125c6460da0e82b0f332a667a068d9a949895f9a370f4dfc
+  fb5f85700ad99c3030b8e999c9d9566fecd5256aee8e95f2b25576dea389fa46:
+    input_sha256: 345a2999513ac26a0f4155b82b9347e00763eace872397d63db588bace905b68
+    configuration_sha256: b0a7612d8d92f49d7240e06864111365b0f9509f9f2559158e01deb9a75e8db3
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:41.710325+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.04
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.09
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.05
+            PARTIAL: 0.42
+          confidence: 0.3
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.07
+            PARTIAL: 0.11
+          confidence: 0.72
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.05
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/genetic_context/functional_impact_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.04
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.61
+            PARTIAL: 0.37
+          confidence: 0.41
+        /assertion/genetic_context/zygosity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.61
+            PARTIAL: 0.37
+          confidence: 0.41
+        /assertion/genetic_context/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.11
+            PARTIAL: 0.23
+          confidence: 0.49
+        /assertion/genetic_context/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.19
+            PARTIAL: 0.36
+          confidence: 0.18
+        /assertion/genetic_context/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.25
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.04
+            PARTIAL: 0.36
+          confidence: 0.4
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.69
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.07
+            PARTIAL: 0.44
+          confidence: 0.23
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.51
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.06
+            PARTIAL: 0.39
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18288
+        output_tokens: 844
+      elapsed_seconds: 0.3031
+      request_sha256: a112d8f5325d077c8c5df4eadb3bdcaa34145ef8a687e49806e9a31835b79914
+      request_sha256s:
+      - a112d8f5325d077c8c5df4eadb3bdcaa34145ef8a687e49806e9a31835b79914
+  2f770d2760207e0318896d2248ee0f1bf310a29a932d82e074f92529e223707a:
+    input_sha256: e2bf6d38652bff6b446a25444606ca9e5e7fb329de3cbd579da424a73823f307
+    configuration_sha256: e6901882e23854de746438dc76f5b318a1f5fdddb842d031686fc7000fb0741e
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:42.068983+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.39
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.57
+            PARTIAL: 0.37
+          confidence: 0.35
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.07
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.17
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.29
+            PARTIAL: 0.67
+          confidence: 0.51
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.38
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.08
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.07
+            PARTIAL: 0.32
+          confidence: 0.41
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9665
+        output_tokens: 418
+      elapsed_seconds: 0.2783
+      request_sha256: b7a7f6feba9863e7a06eea67d56c9ca36da4e0b6c53adcf3b1b32fbdeb7e1e62
+      request_sha256s:
+      - b7a7f6feba9863e7a06eea67d56c9ca36da4e0b6c53adcf3b1b32fbdeb7e1e62
+  e422f2123820e5ddacc8bdbdadafe20ee7374aa13028c746c33124525cd63882:
+    input_sha256: 1d360a18cfcfd7035e5baf83fff3703b640d102f798e8eb36373d3b359e74a2d
+    configuration_sha256: e6901882e23854de746438dc76f5b318a1f5fdddb842d031686fc7000fb0741e
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T17:01:42.066920+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.66
+            PARTIAL: 0.32
+          confidence: 0.49
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.2
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/relationship_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.48
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.38
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/presence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.57
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/gene_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.19
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/gene_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.18
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.45
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9623
+        output_tokens: 427
+      elapsed_seconds: 0.2212
+      request_sha256: fb7f758f9f1418d23bee53a8f31344f61e482d129cff25ec633740d162d8305b
+      request_sha256s:
+      - fb7f758f9f1418d23bee53a8f31344f61e482d129cff25ec633740d162d8305b

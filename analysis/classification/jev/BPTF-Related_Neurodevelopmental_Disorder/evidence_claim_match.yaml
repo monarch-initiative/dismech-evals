@@ -12837,6 +12837,95 @@ inputs:
     - assertion_path: /variants/4
       evidence_path: /variants/4/evidence/0
       reference: PMID:40415676
+  3250b1a14fa0ed6d26bc561a443e60be892c4700598de0576c51f8cc0dff3b17:
+    claim:
+      about:
+        disease:
+          name: BPTF-Related Neurodevelopmental Disorder
+          disease_term:
+            preferred_term: NEDDFL
+            term:
+              id: MONDO:0060596
+              label: neurodevelopmental disorder with dysmorphic facies and distal limb anomalies
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: Bptf-null mouse embryonic stem cells and rescued embryoid bodies
+        experimental_model_type: OTHER
+        organism:
+          preferred_term: Mus musculus
+          term:
+            id: NCBITaxon:10090
+            label: Mus musculus
+        cell_source: Engineered mouse embryonic stem-cell lines derived from CJ7 cells
+        cell_types:
+        - preferred_term: embryonic stem cell
+          term:
+            id: CL:0002322
+            label: embryonic stem cell
+        culture_system: Embryonic stem-cell culture, LIF withdrawal or retinoic-acid differentiation,
+          and nine-day embryoid-body differentiation
+        conditions:
+        - Wild type
+        - Biallelic Bptf exon-2 deletion
+        - Retargeted Bptf rescue allele
+        publication: PMID:18974875
+        description: Bptf-null embryonic stem cells remain viable but differentiate abnormally. Embryoid
+          bodies fail to form a normal outer endodermal layer and show impaired lineage-marker induction,
+          rescued by retargeting a functional Bptf allele. Microarray experiments under LIF maintenance,
+          LIF withdrawal and retinoic-acid differentiation show context-dependent activation and repression,
+          including derepression of Hox clusters. Activin experiments preserve Smad2 phosphorylation but
+          impair selected target-gene induction and Snf2h/l enhancer recruitment.
+        modeled_mechanisms:
+        - target: Dysregulated Developmental Gene Transcription
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          description: Directly measures Bptf-dependent transcription during differentiation and ligand
+            stimulation.
+          readouts:
+          - name: Lineage-marker induction after Bptf restoration
+            target: Dysregulated Developmental Gene Transcription
+            direction: RESTORED
+            description: Mesodermal and endodermal transcriptional responses during embryoid-body differentiation
+              recover after retargeting a functional allele.
+          - name: Activin-responsive target-gene induction
+            target: Dysregulated Developmental Gene Transcription
+            direction: DECREASED
+            description: Cer1, Gsc and T induction is impaired in Bptf-null cells despite retained Smad2
+              phosphorylation.
+          limitations: Complete-loss mouse stem cells and early embryonic differentiation are not patient-derived
+            heterozygous neural models. The findings do not establish a universal increase in apoptosis
+            after BPTF loss.
+        notes: The 2008 paper provides microarray and analysis data in a supplementary XLS file; no GEO
+          accession was identified in the cached full text. NURF can activate or repress different gene
+          sets depending on differentiation conditions.
+      selected_evidence:
+        snippet: Chromatin immunoprecipation of Snf2h/l and histone modifications 3me-K4H3 and 3me-K27H3
+          at Lefty1 show recruitment of the Snf2h/l subunit to the neural plate specific enhancer (NPE),
+          a region which contains Smad binding elements, in a Bptf and an activin-A–dependent manner.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:18974875
+      reference_title: Essential role of chromatin remodeling protein Bptf in early mouse embryos and
+        embryonic stem cells.
+      evidence_source: IN_VITRO
+      explanation: Enhancer recruitment of Snf2h/l depends on Bptf and activin stimulation; this supports
+        a nuclear regulatory defect downstream of ligand reception.
+    first_seen_at: '2026-10-19T16:57:47.625915+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:57:47.625915+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:57:47.625915+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0
+      evidence_path: /experimental_models/0/evidence/3
+      reference: PMID:18974875
 assessments:
   ab0a1823e39138f97cdc8b50ade3a5ec233bd0f23ce0ca250385a6876781fc53:
     input_sha256: aac419ab92bf6000e67d80bf748dbcf10abce480bee6a891d4846ec6e27a4875
@@ -32996,3 +33085,209 @@ assessments:
       request_sha256: 83b28b814570ee6022203c4e3131c424501f65a19a0bc31a791ffe48e23dbc15
       request_sha256s:
       - 83b28b814570ee6022203c4e3131c424501f65a19a0bc31a791ffe48e23dbc15
+  6bd02a4759e69e4681d92147dca93041d32e311a1c182746b393e0c8cf0b6879:
+    input_sha256: 3250b1a14fa0ed6d26bc561a443e60be892c4700598de0576c51f8cc0dff3b17
+    configuration_sha256: d3def81848c1f06de9ac6d8b589e6e4776db2d2be4356ff7709ff5290dd72fd6
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:57:47.625915+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.2
+            PARTIAL: 0.47
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.24
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.43
+            PARTIAL: 0.34
+          confidence: 0.14
+        /assertion/experimental_model_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.34
+            PARTIAL: 0.28
+          confidence: 0.07
+        /assertion/organism/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.41
+            PARTIAL: 0.26
+          confidence: 0.11
+        /assertion/organism/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.35
+            PARTIAL: 0.28
+          confidence: 0.06
+        /assertion/cell_source:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.52
+            PARTIAL: 0.28
+          confidence: 0.28
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.45
+            PARTIAL: 0.32
+          confidence: 0.18
+        /assertion/culture_system:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/conditions:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.14
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.57
+            PARTIAL: 0.2
+          confidence: 0.35
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.1
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/modeled_mechanisms/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.03
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.12
+            PARTIAL: 0.19
+          confidence: 0.53
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.07
+            PARTIAL: 0.49
+          confidence: 0.23
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.09
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.52
+            PARTIAL: 0.41
+          confidence: 0.28
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+          confidence: 0.27
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.46
+            PARTIAL: 0.34
+          confidence: 0.19
+        /assertion/modeled_mechanisms/0/readouts/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.52
+            PARTIAL: 0.42
+          confidence: 0.28
+        /assertion/modeled_mechanisms/0/readouts/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.22
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/modeled_mechanisms/0/readouts/1/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.08
+            PARTIAL: 0.35
+          confidence: 0.35
+        /assertion/modeled_mechanisms/0/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.29
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/modeled_mechanisms/0/readouts/1/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.17
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.77
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.56
+            PARTIAL: 0.32
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 27431
+        output_tokens: 1421
+      elapsed_seconds: 0.4821
+      request_sha256: 407142a47117211dd210c3bb6a28802c9dabf72a5bb576d0b4c45339a481754d
+      request_sha256s:
+      - 407142a47117211dd210c3bb6a28802c9dabf72a5bb576d0b4c45339a481754d

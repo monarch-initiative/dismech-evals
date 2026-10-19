@@ -5394,6 +5394,62 @@ inputs:
     - assertion_path: /pathophysiology/5
       evidence_path: /pathophysiology/5/evidence/1
       reference: PMID:41550027
+  2462d3bce03182b4e06cc0983813dd7012874fc9a974ff4a021af3ccb2099e0a:
+    claim:
+      about:
+        disease:
+          name: Autism Spectrum Disorder
+          disease_term:
+            preferred_term: autism spectrum disorder
+            term:
+              id: MONDO:0005258
+              label: autism spectrum disorder
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Standardized diagnostic instruments as adjuncts
+        presence: Instruments such as ADOS-2, ADI-R, CARS, and structured rating scales can organize observation
+          and history, but thresholds do not replace expert clinical synthesis. Accuracy varies by tool,
+          age, comparator, setting, and study quality; cultural, sex/gender, language, intellectual, and
+          masking effects require consideration.
+        notes: No LOINC code is bound because LOINC carries none of these instruments, nor the M-CHAT-R/F
+          toddler screen. The Monarch KG LOINC search returned nothing for "M-CHAT", "MCHAT", "M-CHAT-R"
+          or "Modified checklist for autism in toddlers", and "autism" returned only PhenX autism-symptom
+          protocol panels, a Minimum Data Set item, an autism action plan and history questions. No LOINC
+          2.83 Long Common Name (the Tuva Project release pinned in data/loinc/MANIFEST.yaml) contains
+          M-CHAT, Modified Checklist, ADOS, Childhood Autism Rating, Autism Diagnostic, SCQ, Social Communication
+          Questionnaire, Social Responsiveness or Autism Spectrum Quotient. NCIT label searches for "M-CHAT"
+          and "Checklist for Autism" return no term either.
+        diagnosis_term:
+          preferred_term: clinical assessment
+          term:
+            id: NCIT:C124351
+            label: Clinical Evaluation
+      selected_evidence:
+        snippet: Diagnostic tools should be regarded as adjunctive aids rather than comprehensive substitutes
+          for diagnosis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40274203
+      reference_title: 'Autism diagnosis in children and adolescents: A systematic review and meta-analysis
+        of test accuracy.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly states the intended use and limitation of standardized tools.
+    first_seen_at: '2026-10-19T16:56:34.228232+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:56:34.228232+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:56:34.228232+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:40274203
 assessments:
   d0a640afacc67c849610d027d12a2543a7521b7cbef6e1914429d232e0aacf5b:
     input_sha256: 19415c34a9a73e734ecd768faf1dc247b9626d86309c46887faf72852b98ca79
@@ -12954,3 +13010,69 @@ assessments:
       request_sha256: 11c631d3c12bdb815e54f9a1b68e41bda0b1058495fd59eaafee49e494537dcb
       request_sha256s:
       - 11c631d3c12bdb815e54f9a1b68e41bda0b1058495fd59eaafee49e494537dcb
+  5719b1a4c2bd4f8a5ad9f4b8a90e0df91732eb02b0d68eedb0c031676b4845d6:
+    input_sha256: 2462d3bce03182b4e06cc0983813dd7012874fc9a974ff4a021af3ccb2099e0a
+    configuration_sha256: f69ab2bece65b174cb39aa067e68c96e216526acea7c7c2ff5f0285e627a7902
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:56:34.228232+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.06
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.16
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.11
+            PARTIAL: 0.3
+          confidence: 0.38
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.07
+            PARTIAL: 0.43
+          confidence: 0.25
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.81
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.24
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.19
+            PARTIAL: 0.37
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7399
+        output_tokens: 325
+      elapsed_seconds: 0.2453
+      request_sha256: cd9987e3109537456505f3204b9a8f5062f7d1a1edba815b72cb7ef9cb2f4d91
+      request_sha256s:
+      - cd9987e3109537456505f3204b9a8f5062f7d1a1edba815b72cb7ef9cb2f4d91

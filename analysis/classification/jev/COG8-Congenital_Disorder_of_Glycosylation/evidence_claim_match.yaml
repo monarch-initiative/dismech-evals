@@ -11924,6 +11924,126 @@ inputs:
     - assertion_path: /experimental_models/3/findings/1
       evidence_path: /experimental_models/3/findings/1/evidence/0
       reference: PMID:34053170
+  e620754f3f47d457c80bc74727c5e7f88c28931c7259d2ed0b148b03bec7c22b:
+    claim:
+      about:
+        disease:
+          name: COG8-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: COG8-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012635
+              label: COG8-congenital disorder of glycosylation
+        context:
+        - path: /experimental_models/0
+          value:
+            name: COG8-deficient CDG patient fibroblasts with lentiviral complementation
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Patient fibroblasts from the Kranz et al. case had undetectable COG8, abnormal
+              subunit localization, hyposialylation and delayed BFA response. Lentiviral wild-type COG8
+              corrected these cellular readouts. Complementation supports a causal contribution of COG8
+              dysfunction but does not establish clinical treatment efficacy.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Delayed Golgi-to-ER retrograde transport
+        relationship: RESCUES
+        model_scale: CELLULAR
+        limitations: Correction in cultured fibroblasts does not establish rescue of neurological or other
+          clinical outcomes.
+        divergences:
+        - divergence_type: BOUNDARY_OMISSION
+          materiality: QUALIFYING
+          description: Cultured cells do not include the neural, hepatic and systemic interactions needed
+            to explain the clinical phenotype.
+        readouts:
+        - name: Restored brefeldin A-induced Golgi redistribution
+          target: Delayed Golgi-to-ER retrograde transport
+          direction: RESTORED
+          interpretation: Wild-type COG8 complementation restores this cellular readout, supporting COG8
+            dependence without establishing clinical treatment benefit.
+      selected_evidence:
+        snippet: Lentiviral-mediated complementation with normal COG8 corrected mislocalization of other
+          COG proteins, normalized sialylation and restored normal BFA-induced Golgi disruption.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0/modeled_mechanisms/3
+      evidence_path: /experimental_models/0/modeled_mechanisms/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/0
+    evidence_metadata:
+      reference: PMID:17331980
+      reference_title: COG8 deficiency causes new congenital disorder of glycosylation type IIh.
+      evidence_source: IN_VITRO
+      explanation: Reports the rescue of all three cellular readouts.
+    first_seen_at: '2026-10-19T16:39:56.086347+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:39:56.086347+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:39:56.086347+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0/modeled_mechanisms/3
+      evidence_path: /experimental_models/0/modeled_mechanisms/3/evidence/0
+      reference: PMID:17331980
+  cf3567fe0535dee42bd79efe9881f975a58f35a5c3cb78363844698ea26c990f:
+    claim:
+      about:
+        disease:
+          name: COG8-congenital disorder of glycosylation
+          disease_term:
+            preferred_term: COG8-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012635
+              label: COG8-congenital disorder of glycosylation
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Golgi SNARE complex assembly
+        biological_scale: CELLULAR
+        description: Assembly of the Stx5-GS28-Ykt6-GS15 and Stx6-Stx16-Vti1a-VAMP4 complexes is reduced
+          in COG8-depleted HeLa cells and the tested COG8-CDG fibroblasts. Protein abundance and localization
+          differ between the systems; loss of complex assembly is not identical to loss of every SNARE
+          protein.
+        biological_processes:
+        - preferred_term: SNARE complex assembly
+          term:
+            id: GO:0035493
+            label: SNARE complex assembly
+          modifier: ABNORMAL
+      selected_evidence:
+        snippet: the interactions of Stx5 with either the v-SNARE GS15 or the t-SNAREs Ykt6 and GS28 were
+          significantly reduced in both Cog8-deficient cell types.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23865579
+      reference_title: Deficiency of the Cog8 subunit in normal and CDG-derived cells impairs the assembly
+        of the COG and Golgi SNARE complexes.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: NEM-stabilized immunoprecipitation detects reduced Stx5 complex assembly.
+    first_seen_at: '2026-10-19T16:39:56.003917+00:00'
+    first_seen_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    last_seen_at: '2026-10-19T16:39:56.003917+00:00'
+    active: true
+    active_as_of: '2026-10-19T16:39:56.003917+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:23865579
 assessments:
   da11dbae2b0e5dca35eecb78c30052d42abf7302e0c1b575fe58dc9bbf416774:
     input_sha256: 251ce3bbcebbd1ccaeb0643cbc90e8efc3fdce4721c61d3e0c61a9638bb2f3f0
@@ -26886,3 +27006,191 @@ assessments:
       request_sha256: 7bf294b5b419fdf37bc7ee874afe191797c79514b0f6873a9e645e027d65ccc6
       request_sha256s:
       - 7bf294b5b419fdf37bc7ee874afe191797c79514b0f6873a9e645e027d65ccc6
+  9d6982e5325797263dbf904f34c814820c8a36728592eb8da09f85bfc8456ea7:
+    input_sha256: e620754f3f47d457c80bc74727c5e7f88c28931c7259d2ed0b148b03bec7c22b
+    configuration_sha256: 2dbb15e9cb98dfc5a2474490aeb2f365aecaac5c3a7b66df4a2d647570d89eca
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:39:56.086347+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.01
+            PARTIAL: 0.14
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.04
+            PARTIAL: 0.26
+          confidence: 0.55
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.16
+            PARTIAL: 0.09
+          confidence: 0.62
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/limitations:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.24
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/divergences/0/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.21
+            PARTIAL: 0.23
+          confidence: 0.34
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.08
+            PARTIAL: 0.21
+          confidence: 0.56
+        /assertion/divergences/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.33
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.04
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.14
+            PARTIAL: 0.13
+          confidence: 0.59
+        /assertion/readouts/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15510
+        output_tokens: 670
+      elapsed_seconds: 0.2714
+      request_sha256: d0b3c6fea61bef587a7d5d4c0f592b720d1a628a8473d503d8c3bf00ce5288f1
+      request_sha256s:
+      - d0b3c6fea61bef587a7d5d4c0f592b720d1a628a8473d503d8c3bf00ce5288f1
+  392a193630621ea52777b9713f9a8ebaed7fceb5ee706e2c8024d52c2eee0c68:
+    input_sha256: cf3567fe0535dee42bd79efe9881f975a58f35a5c3cb78363844698ea26c990f
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 0eac4abb0b649b0f80c6eb8c73d106a53a1e846b
+    status: assessed
+    assessed_at: '2026-10-19T16:39:56.003917+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.01
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.01
+            PARTIAL: 0.22
+          confidence: 0.66
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.19
+            PARTIAL: 0.15
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.02
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.01
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.01
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.06
+            PARTIAL: 0.17
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8902
+        output_tokens: 386
+      elapsed_seconds: 0.2045
+      request_sha256: b97d48017955edc33a0850c595de24e21773d59ced82b25791e5a20d3638630b
+      request_sha256s:
+      - b97d48017955edc33a0850c595de24e21773d59ced82b25791e5a20d3638630b

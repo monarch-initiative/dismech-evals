@@ -2231,6 +2231,65 @@ inputs:
     - assertion_path: /diagnosis/2
       evidence_path: /diagnosis/2/evidence/1
       reference: PMID:12959026
+  428b37f16bcfe645b78c6781e71338c10e218e17a94557127d60b5cf18cfdb26:
+    claim:
+      about:
+        disease:
+          name: Anaerobic Pneumonia
+          disease_term:
+            preferred_term: anaerobic pneumonia
+            term:
+              id: MONDO:0004649
+              label: anaerobic pneumonia
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Pleural Extension of Infection
+            role: outcome
+            conforms_to: parapneumonic_empyema_formation#Bacterial Pleural Invasion and Purulent Progression
+            description: Cavitary lung infection can involve the pleural surface or rupture into the pleural
+              space, producing empyema and, in severe cases, bronchopleural fistula that requires source
+              control.
+            biological_scale: TISSUE
+            locations:
+            - preferred_term: pleura
+              term:
+                id: UBERON:0000977
+                label: pleura
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Pleural Empyema
+        causal_link_type: DIRECT
+        description: Pleural extension seeds infected fluid in the pleural cavity and produces empyema.
+      selected_evidence:
+        snippet: Since antibiotics can provide cure in 80-90% of cases, surgical procedures are limited
+          to severe complications, such as pleural empyema.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: PMID:20477271
+      reference_title: 'Aspiration pneumonia and primary lung abscess: diagnosis and therapy of an aerobic
+        or an anaerobic infection?'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Identifies pleural empyema as a severe complication of aspiration pneumonia and primary
+        lung abscess.
+    first_seen_at: '2026-11-09T19:58:45.984723+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:58:45.984723+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:58:45.984723+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/0
+      evidence_path: /pathophysiology/5/downstream/0/evidence/0
+      reference: PMID:20477271
 assessments:
   1068adcd3b03d090e999c882bc011326db1654749efd9791db5b6f7f2edf4679:
     input_sha256: cdd07914f88fdd67fd1cde14b83cd96ddba1353ddddd9936ede22b5ab250944d
@@ -5066,3 +5125,62 @@ assessments:
       request_sha256: 51943d33a0c3b56a551358a2719e753674b9cc64abae5580d77f9c4f0974cff5
       request_sha256s:
       - 51943d33a0c3b56a551358a2719e753674b9cc64abae5580d77f9c4f0974cff5
+  8a7219ed486ca92d581ca2a31f984ce3a9149216172bc1981469cef991e8a26c:
+    input_sha256: 428b37f16bcfe645b78c6781e71338c10e218e17a94557127d60b5cf18cfdb26
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:58:45.984723+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.41
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.14
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.16
+            PARTIAL: 0.33
+          confidence: 0.26
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.37
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.54
+            PARTIAL: 0.43
+          confidence: 0.31
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.29
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6457
+        output_tokens: 275
+      elapsed_seconds: 0.1807
+      request_sha256: 94d19cc52e1e645843ce5a9275486e0b71f2caf6fab02f27f011d36a985d05b2
+      request_sha256s:
+      - 94d19cc52e1e645843ce5a9275486e0b71f2caf6fab02f27f011d36a985d05b2

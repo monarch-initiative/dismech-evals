@@ -3528,6 +3528,57 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/1
       reference: PMID:36323843
+  5952e7e54a32734ffe55916dc8ec4e89527d618ae4539bead135f5cca42406c5:
+    claim:
+      about:
+        disease:
+          name: MBD4-Related Uveal Melanoma Predisposition
+          disease_term:
+            preferred_term: melanoma, uveal, susceptibility to, 1
+            term:
+              id: MONDO:0011695
+              label: melanoma, uveal, susceptibility to, 1
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Germline MBD4 testing in uveal melanoma
+        diagnosis_term:
+          preferred_term: Genetic Testing
+          term:
+            id: NCIT:C15709
+            label: Genetic Testing
+        description: 'The predisposition is identified by germline MBD4 testing of a person with uveal
+          melanoma, or by cascade testing of relatives once a familial variant is known. A hypermutated,
+          CpG>TpG-dominant, monosomy-3 tumor is a clue to MBD4 deficiency, but somatic MBD4 inactivation
+          also occurs, so germline status needs a constitutional sample. Practice differs between guidelines:
+          NCCN lists MBD4 among the uveal melanoma testing genes and ASCO recommends BAP1 alone (per a
+          secondary report; the guideline texts were not read for this entry). MBD4 was absent from older
+          multigene panels, so an earlier negative panel does not exclude a carrier state.'
+      selected_evidence:
+        snippet: Beyond clinical implications, our findings argue for systematic testing of MBD4 status
+          in uveal melanoma, ideally through both somatic and germline analyses.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42788773
+      reference_title: Survival of Patients With MBD4-Mutated Metastatic Uveal Melanoma Treated With Immune
+        Checkpoint Inhibitors.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports testing both tumor and constitutional DNA.
+    first_seen_at: '2026-11-09T20:02:00.709649+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:02:00.709649+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:02:00.709649+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/3
+      reference: PMID:42788773
 assessments:
   f6015b9f7d92b11350f09f21897cbba0dc21ee03405cc3a28981b9c711c8d14a:
     input_sha256: 3ab5bf590b537a026c3b0f7fe66f6ed56d38c75d26d4d69a5be4229822317a70
@@ -9053,3 +9104,62 @@ assessments:
       request_sha256: d46525b74b94d880cd97aa75127bac70fbb35fa485e2ab1a8fd79a09da04e371
       request_sha256s:
       - d46525b74b94d880cd97aa75127bac70fbb35fa485e2ab1a8fd79a09da04e371
+  ecc9fa7c7787e4e66cd30ac6ce33a1cdc9324676b3c968683abd8903f2f2220b:
+    input_sha256: 5952e7e54a32734ffe55916dc8ec4e89527d618ae4539bead135f5cca42406c5
+    configuration_sha256: 26813391fb5f5c9ae7d3f4b15507e0fa17974893b6ccec031dcec66bfac93ecc
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:02:00.709649+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.03
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.03
+            PARTIAL: 0.47
+          confidence: 0.25
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.07
+            PARTIAL: 0.42
+          confidence: 0.26
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.11
+            PARTIAL: 0.4
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.05
+            PARTIAL: 0.75
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6420
+        output_tokens: 277
+      elapsed_seconds: 0.1407
+      request_sha256: 389d0122ffd682c24d2df6da41d018f75203afd4ff484c9c81974ec2e0dc71ba
+      request_sha256s:
+      - 389d0122ffd682c24d2df6da41d018f75203afd4ff484c9c81974ec2e0dc71ba

@@ -7328,6 +7328,96 @@ inputs:
     - assertion_path: /differential_diagnoses/5
       evidence_path: /differential_diagnoses/5/evidence/0
       reference: PMID:39335093
+  f87f6cb6782f27f2ee05efdfd86a5b855ba89d32ca742217f357590e145cb1d4:
+    claim:
+      about:
+        disease:
+          name: Ocular Melanoma
+          disease_term:
+            preferred_term: ocular melanoma
+            term:
+              id: MONDO:0006325
+              label: ocular melanoma
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Uveal Melanoma
+            display_name: Uveal Melanoma (choroid, ciliary body, iris)
+            description: Melanoma of the uveal tract, accounting for the large majority of ocular melanomas
+              and for essentially all primary intraocular melanoma in adults. Initiated by GNAQ/GNA11
+              (or CYSLTR2/PLCB4) activating mutations, stratified prognostically by BAP1/SF3B1/EIF1AX
+              status and chromosome 3/8q copy number, and characterised by haematogenous liver-dominant
+              metastasis. Curated in depth as its own dismech entry (Uveal_Melanoma).
+            subtype_term:
+              preferred_term: uveal melanoma
+              term:
+                id: MONDO:0006486
+                label: uveal melanoma
+            children:
+            - Choroidal Melanoma
+            - Ciliary Body Melanoma
+            - Iris Melanoma
+            locations:
+            - preferred_term: uvea
+              term:
+                id: UBERON:0001768
+                label: uvea
+            genes:
+            - preferred_term: GNAQ
+              term:
+                id: hgnc:4390
+                label: GNAQ
+            - preferred_term: GNA11
+              term:
+                id: hgnc:4379
+                label: GNA11
+            - preferred_term: BAP1
+              term:
+                id: hgnc:950
+                label: BAP1
+          role: subtype
+      assertion_type: Genetic
+      assertion:
+        name: BAP1
+        gene_term:
+          preferred_term: BAP1
+          term:
+            id: hgnc:950
+            label: BAP1
+        relationship_type: SOMATIC_DRIVER
+        variant_origin: GERMLINE_AND_SOMATIC
+        association: Tumour suppressor loss (biallelic, usually with monosomy 3)
+        subtype: Uveal Melanoma
+        notes: The dominant prognostic gene in uveal melanoma. Somatic inactivation with monosomy 3 defines
+          the class-2, high-metastatic-risk phenotype. A minority of patients carry a germline BAP1 pathogenic
+          variant, constituting BAP1 tumour-predisposition syndrome (uveal melanoma, mesothelioma, cutaneous
+          melanoma, clear-cell renal carcinoma), which warrants genetic counselling and cascade testing.
+      selected_evidence:
+        snippet: "One tumor harbored a frameshift mutation that was germline in origin, thus \nrepresenting\
+          \ a susceptibility allele."
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:21051595
+      reference_title: Frequent mutation of BAP1 in metastasizing uveal melanomas.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents both the somatic and the germline (susceptibility) origin of BAP1 inactivation
+        recorded here.
+    first_seen_at: '2026-11-09T20:43:33.332640+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:33.332640+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:33.332640+00:00'
+    occurrences:
+    - assertion_path: /genetic/2
+      evidence_path: /genetic/2/evidence/0
+      reference: PMID:21051595
 assessments:
   1810dbea7821382cd4b81203a37a69b6948e819a7cd0707ae7404b395cfb7c1f:
     input_sha256: ce46645e9f7a8ecdbdd510ae8128fa9449aae16d6e6317c26c55fbaad09ef454
@@ -16689,3 +16779,97 @@ assessments:
       request_sha256: b6d875246b02451118350e5dfdae7b6a736f9499b09a6608873d05ab2a1151a7
       request_sha256s:
       - b6d875246b02451118350e5dfdae7b6a736f9499b09a6608873d05ab2a1151a7
+  55d42354723355da7ced5db6c166610880f195168e9f8d228fdc11615ef49b35:
+    input_sha256: f87f6cb6782f27f2ee05efdfd86a5b855ba89d32ca742217f357590e145cb1d4
+    configuration_sha256: 450d03e131ec2900f0fbbf93c518c4d515daf4923fd9eef81117e98975afdcbf
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:33.332640+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.23
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.08
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.18
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.13
+            PARTIAL: 0.37
+          confidence: 0.25
+        /assertion/gene_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.18
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.38
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.04
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/association:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.4
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/subtype:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.49
+            PARTIAL: 0.45
+          confidence: 0.24
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.21
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.22
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12014
+        output_tokens: 510
+      elapsed_seconds: 0.2569
+      request_sha256: f0b1565fa686b896b2d5078f307e607c4efcea65d6f915ded26782555803b0d3
+      request_sha256s:
+      - f0b1565fa686b896b2d5078f307e607c4efcea65d6f915ded26782555803b0d3

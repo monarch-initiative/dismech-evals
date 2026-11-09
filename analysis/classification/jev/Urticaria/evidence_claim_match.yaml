@@ -2889,6 +2889,144 @@ inputs:
     - assertion_path: /diagnosis/2
       evidence_path: /diagnosis/2/evidence/0
       reference: DOI:10.1186/s13223-024-00931-6
+  b3ccf9acfb746750b9d3e5ccaf650c412196971b6760af8be929732dc8eee0ca:
+    claim:
+      about:
+        disease:
+          name: Urticaria
+          disease_term:
+            preferred_term: urticaria
+            term:
+              id: MONDO:0005492
+              label: urticaria
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Antihistamine Occupancy of Cutaneous H1 Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: h1_receptor_antagonism#H1 Receptor Antagonist Occupancy
+        description: 'The receptor occupancy that second-generation antihistamine therapy establishes
+          in this disease, held as a node of its own so the drug class has somewhere to attach. It carries
+          no downstream edge: the relation between an antagonist and the histaminergic signalling above
+          is inhibitory, and a downstream edge would assert that the drug drives the signalling it blocks.
+          The existing links from that treatment to the vascular and sensory nodes are deliberately MODULATES
+          and are left as they are; this node adds the receptor step they act through, not a stronger
+          claim about them. What the occupancy produces, and what it costs when the agent reaches the
+          brain, is the H1 receptor antagonism module.'
+        molecular_functions:
+        - preferred_term: H1 receptor blockade by an antihistamine
+          term:
+            id: GO:0004969
+            label: histamine receptor activity
+          modifier: DECREASED
+        locations:
+        - preferred_term: dermis
+          term:
+            id: UBERON:0002067
+            label: dermis
+        genes:
+        - preferred_term: HRH1
+          term:
+            id: hgnc:5182
+            label: HRH1
+      selected_evidence:
+        snippet: blocking the action of histamine on receptors in blood vessels and sensory nerve endings
+          indirectly reduces allergic inflammation
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40845419
+      reference_title: 'Chronic spontaneous urticaria: update on pathogenesis and therapeutic implications.'
+      evidence_source: OTHER
+      explanation: Places the drug's action at the receptor in this disease, on both the vascular and
+        the sensory side, which is what makes this a cutaneous occupancy node rather than a restatement
+        of the module.
+    first_seen_at: '2026-11-09T20:07:03.221745+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:07:03.221745+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:07:03.221745+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      reference: PMID:40845419
+  623fd2e2e2d959eadf67a26ebe520cdb84441ec2d5817738b13755277073a9e2:
+    claim:
+      about:
+        disease:
+          name: Urticaria
+          disease_term:
+            preferred_term: urticaria
+            term:
+              id: MONDO:0005492
+              label: urticaria
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Antihistamine Occupancy of Cutaneous H1 Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: h1_receptor_antagonism#H1 Receptor Antagonist Occupancy
+        description: 'The receptor occupancy that second-generation antihistamine therapy establishes
+          in this disease, held as a node of its own so the drug class has somewhere to attach. It carries
+          no downstream edge: the relation between an antagonist and the histaminergic signalling above
+          is inhibitory, and a downstream edge would assert that the drug drives the signalling it blocks.
+          The existing links from that treatment to the vascular and sensory nodes are deliberately MODULATES
+          and are left as they are; this node adds the receptor step they act through, not a stronger
+          claim about them. What the occupancy produces, and what it costs when the agent reaches the
+          brain, is the H1 receptor antagonism module.'
+        molecular_functions:
+        - preferred_term: H1 receptor blockade by an antihistamine
+          term:
+            id: GO:0004969
+            label: histamine receptor activity
+          modifier: DECREASED
+        locations:
+        - preferred_term: dermis
+          term:
+            id: UBERON:0002067
+            label: dermis
+        genes:
+        - preferred_term: HRH1
+          term:
+            id: hgnc:5182
+            label: HRH1
+      selected_evidence:
+        snippet: H1 receptor antagonists, known as H1-antihistamines (AHs), inactivate the histamine H1-receptor
+          thereby preventing histamine causing the primary symptoms of allergic diseases, such as atopic
+          dermatitis, pollinosis, food allergies, and urticaria.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34622396
+      reference_title: Efficacy and Safety of Non-brain Penetrating H(1)-Antihistamines for the Treatment
+        of Allergic Diseases.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Names the receptor the class inactivates and lists urticaria among the indications,
+        which is the receptor bound on this node and the module trigger it conforms to.
+    first_seen_at: '2026-11-09T20:07:03.348294+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:07:03.348294+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:07:03.348294+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/1
+      reference: PMID:34622396
 assessments:
   ff4b380e71e8ce47101e71c5ef47ee90c26596c0920482efd65d5a2b94826fcc:
     input_sha256: dad57fa8e35e5b7b24ede6d660ba1417bcbaa285782710198c6f408dc7c539a5
@@ -6539,3 +6677,233 @@ assessments:
       request_sha256: 028b7472b07aa76c299a5dfb7f52eb20464e984b480d7ae29a2b1d49e3475533
       request_sha256s:
       - 028b7472b07aa76c299a5dfb7f52eb20464e984b480d7ae29a2b1d49e3475533
+  a2787304a0519e895a8e1cfbcafbc5d80359e0f5a6cf3545f6d20e7bf85516ef:
+    input_sha256: b3ccf9acfb746750b9d3e5ccaf650c412196971b6760af8be929732dc8eee0ca
+    configuration_sha256: 08e7781f4098dd3e533141c7eae5d5c250660d2bcb9dfe6804fec54113227829
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:07:03.221745+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.08
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.06
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.09
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.07
+            PARTIAL: 0.44
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.09
+            PARTIAL: 0.12
+          confidence: 0.68
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.29
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.04
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.1
+            PARTIAL: 0.26
+          confidence: 0.46
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.24
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.18
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/genes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.16
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/genes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.16
+            PARTIAL: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14993
+        output_tokens: 671
+      elapsed_seconds: 0.2476
+      request_sha256: 0145f52ef557bc4f4d66c6626fceb7a51a0961b91515e18bb0fe4a28f7232e3b
+      request_sha256s:
+      - 0145f52ef557bc4f4d66c6626fceb7a51a0961b91515e18bb0fe4a28f7232e3b
+  76954aaec6e57ef36ee9579dabd4cc577ca9b047f7c2dbe231a29fcb92149a67:
+    input_sha256: 623fd2e2e2d959eadf67a26ebe520cdb84441ec2d5817738b13755277073a9e2
+    configuration_sha256: 08e7781f4098dd3e533141c7eae5d5c250660d2bcb9dfe6804fec54113227829
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:07:03.348294+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.04
+            PARTIAL: 0.37
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.04
+            PARTIAL: 0.19
+          confidence: 0.66
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.03
+            PARTIAL: 0.03
+          confidence: 0.91
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.2
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.12
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.15
+            PARTIAL: 0.13
+          confidence: 0.58
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.31
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.33
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.05
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15036
+        output_tokens: 666
+      elapsed_seconds: 0.2657
+      request_sha256: 1d771e036ff8782d1636d62b85ef2cbdae970ac59e3a9b3db4f5be5c651b39d6
+      request_sha256s:
+      - 1d771e036ff8782d1636d62b85ef2cbdae970ac59e3a9b3db4f5be5c651b39d6

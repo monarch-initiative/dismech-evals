@@ -1370,6 +1370,145 @@ inputs:
     - assertion_path: /diagnosis/1
       evidence_path: /diagnosis/1/evidence/0
       reference: PMID:42069959
+  f7cbdf35994d665a547c06c01b8f34c22f2c7ec786665364ca2fbb4a30639ac6:
+    claim:
+      about:
+        disease:
+          name: Mesomelic Dysplasia, Savarirayan Type
+          disease_term:
+            preferred_term: mesomelic dysplasia, Savarirayan type
+            term:
+              id: MONDO:0011530
+              label: mesomelic dysplasia, Savarirayan type
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: ID4 (6p22.3 regulatory landscape)
+        gene_term:
+          preferred_term: ID4
+          term:
+            id: hgnc:5363
+            label: ID4
+        relationship_type: CAUSATIVE
+        notes: The causal unit is a genomic region rather than a gene, and ID4 is named as the effector
+          on positional grounds only — its coding sequence is intact and it lies outside the smallest
+          deleted interval. Diagnostically this means ID4 sequencing is uninformative; copy-number analysis
+          finds the deletion alleles and whole-genome sequencing can identify inversion alleles. The deleted
+          interval itself contains MBOAT1, E2F3, CDKAL1 and SOX4. The proposed regulatory effect on ID4
+          is distinct from the loss of these coding genes.
+        variants:
+        - name: 6p22.3 deletion spanning hg19 chr6:19974194-22013061
+          variant_type: deletion
+          genomic_contexts:
+          - coding sequence
+          - intron
+          - intergenic region
+          regulatory_target_gene:
+            preferred_term: ID4
+            term:
+              id: hgnc:5363
+              label: ID4
+          description: Heterozygous deletion reported as arr[hg19] 6p22.3 (19974194-22013061)x1 in the
+            2015 series. These coordinates are the outermost deleted probes, not nucleotide-resolved breakpoints;
+            Table 2 gives flanking normal probes at chr6:19965294 and chr6:22016585. The interval removes
+            MBOAT1, E2F3, CDKAL1 and SOX4, including coding, intronic and intervening intergenic sequence,
+            while retaining ID4. ID4 is the proposed regulatory target, not a deleted coding gene. Parental
+            samples were unavailable, so origin is unconfirmed for this allele despite the abstract's
+            collective de novo wording.
+          functional_effects:
+          - function: Spatial regulation of ID4 expression during limb development
+            type: predicted enhancer adoption
+            regulatory_element_type: TAD_BOUNDARY
+            affected_developmental_stage: embryonic limb development
+            regulatory_mechanism: Deletion of regulatory boundaries is predicted to expose intact ID4
+              to normally insulated limb enhancers.
+            description: The proposed outcome is gain of ectopic ID4 expression in limb buds. This remains
+              a positional hypothesis; expression was not measured.
+        - name: 6p22.3 deletion spanning hg19 chr6:19849280-21604600
+          variant_type: deletion
+          genomic_contexts:
+          - coding sequence
+          - intron
+          - intergenic region
+          regulatory_target_gene:
+            preferred_term: ID4
+            term:
+              id: hgnc:5363
+              label: ID4
+          description: De novo heterozygous deletion reported as arr[hg19] 6p22.3 (19849280-21604600)x1
+            in the 2015 series. These are the outermost deleted probes; Table 2 gives flanking normal
+            probes at chr6:19840492 and chr6:21630684. The approximately 1.76 Mb minimum interval removes
+            MBOAT1, E2F3, CDKAL1 and SOX4, including coding, intronic and intervening intergenic sequence,
+            but leaves the proposed target ID4 intact. The deletion and its de novo origin were confirmed
+            by qPCR.
+          functional_effects:
+          - function: Spatial regulation of ID4 expression during limb development
+            type: predicted enhancer adoption
+            regulatory_element_type: TAD_BOUNDARY
+            affected_developmental_stage: embryonic limb development
+            regulatory_mechanism: Removal of regulatory boundaries is predicted to place limb enhancers
+              in the regulatory domain of ID4 without deleting its coding sequence.
+            description: Ectopic ID4 expression is proposed to explain the limb phenotype; neither the
+              expression change nor the causal enhancer contacts were measured in this allele.
+        - name: 6p22.3 inversion with a breakpoint insertion
+          variant_type: inversion
+          regulatory_target_gene:
+            preferred_term: ID4
+            term:
+              id: hgnc:5363
+              label: ID4
+          description: De novo inversion identified by whole-genome sequencing after a negative array
+            in the 2026 report. The author-deposited LOVD record gives the hg38 genomic description on
+            chromosome 6 as g.19066060_21763046delins[CGAATTAACTGT;19066051_21763045inv]. Supplementary
+            Figure 2 documents a templated insertion at the telomeric breakpoint, so this is not represented
+            as a completely balanced simple inversion. ID4 is a predicted regulatory target whose coding
+            sequence is retained. Genomic contexts are omitted because the accessed abstract and supplement
+            do not establish transcript-specific breakpoint overlaps.
+          external_assertions:
+          - name: LOVD 6p22.3 inversion record 0001070241
+            source: Global Variome shared LOVD
+            external_id: '0001070241'
+            assertion_type: author-deposited variant record
+            url: https://databases.lovd.nl/shared/individuals/00474045
+            description: Variant linked from individual 00474045 in the publication's data availability
+              statement. The record includes hg19 and hg38 descriptions and resolves the associated inversion
+              junction insertion.
+          functional_effects:
+          - function: Spatial regulation of ID4 expression during limb development
+            type: predicted enhancer adoption
+            regulatory_element_type: TAD_BOUNDARY
+            affected_developmental_stage: embryonic limb development
+            regulatory_mechanism: The inversion is predicted to alter TAD organization and reposition
+              intact ID4 relative to telomeric limb enhancers.
+            description: The proposed gain of ectopic expression is supported by genomic position and
+              POSTRE prediction, not by direct measurement of ID4 RNA or protein in developing limb tissue.
+      selected_evidence:
+        snippet: Thus, this case broadens the genetic spectrum in MDST and provides further support to
+          the role of ID4 dysregulation as the main underlying molecular mechanism of this ultra-rare
+          skeletal disorder.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42069959
+      reference_title: Genomic inversion at 6p22.3 supports ID4 dysregulation as the pathogenic mechanism
+        of Mesomelic dysplasia Savarirayan-type.
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the ID4-dysregulation attribution, at the strength the source gives it ("further
+        support", not proof).
+    first_seen_at: '2026-11-09T20:22:12.058390+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:22:12.058390+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:22:12.058390+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:42069959
 assessments:
   ab32187110a546b84461da7d410233a6ca0e52c2fbc9a3ce8eecfa87d6192686:
     input_sha256: cccbf03ac51bfba9c0c8b619a35a28a2813faf5b69b471ade4f98d592267401b
@@ -3597,3 +3736,356 @@ assessments:
       request_sha256: 0ac7724146a333714edf60ce398ac61a72beba51f0240d2d1efb9e6e7584c0bc
       request_sha256s:
       - 0ac7724146a333714edf60ce398ac61a72beba51f0240d2d1efb9e6e7584c0bc
+  3507ae66ec01ffa2a5ee860fdc0ee7a58dd783494850e6d2becd4ef8d8c75a33:
+    input_sha256: f7cbdf35994d665a547c06c01b8f34c22f2c7ec786665364ca2fbb4a30639ac6
+    configuration_sha256: d836669b5cdea0dcb18766d3193e265a164ff07c9a26ba8cb749cbe8ecdc75b1
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:22:12.058390+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.03
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.0
+            PARTIAL: 0.11
+          confidence: 0.83
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.08
+            PARTIAL: 0.31
+          confidence: 0.42
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.05
+            PARTIAL: 0.26
+          confidence: 0.53
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.06
+            PARTIAL: 0.33
+          confidence: 0.42
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.04
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.42
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/variants/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.61
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/variants/0/variant_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.56
+            PARTIAL: 0.24
+          confidence: 0.34
+        /assertion/variants/0/genomic_contexts:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.55
+            PARTIAL: 0.23
+          confidence: 0.33
+        /assertion/variants/0/regulatory_target_gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/variants/0/regulatory_target_gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.04
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/variants/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.54
+            PARTIAL: 0.37
+          confidence: 0.31
+        /assertion/variants/0/functional_effects/0/function:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.1
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/variants/0/functional_effects/0/type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.35
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/variants/0/functional_effects/0/regulatory_element_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.5
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/variants/0/functional_effects/0/affected_developmental_stage:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.52
+            PARTIAL: 0.44
+          confidence: 0.28
+        /assertion/variants/0/functional_effects/0/regulatory_mechanism:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.45
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/variants/0/functional_effects/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.18
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/variants/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.53
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/variants/1/variant_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.55
+            PARTIAL: 0.2
+          confidence: 0.33
+        /assertion/variants/1/genomic_contexts:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.49
+            PARTIAL: 0.25
+          confidence: 0.24
+        /assertion/variants/1/regulatory_target_gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/variants/1/regulatory_target_gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.05
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/variants/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/variants/1/functional_effects/0/function:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.13
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/variants/1/functional_effects/0/type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.37
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/variants/1/functional_effects/0/regulatory_element_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.47
+            PARTIAL: 0.38
+          confidence: 0.2
+        /assertion/variants/1/functional_effects/0/affected_developmental_stage:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.53
+            PARTIAL: 0.43
+          confidence: 0.3
+        /assertion/variants/1/functional_effects/0/regulatory_mechanism:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.46
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/variants/1/functional_effects/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.19
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/variants/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.52
+            PARTIAL: 0.41
+          confidence: 0.28
+        /assertion/variants/2/variant_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.55
+            PARTIAL: 0.2
+          confidence: 0.33
+        /assertion/variants/2/regulatory_target_gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.05
+            PARTIAL: 0.23
+          confidence: 0.58
+        /assertion/variants/2/regulatory_target_gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/variants/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/variants/2/external_assertions/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.73
+            PARTIAL: 0.2
+          confidence: 0.6
+        /assertion/variants/2/external_assertions/0/source:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.66
+            PARTIAL: 0.21
+          confidence: 0.49
+        /assertion/variants/2/external_assertions/0/external_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.7
+            PARTIAL: 0.21
+          confidence: 0.55
+        /assertion/variants/2/external_assertions/0/assertion_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.6
+            PARTIAL: 0.18
+          confidence: 0.4
+        /assertion/variants/2/external_assertions/0/url:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.7
+            PARTIAL: 0.18
+          confidence: 0.55
+        /assertion/variants/2/external_assertions/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.62
+            PARTIAL: 0.28
+          confidence: 0.43
+        /assertion/variants/2/functional_effects/0/function:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.13
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/variants/2/functional_effects/0/type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.39
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/variants/2/functional_effects/0/regulatory_element_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.5
+            PARTIAL: 0.39
+          confidence: 0.25
+        /assertion/variants/2/functional_effects/0/affected_developmental_stage:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.52
+            PARTIAL: 0.43
+          confidence: 0.28
+        /assertion/variants/2/functional_effects/0/regulatory_mechanism:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.43
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/variants/2/functional_effects/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.37
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 49369
+        output_tokens: 2665
+      elapsed_seconds: 0.3483
+      request_sha256: 2cbaf01ee1b14094f8eec638034ad973f79f68adcd59f77adc2815355460e1e3
+      request_sha256s:
+      - 2cbaf01ee1b14094f8eec638034ad973f79f68adcd59f77adc2815355460e1e3

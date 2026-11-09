@@ -5234,6 +5234,68 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/0
       reference: PMID:37711075
+  886c2f331c1f6609b548b6767ce375fa8847e3e6075318da33e749e645023b90:
+    claim:
+      about:
+        disease:
+          name: COG3-Congenital Disorder of Glycosylation
+          disease_term:
+            preferred_term: COG3-Congenital Disorder of Glycosylation
+            term:
+              id: MONDO:0957820
+              label: congenital disorder of glycosylation, type IIbb
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: Golgi Glycosylation Enzyme Mislocalization
+            biological_scale: CELLULAR
+            description: 'Golgi glycosyltransferases are relocated into untethered COG complex-dependent
+              vesicles and their steady-state levels fall, separating them from the anterograde cargo
+              they should modify. In COG3-CDG patient fibroblasts, a panel of Golgi and endolysosomal
+              resident proteins showed perturbations in selected glycoproteins and Golgi enzymes; the
+              individual enzymes are reported only in supplementary data, so the named examples here come
+              from COG3 knockdown cells.
+
+              '
+            biological_processes:
+            - preferred_term: Golgi organization
+              modifier: DECREASED
+              term:
+                id: GO:0007030
+                label: Golgi organization
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Deficient Protein Sialylation
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: MALDI-TOF analysis of total N-linked glycoconjugates indicated a decrease in the relative
+          amount of sialylated glycans in both COG3 KD and COG4 KD cells.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: PMID:21421995
+      reference_title: Conserved oligomeric Golgi complex specifically regulates the maintenance of Golgi
+        glycosylation machinery.
+      evidence_source: IN_VITRO
+      explanation: 'Reduced sialylation measured in COG3 knockdown cells. INDIRECT: knockdown model, not
+        patient material.'
+    first_seen_at: '2026-11-09T20:29:21.739504+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:29:21.739504+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:29:21.739504+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/1
+      reference: PMID:21421995
 assessments:
   43e00595e9f0f5005bdd043a7f6cfc1d882a9a7fc8c0113eafaafdef3de2c3c6:
     input_sha256: 7b0246be6b82f4fbde94ddecb40fbebe3d0521a63f963a08a05e2855667e92dc
@@ -11832,3 +11894,55 @@ assessments:
       request_sha256: 383f06caba434d9f9d2e79d44421ff9b3717700bcfbe92f1e87053eae33ed3f5
       request_sha256s:
       - 383f06caba434d9f9d2e79d44421ff9b3717700bcfbe92f1e87053eae33ed3f5
+  08c8a2333b33ba48b10a06342f72cebc4ff3402b59d6e56612c68aaff699a8e0:
+    input_sha256: 886c2f331c1f6609b548b6767ce375fa8847e3e6075318da33e749e645023b90
+    configuration_sha256: e16ae0eb91cb7a047448384bc2e4d65fa7a25457eb28490cdf26275cd97f499c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:29:21.739504+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.19
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.08
+            PARTIAL: 0.24
+          confidence: 0.52
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.04
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.49
+            PARTIAL: 0.31
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.14
+            PARTIAL: 0.45
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5591
+        output_tokens: 228
+      elapsed_seconds: 0.1688
+      request_sha256: 527e4b9f41e63d17130ca9b2a3ec5115d3496bb51303d83a0cad16f1dd189e4c
+      request_sha256s:
+      - 527e4b9f41e63d17130ca9b2a3ec5115d3496bb51303d83a0cad16f1dd189e4c

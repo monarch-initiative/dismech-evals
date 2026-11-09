@@ -1664,6 +1664,63 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/0
       reference: PMID:41246786
+  9256919fe97afcdbe7f6e89a2f66f8ec80449971d2623030a311288777d35b40:
+    claim:
+      about:
+        disease:
+          name: Typhoid Fever
+          disease_term:
+            preferred_term: typhoid fever
+            term:
+              id: MONDO:0005619
+              label: typhoid fever
+        context:
+        - path: /treatments/1
+          value:
+            name: Typhoid conjugate vaccination
+            description: Vi tetanus-toxoid conjugate vaccines reduce blood culture-confirmed typhoid risk
+              and are a preventive intervention for endemic areas.
+            treatment_term:
+              preferred_term: vaccination
+              term:
+                id: NCIT:C15346
+                label: Vaccination
+            therapeutic_modality: VACCINE
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: S. Typhi bacteremia
+        treatment_effect: INHIBITS
+        description: Vi capsular polysaccharide-tetanus toxoid conjugate vaccine (Vi-TT) elicits T-cell-dependent
+          anti-Vi IgG antibodies that opsonize Vi-encapsulated Salmonella enterica serovar Typhi, counteracting
+          Vi-mediated complement evasion and preventing systemic bacteremia.
+      selected_evidence:
+        snippet: Four trials with 111 481 children found the risk of blood culture-confirmed typhoid fever
+          after Vi-TT to be 0.18 compared with nontyphoid vaccines.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:40788116
+      reference_title: 'Efficacy and Safety of Tetanus-Toxoid Conjugate Typhoid Vaccine (Vi-TT) in Children
+        and Adolescents: A Systematic Review and Meta-Analysis.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Demonstrates that Vi-TT vaccination markedly reduces blood culture-confirmed S. Typhi
+        bacteremia in children and adolescents.
+    first_seen_at: '2026-11-09T20:22:40.920699+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:22:40.920699+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:22:40.920699+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:40788116
 assessments:
   e1899cd445b25b79b74470a1332b6341a5d5119f2a44e49ae5e1efb2a07187f7:
     input_sha256: 4a1364edac3253795737f2290078871045e117d503e15eb14f8b1a1908f14209
@@ -3972,3 +4029,62 @@ assessments:
       request_sha256: 39edc721c89d5713e68a3b0d216ed350c5d12c31a023df895d738bd2c45e26b7
       request_sha256s:
       - 39edc721c89d5713e68a3b0d216ed350c5d12c31a023df895d738bd2c45e26b7
+  d713ce27cb49ff80abcbd80efd2e7ba53ca5090d29a7bfb5377e3da956960fb8:
+    input_sha256: 9256919fe97afcdbe7f6e89a2f66f8ec80449971d2623030a311288777d35b40
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:22:40.920699+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.04
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.07
+            PARTIAL: 0.42
+          confidence: 0.26
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.02
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.25
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.03
+            PARTIAL: 0.15
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6478
+        output_tokens: 269
+      elapsed_seconds: 0.174
+      request_sha256: b218fcc992fd6d8d08f993bda0fa28857746191927afd8d8633860d279d4f7ab
+      request_sha256s:
+      - b218fcc992fd6d8d08f993bda0fa28857746191927afd8d8633860d279d4f7ab

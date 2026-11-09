@@ -1,0 +1,4186 @@
+format_version: 2
+benchmark: evidence_claim_match
+source_file: kb/disorders/Reynolds_Syndrome.yaml
+disease: Reynolds Syndrome
+inventory:
+  source_sha256: 8bc1c4b492b624aa91d415668fc017d634740a0e1cc229e2107ae19b0659314c
+  extraction_sha256: 498166540e4e843714ebb69344a2abad67c31655f18886378e66d7e77c773d30
+  source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+  observed_at: '2026-11-09T21:59:58.051742+00:00'
+  complete: true
+  source_exists: true
+inputs:
+  2043d90fef9a36f80738b520ba16e163623d3b345bbf83c63d6bfc0714ff25c5:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of Immune Tolerance to Pyruvate Dehydrogenase Complex E2
+        biological_scale: MOLECULAR
+        description: Aberrant exposure of the mitochondrial autoantigen PDC-E2, released from apoptotic
+          biliary epithelial cells, breaks tolerance and drives the antimitochondrial antibody response
+          that defines the hepatic arm of this overlap.
+      selected_evidence:
+        snippet: apoptosis of biliary epithelial cells releases antigens (e.g., PDC-E2), triggering aberrant
+          innate and adaptive immune responses
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41112296
+      reference_title: Innate immunity of bile and cholangiocytes in primary biliary cholangitis.
+      evidence_source: OTHER
+      explanation: Establishes the source of the PDC-E2 autoantigen and the immune response it provokes.
+    first_seen_at: '2026-11-09T20:59:16.117244+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:41112296
+  a04184c474ba0f6076c0c99729d24d6cfb25dd5d96f527294b998486a706cd86:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Loss of Immune Tolerance to Pyruvate Dehydrogenase Complex E2
+            biological_scale: MOLECULAR
+            description: Aberrant exposure of the mitochondrial autoantigen PDC-E2, released from apoptotic
+              biliary epithelial cells, breaks tolerance and drives the antimitochondrial antibody response
+              that defines the hepatic arm of this overlap.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Autoimmune Destruction of Small Intrahepatic Bile Ducts
+        causal_link_type: DIRECT
+        description: Broken tolerance to PDC-E2 licenses the innate and adaptive attack on the biliary
+          epithelium.
+        hypothesis_groups:
+        - autoimmune_overlap_model
+      selected_evidence:
+        snippet: These DAMPs encompass autoantigens such as the mitochondrial Antigen Pyruvate Dehydrogenase
+          Complex- E2 (PDC-E2), whose aberrant exposure disrupts normal immune tolerance
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:41112296
+      reference_title: Innate immunity of bile and cholangiocytes in primary biliary cholangitis.
+      evidence_source: OTHER
+      explanation: Identifies aberrant PDC-E2 exposure as the tolerance-breaking event upstream of the
+        biliary attack.
+    first_seen_at: '2026-11-09T20:59:16.273971+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:41112296
+  00647c7dd931290049e2daca8da965a909d81728b9d2e2466e1fe56d9c419db9:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Autoimmune Destruction of Small Intrahepatic Bile Ducts
+            biological_scale: TISSUE
+            description: Immune-mediated injury of cholangiocytes lining the small intrahepatic bile ducts,
+              the lesion shared with isolated primary biliary cholangitis.
+            cell_types:
+            - preferred_term: cholangiocyte
+              term:
+                id: CL:1000488
+                label: cholangiocyte
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Intrahepatic Cholestasis
+        causal_link_type: DIRECT
+        description: Progressive loss of small bile ducts obstructs bile flow.
+        hypothesis_groups:
+        - autoimmune_overlap_model
+      selected_evidence:
+        snippet: Primary biliary cholangitis (PBC) is a chronic, progressive cholestatic liver disease
+          marked by immune‐mediated destruction of intrahepatic bile ducts, eventually leading to fibrosis
+          and cirrhosis
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the causal sequence from duct destruction through cholestasis to fibrosis and
+        cirrhosis.
+    first_seen_at: '2026-11-09T20:59:16.586380+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:42499963
+  e9d2e84a89152fd3d2ceefde9b38447c41fde9066a3853131acb20a04e73e7f2:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Autoimmune Destruction of Small Intrahepatic Bile Ducts
+        biological_scale: TISSUE
+        description: Immune-mediated injury of cholangiocytes lining the small intrahepatic bile ducts,
+          the lesion shared with isolated primary biliary cholangitis.
+        cell_types:
+        - preferred_term: cholangiocyte
+          term:
+            id: CL:1000488
+            label: cholangiocyte
+      selected_evidence:
+        snippet: collectively initiating autoimmune targeting of biliary epithelial cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41112296
+      reference_title: Innate immunity of bile and cholangiocytes in primary biliary cholangitis.
+      evidence_source: OTHER
+      explanation: Identifies the biliary epithelium as the target of the autoimmune attack.
+    first_seen_at: '2026-11-09T20:59:16.585022+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:41112296
+  b9f0dee52f46caad13ad69a0f1349ff04d5829f1e9300bdfb7de9f190a022712:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Loss of Immune Tolerance to Centromere Protein B
+        biological_scale: MOLECULAR
+        description: The anticentromere response that marks the limited cutaneous sclerodermatous arm.
+          Strong anti-CENP-B reactivity is itself enriched for AMA-M2 positivity and for cirrhosis, which
+          is the serological link between the two arms of this syndrome.
+      selected_evidence:
+        snippet: strong anti-CENP-B reactivity was associated with enrichment of centromere ANA patterns
+          (64.05%), AMA-M2 positivity (31.44%), and liver cirrhosis (11.76%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42618734
+      reference_title: 'Anti-centromere antibody positivity: a spectrum of clinical diagnoses and immunological
+        patterns in a large patient cohort.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: In a 1736-patient ACA-positive cohort, strong anti-CENP-B reactivity travels with AMA-M2
+        and with cirrhosis, which is the serological co-occurrence this syndrome is built on.
+    first_seen_at: '2026-11-09T20:59:16.604063+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:42618734
+  c6b543ead54fef88198cbe0536d4a229ec424686c919c9e03a1dabb88fb4e139:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Intrahepatic Cholestasis
+        biological_scale: ORGANISM
+        description: Impaired bile flow following duct loss, detected biochemically as a cholestatic liver
+          enzyme pattern and clinically as pruritus. Persistent cholestatic enzymes in a CREST patient
+          are the trigger for considering this diagnosis.
+      selected_evidence:
+        snippet: Reynolds Syndrome should be suspected in CREST patients with persistent cholestatic liver
+          enzymes, since delayed diagnosis allows portal hypertension and variceal bleeding to develop.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Ties the cholestatic biochemical picture to this diagnosis and to the consequences
+        of missing it.
+    first_seen_at: '2026-11-09T20:59:16.603031+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:42499963
+  e7ba13620131e6586959234e0ff6288522a19e9835fa0ef50cb6164b9e003183:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Microvascular Endothelial Injury
+        biological_scale: TISSUE
+        description: Widespread injury of the cutaneous and digital microvasculature, producing cold-triggered
+          vasospasm, visible telangiectasia, and in severe cases digital ischemia and tissue loss.
+        cell_types:
+        - preferred_term: endothelial cell of vascular tree
+          term:
+            id: CL:0002139
+            label: endothelial cell of vascular tree
+      selected_evidence:
+        snippet: SSc is a connective tissue disorder with widespread microvascular injury, immune dysregulation,
+          and excessive collagen deposition, affecting the skin and internal organs
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Names microvascular injury as a core lesion of the sclerodermatous arm.
+    first_seen_at: '2026-11-09T20:59:16.773981+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:42499963
+  4cddf250fb16481c5aae928afa861f4a0656aa9dded3f763c6807b24172f46e6:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: shared_upstream_mechanism_unknown
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - pathophysiology#Loss of Immune Tolerance to Pyruvate Dehydrogenase Complex E2
+        - pathophysiology#Loss of Immune Tolerance to Centromere Protein B
+        prompt: What shared upstream mechanism causes anti-PDC-E2 and anti-CENP-B autoimmunity to co-occur
+          so much more often than chance?
+        rationale: Candidate shared mechanisms exist and none is established as causal for the overlap.
+          Shared HLA alleles (HLA-DQB1, HLA-DRB1, HLA-DQA1) and the non-HLA loci IRF5 and STAT4 are reported
+          in both diseases, both are marked by elevated TGF-beta and IL-6, and antibodies in the overlap
+          preferentially recognise CENP-C rather than CENP-B alone. But the HLA associations are explicitly
+          not exclusive to either disease, and none of these has been shown to explain why the two diseases
+          co-occur rather than simply being features each has separately. The pathograph therefore stops
+          at two parallel arms rather than asserting a common upstream node. Establishing one is the main
+          thing that would distinguish this entity from the coincidence of two common autoimmune diseases
+          in a predisposed host.
+      selected_evidence:
+        snippet: The overlap group predominantly included patients with limited cutaneous SSc and had
+          a higher prevalence of extrahepatic autoimmune diseases, particularly Sjögren's syndrome and
+          Hashimoto's thyroiditis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the broader autoimmune excess that a shared upstream mechanism would need
+        to account for.
+    first_seen_at: '2026-11-09T20:59:16.831071+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/0
+      reference: PMID:42256626
+  21a473392e1f06abd7efdb0b10fb3f5fa310d07b06c1c31de8e1428ae5717fa8:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Dermal Fibroblast Activation and Skin Fibrosis
+        biological_scale: CELLULAR
+        description: Activation of dermal fibroblasts with excess collagen deposition, producing the distal
+          skin thickening and joint restriction of the limited cutaneous subset.
+        cell_types:
+        - preferred_term: fibroblast of dermis
+          term:
+            id: CL:0002551
+            label: fibroblast of dermis
+        biological_processes:
+        - preferred_term: collagen fibril organization
+          term:
+            id: GO:0030199
+            label: collagen fibril organization
+          modifier: INCREASED
+      selected_evidence:
+        snippet: We highlight emerging cellular- and molecular-level insights into vasculopathy, immune
+          dysregulation, and fibroblast activation in SSc.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41974602
+      reference_title: 'Cellular and molecular mechanisms of systemic sclerosis: Translation to targeted
+        therapies and clinical practice.'
+      evidence_source: OTHER
+      explanation: Places fibroblast activation alongside vasculopathy and immune dysregulation as the
+        core compartments of SSc pathogenesis.
+    first_seen_at: '2026-11-09T20:59:16.808412+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:41974602
+  ec7c0769d1ba34fda5fe68e9bd3c9f2bc8183136efc25e6ddac934b47fa2d0b5:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: lbr_causality_unresolved
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - genetic#LBR
+        - mechanistic_hypotheses#lbr_laminopathy_model
+        prompt: Is Reynolds syndrome a genetic laminopathy caused by LBR variants, or an autoimmune overlap
+          in which the reported LBR variant is incidental?
+        rationale: MONDO classifies Reynolds syndrome as a hereditary disease and OMIM (MIM#613471) attributes
+          it to LBR, but the entire genetic claim rests on one patient with one heterozygous missense
+          variant. The functional work in that report was done on patient fibroblasts and lymphoblastoid
+          lines, not on the affected liver, and contemporaneous commentary in the same year stated explicitly
+          that the pathogenicity claim remained to be demonstrated and that larger PBC and SSc series
+          were needed. No replication has been reported. This matters for curation because it decides
+          whether the entry's root cause is a nuclear-envelope defect or a break in immune tolerance.
+      selected_evidence:
+        snippet: It remains to be shown, however, that this is really the case by testing directly the
+          liver and skin fibroblasts of the patient.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20800400
+      reference_title: Is Reynolds syndrome a genetic laminopathy?
+      evidence_source: OTHER
+      explanation: Contemporaneous commentary stating that the pathogenicity of the LBR variant was not
+        established by the original report.
+    first_seen_at: '2026-11-09T20:59:16.809175+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:20800400
+  3a819df7f57e28ccc1ce29cbadc7b914fbba4103355f8718e831c56c01679c94:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: shared_upstream_mechanism_unknown
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - pathophysiology#Loss of Immune Tolerance to Pyruvate Dehydrogenase Complex E2
+        - pathophysiology#Loss of Immune Tolerance to Centromere Protein B
+        prompt: What shared upstream mechanism causes anti-PDC-E2 and anti-CENP-B autoimmunity to co-occur
+          so much more often than chance?
+        rationale: Candidate shared mechanisms exist and none is established as causal for the overlap.
+          Shared HLA alleles (HLA-DQB1, HLA-DRB1, HLA-DQA1) and the non-HLA loci IRF5 and STAT4 are reported
+          in both diseases, both are marked by elevated TGF-beta and IL-6, and antibodies in the overlap
+          preferentially recognise CENP-C rather than CENP-B alone. But the HLA associations are explicitly
+          not exclusive to either disease, and none of these has been shown to explain why the two diseases
+          co-occur rather than simply being features each has separately. The pathograph therefore stops
+          at two parallel arms rather than asserting a common upstream node. Establishing one is the main
+          thing that would distinguish this entity from the coincidence of two common autoimmune diseases
+          in a predisposed host.
+      selected_evidence:
+        snippet: non-HLA susceptibility genes IRF5 and STAT4 have been identified in both PBC and SSc
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: A named shared-susceptibility candidate. Cited as a candidate rather than as an explanation,
+        since the same review notes these loci are not exclusive to either disease.
+    first_seen_at: '2026-11-09T20:59:16.988127+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      reference: PMID:42256626
+  aa6dacf0308dbf9b4b43a48e3b7323956b8e6ef54c3e4fd3449c864cd44314ae:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: shared_upstream_mechanism_unknown
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - pathophysiology#Loss of Immune Tolerance to Pyruvate Dehydrogenase Complex E2
+        - pathophysiology#Loss of Immune Tolerance to Centromere Protein B
+        prompt: What shared upstream mechanism causes anti-PDC-E2 and anti-CENP-B autoimmunity to co-occur
+          so much more often than chance?
+        rationale: Candidate shared mechanisms exist and none is established as causal for the overlap.
+          Shared HLA alleles (HLA-DQB1, HLA-DRB1, HLA-DQA1) and the non-HLA loci IRF5 and STAT4 are reported
+          in both diseases, both are marked by elevated TGF-beta and IL-6, and antibodies in the overlap
+          preferentially recognise CENP-C rather than CENP-B alone. But the HLA associations are explicitly
+          not exclusive to either disease, and none of these has been shown to explain why the two diseases
+          co-occur rather than simply being features each has separately. The pathograph therefore stops
+          at two parallel arms rather than asserting a common upstream node. Establishing one is the main
+          thing that would distinguish this entity from the coincidence of two common autoimmune diseases
+          in a predisposed host.
+      selected_evidence:
+        snippet: Both diseases are marked by elevated TGF-β (transforming growth factor-beta) and IL-6
+          (Interleukin-6)
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: A shared profibrotic cytokine signature, the closest thing to a common effector, still
+        not shown to drive the co-occurrence itself.
+    first_seen_at: '2026-11-09T20:59:17.029517+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/2
+      reference: PMID:42256626
+  389d1b7cec7732a201755bcd210a24281d34251d93e67e9b43477ec9fb80b7ab:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cutaneous
+        name: Telangiectasia
+        description: Dilated superficial cutaneous vessels, typically on face and hands.
+        phenotype_term:
+          preferred_term: Telangiectasia
+          term:
+            id: HP:0001009
+            label: Telangiectasia
+      selected_evidence:
+        snippet: Physical examination revealed sclerodactyly with digital ulcers on her fingers, telangiectasias
+          on her face and hands, and limited range of motion in her fingers and wrists.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Records telangiectasia on examination in this syndrome.
+    first_seen_at: '2026-11-09T20:59:17.096708+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1
+      evidence_path: /phenotypes/1/evidence/0
+      reference: PMID:42499963
+  3019a219122e874feef636bd44e890e7a75e8970769494a155bf5c31260f3455:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Vascular
+        name: Raynaud phenomenon
+        description: Episodic cold- or stress-triggered discoloration of the digits, and in severe disease
+          digital ulceration, ischemia and tissue loss.
+        phenotype_term:
+          preferred_term: Raynaud phenomenon
+          term:
+            id: HP:0030880
+            label: Raynaud phenomenon
+      selected_evidence:
+        snippet: she had a history of amputation of her right‐hand index finger due to severe digital
+          ischemia and gangrene
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the severe ischemic end of the digital vascular phenotype in a patient with
+        this syndrome.
+    first_seen_at: '2026-11-09T20:59:17.096263+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:42499963
+  66b786d71f4af3191722d931e219ae81ee6336aa5c6bea4dbcec5a79633d74f7:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Cutaneous
+        name: Sclerodactyly
+        description: Fibrotic thickening and tightening of the skin of the digits, with reduced range
+          of motion.
+        phenotype_term:
+          preferred_term: Sclerodactyly
+          term:
+            id: HP:0011838
+            label: Sclerodactyly
+          clinical_course: PROGRESSIVE
+      selected_evidence:
+        snippet: A 64‐year‐old woman presented to the rheumatology clinic with a 3‐year history of progressive
+          skin thickening and tightening, particularly affecting her hands, face, and feet.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Describes the progressive distal skin thickening characteristic of the limited cutaneous
+        subset.
+    first_seen_at: '2026-11-09T20:59:17.223305+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/2
+      evidence_path: /phenotypes/2/evidence/0
+      reference: PMID:42499963
+  c995e52ba4c9e6621ff0171272b2a04556627c084221c012ef783c0e7483c57b:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Gastrointestinal
+        name: Dysphagia
+        description: Difficulty swallowing solids from oesophageal dysmotility, the "E" of the CREST pattern.
+        phenotype_term:
+          preferred_term: Dysphagia
+          term:
+            id: HP:0002015
+            label: Dysphagia
+      selected_evidence:
+        snippet: She reported difficulty swallowing solid foods and experienced frequent episodes of discoloration
+          of fingers and toes, often triggered by cold temperatures or stress.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Records oesophageal dysmotility alongside Raynaud phenomenon in the same patient.
+    first_seen_at: '2026-11-09T20:59:17.272511+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/4
+      evidence_path: /phenotypes/4/evidence/0
+      reference: PMID:42499963
+  c7556bac5eb66a78e65f4b9ab038ab77c184d3ab0372fe1bdf53d0d7263d7025:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Hepatic
+        name: Elevated circulating alkaline phosphatase concentration
+        description: The cholestatic enzyme pattern that should prompt antimitochondrial antibody testing
+          in a patient already carrying a CREST diagnosis.
+        phenotype_term:
+          preferred_term: Elevated circulating alkaline phosphatase concentration
+          term:
+            id: HP:0003155
+            label: Elevated circulating alkaline phosphatase concentration
+      selected_evidence:
+        snippet: liver function tests (LFTs) showed alanine aminotransferase (ALT) 49 U/L, aspartate aminotransferase
+          (AST) 90 U/L, and alkaline phosphatase (ALP) 927 U/L
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: A markedly cholestatic enzyme profile, with ALP disproportionately raised relative
+        to the transaminases.
+    first_seen_at: '2026-11-09T20:59:17.320011+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/6
+      evidence_path: /phenotypes/6/evidence/0
+      reference: PMID:42499963
+  d6fdf50754a93f4c3df67319271e26055815509bba6849e8095d5bc966952350:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Interstitial lung disease
+        description: 'Occurs in this syndrome and is the indication for immunosuppression when it does,
+          but its frequency sits between the two isolated diseases rather than above them: lower than
+          in SSc alone, higher than in PBC alone. That direction matters, because the overlap''s milder
+          visceral phenotype is half of what makes it a distinct entity.
+
+          Do not read a whole-SSc ILD frequency as this syndrome''s. The 33% figure in the AMA-screening
+          cohort cited under the antimitochondrial antibody biomarker is that cohort''s overall SSc rate,
+          not an overlap-specific one.'
+        phenotype_term:
+          preferred_term: Interstitial lung disease
+          term:
+            id: HP:0006530
+            label: Abnormal pulmonary interstitial morphology
+      selected_evidence:
+        snippet: computed tomography (HRCT) chest was suggestive of interstitial lung disease (ILD)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: HRCT-confirmed interstitial lung disease in a patient with this syndrome, establishing
+        that it occurs.
+    first_seen_at: '2026-11-09T20:59:17.368687+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/0
+      reference: PMID:42499963
+  47f1ebef79d05ad47787938196ab78d4b3ce4843fa8b5d6cf5aec9a8d8caee0c:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Interstitial lung disease
+        description: 'Occurs in this syndrome and is the indication for immunosuppression when it does,
+          but its frequency sits between the two isolated diseases rather than above them: lower than
+          in SSc alone, higher than in PBC alone. That direction matters, because the overlap''s milder
+          visceral phenotype is half of what makes it a distinct entity.
+
+          Do not read a whole-SSc ILD frequency as this syndrome''s. The 33% figure in the AMA-screening
+          cohort cited under the antimitochondrial antibody biomarker is that cohort''s overall SSc rate,
+          not an overlap-specific one.'
+        phenotype_term:
+          preferred_term: Interstitial lung disease
+          term:
+            id: HP:0006530
+            label: Abnormal pulmonary interstitial morphology
+      selected_evidence:
+        snippet: Clinically, patients with overlap disease demonstrate milder systemic involvement than
+          SSc-only patients, with lower occurrence of interstitial lung disease, gastro-oesophageal reflux
+          and musculoskeletal involvement.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The comparison against isolated SSc: ILD is less frequent in the overlap, part of
+        a broader milder visceral profile.'
+    first_seen_at: '2026-11-09T20:59:17.486768+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/1
+      reference: PMID:42256626
+  9f66a924c7199e628df1ad9ee74e4df794ad63ad95f476f88993f5b2284a502e:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Interstitial lung disease
+        description: 'Occurs in this syndrome and is the indication for immunosuppression when it does,
+          but its frequency sits between the two isolated diseases rather than above them: lower than
+          in SSc alone, higher than in PBC alone. That direction matters, because the overlap''s milder
+          visceral phenotype is half of what makes it a distinct entity.
+
+          Do not read a whole-SSc ILD frequency as this syndrome''s. The 33% figure in the AMA-screening
+          cohort cited under the antimitochondrial antibody biomarker is that cohort''s overall SSc rate,
+          not an overlap-specific one.'
+        phenotype_term:
+          preferred_term: Interstitial lung disease
+          term:
+            id: HP:0006530
+            label: Abnormal pulmonary interstitial morphology
+      selected_evidence:
+        snippet: Compared with PBC-only, overlap patients have higher rates of renal complications, interstitial
+          lung disease and extrahepatic autoimmune diseases such as SjS and Hashimoto’s thyroiditis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The comparison in the other direction: ILD is more frequent than in isolated PBC.
+        Together with the item above this is why the frequency is stated as intermediate rather than high
+        or low.'
+    first_seen_at: '2026-11-09T20:59:17.566041+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/2
+      reference: PMID:42256626
+  7dcb69021ce01a0e39c109f7b6474612b4563d6ff39a7be56b0daf37aa89d2dc:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Constitutional
+        name: Milder systemic involvement than isolated systemic sclerosis
+        description: 'Taken as a profile rather than a single finding: interstitial lung disease, digital
+          ulcers, gastro-oesophageal reflux and musculoskeletal involvement are all less frequent than
+          in SSc alone. This is not the same as a better prognosis -- some cohorts report more SSc-related
+          mortality and more oesophageal varices -- so it is curated as an organ-involvement profile,
+          not as a severity or outcome claim.'
+      selected_evidence:
+        snippet: Clinical manifestations such as ILD, digital ulcers, GERD and musculoskeletal involvement
+          were less common in overlap patients compared with patients with SSc, supporting the notion
+          of a milder systemic phenotype.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The review's cross-study synthesis of the milder systemic phenotype, naming the four
+        manifestations it rests on.
+    first_seen_at: '2026-11-09T20:59:17.684286+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/9
+      evidence_path: /phenotypes/9/evidence/0
+      reference: PMID:42256626
+  9bc787bbe664853acacbf5e7627361d1a64f3dd034171954b95c1f38de40b33f:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Respiratory
+        name: Interstitial lung disease
+        description: 'Occurs in this syndrome and is the indication for immunosuppression when it does,
+          but its frequency sits between the two isolated diseases rather than above them: lower than
+          in SSc alone, higher than in PBC alone. That direction matters, because the overlap''s milder
+          visceral phenotype is half of what makes it a distinct entity.
+
+          Do not read a whole-SSc ILD frequency as this syndrome''s. The 33% figure in the AMA-screening
+          cohort cited under the antimitochondrial antibody biomarker is that cohort''s overall SSc rate,
+          not an overlap-specific one.'
+        phenotype_term:
+          preferred_term: Interstitial lung disease
+          term:
+            id: HP:0006530
+            label: Abnormal pulmonary interstitial morphology
+      selected_evidence:
+        snippet: The overlap group also had fewer digital ulcers and a lower frequency of interstitial
+          lung disease (ILD).
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The Lepri multinational cohort, an independent cohort-level report of the same direction
+        against isolated SSc.
+    first_seen_at: '2026-11-09T20:59:17.683788+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/8
+      evidence_path: /phenotypes/8/evidence/3
+      reference: PMID:42256626
+  e1fc28bb972722e9e26e8969f8d7d41de93d918d24bb2bd7de07a3868334cbac:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Immunologic
+        name: Autoimmunity
+        description: Excess of additional autoimmune disease, particularly Sjogren syndrome and Hashimoto
+          thyroiditis, compared with either isolated disease.
+        phenotype_term:
+          preferred_term: Autoimmunity
+          term:
+            id: HP:0002960
+            label: Autoimmunity
+      selected_evidence:
+        snippet: The overlap group predominantly included patients with limited cutaneous SSc and had
+          a higher prevalence of extrahepatic autoimmune diseases, particularly Sjögren's syndrome and
+          Hashimoto's thyroiditis.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/10
+      evidence_path: /phenotypes/10/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies the extrahepatic autoimmune excess that characterises the overlap group.
+    first_seen_at: '2026-11-09T20:59:17.768355+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/10
+      evidence_path: /phenotypes/10/evidence/0
+      reference: PMID:42256626
+  7e34dd1e0cb9db4010b27a6b0039643a172f2ee5971e7ea08ec6a8008182505a:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Antimitochondrial antibody
+        notes: 'The serological hallmark of the hepatic arm. AMA are considerably more frequent in SSc
+          than routine practice assumes, which is the basis for screening CREST patients rather than waiting
+          for symptomatic liver disease.
+
+          No biomarker_term is bound. NCIT and the biomarker enum caches were searched for an autoantibody-analyte
+          term covering AMA/AMA-M2 and nothing matching the analyte was found; left unbound rather than
+          bound to a broader immunology term that would not identify the analyte.'
+      selected_evidence:
+        snippet: Among 165 SSc patients (20% diffuse cutaneous disease, 33% interstitial lung disease,
+          7.3% pulmonary arterial hypertension; 51% positive for anticentromere antibodies, 29% anti-topoisomerase
+          I, 12% anti-RNA polymerase III), 37 (22%) were AMA-positive.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41715235
+      reference_title: Prevalence and clinical relevance of systematically tested antimitochondrial antibodies
+        in systemic sclerosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: In a systematically screened SSc cohort, 22% were AMA-positive, which supports proactive
+        screening for the hepatic arm.
+    first_seen_at: '2026-11-09T20:59:17.858929+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:41715235
+  f611589c496f5a7d8e46a1ab32981b0e5f350595aa18f7bbb06bc9419133439f:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Anticentromere antibody
+        notes: 'The serological marker of the limited cutaneous sclerodermatous arm, present with a centromere
+          ANA pattern.
+
+          No biomarker_term is bound, for the same reason recorded on the antimitochondrial antibody entry.'
+      selected_evidence:
+        snippet: Laboratory tests showed positive antinuclear antibodies (ANA) with a centromere pattern.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Records the centromere ANA pattern in a patient with this syndrome.
+    first_seen_at: '2026-11-09T20:59:17.938122+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:42499963
+  7a53f17b3b1e02b89758a6f17a9fbf01c73187371bb261c2966d629a91bc61e8:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Anticentromere antibody
+        notes: 'The serological marker of the limited cutaneous sclerodermatous arm, present with a centromere
+          ANA pattern.
+
+          No biomarker_term is bound, for the same reason recorded on the antimitochondrial antibody entry.'
+      selected_evidence:
+        snippet: sera from patients with PBC–SSc more frequently reacted with (CENP-C) compared with sera
+          from patients with SSc alone
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'CENP-C reactivity is the most overlap-specific serological finding available: it separates
+        the overlap from isolated SSc, rather than merely marking the limited cutaneous subset.'
+    first_seen_at: '2026-11-09T20:59:18.017575+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/1
+      reference: PMID:42256626
+  7afa7ecbdbd2a8f075dc71bc29cfd0e4fdaad8d2b45e549181278846a04e4240:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Anticentromere antibody
+        notes: 'The serological marker of the limited cutaneous sclerodermatous arm, present with a centromere
+          ANA pattern.
+
+          No biomarker_term is bound, for the same reason recorded on the antimitochondrial antibody entry.'
+      selected_evidence:
+        snippet: STAT4 has been associated with ACA positivity in PBC, an autoantibody already present
+          in over 50% of patients with limited cutaneous SSc (lcSSc).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Links the anticentromere response to a shared non-HLA susceptibility locus reported
+        in both diseases.
+    first_seen_at: '2026-11-09T20:59:18.096629+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/2
+      reference: PMID:42256626
+  96e7762eec9859440795e4556eb2ff413c91872fb28d72f5ce53d3cfed0a24c6:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: LBR
+        notes: Reported in a single patient with Reynolds syndrome as a heterozygous missense variant
+          with a proposed tissue-specific dominant negative effect. Recorded here as an unreplicated hypothesis,
+          not as an established cause of this syndrome; see the LBR knowledge gap in `discussions`. LBR
+          is otherwise the gene of Pelger-Huet anomaly and Greenberg dysplasia.
+        gene_term:
+          preferred_term: LBR
+          term:
+            id: hgnc:6518
+            label: LBR
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: revealing a single heterozygous missense mutation in LBR exon 9 (c.1114C/T; p.R372C).
+          This variant was absent in 400 control chromosomes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20522425
+      reference_title: LBR mutation and nuclear envelope defects in a patient affected with Reynolds syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports the variant and its absence from 400 control chromosomes, the whole of the
+        genetic evidence for this association.
+    first_seen_at: '2026-11-09T20:59:18.178524+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:20522425
+  010821b2b5043e55b9d4fda57da900c1ab532f0a762c8962dc32106fecb620a6:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: LBR
+        notes: Reported in a single patient with Reynolds syndrome as a heterozygous missense variant
+          with a proposed tissue-specific dominant negative effect. Recorded here as an unreplicated hypothesis,
+          not as an established cause of this syndrome; see the LBR knowledge gap in `discussions`. LBR
+          is otherwise the gene of Pelger-Huet anomaly and Greenberg dysplasia.
+        gene_term:
+          preferred_term: LBR
+          term:
+            id: hgnc:6518
+            label: LBR
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: The fibroblast specific abnormalities observed suggest that this particular LBR mutation
+          might have dominant negative deleterious effects in a tissue specific fashion
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20522425
+      reference_title: LBR mutation and nuclear envelope defects in a patient affected with Reynolds syndrome.
+      evidence_source: IN_VITRO
+      explanation: The proposed mechanism, from patient-derived fibroblasts rather than affected liver
+        tissue.
+    first_seen_at: '2026-11-09T20:59:18.262261+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/1
+      reference: PMID:20522425
+  86c73040a6fac334a3d14ef6fd872d55d4c6d76cc2be0998516cd08c93c98a4a:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: LBR
+        notes: Reported in a single patient with Reynolds syndrome as a heterozygous missense variant
+          with a proposed tissue-specific dominant negative effect. Recorded here as an unreplicated hypothesis,
+          not as an established cause of this syndrome; see the LBR knowledge gap in `discussions`. LBR
+          is otherwise the gene of Pelger-Huet anomaly and Greenberg dysplasia.
+        gene_term:
+          preferred_term: LBR
+          term:
+            id: hgnc:6518
+            label: LBR
+        relationship_type: SUSCEPTIBILITY
+      selected_evidence:
+        snippet: the new mutation has been found neither in a group of 27 other patients with SSc
+        supports: REFUTE
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20800400
+      reference_title: Is Reynolds syndrome a genetic laminopathy?
+      evidence_source: OTHER
+      explanation: 'Cited against a general causal role: the variant was not found in any other SSc patient
+        tested, so it cannot account for the syndrome broadly.'
+    first_seen_at: '2026-11-09T20:59:18.353156+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/2
+      reference: PMID:20800400
+  3abcaf5a91c63aabae5d87767c702d12571f26877cdc505c7e71df1601a03960:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Ursodeoxycholic Acid
+        description: First-line therapy for the cholestatic hepatic arm, started promptly once the PBC
+          component is identified.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: ursodeoxycholic acid
+            term:
+              id: CHEBI:9907
+              label: ursodeoxycholic acid
+      selected_evidence:
+        snippet: Early anti-mitochondrial antibody screening and prompt ursodeoxycholic acid therapy improve
+          outcomes, and these patients need multidisciplinary follow-up for lung and thyroid disease.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the therapeutic strategy for the hepatic arm and the rationale for early serological
+        screening.
+    first_seen_at: '2026-11-09T20:59:18.443060+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/0
+      reference: PMID:42499963
+  43275061cc097f77f09bd2244cad84b158020a24d1a0f548bf6cc4effb9ff05e:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Cyclophosphamide
+        description: Used for severe systemic sclerosis complications, notably interstitial lung disease,
+          in the sclerodermatous arm.
+        therapeutic_modality: SMALL_MOLECULE
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: cyclophosphamide
+            term:
+              id: CHEBI:4027
+              label: cyclophosphamide
+      selected_evidence:
+        snippet: She was started on intravenous cyclophosphamide 750 mg/m2 monthly for 6 months, with
+          monthly monitoring of blood counts and renal function
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the regimen used for the interstitial lung disease complicating this patient's
+        sclerodermatous arm.
+    first_seen_at: '2026-11-09T20:59:18.536102+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/0
+      reference: PMID:42499963
+  b9259059fbae1dc12e72307dc8301b42bd14398917ed2dbbdaa1cde1c090aeb8:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Patients with systemic sclerosis
+        measure_type: POINT_PREVALENCE
+        prevalence_class: ABOVE_1_IN_1000
+        rate_per_100000: 3000.0
+        rate_low: 2000.0
+        rate_high: 3000.0
+        rate_denominator: POPULATION
+        notes: Frequency of the overlap within an SSc population, not a general-population prevalence.
+          Reported as 2-3% of SSc patients, and separately as a weighted prevalence of 3.0%.
+      selected_evidence:
+        snippet: prevalence studies have demonstrated that 2–3% of patients with SSc have overlapping
+          PBC, whereas the prevalence of SSc in PBC has been estimated to be around 8%.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the frequency of the overlap in both directions.
+    first_seen_at: '2026-11-09T20:59:18.631379+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      reference: PMID:42256626
+  6be61d4a939230f2e4bf725d1ab7cef8f912cf15010cbe1a267fd90dfaa9391a:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Patients with systemic sclerosis
+        measure_type: POINT_PREVALENCE
+        prevalence_class: ABOVE_1_IN_1000
+        rate_per_100000: 3000.0
+        rate_low: 2000.0
+        rate_high: 3000.0
+        rate_denominator: POPULATION
+        notes: Frequency of the overlap within an SSc population, not a general-population prevalence.
+          Reported as 2-3% of SSc patients, and separately as a weighted prevalence of 3.0%.
+      selected_evidence:
+        snippet: This overlap between PBC and SSc has been reported with a weighted prevalence of 3.0%
+          among patients with SSc.
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The pooled weighted estimate, consistent with the 2-3% range above.
+    first_seen_at: '2026-11-09T20:59:18.729252+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/1
+      reference: PMID:42256626
+  ea16503c3ebda3596126271a123e782a31910b42fbc2026b739f75a5d534f3db:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Patients with primary biliary cholangitis
+        measure_type: POINT_PREVALENCE
+        prevalence_class: ABOVE_1_IN_1000
+        rate_per_100000: 8000.0
+        rate_denominator: POPULATION
+        notes: Frequency of SSc within a PBC population; the reciprocal of the record above, and the reason
+          cholestatic patients are screened for sclerodermatous features as well as the reverse.
+      selected_evidence:
+        snippet: the prevalence of SSc in PBC has been estimated to be around 8%
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the frequency of the sclerodermatous arm among PBC patients.
+    first_seen_at: '2026-11-09T20:59:18.895980+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /prevalence/1
+      evidence_path: /prevalence/1/evidence/0
+      reference: PMID:42256626
+  289a406577aba46526eac20e8e826ba53f1b9a72f951ecdd819ef1d6bc208d91:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Compartment-specific fibrosis
+        description: 'The two arms produce fibrosis in different compartments, which is what a biopsy
+          distinguishes: periportal in the hepatic arm, perivascular or interstitial in the sclerodermatous
+          arm.'
+      selected_evidence:
+        snippet: 'The shared immunological environment ultimately leads to characteristic fibrotic histology:
+          predominantly around the periportal region in PBC and perivascular or interstitial region in
+          SSc.'
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42256626
+      reference_title: 'Systemic sclerosis and primary biliary cholangitis: a systematic review of case-control
+        studies comparing isolated and overlapping disease phenotypes.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the compartment-level localisation that separates the two arms histologically
+        despite their shared profibrotic drivers.
+    first_seen_at: '2026-11-09T20:59:19.128448+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /histopathology/0
+      evidence_path: /histopathology/0/evidence/0
+      reference: PMID:42256626
+  b6a6bde09305a4b0f09e385c82d10ea1ebb5368593c8db30f0a15e15fe8d8724:
+    claim:
+      about:
+        disease:
+          name: Reynolds Syndrome
+          disease_term:
+            preferred_term: Reynolds syndrome
+            term:
+              id: MONDO:0013276
+              label: Reynolds syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Antimitochondrial antibody screening in a CREST patient with cholestasis
+        description: The practical diagnostic route to this entity. A patient already carrying a CREST
+          or limited cutaneous SSc diagnosis who develops a cholestatic liver enzyme pattern should be
+          tested for antimitochondrial antibodies rather than observed, because the delay is what allows
+          portal hypertension and variceal bleeding to develop.
+      selected_evidence:
+        snippet: Reynolds Syndrome should be suspected in CREST patients with persistent cholestatic liver
+          enzymes, since delayed diagnosis allows portal hypertension and variceal bleeding to develop.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42499963
+      reference_title: 'Overlap of Primary Biliary Cholangitis and Systemic Sclerosis: A Case of Reynolds
+        Syndrome.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: States the trigger for suspecting the diagnosis and the cost of missing it.
+    first_seen_at: '2026-11-09T20:59:19.127428+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:59:58.051742+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:59:58.051742+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:42499963
+assessments:
+  fdec2ccb70d600332a8fce366f3fbb845c36fbe97f41bbf8b49918c41b0c328b:
+    input_sha256: 2043d90fef9a36f80738b520ba16e163623d3b345bbf83c63d6bfc0714ff25c5
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.117244+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.17
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.25
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.08
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/biological_scale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.25
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.04
+            PARTIAL: 0.62
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5605
+        output_tokens: 227
+      elapsed_seconds: 0.2391
+      request_sha256: c9bdef492e2800dbf4ea49afd9b65da57e1e2484a82054ffc68c2bc5fd0e923b
+      request_sha256s:
+      - c9bdef492e2800dbf4ea49afd9b65da57e1e2484a82054ffc68c2bc5fd0e923b
+  83f2df8930f78ab4368acb4450a4ba1335b48552b396e4a4bd08d2792ac8f75d:
+    input_sha256: a04184c474ba0f6076c0c99729d24d6cfb25dd5d96f527294b998486a706cd86
+    configuration_sha256: 89ae75d4b398452ef704cba70f8889756f18cd27bebdf25b55cc99f0639ea138
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.273971+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.25
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.31
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.29
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.18
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.11
+            PARTIAL: 0.73
+          confidence: 0.6
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.27
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.12
+            PARTIAL: 0.32
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7373
+        output_tokens: 321
+      elapsed_seconds: 0.2683
+      request_sha256: b381de0484f568a0c9ef0114e0a74f3dc32064be9ce96759c5c33b90162311ce
+      request_sha256s:
+      - b381de0484f568a0c9ef0114e0a74f3dc32064be9ce96759c5c33b90162311ce
+  2a6565e3bbeb71b8e0edc879e92699e771fb01adec6d7c2e7d6e796905a07206:
+    input_sha256: 00647c7dd931290049e2daca8da965a909d81728b9d2e2466e1fe56d9c419db9
+    configuration_sha256: 89ae75d4b398452ef704cba70f8889756f18cd27bebdf25b55cc99f0639ea138
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.586380+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.39
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.61
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.1
+            PARTIAL: 0.34
+          confidence: 0.34
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.12
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.05
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/hypothesis_groups:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.23
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.11
+            PARTIAL: 0.22
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7396
+        output_tokens: 322
+      elapsed_seconds: 0.1725
+      request_sha256: 9b710b0c725daf6ba28a4dbc2ee2bb0a64de7738d1e8aadf33539962efd0f89f
+      request_sha256s:
+      - 9b710b0c725daf6ba28a4dbc2ee2bb0a64de7738d1e8aadf33539962efd0f89f
+  7de5dcefb39fb55142443af462da73a9025c71e451aa22623b1690727feed324:
+    input_sha256: e9d2e84a89152fd3d2ceefde9b38447c41fde9066a3853131acb20a04e73e7f2
+    configuration_sha256: e67b491ae62c484505988bad99f46ce8bf6266dc969655b7643de26bca2f4512
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.585022+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.07
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.18
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.21
+            PARTIAL: 0.33
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.05
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.03
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.08
+            PARTIAL: 0.34
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7555
+        output_tokens: 325
+      elapsed_seconds: 0.1866
+      request_sha256: 450de0db6198e5f0b87044fafe20ff7f837c44ef1fe67cc53f131041b2f6015b
+      request_sha256s:
+      - 450de0db6198e5f0b87044fafe20ff7f837c44ef1fe67cc53f131041b2f6015b
+  55a357d18366e3733a4016648ad5412591006c5230aa4d02857370bec6a51091:
+    input_sha256: b9f0dee52f46caad13ad69a0f1349ff04d5829f1e9300bdfb7de9f190a022712
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.604063+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.12
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.13
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.14
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.07
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5627
+        output_tokens: 226
+      elapsed_seconds: 0.168
+      request_sha256: 666cbe0e78e48feaf2d7892429d573058599edf316224294452d822afe37a86f
+      request_sha256s:
+      - 666cbe0e78e48feaf2d7892429d573058599edf316224294452d822afe37a86f
+  735c0b1f2698ec3d4768e8b8567e6b30f2474e702ac83545b0afa4919870450e:
+    input_sha256: c6b543ead54fef88198cbe0536d4a229ec424686c919c9e03a1dabb88fb4e139
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.603031+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.06
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.14
+            PARTIAL: 0.34
+          confidence: 0.28
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.79
+            PARTIAL: 0.15
+          confidence: 0.68
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.18
+            PARTIAL: 0.75
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5590
+        output_tokens: 227
+      elapsed_seconds: 0.1859
+      request_sha256: 8d72d6e05637a1284d9506966b7dc17cb6a16f338e3b54f30d440e82eab474d0
+      request_sha256s:
+      - 8d72d6e05637a1284d9506966b7dc17cb6a16f338e3b54f30d440e82eab474d0
+  e49297cdf6c2a63216068f48b5198dc4ba58c29fd236ad9b13502989527b75e3:
+    input_sha256: e7ba13620131e6586959234e0ff6288522a19e9835fa0ef50cb6164b9e003183
+    configuration_sha256: e67b491ae62c484505988bad99f46ce8bf6266dc969655b7643de26bca2f4512
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.773981+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.59
+            PARTIAL: 0.3
+          confidence: 0.38
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.65
+            PARTIAL: 0.28
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.27
+            PARTIAL: 0.34
+          confidence: 0.09
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.05
+            PARTIAL: 0.12
+          confidence: 0.74
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.38
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.27
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.28
+            PARTIAL: 0.39
+          confidence: 0.09
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7588
+        output_tokens: 331
+      elapsed_seconds: 0.1895
+      request_sha256: 49035adee91ee3ae35d6345f78de1bf6e1f6d8c60271c54a6e9a8cc3a1b9b729
+      request_sha256s:
+      - 49035adee91ee3ae35d6345f78de1bf6e1f6d8c60271c54a6e9a8cc3a1b9b729
+  b5e11fd9245ef757c6915655a011145961c08de9c1b27eef2f4fae384222dd7e:
+    input_sha256: 4cddf250fb16481c5aae928afa861f4a0656aa9dded3f763c6807b24172f46e6
+    configuration_sha256: 5631c918e0c9becdd254213a320aafef4005f3dfd950d70043fe7396c073eb74
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.831071+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.77
+            PARTIAL: 0.13
+          confidence: 0.66
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.75
+            PARTIAL: 0.18
+          confidence: 0.62
+        /assertion/prompt:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.78
+            PARTIAL: 0.21
+          confidence: 0.67
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7552
+        output_tokens: 334
+      elapsed_seconds: 0.1683
+      request_sha256: bbfe357cf4b04d606110d66b19dc2081fdb61df0682a422d38171f114994730a
+      request_sha256s:
+      - bbfe357cf4b04d606110d66b19dc2081fdb61df0682a422d38171f114994730a
+  d77b29a1be5954961a633be79d86f391f145377ea9011c0094e8670c8b85542c:
+    input_sha256: 21a473392e1f06abd7efdb0b10fb3f5fa310d07b06c1c31de8e1428ae5717fa8
+    configuration_sha256: 7bb68e82df0c69ef4b6c6b1cbaf95d08ec51928420b9a0ba9813da0e6f7950da
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.808412+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.53
+            PARTIAL: 0.41
+          confidence: 0.3
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.4
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.25
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.1
+            PARTIAL: 0.24
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.31
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.17
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.17
+            PARTIAL: 0.4
+          confidence: 0.14
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.38
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.36
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.3
+            PARTIAL: 0.66
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10802
+        output_tokens: 496
+      elapsed_seconds: 0.1987
+      request_sha256: 10365d1bc7289c40e12b7159a18e38e3d8042c90c7616abf6ceeab134a7b259c
+      request_sha256s:
+      - 10365d1bc7289c40e12b7159a18e38e3d8042c90c7616abf6ceeab134a7b259c
+  195d38d7cee8fa132296952a79b2b64ee5668858016c5eeba96b86ad82d2c47a:
+    input_sha256: ec7c0769d1ba34fda5fe68e9bd3c9f2bc8183136efc25e6ddac934b47fa2d0b5
+    configuration_sha256: 5631c918e0c9becdd254213a320aafef4005f3dfd950d70043fe7396c073eb74
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.809175+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.06
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.09
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.75
+            PARTIAL: 0.17
+          confidence: 0.62
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.42
+            PARTIAL: 0.32
+          confidence: 0.13
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.26
+            PARTIAL: 0.35
+          confidence: 0.09
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.03
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7479
+        output_tokens: 323
+      elapsed_seconds: 0.1981
+      request_sha256: d026f7001c5a57bb477aba331080cc07e06589831c530fd203b866af062212f4
+      request_sha256s:
+      - d026f7001c5a57bb477aba331080cc07e06589831c530fd203b866af062212f4
+  a3bae0861d61f7454068bb7e36cbccc8279c44edabea441382a86daa8431ae52:
+    input_sha256: 3a819df7f57e28ccc1ce29cbadc7b914fbba4103355f8718e831c56c01679c94
+    configuration_sha256: 5631c918e0c9becdd254213a320aafef4005f3dfd950d70043fe7396c073eb74
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:16.988127+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.35
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.54
+            PARTIAL: 0.34
+          confidence: 0.31
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.52
+            PARTIAL: 0.28
+          confidence: 0.28
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.44
+            PARTIAL: 0.33
+          confidence: 0.16
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.16
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.43
+            PARTIAL: 0.42
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7532
+        output_tokens: 330
+      elapsed_seconds: 0.1959
+      request_sha256: 4ed85c32fbc7bcfeb222806ec20122f3db8e1740a807fe02bc4b8965288398f7
+      request_sha256s:
+      - 4ed85c32fbc7bcfeb222806ec20122f3db8e1740a807fe02bc4b8965288398f7
+  948bd003b8d0fbb865b63b7b351527a6ff8c52ba81c6fbf80dc0840d0f66e250:
+    input_sha256: aa6dacf0308dbf9b4b43a48e3b7323956b8e6ef54c3e4fd3449c864cd44314ae
+    configuration_sha256: 5631c918e0c9becdd254213a320aafef4005f3dfd950d70043fe7396c073eb74
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.029517+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.25
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.3
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.79
+            PARTIAL: 0.17
+          confidence: 0.68
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.64
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/attaches_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.4
+            PARTIAL: 0.3
+          confidence: 0.1
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.24
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/rationale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.43
+            PARTIAL: 0.39
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7541
+        output_tokens: 328
+      elapsed_seconds: 0.2002
+      request_sha256: c03b8e9e0aa182a89bf0abfe7792e57bbc1fc75575f4b53b3b41684a4a5f51e4
+      request_sha256s:
+      - c03b8e9e0aa182a89bf0abfe7792e57bbc1fc75575f4b53b3b41684a4a5f51e4
+  aae4dd16b8e7d77e7a4330421c547dafe73df0b593ee3382e3ce1e4cc263aedd:
+    input_sha256: 389d1b7cec7732a201755bcd210a24281d34251d93e67e9b43477ec9fb80b7ab
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.096708+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.2
+            PARTIAL: 0.36
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.22
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.04
+            PARTIAL: 0.08
+          confidence: 0.82
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7179
+        output_tokens: 317
+      elapsed_seconds: 0.1744
+      request_sha256: b213855989b1b89262803d6e4daca9de208d35e1ee6fc27543b32397cee43985
+      request_sha256s:
+      - b213855989b1b89262803d6e4daca9de208d35e1ee6fc27543b32397cee43985
+  988e0b4df3d582557e1a1f1413f6724a98bfcda762bab9b1f2c045f1198cf3b4:
+    input_sha256: 3019a219122e874feef636bd44e890e7a75e8970769494a155bf5c31260f3455
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.096263+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.1
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.21
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.07
+            PARTIAL: 0.21
+          confidence: 0.58
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.09
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.04
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.08
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.07
+            PARTIAL: 0.56
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7187
+        output_tokens: 322
+      elapsed_seconds: 0.2209
+      request_sha256: 8f13c6ee0f48ee2643342a28a2669eca2a88e4b61d16b21f1a8759b76f9f694b
+      request_sha256s:
+      - 8f13c6ee0f48ee2643342a28a2669eca2a88e4b61d16b21f1a8759b76f9f694b
+  181f13d3ea5681c09d5dcd82b85096d89f3029ed8653434fb01a186bc012907c:
+    input_sha256: 66b786d71f4af3191722d931e219ae81ee6336aa5c6bea4dbcec5a79633d74f7
+    configuration_sha256: 0915181aa693d48ac5a451a0e8e56b800e6a307ee09b2f004d8b8087bb579519
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.223305+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.17
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.37
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.05
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.05
+            PARTIAL: 0.41
+          confidence: 0.31
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.04
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.06
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/phenotype_term/clinical_course:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.01
+            PARTIAL: 0.15
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8177
+        output_tokens: 370
+      elapsed_seconds: 0.2111
+      request_sha256: 54db41e0a3aefc3e22bb1d932440609390256bc3f9ba1ba2654d65042b2c6cc4
+      request_sha256s:
+      - 54db41e0a3aefc3e22bb1d932440609390256bc3f9ba1ba2654d65042b2c6cc4
+  ef40f3b23f720a7582da0e27ed9e28611558a7e72df135df77a16b75bf414b06:
+    input_sha256: c995e52ba4c9e6621ff0171272b2a04556627c084221c012ef783c0e7483c57b
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.272511+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.1
+            PARTIAL: 0.33
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.14
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7178
+        output_tokens: 318
+      elapsed_seconds: 0.2347
+      request_sha256: a58d3e7d22da85adea2e1b4b0d1b17a0e211dd16f71bfc8423e32f4c00b950d2
+      request_sha256s:
+      - a58d3e7d22da85adea2e1b4b0d1b17a0e211dd16f71bfc8423e32f4c00b950d2
+  5c6e2e490ec0f096d4b418e160532a6d3cb4fe193efe7a4dfe6676d11b030f2a:
+    input_sha256: c7556bac5eb66a78e65f4b9ab038ab77c184d3ab0372fe1bdf53d0d7263d7025
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.320011+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.2
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.34
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.49
+            PARTIAL: 0.4
+          confidence: 0.24
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7236
+        output_tokens: 321
+      elapsed_seconds: 0.2181
+      request_sha256: 0c1ef9b5180e99d78782bd4d46ca4d205b456acf45b0bf192c5eef4781375578
+      request_sha256s:
+      - 0c1ef9b5180e99d78782bd4d46ca4d205b456acf45b0bf192c5eef4781375578
+  a4f550277a520e6a09de1062639eed2fc046c46e2f81557dfca44331c48c2594:
+    input_sha256: d6fdf50754a93f4c3df67319271e26055815509bba6849e8095d5bc966952350
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.368687+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.23
+            PARTIAL: 0.72
+          confidence: 0.58
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.32
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.15
+            PARTIAL: 0.34
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.06
+            PARTIAL: 0.41
+          confidence: 0.3
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.62
+            PARTIAL: 0.37
+          confidence: 0.43
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.07
+            PARTIAL: 0.39
+          confidence: 0.31
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.08
+            PARTIAL: 0.46
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7278
+        output_tokens: 322
+      elapsed_seconds: 0.186
+      request_sha256: 9c44e2ee1a5d5832582c380feee248ff94ba329fd1f0cdc52a45a9a42b9e3a30
+      request_sha256s:
+      - 9c44e2ee1a5d5832582c380feee248ff94ba329fd1f0cdc52a45a9a42b9e3a30
+  6517aca559b7a4679812c298c9e5bbd9a1d9f48b3978906d53dc654a7b7a3013:
+    input_sha256: 47f1ebef79d05ad47787938196ab78d4b3ce4843fa8b5d6cf5aec9a8d8caee0c
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.486768+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.12
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.07
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.23
+            PARTIAL: 0.26
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.05
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.2
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.04
+            PARTIAL: 0.35
+          confidence: 0.42
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.05
+            PARTIAL: 0.41
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7297
+        output_tokens: 318
+      elapsed_seconds: 0.2163
+      request_sha256: 5c363b7377a505c227e89a808f35bb9891a5cac5e6e6ee8d381dc7904767488c
+      request_sha256s:
+      - 5c363b7377a505c227e89a808f35bb9891a5cac5e6e6ee8d381dc7904767488c
+  e0398b4b503e104af8ac1859fd699cd2b20c49dce4a37291aaf3804f83a3f1fe:
+    input_sha256: 9f66a924c7199e628df1ad9ee74e4df794ad63ad95f476f88993f5b2284a502e
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.566041+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.1
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.07
+            PARTIAL: 0.22
+          confidence: 0.56
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.08
+            PARTIAL: 0.17
+          confidence: 0.62
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.3
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.03
+            PARTIAL: 0.24
+          confidence: 0.6
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.03
+            PARTIAL: 0.29
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7295
+        output_tokens: 318
+      elapsed_seconds: 0.2246
+      request_sha256: 9bb70acf0653bd8845252479185a5ed0526973b4cff0cd8cb01fb71fae04c02f
+      request_sha256s:
+      - 9bb70acf0653bd8845252479185a5ed0526973b4cff0cd8cb01fb71fae04c02f
+  c44fe70af942a9af15b40e5b077b8692a2629d62fc18f4b91ba21aa9d0ca00cd:
+    input_sha256: 7dcb69021ce01a0e39c109f7b6474612b4563d6ff39a7be56b0daf37aa89d2dc
+    configuration_sha256: 2b07001194984705d623bcfb6563fdbf6eb672407ac96a9679c65c35c42d494c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.684286+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.05
+            PARTIAL: 0.26
+          confidence: 0.53
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.07
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.19
+            PARTIAL: 0.26
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.19
+            PARTIAL: 0.31
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5279
+        output_tokens: 219
+      elapsed_seconds: 0.1813
+      request_sha256: fe775d677466c9148c3ffa1a478e5c938b6e0fc175ef92555d018b00d1d15454
+      request_sha256s:
+      - fe775d677466c9148c3ffa1a478e5c938b6e0fc175ef92555d018b00d1d15454
+  9a74a7258747f845d337587f2c040277f16a9659f2d60ca4ec0faf3dedb99292:
+    input_sha256: 9bc787bbe664853acacbf5e7627361d1a64f3dd034171954b95c1f38de40b33f
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.683788+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.18
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.11
+            PARTIAL: 0.43
+          confidence: 0.19
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.24
+            PARTIAL: 0.3
+          confidence: 0.19
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.21
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.05
+            PARTIAL: 0.41
+          confidence: 0.31
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.09
+            PARTIAL: 0.44
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7276
+        output_tokens: 318
+      elapsed_seconds: 0.23
+      request_sha256: 3801d3bc6bd3c9c2147c923ee9ffd4c2765cbeee0807397ea3b9bfbdcfd7a233
+      request_sha256s:
+      - 3801d3bc6bd3c9c2147c923ee9ffd4c2765cbeee0807397ea3b9bfbdcfd7a233
+  60c0e291d91cc06e36d82bb433d62c0f8fddb6e781eaffd51a8c42da7824357d:
+    input_sha256: e1fc28bb972722e9e26e8969f8d7d41de93d918d24bb2bd7de07a3868334cbac
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.768355+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.3
+            PARTIAL: 0.35
+          confidence: 0.02
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.41
+            PARTIAL: 0.37
+          confidence: 0.11
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.05
+            PARTIAL: 0.1
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.17
+            PARTIAL: 0.23
+          confidence: 0.4
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.15
+            PARTIAL: 0.33
+          confidence: 0.28
+        /assertion/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.1
+            PARTIAL: 0.19
+          confidence: 0.56
+        /assertion/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.2
+            PARTIAL: 0.25
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7195
+        output_tokens: 320
+      elapsed_seconds: 0.2115
+      request_sha256: 6ad9ec327f8f3e61ec4c2f56a0e171eff5eea3d0b6f98669f73e520c0d1d062b
+      request_sha256s:
+      - 6ad9ec327f8f3e61ec4c2f56a0e171eff5eea3d0b6f98669f73e520c0d1d062b
+  3f4009560f2b3f3137a3e2a98f19e7b65acc513ec2b169af33423f01560761ed:
+    input_sha256: 7e34dd1e0cb9db4010b27a6b0039643a172f2ee5971e7ea08ec6a8008182505a
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.858929+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.58
+            PARTIAL: 0.26
+          confidence: 0.37
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.63
+            PARTIAL: 0.22
+          confidence: 0.44
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.19
+            PARTIAL: 0.14
+          confidence: 0.5
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.41
+            PARTIAL: 0.39
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4396
+        output_tokens: 183
+      elapsed_seconds: 0.2119
+      request_sha256: 7df1b4d904c837e1189f1aa97dac0aaa169a972ba86cd39fcfc45c8e48a8b4bf
+      request_sha256s:
+      - 7df1b4d904c837e1189f1aa97dac0aaa169a972ba86cd39fcfc45c8e48a8b4bf
+  ecf7c0889cfb3da346537b20906543bb0c722219e5681610df2878a96313553d:
+    input_sha256: f611589c496f5a7d8e46a1ab32981b0e5f350595aa18f7bbb06bc9419133439f
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:17.938122+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.19
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.36
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.1
+            PARTIAL: 0.23
+          confidence: 0.5
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4275
+        output_tokens: 179
+      elapsed_seconds: 0.228
+      request_sha256: 7e39860db06c11eda83e05d0bc0bb8600054790ffa4da75d9d511f763068b03a
+      request_sha256s:
+      - 7e39860db06c11eda83e05d0bc0bb8600054790ffa4da75d9d511f763068b03a
+  fd90df93d6de48ad01572203958ca9a89ec7e42c6ad8672a5063196e6a3fd40e:
+    input_sha256: 7a53f17b3b1e02b89758a6f17a9fbf01c73187371bb261c2966d629a91bc61e8
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.017575+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.3
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.27
+            PARTIAL: 0.36
+          confidence: 0.06
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.19
+            PARTIAL: 0.3
+          confidence: 0.26
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4282
+        output_tokens: 178
+      elapsed_seconds: 0.2424
+      request_sha256: b28633e9860f38556ae05697f89509e7f34760c7eb96ffa42c4e99f62dd3283d
+      request_sha256s:
+      - b28633e9860f38556ae05697f89509e7f34760c7eb96ffa42c4e99f62dd3283d
+  f22f5a04bd932fdad6762a21b86d2bee55b18e7f0fe2797987f1bc8fd4ce3432:
+    input_sha256: 7afa7ecbdbd2a8f075dc71bc29cfd0e4fdaad8d2b45e549181278846a04e4240
+    configuration_sha256: 0dd269d6b98f605b8e85f9b079c6c48050993f0399d96644af857862952f47a9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.096629+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.45
+            PARTIAL: 0.34
+          confidence: 0.18
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.28
+            PARTIAL: 0.28
+          confidence: 0.16
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.75
+            PARTIAL: 0.2
+          confidence: 0.62
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4293
+        output_tokens: 183
+      elapsed_seconds: 0.2474
+      request_sha256: fdc58a95b8323ffe2bb2fb348d569ed3729624b7ac2bcef601fc223d3b1bea42
+      request_sha256s:
+      - fdc58a95b8323ffe2bb2fb348d569ed3729624b7ac2bcef601fc223d3b1bea42
+  da079b0b034472f15456bb7a1a72307893714b991853930fcc7f670b533537cb:
+    input_sha256: 96e7762eec9859440795e4556eb2ff413c91872fb28d72f5ce53d3cfed0a24c6
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.178524+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.04
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.18
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.2
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.04
+            PARTIAL: 0.18
+          confidence: 0.67
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.04
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.21
+            PARTIAL: 0.72
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7608
+        output_tokens: 321
+      elapsed_seconds: 0.2446
+      request_sha256: ceba64188fbbda665de4c1eb687da553eb746ae8275769f58b12d8410fef697a
+      request_sha256s:
+      - ceba64188fbbda665de4c1eb687da553eb746ae8275769f58b12d8410fef697a
+  ef81c442dff41026b16c8caffec7bc7a80af26a4345ebc2b9a393073ba53766a:
+    input_sha256: 010821b2b5043e55b9d4fda57da900c1ab532f0a762c8962dc32106fecb620a6
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.262261+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.15
+            PARTIAL: 0.74
+          confidence: 0.61
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.22
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.12
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.11
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.08
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.47
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7589
+        output_tokens: 321
+      elapsed_seconds: 0.2563
+      request_sha256: e84e08b57212d6f56ad9ad5bb2622a837488262d3ebd00a460c3eef054e903c1
+      request_sha256s:
+      - e84e08b57212d6f56ad9ad5bb2622a837488262d3ebd00a460c3eef054e903c1
+  a3bdc9003a9ad634d5a9dbe1fe0eff28bb9c6e9d425de68b24e36113af4564a3:
+    input_sha256: 86c73040a6fac334a3d14ef6fd872d55d4c6d76cc2be0998516cd08c93c98a4a
+    configuration_sha256: 330bfcb48e4e3b094b6ab999d5b21f5c47889e194f0b21fdf0d64a9d2545771c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.353156+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.81
+            PARTIAL: 0.08
+          confidence: 0.72
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.75
+            PARTIAL: 0.15
+          confidence: 0.62
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.66
+            PARTIAL: 0.18
+          confidence: 0.49
+        /assertion/gene_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.67
+            PARTIAL: 0.16
+          confidence: 0.5
+        /assertion/gene_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.74
+            PARTIAL: 0.19
+          confidence: 0.61
+        /assertion/relationship_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.72
+            PARTIAL: 0.17
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7581
+        output_tokens: 338
+      elapsed_seconds: 0.2575
+      request_sha256: bd2f42855842b39861f7fda02ab0ff5975ea66d43640c296427b818ee7aa0c06
+      request_sha256s:
+      - bd2f42855842b39861f7fda02ab0ff5975ea66d43640c296427b818ee7aa0c06
+  eb3476af44d6f3b64361ded39c8999f9af016bde6d969a36edf40c7b8b91393e:
+    input_sha256: 3abcaf5a91c63aabae5d87767c702d12571f26877cdc505c7e71df1601a03960
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.443060+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.07
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.11
+            PARTIAL: 0.14
+          confidence: 0.62
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.13
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.23
+            PARTIAL: 0.31
+          confidence: 0.19
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.25
+            PARTIAL: 0.35
+          confidence: 0.1
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.28
+            PARTIAL: 0.33
+          confidence: 0.09
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9684
+        output_tokens: 438
+      elapsed_seconds: 0.3285
+      request_sha256: a93e97e7d0e4f28bf3987c058641b406541b1e84ea8f25d0791bc7a71be81ef6
+      request_sha256s:
+      - a93e97e7d0e4f28bf3987c058641b406541b1e84ea8f25d0791bc7a71be81ef6
+  8625e2fc72085713e9df1e0b5fbd06d8ae87aaa76e52a13cb9321b98e10c2737:
+    input_sha256: 43275061cc097f77f09bd2244cad84b158020a24d1a0f548bf6cc4effb9ff05e
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.536102+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.49
+            PARTIAL: 0.42
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.52
+            PARTIAL: 0.43
+          confidence: 0.28
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.1
+            PARTIAL: 0.1
+          confidence: 0.7
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.46
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.2
+            PARTIAL: 0.26
+          confidence: 0.31
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.2
+            PARTIAL: 0.27
+          confidence: 0.3
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.06
+            PARTIAL: 0.05
+          confidence: 0.83
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.04
+            PARTIAL: 0.06
+          confidence: 0.85
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9678
+        output_tokens: 443
+      elapsed_seconds: 0.2363
+      request_sha256: 6f0365a93133ad2484ecf8062cb84abb833c63be674e241f84b2186175f9f6e7
+      request_sha256s:
+      - 6f0365a93133ad2484ecf8062cb84abb833c63be674e241f84b2186175f9f6e7
+  826a75e81a1e0687ea73d3783554f5266ec723346b4ffde9b2df266fc6db5ffd:
+    input_sha256: b9259059fbae1dc12e72307dc8301b42bd14398917ed2dbbdaa1cde1c090aeb8
+    configuration_sha256: c1b444eb2d3e009cc758df048cc77a24e955392a11c316fbf31c622c8dffda36
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.631379+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.2
+            PARTIAL: 0.32
+          confidence: 0.22
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.27
+            PARTIAL: 0.21
+          confidence: 0.28
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/measure_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.16
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.14
+            PARTIAL: 0.24
+          confidence: 0.43
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.24
+            PARTIAL: 0.35
+          confidence: 0.11
+        /assertion/rate_low:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.23
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/rate_high:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.23
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/rate_denominator:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.1
+            PARTIAL: 0.21
+          confidence: 0.53
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.11
+            PARTIAL: 0.39
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11452
+        output_tokens: 461
+      elapsed_seconds: 0.2619
+      request_sha256: ba5ae829504fb2ee52c52087b64fed87607ed5737ea7e042fab6bb93f2f68b5f
+      request_sha256s:
+      - ba5ae829504fb2ee52c52087b64fed87607ed5737ea7e042fab6bb93f2f68b5f
+  af3158335293957c408925446c2d93a48cc25ff1cebf7e816d1675289d8ead84:
+    input_sha256: 6be61d4a939230f2e4bf725d1ab7cef8f912cf15010cbe1a267fd90dfaa9391a
+    configuration_sha256: c1b444eb2d3e009cc758df048cc77a24e955392a11c316fbf31c622c8dffda36
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.729252+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.12
+            PARTIAL: 0.35
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.17
+            PARTIAL: 0.22
+          confidence: 0.42
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/measure_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.19
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.13
+            PARTIAL: 0.15
+          confidence: 0.58
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.22
+            PARTIAL: 0.28
+          confidence: 0.25
+        /assertion/rate_low:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.46
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/rate_high:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.29
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/rate_denominator:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.11
+            PARTIAL: 0.23
+          confidence: 0.49
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.05
+            PARTIAL: 0.36
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11439
+        output_tokens: 463
+      elapsed_seconds: 0.2269
+      request_sha256: df3fedb557166b9b15fef0fddb693688f15b42d4ebd111e86e29df9f3ec66deb
+      request_sha256s:
+      - df3fedb557166b9b15fef0fddb693688f15b42d4ebd111e86e29df9f3ec66deb
+  18035c7e440ebbb4aba9244f9f413f8f20d2f0cfe137ab2e7e59d933df81dfae:
+    input_sha256: ea16503c3ebda3596126271a123e782a31910b42fbc2026b739f75a5d534f3db
+    configuration_sha256: 9478d17a8a8192cda1b5d442f8e9ee1ab2ba474183ce48011f8efe9c1fbb073a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:18.895980+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.51
+            PARTIAL: 0.16
+          confidence: 0.26
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.63
+            PARTIAL: 0.16
+          confidence: 0.44
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.03
+            PARTIAL: 0.01
+          confidence: 0.94
+        /assertion/measure_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.2
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.1
+            PARTIAL: 0.05
+          confidence: 0.77
+        /assertion/rate_per_100000:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.42
+            PARTIAL: 0.15
+          confidence: 0.14
+        /assertion/rate_denominator:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.17
+            PARTIAL: 0.22
+          confidence: 0.42
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.38
+            PARTIAL: 0.4
+          confidence: 0.1
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9493
+        output_tokens: 376
+      elapsed_seconds: 0.2723
+      request_sha256: f21d90efa19d0b08984a96ac75a523ee09a8215fb35d2cb7fa8a24a7865e0f89
+      request_sha256s:
+      - f21d90efa19d0b08984a96ac75a523ee09a8215fb35d2cb7fa8a24a7865e0f89
+  ff036ccebd1f1bdbc3b7af36adce859be9e04246849730cbe8d4293450c82112:
+    input_sha256: 289a406577aba46526eac20e8e826ba53f1b9a72f951ecdd819ef1d6bc208d91
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:19.128448+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.11
+            PARTIAL: 0.27
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.13
+            PARTIAL: 0.34
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.06
+            PARTIAL: 0.18
+          confidence: 0.64
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.05
+            PARTIAL: 0.19
+          confidence: 0.64
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4295
+        output_tokens: 175
+      elapsed_seconds: 0.237
+      request_sha256: 6e5ad080631be3d6053e803cc561421440beb853f90855a159e2e1c694b481ee
+      request_sha256s:
+      - 6e5ad080631be3d6053e803cc561421440beb853f90855a159e2e1c694b481ee
+  32b7506b3c7f3cb6229264afbaedd07dfda9c44a2b02495eed74300d768cdba0:
+    input_sha256: b6a6bde09305a4b0f09e385c82d10ea1ebb5368593c8db30f0a15e15fe8d8724
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:59:19.127428+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.28
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4310
+        output_tokens: 177
+      elapsed_seconds: 0.2589
+      request_sha256: e9b840fdbd1355976bbf7d30eb4316b8db7a23e8d9cce49a1063fe298d92bd33
+      request_sha256s:
+      - e9b840fdbd1355976bbf7d30eb4316b8db7a23e8d9cce49a1063fe298d92bd33

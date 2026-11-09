@@ -3983,6 +3983,175 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/0
       reference: PMID:21792650
+  e10a20587cb4d091366258231c58e62138fd0a920d59ba8baf892121a7ee52d2:
+    claim:
+      about:
+        disease:
+          name: Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome 2
+          disease_term:
+            preferred_term: megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+            term:
+              id: MONDO:0025708
+              label: megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+        context: []
+      assertion_type: EpidemiologyInfo
+      assertion:
+        name: Female predominance
+        description: 'Roughly seven in ten reported MMIHS patients are female, and the figure is stable
+          across independent systematic reviews two decades apart: 70.6 per cent of 227 cases reviewed
+          to 2011, 73 per cent of 121 to 2016, and 16 of 19 in the Japanese national survey. Berdon''s
+          original 1976 description was of five female neonates.
+
+          This is a syndrome-level figure across all causative genes, not a MYH11-specific one, and it
+          is drawn from published case reports rather than from a population denominator, so ascertainment
+          bias cannot be excluded. It is recorded because a skew this large and this reproducible is not
+          what an autosomal recessive mechanism predicts; the open question that raises is curated in
+          `discussions`.'
+        minimum_value: 70.6
+        maximum_value: 84.2
+        unit: percent of reported cases that are female
+      selected_evidence:
+        snippet: 73% (88/121) of the patients were female, 65% underwent diagnostic biopsy (64/99), and
+          63% (66/106) were identified with prenatal imaging.
+        supports: SUPPORT
+    origin:
+      assertion_path: /epidemiology/0
+      evidence_path: /epidemiology/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:27421821
+      reference_title: 'Megacystis microcolon intestinal hypoperistalsis syndrome: Case series and updated
+        review of the literature with an emphasis on urologic management.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: An independent review over a later period, reproducing the skew.
+    first_seen_at: '2026-11-09T20:51:52.241079+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:51:52.241079+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:51:52.241079+00:00'
+    occurrences:
+    - assertion_path: /epidemiology/0
+      evidence_path: /epidemiology/0/evidence/1
+      reference: PMID:27421821
+  e4dfd86690223874a7b138285a210b893bdd49161e8615dad9543d4124166618:
+    claim:
+      about:
+        disease:
+          name: Megacystis-Microcolon-Intestinal Hypoperistalsis Syndrome 2
+          disease_term:
+            preferred_term: megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+            term:
+              id: MONDO:0025708
+              label: megacystis-microcolon-intestinal hypoperistalsis syndrome 2
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Myh11 heterozygous knockout mouse
+        species: Mouse
+        genotype: Myh11+/- heterozygous knockout
+        publication: PMID:41797110
+        description: 'The first purpose-built MMIHS model for this gene, and the one thing to read carefully
+          about it is the genotype. Human MMIHS2 is recessive: patients carry two damaged MYH11 alleles
+          and their unaffected parents carry one. This mouse is a heterozygote. It nonetheless develops
+          a markedly enlarged bladder, a thickened smooth muscle layer, collagen deposition, reduced voiding
+          frequency, increased post-void residual volume and slowed bladder contraction, which is the
+          human megacystis phenotype in miniature.
+
+          So the model reproduces the phenotype through a dose that does not produce disease in humans.
+          That is worth stating plainly rather than smoothing over: it makes the mouse a good readout
+          of what losing Myh11 does to a bladder, and a poor model of the human genotype-phenotype relationship.
+          The intestinal arm is mild in the mouse - prolonged transit and raised faecal water content
+          - where in patients it is the lethal half of the disease, so the microcolon and the functional
+          obstruction are not modelled here at all.'
+        modeled_mechanisms:
+        - target: Bladder Failure with Megacystis
+          relationship: RECAPITULATES
+          fidelity: MODERATE
+          model_scale: TISSUE
+          description: Enlarged bladder volume, raised bladder-to-body weight ratio, thickened smooth
+            muscle, collagen deposition, and the functional counterpart - reduced voiding frequency with
+            raised residual volume.
+          limitations: The mouse is heterozygous where the human disease is biallelic, so the allele dose
+            that produces the phenotype here is the carrier dose in patients. Bladder wall thickening
+            with collagen deposition and active proliferation is also a remodelling response that human
+            MMIHS bladders are not reported to share in this form.
+          divergences:
+          - divergence_type: POPULATION_MISMATCH
+            materiality: QUALIFYING
+            description: Human obligate carriers of a single MYH11 loss-of-function allele are unaffected
+              - the mother in the late-onset family had a normal assessment - while the model's whole
+              phenotype arises at exactly that dose. The comparison the model supports is Myh11-low versus
+              Myh11-normal bladder, not patient versus carrier.
+          - divergence_type: BOUNDARY_OMISSION
+            materiality: QUALIFYING
+            description: Microcolon is absent from the model and the intestinal phenotype is mild dysmotility.
+              The gastrointestinal failure that determines survival in patients is outside the boundary
+              of what this mouse reproduces, so it cannot speak to parenteral nutrition dependence or
+              its complications. Recorded as a boundary omission because ModelDivergenceTypeEnum has no
+              value for an incomplete phenotype, which is the more exact description.
+          - divergence_type: SCALE_EXTRAPOLATION
+            materiality: QUALIFYING
+            description: 'The model observes tissue - bladder wall thickness, collagen content, muscle
+              tension, void volumes - while this node is an organism-level claim about a failing bladder
+              in a patient. One step of upward extrapolation, so the organ failure is inferred from the
+              tissue measurements rather than observed. Recorded explicitly to agree with `model_scale:
+              TISSUE` against the node''s `biological_scale: ORGANISM`.'
+          - divergence_type: SPECIES_MISMATCH
+            materiality: QUALIFYING
+            description: Mouse and human visceral smooth muscle differ in ways this model cannot control
+              for, and the human disease is defined partly by a prenatal presentation - megacystis on
+              antenatal ultrasound with polyhydramnios or normal fluid - that a mouse study does not assess
+              at all. A second, independent gap alongside the allele-dose one above.
+          readouts:
+          - name: Post-void residual urine volume
+            target: Bladder Failure with Megacystis
+            direction: INCREASED
+            interpretation: The functional measure of the failure to empty, rather than the anatomical
+              one - a bladder can be large without being a failing bladder.
+        - target: Failure of Visceral Smooth Muscle Contraction
+          relationship: PARTIALLY_RECAPITULATES
+          fidelity: MODERATE
+          model_scale: TISSUE
+          description: Muscle tension assays showed slowed bladder contraction, which is a direct measurement
+            of the contractile defect this node names rather than an inference from organ size.
+          limitations: Measured in bladder, not in bowel. The node covers visceral smooth muscle generally,
+            and the intestinal contractile apparatus is assessed only indirectly here, through transit
+            time.
+          divergences:
+          - divergence_type: PROXY_QUANTITY
+            materiality: QUALIFYING
+            description: The intestinal half of this node is represented by whole-gut transit time, which
+              is an outcome of contraction rather than a measurement of it. The bladder half is measured
+              directly by muscle tension assay; the two are not equivalent evidence.
+      selected_evidence:
+        snippet: Immunohistochemical staining revealed that Myh11 was predominantly expressed in the bladder
+          smooth muscle, and a significant reduction in its expression level was observed in the bladders
+          of Myh11+/- mice (P < 0.01).
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41797110
+      reference_title: Myh11 haploinsufficiency recapitulates megacystis and voiding dysfunction in a
+        mouse model of MMIHS.
+      evidence_source: MODEL_ORGANISM
+      explanation: Confirms the model does what it claims at the protein level, which matters here because
+        a heterozygote reducing rather than abolishing expression is the whole design.
+    first_seen_at: '2026-11-09T20:51:52.961863+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:51:52.961863+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:51:52.961863+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/1
+      reference: PMID:41797110
 assessments:
   2d4b584ce5205cb42a4a6f1ac3ab5a82c63ce522e0c101d2d710fa791fcbf20b:
     input_sha256: b36a2299034d60d996c0e165f7e237350dd1169538512c977cd30410d78525a0
@@ -9030,3 +9199,352 @@ assessments:
       request_sha256: 56b48e804427d2f69dd3cb415b096db69482a08adbe7495605afa51dcc5689bf
       request_sha256s:
       - 56b48e804427d2f69dd3cb415b096db69482a08adbe7495605afa51dcc5689bf
+  8148a2c39ffad711e701ca0ad1dfba2b2b6dbd50f77b9f6a24c224db7421f310:
+    input_sha256: e10a20587cb4d091366258231c58e62138fd0a920d59ba8baf892121a7ee52d2
+    configuration_sha256: 0c66253366eed4cca846be4285444e6b0f73073ab853a4058ffdcedc18241021
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:51:52.241079+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.06
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.07
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.05
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/minimum_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.38
+            PARTIAL: 0.37
+          confidence: 0.07
+        /assertion/maximum_value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.77
+            PARTIAL: 0.22
+          confidence: 0.66
+        /assertion/unit:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.11
+            PARTIAL: 0.26
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7311
+        output_tokens: 318
+      elapsed_seconds: 0.2771
+      request_sha256: 8486fafee4d2a5bacf4ef86a85ec883877c6a2c7ac55073ea7e8e2898d2a962c
+      request_sha256s:
+      - 8486fafee4d2a5bacf4ef86a85ec883877c6a2c7ac55073ea7e8e2898d2a962c
+  371e57fa0b0b7aa666da4c0646f465bc1738d3978239b0b8f646ce0baa7ea466:
+    input_sha256: e4dfd86690223874a7b138285a210b893bdd49161e8615dad9543d4124166618
+    configuration_sha256: 52bb87a9de05d7e8b41e354f1bd695d2203f5641ba85d91ef91e6afedad6cf57
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:51:52.961863+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.15
+            PARTIAL: 0.47
+          confidence: 0.2
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.13
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.51
+            PARTIAL: 0.3
+          confidence: 0.26
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.11
+            PARTIAL: 0.17
+          confidence: 0.58
+        /assertion/genotype:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.06
+            PARTIAL: 0.09
+          confidence: 0.77
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.71
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.18
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.46
+            PARTIAL: 0.31
+          confidence: 0.19
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.14
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.36
+            PARTIAL: 0.26
+          confidence: 0.07
+        /assertion/modeled_mechanisms/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.4
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.76
+            PARTIAL: 0.2
+          confidence: 0.64
+        /assertion/modeled_mechanisms/0/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.47
+            PARTIAL: 0.2
+          confidence: 0.2
+        /assertion/modeled_mechanisms/0/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.3
+            PARTIAL: 0.34
+          confidence: 0.04
+        /assertion/modeled_mechanisms/0/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.42
+        /assertion/modeled_mechanisms/0/divergences/1/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.61
+            PARTIAL: 0.17
+          confidence: 0.42
+        /assertion/modeled_mechanisms/0/divergences/1/materiality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.4
+            PARTIAL: 0.34
+          confidence: 0.1
+        /assertion/modeled_mechanisms/0/divergences/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.8
+            PARTIAL: 0.15
+          confidence: 0.7
+        /assertion/modeled_mechanisms/0/divergences/2/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.53
+            PARTIAL: 0.16
+          confidence: 0.3
+        /assertion/modeled_mechanisms/0/divergences/2/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.32
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/modeled_mechanisms/0/divergences/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/modeled_mechanisms/0/divergences/3/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.6
+            PARTIAL: 0.15
+          confidence: 0.4
+        /assertion/modeled_mechanisms/0/divergences/3/materiality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.42
+            PARTIAL: 0.41
+          confidence: 0.13
+        /assertion/modeled_mechanisms/0/divergences/3/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/modeled_mechanisms/0/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/modeled_mechanisms/0/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.2
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/modeled_mechanisms/0/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.5
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/modeled_mechanisms/0/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.71
+            PARTIAL: 0.22
+          confidence: 0.56
+        /assertion/modeled_mechanisms/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.2
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.39
+            PARTIAL: 0.32
+          confidence: 0.09
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.21
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.25
+            PARTIAL: 0.25
+          confidence: 0.25
+        /assertion/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.48
+            PARTIAL: 0.41
+          confidence: 0.22
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/modeled_mechanisms/1/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.61
+            PARTIAL: 0.15
+          confidence: 0.42
+        /assertion/modeled_mechanisms/1/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.24
+            PARTIAL: 0.36
+          confidence: 0.1
+        /assertion/modeled_mechanisms/1/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 42968
+        output_tokens: 2155
+      elapsed_seconds: 0.4641
+      request_sha256: e9298712a7c7f2e4bcda8c5c0d0cca5469c9c69a4f7c60ebe5f02b3aa3a5e5a6
+      request_sha256s:
+      - e9298712a7c7f2e4bcda8c5c0d0cca5469c9c69a4f7c60ebe5f02b3aa3a5e5a6

@@ -1067,6 +1067,59 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:24614659
+  fc9a884102c22f3c8971bef5a40adf1484f7fd9510970f5911584a9f6f2a90d8:
+    claim:
+      about:
+        disease:
+          name: Oculoglandular Tularemia
+          disease_term:
+            preferred_term: oculoglandular tularemia
+            term:
+              id: MONDO:0001665
+              label: oculoglandular tularemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Francisella microagglutination serology
+        description: Microagglutination serology confirms oculoglandular tularemia when titers reach a
+          diagnostic threshold or rise fourfold across paired acute and convalescent sera.
+        diagnosis_term:
+          preferred_term: Diagnostic Serology Testing
+          term:
+            id: NCIT:C217458
+            label: Diagnostic Serology Testing
+        measurements:
+        - preferred_term: Francisella tularensis antibody titer
+          term:
+            id: LOINC:16875-7
+            label: Francisella tularensis Ab [Titer] in Serum
+      selected_evidence:
+        snippet: 'Titers of ≥1: 160 within 2–3 weeks after the onset of symptoms or a 4-fold increase
+          in microagglutination test titers over a 2-week interval (between acute and convalescent sera)
+          are considered diagnostic of tularemia [12].'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38941282
+      reference_title: Francisella tularensis Infection Causing Parinaud Oculoglandular Syndrome.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: BACKGROUND
+      explanation: States the microagglutination threshold and paired-serum rule used to confirm oculoglandular
+        tularemia.
+    first_seen_at: '2026-11-09T20:24:25.629344+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:24:25.629344+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:24:25.629344+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:38941282
 assessments:
   4a3d3831ba7d33573f65fe362537a42bca0865f3aaa2338d754245095293c449:
     input_sha256: 30fd7f983dcd103459ea3aa160829c6eba7fb536a2e158e97d6ad4013f8d78a1
@@ -2541,3 +2594,76 @@ assessments:
       request_sha256: cdd248d226be3434db00d783d517a6e768b0bc8599d31d1a4ab1e0fafd347194
       request_sha256s:
       - cdd248d226be3434db00d783d517a6e768b0bc8599d31d1a4ab1e0fafd347194
+  d7e03a3ad4fcd126def6c45578bfd93e7094c929351a95167e78d5bbb44a8b24:
+    input_sha256: fc9a884102c22f3c8971bef5a40adf1484f7fd9510970f5911584a9f6f2a90d8
+    configuration_sha256: e67d1393a11ed48587f040e619362e339d9da6b300f2029a72072cbb1798833e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:24:25.629344+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.07
+            PARTIAL: 0.4
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.07
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.06
+            PARTIAL: 0.18
+          confidence: 0.64
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.09
+            PARTIAL: 0.22
+          confidence: 0.53
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.05
+            PARTIAL: 0.23
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8320
+        output_tokens: 378
+      elapsed_seconds: 0.1594
+      request_sha256: e0f2d06ba9c22dd70a4d92e3c365c409eb17c07b1b3d090d7b49a15830e029d1
+      request_sha256s:
+      - e0f2d06ba9c22dd70a4d92e3c365c409eb17c07b1b3d090d7b49a15830e029d1

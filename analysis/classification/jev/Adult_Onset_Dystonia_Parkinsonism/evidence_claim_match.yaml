@@ -6246,6 +6246,58 @@ inputs:
     - assertion_path: /prevalence/0
       evidence_path: /prevalence/0/evidence/0
       reference: ORPHA:199351
+  136e8ac716cb4f97e61f072bcded858cffd21e1a05b585f6e283463a517a7024:
+    claim:
+      about:
+        disease:
+          name: Adult-Onset Dystonia-Parkinsonism
+          disease_term:
+            preferred_term: adult-onset dystonia-parkinsonism
+            term:
+              id: MONDO:0013060
+              label: autosomal recessive Parkinson disease 14
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Progressive Neuronal Dysfunction and Neurodegeneration
+            description: Convergent membrane-homeostasis and mitochondrial injury pathways produce progressive
+              neuronal dysfunction across dopaminergic, pyramidal, cerebellar, autonomic, ocular-motor,
+              bulbar, and cognitive networks. Human observations establish the multisystem phenotype,
+              but most individual symptom routes remain mechanistically unresolved.
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hypometric Saccades
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: '| HP:0000571 | Hypometric saccades | Frequent (79-30%) |'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/4
+      evidence_path: /pathophysiology/3/downstream/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: ORPHA:199351
+      reference_title: Adult-onset dystonia-parkinsonism
+      evidence_source: OTHER
+      explanation: Orphanet supports occurrence; the ocular-motor route remains unresolved.
+    first_seen_at: '2026-11-09T20:58:57.147118+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:58:57.147118+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:58:57.147118+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/4
+      evidence_path: /pathophysiology/3/downstream/4/evidence/0
+      reference: ORPHA:199351
 assessments:
   8b6f91ee07535d52b29989d6d97e360d5158226e78519950b0dc59a7b08c414f:
     input_sha256: d57496dbfbda651386a0e3f088868447877ff14b3c5c6d33c2a35a2437bf14cb
@@ -14668,3 +14720,55 @@ assessments:
       request_sha256: d155fd40b615fd781e3b3fc707f246fa061819567c76448de4af55557e1f8515
       request_sha256s:
       - d155fd40b615fd781e3b3fc707f246fa061819567c76448de4af55557e1f8515
+  7a18862399634e732f658ddf49f71d507fd398520fc2345da152b9a0c497a055:
+    input_sha256: 136e8ac716cb4f97e61f072bcded858cffd21e1a05b585f6e283463a517a7024
+    configuration_sha256: e16ae0eb91cb7a047448384bc2e4d65fa7a25457eb28490cdf26275cd97f499c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:58:57.147118+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.2
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.27
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.09
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.41
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.32
+            PARTIAL: 0.42
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5499
+        output_tokens: 227
+      elapsed_seconds: 0.2372
+      request_sha256: f71ee2310b23c45672554c6023d7f1e47ef994fe75e10eeaac4f00220692d363
+      request_sha256s:
+      - f71ee2310b23c45672554c6023d7f1e47ef994fe75e10eeaac4f00220692d363

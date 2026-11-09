@@ -6271,6 +6271,60 @@ inputs:
     - assertion_path: /pathophysiology/11/downstream/2
       evidence_path: /pathophysiology/11/downstream/2/evidence/0
       reference: PMID:33956777
+  2e74d9affa4ac5d840940557f6040138bf6094dfbcbef55726443901f514dd72:
+    claim:
+      about:
+        disease:
+          name: Botulism
+          disease_term:
+            preferred_term: botulism
+            term:
+              id: MONDO:0005498
+              label: botulism
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Public-health toxin detection and toxigenic-organism testing
+        diagnosis_term:
+          preferred_term: clinical laboratory procedure
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        description: Public-health laboratories test serum, stool, gastric fluid, wound material, or implicated
+          food for toxin and may culture stool or wound specimens for toxin-producing C. botulinum, C.
+          baratii, or C. butyricum. Specimens should be collected promptly without delaying antitoxin.
+        measurements:
+        - preferred_term: Clostridium botulinum toxin
+          term:
+            id: LOINC:33708-9
+            label: Clostridium botulinum toxin [Presence] in Specimen
+        results: Detection of toxin in an appropriate specimen or food, or isolation of a toxin-producing
+          species from stool or wound, confirms a compatible case.
+      selected_evidence:
+        snippet: 'Botulism is confirmed in symptomatic persons by detecting one of the following: 1) botulinum
+          neurotoxin in serum, stool, or gastric fluid; 2) botulinum neurotoxin–producing species of Clostridium
+          (i.e., C. botulinum, C. baratii, or C. butyricum) in a stool or wound culture'
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33956777
+      reference_title: Clinical Guidelines for Diagnosis and Treatment of Botulism, 2021.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The guideline defines laboratory confirmation routes and specimens.
+    first_seen_at: '2026-11-09T20:45:50.168845+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:45:50.168845+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:45:50.168845+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:33956777
 assessments:
   366a736961da843eab0805ddc33dcf62d20dd7b02cd8fc5d3e0101a499e3c32e:
     input_sha256: 08f999927dbac31fac1c9c1e50f8dbc6839b920c80545e6d519bdf9d10e1dc1e
@@ -14477,3 +14531,83 @@ assessments:
       request_sha256: cadaaf2e643bf2b2d2d86aceae8a6f408d0d5e3502e122dc7abfd9b45eef32dc
       request_sha256s:
       - cadaaf2e643bf2b2d2d86aceae8a6f408d0d5e3502e122dc7abfd9b45eef32dc
+  d15234c063d89f38ac30adaf52c7736425aed5de2f782de211b9ddc576589855:
+    input_sha256: 2e74d9affa4ac5d840940557f6040138bf6094dfbcbef55726443901f514dd72
+    configuration_sha256: 81044ae5daaffb5d20cf61d0344eb18bf12e4514b0c51a969ddb49ae3c27c846
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:45:50.168845+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.05
+            PARTIAL: 0.16
+          confidence: 0.68
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.16
+            PARTIAL: 0.19
+          confidence: 0.48
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.13
+            PARTIAL: 0.19
+          confidence: 0.52
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9308
+        output_tokens: 420
+      elapsed_seconds: 0.1992
+      request_sha256: 0ae980fb07943039eeae83d4c9ce18844585f4fabed70e226c137dd0170b7450
+      request_sha256s:
+      - 0ae980fb07943039eeae83d4c9ce18844585f4fabed70e226c137dd0170b7450

@@ -3208,6 +3208,56 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:41167601
+  e9cbf8c9c4674d87aa2d43cbb5d69467dc2ec9c6bf92f6b77e53912d50985c51:
+    claim:
+      about:
+        disease:
+          name: Congenital Factor V Deficiency
+          disease_term:
+            preferred_term: congenital factor V deficiency
+            term:
+              id: MONDO:0009210
+              label: congenital factor V deficiency
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: fv_no_licensed_concentrate
+        kind: KNOWLEDGE_GAP
+        status: OPEN
+        prompt: Can a factor-V-specific replacement therapy be developed and licensed?
+        attaches_to:
+        - treatments#
+        rationale: Factor V deficiency is the rare bleeding disorder still without a licensed factor-specific
+          concentrate, unlike factor X and factor XIII deficiencies. Two candidates have reached preclinical
+          or in-vitro stage - a plasma-derived factor V concentrate that corrects clotting times and thrombin
+          generation in patient plasma, and an engineered activated factor V (superFVa) - but neither
+          has completed human trials, so plasma and platelet transfusion remain the only options.
+      selected_evidence:
+        snippet: The novel plasma-derived FV concentrate was effective to correct "in vitro" severe FV
+          deficiency in patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29578313
+      reference_title: '"In vitro" correction of the severe factor V deficiency-related coagulopathy by
+        a novel plasma-derived factor V concentrate.'
+      evidence_source: IN_VITRO
+      explanation: A candidate concentrate shown to work in vitro, the preclinical state of the art this
+        gap tracks.
+    first_seen_at: '2026-11-09T20:14:25.271018+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:14:25.271018+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:14:25.271018+00:00'
+    occurrences:
+    - assertion_path: /discussions/1
+      evidence_path: /discussions/1/evidence/1
+      reference: PMID:29578313
 assessments:
   be2e3780a59818cea0b866d2032ed43de8000b73345fc621c2e052893d57c3f6:
     input_sha256: 2dfaed0f1e7adb1ba00f3a173dcbd7f7743fd7c080c4a097f781b31c59f439c7
@@ -8075,3 +8125,76 @@ assessments:
       request_sha256: 7e641325d77caf0baaee5c1918b165380d3afc313e5852d681ae47759858a680
       request_sha256s:
       - 7e641325d77caf0baaee5c1918b165380d3afc313e5852d681ae47759858a680
+  84e7001a1ff8c419546015749d63e56e9c45aaa27e0b8c02a696d54ea87c8dd8:
+    input_sha256: e9cbf8c9c4674d87aa2d43cbb5d69467dc2ec9c6bf92f6b77e53912d50985c51
+    configuration_sha256: 0cc1f5b26da05df05194df920c2938c8f8dc5dd8898d2c6724fb4a40acf09259
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:14:25.271018+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.06
+            PARTIAL: 0.83
+          confidence: 0.74
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.65
+            PARTIAL: 0.24
+          confidence: 0.48
+        /assertion/kind:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.64
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/status:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.6
+            PARTIAL: 0.39
+          confidence: 0.4
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.05
+            PARTIAL: 0.85
+          confidence: 0.77
+        /assertion/attaches_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.26
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.3
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8339
+        output_tokens: 369
+      elapsed_seconds: 0.2381
+      request_sha256: 9be88fcddccbed9e1ff8ba62e025ed9f9387b2e27ee5837d320d52c8b619c781
+      request_sha256s:
+      - 9be88fcddccbed9e1ff8ba62e025ed9f9387b2e27ee5837d320d52c8b619c781

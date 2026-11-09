@@ -1538,6 +1538,48 @@ inputs:
     - assertion_path: /agent_life_cycle/life_cycle_stages/4
       evidence_path: /agent_life_cycle/life_cycle_stages/4/evidence/0
       reference: PMID:27047771
+  6b55e59a15b5c587586dccc8cbe0b21f4292e05dbedddfe81588b02a89bb02c0:
+    claim:
+      about:
+        disease:
+          name: Cystic echinococcosis
+          disease_term:
+            term:
+              id: MONDO:0018408
+              label: cystic echinococcosis
+            preferred_term: Cystic echinococcosis
+        context: []
+      assertion_type: Prevalence
+      assertion:
+        population: Europe
+        measure_type: ANNUAL_INCIDENCE
+        prevalence_class: BAND_1_9_PER_100000
+        rate_denominator: POPULATION_PER_YEAR
+        notes: Orphanet lists annual incidence of 1-9 / 100 000 in Europe (source type EXPERT); worldwide
+          point prevalence is listed as unknown.
+      selected_evidence:
+        snippet: 1-9 / 100 000 | Europe | Annual incidence | EXPERT
+        supports: SUPPORT
+    origin:
+      assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: ORPHA:400
+      reference_title: Cystic echinococcosis
+      evidence_source: OTHER
+      explanation: Orphanet epidemiology table gives the European annual incidence band for cystic echinococcosis.
+    first_seen_at: '2026-11-09T20:14:33.227199+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:14:33.227199+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:14:33.227199+00:00'
+    occurrences:
+    - assertion_path: /prevalence/0
+      evidence_path: /prevalence/0/evidence/0
+      reference: ORPHA:400
 assessments:
   3605b7862b6c2d239dfaa282cdbae3e2de62b2325067ceebec97cd12b81f59fd:
     input_sha256: a6d669044e5d6312a22efaa9daaad2ae26776afe9ead4234a9a0fd567e8004c5
@@ -3303,3 +3345,69 @@ assessments:
       request_sha256: 85cb63e8fc9523a6cbaed67d88aeff961c49b3e3d2c92d2776c82547ac3d69f6
       request_sha256s:
       - 85cb63e8fc9523a6cbaed67d88aeff961c49b3e3d2c92d2776c82547ac3d69f6
+  19c87a56ab1307de5dfaea05d06ae68abd90ec49febde80d5c3e9a3d8c62dca4:
+    input_sha256: 6b55e59a15b5c587586dccc8cbe0b21f4292e05dbedddfe81588b02a89bb02c0
+    configuration_sha256: bd9f5839f6534e914d303f90ffab79cc636f59d66cc5746ec61327bbe98ae88a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:14:33.227199+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.06
+            PARTIAL: 0.09
+          confidence: 0.77
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.04
+            PARTIAL: 0.44
+          confidence: 0.28
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/measure_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.01
+            PARTIAL: 0.0
+          confidence: 0.98
+        /assertion/prevalence_class:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/rate_denominator:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.24
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.48
+            PARTIAL: 0.31
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8470
+        output_tokens: 319
+      elapsed_seconds: 0.3404
+      request_sha256: b5da93710f2feaf43e48e2024d93865f8b8a94a6b78e5e80feea0d8f5233c03b
+      request_sha256s:
+      - b5da93710f2feaf43e48e2024d93865f8b8a94a6b78e5e80feea0d8f5233c03b

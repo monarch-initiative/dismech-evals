@@ -4269,6 +4269,49 @@ inputs:
     - assertion_path: /animal_models/3/modeled_mechanisms/0
       evidence_path: /animal_models/3/modeled_mechanisms/0/evidence/0
       reference: PMID:37143142
+  3d23d857d1f259285aedf6574789921fcb853dcbc058134f98eccc329728df03:
+    claim:
+      about:
+        disease:
+          name: Ariboflavinosis
+          disease_term:
+            preferred_term: ariboflavinosis
+            term:
+              id: MONDO:0004573
+              label: ariboflavinosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Iron Absorption and Mobilization
+        biological_scale: ORGANISM
+        description: Low riboflavin status reduces iron absorption and release of iron from stores, contributing
+          to anemia when iron intake is low.
+      selected_evidence:
+        snippet: Dietary iron intake and iron absorption did not change during the study.
+        supports: REFUTE
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21525198
+      reference_title: Correcting a marginal riboflavin deficiency improves hematologic status in young
+        women in the United Kingdom (RIBOFEM).
+      evidence_source: HUMAN_CLINICAL
+      explanation: In the RIBOFEM trial correcting marginal deficiency raised hemoglobin without a measurable
+        change in iron absorption, which argues against impaired absorption as the explanation in marginal
+        deficiency.
+    first_seen_at: '2026-11-09T20:09:46.926261+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:09:46.926261+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:09:46.926261+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/2
+      reference: PMID:21525198
 assessments:
   0df40e9fb438750c23ce313be78a99938715603cfacf3c20b93affcf22b341c6:
     input_sha256: df02cc3104ec6cb03edc6fccea2b4f693211bcd682b08c770d077d388d9702f8
@@ -9922,3 +9965,55 @@ assessments:
       request_sha256: cf8090bbd9b258eccb38c0c46ae848de87e1b79ad1b64eb020bbf6fa3eebdbef
       request_sha256s:
       - cf8090bbd9b258eccb38c0c46ae848de87e1b79ad1b64eb020bbf6fa3eebdbef
+  55a9a7610aaac01b6cd7f29368ad943eca9759b0b480d1a6220c472822ed4935:
+    input_sha256: 3d23d857d1f259285aedf6574789921fcb853dcbc058134f98eccc329728df03
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:09:46.926261+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.67
+            PARTIAL: 0.15
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.32
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.69
+            PARTIAL: 0.16
+          confidence: 0.53
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.39
+            PARTIAL: 0.22
+          confidence: 0.09
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.79
+            PARTIAL: 0.12
+          confidence: 0.68
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5560
+        output_tokens: 235
+      elapsed_seconds: 0.3329
+      request_sha256: 4ce4c2ac9d76c5b98a34aef3a9597aef4f43875c16f32e9ffe8a95b9a87a4813
+      request_sha256s:
+      - 4ce4c2ac9d76c5b98a34aef3a9597aef4f43875c16f32e9ffe8a95b9a87a4813

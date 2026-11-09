@@ -2431,6 +2431,124 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/1/readouts/0
       evidence_path: /experimental_models/0/modeled_mechanisms/1/readouts/0/evidence/0
       reference: PMID:25556185
+  4240f1d359a73531bbf1827d7c1b9f4af5bc760de311e2aadbb7de5692df213f:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Deficiency 34
+          disease_term:
+            preferred_term: combined oxidative phosphorylation deficiency 34
+            term:
+              id: MONDO:0054741
+              label: combined oxidative phosphorylation deficiency 34
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Mitochondrial Protein Synthesis
+        conforms_to:
+        - mitochondrial_translation_deficiency#Impaired Synthesis of mtDNA-Encoded OXPHOS Subunits
+        - primary_oxphos_deficiency#Mitochondrial Translation Defect
+        biological_scale: CELLULAR
+        description: 'Pulse labelling of mitochondrial translation products in patient fibroblasts showed
+          impaired mitochondrial protein synthesis. This is the functional consequence of a defective
+          small subunit and the step at which a single ribosomal-protein defect becomes a multi-complex
+          disease: the mitoribosome makes only thirteen proteins, but they are distributed across complexes
+          I, III, IV and V.'
+        biological_processes:
+        - preferred_term: mitochondrial translation
+          modifier: DECREASED
+          term:
+            id: GO:0032543
+            label: mitochondrial translation
+      selected_evidence:
+        snippet: Pulse labeling of mitochondrial protein synthesis products revealed impaired mitochondrial
+          protein synthesis in patient fibroblasts.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25556185
+      reference_title: Mutation in mitochondrial ribosomal protein S7 (MRPS7) causes congenital sensorineural
+        deafness, progressive hepatic and renal failure and lactic acidemia.
+      evidence_source: IN_VITRO
+      explanation: The direct measurement of the translation defect in patient cells.
+    first_seen_at: '2026-11-09T20:14:57.565048+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:14:57.565048+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:14:57.565048+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:25556185
+  993d32efe16d800d084906c68cb58240118d57998086a0dea61f1e47af2a04d7:
+    claim:
+      about:
+        disease:
+          name: Combined Oxidative Phosphorylation Deficiency 34
+          disease_term:
+            preferred_term: combined oxidative phosphorylation deficiency 34
+            term:
+              id: MONDO:0054741
+              label: combined oxidative phosphorylation deficiency 34
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Oxidative Phosphorylation
+        biological_scale: CELLULAR
+        conforms_to: primary_oxphos_deficiency#OXPHOS Complex Deficiency
+        description: 'With three of the four electron-transport complexes deficient, oxidative ATP synthesis
+          falls. This is the bioenergetic endpoint that inherited OXPHOS defects converge on, and the
+          node conforms to primary_oxphos_deficiency#OXPHOS Complex Deficiency at that point, as the sibling
+          entry COXPD48 does; the upstream Impaired Mitochondrial Protein Synthesis node conforms to the
+          module''s Mitochondrial Translation Defect trigger. No ROS measurement has been reported in
+          an MRPS7 patient, and no reactive-oxygen claim is made here.
+
+          The consequence of the failing chain that these patients actually show is downstream - the cytosolic
+          redox shift and the lactic acidemia, which are their own node.'
+        biological_processes:
+        - preferred_term: oxidative phosphorylation
+          modifier: DECREASED
+          term:
+            id: GO:0006119
+            label: oxidative phosphorylation
+        - preferred_term: mitochondrial ATP synthesis coupled electron transport
+          modifier: DECREASED
+          term:
+            id: GO:0042775
+            label: mitochondrial ATP synthesis coupled electron transport
+      selected_evidence:
+        snippet: We report siblings with congenital sensorineural deafness and lactic acidemia in association
+          with combined respiratory chain (RC) deficiencies of complexes I, III and IV observed in fibroblasts
+          and liver.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:25556185
+      reference_title: Mutation in mitochondrial ribosomal protein S7 (MRPS7) causes congenital sensorineural
+        deafness, progressive hepatic and renal failure and lactic acidemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The co-occurrence of the enzyme deficiency and the lactic acidemia. INDIRECT because
+        the redox mechanism this node names was not itself measured; what is reported is the lactate.
+    first_seen_at: '2026-11-09T20:14:57.568137+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:14:57.568137+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:14:57.568137+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:25556185
 assessments:
   70138fcaaa2480ca556e16b8b8acfbccedd99c047c459b70dfda266dd5216d1e:
     input_sha256: 7391f1872f385d332c9eecfd55db40c5a1ac4cca638161672e882b1d567454b2
@@ -5624,3 +5742,184 @@ assessments:
       request_sha256: 37333793c7eefa4c89598df40ad1c9bde060b3e437cdb509b6740b3179c642cd
       request_sha256s:
       - 37333793c7eefa4c89598df40ad1c9bde060b3e437cdb509b6740b3179c642cd
+  a6647bd2978166fd0843fac3a5cc13f51ff94dbceecc9f7f7a4d2b2833ab5fa2:
+    input_sha256: 4240f1d359a73531bbf1827d7c1b9f4af5bc760de311e2aadbb7de5692df213f
+    configuration_sha256: dffa1db52696da01e0ab11f8cc147c45911ec48a510693403437144fc0506d8e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:14:57.565048+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.06
+            PARTIAL: 0.45
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.09
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.23
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.06
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.01
+            PARTIAL: 0.08
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9961
+        output_tokens: 432
+      elapsed_seconds: 0.2393
+      request_sha256: 0098597238474185b281ff348e498269f4af10540070e2a31e12d1dde7fb41a4
+      request_sha256s:
+      - 0098597238474185b281ff348e498269f4af10540070e2a31e12d1dde7fb41a4
+  ca0e741516edb07867d7d3ba4bf9b6b8c33141d7830b695297990765303e16c5:
+    input_sha256: 993d32efe16d800d084906c68cb58240118d57998086a0dea61f1e47af2a04d7
+    configuration_sha256: 5b1da3f43ebb2affdf67cae0651e2a34988336156aa56a5d30e2d7839eedf61d
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:14:57.568137+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.05
+            PARTIAL: 0.4
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.07
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.05
+            PARTIAL: 0.14
+          confidence: 0.72
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.25
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.12
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.0
+            PARTIAL: 0.08
+          confidence: 0.88
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.01
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/biological_processes/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.04
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/biological_processes/1/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/biological_processes/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13284
+        output_tokens: 594
+      elapsed_seconds: 0.3371
+      request_sha256: 401a449ebc85f27de7975465f671978a29f6d696552eb060edc7ae180a1adce3
+      request_sha256s:
+      - 401a449ebc85f27de7975465f671978a29f6d696552eb060edc7ae180a1adce3

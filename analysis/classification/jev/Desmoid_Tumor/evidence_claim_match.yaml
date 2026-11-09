@@ -3892,6 +3892,66 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT03785964
+  49a82fef5673b998cd6a6e57ae3f9ed0b2391dbccf16bd553aa31bbca3bf5759:
+    claim:
+      about:
+        disease:
+          name: Desmoid Tumor
+          disease_term:
+            preferred_term: desmoid tumor
+            term:
+              id: MONDO:0007608
+              label: desmoid tumor
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Constitutive Activation of the Wnt-beta-catenin Axis
+        description: 'The shared consequence of the convergence, stated as a pathway state rather than
+          as a genetic event. Whichever lesion disabled the destruction complex, the result is the same:
+          persistent canonical Wnt signalling in a cell that is receiving no Wnt ligand.'
+        biological_scale: MOLECULAR
+        genes:
+        - preferred_term: CTNNB1
+          term:
+            id: hgnc:2514
+            label: CTNNB1
+        - preferred_term: APC
+          term:
+            id: hgnc:583
+            label: APC
+        biological_processes:
+        - preferred_term: canonical Wnt signaling pathway
+          modifier: INCREASED
+          term:
+            id: GO:0060070
+            label: canonical Wnt signaling pathway
+      selected_evidence:
+        snippet: The pathogenesis of DF is not completely understood even if a high prevalence (∼85%)
+          of CTNNB1 mutations discovered in sporadic DF underlies the importance of the Wnt/β-catenin
+          pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24325833
+      reference_title: 'Sporadic desmoid-type fibromatosis: a stepwise approach to a non-metastasising
+        neoplasm--a position paper from the Italian and the French Sarcoma Group.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies CTNNB1 mutation prevalence in sporadic disease and states the pathway it
+        implicates, while being explicit that the pathogenesis is not fully understood.
+    first_seen_at: '2026-11-09T20:14:42.557140+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:14:42.557140+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:14:42.557140+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:24325833
 assessments:
   1510de9aa71d0fbcfb3ef27e666f739caca1525f2043120ab0d0d98b22ea094f:
     input_sha256: 544c471556188b7e37315f69444d7a2b9291fc089c867b3fd67e8f16d87fe258
@@ -8769,3 +8829,104 @@ assessments:
       request_sha256: 9ba2debd2ec4abc61ec7845c0dc1f2e3c88627067376acf98da8f105b3c3ce06
       request_sha256s:
       - 9ba2debd2ec4abc61ec7845c0dc1f2e3c88627067376acf98da8f105b3c3ce06
+  83a5841b8482decd675ceb1116b23f483abab86bac3a4c72819a18548eeb9158:
+    input_sha256: 49a82fef5673b998cd6a6e57ae3f9ed0b2391dbccf16bd553aa31bbca3bf5759
+    configuration_sha256: 762399e955b9f9d663b8aff129540d7a2439a8bb362dc6329a505f78659c236d
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:14:42.557140+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.01
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.01
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.01
+            PARTIAL: 0.48
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.04
+            PARTIAL: 0.76
+          confidence: 0.64
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.02
+            PARTIAL: 0.23
+          confidence: 0.62
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.01
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/genes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/genes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.01
+            PARTIAL: 0.31
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.01
+            PARTIAL: 0.37
+          confidence: 0.43
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.01
+            PARTIAL: 0.35
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12808
+        output_tokens: 588
+      elapsed_seconds: 0.2349
+      request_sha256: d89f382f73080c8ee8966722075e5991a6a9d6db80c15276bdaf6f28cc58763e
+      request_sha256s:
+      - d89f382f73080c8ee8966722075e5991a6a9d6db80c15276bdaf6f28cc58763e

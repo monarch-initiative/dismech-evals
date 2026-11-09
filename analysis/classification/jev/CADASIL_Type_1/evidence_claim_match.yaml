@@ -4456,6 +4456,143 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/0
       reference: PMID:20301673
+  e3beb61842ca7ea8c097307789f4d24c3f051647015343852b5875cb414c346b:
+    claim:
+      about:
+        disease:
+          name: CADASIL Type 1
+          disease_term:
+            preferred_term: CADASIL
+            term:
+              id: MONDO:0000914
+              label: cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy,
+                type 1
+        context:
+        - path: /treatments/0
+          value:
+            name: Antiplatelet Therapy
+            description: Antiplatelet therapy may be considered for prevention of stroke or transient
+              ischemic attack, but CADASIL-specific efficacy is unproven.
+            therapeutic_modality: SMALL_MOLECULE
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: aspirin
+                term:
+                  id: CHEBI:15365
+                  label: acetylsalicylic acid
+              - preferred_term: clopidogrel
+                term:
+                  id: CHEBI:37941
+                  label: clopidogrel
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: P2Y12 Antagonist Occupancy of Platelet ADP Receptors
+        treatment_effect: ACTIVATES
+        description: Clopidogrel occupies the platelet P2Y12 receptor and holds it inactive; the aspirin
+          bound alongside it in this treatment acts elsewhere and is not asserted by this link.
+      selected_evidence:
+        snippet: selatogrel, ticagrelor, and elinogrel were shown to stabilize the inactive form of the
+          Gαi/o-Gβγ complex in cells with recombinant expression of the P2Y12 receptor
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:36306820
+      reference_title: Inverse agonist efficacy of selatogrel blunts constitutive P2Y12 receptor signaling
+        by inducing the inactive receptor conformation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Names the antagonists shown to stabilize the receptor's Gi/o heterotrimer in its inactive
+        form, in cells with recombinant P2Y12. It names selatogrel, ticagrelor and elinogrel but never
+        clopidogrel, this entry's agent, so it supports the class action rather than this drug.
+    first_seen_at: '2026-11-09T19:59:35.905165+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:35.905165+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:35.905165+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:36306820
+  0ca9b11313cc1bdf48207ba63794c2d2359fa5d8dca4fc21c61c32be705b5932:
+    claim:
+      about:
+        disease:
+          name: CADASIL Type 1
+          disease_term:
+            preferred_term: CADASIL
+            term:
+              id: MONDO:0000914
+              label: cerebral arteriopathy, autosomal dominant, with subcortical infarcts and leukoencephalopathy,
+                type 1
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: P2Y12 Antagonist Occupancy of Platelet ADP Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: p2y12_receptor_antagonism#P2Y12 Antagonist Occupancy of the Platelet ADP Receptor
+        description: Clopidogrel blocks the platelet P2Y12 ADP receptor, suppressing ADP-induced platelet
+          activation. The relation to the nodes above is prevention of thrombotic events rather than causation,
+          so this node asserts no downstream edge. The treatment pairs it with aspirin, which acts on
+          cyclooxygenase and is not part of this mechanism.
+        molecular_functions:
+        - preferred_term: P2Y12 ADP receptor activity
+          modifier: DECREASED
+          term:
+            id: GO:0001621
+            label: G protein-coupled ADP receptor activity
+        cell_types:
+        - preferred_term: platelet
+          term:
+            id: CL:0000233
+            label: platelet
+        genes:
+        - preferred_term: P2RY12
+          term:
+            id: hgnc:18124
+            label: P2RY12
+      selected_evidence:
+        snippet: Selatogrel is a potent inhibitor of adenosine diphosphate (ADP) binding to the P2Y12
+          receptor, preventing platelet activation
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/8
+      evidence_path: /pathophysiology/8/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36306820
+      reference_title: Inverse agonist efficacy of selatogrel blunts constitutive P2Y12 receptor signaling
+        by inducing the inactive receptor conformation.
+      evidence_source: IN_VITRO
+      quote_role: BACKGROUND
+      explanation: States the receptor-level blockade this node represents and the suppression of platelet
+        activation it produces. It is the abstract's framing line for selatogrel's established action,
+        and the paper names selatogrel, ticagrelor and elinogrel but never clopidogrel, this entry's agent,
+        so it supports the class action rather than this drug.
+    first_seen_at: '2026-11-09T19:59:35.888635+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:35.888635+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:35.888635+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/8
+      evidence_path: /pathophysiology/8/evidence/0
+      reference: PMID:36306820
 assessments:
   47a55104d9c423592c526b75a0157eb04bc61450aa2a5110ff5882dff458bf6e:
     input_sha256: ba06ada7ced589d6d14badd553dd9c8ae063782b6222be67a452aee7d49cf4e0
@@ -9857,3 +9994,177 @@ assessments:
       request_sha256: 52927447f698651f13e16a582f1a794e1eb3c59fd4b46305e69987e2b82235cd
       request_sha256s:
       - 52927447f698651f13e16a582f1a794e1eb3c59fd4b46305e69987e2b82235cd
+  022e683573605c1f96f95776cb305fe591342902b654957dc55b50c570f374d8:
+    input_sha256: e3beb61842ca7ea8c097307789f4d24c3f051647015343852b5875cb414c346b
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:35.905165+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.82
+            PARTIAL: 0.17
+          confidence: 0.73
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.5
+            PARTIAL: 0.41
+          confidence: 0.25
+        /assertion/treatment_effect:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.88
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+          confidence: 0.52
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.66
+            PARTIAL: 0.24
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6607
+        output_tokens: 285
+      elapsed_seconds: 0.2422
+      request_sha256: 999de5a6be3375e3a2a9e1778521a1c356b2bccd9f5e971f8e77eda4b162c61f
+      request_sha256s:
+      - 999de5a6be3375e3a2a9e1778521a1c356b2bccd9f5e971f8e77eda4b162c61f
+  3a635e5381a48202c04fd330199e365bba1e7d923835f68c8f1b50a83b5787e6:
+    input_sha256: 0ca9b11313cc1bdf48207ba63794c2d2359fa5d8dca4fc21c61c32be705b5932
+    configuration_sha256: 82a319cae4c17ea120d71e75cc470776f15fcfbb4d3d0f78146506ddc6a2e87a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:35.888635+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.68
+            PARTIAL: 0.2
+          confidence: 0.52
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.96
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.21
+            PARTIAL: 0.3
+          confidence: 0.24
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.27
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.06
+            PARTIAL: 0.05
+          confidence: 0.83
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.41
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.3
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.09
+            PARTIAL: 0.16
+          confidence: 0.62
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.03
+            PARTIAL: 0.05
+          confidence: 0.88
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.1
+            PARTIAL: 0.17
+          confidence: 0.6
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.1
+            PARTIAL: 0.12
+          confidence: 0.67
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.1
+            PARTIAL: 0.12
+          confidence: 0.67
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.17
+            PARTIAL: 0.16
+          confidence: 0.5
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.14
+            PARTIAL: 0.18
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15003
+        output_tokens: 671
+      elapsed_seconds: 0.2324
+      request_sha256: ab1bdccdcd329ab14601c9463974ed046de66eeefd4a4f47f46d2bb31254b45c
+      request_sha256s:
+      - ab1bdccdcd329ab14601c9463974ed046de66eeefd4a4f47f46d2bb31254b45c

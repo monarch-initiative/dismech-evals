@@ -3492,6 +3492,59 @@ inputs:
     - assertion_path: /diagnosis/3
       evidence_path: /diagnosis/3/evidence/1
       reference: PMID:36029706
+  5275e6b28d7378dc3efd45f03116d08681c1d1526e66d08f2c315ef333c82fe9:
+    claim:
+      about:
+        disease:
+          name: Chronic Lymphocytic Inflammation With Pontine Perivascular Enhancement Responsive To Steroids
+          disease_term:
+            preferred_term: chronic lymphocytic inflammation with pontine perivascular enhancement responsive
+              to steroids
+            term:
+              id: MONDO:0017297
+              label: chronic lymphocytic inflammation with pontine perivascular enhancement responsive
+                to steroids
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Cerebrospinal fluid examination
+        description: 'CSF is examined to exclude infection and to characterise the inflammation, not to
+          confirm the diagnosis: the findings are mild and inconstant. Oligoclonal bands appear in a minority,
+          and the lymphocyte population shows the raised CD4:CD8 ratio consistent with the CD4-predominant
+          perivascular infiltrate seen on biopsy. A normal CSF does not argue against CLIPPERS.
+
+          '
+        measurements:
+        - preferred_term: CSF oligoclonal bands
+          term:
+            id: LOINC:32358-4
+            label: Oligoclonal bands [Presence] in Cerebral spinal fluid
+      selected_evidence:
+        snippet: Inconstant oligoclonal bands were found on cerebrospinal fluid investigation in 4 patients,
+          with an increased T-cell ratio of CD4 to CD8.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22777259
+      reference_title: Long-term outcomes of CLIPPERS (chronic lymphocytic inflammation with pontine perivascular
+        enhancement responsive to steroids) in a consecutive series of 12 patients.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives both findings and, in the word inconstant, the reason this test cannot confirm
+        or exclude the diagnosis.
+    first_seen_at: '2026-11-09T19:59:33.447535+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:33.447535+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:33.447535+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      reference: PMID:22777259
 assessments:
   2b84c3be2f71e9d2007e053e1cbc3fadb22697fe8371dab44ec5daa54ebb674e:
     input_sha256: 070fa2fb72d3e2ae60853a2ffb134b1b106bd7f6327ee417ac5cbf104b209e5a
@@ -7660,3 +7713,62 @@ assessments:
       request_sha256: 127636792855d222dd3381810fc1651c2b4a46a8503d482ca38f45f876f08eef
       request_sha256s:
       - 127636792855d222dd3381810fc1651c2b4a46a8503d482ca38f45f876f08eef
+  095a184fb2d943e0e2e5892ff6064486987fafdc74605c67b9e56d4b3f48a128:
+    input_sha256: 5275e6b28d7378dc3efd45f03116d08681c1d1526e66d08f2c315ef333c82fe9
+    configuration_sha256: 0028b8a2883b6a02a026a39b9c580ad6925292051d83ffa8049aadfbbca2e27e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:33.447535+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.04
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.06
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.09
+            PARTIAL: 0.21
+          confidence: 0.55
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.07
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6384
+        output_tokens: 280
+      elapsed_seconds: 0.1628
+      request_sha256: c946d373221fdf53b9ecc37e89d149ba7ed6f9f6dd86e6f35bcb0f13890e7d3c
+      request_sha256s:
+      - c946d373221fdf53b9ecc37e89d149ba7ed6f9f6dd86e6f35bcb0f13890e7d3c

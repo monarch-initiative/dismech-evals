@@ -8367,6 +8367,65 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: PMID:35606650
+  6daaa891cda3c8ae8c6d3b3c8879111c6d468ee3d49fa32d16081c5f294bfc50:
+    claim:
+      about:
+        disease:
+          name: Pyoderma Gangrenosum
+          disease_term:
+            preferred_term: Pyoderma gangrenosum
+            term:
+              id: MONDO:0018824
+              label: pyoderma gangrenosum
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Sterile Neutrophilic Dermal Inflammation and Tissue Destruction
+        biological_scale: TISSUE
+        description: 'A dense, sterile (culture-negative) neutrophilic infiltrate accumulates in the dermis,
+          most conspicuously at the advancing ulcer edge, and destroys dermal tissue. Over-expressed Fas/Fas
+          ligand and CD40/CD40 ligand systems contribute to that tissue damage in PG. The absence of a
+          causative organism is central: the inflammation is aseptic, which is why antibiotics do not
+          resolve the lesion and why exclusion of infection is a formal diagnostic criterion. Biopsy of
+          the ulcer edge demonstrating a neutrophilic infiltrate is the single major criterion in the
+          Delphi consensus definition.'
+        cell_types:
+        - preferred_term: Neutrophil
+          term:
+            id: CL:0000775
+            label: neutrophil
+        biological_processes:
+        - preferred_term: Inflammatory response
+          term:
+            id: GO:0006954
+            label: inflammatory response
+          modifier: INCREASED
+      selected_evidence:
+        snippet: '8 minor criteria: (1) exclusion of infection; (2) pathergy; (3) history of inflammatory
+          bowel disease or inflammatory arthritis'
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29450466
+      reference_title: 'Diagnostic Criteria of Ulcerative Pyoderma Gangrenosum: A Delphi Consensus of
+        International Experts.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: That exclusion of infection is a formal diagnostic criterion establishes the sterile
+        (non-infectious) character of the neutrophilic infiltrate modeled by this node.
+    first_seen_at: '2026-11-09T20:36:37.681479+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:37.681479+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:37.681479+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/1
+      reference: PMID:29450466
 assessments:
   07c1394b5cf91e7ebc7cb60964ad34e2b503a19c0a245387e1889a11aaa10507:
     input_sha256: 19fa21a80ac9d44bb69c5c32ec65c7b6bc6c689f7d295b786b89fb9f8c7fa36b
@@ -19075,3 +19134,90 @@ assessments:
       request_sha256: 8808ca413ce7112adcb670d22793cb4a18d22787474c1cffb474e1dea88ebc5a
       request_sha256s:
       - 8808ca413ce7112adcb670d22793cb4a18d22787474c1cffb474e1dea88ebc5a
+  092bbeb46ac217bb6bba801b791a747592ffd58062f856ef6a0c5c468071bfff:
+    input_sha256: 6daaa891cda3c8ae8c6d3b3c8879111c6d468ee3d49fa32d16081c5f294bfc50
+    configuration_sha256: 7bb68e82df0c69ef4b6c6b1cbaf95d08ec51928420b9a0ba9813da0e6f7950da
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:37.681479+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.42
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.11
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.48
+            PARTIAL: 0.41
+          confidence: 0.22
+        /assertion/biological_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.41
+            PARTIAL: 0.28
+          confidence: 0.11
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.4
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.5
+            PARTIAL: 0.32
+          confidence: 0.25
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.47
+            PARTIAL: 0.3
+          confidence: 0.2
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.5
+            PARTIAL: 0.39
+          confidence: 0.25
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.38
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.42
+            PARTIAL: 0.41
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10910
+        output_tokens: 506
+      elapsed_seconds: 0.3381
+      request_sha256: 8d794f87edfa76e4d91f5a16a40e3d9cba51d01ed4cd08562d766f1ea76c51b5
+      request_sha256s:
+      - 8d794f87edfa76e4d91f5a16a40e3d9cba51d01ed4cd08562d766f1ea76c51b5

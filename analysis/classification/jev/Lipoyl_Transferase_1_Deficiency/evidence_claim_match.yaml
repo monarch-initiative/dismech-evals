@@ -2908,6 +2908,59 @@ inputs:
     - assertion_path: /treatments/1/target_mechanisms/0
       evidence_path: /treatments/1/target_mechanisms/0/evidence/0
       reference: PMID:39199267
+  350c319105532aff031a312cdd7c340cf937ff944c56af0f8b8fdf06df9632af:
+    claim:
+      about:
+        disease:
+          name: Lipoyl Transferase 1 Deficiency
+          disease_term:
+            preferred_term: lipoyl transferase 1 deficiency
+            term:
+              id: MONDO:0014576
+              label: lipoyl transferase 1 deficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Lipoylated dehydrogenase E2 subunits
+        presence: DECREASED
+        context: 'LIPT1 deficiency reduces lipoylation of pyruvate dehydrogenase and alpha-ketoglutarate
+          dehydrogenase E2 subunits in patient-derived cells.
+
+          '
+        readouts:
+        - target: Defective lipoyl relay via LIPT1 deficiency
+          relationship: READOUT_OF
+          direction: NEGATIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Reduced lipoylated dehydrogenase E2 subunits directly report the proximal LIPT1
+            lipoyl-transfer defect.
+      selected_evidence:
+        snippet: A Western blot analysis revealed a reduced expression of LIPT1 and absent expression
+          of lipoylated pyruvate dehydrogenase E2 (PDH E2) and alpha-ketoglutarate dehydrogenase E2 (α-KGDH
+          E2) subunits.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39199267
+      reference_title: A Multi-Target Pharmacological Correction of a Lipoyltransferase LIPT1 Gene Mutation
+        in Patient-Derived Cellular Models.
+      evidence_source: IN_VITRO
+      explanation: Western blot evidence from patient-derived cellular models confirms absent lipoylated
+        PDH E2 and alpha-KGDH E2.
+    first_seen_at: '2026-11-09T20:18:20.187491+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:18:20.187491+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:18:20.187491+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:39199267
 assessments:
   cfe81f5d4c4ef0597de47234d2cda12b1fa1352ca357cbb694ba43046f97c8a8:
     input_sha256: 167c95df713bcb3b86a8a87cd1b660dfcfaee0d3ccbe106090c314e8fd5f72be
@@ -6766,3 +6819,90 @@ assessments:
       request_sha256: 5e6aeca9eadc5e02af2fa1127494c1d04eb976938e73d552bc8429da36209152
       request_sha256s:
       - 5e6aeca9eadc5e02af2fa1127494c1d04eb976938e73d552bc8429da36209152
+  822af4210039b8471b1f5ef58c6277ef0c2ac6eb7aae6cdba2ddbdb7d1356b85:
+    input_sha256: 350c319105532aff031a312cdd7c340cf937ff944c56af0f8b8fdf06df9632af
+    configuration_sha256: 2ac3aa8f53067b7d50ceb4582943c42c5e1d57e0c2b4b127a3d8653ae2fc28cc
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:18:20.187491+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.02
+            PARTIAL: 0.21
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.0
+            PARTIAL: 0.06
+          confidence: 0.91
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.35
+            PARTIAL: 0.27
+          confidence: 0.07
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.28
+            PARTIAL: 0.07
+          confidence: 0.48
+        /assertion/readouts/0/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.17
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/readouts/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10393
+        output_tokens: 473
+      elapsed_seconds: 0.2799
+      request_sha256: 512c69f18389c84428e9e5c972ef7cea5fd2a88cfab9880b9b5a34d298fd465d
+      request_sha256s:
+      - 512c69f18389c84428e9e5c972ef7cea5fd2a88cfab9880b9b5a34d298fd465d

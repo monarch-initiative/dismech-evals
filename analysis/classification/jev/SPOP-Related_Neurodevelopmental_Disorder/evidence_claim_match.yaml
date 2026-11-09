@@ -7251,6 +7251,157 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:28412462
+  7460d017560a93a92e66a56845b20df22272d4da99ff8da25e6008ab19245bca:
+    claim:
+      about:
+        disease:
+          name: SPOP-Related Neurodevelopmental Disorder
+        context: []
+      assertion_type: Inheritance
+      assertion:
+        name: Autosomal dominant
+        inheritance_term:
+          preferred_term: Autosomal dominant inheritance
+          term:
+            id: HP:0000006
+            label: Autosomal dominant inheritance
+        description: Autosomal dominant disease, with confirmed de novo variants in the seven-person discovery
+          cohort and later trio-sequenced cases. De novo origin was assumed without segregation testing
+          for p.Met117Ile in the 2026 report; it should not be stated as confirmed for every reported
+          individual.
+      selected_evidence:
+        snippet: By using clinical exome sequencing, we identified six de novo pathogenic missense variants
+          in SPOP in seven individuals with developmental delay and/or intellectual disability, facial
+          dysmorphisms, and congenital anomalies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/1
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:32109420
+      reference_title: De Novo Variants in SPOP Cause Two Clinically Distinct Neurodevelopmental Disorders.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The defining cohort: every pathogenic SPOP variant was de novo, supporting dominant
+        disease from new heterozygous mutations.'
+    first_seen_at: '2026-11-09T20:45:04.734947+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:45:04.734947+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:45:04.734947+00:00'
+    occurrences:
+    - assertion_path: /inheritance/0
+      evidence_path: /inheritance/0/evidence/1
+      reference: PMID:32109420
+  f52ccef09547637cdce9ed95bf1cf46682ddafe2274da6e4b4ec68ce27da3125:
+    claim:
+      about:
+        disease:
+          name: SPOP-Related Neurodevelopmental Disorder
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Increased CUL3-SPOP Substrate Degradation
+        conforms_to: cul3_substrate_adaptor_dysfunction#Substrate Dosage Error
+        biological_scale: MOLECULAR
+        description: Gain-of-function variants (NSDVS type 1) enhance SPOP-mediated ubiquitination, accelerating
+          proteasomal degradation of SPOP substrates.
+        genetic_context:
+          functional_impact_category: GAIN_OF_FUNCTION
+          variant_origin: DE_NOVO
+          zygosity: HETEROZYGOUS
+          description: Experimentally tested type 1 alleles p.Arg121Gln and p.Asp144Asn. A similar effect
+            was proposed, not functionally demonstrated, for p.Arg121Trp and p.Met117Ile.
+        biological_processes:
+        - preferred_term: proteasome-mediated degradation of SPOP substrates
+          term:
+            id: GO:0043161
+            label: proteasome-mediated ubiquitin-dependent protein catabolic process
+          modifier: INCREASED
+      selected_evidence:
+        snippet: The de novo variants c.362G>A (p.Arg121Gln) and c. 430G>A (p.Asp144Asn), identified in
+          the first two individuals, resulted in a gain of function
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+    evidence_metadata:
+      reference: PMID:32109420
+      reference_title: De Novo Variants in SPOP Cause Two Clinically Distinct Neurodevelopmental Disorders.
+      evidence_source: IN_VITRO
+      explanation: Direct functional classification of the type 1 variants as gain-of-function toward
+        SPOP substrate handling.
+    first_seen_at: '2026-11-09T20:45:04.742777+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:45:04.742777+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:45:04.742777+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:32109420
+  a5b95970583a82c5ab45271ff436a015d9858c572f8326f6e207dedf46689645:
+    claim:
+      about:
+        disease:
+          name: SPOP-Related Neurodevelopmental Disorder
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Increased CUL3-SPOP Substrate Degradation
+            conforms_to: cul3_substrate_adaptor_dysfunction#Substrate Dosage Error
+            biological_scale: MOLECULAR
+            description: Gain-of-function variants (NSDVS type 1) enhance SPOP-mediated ubiquitination,
+              accelerating proteasomal degradation of SPOP substrates.
+            genetic_context:
+              functional_impact_category: GAIN_OF_FUNCTION
+              variant_origin: DE_NOVO
+              zygosity: HETEROZYGOUS
+              description: Experimentally tested type 1 alleles p.Arg121Gln and p.Asp144Asn. A similar
+                effect was proposed, not functionally demonstrated, for p.Arg121Trp and p.Met117Ile.
+            biological_processes:
+            - preferred_term: proteasome-mediated degradation of SPOP substrates
+              term:
+                id: GO:0043161
+                label: proteasome-mediated ubiquitin-dependent protein catabolic process
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Reduced BET Protein Abundance
+        causal_link_type: DIRECT
+        hypothesis_groups:
+        - bet_bidirectional_dysregulation
+      selected_evidence:
+        snippet: Variants p.Arg121Gln and p.Asp144Asn resulted in reduced amounts of the BET proteins
+          BRD2, BRD3, and BRD4, suggesting that these are gain-of-function variants comparable to those
+          seen in endometrial cancer
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: url:https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7058825
+      reference_title: De Novo Variants in SPOP Cause Two Clinically Distinct Neurodevelopmental Disorders
+        - PMC
+      evidence_source: IN_VITRO
+      explanation: The discovery study directly tested disease-associated SPOP alleles for altered BET
+        protein turnover in cells. Neural consequences remain a separate hypothesis.
+    first_seen_at: '2026-11-09T20:45:05.469922+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:45:05.469922+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:45:05.469922+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: url:https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7058825
 assessments:
   5e1d245b69bf3c5a9e45d6c636f3b7108e6e84cd2faa936d1eaed30a6f04e152:
     input_sha256: 569af45101b5363de192973bf8f123be6c01beac88dc01ed70e37a4ff3ec0dcf
@@ -16763,3 +16914,229 @@ assessments:
       request_sha256: 3898f423ee27585c7e6e6ffd4fdb59ca299f6dae64ae256afac1c62f10cf7f2a
       request_sha256s:
       - 3898f423ee27585c7e6e6ffd4fdb59ca299f6dae64ae256afac1c62f10cf7f2a
+  101310cacc8f529a34dbc4998983c3c8ee21737c6605f02d34aa982be8c9414a:
+    input_sha256: 7460d017560a93a92e66a56845b20df22272d4da99ff8da25e6008ab19245bca
+    configuration_sha256: 5d7c76ef19e36af422cc1406292fc9f32966f1319cc72d7d30dfed7698ed6bdd
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:45:04.734947+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.03
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.02
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /assertion/inheritance_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.02
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/inheritance_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.03
+            PARTIAL: 0.48
+          confidence: 0.24
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.2
+            PARTIAL: 0.65
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6251
+        output_tokens: 278
+      elapsed_seconds: 0.2881
+      request_sha256: b9f009bf88ec5e492ec0403d33bf03e54cd8860a08c2b74b67e2e7475fa46146
+      request_sha256s:
+      - b9f009bf88ec5e492ec0403d33bf03e54cd8860a08c2b74b67e2e7475fa46146
+  3c040ca4900a4a1a2e438090a1feff59460658dfc6fe38b179e7d4709a3bd661:
+    input_sha256: f52ccef09547637cdce9ed95bf1cf46682ddafe2274da6e4b4ec68ce27da3125
+    configuration_sha256: abe73d34d6d89f660dad91a48ad403b9f89af8f1482060f41969e8775b950974
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:45:04.742777+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.04
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.07
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.06
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.26
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.1
+            PARTIAL: 0.27
+          confidence: 0.44
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.06
+            PARTIAL: 0.82
+          confidence: 0.73
+        /assertion/genetic_context/functional_impact_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.0
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/genetic_context/variant_origin:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/genetic_context/zygosity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.33
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/genetic_context/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.11
+            PARTIAL: 0.73
+          confidence: 0.6
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.04
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.21
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.03
+            PARTIAL: 0.42
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14006
+        output_tokens: 635
+      elapsed_seconds: 0.3182
+      request_sha256: 9b00b7279f53f024eb819ce6d583d8191d40c5fa593145ae07e5f37034c82614
+      request_sha256s:
+      - 9b00b7279f53f024eb819ce6d583d8191d40c5fa593145ae07e5f37034c82614
+  db871e777e5653487af188b7ed881a976b0dc2eb5f9381c5300a953c41d55bd2:
+    input_sha256: a5b95970583a82c5ab45271ff436a015d9858c572f8326f6e207dedf46689645
+    configuration_sha256: c22e1649b9ced4edc00cbeb4a24edcb08c2d007fb931bfd552aa6573aadc4e9f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:45:05.469922+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.1
+            PARTIAL: 0.32
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.12
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.06
+            PARTIAL: 0.32
+          confidence: 0.43
+        /assertion/hypothesis_groups:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.44
+            PARTIAL: 0.41
+          confidence: 0.16
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.09
+            PARTIAL: 0.21
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6576
+        output_tokens: 273
+      elapsed_seconds: 0.2386
+      request_sha256: df0f33ae9400675664da3ab0ecfe3e9a25cf8fcc57a128bfb924cf4b22e7481a
+      request_sha256s:
+      - df0f33ae9400675664da3ab0ecfe3e9a25cf8fcc57a128bfb924cf4b22e7481a

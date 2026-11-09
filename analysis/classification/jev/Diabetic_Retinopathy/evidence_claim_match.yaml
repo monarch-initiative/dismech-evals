@@ -2202,6 +2202,75 @@ inputs:
     - assertion_path: /classifications/harrisons_chapter/0
       evidence_path: /classifications/harrisons_chapter/0/evidence/0
       reference: PMID:39550444
+  1cbeeed25aa25e8c85608f99ea9c2aa3e0b48d2ceaf766002ec56ff47d9e3759:
+    claim:
+      about:
+        disease:
+          name: Diabetic Retinopathy
+          disease_term:
+            preferred_term: Diabetic retinopathy
+            term:
+              id: MONDO:0005266
+              label: diabetic retinopathy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Intravitreal Anti-VEGF Therapy
+        therapeutic_modality: MONOCLONAL_ANTIBODY
+        description: 'First-line therapy for center-involving diabetic macular edema (CI-DME) and vision-threatening
+          PDR complications. Agents (ranibizumab, bevacizumab, aflibercept, faricimab) neutralize VEGF-A,
+          reducing vascular permeability and pathological neovascularization. Landmark trials (RISE/RIDE
+          for ranibizumab; VIVID/VISTA for aflibercept; PROTOCOL T) demonstrated superior outcomes over
+          macular laser for CI-DME, with 18–45% of patients gaining ≥15 ETDRS letters. Best outcomes require
+          frequent injections and close monitoring; real-world outcomes often fall short of trials due
+          to treatment burden.
+
+          '
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: anti-VEGF biologic
+            term:
+              id: NCIT:C20401
+              label: Monoclonal Antibody
+        target_phenotypes:
+        - preferred_term: Macular edema
+          term:
+            id: HP:0040049
+            label: Macular edema
+        - preferred_term: Vitreous hemorrhage
+          term:
+            id: HP:0007902
+            label: Vitreous hemorrhage
+      selected_evidence:
+        snippet: intravitreal anti-vascular endothelial growth factor (VEGF) therapy is the standard of
+          care for the management of DME
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38995350
+      reference_title: 'Anti-VEGF therapy for the long-term management of diabetic macular edema: a treat-to-target
+        strategy based on macular morphology.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Review establishes intravitreal anti-VEGF as the current standard of care for DME management,
+        though sustained treatment is required.
+    first_seen_at: '2026-11-09T20:42:36.658499+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:42:36.658499+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:42:36.658499+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:38995350
 assessments:
   b75b596e37d624c94b60364425495d6abf885f0904bdf63a5c7672fa6a8a1403:
     input_sha256: 30eb8eb25a9d4a268131df21888d6d399ef58f9799cb14773c914c87ba9e334a
@@ -4925,3 +4994,111 @@ assessments:
       request_sha256: b64e059caaff831cdd1ad6d1169b370da26a182f8d8214d2a994bc0895446c0c
       request_sha256s:
       - b64e059caaff831cdd1ad6d1169b370da26a182f8d8214d2a994bc0895446c0c
+  7ddf8db1c57409793a52cef104d7e1dd1d88f3a8406cab9205e5ab5d9424c2c0:
+    input_sha256: 1cbeeed25aa25e8c85608f99ea9c2aa3e0b48d2ceaf766002ec56ff47d9e3759
+    configuration_sha256: 7e43c2f8207ecffb3db5168166508b227240bfcfbb4dbac25ce7d423a35be523
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:42:36.658499+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.04
+            PARTIAL: 0.78
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.01
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.12
+            PARTIAL: 0.32
+          confidence: 0.34
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.16
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.32
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.21
+            PARTIAL: 0.37
+          confidence: 0.13
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.04
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.12
+            PARTIAL: 0.33
+          confidence: 0.33
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.03
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/target_phenotypes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/target_phenotypes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.61
+            PARTIAL: 0.36
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13809
+        output_tokens: 657
+      elapsed_seconds: 0.3353
+      request_sha256: 3ecdb1fd0b81662ac0d60075ccb6cfe52b2315beffebf4670cd675a8c91f38e7
+      request_sha256s:
+      - 3ecdb1fd0b81662ac0d60075ccb6cfe52b2315beffebf4670cd675a8c91f38e7

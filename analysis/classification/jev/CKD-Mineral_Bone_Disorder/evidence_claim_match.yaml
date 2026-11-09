@@ -7290,6 +7290,372 @@ inputs:
     - assertion_path: /computational_models/1/findings/2
       evidence_path: /computational_models/1/findings/2/evidence/0
       reference: PMID:22232752
+  0c0876a7ea5a8a208233860806ff913e3690245cf566d93a4513743107cd6f35:
+    claim:
+      about:
+        disease:
+          name: CKD-Mineral Bone Disorder
+          disease_term:
+            preferred_term: CKD-mineral bone disorder
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Calcimimetic Occupancy of Parathyroid Calcium-Sensing Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: casr_positive_allosteric_modulation#Calcimimetic Occupancy of the Parathyroid Calcium-Sensing
+          Receptor
+        description: A calcimimetic sensitises the calcium-sensing receptor on the parathyroid chief cell,
+          which suppresses the parathyroid hormone secretion that drives the mineral and bone disorder.
+          The relation to the nodes above is relief of hormone excess, not causation, so this node asserts
+          no downstream edge.
+        molecular_functions:
+        - preferred_term: calcium-sensing receptor activity
+          modifier: INCREASED
+          term:
+            id: GO:0004930
+            label: G protein-coupled receptor activity
+        cell_types:
+        - preferred_term: parathyroid chief cell
+          term:
+            id: CL:0000446
+            label: chief cell of parathyroid gland
+        locations:
+        - preferred_term: parathyroid gland
+          term:
+            id: UBERON:0001132
+            label: parathyroid gland
+        genes:
+        - preferred_term: CASR
+          term:
+            id: hgnc:1514
+            label: CASR
+      selected_evidence:
+        snippet: Etelcalcetide binds the calcium-sensing receptor and increases its sensitivity to extracellular
+          calcium, thereby decreasing secretion of parathyroid hormone (PTH) by chief cells
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29534286
+      reference_title: Clinical Pharmacokinetics and Pharmacodynamics of Etelcalcetide, a Novel Calcimimetic
+        for Treatment of Secondary Hyperparathyroidism in Patients With Chronic Kidney Disease on Hemodialysis.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: States the receptor occupancy and sensitisation this node represents, and names the
+        chief cell it acts on.
+    first_seen_at: '2026-11-09T20:13:39.902219+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:13:39.902219+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:13:39.902219+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/7
+      evidence_path: /pathophysiology/7/evidence/0
+      reference: PMID:29534286
+  8cfc8efd1193dc13db88fdf5f6dfd29b08b84f0e0a822bf72b20ad851d9a63ba:
+    claim:
+      about:
+        disease:
+          name: CKD-Mineral Bone Disorder
+          disease_term:
+            preferred_term: CKD-mineral bone disorder
+        context:
+        - path: /treatments/2
+          value:
+            name: Calcimimetics
+            description: 'Cinacalcet and etelcalcetide allosterically activate the calcium-sensing receptor
+              on parathyroid cells, suppressing PTH secretion without raising serum calcium. First-line
+              for secondary hyperparathyroidism in dialysis.
+
+              '
+            treatment_term:
+              preferred_term: calcimimetic therapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: cinacalcet
+                term:
+                  id: CHEBI:48390
+                  label: cinacalcet
+              - preferred_term: etelcalcetide
+                term:
+                  id: CHEBI:134700
+                  label: etelcalcetide
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Calcimimetic Occupancy of Parathyroid Calcium-Sensing Receptors
+        treatment_effect: ACTIVATES
+        description: Cinacalcet and etelcalcetide occupy the calcium-sensing receptor allosterically and
+          raise its sensitivity to extracellular calcium, which is the receptor-level action this node
+          represents.
+      selected_evidence:
+        snippet: Calcimimetics are agonists or positive allosteric modulators of the CaR
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /treatments/2/target_mechanisms/1
+      evidence_path: /treatments/2/target_mechanisms/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/2
+    evidence_metadata:
+      reference: PMID:29680147
+      reference_title: Discovery and Development of Calcimimetic and Calcilytic Compounds.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Establishes that this drug class acts as a positive allosteric modulator at the receptor
+        this node represents.
+    first_seen_at: '2026-11-09T20:13:39.926472+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:13:39.926472+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:13:39.926472+00:00'
+    occurrences:
+    - assertion_path: /treatments/2/target_mechanisms/1
+      evidence_path: /treatments/2/target_mechanisms/1/evidence/0
+      reference: PMID:29680147
+  42ed64f35955cd7093c21c8dc58972bf96851d3c17fe4bd244d41757825dc822:
+    claim:
+      about:
+        disease:
+          name: CKD-Mineral Bone Disorder
+          disease_term:
+            preferred_term: CKD-mineral bone disorder
+        context: []
+      assertion_type: ComputationalModel
+      assertion:
+        name: Peterson-Riggs Calcium Homeostasis and Bone Remodeling Model
+        description: Physiologically based ODE model of integrated calcium homeostasis and bone remodeling.
+          Includes PTH, calcitriol, calcium, phosphate, and bone remodeling markers (osteoblasts, osteoclasts,
+          RANKL/OPG). Describes hypoparathyroidism, hyperparathyroidism, renal insufficiency, PTH 1-34
+          administration, and RANKL inhibition. Foundation model for CKD-MBD simulations.
+        model_type: KINETIC
+        repository_url: https://www.ebi.ac.uk/biomodels/BIOMD0000000613
+        model_id: BIOMD0000000613
+        model_software: COPASI
+        model_format: SBML
+        publication: PMID:19732857
+        findings:
+        - statement: Model appropriately describes plasma PTH, calcitriol, calcium, phosphate, and bone
+            remodeling markers across a broad range of clinical conditions
+        - statement: Renal insufficiency simulation reproduces secondary hyperparathyroidism and bone
+            loss
+        - statement: Provides platform for hypothesis testing of PTH, vitamin D, and RANKL pathway interventions
+        notes: 'Key validatable outputs: serum Ca, PO4, PTH, calcitriol, BMD. Genetic-validation anchors
+          include CASR and RGS14 loci from CKD cohort data. Clinically validatable against CRIC mineral-marker
+          data.'
+        variables:
+        - name: Plasma_Ca
+          dataset_identifier: P
+          description: Plasma calcium concentration
+          unit: mg/dL
+          mappings_list:
+          - preferred_term: Serum calcium
+            term:
+              id: LOINC:17861-6
+              label: Calcium:MCnc:Pt:Ser/Plas:Qn
+          - preferred_term: Calcium
+            term:
+              id: CHEBI:22984
+              label: calcium(2+)
+        - name: Plasma_PO4
+          dataset_identifier: ECCPhos
+          description: Plasma inorganic phosphate concentration
+          unit: mg/dL
+          mappings_list:
+          - preferred_term: Serum phosphate
+            term:
+              id: LOINC:2777-1
+              label: Phosphate:MCnc:Pt:Ser/Plas:Qn
+          - preferred_term: Phosphate
+            term:
+              id: CHEBI:43474
+              label: hydrogenphosphate
+        - name: Plasma_PTH
+          dataset_identifier: PTH
+          description: Plasma intact parathyroid hormone concentration
+          unit: pg/mL
+          mappings_list:
+          - preferred_term: Intact PTH
+            term:
+              id: LOINC:2731-8
+              label: Parathyrin.intact:MCnc:Pt:Ser/Plas:Qn
+        - name: Plasma_Calcitriol
+          dataset_identifier: B
+          description: Plasma 1,25-dihydroxyvitamin D (calcitriol) concentration
+          unit: pg/mL
+          mappings_list:
+          - preferred_term: Serum 1,25-dihydroxyvitamin D
+            term:
+              id: LOINC:62290-2
+              label: 1,25-Dihydroxyvitamin D [Mass/volume] in Serum or Plasma
+          - preferred_term: Calcitriol
+            term:
+              id: CHEBI:17823
+              label: calcitriol
+          - preferred_term: Proximal muscle weakness
+            term:
+              id: HP:0003701
+              label: Proximal muscle weakness
+            threshold: 0.5
+            threshold_direction: below
+            severity_scale:
+            - threshold: 0.5
+              name: mild
+            - threshold: 0.25
+              name: moderate
+        - name: BMD
+          dataset_identifier: Qbone
+          description: Bone mineral density (relative to healthy baseline)
+          unit: relative
+          mappings_list:
+          - preferred_term: Reduced bone mineral density
+            term:
+              id: HP:0004349
+              label: Reduced bone mineral density
+            threshold: 0.85
+            threshold_direction: below
+            severity_scale:
+            - threshold: 0.85
+              name: mild
+            - threshold: 0.7
+              name: moderate
+            - threshold: 0.5
+              name: severe
+          - preferred_term: Pathologic fracture
+            term:
+              id: HP:0002756
+              label: Pathologic fracture
+            threshold: 0.7
+            threshold_direction: below
+            severity_scale:
+            - threshold: 0.7
+              name: moderate risk
+            - threshold: 0.5
+              name: high risk
+          - preferred_term: Short stature
+            term:
+              id: HP:0004322
+              label: Short stature
+            threshold: 0.75
+            threshold_direction: below
+            severity_scale:
+            - threshold: 0.75
+              name: growth impairment
+        - name: Osteoclasts
+          dataset_identifier: OC
+          description: Osteoclast population
+          unit: relative
+        - name: Osteoblasts
+          dataset_identifier: OB
+          description: Osteoblast population
+          unit: relative
+        - name: FGF23
+          dataset_identifier: FGF23
+          description: Fibroblast growth factor 23
+          unit: pg/mL
+          notes: Extension model species (BIOMD0000000613.ext.ant)
+          mappings_list:
+          - preferred_term: Fibroblast growth factor 23
+            term:
+              id: LOINC:54390-0
+              label: Fibroblast growth factor 23.intact [Mass/volume] in Serum or Plasma
+        - name: Soluble_Klotho
+          dataset_identifier: sKlotho
+          description: Soluble alpha-Klotho, FGF23 co-receptor shed from kidney
+          unit: pg/mL
+          notes: Extension model species
+        - name: Vascular_Calcification
+          dataset_identifier: VascCa
+          description: Vascular calcification burden
+          unit: relative
+          notes: Extension model species
+          mappings_list:
+          - preferred_term: Arterial calcification
+            term:
+              id: HP:0003207
+              label: Arterial calcification
+            threshold: 50
+            threshold_direction: above
+            severity_scale:
+            - threshold: 50
+              name: mild
+            - threshold: 150
+              name: moderate
+            - threshold: 300
+              name: severe
+          - preferred_term: Left ventricular hypertrophy
+            description: 'Model approximation: LVH is a consequence of arterial stiffening from vascular
+              calcification, not a direct readout of calcification burden. VascCa serves as a proxy for
+              arterial stiffness-driven cardiac remodeling.'
+            term:
+              id: HP:0001712
+              label: Left ventricular hypertrophy
+            threshold: 100
+            threshold_direction: above
+            severity_scale:
+            - threshold: 100
+              name: mild
+            - threshold: 200
+              name: moderate
+          - preferred_term: Calciphylaxis
+            description: 'Model approximation: calcinosis cutis (calciphylaxis) involves small vessel
+              disease distinct from medial arterial calcification. VascCa is used as a proxy for overall
+              ectopic calcification burden.'
+            term:
+              id: HP:0025520
+              label: Calcinosis cutis
+            threshold: 250
+            threshold_direction: above
+            severity_scale:
+            - threshold: 250
+              name: calciphylaxis risk
+        - name: Sclerostin
+          dataset_identifier: SOST
+          description: Sclerostin, Wnt pathway inhibitor produced by osteocytes and calcified vasculature
+          unit: pmol/L
+          notes: Extension model species
+        - name: CaPO4_Product
+          dataset_identifier: CaPO4_product
+          description: Calcium-phosphate product (derived quantity)
+          unit: (mg/dL)^2
+          notes: Extension model assignment rule
+      selected_evidence:
+        snippet: The model includes relevant cellular aspects with major controlling mechanisms for bone
+          remodeling and calcium homeostasis and appropriately describes a broad range of clinical and
+          therapeutic conditions.
+        supports: SUPPORT
+    origin:
+      assertion_path: /computational_models/0
+      evidence_path: /computational_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19732857
+      reference_title: A physiologically based mathematical model of integrated calcium homeostasis and
+        bone remodeling.
+      evidence_source: COMPUTATIONAL
+      explanation: Describes the physiologically based ODE model of calcium homeostasis and bone remodeling
+        that serves as the foundation for CKD-MBD simulations.
+    first_seen_at: '2026-11-09T20:13:39.951479+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:13:39.951479+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:13:39.951479+00:00'
+    occurrences:
+    - assertion_path: /computational_models/0
+      evidence_path: /computational_models/0/evidence/0
+      reference: PMID:19732857
 assessments:
   784b66843865a4e9500b3182528510d3d1358e8cf13a6a1e80ee01045f4a7ac6:
     input_sha256: 083f15d201bd63714ddcd47d2c76c57ce67b01298c0a3b9cca6eab2ceb335ba0
@@ -16415,3 +16781,1198 @@ assessments:
       request_sha256: 1d484fda0a188d9393d1603427fdca25274d06d784a39ca995bd5fb481467fb4
       request_sha256s:
       - 1d484fda0a188d9393d1603427fdca25274d06d784a39ca995bd5fb481467fb4
+  26cd346e033c8a5d4e770206f6f6d8462f5c60c5afe4efe10036901c4083db96:
+    input_sha256: 0c0876a7ea5a8a208233860806ff913e3690245cf566d93a4513743107cd6f35
+    configuration_sha256: 136ed2ee4a0669b0340ba45d1af8536f20ac90dd67d8cebb9f7d869a27cb3028
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:13:39.902219+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.03
+            PARTIAL: 0.15
+          confidence: 0.73
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.06
+            PARTIAL: 0.34
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.03
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.16
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.09
+            PARTIAL: 0.23
+          confidence: 0.52
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.17
+            PARTIAL: 0.12
+          confidence: 0.56
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.03
+            PARTIAL: 0.02
+          confidence: 0.92
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.21
+            PARTIAL: 0.24
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16918
+        output_tokens: 763
+      elapsed_seconds: 0.1618
+      request_sha256: ec82811a9eb4e30340a8ee259ae903f7fa3fb55f7782e18e2da38e9be25e335d
+      request_sha256s:
+      - ec82811a9eb4e30340a8ee259ae903f7fa3fb55f7782e18e2da38e9be25e335d
+  ee4a0459dade3788dabe528a1767b8ed7f14e80d5aa36e8598d01bd45a128c2f:
+    input_sha256: 8cfc8efd1193dc13db88fdf5f6dfd29b08b84f0e0a822bf72b20ad851d9a63ba
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:13:39.926472+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.09
+            PARTIAL: 0.19
+          confidence: 0.58
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.5
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.05
+            PARTIAL: 0.08
+          confidence: 0.8
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.06
+            PARTIAL: 0.32
+          confidence: 0.43
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.17
+            PARTIAL: 0.23
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6531
+        output_tokens: 270
+      elapsed_seconds: 0.2029
+      request_sha256: 7fa44c24414e06e69e6a8d9b6a6ea42a341e862b85b4a4924e2d1a3be6840278
+      request_sha256s:
+      - 7fa44c24414e06e69e6a8d9b6a6ea42a341e862b85b4a4924e2d1a3be6840278
+  24eb719a93c3bba4c76a3a627a3dc7bcf68f103c42c234824a833f283440bec2:
+    input_sha256: 42ed64f35955cd7093c21c8dc58972bf96851d3c17fe4bd244d41757825dc822
+    configuration_sha256: fd1a6a91989f82a22f7803c94b00d7ce96f337411927387a22389d9bf3ca9487
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:13:39.951479+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.04
+            PARTIAL: 0.45
+          confidence: 0.26
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.05
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.64
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.02
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/model_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.21
+            PARTIAL: 0.35
+          confidence: 0.16
+        /assertion/repository_url:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.81
+            PARTIAL: 0.13
+          confidence: 0.72
+        /assertion/model_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/model_software:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.96
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/model_format:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/findings/0/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.01
+            PARTIAL: 0.15
+          confidence: 0.76
+        /assertion/findings/1/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/findings/2/statement:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.09
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.46
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/variables/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.17
+            PARTIAL: 0.4
+          confidence: 0.14
+        /assertion/variables/0/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/variables/0/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.12
+            PARTIAL: 0.34
+          confidence: 0.31
+        /assertion/variables/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/variables/0/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.26
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/variables/0/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.35
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/variables/0/mappings_list/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.32
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/variables/0/mappings_list/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.5
+            PARTIAL: 0.31
+          confidence: 0.25
+        /assertion/variables/1/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.2
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/variables/1/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.72
+            PARTIAL: 0.22
+          confidence: 0.58
+        /assertion/variables/1/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.16
+            PARTIAL: 0.38
+          confidence: 0.19
+        /assertion/variables/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/variables/1/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.25
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/variables/1/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.28
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/variables/1/mappings_list/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.33
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/variables/1/mappings_list/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.41
+            PARTIAL: 0.35
+          confidence: 0.11
+        /assertion/variables/2/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.2
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/variables/2/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.69
+            PARTIAL: 0.23
+          confidence: 0.53
+        /assertion/variables/2/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/variables/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.58
+            PARTIAL: 0.28
+          confidence: 0.37
+        /assertion/variables/2/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.2
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/variables/2/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.27
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/variables/3/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.14
+            PARTIAL: 0.41
+          confidence: 0.18
+        /assertion/variables/3/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.7
+            PARTIAL: 0.22
+          confidence: 0.55
+        /assertion/variables/3/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.17
+            PARTIAL: 0.36
+          confidence: 0.2
+        /assertion/variables/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+          confidence: 0.4
+        /assertion/variables/3/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.18
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/variables/3/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.28
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/variables/3/mappings_list/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.27
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/variables/3/mappings_list/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.34
+            PARTIAL: 0.34
+          confidence: 0.01
+        /assertion/variables/3/mappings_list/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/variables/3/mappings_list/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.82
+            PARTIAL: 0.12
+          confidence: 0.73
+        /assertion/variables/3/mappings_list/2/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/variables/3/mappings_list/2/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.75
+            PARTIAL: 0.23
+          confidence: 0.62
+        /assertion/variables/3/mappings_list/2/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/variables/3/mappings_list/2/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/variables/3/mappings_list/2/severity_scale/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.86
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/variables/3/mappings_list/2/severity_scale/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/variables/4/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.12
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/variables/4/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.68
+            PARTIAL: 0.22
+          confidence: 0.52
+        /assertion/variables/4/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.13
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/variables/4/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/variables/4/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/variables/4/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.18
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/variables/4/mappings_list/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/variables/4/mappings_list/0/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.44
+        /assertion/variables/4/mappings_list/0/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.76
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/variables/4/mappings_list/0/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.67
+            PARTIAL: 0.3
+          confidence: 0.5
+        /assertion/variables/4/mappings_list/0/severity_scale/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/variables/4/mappings_list/0/severity_scale/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/variables/4/mappings_list/0/severity_scale/2/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.74
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/variables/4/mappings_list/0/severity_scale/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/variables/4/mappings_list/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.28
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/variables/4/mappings_list/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.34
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/variables/4/mappings_list/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/variables/4/mappings_list/1/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/variables/4/mappings_list/1/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/variables/4/mappings_list/1/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/variables/4/mappings_list/1/severity_scale/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/variables/4/mappings_list/1/severity_scale/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/variables/4/mappings_list/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.43
+            PARTIAL: 0.42
+          confidence: 0.14
+        /assertion/variables/4/mappings_list/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/variables/4/mappings_list/2/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/variables/4/mappings_list/2/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/variables/4/mappings_list/2/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.76
+            PARTIAL: 0.22
+          confidence: 0.64
+        /assertion/variables/4/mappings_list/2/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.71
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/variables/5/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.16
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/variables/5/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.73
+            PARTIAL: 0.2
+          confidence: 0.6
+        /assertion/variables/5/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.15
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/variables/5/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.52
+            PARTIAL: 0.39
+          confidence: 0.28
+        /assertion/variables/6/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.15
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/variables/6/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.73
+            PARTIAL: 0.2
+          confidence: 0.6
+        /assertion/variables/6/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.12
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/variables/6/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/variables/7/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.28
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/variables/7/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.71
+            PARTIAL: 0.22
+          confidence: 0.56
+        /assertion/variables/7/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.25
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/variables/7/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/variables/7/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.54
+            PARTIAL: 0.38
+          confidence: 0.31
+        /assertion/variables/7/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.35
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/variables/7/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.33
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/variables/8/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.27
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/variables/8/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.72
+            PARTIAL: 0.22
+          confidence: 0.58
+        /assertion/variables/8/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.29
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/variables/8/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/variables/8/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.55
+            PARTIAL: 0.37
+          confidence: 0.33
+        /assertion/variables/9/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.28
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/variables/9/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/variables/9/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/variables/9/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/variables/9/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.53
+            PARTIAL: 0.38
+          confidence: 0.3
+        /assertion/variables/9/mappings_list/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.34
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/variables/9/mappings_list/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.31
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/variables/9/mappings_list/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/variables/9/mappings_list/0/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/variables/9/mappings_list/0/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/variables/9/mappings_list/0/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+        /assertion/variables/9/mappings_list/0/severity_scale/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/variables/9/mappings_list/0/severity_scale/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/variables/9/mappings_list/0/severity_scale/2/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/variables/9/mappings_list/0/severity_scale/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/variables/9/mappings_list/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.52
+            PARTIAL: 0.36
+          confidence: 0.28
+        /assertion/variables/9/mappings_list/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.55
+            PARTIAL: 0.34
+          confidence: 0.33
+        /assertion/variables/9/mappings_list/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/variables/9/mappings_list/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/variables/9/mappings_list/1/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.72
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/variables/9/mappings_list/1/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.85
+            PARTIAL: 0.14
+          confidence: 0.77
+        /assertion/variables/9/mappings_list/1/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/variables/9/mappings_list/1/severity_scale/1/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/variables/9/mappings_list/1/severity_scale/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/variables/9/mappings_list/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/variables/9/mappings_list/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.42
+        /assertion/variables/9/mappings_list/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.6
+            PARTIAL: 0.31
+          confidence: 0.4
+        /assertion/variables/9/mappings_list/2/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/variables/9/mappings_list/2/threshold_direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/variables/9/mappings_list/2/severity_scale/0/threshold:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.83
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/variables/9/mappings_list/2/severity_scale/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/variables/10/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.27
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/variables/10/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.71
+            PARTIAL: 0.23
+          confidence: 0.56
+        /assertion/variables/10/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.44
+            PARTIAL: 0.42
+          confidence: 0.16
+        /assertion/variables/10/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/variables/10/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/variables/11/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.36
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/variables/11/dataset_identifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/variables/11/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.4
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/variables/11/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/variables/11/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.56
+            PARTIAL: 0.35
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        output_tokens: 7873
+        input_tokens: 146919
+      elapsed_seconds: 1.2764
+      request_sha256: 8ea087d94f7ab0a9b717c4f28af95e695935d8f8882c500d68a2ecbf8fded72c
+      request_sha256s:
+      - 5a863620c2ca5fe47c020dba33c04997f96e970ad37ecd1acc73a4f7bbcea791
+      - 572915a9320b8de5a5d435f549192835f6e17b3a021f33939582b85ffcf9d45c
+      - c18cb7824f43e97baf8a6acca939b9f41adceb71d433ecdfd7a6e5b9c7c8c382
+      - 47e0fbcde46ef0180513f95e4d3f016acb6cb020dac89bffc6f7948c9eb83926

@@ -7718,6 +7718,442 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/0
       reference: DOI:10.3389/fgene.2022.867856
+  6adf2e0e5cf03525f5f14c5a54a6e01d682fe919f71c10d51512ad1492d437f3:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context:
+        - path: /pathophysiology/8
+          value:
+            name: ALA-Mediated Neurovisceral Neurotoxicity
+            conforms_to: heme_biosynthesis_porphyria#Neurovisceral Precursor Neurotoxicity
+            description: Accumulated ALA acts as a pro-oxidant neurotoxin on the autonomic, peripheral,
+              and central nervous systems, producing the classic neurovisceral triad of abdominal pain,
+              constipation, and peripheral neuropathy — the same effector arm the heme biosynthesis module
+              assigns to precursor accumulation in the acute hepatic porphyrias.
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            biological_processes:
+            - preferred_term: response to oxidative stress
+              modifier: INCREASED
+              term:
+                id: GO:0006979
+                label: response to oxidative stress
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Peripheral neuropathy
+        description: Precursor-driven neurovisceral toxicity is the proposed mechanism behind lead's peripheral
+          neuropathy, alongside the calcium-mimicry route modeled elsewhere in this entry.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: The same biochemical abnormalities and neurological symptoms are seen with ALAD inhibition
+          by lead poisoning and by succinylacetone in hereditary tyrosinemia type 2.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/8/downstream/2
+      evidence_path: /pathophysiology/8/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/8
+    evidence_metadata:
+      reference: DOI:10.3389/fgene.2022.867856
+      reference_title: 'Case Report: Lack of Response to Givosiran in a Case of ALAD Porphyria'
+      evidence_source: OTHER
+      explanation: Supports the neurovisceral-symptom analogy to ALAD-deficiency porphyria, whose neurovisceral
+        attacks include peripheral neuropathy, rather than a lead-specific mechanistic study.
+    first_seen_at: '2026-11-09T20:50:23.275756+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:23.275756+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:23.275756+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/8/downstream/2
+      evidence_path: /pathophysiology/8/downstream/2/evidence/0
+      reference: DOI:10.3389/fgene.2022.867856
+  22a793a49dd15c822589e36de4dfe08cab68b962077e9959fc0593424dec3b89:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Blood Lead Level
+        presence: INCREASED
+        loinc_term:
+          id: LOINC:5671-3
+          label: Lead [Mass/volume] in Blood
+        notes: 'Venous whole-blood lead measurement is the primary laboratory test for confirming exposure
+          and guiding intervention thresholds. LOINC:5671-3 is the specimen-generic Blood code, bound
+          in preference to the Venous blood specimen-specific variant (LOINC:77307-7). No reference_ranges
+          band is recorded: the CDC blood lead reference value (BLRV) is a population percentile -- a
+          public-health intervention trigger, not a diagnostic cut-off this disease owns, so it is not
+          curated here as a band.
+
+          CDC''s current (as of 2021) pediatric blood lead reference value is 3.5 microg/dL, for ages
+          1 to 5 years. The 5 microg/dL figure is the superseded pre-2021 value.'
+      selected_evidence:
+        snippet: Consequently, in 2021, the Centers for Disease Control and Prevention (CDC) reduced its
+          blood lead reference value from 5 µg/dL to 3.5 µg/dL in pediatric patients, 1 to 5 years old.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37478813
+      reference_title: 'Trends in Blood Lead Levels Quantified by ICP-MS: A Reference Laboratory Retrospective
+        Study.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports blood lead concentration as the central biomarker for diagnosis and public-health
+        intervention.
+    first_seen_at: '2026-11-09T20:50:24.374949+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:24.374949+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:24.374949+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:37478813
+  bdde83fd2a4e772eb481cf06bc066694efc51ed997a8130dbdf05a7dfadc6d55:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Zinc Protoporphyrin
+        presence: INCREASED
+        loinc_term:
+          id: LOINC:33007-6
+          label: Protoporphyrin.zinc [Mass/volume] in Blood
+        notes: 'Zinc protoporphyrin is an adjunct biomarker of disrupted heme synthesis and has been used
+          for biologic monitoring of lead exposure. LOINC:33007-6 is the specimen-generic, method-less
+          Blood code. No reference_ranges band is recorded: the cited source states only that the analyte
+          has historically been used for monitoring, not a numeric cut-off.'
+      selected_evidence:
+        snippet: Furthermore, BSC has been replaced by blood lead (since the 1940s) and zinc protoporphyrin
+          (since the 1970s) levels for biologic monitoring of lead-exposed workers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:6202140
+      reference_title: 'Basophilic stippling of red blood cells: a nonspecific finding of multiple etiology.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports zinc protoporphyrin as a laboratory biomarker used in monitoring lead exposure.
+    first_seen_at: '2026-11-09T20:50:24.375794+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:24.375794+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:24.375794+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:6202140
+  1175e898a3acb29a6de76e137a07dcbe5dfe418527abc8a0b2884c7421fb39f6:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Blood lead level measurement
+        diagnosis_term:
+          preferred_term: diagnostic procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+          qualifiers:
+          - predicate:
+              preferred_term: diagnostic procedure
+              term:
+                id: NCIT:C18020
+                label: Diagnostic Procedure
+            value:
+              preferred_term: laboratory procedure
+              term:
+                id: NCIT:C25294
+                label: Laboratory Procedure
+        description: Venous whole-blood lead measurement is the primary laboratory method for confirming
+          lead exposure and determining intervention thresholds.
+        markers: Blood lead concentration in venous whole blood
+        measurements:
+        - preferred_term: Blood lead
+          term:
+            id: LOINC:5671-3
+            label: Lead [Mass/volume] in Blood
+        results: Elevated blood lead concentration; CDC pediatric blood lead reference value cited here
+          is 3.5 microgram/dL.
+      selected_evidence:
+        snippet: Consequently, in 2021, the Centers for Disease Control and Prevention (CDC) reduced its
+          blood lead reference value from 5 µg/dL to 3.5 µg/dL in pediatric patients, 1 to 5 years old.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37478813
+      reference_title: 'Trends in Blood Lead Levels Quantified by ICP-MS: A Reference Laboratory Retrospective
+        Study.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports blood lead concentration as the core diagnostic and screening measure.
+    first_seen_at: '2026-11-09T20:50:25.610890+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:25.610890+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:25.610890+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:37478813
+  14a4e6692dea0e9995b15368e2f360f78a79084f280eb92045e2db83f337c9a8:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Zinc protoporphyrin testing
+        diagnosis_term:
+          preferred_term: diagnostic procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+          qualifiers:
+          - predicate:
+              preferred_term: diagnostic procedure
+              term:
+                id: NCIT:C18020
+                label: Diagnostic Procedure
+            value:
+              preferred_term: laboratory procedure
+              term:
+                id: NCIT:C25294
+                label: Laboratory Procedure
+        description: Zinc protoporphyrin measurement is an adjunct laboratory test reflecting disturbed
+          heme synthesis in lead exposure.
+        markers: Zinc protoporphyrin
+        measurements:
+        - preferred_term: Zinc protoporphyrin
+          term:
+            id: LOINC:33007-6
+            label: Protoporphyrin.zinc [Mass/volume] in Blood
+        results: Elevated zinc protoporphyrin supports disrupted heme synthesis in lead exposure.
+      selected_evidence:
+        snippet: Furthermore, BSC has been replaced by blood lead (since the 1940s) and zinc protoporphyrin
+          (since the 1970s) levels for biologic monitoring of lead-exposed workers.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:6202140
+      reference_title: 'Basophilic stippling of red blood cells: a nonspecific finding of multiple etiology.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports zinc protoporphyrin as an adjunct biomarker in evaluation of lead exposure.
+    first_seen_at: '2026-11-09T20:50:25.611803+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:25.611803+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:25.611803+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:6202140
+  a0c3d3771b342b9d124bfcc3349e2ef1ccdb14c6fb6099aa299b3eeaf44c9946:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Chronic lead-exposed adult C57BL/6 mouse (skeletal)
+        species: Mus musculus
+        background: C57BL/6
+        description: Adult female C57BL/6 mice exposed to lead in drinking water for 4 months develop
+          altered bone mineral density, increased bone turnover, and weaker cortical bone, modeling the
+          skeletal reservoir and bone toxicity of chronic lead exposure.
+        associated_phenotypes:
+        - Increased bone turnover
+        - Reduced bone strength
+        - Altered bone mineral density
+      selected_evidence:
+        snippet: These data show that lead increases bone turnover resulting in weaker cortical bone in
+          adult female mice and suggest that lead may exacerbate bone loss and osteoporosis in the elderly.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20643234
+      reference_title: The effect of lead on bone mineral properties from female adult C57/BL6 mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes a chronic murine skeletal model of lead deposition and bone toxicity.
+    first_seen_at: '2026-11-09T20:50:26.653627+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:26.653627+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:26.653627+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:20643234
+  260d8a2a8365f56395c1e0e42beead9ee9908e3bc1b9a79e3f0ea7238672598d:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Developmental lead-exposed BALB/cAnNTac mouse
+        species: Mus musculus
+        background: BALB/cAnNTac
+        description: Developmental lead exposure from gestation through weaning in BALB/cAnNTac mice produces
+          adult behavioral abnormalities and whole-brain inflammatory gene-expression changes, modeling
+          developmental neurotoxicity.
+        associated_phenotypes:
+        - Impaired spatial memory
+        - Altered exploratory behavior
+        - Neuroinflammatory gene-expression changes
+      selected_evidence:
+        snippet: Pups were exposed to Pb from gestational-day (gd) 8 to postnatal-day (pnd) 21 and later
+          evaluated in exploratory behavior, rotarod, Morris water maze, and resident-intruder assays
+          as adults.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22609695
+      reference_title: Developmental lead effects on behavior and brain gene expression in male and female
+        BALB/cAnNTac mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes a developmental mouse exposure paradigm for long-term behavioral lead neurotoxicity.
+    first_seen_at: '2026-11-09T20:50:26.654885+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:26.654885+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:26.654885+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/0
+      reference: PMID:22609695
+  c6a27720ba0dec81bdb41890bfd9b66b514a0f54ee0606bc3f9ee60d84491387:
+    claim:
+      about:
+        disease:
+          name: Lead Poisoning
+          disease_term:
+            preferred_term: lead poisoning
+            term:
+              id: MONDO:0018019
+              label: lead poisoning
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Developmental lead-exposed BALB/cAnNTac mouse
+        species: Mus musculus
+        background: BALB/cAnNTac
+        description: Developmental lead exposure from gestation through weaning in BALB/cAnNTac mice produces
+          adult behavioral abnormalities and whole-brain inflammatory gene-expression changes, modeling
+          developmental neurotoxicity.
+        associated_phenotypes:
+        - Impaired spatial memory
+        - Altered exploratory behavior
+        - Neuroinflammatory gene-expression changes
+      selected_evidence:
+        snippet: Pb-exposure caused significant alterations in exploratory behavior and water maze performance
+          during the probe trial, but rotarod performance was not affected.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22609695
+      reference_title: Developmental lead effects on behavior and brain gene expression in male and female
+        BALB/cAnNTac mice.
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports measurable adult cognitive and behavioral phenotypes in the developmental
+        lead mouse model.
+    first_seen_at: '2026-11-09T20:50:27.675948+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:50:27.675948+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:50:27.675948+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1
+      evidence_path: /animal_models/1/evidence/1
+      reference: PMID:22609695
 assessments:
   58351ab9f454e428b8dfba987658de2b12c83172dcee4fe24452a6b6e3793926:
     input_sha256: bf5b037751066be4d11e307eb7dfb8cb491c20db53645a5c07b16029dbd29264
@@ -17913,3 +18349,622 @@ assessments:
       request_sha256: 0b5c0b5309aec5649b3e57d79388cb971150a851c3222d46282e183c4205270b
       request_sha256s:
       - 0b5c0b5309aec5649b3e57d79388cb971150a851c3222d46282e183c4205270b
+  8dd935a3efeae34a4629df4c43e6e532d435e8ec957c370b06b643e8f98ddd7a:
+    input_sha256: 6adf2e0e5cf03525f5f14c5a54a6e01d682fe919f71c10d51512ad1492d437f3
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:23.275756+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.05
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.07
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.03
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.17
+            PARTIAL: 0.52
+          confidence: 0.28
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.11
+            PARTIAL: 0.42
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6571
+        output_tokens: 272
+      elapsed_seconds: 0.2571
+      request_sha256: 7c4664f177938b97b5dd8e1c03a86d7623ce2e8e56cfe96df07203a60089d261
+      request_sha256s:
+      - 7c4664f177938b97b5dd8e1c03a86d7623ce2e8e56cfe96df07203a60089d261
+  d17fcae2fb4ba851535f56b636201698a52dc0859f71d1706ea5fba2e0a012c2:
+    input_sha256: 22a793a49dd15c822589e36de4dfe08cab68b962077e9959fc0593424dec3b89
+    configuration_sha256: 43baa55368f2e60e76c4765452ab9cd98d75640841c7677fbebde8be53d3cff8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:24.374949+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.23
+            PARTIAL: 0.47
+          confidence: 0.2
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.52
+            PARTIAL: 0.28
+          confidence: 0.28
+        /assertion/presence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.42
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.47
+            PARTIAL: 0.27
+          confidence: 0.2
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.16
+            PARTIAL: 0.34
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7282
+        output_tokens: 327
+      elapsed_seconds: 0.2626
+      request_sha256: 454b01518be9fbdb35740b1968a9ea6bf99a19d85dd44994c967682fac26ebdd
+      request_sha256s:
+      - 454b01518be9fbdb35740b1968a9ea6bf99a19d85dd44994c967682fac26ebdd
+  fb493a7484aca1c09036145c6e3b96ded1ea7be622f7bbde0063507d75cfe4a2:
+    input_sha256: bdde83fd2a4e772eb481cf06bc066694efc51ed997a8130dbdf05a7dfadc6d55
+    configuration_sha256: 43baa55368f2e60e76c4765452ab9cd98d75640841c7677fbebde8be53d3cff8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:24.375794+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.09
+            PARTIAL: 0.76
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.07
+            PARTIAL: 0.31
+          confidence: 0.43
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.33
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.6
+            PARTIAL: 0.27
+          confidence: 0.4
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.21
+            PARTIAL: 0.29
+          confidence: 0.25
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.22
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7204
+        output_tokens: 320
+      elapsed_seconds: 0.3077
+      request_sha256: ee208202c27c6ccd4f13e758e41e4a72fae2d1dafe488cad27427dc2f727ae07
+      request_sha256s:
+      - ee208202c27c6ccd4f13e758e41e4a72fae2d1dafe488cad27427dc2f727ae07
+  a9d2c95eb7114381059c2dbb18b6e36483ae4884782fb995f6041dc9fc564341:
+    input_sha256: 1175e898a3acb29a6de76e137a07dcbe5dfe418527abc8a0b2884c7421fb39f6
+    configuration_sha256: 3340360f01bf10f83ec341eb999b944d659c3fa1c8c5016d2bbc939d6c2f2214
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:25.610890+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.12
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.56
+            PARTIAL: 0.27
+          confidence: 0.34
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.47
+            PARTIAL: 0.33
+          confidence: 0.2
+        /assertion/diagnosis_term/qualifiers/0/predicate/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.56
+            PARTIAL: 0.26
+          confidence: 0.34
+        /assertion/diagnosis_term/qualifiers/0/predicate/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.57
+            PARTIAL: 0.26
+          confidence: 0.35
+        /assertion/diagnosis_term/qualifiers/0/value/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.6
+            PARTIAL: 0.23
+          confidence: 0.4
+        /assertion/diagnosis_term/qualifiers/0/value/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.54
+            PARTIAL: 0.28
+          confidence: 0.31
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.29
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.18
+            PARTIAL: 0.39
+          confidence: 0.14
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.25
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.3
+            PARTIAL: 0.43
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14169
+        output_tokens: 721
+      elapsed_seconds: 0.3361
+      request_sha256: 1fce91ce2730f8653c41bcd4e08fff4857954bb058c20ac6c435e60b1c1525f2
+      request_sha256s:
+      - 1fce91ce2730f8653c41bcd4e08fff4857954bb058c20ac6c435e60b1c1525f2
+  1cd0de1d21246d3e9c8d87a351439bf1f3c2d4f4288d94a6296130a5a7c9ccc0:
+    input_sha256: 14a4e6692dea0e9995b15368e2f360f78a79084f280eb92045e2db83f337c9a8
+    configuration_sha256: 3340360f01bf10f83ec341eb999b944d659c3fa1c8c5016d2bbc939d6c2f2214
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:25.611803+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.04
+            PARTIAL: 0.38
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.05
+            PARTIAL: 0.18
+          confidence: 0.66
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.17
+            PARTIAL: 0.24
+          confidence: 0.38
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.18
+            PARTIAL: 0.24
+          confidence: 0.37
+        /assertion/diagnosis_term/qualifiers/0/predicate/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.17
+            PARTIAL: 0.23
+          confidence: 0.4
+        /assertion/diagnosis_term/qualifiers/0/predicate/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.17
+            PARTIAL: 0.24
+          confidence: 0.38
+        /assertion/diagnosis_term/qualifiers/0/value/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.11
+            PARTIAL: 0.28
+          confidence: 0.42
+        /assertion/diagnosis_term/qualifiers/0/value/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.1
+            PARTIAL: 0.25
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.19
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/markers:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.06
+            PARTIAL: 0.22
+          confidence: 0.58
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14171
+        output_tokens: 695
+      elapsed_seconds: 0.3354
+      request_sha256: 6642cb83805012f194cc8416562abef8d5d4416eae50128c844977535eea522f
+      request_sha256s:
+      - 6642cb83805012f194cc8416562abef8d5d4416eae50128c844977535eea522f
+  af46d5f61b49ebbd5d919431efb7f0a3e5e276cb101223065e37f77990dc56ff:
+    input_sha256: a0c3d3771b342b9d124bfcc3349e2ef1ccdb14c6fb6099aa299b3eeaf44c9946
+    configuration_sha256: dda2432ca7bca95685bb10f193f81ae9e1fa0e9fe65e6127e182ce0d86626ea3
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:26.653627+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.02
+            PARTIAL: 0.41
+          confidence: 0.35
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.08
+            PARTIAL: 0.42
+          confidence: 0.25
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/background:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.47
+            PARTIAL: 0.41
+          confidence: 0.2
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.02
+            PARTIAL: 0.46
+          confidence: 0.28
+        /assertion/associated_phenotypes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.01
+            PARTIAL: 0.27
+          confidence: 0.58
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7146
+        output_tokens: 315
+      elapsed_seconds: 0.2465
+      request_sha256: 9d4315aced8a41189b4bfe2816bdd7b38d53b0c3cff31c2bab358a870eb678ba
+      request_sha256s:
+      - 9d4315aced8a41189b4bfe2816bdd7b38d53b0c3cff31c2bab358a870eb678ba
+  acd5200308c1da6e71dcea8f8b0cbfa8c0d61d35852b0638dd033e6940a3e82b:
+    input_sha256: 260d8a2a8365f56395c1e0e42beead9ee9908e3bc1b9a79e3f0ea7238672598d
+    configuration_sha256: dda2432ca7bca95685bb10f193f81ae9e1fa0e9fe65e6127e182ce0d86626ea3
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:26.654885+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.04
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.04
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.05
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/species:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.05
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/background:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.44
+            PARTIAL: 0.43
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.05
+            PARTIAL: 0.8
+          confidence: 0.7
+        /assertion/associated_phenotypes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.15
+            PARTIAL: 0.8
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7161
+        output_tokens: 318
+      elapsed_seconds: 0.2719
+      request_sha256: bface5216f0ae708720ec7df3e9d090298758950b553e40f996a4fabf5977060
+      request_sha256s:
+      - bface5216f0ae708720ec7df3e9d090298758950b553e40f996a4fabf5977060
+  b8ae0fb006aa218258331b12a4275492fd96855f541d9670efa7641e1bf89ea1:
+    input_sha256: c6a27720ba0dec81bdb41890bfd9b66b514a0f54ee0606bc3f9ee60d84491387
+    configuration_sha256: dda2432ca7bca95685bb10f193f81ae9e1fa0e9fe65e6127e182ce0d86626ea3
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:50:27.675948+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.04
+            PARTIAL: 0.8
+          confidence: 0.7
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.2
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/species:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.48
+            PARTIAL: 0.43
+          confidence: 0.22
+        /assertion/background:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.74
+            PARTIAL: 0.25
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.05
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/associated_phenotypes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.06
+            PARTIAL: 0.81
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7137
+        output_tokens: 322
+      elapsed_seconds: 0.2492
+      request_sha256: 7736e844b878da4a4edbae7721cd3a322c44629648dac140e1eaf9f5dad3c639
+      request_sha256s:
+      - 7736e844b878da4a4edbae7721cd3a322c44629648dac140e1eaf9f5dad3c639

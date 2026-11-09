@@ -4619,6 +4619,61 @@ inputs:
     - assertion_path: /animal_models/3/modeled_mechanisms/0
       evidence_path: /animal_models/3/modeled_mechanisms/0/evidence/0
       reference: PMID:37461635
+  e9bcbb7f40f449664af62759cf594b5db51803c22a6080d2561f50024199318f:
+    claim:
+      about:
+        disease:
+          name: Neonatal Diabetes Mellitus With Congenital Hypothyroidism
+          disease_term:
+            preferred_term: neonatal diabetes mellitus with congenital hypothyroidism
+            term:
+              id: MONDO:0012436
+              label: neonatal diabetes mellitus with congenital hypothyroidism
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Insulin Therapy
+        description: 'Lifelong insulin from diagnosis, often by continuous subcutaneous infusion with
+          glucose monitoring. Insulin sensitivity varies widely, from recurrent hypoglycaemia on very
+          small doses to insulin resistance during illness, so control is often labile. The diabetes is
+          a beta-cell developmental deficiency rather than a KATP-channel defect, so molecular diagnosis
+          matters: it distinguishes insulin-dependent forms like this one from the sulfonylurea-responsive
+          KCNJ11/ABCC8 channel forms.'
+        therapeutic_modality: PROTEIN_REPLACEMENT
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: insulin
+            term:
+              id: CHEBI:145810
+              label: insulin
+      selected_evidence:
+        snippet: Patients were initially treated with insulin at 0.4 to 2.0 U/kg/24 h (patient 4 required
+          2.0 U/kg/24 h), demonstrating a range of insulin sensitivities.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:26259131
+      reference_title: Expanding the Clinical Spectrum Associated With GLIS3 Mutations.
+      evidence_source: HUMAN_CLINICAL
+      explanation: All patients in the series were insulin treated, with widely varying doses.
+    first_seen_at: '2026-11-09T20:35:54.993298+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:54.993298+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:54.993298+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/1
+      reference: PMID:26259131
 assessments:
   c5dec5ba1305d4248fd6d5f292d8a2fe4c9b8e964d5efb55c772ab135a465dbb:
     input_sha256: 52fcc4e645e26af6055f6ddd17294386f52817aa54da1fd370c13e20c4892b32
@@ -11734,3 +11789,83 @@ assessments:
       request_sha256: 81b244cf04d63c284c5a8d76a79f66b964b08134708c3edcbf9a67863002efa3
       request_sha256s:
       - 81b244cf04d63c284c5a8d76a79f66b964b08134708c3edcbf9a67863002efa3
+  03fa1b978edb7736735dbf50d5fbb11e0200bf3d45d8fd1dfe57c99cdd46c8d7:
+    input_sha256: e9bcbb7f40f449664af62759cf594b5db51803c22a6080d2561f50024199318f
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:54.993298+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.03
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.03
+            PARTIAL: 0.8
+          confidence: 0.7
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.01
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.07
+            PARTIAL: 0.73
+          confidence: 0.6
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.09
+            PARTIAL: 0.2
+          confidence: 0.56
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.22
+            PARTIAL: 0.36
+          confidence: 0.13
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.2
+            PARTIAL: 0.37
+          confidence: 0.14
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9793
+        output_tokens: 439
+      elapsed_seconds: 0.1987
+      request_sha256: 3fa6a3034aac1291f263d12a00f98d07ef25bab85496ab4606a4002bfb22027b
+      request_sha256s:
+      - 3fa6a3034aac1291f263d12a00f98d07ef25bab85496ab4606a4002bfb22027b

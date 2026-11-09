@@ -13232,6 +13232,55 @@ inputs:
     - assertion_path: /experimental_models/4
       evidence_path: /experimental_models/4/evidence/1
       reference: PMID:30012219
+  e98f22beadedf8472a4cf13ce03fcca843c831bbfcfa0c21657afb370f76827a:
+    claim:
+      about:
+        disease:
+          name: Cerebellar Ataxia, Intellectual Disability, and Dysequilibrium Syndrome
+          disease_term:
+            preferred_term: cerebellar ataxia, intellectual disability, and dysequilibrium
+            term:
+              id: MONDO:0009133
+              label: cerebellar ataxia, intellectual disability, and dysequilibrium
+        context: []
+      assertion_type: ExperimentalModel
+      assertion:
+        name: VLDLR p.P565Q trafficking assay
+        experimental_model_type: CELL_LINE
+        cell_source: Transfected HeLa, HEK293T and HRD1-knockout HEK293 cells
+        description: Imaging, Endo H susceptibility and HRD1 knockout assess surface delivery, maturation
+          and degradation of the variant receptor.
+        modeled_mechanisms:
+        - target: Impaired VLDLR surface delivery (CAMRQ1)
+          relationship: RECAPITULATES
+          description: Models the variant-specific trafficking defect.
+          limitations: Overexpression experiments do not directly measure Reelin signaling or neuroblast
+            migration.
+      selected_evidence:
+        snippet: In contrast, only the immature band was observed for p.(P565Q), confirming its retention
+          in the ER
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/2
+      evidence_path: /experimental_models/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42051465
+      reference_title: 'Identification of a Novel VLDLR Variant in the First Report of CAMRQ1 From Africa:
+        Expanding the Spectrum of Cerebellar Ataxia Syndromes.'
+      evidence_source: IN_VITRO
+      explanation: The transfected variant fails to acquire mature glycosylation.
+    first_seen_at: '2026-11-09T20:00:20.869327+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:00:20.869327+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:00:20.869327+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/2
+      evidence_path: /experimental_models/2/evidence/0
+      reference: PMID:42051465
 assessments:
   5fec2cc8abb802ede27d627745689345c0755a8cf3d14f0f257dbefbd8b332c3:
     input_sha256: 9f25c57e8ae4d8ff4bdf572fef89dd0650c743102cf68f972fbcd5bac6b403e0
@@ -29084,3 +29133,90 @@ assessments:
       request_sha256: 54f7b0a1426200749d3956e8ac270c788d9c79afb6fecab07220eee5d04569ea
       request_sha256s:
       - 54f7b0a1426200749d3956e8ac270c788d9c79afb6fecab07220eee5d04569ea
+  ce4f0ce9e3b5ec0f2addddfe30d93c8ce185252c7503a3be73650ffea86ee13e:
+    input_sha256: e98f22beadedf8472a4cf13ce03fcca843c831bbfcfa0c21657afb370f76827a
+    configuration_sha256: e37c9c3746a77a575c8a021104a8067d25b0a5dc680d6099abfd82e0f8237ea1
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:00:20.869327+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.19
+            PARTIAL: 0.29
+          confidence: 0.28
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.24
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.2
+            PARTIAL: 0.35
+          confidence: 0.18
+        /assertion/experimental_model_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.31
+            PARTIAL: 0.24
+          confidence: 0.18
+        /assertion/cell_source:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/modeled_mechanisms/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.22
+            PARTIAL: 0.13
+          confidence: 0.48
+        /assertion/modeled_mechanisms/0/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.07
+            PARTIAL: 0.15
+          confidence: 0.67
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.73
+            PARTIAL: 0.19
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10336
+        output_tokens: 490
+      elapsed_seconds: 0.3109
+      request_sha256: 2f33300b6fbe3b4175b80a972e20f2816c5b89e54144dbcce3a8c796a4568e1e
+      request_sha256s:
+      - 2f33300b6fbe3b4175b80a972e20f2816c5b89e54144dbcce3a8c796a4568e1e

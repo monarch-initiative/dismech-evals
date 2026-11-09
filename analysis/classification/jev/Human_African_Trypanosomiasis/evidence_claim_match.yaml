@@ -1425,6 +1425,69 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/1
       reference: clinicaltrials:NCT03087955
+  b00c44bd6450c7b8258f6029ae1323ce633feaabbd9a52736905fdbb1e4d6dd5:
+    claim:
+      about:
+        disease:
+          name: Human African trypanosomiasis
+          disease_term:
+            term:
+              id: MONDO:0005459
+              label: human African trypanosomiasis
+            preferred_term: Human African trypanosomiasis
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: gap_hat_neuroinvasion_to_circadian_dysfunction
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - pathophysiology#Central nervous system infection after BBB traversal
+        - phenotypes#Sleep-wake cycle disturbance
+        prompt: Which molecular pathways carry trypanosome CNS invasion and neuroinflammation to disruption
+          of the suprachiasmatic clock and of sleep homeostasis?
+        rationale: 'The disorder entry links CNS invasion to the sleep-wake phenotype through a single
+          downstream edge. The narrative review PMID:42496249 names the chain as unresolved: it proposes
+          that inflammatory cytokines (IFN-γ, TNF-α, IL-1β) alter clock-gene expression and SCN firing,
+          and that parasite-driven adenosine accumulation via CD73 impairs sleep homeostasis. Its SCN,
+          clock-gene and melatonin-receptor findings come from experimental rat models, which the review
+          itself says cannot fully reproduce the chronic human course, and the review names biomarkers,
+          disease staging and irreversible neuronal damage as open gaps. The three-stage TASD model is
+          a proposal by the authors, not a validated staging scheme.'
+        proposed_experiments:
+        - experiment_id: exp_hat_scn_inflammation_clock_genes
+          name: SCN clock-gene expression and cytokine signalling in chronic T. brucei infection
+          description: Measure clock-gene expression and cytokine-responsive signalling in the suprachiasmatic
+            nucleus across the time course of chronic infection in animals with and without cytokine blockade,
+            alongside cortisol and melatonin rhythms.
+          would_support:
+          - pathophysiology#Central nervous system infection after BBB traversal
+      selected_evidence:
+        snippet: the connection between parasite neuroinvasion, neuroinflammation, circadian dysfunction,
+          and neurological impairment is not fully understood
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42496249
+      reference_title: 'Sleep-Wake Dysregulation in Human African Trypanosomiasis: From Neuroinvasion
+        to Neuronal Dysfunction.'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The review states in its abstract that the link from CNS invasion to circadian dysfunction
+        is not established.
+    first_seen_at: '2026-11-09T20:01:17.042379+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:01:17.042379+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:01:17.042379+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:42496249
 assessments:
   14141c680780cffdbae34962e8f859b24b82a1dc5bb9e0bb124730de28af1653:
     input_sha256: 82f1d954507dcd2bb0ca7a72436a0065bb380dd67e2ca5b72547af88385b4283
@@ -3351,3 +3414,97 @@ assessments:
       request_sha256: 724d407e7a9347209c638d382d8302102e42cd6fe3872149417d0573d5fc9916
       request_sha256s:
       - 724d407e7a9347209c638d382d8302102e42cd6fe3872149417d0573d5fc9916
+  757ad55947184412486c6838aeb3f94f007d964efc122ed96932dba9080e24d8:
+    input_sha256: b00c44bd6450c7b8258f6029ae1323ce633feaabbd9a52736905fdbb1e4d6dd5
+    configuration_sha256: 516c734358c93df11566a0696fd11c6cefa30d5e2bf2a56825cb6fc89060c533
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:01:17.042379+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.04
+            PARTIAL: 0.47
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.05
+            PARTIAL: 0.39
+          confidence: 0.34
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.54
+            PARTIAL: 0.25
+          confidence: 0.31
+        /assertion/kind:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.26
+            PARTIAL: 0.28
+          confidence: 0.19
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/prompt:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.02
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.08
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/proposed_experiments/0/experiment_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.52
+            PARTIAL: 0.33
+          confidence: 0.28
+        /assertion/proposed_experiments/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.23
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/proposed_experiments/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.32
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/proposed_experiments/0/would_support:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.3
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11474
+        output_tokens: 530
+      elapsed_seconds: 0.1997
+      request_sha256: 6777cf1c4f73f9ef6b1ac3b834911f8ea949979b45fba840f13bf39b69330f2b
+      request_sha256s:
+      - 6777cf1c4f73f9ef6b1ac3b834911f8ea949979b45fba840f13bf39b69330f2b

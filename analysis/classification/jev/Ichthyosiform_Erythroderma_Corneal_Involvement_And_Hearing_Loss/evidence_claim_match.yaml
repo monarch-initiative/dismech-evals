@@ -4724,6 +4724,127 @@ inputs:
     - assertion_path: /discussions/3
       evidence_path: /discussions/3/evidence/0
       reference: PMID:31630791
+  2d1b2544aa05fcf10237f85166b1a3eb0a9f785cf61a6cc6d4d5597cf5a9c961:
+    claim:
+      about:
+        disease:
+          name: Ichthyosiform Erythroderma, Corneal Involvement, and Hearing Loss
+          disease_term:
+            preferred_term: ichthyosiform erythroderma, corneal involvement, and hearing loss
+            term:
+              id: MONDO:0009440
+              label: ichthyosiform erythroderma, corneal involvement, and hearing loss
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: AP-1 Adaptor Complex Dysfunction
+        biological_scale: MOLECULAR
+        mechanism_confidence: ESTABLISHED
+        description: The AP-1 clathrin adaptor complex cannot perform its cargo-sorting role at the trans-Golgi
+          network. Because the complex has several subunits and two of them now cause human disease, this
+          node is where the AP1B1 and AP1S1 disorders converge, and it is why they share a phenotype and
+          a treatment.
+        cellular_components:
+        - preferred_term: AP-1 adaptor complex
+          term:
+            id: GO:0030121
+            label: AP-1 adaptor complex
+        - preferred_term: trans-Golgi network
+          term:
+            id: GO:0005802
+            label: trans-Golgi network
+      selected_evidence:
+        snippet: The diagnosis of IDEDNIK syndrome is established in a proband by identification of biallelic
+          pathogenic variants in AP1B1 or AP1S1 by molecular genetic testing.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39541497
+      reference_title: IDEDNIK Syndrome.
+      evidence_source: OTHER
+      explanation: 'Establishes that the two subunit genes are curated as one clinical entity, which is
+        the strongest available statement that the complex, rather than either subunit, is the operative
+        level. Graded INDIRECT rather than DIRECT: the sentence states diagnostic criteria and does not
+        assert that the complex fails to sort cargo. The step from "either subunit produces the same disease"
+        to "the complex is the operative level" is an inference, and the explanation had already conceded
+        as much while the grade said otherwise.'
+    first_seen_at: '2026-11-09T20:34:31.103502+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:34:31.103502+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:34:31.103502+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:39541497
+  0ce127e1c55b1e5e1f8beedc52a4fc30fc0ccd8fc8a165ca08b3f0402dc23c24:
+    claim:
+      about:
+        disease:
+          name: Ichthyosiform Erythroderma, Corneal Involvement, and Hearing Loss
+          disease_term:
+            preferred_term: ichthyosiform erythroderma, corneal involvement, and hearing loss
+            term:
+              id: MONDO:0009440
+              label: ichthyosiform erythroderma, corneal involvement, and hearing loss
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Systemic Copper Handling Defect
+            biological_scale: ORGANISM
+            description: 'Low serum copper and low ceruloplasmin. Note the asymmetry with MEDNIK: the
+              copper deficiency arm is present and the hepatic copper toxicity arm was not demonstrated
+              in the founding AP1B1 patients, although later guidance describes zinc therapy aimed at
+              liver copper overload. This entry does not resolve that tension and marks it as a knowledge
+              gap.'
+            biological_processes:
+            - preferred_term: copper ion homeostasis
+              modifier: DECREASED
+              term:
+                id: GO:0055070
+                label: copper ion homeostasis
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Congenital Ichthyosiform Erythroderma
+        description: The skin phenotype. Copper is a cofactor for enzymes of keratinisation and hair-shaft
+          formation, which is the standard account, but no source cited here traces the route from the
+          copper defect to the skin in this disease.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: The main phenotypic features of KIDAR are ichthyosis, keratitis, erythroderma, and progressive
+          hearing loss accompanied by developmental delay and failure to thrive.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:35144013
+      reference_title: Phenotypic spectrum of autosomal recessive Keratitis-Ichthyosis-Deafness Syndrome
+        (KIDAR) due to mutations in AP1B1.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the skin phenotype as a feature of the disease. It does not establish the
+        causal route from the copper defect, which is why the edge carries unknown intermediates.
+    first_seen_at: '2026-11-09T20:34:31.108321+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:34:31.108321+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:34:31.108321+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:35144013
 assessments:
   3bd35806bb7457f67777ebe68e4730cbb301eb57c9e5373c1d958171ffd4f721:
     input_sha256: 6b0e790ee1457ab3a3a1e5d74310960f33b0b155dec9d1049fbd81e0ec120ac9
@@ -10358,3 +10479,149 @@ assessments:
       request_sha256: f3e4de028ed93c3110e95c057527e3f59c16a06e0f9dd372e8ca3f05c7ad3884
       request_sha256s:
       - f3e4de028ed93c3110e95c057527e3f59c16a06e0f9dd372e8ca3f05c7ad3884
+  707dab9690fd71d06741a1339bc68e97912b81b11081a99bb7b40bb3c9611183:
+    input_sha256: 2d1b2544aa05fcf10237f85166b1a3eb0a9f785cf61a6cc6d4d5597cf5a9c961
+    configuration_sha256: e48fd2760b5473157db7b40bab755509a994a991b2233dc25608cbce080bd7b5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:34:31.103502+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.4
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.42
+            PARTIAL: 0.25
+          confidence: 0.13
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.15
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.12
+            PARTIAL: 0.25
+          confidence: 0.44
+        /assertion/mechanism_confidence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.39
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.33
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/cellular_components/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.19
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.16
+            PARTIAL: 0.4
+          confidence: 0.16
+        /assertion/cellular_components/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/cellular_components/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10689
+        output_tokens: 488
+      elapsed_seconds: 0.2295
+      request_sha256: 98e368ebc0014ec661f67e78ea1252a1aa93705f5aba2b17667c6558212f6168
+      request_sha256s:
+      - 98e368ebc0014ec661f67e78ea1252a1aa93705f5aba2b17667c6558212f6168
+  812fd53c543ab0befcd641dc042aebe6f01cb0750516f9330db31955359dbfc7:
+    input_sha256: 0ce127e1c55b1e5e1f8beedc52a4fc30fc0ccd8fc8a165ca08b3f0402dc23c24
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:34:31.108321+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.35
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.15
+            PARTIAL: 0.23
+          confidence: 0.43
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.25
+            PARTIAL: 0.33
+          confidence: 0.13
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.27
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.34
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.68
+            PARTIAL: 0.24
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6579
+        output_tokens: 274
+      elapsed_seconds: 0.1551
+      request_sha256: a7c3502ef875d6287099345cc85d0dd18c31e6860340537f6733b16e82810906
+      request_sha256s:
+      - a7c3502ef875d6287099345cc85d0dd18c31e6860340537f6733b16e82810906

@@ -7356,6 +7356,94 @@ inputs:
     - assertion_path: /treatments/1/target_mechanisms/2
       evidence_path: /treatments/1/target_mechanisms/2/evidence/0
       reference: PMID:38072986
+  0f537fc91f2792985733eda2bc7729f3753fafeaa22425116bd5de7b839be696:
+    claim:
+      about:
+        disease:
+          name: COX6A2-Related COX Deficiency
+          disease_term:
+            preferred_term: COX6A2-related COX deficiency (MC4DN18)
+            term:
+              id: MONDO:0033653
+              label: mitochondrial complex IV deficiency, nuclear type 18
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Global Cox6a2 knockout mouse
+        species: Mouse
+        genotype: Cox6a2-/-
+        description: Global knockout mice reproduce complex IV biochemical impairment and mild workload-dependent
+          diastolic dysfunction. Bulk heart and skeletal-muscle ATP remain preserved. Skeletal muscle
+          shifts toward oxidative fibers with increased isolated fatigue resistance, while uphill exercise
+          performance decreases. Cortical PV cells have oxidative damage, reduced nets and impaired dendritic
+          and fast-spiking maturation, without loss of PV-cell density. Female behavioral cohorts show
+          locomotor hyperactivity with preserved social preference and prepulse inhibition; these are
+          not human psychiatric diagnoses.
+        publication: PMID:11788423
+        modeled_mechanisms:
+        - target: Impaired Complex IV Assembly
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Reduced Cytochrome c Oxidase Activity
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Interneuron Oxidative DNA Damage
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Reduced Perineuronal Nets
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Impaired Fast-Spiking Maturation
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Reduced Interneuron Dendritic Arborization
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: ORGANISM
+          limitations: Global null mice show substantial compensation and do not uniformly reproduce human
+            myopathy or the ATP deficit of cultured cardiomyocytes.
+        - target: Reduced PV Interneuron Synaptic Contacts
+          relationship: PARTIALLY_RECAPITULATES
+          model_scale: CELLULAR
+          limitations: Mouse synaptic anatomy does not establish a human psychiatric diagnosis.
+        notes: 'Behavioral findings depend on protocol and cohort: the metabolic study reported reduced
+          spontaneous activity, whereas the later female cohort showed increased locomotion in the open-field
+          and social-interaction tests.'
+      selected_evidence:
+        snippet: In the OFT and SIT, ... Cox6a2 ... − ... / ... − ... mice exhibited increased locomotor
+          activity since they traveled longer distances and they did so faster than WT mice (Fig ... 7
+          ... B and D).
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/11
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: url:https://www.embopress.org/doi/full/10.15252/embj.2020105759
+      reference_title: Complex IV subunit isoform COX6A2 protects fast‐spiking interneurons from oxidative
+        stress and supports their function | The EMBO Journal | Springer Nature Link
+      evidence_source: MODEL_ORGANISM
+      explanation: The female knockout cohort shows increased locomotor activity.
+    first_seen_at: '2026-11-09T20:00:05.466210+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:00:05.466210+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:00:05.466210+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/11
+      reference: url:https://www.embopress.org/doi/full/10.15252/embj.2020105759
 assessments:
   8e63a419fbd717841cbfaec1dd15be43d89dc6b3eb12b6891fd70cbde63eecc4:
     input_sha256: 48b82d7993aef4dbfb7661ab922b88bd5bde186b30ee3067b8db48a4e339fc48
@@ -20157,3 +20245,272 @@ assessments:
       request_sha256: 29bf91ce4c3607f2ff587b609b9e0e0de0791c05719d5deaef3af44343851201
       request_sha256s:
       - 29bf91ce4c3607f2ff587b609b9e0e0de0791c05719d5deaef3af44343851201
+  85b82ee8cdb0a8734587d79f3f338786fba4531346014198608b5789eaa2d4a1:
+    input_sha256: 0f537fc91f2792985733eda2bc7729f3753fafeaa22425116bd5de7b839be696
+    configuration_sha256: 8e72cc1d13637b188a68859c906f96b3142b7c55ca1434de014b03547a6c85e7
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:00:05.466210+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.08
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.1
+            PARTIAL: 0.22
+          confidence: 0.52
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.75
+            PARTIAL: 0.18
+          confidence: 0.62
+        /assertion/species:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.31
+            PARTIAL: 0.36
+          confidence: 0.04
+        /assertion/genotype:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.31
+            PARTIAL: 0.26
+          confidence: 0.14
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.11
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.75
+            PARTIAL: 0.18
+          confidence: 0.62
+        /assertion/modeled_mechanisms/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.82
+            PARTIAL: 0.16
+          confidence: 0.73
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/modeled_mechanisms/0/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.62
+            PARTIAL: 0.2
+          confidence: 0.43
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.76
+            PARTIAL: 0.19
+          confidence: 0.64
+        /assertion/modeled_mechanisms/1/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.63
+            PARTIAL: 0.16
+          confidence: 0.44
+        /assertion/modeled_mechanisms/1/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/modeled_mechanisms/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/modeled_mechanisms/2/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.79
+            PARTIAL: 0.17
+          confidence: 0.68
+        /assertion/modeled_mechanisms/2/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.67
+            PARTIAL: 0.17
+          confidence: 0.5
+        /assertion/modeled_mechanisms/2/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.92
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/modeled_mechanisms/3/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.89
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/modeled_mechanisms/3/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/modeled_mechanisms/3/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.67
+            PARTIAL: 0.19
+          confidence: 0.5
+        /assertion/modeled_mechanisms/3/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/modeled_mechanisms/4/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/modeled_mechanisms/4/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/modeled_mechanisms/4/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.78
+            PARTIAL: 0.15
+          confidence: 0.67
+        /assertion/modeled_mechanisms/4/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/modeled_mechanisms/5/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/modeled_mechanisms/5/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.75
+            PARTIAL: 0.2
+          confidence: 0.62
+        /assertion/modeled_mechanisms/5/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.73
+            PARTIAL: 0.17
+          confidence: 0.6
+        /assertion/modeled_mechanisms/5/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/modeled_mechanisms/6/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.83
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/modeled_mechanisms/6/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/modeled_mechanisms/6/model_scale:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.75
+            PARTIAL: 0.18
+          confidence: 0.62
+        /assertion/modeled_mechanisms/6/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.22
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 38895
+        output_tokens: 1938
+      elapsed_seconds: 0.3399
+      request_sha256: 44bdcd3f573d21df7b7a83442036fff680d7b0dab5c1ac41cfa7d0acf3614fa9
+      request_sha256s:
+      - 44bdcd3f573d21df7b7a83442036fff680d7b0dab5c1ac41cfa7d0acf3614fa9

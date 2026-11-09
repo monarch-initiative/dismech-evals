@@ -4191,6 +4191,59 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:40787890
+  f55ac7b6ea91ca6d757dbde9ae4bca6ae9a4624845975529362f8d90223c2c68:
+    claim:
+      about:
+        disease:
+          name: VEXAS Syndrome
+          disease_term:
+            preferred_term: VEXAS syndrome
+            term:
+              id: MONDO:0026777
+              label: VEXAS syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Elevated C-reactive protein
+        biomarker_term:
+          preferred_term: Elevated circulating C-reactive protein concentration
+          term:
+            id: HP:0011227
+            label: Elevated circulating C-reactive protein concentration
+        presence: Positive
+        notes: 'C-reactive protein is a nonspecific marker of inflammatory activity. The 64-versus-10
+          mg/L median comparison applies specifically to the VEXAS-relapsing-polychondritis subgroup;
+          it is not a universal VEXAS threshold.
+
+          '
+      selected_evidence:
+        snippet: Erythrocyte sedimentation rate (ESR), ferritin, and C‐reactive protein (CRP) are increased
+          in most untreated patients and can trend with acute episodes of inflammation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40787890
+      reference_title: American College of Rheumatology Guidance Statement for Diagnosis and Management
+        of VEXAS Developed by the International VEXAS Working Group Expert Panel.
+      evidence_source: OTHER
+      explanation: 'Consensus guidance supports elevated CRP in most untreated patients and scopes it
+        as a marker that can track acute inflammatory episodes.
+
+        '
+    first_seen_at: '2026-11-09T20:46:44.777222+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:44.777222+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:44.777222+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:40787890
 assessments:
   185e1c36c1ce9087bbdcab43c09c13caadab5b43e3029000e3fb23cc0eaa19f0:
     input_sha256: 14ba7d94d4880a81ff68d6147bda4a249be503a77d8fbfc36575569c7cc11581
@@ -9202,3 +9255,69 @@ assessments:
       request_sha256: 3103ace6a6251ec543ef07aa1cd89145e04a4dc533828f3aa315e8c36bb82080
       request_sha256s:
       - 3103ace6a6251ec543ef07aa1cd89145e04a4dc533828f3aa315e8c36bb82080
+  a9bd810bada2d7ceb275481637b7df02ac2933f8b393592865d3eb23fe2ac019:
+    input_sha256: f55ac7b6ea91ca6d757dbde9ae4bca6ae9a4624845975529362f8d90223c2c68
+    configuration_sha256: e63db4ccb71090f2445d163c0849efe5f8f104f8c22857421662e3b34433a8b8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:44.777222+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.03
+            PARTIAL: 0.29
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.1
+            PARTIAL: 0.39
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.0
+            PARTIAL: 0.14
+          confidence: 0.79
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7245
+        output_tokens: 324
+      elapsed_seconds: 0.2957
+      request_sha256: 8b691e7be0e9ed68407ffc2bfb00f250af2d1f94ba0db15378fc7ee4ef028a28
+      request_sha256s:
+      - 8b691e7be0e9ed68407ffc2bfb00f250af2d1f94ba0db15378fc7ee4ef028a28

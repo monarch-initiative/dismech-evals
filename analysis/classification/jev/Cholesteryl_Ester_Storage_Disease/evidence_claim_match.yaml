@@ -779,6 +779,53 @@ inputs:
     - assertion_path: /pathophysiology/0
       evidence_path: /pathophysiology/0/evidence/0
       reference: PMID:37028992
+  197385e9e7e0f9e9418b7dbb4062898cd94c18adee07c05fbf668f817ccf5bdf:
+    claim:
+      about:
+        disease:
+          name: Cholesteryl Ester Storage Disease
+          disease_term:
+            preferred_term: cholesteryl ester storage disease
+            term:
+              id: MONDO:0019149
+              label: cholesteryl ester storage disease
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: LIPA pathogenic variants
+        gene_term:
+          preferred_term: LIPA
+          term:
+            id: hgnc:6617
+            label: LIPA
+        association: Causative
+        relationship_type: CAUSATIVE
+        variant_origin: GERMLINE
+        notes: Biallelic LIPA variants with residual LAL activity cause CESD; a homozygous LIPA mutation
+          was identified in a reported CESD patient.
+      selected_evidence:
+        snippet: a homozygous mutation of the LIPA gene was identified
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39650963
+      reference_title: 'Lysosomal Acid Lipase Deficiency: A Report of Two Cases and a Review of the Literature.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms biallelic LIPA variants as the molecular cause of CESD.
+    first_seen_at: '2026-11-09T20:36:29.262316+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:29.262316+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:29.262316+00:00'
+    occurrences:
+    - assertion_path: /genetic/0
+      evidence_path: /genetic/0/evidence/0
+      reference: PMID:39650963
 assessments:
   8269c7fd6305252dc0ea1a51b194f0d565306a2744436dd6ce0905bc67d77eda:
     input_sha256: 34fca287800ea6b4f95773fc23aff0d52d0ba264f1df35d53861bfec13dc8d64
@@ -1899,3 +1946,83 @@ assessments:
       request_sha256: 3e3c40dff8ac38413f752a81745024f3f50f097c2861daa0bd9d37950201db43
       request_sha256s:
       - 3e3c40dff8ac38413f752a81745024f3f50f097c2861daa0bd9d37950201db43
+  582b879e2486d140552970d723a17f9a02ae285f5029b3b9628f3f05390f047c:
+    input_sha256: 197385e9e7e0f9e9418b7dbb4062898cd94c18adee07c05fbf668f817ccf5bdf
+    configuration_sha256: 4abe2e198c108785f8c9744172b23fab52f7521529ba579eaa9d46f16bb0d348
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:29.262316+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.02
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.13
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.03
+            PARTIAL: 0.29
+          confidence: 0.52
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.02
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.01
+            PARTIAL: 0.37
+          confidence: 0.43
+        /assertion/variant_origin:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.02
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.06
+            PARTIAL: 0.74
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9544
+        output_tokens: 413
+      elapsed_seconds: 0.2797
+      request_sha256: 9ecc3803a3c75dfca6a0c5b253d54a3c6da6f36c20757ed0019f5e15b71dd657
+      request_sha256s:
+      - 9ecc3803a3c75dfca6a0c5b253d54a3c6da6f36c20757ed0019f5e15b71dd657

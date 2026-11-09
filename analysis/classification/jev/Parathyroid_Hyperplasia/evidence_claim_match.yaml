@@ -1893,6 +1893,142 @@ inputs:
     - assertion_path: /differential_diagnoses/0
       evidence_path: /differential_diagnoses/0/evidence/0
       reference: DOI:10.1007/s42000-023-00508-9
+  69d46eaa99b9ddf5829f283b8f90d79a650912f13ba3072416e094ec810c04ee:
+    claim:
+      about:
+        disease:
+          name: Parathyroid Hyperplasia
+          disease_term:
+            preferred_term: parathyroid hyperplasia
+            term:
+              id: MONDO:0006354
+              label: parathyroid hyperplasia
+        context:
+        - path: /treatments/1
+          value:
+            name: Calcimimetic Pharmacotherapy
+            description: Calcimimetic therapy, including cinacalcet and etelcalcetide, is used to reduce
+              parathyroid hormone levels in secondary hyperparathyroidism and can be combined with other
+              therapies in selected PHPT settings.
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: cinacalcet
+                term:
+                  id: CHEBI:48390
+                  label: cinacalcet
+              - preferred_term: etelcalcetide
+                term:
+                  id: CHEBI:134700
+                  label: etelcalcetide
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Calcimimetic Occupancy of Parathyroid Calcium-Sensing Receptors
+        treatment_effect: ACTIVATES
+        description: Cinacalcet and etelcalcetide act as positive allosteric modulators at the calcium-sensing
+          receptor on the hyperplastic chief cells, which is the receptor-level action this node represents.
+      selected_evidence:
+        snippet: Calcimimetics are agonists or positive allosteric modulators of the CaR
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/1
+    evidence_metadata:
+      reference: PMID:29680147
+      reference_title: Discovery and Development of Calcimimetic and Calcilytic Compounds.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Establishes that this drug class acts as a positive allosteric modulator at the receptor
+        this node represents.
+    first_seen_at: '2026-11-09T20:04:14.471088+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:04:14.471088+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:04:14.471088+00:00'
+    occurrences:
+    - assertion_path: /treatments/1/target_mechanisms/0
+      evidence_path: /treatments/1/target_mechanisms/0/evidence/0
+      reference: PMID:29680147
+  4fb6e0ef9172962b61abc007cc18ecd410bad27799e5a8d3550cb2770f74f301:
+    claim:
+      about:
+        disease:
+          name: Parathyroid Hyperplasia
+          disease_term:
+            preferred_term: parathyroid hyperplasia
+            term:
+              id: MONDO:0006354
+              label: parathyroid hyperplasia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Calcimimetic Occupancy of Parathyroid Calcium-Sensing Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: casr_positive_allosteric_modulation#Calcimimetic Occupancy of the Parathyroid Calcium-Sensing
+          Receptor
+        description: A calcimimetic sensitises the calcium-sensing receptor on the hyperplastic parathyroid
+          chief cells, suppressing their parathyroid hormone secretion. This node does not model any effect
+          on gland mass, which is a separate question the module leaves open. The relation to the nodes
+          above is suppression of hormone output, not causation, so this node asserts no downstream edge.
+        molecular_functions:
+        - preferred_term: calcium-sensing receptor activity
+          modifier: INCREASED
+          term:
+            id: GO:0004930
+            label: G protein-coupled receptor activity
+        cell_types:
+        - preferred_term: parathyroid chief cell
+          term:
+            id: CL:0000446
+            label: chief cell of parathyroid gland
+        locations:
+        - preferred_term: parathyroid gland
+          term:
+            id: UBERON:0001132
+            label: parathyroid gland
+        genes:
+        - preferred_term: CASR
+          term:
+            id: hgnc:1514
+            label: CASR
+      selected_evidence:
+        snippet: Etelcalcetide binds the calcium-sensing receptor and increases its sensitivity to extracellular
+          calcium, thereby decreasing secretion of parathyroid hormone (PTH) by chief cells
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29534286
+      reference_title: Clinical Pharmacokinetics and Pharmacodynamics of Etelcalcetide, a Novel Calcimimetic
+        for Treatment of Secondary Hyperparathyroidism in Patients With Chronic Kidney Disease on Hemodialysis.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: States the receptor occupancy and sensitisation this node represents, and names the
+        chief cell it acts on.
+    first_seen_at: '2026-11-09T20:04:13.964066+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:04:13.964066+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:04:13.964066+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:29534286
 assessments:
   1c595801e9dc1c641620eaa2d47a5f12bce9e87950b0a84c1fa644a23635341e:
     input_sha256: 78984d67d476fe76d00b6f501d40ce839179f2b718ea3d2ace1852bf4328a0e4
@@ -4346,3 +4482,191 @@ assessments:
       request_sha256: b4938f146e6da3490f1d76b18bac292356accacf1db94b22dd57d32b8fadec07
       request_sha256s:
       - b4938f146e6da3490f1d76b18bac292356accacf1db94b22dd57d32b8fadec07
+  a890ba871493bb7016d40f96235e2c47b09ccf522e3f7f5ba09d91e28fe15697:
+    input_sha256: 69d46eaa99b9ddf5829f283b8f90d79a650912f13ba3072416e094ec810c04ee
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:04:14.471088+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.08
+            PARTIAL: 0.37
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.29
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.08
+            PARTIAL: 0.43
+          confidence: 0.24
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.19
+            PARTIAL: 0.4
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6572
+        output_tokens: 268
+      elapsed_seconds: 0.1194
+      request_sha256: bf704287976e834f26bf70183a6164f11ebcfbd26e425aff0029307708a9d5f3
+      request_sha256s:
+      - bf704287976e834f26bf70183a6164f11ebcfbd26e425aff0029307708a9d5f3
+  92779a060eecccda92c7dd383faaf7b6f05d45d6511825677a39347fc4f116e0:
+    input_sha256: 4fb6e0ef9172962b61abc007cc18ecd410bad27799e5a8d3550cb2770f74f301
+    configuration_sha256: 136ed2ee4a0669b0340ba45d1af8536f20ac90dd67d8cebb9f7d869a27cb3028
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:04:13.964066+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.67
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.05
+            PARTIAL: 0.44
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.03
+            PARTIAL: 0.24
+          confidence: 0.6
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.15
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.1
+            PARTIAL: 0.3
+          confidence: 0.4
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.16
+            PARTIAL: 0.11
+          confidence: 0.6
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.06
+            PARTIAL: 0.05
+          confidence: 0.83
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.37
+            PARTIAL: 0.25
+          confidence: 0.07
+        /assertion/cell_types/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.02
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16973
+        output_tokens: 763
+      elapsed_seconds: 0.2228
+      request_sha256: 9777fa4cb613d69c266414e300b49f58cf506187f492c172e1ad15e5c5429198
+      request_sha256s:
+      - 9777fa4cb613d69c266414e300b49f58cf506187f492c172e1ad15e5c5429198

@@ -3112,6 +3112,58 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/0
       reference: clinicaltrials:NCT06046222
+  a4489d332b31e3dbd94fc45f10eaaa229758512a5213a9642a6e437562899f48:
+    claim:
+      about:
+        disease:
+          name: Eosinophilic granulomatosis with polyangiitis
+          disease_term:
+            preferred_term: eosinophilic granulomatosis with polyangiitis
+            term:
+              id: MONDO:0015943
+              label: eosinophilic granulomatosis with polyangiitis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: MPO-ANCA serology
+        description: ANCA testing helps identify the vasculitic EGPA subset, particularly patients with
+          MPO-specific autoantibodies.
+        diagnosis_term:
+          preferred_term: diagnostic procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+        results: MPO-ANCA positivity supports an ANCA-associated vasculitic EGPA phenotype.
+        measurements:
+        - preferred_term: Myeloperoxidase antibody
+          term:
+            id: LOINC:17316-1
+            label: Myeloperoxidase Ab [Presence] in Serum
+      selected_evidence:
+        snippet: EGPA occurs in patients with asthma and peripheral and tissue eosinophilia, and ~30%
+          of the patients present antineutrophil cytoplasm antibodies (ANCA) mainly specific for myeloperoxidase
+          (MPO) (1).
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:33718405
+      reference_title: 'Eosinophilic Granulomatosis With Polyangiitis: Dissecting the Pathophysiology.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports MPO-ANCA serology as a disease-relevant diagnostic discriminator in EGPA.
+    first_seen_at: '2026-11-09T20:43:07.197391+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:07.197391+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:07.197391+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:33718405
 assessments:
   91002a6640abedeff4cb6647bcaa4c41ba95de195627986522c9a1c294bfd5e4:
     input_sha256: 45572eea2407996337c648f216d962d6944b3517f0eb86b8a6812a864983b86b
@@ -7551,3 +7603,83 @@ assessments:
       request_sha256: 1e67c116c86d0536decaa5530ce6a50456838d081a692457d5aa8d5a56859afb
       request_sha256s:
       - 1e67c116c86d0536decaa5530ce6a50456838d081a692457d5aa8d5a56859afb
+  1a3f483b5384e4abac9fd344e6d8fc1655866af3847b7ffa844916241654e63d:
+    input_sha256: a4489d332b31e3dbd94fc45f10eaaa229758512a5213a9642a6e437562899f48
+    configuration_sha256: 7ac7e54b8b9f93b9116bdf372a11dca43a71b58fe6bbce8a4be3a5bc8460233a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:07.197391+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.02
+            PARTIAL: 0.21
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.14
+            PARTIAL: 0.16
+          confidence: 0.55
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.02
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.21
+            PARTIAL: 0.27
+          confidence: 0.28
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.22
+            PARTIAL: 0.27
+          confidence: 0.26
+        /assertion/results:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.03
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9255
+        output_tokens: 420
+      elapsed_seconds: 0.275
+      request_sha256: 5b1df916076532c512a0778bd5dd788ad75624b9c9bb6796dcd5f2b2c2edcaad
+      request_sha256s:
+      - 5b1df916076532c512a0778bd5dd788ad75624b9c9bb6796dcd5f2b2c2edcaad

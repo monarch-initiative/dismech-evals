@@ -4274,6 +4274,57 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:29194189
+  730219e89249906764f4a92edeaca9ab3bb051c92227f3e7b5ca09bc7887788a:
+    claim:
+      about:
+        disease:
+          name: Yolk Sac Tumor
+          disease_term:
+            preferred_term: yolk sac tumor
+            term:
+              id: MONDO:0005744
+              label: yolk sac tumor
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Site-Specific Staging and Risk Classification
+        description: Stage and risk-classify the complete germ cell tumor context rather than the YST
+          component in isolation. Advanced postpubertal testicular germ cell tumors use IGCCCG risk classification,
+          primary mediastinal nonseminoma is assigned to the IGCCCG poor-prognosis group, and the cited
+          ovarian YST cohorts use FIGO stage. The pediatric evidence here is limited to stage I ovarian
+          malignant germ cell tumors and does not establish a universal pediatric extracranial or CNS
+          YST staging convention.
+        diagnosis_term:
+          preferred_term: staging procedure
+          term:
+            id: NCIT:C18020
+            label: Diagnostic Procedure
+      selected_evidence:
+        snippet: EGCT patients are classified according to the IGCCCG classification. Consecutively, all
+          mediastinal non-seminomatous EGCT patients belong to the "poor prognosis" group.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35554637
+      reference_title: How to classify, diagnose, treat and follow-up extragonadal germ cell tumors? A
+        systematic review of available evidence.
+      evidence_source: OTHER
+      explanation: The systematic review supplies the mediastinal nonseminomatous risk context; it is
+        not a YST-component-specific stage.
+    first_seen_at: '2026-11-09T20:38:11.057309+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:38:11.057309+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:38:11.057309+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/2
+      reference: PMID:35554637
 assessments:
   59f51f874402393039cc81d1804c0cfccc14c48285a37e9befbe95dbeb6692ba:
     input_sha256: b33f35a460e9b32ec7fa4905f0a75d5ab4b920f4a47c584ecda3f230107b16c0
@@ -9791,3 +9842,62 @@ assessments:
       request_sha256: f0154ec65e878cc0af9348aba96932471fa0742c1bc493c9c928f94485cd1585
       request_sha256s:
       - f0154ec65e878cc0af9348aba96932471fa0742c1bc493c9c928f94485cd1585
+  f81594bf08bb83e2f63adf33b58b6ddd73e933bb43bf0db20c225ce79b6d805e:
+    input_sha256: 730219e89249906764f4a92edeaca9ab3bb051c92227f3e7b5ca09bc7887788a
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:38:11.057309+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.43
+            PARTIAL: 0.45
+          confidence: 0.18
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.42
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.25
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.3
+            PARTIAL: 0.35
+          confidence: 0.02
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.43
+            PARTIAL: 0.3
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6334
+        output_tokens: 282
+      elapsed_seconds: 0.2745
+      request_sha256: 63d4c13a608050e41c2c64d77d82aa17a6387ddd811776fd8a639581efa62e36
+      request_sha256s:
+      - 63d4c13a608050e41c2c64d77d82aa17a6387ddd811776fd8a639581efa62e36

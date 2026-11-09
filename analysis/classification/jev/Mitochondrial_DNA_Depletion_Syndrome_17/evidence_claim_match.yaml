@@ -2626,6 +2626,65 @@ inputs:
     - assertion_path: /genetic/0/inheritance/0
       evidence_path: /genetic/0/inheritance/0/evidence/0
       reference: PMID:36002240
+  196d9a440cea04cd73bbc5f84b739df8fef2fe3ad582fbd5abb5f213b6ef1dbe:
+    claim:
+      about:
+        disease:
+          name: Mitochondrial DNA Depletion Syndrome 17
+          disease_term:
+            preferred_term: mitochondrial DNA depletion syndrome 17
+            term:
+              id: MONDO:0032815
+              label: mitochondrial DNA depletion syndrome 17
+        context:
+        - path: /phenotypes/1
+          value:
+            name: Stroke-like episodes
+            category: Neurological
+            description: 'MELAS-like stroke-like episodes with multiple cortical lesions in the index
+              patient, described in the later report as recurrent strokes.
+
+              '
+            phenotype_term:
+              preferred_term: Stroke-like episode
+              term:
+                id: HP:0002401
+                label: Stroke-like episode
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Cerebral atrophy
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+        description: 'Severe cerebral atrophy developed in the year after the acute stroke-like episode,
+          on top of the multiple stroke-like lesions seen on early MRI.
+
+          '
+      selected_evidence:
+        snippet: Repeat brain MRI at 1 year of follow-up showed severe cerebral and cerebellar atrophy
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /phenotypes/1/sequelae/0
+      evidence_path: /phenotypes/1/sequelae/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /phenotypes/1
+    evidence_metadata:
+      reference: PMID:28973171
+      reference_title: Defective mitochondrial rRNA methyltransferase MRM2 causes MELAS-like clinical
+        syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Severe cerebral atrophy one year after the acute stroke-like episode.
+    first_seen_at: '2026-11-09T20:06:08.662207+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:06:08.662207+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:06:08.662207+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/1/sequelae/0
+      evidence_path: /phenotypes/1/sequelae/0/evidence/1
+      reference: PMID:28973171
 assessments:
   8e16f938a3266fccfdc22db6d9a2042ee33d28a8ada98bd6393658727bf5dca3:
     input_sha256: 94b6f539e9b0ffe53539313ee1bc450cf1ca8149fea4465f7aac66c1af224eed
@@ -6030,3 +6089,62 @@ assessments:
       request_sha256: c86a4c54a9c02c1e00a05f64f8f349034db97553a63230582f262afcc44c7454
       request_sha256s:
       - c86a4c54a9c02c1e00a05f64f8f349034db97553a63230582f262afcc44c7454
+  2e39aa302682c17da8d2d6010972734de6c7b9b149b6439a6f6774f3298a799d:
+    input_sha256: 196d9a440cea04cd73bbc5f84b739df8fef2fe3ad582fbd5abb5f213b6ef1dbe
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:06:08.662207+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.09
+            PARTIAL: 0.47
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.2
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.08
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.06
+            PARTIAL: 0.45
+          confidence: 0.24
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.3
+            PARTIAL: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6427
+        output_tokens: 272
+      elapsed_seconds: 0.2326
+      request_sha256: d4b07c0fbe90c3690b8a3a5c80f9dcc35c272706c558389571636b883986f552
+      request_sha256s:
+      - d4b07c0fbe90c3690b8a3a5c80f9dcc35c272706c558389571636b883986f552

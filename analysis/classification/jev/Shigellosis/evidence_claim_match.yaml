@@ -1689,6 +1689,102 @@ inputs:
     - assertion_path: /differential_diagnoses/2
       evidence_path: /differential_diagnoses/2/evidence/0
       reference: PMID:20856114
+  e7a33a256bc9dabc0ad8d6bda373208b7f3e1842ff960dca1f1245db52ef4de0:
+    claim:
+      about:
+        disease:
+          name: Shigellosis
+          disease_term:
+            preferred_term: shigellosis
+            term:
+              id: MONDO:0019345
+              label: shigellosis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Fluid and electrolyte replacement
+        description: 'Intravenous fluid replacement in severe cases with significant dehydration.
+
+          '
+        treatment_term:
+          preferred_term: supportive care
+          term:
+            id: NCIT:C15747
+            label: Supportive Care
+      selected_evidence:
+        snippet: an inoculum of only 10-100 organisms is required for infection
+        supports: NO_EVIDENCE
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:40915309
+      reference_title: Shigellosis.
+      explanation: Severe fluid losses from Shigella-mediated diarrhea may necessitate intravenous fluid
+        replacement
+    first_seen_at: '2026-11-09T20:26:20.384448+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:26:20.384448+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:26:20.384448+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/0
+      reference: PMID:40915309
+  4b60f076e1fd4fbd3ad67038280dd983a8dce9031b36400ed7f5883c997b083e:
+    claim:
+      about:
+        disease:
+          name: Shigellosis
+          disease_term:
+            preferred_term: shigellosis
+            term:
+              id: MONDO:0019345
+              label: shigellosis
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Enteroinvasive E. coli (EIEC) infection
+        description: 'Enteroinvasive E. coli causes a dysentery-like illness similar to Shigella with
+          invasive colitis and bloody diarrhea. However, EIEC is less transmissible than Shigella (higher
+          inoculum required) and tends to affect older children and adults more frequently.
+
+          '
+        disease_term:
+          preferred_term: Escherichia coli infection
+          term:
+            id: MONDO:0020920
+            label: escherichia coli infection
+        distinguishing_features:
+        - EIEC requires higher inoculum (>10^8) compared to Shigella (10-100)
+        - E. coli is motile; Shigella is non-motile
+        - Serologic responses differ between the two pathogens
+      selected_evidence:
+        snippet: a small inoculum, as few as 10 to 100 organisms, may cause disease
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29493962
+      reference_title: Shigellosis.
+      explanation: The exceptional infectivity of Shigella contrasts with EIEC, which requires much higher
+        inoculum
+    first_seen_at: '2026-11-09T20:26:21.000626+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:26:21.000626+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:26:21.000626+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/0
+      evidence_path: /differential_diagnoses/0/evidence/0
+      reference: PMID:29493962
 assessments:
   4da22d7039654c1fe336d433043b339d11de5bb657f1b8f10bbb879625dc1613:
     input_sha256: 76b1aa9b7699c9e7ebada2b820b8b81c1f1e444c620b23e38a4314aa5d781d7e
@@ -3917,3 +4013,128 @@ assessments:
       request_sha256: 4bed4fa0d11cec632e218d4ce11b7999dab0fb60f49cd9e363dc50a654bdf06b
       request_sha256s:
       - 4bed4fa0d11cec632e218d4ce11b7999dab0fb60f49cd9e363dc50a654bdf06b
+  bdd0101957eb4903ed9f277b582d0de84ca38a67904443155061b0364a71db76:
+    input_sha256: e7a33a256bc9dabc0ad8d6bda373208b7f3e1842ff960dca1f1245db52ef4de0
+    configuration_sha256: 4e0128940c04c99abb63d3cc1543c72da5c21ffca8280ae88386308d7eb1209e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:26:20.384448+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.96
+            PARTIAL: 0.02
+          confidence: 0.94
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.36
+            PARTIAL: 0.35
+          confidence: 0.04
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.98
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.96
+            PARTIAL: 0.02
+          confidence: 0.94
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6220
+        output_tokens: 291
+      elapsed_seconds: 0.1903
+      request_sha256: c5302900ee35ac435b39839606160e083ddb95ec25010124294de3dceae05847
+      request_sha256s:
+      - c5302900ee35ac435b39839606160e083ddb95ec25010124294de3dceae05847
+  cbec8e30a19b5b4d832f151f11fcea29a4ce6d1e334a174f60c90fb728fc49e0:
+    input_sha256: 4b60f076e1fd4fbd3ad67038280dd983a8dce9031b36400ed7f5883c997b083e
+    configuration_sha256: 82218847b001daff2a248127edc3a2b73029d848b93db738bb341db117e93f88
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:26:21.000626+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.14
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+          confidence: 0.8
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.65
+            PARTIAL: 0.18
+          confidence: 0.48
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.35
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/disease_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.69
+            PARTIAL: 0.15
+          confidence: 0.53
+        /assertion/disease_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.7
+            PARTIAL: 0.13
+          confidence: 0.55
+        /assertion/distinguishing_features:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.08
+            PARTIAL: 0.43
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7314
+        output_tokens: 332
+      elapsed_seconds: 0.1983
+      request_sha256: c6219042e533e33898a070ba13ede9b1c574e372c3d8961e374f084536acb4e9
+      request_sha256s:
+      - c6219042e533e33898a070ba13ede9b1c574e372c3d8961e374f084536acb4e9

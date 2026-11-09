@@ -10883,6 +10883,91 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/1
       reference: PMID:41215497
+  f66da80ed47015ef1b5a670455141c7c0dbe6ed83f18d5e442ecb65b01db8abf:
+    claim:
+      about:
+        disease:
+          name: Dopa-Responsive Dystonia
+          disease_term:
+            preferred_term: dopa-responsive dystonia
+            term:
+              id: MONDO:0016812
+              label: dopa-responsive dystonia
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Striatal Dopamine Biosynthesis Impairment
+            description: The unifying mechanism across DRD subtypes is reduced dopamine biosynthesis in
+              nigrostriatal dopaminergic neurons, arising either via tetrahydrobiopterin (BH4) cofactor
+              limitation (GCH1, SPR, PTS, QDPR) or via direct loss of tyrosine hydroxylase catalytic activity
+              (TH). Because nigrostriatal dopaminergic terminals remain structurally intact, this functional
+              neurotransmitter deficit produces diurnal childhood dystonia, pyramidal-like signs, and
+              parkinsonism that respond dramatically and durably to exogenous levodopa.
+            cell_types:
+            - preferred_term: dopaminergic neuron
+              term:
+                id: CL:0000700
+                label: dopaminergic neuron
+            biological_processes:
+            - preferred_term: dopamine biosynthetic process
+              modifier: DECREASED
+              term:
+                id: GO:0042416
+                label: dopamine biosynthetic process
+            - preferred_term: dopamine biosynthetic process from tyrosine
+              modifier: DECREASED
+              term:
+                id: GO:0006585
+                label: dopamine biosynthetic process from tyrosine
+            - preferred_term: catecholamine biosynthetic process
+              modifier: DECREASED
+              term:
+                id: GO:0042423
+                label: catecholamine biosynthetic process
+            chemical_entities:
+            - preferred_term: dopamine
+              term:
+                id: CHEBI:18243
+                label: dopamine
+              modifier: DECREASED
+            - preferred_term: homovanillic acid
+              term:
+                id: CHEBI:545959
+                label: homovanillic acid
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Hyperreflexia
+        causal_link_type: DIRECT
+        description: Central dopamine deficiency in DRD frequently produces brisk deep tendon reflexes
+          and pseudo-pyramidal signs that mimic cerebral palsy or spastic paraplegia.
+      selected_evidence:
+        snippet: Brisk deep-tendon reflexes in the legs, ankle clonus, and/or the striatal toe (dystonic
+          extension of the big toe) are present in many affected individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/9
+      evidence_path: /pathophysiology/0/downstream/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:20301681
+      reference_title: GTP Cyclohydrolase 1-Deficient Dopa-Responsive Dystonia.
+      evidence_source: OTHER
+      explanation: GeneReviews documents brisk lower-limb deep tendon reflexes, ankle clonus, and striatal
+        toe in GTPCH1-deficient DRD.
+    first_seen_at: '2026-11-09T20:15:16.485090+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:15:16.485090+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:15:16.485090+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/9
+      evidence_path: /pathophysiology/0/downstream/9/evidence/0
+      reference: PMID:20301681
 assessments:
   82954e661e5182e97a34873e4db9251a5fe9c0724c75ad3cfaf03199ca64990c:
     input_sha256: 18d965b6af9c677bf43d7740b64f68ef6970a678f9da7a4649cdeb0f2e79efee
@@ -23710,3 +23795,62 @@ assessments:
       request_sha256: 551b256436ae3de0ce44e5a5a767b9f30b36b54c740b048a0ed10acd8675ed2d
       request_sha256s:
       - 551b256436ae3de0ce44e5a5a767b9f30b36b54c740b048a0ed10acd8675ed2d
+  6b370ae845c56306905fada499bee3aaf02bad5be99f3d5806fa784ce55387b4:
+    input_sha256: f66da80ed47015ef1b5a670455141c7c0dbe6ed83f18d5e442ecb65b01db8abf
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:15:16.485090+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.11
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.24
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.17
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.11
+            PARTIAL: 0.47
+          confidence: 0.2
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.29
+            PARTIAL: 0.26
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6858
+        output_tokens: 271
+      elapsed_seconds: 0.1875
+      request_sha256: 398739012ebb71499d1fcf82ebae7ed429cf1629e7ea66c51587db02a6c23a72
+      request_sha256s:
+      - 398739012ebb71499d1fcf82ebae7ed429cf1629e7ea66c51587db02a6c23a72

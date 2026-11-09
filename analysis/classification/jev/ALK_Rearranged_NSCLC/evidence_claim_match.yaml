@@ -3818,6 +3818,296 @@ inputs:
     - assertion_path: /clinical_trials/6
       evidence_path: /clinical_trials/6/evidence/0
       reference: clinicaltrials:NCT02767804
+  9db77741c2d468dfac793c03ee7da3016408cd059ed8adc8f3048a0949f34967:
+    claim:
+      about:
+        disease:
+          name: ALK-Rearranged Non-Small Cell Lung Cancer
+          disease_term:
+            preferred_term: non-small cell lung carcinoma
+            term:
+              id: MONDO:0005233
+              label: non-small cell lung carcinoma
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Tumor ALK fusion testing
+        presence: REQUIRED_FOR_SUBTYPE_ASSIGNMENT
+        description: Classification as ALK-rearranged NSCLC requires demonstration of ALK positivity in
+          tumor material. Immunohistochemistry, break-apart FISH, and DNA- or RNA-based next-generation
+          sequencing provide complementary protein, rearrangement, and expressed-fusion readouts. Discordant
+          or complex results may require orthogonal confirmation; demographic enrichment is not an adequate
+          substitute for testing.
+        results: Detection of an oncogenic ALK rearrangement, fusion transcript, or fusion-protein expression
+        markers: ALK rearrangement; expressed ALK fusion; ALK protein expression
+        measurements:
+        - preferred_term: ALK protein expression (IHC)
+          term:
+            id: LOINC:47303-3
+            label: Anaplastic lymphoma kinase Ag [Presence] in Tissue by Immune stain
+        - preferred_term: ALK gene rearrangement (FISH)
+          term:
+            id: LOINC:78205-2
+            label: ALK gene rearrangements [Presence] in Blood or Tissue by FISH
+        - preferred_term: EML4-ALK fusion transcript (molecular genetics)
+          term:
+            id: LOINC:88744-8
+            label: inv(2)(p21;p23)(EML4,ALK) fusion transcript [Presence] in Tissue by Molecular genetics
+              method
+        notes: 'This row names three complementary, non-interchangeable methods (IHC, break-apart FISH,
+          DNA/RNA NGS) and does not commit to one as sole identity, so a single Part-level code would
+          misrepresent the test. The Monarch KG search API (`q=ALK gene rearrangement`, `category=biolink:ClinicalMeasurement`)
+          returns 3 results, fully enumerated, none at Part level (LOINC:78205-2 [Presence] by FISH, LOINC:78210-2
+          [Interpretation] Narrative, LOINC:78233-4 a cell-count ratio); the broader `q=ALK gene` query
+          under the same category returns 9, fully enumerated, and includes two fusion-transcript presence
+          codes by molecular-genetics method that name a specific partner (`LOINC:88744-8` EML4-ALK, the
+          dominant NSCLC fusion partner; two more name ALK-NPM1, the anaplastic-lymphoma partner, not
+          relevant here), so point-mutation-style "mutations found/tested for" codes are not the only
+          molecular-genetics option. Bound all three methods: the IHC antigen stain, the FISH rearrangement
+          presence test, and the EML4-ALK molecular-genetics fusion-transcript presence test. The molecular
+          binding is narrower than this row''s own partner-agnostic "DNA- or RNA-based NGS" claim: `q=ALK
+          fusion` under the same category returns 4 results, fully enumerated, and none names a non-EML4,
+          non-NPM1 fusion partner (KIF5B-ALK, TFG-ALK and others reported in NSCLC have no separate LOINC
+          code), so this binding covers only the dominant partner, not every fusion this row''s text describes.
+          No reference_ranges band is recorded: all three results are qualitative (positive/negative),
+          not a numeric cut-off.'
+      selected_evidence:
+        snippet: The concordance rates were 97.1% (34/35) for RNA-NGS, 94.7% (36/38) for IHC, and 97.4%
+          (37/38) for FISH.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35624360
+      reference_title: Detecting anaplastic lymphoma kinase (ALK) gene rearrangements with next-generation
+        sequencing remains a reliable approach in patients with non-small-cell lung cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Direct method comparison supports the complementary use and high, but not perfect,
+        concordance of molecular and protein assays.
+    first_seen_at: '2026-11-09T20:53:16.886827+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:53:16.886827+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:53:16.886827+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:35624360
+  5b0f1506e750022bd27360374de8b7ab1f1925ac8e4efffce93e4a1e4c834aa7:
+    claim:
+      about:
+        disease:
+          name: ALK-Rearranged Non-Small Cell Lung Cancer
+          disease_term:
+            preferred_term: non-small cell lung carcinoma
+            term:
+              id: MONDO:0005233
+              label: non-small cell lung carcinoma
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Tumor ALK fusion testing
+        presence: REQUIRED_FOR_SUBTYPE_ASSIGNMENT
+        description: Classification as ALK-rearranged NSCLC requires demonstration of ALK positivity in
+          tumor material. Immunohistochemistry, break-apart FISH, and DNA- or RNA-based next-generation
+          sequencing provide complementary protein, rearrangement, and expressed-fusion readouts. Discordant
+          or complex results may require orthogonal confirmation; demographic enrichment is not an adequate
+          substitute for testing.
+        results: Detection of an oncogenic ALK rearrangement, fusion transcript, or fusion-protein expression
+        markers: ALK rearrangement; expressed ALK fusion; ALK protein expression
+        measurements:
+        - preferred_term: ALK protein expression (IHC)
+          term:
+            id: LOINC:47303-3
+            label: Anaplastic lymphoma kinase Ag [Presence] in Tissue by Immune stain
+        - preferred_term: ALK gene rearrangement (FISH)
+          term:
+            id: LOINC:78205-2
+            label: ALK gene rearrangements [Presence] in Blood or Tissue by FISH
+        - preferred_term: EML4-ALK fusion transcript (molecular genetics)
+          term:
+            id: LOINC:88744-8
+            label: inv(2)(p21;p23)(EML4,ALK) fusion transcript [Presence] in Tissue by Molecular genetics
+              method
+        notes: 'This row names three complementary, non-interchangeable methods (IHC, break-apart FISH,
+          DNA/RNA NGS) and does not commit to one as sole identity, so a single Part-level code would
+          misrepresent the test. The Monarch KG search API (`q=ALK gene rearrangement`, `category=biolink:ClinicalMeasurement`)
+          returns 3 results, fully enumerated, none at Part level (LOINC:78205-2 [Presence] by FISH, LOINC:78210-2
+          [Interpretation] Narrative, LOINC:78233-4 a cell-count ratio); the broader `q=ALK gene` query
+          under the same category returns 9, fully enumerated, and includes two fusion-transcript presence
+          codes by molecular-genetics method that name a specific partner (`LOINC:88744-8` EML4-ALK, the
+          dominant NSCLC fusion partner; two more name ALK-NPM1, the anaplastic-lymphoma partner, not
+          relevant here), so point-mutation-style "mutations found/tested for" codes are not the only
+          molecular-genetics option. Bound all three methods: the IHC antigen stain, the FISH rearrangement
+          presence test, and the EML4-ALK molecular-genetics fusion-transcript presence test. The molecular
+          binding is narrower than this row''s own partner-agnostic "DNA- or RNA-based NGS" claim: `q=ALK
+          fusion` under the same category returns 4 results, fully enumerated, and none names a non-EML4,
+          non-NPM1 fusion partner (KIF5B-ALK, TFG-ALK and others reported in NSCLC have no separate LOINC
+          code), so this binding covers only the dominant partner, not every fusion this row''s text describes.
+          No reference_ranges band is recorded: all three results are qualitative (positive/negative),
+          not a numeric cut-off.'
+      selected_evidence:
+        snippet: IHC-VENTANA-D5F3 was used in 53.6%, real-time polymerase chain reaction (RT-PCR) in 25.4%,
+          next-generation sequencing (NGS) in 18.3%, and fluorescence in-situ hybridization (FISH) in
+          15.9% in the adenocarcinoma subgroup.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:39016057
+      reference_title: 'Real-world data on ALK rearrangement test in Chinese advanced non-small cell lung
+        cancer (RATICAL): a nationwide multicenter retrospective study.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The real-world cohort demonstrates multimodal ALK testing rather than a single universally
+        sufficient assay workflow.
+    first_seen_at: '2026-11-09T20:53:17.724388+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:53:17.724388+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:53:17.724388+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/2
+      reference: PMID:39016057
+  c1838b8410734103ba309add47578196a1d04bccf3368c039d08f6ce7ed86129:
+    claim:
+      about:
+        disease:
+          name: ALK-Rearranged Non-Small Cell Lung Cancer
+          disease_term:
+            preferred_term: non-small cell lung carcinoma
+            term:
+              id: MONDO:0005233
+              label: non-small cell lung carcinoma
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Tumor ALK fusion testing
+        presence: REQUIRED_FOR_SUBTYPE_ASSIGNMENT
+        description: Classification as ALK-rearranged NSCLC requires demonstration of ALK positivity in
+          tumor material. Immunohistochemistry, break-apart FISH, and DNA- or RNA-based next-generation
+          sequencing provide complementary protein, rearrangement, and expressed-fusion readouts. Discordant
+          or complex results may require orthogonal confirmation; demographic enrichment is not an adequate
+          substitute for testing.
+        results: Detection of an oncogenic ALK rearrangement, fusion transcript, or fusion-protein expression
+        markers: ALK rearrangement; expressed ALK fusion; ALK protein expression
+        measurements:
+        - preferred_term: ALK protein expression (IHC)
+          term:
+            id: LOINC:47303-3
+            label: Anaplastic lymphoma kinase Ag [Presence] in Tissue by Immune stain
+        - preferred_term: ALK gene rearrangement (FISH)
+          term:
+            id: LOINC:78205-2
+            label: ALK gene rearrangements [Presence] in Blood or Tissue by FISH
+        - preferred_term: EML4-ALK fusion transcript (molecular genetics)
+          term:
+            id: LOINC:88744-8
+            label: inv(2)(p21;p23)(EML4,ALK) fusion transcript [Presence] in Tissue by Molecular genetics
+              method
+        notes: 'This row names three complementary, non-interchangeable methods (IHC, break-apart FISH,
+          DNA/RNA NGS) and does not commit to one as sole identity, so a single Part-level code would
+          misrepresent the test. The Monarch KG search API (`q=ALK gene rearrangement`, `category=biolink:ClinicalMeasurement`)
+          returns 3 results, fully enumerated, none at Part level (LOINC:78205-2 [Presence] by FISH, LOINC:78210-2
+          [Interpretation] Narrative, LOINC:78233-4 a cell-count ratio); the broader `q=ALK gene` query
+          under the same category returns 9, fully enumerated, and includes two fusion-transcript presence
+          codes by molecular-genetics method that name a specific partner (`LOINC:88744-8` EML4-ALK, the
+          dominant NSCLC fusion partner; two more name ALK-NPM1, the anaplastic-lymphoma partner, not
+          relevant here), so point-mutation-style "mutations found/tested for" codes are not the only
+          molecular-genetics option. Bound all three methods: the IHC antigen stain, the FISH rearrangement
+          presence test, and the EML4-ALK molecular-genetics fusion-transcript presence test. The molecular
+          binding is narrower than this row''s own partner-agnostic "DNA- or RNA-based NGS" claim: `q=ALK
+          fusion` under the same category returns 4 results, fully enumerated, and none names a non-EML4,
+          non-NPM1 fusion partner (KIF5B-ALK, TFG-ALK and others reported in NSCLC have no separate LOINC
+          code), so this binding covers only the dominant partner, not every fusion this row''s text describes.
+          No reference_ranges band is recorded: all three results are qualitative (positive/negative),
+          not a numeric cut-off.'
+      selected_evidence:
+        snippet: targeted RNA NGS was confirmed to be the most efficient technique for gene fusion identification
+          in clinical practice
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37190044
+      reference_title: 'Gene Fusion Detection in NSCLC Routine Clinical Practice: Targeted-NGS or FISH?'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The prospective multicenter comparison supports RNA-based fusion identification in
+        routine practice.
+    first_seen_at: '2026-11-09T20:53:17.723095+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:53:17.723095+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:53:17.723095+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:37190044
+  fcba7ba5a13d05f8773233cf07d38a81ee781b334aad7a215b1872b918d70b01:
+    claim:
+      about:
+        disease:
+          name: ALK-Rearranged Non-Small Cell Lung Cancer
+          disease_term:
+            preferred_term: non-small cell lung carcinoma
+            term:
+              id: MONDO:0005233
+              label: non-small cell lung carcinoma
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Platinum/pemetrexed chemotherapy
+        description: Platinum plus pemetrexed is a studied cytotoxic regimen in advanced ALK-positive
+          NSCLC. Its placement in an individual treatment sequence depends on stage, prior therapy, comorbidity,
+          and current guidance and is not inferred from the retrospective cohort cited here.
+        treatment_term:
+          preferred_term: Chemotherapy
+          term:
+            id: NCIT:C15632
+            label: Chemotherapy
+          therapeutic_agent:
+          - preferred_term: pemetrexed
+            term:
+              id: CHEBI:63616
+              label: pemetrexed
+      selected_evidence:
+        snippet: Among 70 ALK-positive patients treated with a platinum/pemetrexed regimen, the median
+          PFS (mPFS) was 7.3 months
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22887466
+      reference_title: Pemetrexed-based chemotherapy in patients with advanced, ALK-positive non-small
+        cell lung cancer.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly supports platinum/pemetrexed chemotherapy as a studied regimen in advanced
+        ALK-positive NSCLC.
+    first_seen_at: '2026-11-09T20:53:17.748684+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:53:17.748684+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:53:17.748684+00:00'
+    occurrences:
+    - assertion_path: /treatments/6
+      evidence_path: /treatments/6/evidence/0
+      reference: PMID:22887466
 assessments:
   16564b4682532d0e1d9af3871aba54189f45dcc90df7701b0c8456b6b3d1a19e:
     input_sha256: e2d575fe497b2fd000f33e6183719ada264c5be23af5d34bdda08abd519cd4ef
@@ -8786,3 +9076,421 @@ assessments:
       request_sha256: bdb2932f808ee04218717b8d1134663d75f08e8134865dc4e60fd1037194da42
       request_sha256s:
       - bdb2932f808ee04218717b8d1134663d75f08e8134865dc4e60fd1037194da42
+  5b646228eead4234615324c56bdbbf5a1725fdb973d57694df9728e9825f8eda:
+    input_sha256: 9db77741c2d468dfac793c03ee7da3016408cd059ed8adc8f3048a0949f34967
+    configuration_sha256: 8e882e11badcd61e4842f583d58cc1b83d2e420e00bb0f61c267a1b37b7b8e88
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:53:16.886827+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.19
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.19
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.26
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/presence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.43
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.23
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/results:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.41
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.15
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.23
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.18
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.19
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.28
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/measurements/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.26
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.55
+            PARTIAL: 0.38
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14615
+        output_tokens: 676
+      elapsed_seconds: 0.2344
+      request_sha256: 438c1ce53ae1e24026a0535659b5fe8939df7785b4b58ed7b9050218b1782fdc
+      request_sha256s:
+      - 438c1ce53ae1e24026a0535659b5fe8939df7785b4b58ed7b9050218b1782fdc
+  5174e36bbfeaf356df18abb613ede4d813d6d68335256c28fc7202b854a14aad:
+    input_sha256: 5b0f1506e750022bd27360374de8b7ab1f1925ac8e4efffce93e4a1e4c834aa7
+    configuration_sha256: 8e882e11badcd61e4842f583d58cc1b83d2e420e00bb0f61c267a1b37b7b8e88
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:53:17.724388+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.23
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.06
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.1
+            PARTIAL: 0.35
+          confidence: 0.33
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.25
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.23
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/results:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.52
+            PARTIAL: 0.45
+          confidence: 0.28
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.12
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.13
+            PARTIAL: 0.39
+          confidence: 0.22
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.09
+            PARTIAL: 0.4
+          confidence: 0.26
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.16
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/measurements/1/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+          confidence: 0.2
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.29
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/measurements/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.29
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.55
+            PARTIAL: 0.38
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14636
+        output_tokens: 672
+      elapsed_seconds: 0.2185
+      request_sha256: 02b35854c786792fbb1f25bfeae1c0f2d948be343905c875d622ae072c5bffa6
+      request_sha256s:
+      - 02b35854c786792fbb1f25bfeae1c0f2d948be343905c875d622ae072c5bffa6
+  241b1c4b6acad253df8eb8c4e7307824cdaece4029be4c161bfcb63feba60173:
+    input_sha256: c1838b8410734103ba309add47578196a1d04bccf3368c039d08f6ce7ed86129
+    configuration_sha256: 8e882e11badcd61e4842f583d58cc1b83d2e420e00bb0f61c267a1b37b7b8e88
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:53:17.723095+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.4
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.37
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/presence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.51
+            PARTIAL: 0.44
+          confidence: 0.26
+        /assertion/results:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.59
+            PARTIAL: 0.37
+          confidence: 0.38
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.32
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/measurements/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.69
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/measurements/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/measurements/2/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.32
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/measurements/2/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.37
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.54
+            PARTIAL: 0.39
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14577
+        output_tokens: 688
+      elapsed_seconds: 0.1872
+      request_sha256: b6683d8bd508a181ad2f8ffe89e6d04e2adfd3e4ea37af61a951d1885f181d61
+      request_sha256s:
+      - b6683d8bd508a181ad2f8ffe89e6d04e2adfd3e4ea37af61a951d1885f181d61
+  20741ddefeb9fc0f5ef550507f796820dd2d08258ec1d4a71e07be1aa28bbc4b:
+    input_sha256: fcba7ba5a13d05f8773233cf07d38a81ee781b334aad7a215b1872b918d70b01
+    configuration_sha256: 0ca64f3b4f6930ec3a527395bbebb1ba242a39f75e1b1bb54c03b802d0b32a6c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:53:17.748684+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.05
+            PARTIAL: 0.43
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.46
+            PARTIAL: 0.39
+          confidence: 0.19
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.05
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.02
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8289
+        output_tokens: 390
+      elapsed_seconds: 0.1841
+      request_sha256: 62115bc99e412fa04e310d52c9f688e103f6fbe2628f334617efec8f3385e12b
+      request_sha256s:
+      - 62115bc99e412fa04e310d52c9f688e103f6fbe2628f334617efec8f3385e12b

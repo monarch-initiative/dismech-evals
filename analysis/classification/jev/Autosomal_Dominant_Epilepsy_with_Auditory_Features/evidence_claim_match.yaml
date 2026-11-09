@@ -10976,6 +10976,74 @@ inputs:
     - assertion_path: /animal_models/3/modeled_mechanisms/0/readouts/0
       evidence_path: /animal_models/3/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:25234641
+  3d9653d3e79a3a4106b164579daa7453e788dbc195a711c74bced5c49f8cb272:
+    claim:
+      about:
+        disease:
+          name: Autosomal Dominant Epilepsy with Auditory Features
+          disease_term:
+            preferred_term: autosomal dominant epilepsy with auditory features
+            term:
+              id: MONDO:0010898
+              label: autosomal dominant epilepsy with auditory features
+        context:
+        - path: /experimental_models/2
+          value:
+            name: LGI1 variant secretion and receptor-binding cell assays
+            experimental_model_type: CELL_LINE
+            description: 'Transfected-cell assays distinguish secretion-defective E383A from secretion-competent
+              S473L with altered ADAM22 interaction. Later HEK293T secretion and COS7 binding assays studied
+              biallelic-encephalopathy variants: C48F, S524P and a terminal extension. All had reduced
+              net binding, while inferred relative binding differed; these assays did not determine an
+              equilibrium affinity constant. Four-phenylbutyrate responses were allele dependent and were
+              not human treatment outcomes.'
+            notes: Heterologous overexpression and distinct dominant versus biallelic alleles limit direct
+              translation. Five mM 4PBA for 72 hours increased C48F and wild-type secretion but reduced
+              S524P and terminal-extension secretion in the later study.
+          role: ancestor
+        - path: /experimental_models/2/modeled_mechanisms/0
+          value:
+            target: Reduced LGI1 Secretion
+            relationship: MEASURES
+            description: Cell-medium protein assays quantify reduced secretion for selected constructs.
+            fidelity: UNKNOWN
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Secreted LGI1
+        target: Reduced LGI1 Secretion
+        direction: DECREASED
+        interpretation: Cell-medium protein assays quantify reduced secretion for selected constructs.
+      selected_evidence:
+        snippet: We found differently reduced secretion levels of Cys48Phe, Ser524Pro and Ter558GlyextTer23
+          variants ∼6.7%, 0.5% and 40% (median, compared to LGI1 WT), respectively (Fig. 1E).
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /experimental_models/2/modeled_mechanisms/0/readouts/0
+      evidence_path: /experimental_models/2/modeled_mechanisms/0/readouts/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/2
+      - /experimental_models/2/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:40455867
+      reference_title: Biallelic LGI1 and ADAM23 variants cause hippocampal epileptic encephalopathy via
+        the LGI1-ADAM22/23 pathway.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: HEK293T conditioned-medium assay measures variant-specific secretion, not neuronal
+        firing.
+    first_seen_at: '2026-11-09T20:32:18.491750+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:32:18.491750+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:32:18.491750+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/2/modeled_mechanisms/0/readouts/0
+      evidence_path: /experimental_models/2/modeled_mechanisms/0/readouts/0/evidence/1
+      reference: PMID:40455867
 assessments:
   d512623d2a269131734017b6c8311b33c5b86669a4852608a0197f2144031041:
     input_sha256: 1c53360385e41174061d5d401fc375d7bc8a89de38e68fe80af46907ef3fbb4b
@@ -26382,3 +26450,76 @@ assessments:
       request_sha256: 58764d106812597f3a61164b810317b1696ad6e09d50d54605a3f5eda96a7aea
       request_sha256s:
       - 58764d106812597f3a61164b810317b1696ad6e09d50d54605a3f5eda96a7aea
+  cd7fb63c47f3ddcd852917c1e07e8caf5d0c3fb0edd57fa1d303ac42fa0fabb1:
+    input_sha256: 3d9653d3e79a3a4106b164579daa7453e788dbc195a711c74bced5c49f8cb272
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:32:18.491750+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.08
+            PARTIAL: 0.3
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.16
+            PARTIAL: 0.14
+          confidence: 0.55
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.14
+            PARTIAL: 0.41
+          confidence: 0.18
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.13
+            PARTIAL: 0.41
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8577
+        output_tokens: 355
+      elapsed_seconds: 0.2259
+      request_sha256: a77fe7206cbb97bea45bd26e15725b39e3c2e30568dbf8be1e501abf42e03a25
+      request_sha256s:
+      - a77fe7206cbb97bea45bd26e15725b39e3c2e30568dbf8be1e501abf42e03a25

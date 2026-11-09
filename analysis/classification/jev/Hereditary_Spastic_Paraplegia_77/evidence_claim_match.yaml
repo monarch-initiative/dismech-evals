@@ -3982,6 +3982,115 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:29126765
+  2b6ab6c7e56c95a6e03e5cfc452f8bf7e911918282a5a6edba9e826e6aa900b5:
+    claim:
+      about:
+        disease:
+          name: Hereditary Spastic Paraplegia 77
+          disease_term:
+            preferred_term: hereditary spastic paraplegia 77
+            term:
+              id: MONDO:0014882
+              label: hereditary spastic paraplegia 77
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Mitochondrial Translation
+        conforms_to: mitochondrial_translation_deficiency#Impaired Synthesis of mtDNA-Encoded OXPHOS Subunits
+        biological_scale: MOLECULAR
+        description: Mitochondrial ribosomes cannot efficiently incorporate phenylalanine, so synthesis
+          of the thirteen mtDNA-encoded subunits of complexes I, III, IV and V falls, and the complexes
+          are not assembled at normal levels.
+        biological_processes:
+        - preferred_term: mitochondrial translation
+          term:
+            id: GO:0032543
+            label: mitochondrial translation
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Altered mitochondrial protein synthesis and reduced levels of oxidative phosphorylation
+          complexes were detected in Fars2-deficient samples.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35794642
+      reference_title: Neuropathy-associated Fars2 deficiency affects neuronal development and potentiates
+        neuronal apoptosis by impairing mitochondrial function.
+      evidence_source: MODEL_ORGANISM
+      explanation: Fars2-deficient mouse and zebrafish samples show reduced mitochondrial protein synthesis.
+    first_seen_at: '2026-11-09T20:04:28.698233+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:04:28.698233+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:04:28.698233+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:35794642
+  16dfa12ba331aa975842bfb8e492b87023e8fef316a21a0dd0cccbd99f21019c:
+    claim:
+      about:
+        disease:
+          name: Hereditary Spastic Paraplegia 77
+          disease_term:
+            preferred_term: hereditary spastic paraplegia 77
+            term:
+              id: MONDO:0014882
+              label: hereditary spastic paraplegia 77
+        context:
+        - path: /pathophysiology/1
+          value:
+            name: Impaired Mitochondrial Translation
+            conforms_to: mitochondrial_translation_deficiency#Impaired Synthesis of mtDNA-Encoded OXPHOS
+              Subunits
+            biological_scale: MOLECULAR
+            description: Mitochondrial ribosomes cannot efficiently incorporate phenylalanine, so synthesis
+              of the thirteen mtDNA-encoded subunits of complexes I, III, IV and V falls, and the complexes
+              are not assembled at normal levels.
+            biological_processes:
+            - preferred_term: mitochondrial translation
+              term:
+                id: GO:0032543
+                label: mitochondrial translation
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: OXPHOS Deficiency and Neuronal Bioenergetic Failure
+        causal_link_type: DIRECT
+        description: Fewer assembled respiratory chain complexes reduce oxidative ATP production.
+      selected_evidence:
+        snippet: Altered mitochondrial protein synthesis and reduced levels of oxidative phosphorylation
+          complexes were detected in Fars2-deficient samples.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/1
+    evidence_metadata:
+      reference: PMID:35794642
+      reference_title: Neuropathy-associated Fars2 deficiency affects neuronal development and potentiates
+        neuronal apoptosis by impairing mitochondrial function.
+      evidence_source: MODEL_ORGANISM
+      explanation: The same Fars2-deficient samples show both reduced mitochondrial translation and reduced
+        OXPHOS complexes.
+    first_seen_at: '2026-11-09T20:04:29.291271+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:04:29.291271+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:04:29.291271+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1/downstream/0
+      evidence_path: /pathophysiology/1/downstream/0/evidence/0
+      reference: PMID:35794642
 assessments:
   23cecdae0856defb54634e6a7ed1e545d8dd2eb5fe42d0e400cbc8b38f4a099f:
     input_sha256: d4ab433e985aa4aa0ac75aa7db4960430348f7756b796af29afc0d98280e46ff
@@ -9503,3 +9612,142 @@ assessments:
       request_sha256: c7306b9cfd64bdcb65855e41462d87dc2fed518c8647af2362167e372b0c392c
       request_sha256s:
       - c7306b9cfd64bdcb65855e41462d87dc2fed518c8647af2362167e372b0c392c
+  37f722de248bb3b1359dfdc610fd358b0676ba74f988e6655eef43883ea6f942:
+    input_sha256: 2b6ab6c7e56c95a6e03e5cfc452f8bf7e911918282a5a6edba9e826e6aa900b5
+    configuration_sha256: 397d7046cfa60382fdc55368d70c88b45b9d6f4b008c35f407d3dde6f449bcfb
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:04:28.698233+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.19
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.25
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+          confidence: 0.38
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.14
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.02
+            PARTIAL: 0.06
+          confidence: 0.88
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.14
+            PARTIAL: 0.8
+          confidence: 0.7
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.03
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.03
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9914
+        output_tokens: 433
+      elapsed_seconds: 0.2401
+      request_sha256: 960a10f6f3e89111ac2c3541c00e86b7655d4876ce998d76f05480a7ade79b33
+      request_sha256s:
+      - 960a10f6f3e89111ac2c3541c00e86b7655d4876ce998d76f05480a7ade79b33
+  2639c393617f39366c07417021577b700b5b479052d67c7714988e3f18438284:
+    input_sha256: 16dfa12ba331aa975842bfb8e492b87023e8fef316a21a0dd0cccbd99f21019c
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:04:29.291271+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.25
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.27
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.09
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.12
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.05
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.18
+            PARTIAL: 0.38
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6499
+        output_tokens: 273
+      elapsed_seconds: 0.1771
+      request_sha256: da9b7ffa4d97a8b47101745dc299d8577c05634ba90a2be86130f1c2311801fb
+      request_sha256s:
+      - da9b7ffa4d97a8b47101745dc299d8577c05634ba90a2be86130f1c2311801fb

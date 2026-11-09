@@ -3886,6 +3886,59 @@ inputs:
     - active: false
       observed_at: '2026-10-26T16:16:19.743096+00:00'
       source_revision: bebfef248e98632d5599a78760bdf73d0f59f142
+  6072c9c4337bd462a7c6a4fecac2244188277020068a880ed9794b0a3d38de32:
+    claim:
+      about:
+        disease:
+          name: Mucopolysaccharidosis
+          disease_term:
+            preferred_term: Mucopolysaccharidosis
+            term:
+              id: MONDO:0019249
+              label: mucopolysaccharidosis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Lysosomal Enzyme Activity Assay
+        description: Definitive biochemical diagnosis of a mucopolysaccharidosis relies on demonstrating
+          deficient activity of the specific lysosomal hydrolase in leukocytes or fibroblasts, typically
+          after abnormal urine glycosaminoglycan screening and confirmed by molecular genetic testing.
+        diagnosis_term:
+          preferred_term: lysosomal enzyme activity assay
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        notes: 'No measurements binding is recorded here: this row is deliberately generic across the
+          whole MPS family ("the specific lysosomal hydrolase" -- plural, type-dependent), so no single
+          enzyme LOINC code would represent its own claim. Each enzyme-specific MPS subtype entry (e.g.
+          alpha-L-iduronidase for MPS I in Attenuated_Mucopolysaccharidosis_Type_I.yaml and Hurler_syndrome.yaml)
+          binds its own code on its own diagnosis row instead.'
+      selected_evidence:
+        snippet: Assays that measure lysosomal enzyme activity are important tools for the screening and
+          diagnosis of lysosomal storage disorders (LSDs).
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35394426
+      reference_title: 'Measurement of lysosomal enzyme activities: A technical standard of the American
+        College of Medical Genetics and Genomics (ACMG).'
+      evidence_source: OTHER
+      explanation: The ACMG technical standard establishes lysosomal enzyme activity assays as key tools
+        for diagnosing lysosomal storage disorders, which include the mucopolysaccharidoses.
+    first_seen_at: '2026-11-09T20:06:12.880981+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:06:12.880981+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:06:12.880981+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:35394426
 assessments:
   7c0c65c90f2cc94f0c9a5d9cd0b6cbe89a851da429bfe83aea4b28725b4549ad:
     input_sha256: 512139a6010d334fc78a87ab80ac4ee079bc462592b9433b7df242e9369b667e
@@ -9430,3 +9483,69 @@ assessments:
       request_sha256: 4dd8fa5baa6593d7a2ddb984417b50ca4944a8cfe6b4a1befbb5e04678fcb191
       request_sha256s:
       - 4dd8fa5baa6593d7a2ddb984417b50ca4944a8cfe6b4a1befbb5e04678fcb191
+  9d1dffe0db849b8b9491089e1ef48adeabcc4e14aab8244d6512b0e1b12b820d:
+    input_sha256: 6072c9c4337bd462a7c6a4fecac2244188277020068a880ed9794b0a3d38de32
+    configuration_sha256: 2840a0204a217a29c91765869338fffe92f7125042b4b2cce902af65e64a2f5c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:06:12.880981+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.03
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+          confidence: 0.38
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.04
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.06
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.05
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.09
+            PARTIAL: 0.3
+          confidence: 0.42
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.49
+            PARTIAL: 0.38
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7333
+        output_tokens: 324
+      elapsed_seconds: 0.2748
+      request_sha256: cd9808ea1e7daf338adf5d8d99f2f3d80126f4cc11281cfb4f90f29dd482fa57
+      request_sha256s:
+      - cd9808ea1e7daf338adf5d8d99f2f3d80126f4cc11281cfb4f90f29dd482fa57

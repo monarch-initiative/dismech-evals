@@ -2822,6 +2822,152 @@ inputs:
     - assertion_path: /treatments/5
       evidence_path: /treatments/5/evidence/0
       reference: PMID:33524167
+  c06b73bc9ea39697c39e86e37bb70ca3548704647b018efbf969c554dc2eedd1:
+    claim:
+      about:
+        disease:
+          name: Systemic Mastocytosis
+          disease_term:
+            preferred_term: systemic mastocytosis
+            term:
+              id: MONDO:0016586
+              label: systemic mastocytosis
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Antihistamine Occupancy of H1 Receptors
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: h1_receptor_antagonism#H1 Receptor Antagonist Occupancy
+        description: 'The receptor occupancy that the H1 antihistamine component of this anti-mediator
+          regimen establishes, held as a node of its own so that drug class has somewhere to attach. The
+          regimen also carries an H2 antihistamine, cromolyn and epinephrine; only the H1 component is
+          linked here, because the gastric acid chain an H2 antagonist acts through is not modelled in
+          this entry and the other two act on degranulation rather than at a histamine receptor. The node
+          carries no downstream edge: the relation between an antagonist and the mediator release above
+          is inhibitory, and a downstream edge would assert that the drug drives it. No location is bound,
+          because the H1-mediated symptoms are multisystem.'
+        molecular_functions:
+        - preferred_term: H1 receptor blockade by an antihistamine
+          term:
+            id: GO:0004969
+            label: histamine receptor activity
+          modifier: DECREASED
+        genes:
+        - preferred_term: HRH1
+          term:
+            id: hgnc:5182
+            label: HRH1
+      selected_evidence:
+        snippet: H1 receptor antagonists, known as H1-antihistamines (AHs), inactivate the histamine H1-receptor
+          thereby preventing histamine causing the primary symptoms of allergic diseases, such as atopic
+          dermatitis, pollinosis, food allergies, and urticaria.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34622396
+      reference_title: Efficacy and Safety of Non-brain Penetrating H(1)-Antihistamines for the Treatment
+        of Allergic Diseases.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Names the receptor the class inactivates, which is the receptor bound on this node
+        and the trigger of the module it conforms to.
+    first_seen_at: '2026-11-09T20:37:14.793551+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:37:14.793551+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:37:14.793551+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:34622396
+  c207bc79320f7e88a0fcf9cdb5807c9cffcbeb09602fe5d1adac1a08c871f4b7:
+    claim:
+      about:
+        disease:
+          name: Systemic Mastocytosis
+          disease_term:
+            preferred_term: systemic mastocytosis
+            term:
+              id: MONDO:0016586
+              label: systemic mastocytosis
+        context:
+        - path: /treatments/3
+          value:
+            name: Anti-Mediator Symptomatic Therapy
+            description: 'Most indolent SM patients are managed with symptomatic anti-mediator therapy
+              directed at mast-cell mediator release: H1 and H2 antihistamines and the oral mast cell
+              stabilizer cromolyn sodium for chronic symptom control, and self-injectable epinephrine
+              for anaphylaxis. This is distinct from the cytoreductive/KIT-inhibitor arm used in more
+              advanced or refractory disease.'
+            therapeutic_modality: SMALL_MOLECULE
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: H1 antihistamine
+                term:
+                  id: NCIT:C29578
+                  label: Histamine-1 Receptor Antagonist
+              - preferred_term: H2 antihistamine
+                term:
+                  id: NCIT:C29702
+                  label: Histamine-2 Receptor Antagonist
+              - preferred_term: cromolyn sodium
+                term:
+                  id: CHEBI:128458
+                  label: disodium cromoglycate
+              - preferred_term: epinephrine
+                term:
+                  id: CHEBI:33568
+                  label: adrenaline
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Antihistamine Occupancy of H1 Receptors
+        treatment_effect: ACTIVATES
+        description: The H1 antihistamine component of this regimen establishes receptor occupancy at
+          this node, which is the h1_receptor_antagonism module's trigger. ACTIVATES because what the
+          treatment brings about is the occupancy itself. The existing link to the mast cell mediator
+          release node is left as it stands.
+      selected_evidence:
+        snippet: H1 receptor antagonists, known as H1-antihistamines (AHs), inactivate the histamine H1-receptor
+          thereby preventing histamine causing the primary symptoms of allergic diseases, such as atopic
+          dermatitis, pollinosis, food allergies, and urticaria.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /treatments/3/target_mechanisms/0
+      evidence_path: /treatments/3/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/3
+    evidence_metadata:
+      reference: PMID:34622396
+      reference_title: Efficacy and Safety of Non-brain Penetrating H(1)-Antihistamines for the Treatment
+        of Allergic Diseases.
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Supports the H1 antihistamine in this treatment acting at the H1 receptor, which is
+        what this link asserts.
+    first_seen_at: '2026-11-09T20:37:15.129014+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:37:15.129014+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:37:15.129014+00:00'
+    occurrences:
+    - assertion_path: /treatments/3/target_mechanisms/0
+      evidence_path: /treatments/3/target_mechanisms/0/evidence/0
+      reference: PMID:34622396
 assessments:
   8327739049dc7070009ad5c5c2865180ab7ef5a7ba250c1e4d48cdbd28552ef9:
     input_sha256: 41f06eea5b9a59bbee06ec47de095a09de6f8d6ac7bf180e88dfff37199e193b
@@ -6949,3 +7095,163 @@ assessments:
       request_sha256: 0300b758909865c0671da10279b40f9f9a778d0acfe7aaf6f2638004f7eaf2e9
       request_sha256s:
       - 0300b758909865c0671da10279b40f9f9a778d0acfe7aaf6f2638004f7eaf2e9
+  f4cb20bcdee657d16e5c6043da24751a1832bebe7c0b63e636cf83c46cbb7390:
+    input_sha256: c06b73bc9ea39697c39e86e37bb70ca3548704647b018efbf969c554dc2eedd1
+    configuration_sha256: f01d842e36861478925a7d19a3fc01f4c15268389596987c86d8d547ea7255b0
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:37:14.793551+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.35
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.64
+            PARTIAL: 0.34
+          confidence: 0.46
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.16
+            PARTIAL: 0.2
+          confidence: 0.46
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.16
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.02
+            PARTIAL: 0.02
+          confidence: 0.94
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.46
+            PARTIAL: 0.39
+          confidence: 0.19
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.25
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.04
+            PARTIAL: 0.08
+          confidence: 0.82
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.16
+            PARTIAL: 0.12
+          confidence: 0.58
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.02
+            PARTIAL: 0.01
+          confidence: 0.96
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.19
+            PARTIAL: 0.25
+          confidence: 0.34
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.18
+            PARTIAL: 0.22
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13069
+        output_tokens: 571
+      elapsed_seconds: 0.3203
+      request_sha256: f5641ad55ee54eda694b3fecaca7ab87e56eaa64a9a88b82059828a6ac25124c
+      request_sha256s:
+      - f5641ad55ee54eda694b3fecaca7ab87e56eaa64a9a88b82059828a6ac25124c
+  1cf46bd54dd6e75bac4e72a2ef8089043aa13073657263819f66adedd900a9c3:
+    input_sha256: c207bc79320f7e88a0fcf9cdb5807c9cffcbeb09602fe5d1adac1a08c871f4b7
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:37:15.129014+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.61
+            PARTIAL: 0.26
+          confidence: 0.42
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.8
+            PARTIAL: 0.19
+          confidence: 0.7
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.21
+            PARTIAL: 0.16
+          confidence: 0.44
+        /assertion/treatment_effect:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.86
+            PARTIAL: 0.04
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.3
+            PARTIAL: 0.33
+          confidence: 0.06
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.41
+            PARTIAL: 0.3
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6793
+        output_tokens: 279
+      elapsed_seconds: 0.2342
+      request_sha256: 5e62deedaab5810b05fb61657a144e2fa46fb9e2a0a97904407abc06e83587b7
+      request_sha256s:
+      - 5e62deedaab5810b05fb61657a144e2fa46fb9e2a0a97904407abc06e83587b7

@@ -1086,6 +1086,62 @@ inputs:
     - assertion_path: /pathophysiology/0
       evidence_path: /pathophysiology/0/evidence/0
       reference: PMID:28164782
+  90eece58a2b3812b7456cd913717062793422e2f35cf811637adb490069cb43b:
+    claim:
+      about:
+        disease:
+          name: Chronic Neurovisceral Acid Sphingomyelinase Deficiency
+          disease_term:
+            preferred_term: chronic neurovisceral acid sphingomyelinase deficiency
+            term:
+              id: MONDO:0850058
+              label: chronic neurovisceral acid sphingomyelinase deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Acid sphingomyelinase enzyme assay
+        diagnosis_term:
+          preferred_term: clinical laboratory procedure
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        description: Demonstration of deficient acid sphingomyelinase activity in leukocytes, fibroblasts,
+          or dried blood spots; intermediate forms typically have low but detectable residual activity.
+        markers: Reduced acid sphingomyelinase activity (intermediate residual level).
+        measurements:
+        - preferred_term: Acid sphingomyelinase activity
+          term:
+            id: LOINC:LP14035-7
+            label: Acid sphingomyelinase
+        notes: 'Bound the specimen-generic Part code for acid sphingomyelinase activity: this row''s own
+          description names three specimens (leukocytes, fibroblasts, dried blood spots) rather than one.
+          No reference_ranges band is recorded: "low but detectable residual activity" is a qualitative
+          characterization, with no numeric cut-off.'
+      selected_evidence:
+        snippet: NPD type A and B are caused by mutations in the gene SMPD1 coding for sphingomyelin phosphodiesterase
+          1, with a consequent lack of acid sphingomyelinase activity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38397448
+      reference_title: 'The Genetic Basis, Lung Involvement, and Therapeutic Options in Niemann-Pick Disease:
+        A Comprehensive Review.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Deficient acid sphingomyelinase activity is the diagnostic biochemical hallmark.
+    first_seen_at: '2026-11-09T19:59:28.458319+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:28.458319+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:28.458319+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:38397448
 assessments:
   82e650e30fafbfa7f0d826df7ed148aaab8fa642d17c34ce97b535cedaf97d9a:
     input_sha256: 06c6c3a2d0e3775bd9b8cc7f60a0e0d00a82804faa2e52771877f32383f34ab0
@@ -2459,3 +2515,90 @@ assessments:
       request_sha256: e47b976ac865087aa7ad4a42de22ede8a86f8426bd1f496b9d6c4416024a7cbb
       request_sha256s:
       - e47b976ac865087aa7ad4a42de22ede8a86f8426bd1f496b9d6c4416024a7cbb
+  21ea69240d6d856b352ca7f8d245d36963b3dbf8ab55487ca1ae1af1e8b59ab6:
+    input_sha256: 90eece58a2b3812b7456cd913717062793422e2f35cf811637adb490069cb43b
+    configuration_sha256: debd19aee49193bc5574ae2140eadfe89556def8b11cc266077d20dac7387a8c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:28.458319+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.27
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.18
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.28
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.46
+            PARTIAL: 0.31
+          confidence: 0.19
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.37
+            PARTIAL: 0.36
+          confidence: 0.06
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.28
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.38
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.12
+            PARTIAL: 0.23
+          confidence: 0.48
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.16
+            PARTIAL: 0.34
+          confidence: 0.25
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10275
+        output_tokens: 480
+      elapsed_seconds: 0.183
+      request_sha256: ab59164cee902822a6c86e7956f3815f6b0b6a2ee17972a252f255c4e586ee40
+      request_sha256s:
+      - ab59164cee902822a6c86e7956f3815f6b0b6a2ee17972a252f255c4e586ee40

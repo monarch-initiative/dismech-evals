@@ -3287,6 +3287,80 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/0
       reference: PMID:33988877
+  1f2b02245c385dbc0b072f4470099512c3d19e023705924c48b52591ee33a72a:
+    claim:
+      about:
+        disease:
+          name: Isolated Woolly Hair
+          disease_term:
+            preferred_term: isolated familial woolly hair
+            term:
+              id: MONDO:0008686
+              label: isolated familial wooly hair disorder
+        context:
+        - path: /has_subtypes/4
+          value:
+            name: HYPT13
+            display_name: Hypotrichosis 13 / Autosomal Dominant Woolly Hair (KRT71)
+            subtype_term:
+              preferred_term: hypotrichosis with woolly hair
+              term:
+                id: MONDO:0014390
+                label: hypotrichosis 13
+            genes:
+            - preferred_term: KRT71
+              term:
+                id: hgnc:28927
+                label: KRT71
+            description: 'Autosomal dominant woolly hair with hypotrichosis caused by heterozygous variants
+              in KRT71, the type II inner-root-sheath keratin that partners K25. MONDO files this under
+              the hypotrichosis series as hypotrichosis 13 while listing "hypotrichosis with woolly hair"
+              as an exact synonym; it is a direct child of this entry''s own disease term.
+
+              '
+          role: subtype
+      assertion_type: Genetic
+      assertion:
+        name: KRT71
+        subtype: HYPT13
+        notes: KRT71 is the second type II inner-root-sheath keratin reported in autosomal dominant woolly
+          hair. MONDO gives it its own gene-anchored term in the hypotrichosis series (MONDO:0014390,
+          hypotrichosis 13, RO:0004003 to KRT71), which is why it is curated as a distinct subtype rather
+          than folded into the KRT74 ADWH row.
+        gene_term:
+          preferred_term: KRT71
+          term:
+            id: hgnc:28927
+            label: KRT71
+      selected_evidence:
+        snippet: ADWH and hypotrichosis (MIM 613981) are caused by mutations in two type II IRS-specific
+          genes KRT71 (MIM 608245) and KRT74 (MIM 608248).
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/4
+    evidence_metadata:
+      reference: PMID:26160856
+      reference_title: A homozygous missense variant in type I keratin KRT25 causes autosomal recessive
+        woolly hair.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: BACKGROUND
+      explanation: Independent confirmation that KRT71 sits beside KRT74 as an autosomal dominant woolly
+        hair gene. The quote is the introduction of the KRT25 gene-discovery paper restating established
+        human genetics, not that paper's own finding.
+    first_seen_at: '2026-11-09T20:18:42.085716+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:18:42.085716+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:18:42.085716+00:00'
+    occurrences:
+    - assertion_path: /genetic/3
+      evidence_path: /genetic/3/evidence/1
+      reference: PMID:26160856
 assessments:
   f85292b6c3c0e4ced9ec29d960eec9a7c4b5bc23f57eb208703c4abf600babaf:
     input_sha256: d05f709d197785455effdfd9d3f1e716ffc1b07bcffa0b04b1b989d3f70b4732
@@ -6992,3 +7066,76 @@ assessments:
       request_sha256: 9ebbb69c5e758343ae9f89e2f99baf6502ef022bdf87112738f4f08beff1544d
       request_sha256s:
       - 9ebbb69c5e758343ae9f89e2f99baf6502ef022bdf87112738f4f08beff1544d
+  3d591faae24b266dcc405e98a7595fe15d1aa01cf764dc2aa612dbbb22b1fcd7:
+    input_sha256: 1f2b02245c385dbc0b072f4470099512c3d19e023705924c48b52591ee33a72a
+    configuration_sha256: 351df1ccbf921923a62900c1d801f075027ddf1b0736a66f98531b62fa306eb5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:18:42.085716+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.19
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.18
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.06
+            PARTIAL: 0.1
+          confidence: 0.76
+        /assertion/subtype:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.09
+            PARTIAL: 0.3
+          confidence: 0.42
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.19
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.05
+            PARTIAL: 0.11
+          confidence: 0.76
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.03
+            PARTIAL: 0.08
+          confidence: 0.83
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.17
+            PARTIAL: 0.3
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8527
+        output_tokens: 362
+      elapsed_seconds: 0.1695
+      request_sha256: fe79906cabbc6a997b6910225c0dc3bc5fe46b5e1d6e9679dadf134c7835667a
+      request_sha256s:
+      - fe79906cabbc6a997b6910225c0dc3bc5fe46b5e1d6e9679dadf134c7835667a

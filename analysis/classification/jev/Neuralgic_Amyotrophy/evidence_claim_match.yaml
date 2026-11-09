@@ -2736,6 +2736,59 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:38248282
+  36994c82881c999bb9fa0c10bc302b7323d04a99d160a234ae16369852d67b32:
+    claim:
+      about:
+        disease:
+          name: Neuralgic Amyotrophy
+          disease_term:
+            preferred_term: neuralgic amyotrophy
+            term:
+              id: MONDO:0017362
+              label: neuralgic amyotrophy
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Phrenic Nerve Reconstruction
+        description: 'Surgical repair of the injured phrenic nerve for symptomatic diaphragm paralysis,
+          in selected patients. Curated because diaphragmatic weakness is a phenotype of this entry with
+          no other treatment linked to it, and because it is the intervention that follows from the HEV-associated
+          phrenic presentation.
+
+          The evidence is weaker than for the other surgical entry here: this is a narrative review of
+          phrenic nerve reconstruction across all causes of phrenic injury, of which neuralgic amyotrophy
+          is one, not a series of NA patients. It reports no NA-specific outcome.'
+        therapeutic_modality: SURGERY
+        treatment_term:
+          preferred_term: Phrenic nerve reconstruction
+          term:
+            id: NCIT:C15329
+            label: Surgical Procedure
+      selected_evidence:
+        snippet: Common etiologies of phrenic injuries include cervical trauma, iatrogenic injury in the
+          neck or chest, and neuralgic amyotrophy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36031309
+      reference_title: Phrenic nerve paralysis and phrenic nerve reconstruction surgery.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes that neuralgic amyotrophy is among the phrenic injuries this operation
+        is performed for, which is what makes the treatment in scope for this entry.
+    first_seen_at: '2026-11-09T20:19:39.116996+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:19:39.116996+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:19:39.116996+00:00'
+    occurrences:
+    - assertion_path: /treatments/3
+      evidence_path: /treatments/3/evidence/0
+      reference: PMID:36031309
 assessments:
   b184b43f4c4c682b01aff9a579f6119f27651b38eab340d693e6023e4e973a89:
     input_sha256: b93e5be9fa6a2905ed6238f786a227f339dc9582b0158516f7bc98689ca4cd08
@@ -6186,3 +6239,69 @@ assessments:
       request_sha256: 4abf955f1c6de387533b37e6bce6824fc27e6ee8f9cc4f929f04a6c32996df24
       request_sha256s:
       - 4abf955f1c6de387533b37e6bce6824fc27e6ee8f9cc4f929f04a6c32996df24
+  7bfd7cb3146c0d8905116d194f37374cd3d9dca3341626cf791e8a7705ef55df:
+    input_sha256: 36994c82881c999bb9fa0c10bc302b7323d04a99d160a234ae16369852d67b32
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:19:39.116996+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.33
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.51
+            PARTIAL: 0.4
+          confidence: 0.26
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.5
+            PARTIAL: 0.47
+          confidence: 0.25
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.51
+            PARTIAL: 0.25
+          confidence: 0.26
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.62
+            PARTIAL: 0.32
+          confidence: 0.43
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7775
+        output_tokens: 338
+      elapsed_seconds: 0.2579
+      request_sha256: 3528ed6a3349f9c3be5e1f097f4c5450578e7f2bf8adcb004d270ff864c83197
+      request_sha256s:
+      - 3528ed6a3349f9c3be5e1f097f4c5450578e7f2bf8adcb004d270ff864c83197

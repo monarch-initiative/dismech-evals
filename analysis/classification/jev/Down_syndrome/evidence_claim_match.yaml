@@ -2920,6 +2920,54 @@ inputs:
     - assertion_path: /treatments/5
       evidence_path: /treatments/5/evidence/0
       reference: PPR:PPR1272214
+  01866e9fa12501c9cf0125881ef9c22187833952178c31482db61d3477072081:
+    claim:
+      about:
+        disease:
+          name: Down_syndrome
+          disease_term:
+            preferred_term: Down syndrome
+            term:
+              id: MONDO:0008608
+              label: Down syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Noninvasive Prenatal Screening
+        description: Screening of cell-free DNA in maternal plasma to estimate the risk of fetal trisomy
+          21 before birth. A positive result is a screening result, not a diagnosis, and is confirmed
+          by karyotype on chorionic villus or amniotic fluid sampling.
+        measurements:
+        - preferred_term: Fetal trisomy 21 cell-free DNA screening
+          term:
+            id: LOINC:77011-5
+            label: Fetal Chromosome 21 trisomy [Presence] based on Plasma cell-free DNA by Sequencing
+      selected_evidence:
+        snippet: NIPS is a highly accurate screening method for T21, T18, and T13 in both singleton and
+          twin pregnancies.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35608568
+      reference_title: 'Systematic evidence-based review: The application of noninvasive prenatal screening
+        using cell-free DNA in general-risk pregnancies.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Systematic evidence-based review establishing cell-free DNA screening as an accurate
+        prenatal screening method for trisomy 21, which is the procedure this entry names.
+    first_seen_at: '2026-11-09T20:47:22.660814+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:47:22.660814+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:47:22.660814+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:35608568
 assessments:
   05b7eb59f43761f6b325a34fb352a0a92d8cc17b617707b3470a638b33281928:
     input_sha256: f4740715d2d7407e1baae7fb69da4ddecf890d65cfa82d26bfb4fed7d495a2ca
@@ -6636,3 +6684,62 @@ assessments:
       request_sha256: ab567ca81f29984c0404747dbbab8f76115aeae59c506a43f1c020b9dd679c0b
       request_sha256s:
       - ab567ca81f29984c0404747dbbab8f76115aeae59c506a43f1c020b9dd679c0b
+  90025e6faafd9d1fdfd459df78b8100bb5fdaaf8670bbcb51b6b17f08b5dddf1:
+    input_sha256: 01866e9fa12501c9cf0125881ef9c22187833952178c31482db61d3477072081
+    configuration_sha256: 0028b8a2883b6a02a026a39b9c580ad6925292051d83ffa8049aadfbbca2e27e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:47:22.660814+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.36
+            PARTIAL: 0.29
+          confidence: 0.04
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.18
+            PARTIAL: 0.2
+          confidence: 0.43
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.42
+            PARTIAL: 0.39
+          confidence: 0.13
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.06
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.15
+            PARTIAL: 0.25
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6304
+        output_tokens: 283
+      elapsed_seconds: 0.1777
+      request_sha256: 37200f364f18d3df454a7c4fe34dc28106c5a5897bd6f66ca1741483e6cccac8
+      request_sha256s:
+      - 37200f364f18d3df454a7c4fe34dc28106c5a5897bd6f66ca1741483e6cccac8

@@ -2691,6 +2691,60 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:25043000
+  62d79ad25b11a57d109ee5680786e24fcc060234f65c4ac53cba907fca77f207:
+    claim:
+      about:
+        disease:
+          name: A20 Haploinsufficiency
+          disease_term:
+            preferred_term: A20 haploinsufficiency
+            term:
+              id: MONDO:0100222
+              label: A20 haploinsufficiency
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Constitutive NF-kappa-B Pathway Activation
+        biological_scale: CELLULAR
+        description: Persistent canonical NF-kappa-B signalling in immune cells, demonstrated functionally
+          in patient-derived mononuclear cells and in cell lines expressing the mutant protein.
+        cell_types:
+        - preferred_term: monocyte
+          term:
+            id: CL:0000576
+            label: monocyte
+        biological_processes:
+        - preferred_term: canonical NF-kappaB signal transduction
+          modifier: INCREASED
+          term:
+            id: GO:0007249
+            label: canonical NF-kappaB signal transduction
+      selected_evidence:
+        snippet: Functional studies were performed in A20(c.1804A > T, p.T602S) patient-derived peripheral
+          blood mononuclear cells (PBMCs) and THP-1 cell lines by lentivirus mediating stable over-expression
+          of A20 and A20(c.1804A > T, p.T602S) to analyze the activity of NF-κB signaling pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34808442
+      reference_title: A novel missense mutation in TNFAIP3 causes haploinsufficiency of A20.
+      evidence_source: IN_VITRO
+      explanation: Describes the functional demonstration in both patient cells and a cell line, which
+        is how a missense allele is shown to be loss of function rather than benign.
+    first_seen_at: '2026-11-09T21:13:01.688014+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:13:01.688014+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:13:01.688014+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:34808442
 assessments:
   e09de7942fd701d240acd4a01843067af5469bcad1c703a3898fddd337113a37:
     input_sha256: da48a551d704d0c104f7e742bb1145ade037962e84c56c497415bb5b710dfdcd
@@ -6110,3 +6164,90 @@ assessments:
         output_tokens: 370
       elapsed_seconds: 0.9321
       request_sha256: b1768d710008ea8dd6f8af2d964efd71714f09c29ddf6e9af7073a626e4d786d
+  caec4eaa6ee209ee2fb9bffc00be864edb404d2ba17e34bf2ef3ade7cce7be45:
+    input_sha256: 62d79ad25b11a57d109ee5680786e24fcc060234f65c4ac53cba907fca77f207
+    configuration_sha256: 2c331dbf8e4431df42dcf4dab73418b9209d6e50fad5f18bd3a727995552a4cf
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T21:13:01.688014+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.03
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.03
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.03
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.03
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.15
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.13
+            PARTIAL: 0.41
+          confidence: 0.19
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.03
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.05
+            PARTIAL: 0.68
+          confidence: 0.52
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.02
+            PARTIAL: 0.57
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10882
+        output_tokens: 491
+      elapsed_seconds: 0.2171
+      request_sha256: c2f93576159fa9361f55dc1df4cc4d58b5f1429b760500603e57e4353a3c4714
+      request_sha256s:
+      - c2f93576159fa9361f55dc1df4cc4d58b5f1429b760500603e57e4353a3c4714

@@ -3473,6 +3473,106 @@ inputs:
     - assertion_path: /treatments/4/target_mechanisms/0
       evidence_path: /treatments/4/target_mechanisms/0/evidence/0
       reference: PMID:37530867
+  e7141575670866bce1490642f569076c943a4a6507f8d9f8b20ce2abfe1a9e67:
+    claim:
+      about:
+        disease:
+          name: Cisplatin Toxicity
+          disease_term:
+            preferred_term: cisplatin toxicity
+            term:
+              id: MONDO:0027664
+              label: cisplatin toxicity
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum creatinine
+        presence: INCREASED
+        loinc_term:
+          id: LOINC:2160-0
+          label: Creatinine [Mass/volume] in Serum or Plasma
+        notes: 'LOINC:2160-0 is the method-less, Serum-or-Plasma identity code for the creatinine measurement
+          this entry''s own prevalence notes name as the basis for defining nephrotoxicity ("reported
+          incidence for this endpoint varies with the creatinine threshold used to define it"). No reference_ranges
+          band is recorded: the cited sources state that incidence varies with the threshold used, not
+          a specific threshold value.'
+      selected_evidence:
+        snippet: Cisplatin-induced nephrotoxicity (CIN) limits the use of this drug and affects up to
+          20% of patients.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37530867
+      reference_title: A systematic review for prevention of cisplatin-induced nephrotoxicity using different
+        hydration protocols and meta-analysis for magnesium hydrate supplementation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Supports serum creatinine as the measurement underlying this entry''s nephrotoxicity
+        (acute kidney injury) phenotype, by an inference step: the sentence gives the endpoint''s incidence,
+        not a direct statement that creatinine is the measurement behind it.'
+    first_seen_at: '2026-11-09T20:46:02.575983+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:02.575983+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:02.575983+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:37530867
+  6b6f64a0c3e866f29c78f99bec23dc0a3953acc44312e1316e0aa84b63cca53f:
+    claim:
+      about:
+        disease:
+          name: Cisplatin Toxicity
+          disease_term:
+            preferred_term: cisplatin toxicity
+            term:
+              id: MONDO:0027664
+              label: cisplatin toxicity
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum magnesium
+        presence: DECREASED
+        loinc_term:
+          id: LOINC:2601-3
+          label: Magnesium [Moles/volume] in Serum or Plasma
+        notes: 'LOINC:2601-3 is the method-less, Serum-or-Plasma identity code for the magnesium measurement
+          behind this entry''s Hypomagnesemia phenotype. No reference_ranges band is recorded: the cited
+          source names magnesium supplementation as a candidate intervention but does not state a numeric
+          threshold for the marker itself.'
+      selected_evidence:
+        snippet: Several possible interventions such as magnesium supplementation may prevent CIN.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37530867
+      reference_title: A systematic review for prevention of cisplatin-induced nephrotoxicity using different
+        hydration protocols and meta-analysis for magnesium hydrate supplementation.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Names magnesium specifically, by an inference step: the sentence supports magnesium
+        supplementation as a candidate intervention for nephrotoxicity, not a direct statement that magnesium
+        is the measured marker.'
+    first_seen_at: '2026-11-09T20:46:02.577412+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:02.577412+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:02.577412+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:37530867
 assessments:
   968f41ab6e2b3d0a31f78602cb5a33d5a873829128f98c3cdf7ef982c8f7b5d8:
     input_sha256: c47de3cbf95d6665257b357196f5b55182541d5fa79bbc74050e2d910c578297
@@ -8106,3 +8206,135 @@ assessments:
       request_sha256: 34b864b6a26ca89848311edbc0d5eafef2a16b8b042a039e7c0b0c59b8444a85
       request_sha256s:
       - 34b864b6a26ca89848311edbc0d5eafef2a16b8b042a039e7c0b0c59b8444a85
+  9dd2bcc4a1854dea5b8ad17d0ee4c3c908df9e82bea68161be511e88e26263a0:
+    input_sha256: e7141575670866bce1490642f569076c943a4a6507f8d9f8b20ce2abfe1a9e67
+    configuration_sha256: 43baa55368f2e60e76c4765452ab9cd98d75640841c7677fbebde8be53d3cff8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:02.575983+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.13
+            PARTIAL: 0.79
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.39
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.35
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.72
+            PARTIAL: 0.19
+          confidence: 0.58
+        /assertion/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.47
+            PARTIAL: 0.21
+          confidence: 0.2
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7201
+        output_tokens: 326
+      elapsed_seconds: 0.1876
+      request_sha256: 09c781f5aa71579ac2d97de6c31677b60858a3ed76c613e7628574065967ebaf
+      request_sha256s:
+      - 09c781f5aa71579ac2d97de6c31677b60858a3ed76c613e7628574065967ebaf
+  1edb6f335538df61c86baec92995512a562d69c00c382b1bb54518fbc49137ef:
+    input_sha256: 6b6f64a0c3e866f29c78f99bec23dc0a3953acc44312e1316e0aa84b63cca53f
+    configuration_sha256: 43baa55368f2e60e76c4765452ab9cd98d75640841c7677fbebde8be53d3cff8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:02.577412+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.32
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.07
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.37
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.44
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.58
+            PARTIAL: 0.24
+          confidence: 0.37
+        /assertion/loinc_term/label:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.31
+            PARTIAL: 0.35
+          confidence: 0.02
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.26
+            PARTIAL: 0.43
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7159
+        output_tokens: 323
+      elapsed_seconds: 0.2174
+      request_sha256: 01b5f1a13efe5e2ed47f9729845911056f4fe76fd724d8931ba0ffb0f1ab98d0
+      request_sha256s:
+      - 01b5f1a13efe5e2ed47f9729845911056f4fe76fd724d8931ba0ffb0f1ab98d0

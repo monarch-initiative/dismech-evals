@@ -3758,6 +3758,65 @@ inputs:
     - assertion_path: /genetic/0/variants/1
       evidence_path: /genetic/0/variants/1/evidence/2
       reference: PMID:40501776
+  4a4f178f8021f68fd41f7505e349baedc50bc999dd847f3f3d911b44de2cb9e1:
+    claim:
+      about:
+        disease:
+          name: PMM2-Congenital Disorder of Glycosylation
+          disease_term:
+            preferred_term: PMM2-congenital disorder of glycosylation
+            term:
+              id: MONDO:0008907
+              label: PMM2-congenital disorder of glycosylation
+        context:
+        - path: /biochemical/0
+          value:
+            name: Serum transferrin isoform pattern
+            presence: Abnormal
+            biomarker_term:
+              preferred_term: Type I transferrin isoform profile
+              term:
+                id: HP:0003642
+                label: Type I transferrin isoform profile
+            context: A type I transferrin pattern is the established screening test and the functional
+              assay used to interpret PMM2 variants of uncertain significance. Its sensitivity is high
+              but not complete, and two recurrent variants are enriched among false positives.
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Global Protein N-Hypoglycosylation
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: Under-occupied glycosylation sites on transferrin report the global sequon occupancy
+          defect.
+      selected_evidence:
+        snippet: The data demonstrate 94% overall test sensitivity for PMM2-CDG and importantly demonstrate
+          two known, recurrent variants enriched in false positive cases highlighting an important limitation
+          of the test.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: PMID:39216211
+      reference_title: Sensitivity of transferrin isoform analysis for PMM2-CDG.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Quantifies the sensitivity of this readout and names its limitation, rather than treating
+        it as a perfect test.
+    first_seen_at: '2026-11-09T20:04:06.946223+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:04:06.946223+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:04:06.946223+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      reference: PMID:39216211
 assessments:
   502a33847f07cc6c9c611a56cdddc9cbb16a3bae9b723cfbc170255f9a4e738a:
     input_sha256: 8e1b3f708c732a9b61f9e9787fb0769a9afdc689c24220545299fcc03490579a
@@ -8777,3 +8836,76 @@ assessments:
       request_sha256: d1947ea512057ea4027d5a172d763b157b08c4b303186b44ad05de3661bd7e93
       request_sha256s:
       - d1947ea512057ea4027d5a172d763b157b08c4b303186b44ad05de3661bd7e93
+  2ee4868a8c14990b60d539c8949f6bc6aae382cdc417669310efd76c7d0ee81e:
+    input_sha256: 4a4f178f8021f68fd41f7505e349baedc50bc999dd847f3f3d911b44de2cb9e1
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:04:06.946223+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.19
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.42
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.22
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.17
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.51
+            PARTIAL: 0.45
+          confidence: 0.26
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.06
+            PARTIAL: 0.31
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8585
+        output_tokens: 367
+      elapsed_seconds: 0.1805
+      request_sha256: b8c2b106e80f770b5179f42611eb32c7f732c44ed4ccc9326740ccf47ac72f81
+      request_sha256s:
+      - b8c2b106e80f770b5179f42611eb32c7f732c44ed4ccc9326740ccf47ac72f81

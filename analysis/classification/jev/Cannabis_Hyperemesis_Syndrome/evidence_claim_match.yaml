@@ -2411,6 +2411,68 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/1
       reference: PMID:29310960
+  7cd4015253d109dc477989f73122d377dc538347ec39f4f855502288cb75571d:
+    claim:
+      about:
+        disease:
+          name: Cannabis Hyperemesis Syndrome
+          disease_term:
+            preferred_term: cannabinoid hyperemesis syndrome
+            term:
+              id: MONDO:0100094
+              label: cannabinoid hyperemesis syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: D2/3 Receptor Blockade (Antipsychotic Target)
+        description: 'Haloperidol, used for symptomatic relief in acute episodes, occupies D2 and D3 receptors.
+          This is the antiemetic indication of the class rather than the antipsychotic one, and it is
+          the reason a D2 blockade node belongs in an entry with no psychiatric mechanism: the drug reaches
+          the same receptor for a different purpose. The node carries no causal edge on purpose: its relation
+          to the mechanisms above is inhibitory, and a downstream edge would assert that receptor blockade
+          causes them. The treatments that act here name it in their target_mechanisms instead.'
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: d2_receptor_antagonism#D2/3 Receptor Antagonist Occupancy
+        molecular_functions:
+        - preferred_term: dopamine neurotransmitter receptor activity, coupled via Gi/Go
+          term:
+            id: GO:0001591
+            label: dopamine neurotransmitter receptor activity, coupled via Gi/Go
+          modifier: DECREASED
+        genes:
+        - preferred_term: DRD2
+          term:
+            id: hgnc:3023
+            label: DRD2
+      selected_evidence:
+        snippet: These studies show that all currently licensed antipsychotic drugs block striatal D2/3
+          receptors in vivo- a site downstream of the likely principal dopaminergic pathophysiology in
+          schizophrenia
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19689327
+      reference_title: 'Mechanisms underlying psychosis and antipsychotic treatment response in schizophrenia:
+        insights from PET and SPECT imaging.'
+      quote_role: REVIEW_SYNTHESIS
+      evidence_source: OTHER
+      explanation: Establishes the receptor action shared by every drug in the class this entry prescribes.
+    first_seen_at: '2026-11-09T20:45:04.314440+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:45:04.314440+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:45:04.314440+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:19689327
 assessments:
   5e3f5d947627203f9293fabd8314c3067253705ddacea1745d7fd27e666066ad:
     input_sha256: 58e292ac6e556a33ce870c356d17ecd289600d3344f565626fbb49f47ea609b9
@@ -5758,3 +5820,104 @@ assessments:
       request_sha256: 1e4e2e8d5a773b683157512f57c9cbf5491774d3c997eaf20cc8683b2f6344e4
       request_sha256s:
       - 1e4e2e8d5a773b683157512f57c9cbf5491774d3c997eaf20cc8683b2f6344e4
+  95ffdff0c45a2f311a69381557c7d3baadc475786896093aefa20386cf52be62:
+    input_sha256: 7cd4015253d109dc477989f73122d377dc538347ec39f4f855502288cb75571d
+    configuration_sha256: 5f53db500c604aab98995d746c0aaf3afce65964f1aa6d36677e5c51e5e06c15
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:45:04.314440+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.97
+            PARTIAL: 0.02
+          confidence: 0.96
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.99
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.72
+            PARTIAL: 0.13
+          confidence: 0.58
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.84
+            PARTIAL: 0.13
+          confidence: 0.76
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.29
+            PARTIAL: 0.13
+          confidence: 0.37
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.76
+            PARTIAL: 0.13
+          confidence: 0.64
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.71
+            PARTIAL: 0.19
+          confidence: 0.56
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.76
+            PARTIAL: 0.11
+          confidence: 0.64
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.6
+            PARTIAL: 0.15
+          confidence: 0.4
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.59
+            PARTIAL: 0.19
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13040
+        output_tokens: 595
+      elapsed_seconds: 0.2447
+      request_sha256: 7b26ddf8f918479746876b2b913ee46de705c1309f35b347434e5e3ca1db30a3
+      request_sha256s:
+      - 7b26ddf8f918479746876b2b913ee46de705c1309f35b347434e5e3ca1db30a3

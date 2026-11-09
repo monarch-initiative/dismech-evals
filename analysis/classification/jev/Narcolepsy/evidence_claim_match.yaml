@@ -2033,6 +2033,121 @@ inputs:
     - assertion_path: /treatments/7
       evidence_path: /treatments/7/evidence/0
       reference: PMID:18830438
+  aecfd3f7ca410535903dfc9c1a76a8c9f2bccd98440ee05ceea69c7c50e97628:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: CSF Orexin/Hypocretin-1
+        presence: Decreased
+        context: Low or undetectable in Type 1 narcolepsy (<110 pg/mL)
+        loinc_term:
+          id: LOINC:91670-0
+          label: Orexin-A [Mass/volume] in Cerebral spinal fluid
+        notes: 'No interpretation_bands are added for the 110/200 pg/mL diagnostic thresholds below. The
+          diagnostic tier ("below 110") is representable exactly: omitting lower_bound and setting upper_bound:
+          110 gives precisely values below 110, since upper_bound is exclusive. The 200 pg/mL boundary
+          is not representable: "above 200" (normal) would need an exclusive lower bound, which the schema
+          does not offer, so writing lower_bound: 200 for the normal tier would wrongly include a value
+          of exactly 200, and writing the indeterminate tier as [110, 200) would wrongly exclude it --
+          a value of exactly 200 is misclassified by whichever tier gets the inclusive boundary. Rather
+          than write a partial band set that would let a reader infer the missing normal/indeterminate
+          split, the full set is declined and the thresholds are recorded as evidence instead.'
+      selected_evidence:
+        snippet: 'Narcolepsy is a sleep disorder caused by an apparent degeneration of orexin/hypocretin
+          neurons in the lateral hypothalamic area and a subsequent decrease in orexin/hypocretin levels
+          in the cerebrospinal fluid.
+
+          '
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1111/iji.12688
+      reference_title: High-resolution HLA sequencing and hypocretin receptor 2 autoantibodies in narcolepsy
+        type 1 and type 2
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'The deep-research report highlighted this 2024 immunogenetics study; its abstract
+        supports decreased CSF orexin/hypocretin as a key biochemical marker.
+
+        '
+    first_seen_at: '2026-11-09T20:35:53.962122+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:53.962122+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:53.962122+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: DOI:10.1111/iji.12688
+  aa847bdbd9b4479c821cb872afd002dd69e1d0805480e67637e76477431cce24:
+    claim:
+      about:
+        disease:
+          name: Narcolepsy
+          disease_term:
+            preferred_term: narcolepsy
+            term:
+              id: MONDO:0021107
+              label: narcolepsy
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: CSF Orexin/Hypocretin-1
+        presence: Decreased
+        context: Low or undetectable in Type 1 narcolepsy (<110 pg/mL)
+        loinc_term:
+          id: LOINC:91670-0
+          label: Orexin-A [Mass/volume] in Cerebral spinal fluid
+        notes: 'No interpretation_bands are added for the 110/200 pg/mL diagnostic thresholds below. The
+          diagnostic tier ("below 110") is representable exactly: omitting lower_bound and setting upper_bound:
+          110 gives precisely values below 110, since upper_bound is exclusive. The 200 pg/mL boundary
+          is not representable: "above 200" (normal) would need an exclusive lower bound, which the schema
+          does not offer, so writing lower_bound: 200 for the normal tier would wrongly include a value
+          of exactly 200, and writing the indeterminate tier as [110, 200) would wrongly exclude it --
+          a value of exactly 200 is misclassified by whichever tier gets the inclusive boundary. Rather
+          than write a partial band set that would let a reader infer the missing normal/indeterminate
+          split, the full set is declined and the thresholds are recorded as evidence instead.'
+      selected_evidence:
+        snippet: Hypocretin-1 levels below 110 pg/mL were diagnostic for narcolepsy. Values above 200
+          pg/mL were considered normal.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:12374492
+      reference_title: The role of cerebrospinal fluid hypocretin measurement in the diagnosis of narcolepsy
+        and other hypersomnias.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: Signal-detection analysis in this case series establishes the diagnostic (<110 pg/mL)
+        and normal (>200 pg/mL) CSF hypocretin-1 thresholds used clinically for narcolepsy.
+    first_seen_at: '2026-11-09T20:35:54.767900+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:54.767900+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:54.767900+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:12374492
 assessments:
   eb01561628fae6075f6de456dba691b6a902ac59d1e43af40ebda20fbbcf32e7:
     input_sha256: 042e97f19a4b3972fe1a3d70c73a10bf94726c551b047da39040bf63c9d37b54
@@ -4976,3 +5091,149 @@ assessments:
       request_sha256: 25a48cfb4ee2712eeac2eec5e2f4100adcbb18f7f790398318aec2f8130382a9
       request_sha256s:
       - 25a48cfb4ee2712eeac2eec5e2f4100adcbb18f7f790398318aec2f8130382a9
+  dc8d0e299ae895e242db0e7b49ff7efbaddb6b382432b7e0048580f47dad699d:
+    input_sha256: aecfd3f7ca410535903dfc9c1a76a8c9f2bccd98440ee05ceea69c7c50e97628
+    configuration_sha256: c69e77dff0282cbf89f95e0c95df8258e0751a05abf8d039d6c10f46d39d1b54
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:53.962122+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.03
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.03
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.01
+            PARTIAL: 0.4
+          confidence: 0.38
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.23
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.35
+            PARTIAL: 0.31
+          confidence: 0.02
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8299
+        output_tokens: 368
+      elapsed_seconds: 0.1932
+      request_sha256: 224e8f9b15c92b5da54a2226b0ab0f1c985909d1a3e00bbc72ab61562babb5e1
+      request_sha256s:
+      - 224e8f9b15c92b5da54a2226b0ab0f1c985909d1a3e00bbc72ab61562babb5e1
+  1034a80e8c949d8bfc3180c48c525d42aeb071aaefc9fb50a93d0a89bacf7b61:
+    input_sha256: aa847bdbd9b4479c821cb872afd002dd69e1d0805480e67637e76477431cce24
+    configuration_sha256: c69e77dff0282cbf89f95e0c95df8258e0751a05abf8d039d6c10f46d39d1b54
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:54.767900+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.03
+            PARTIAL: 0.37
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.03
+            PARTIAL: 0.07
+          confidence: 0.85
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.01
+            PARTIAL: 0.24
+          confidence: 0.62
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.09
+            PARTIAL: 0.37
+          confidence: 0.31
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.6
+            PARTIAL: 0.23
+          confidence: 0.4
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.34
+            PARTIAL: 0.23
+          confidence: 0.14
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.28
+            PARTIAL: 0.31
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8292
+        output_tokens: 360
+      elapsed_seconds: 0.2045
+      request_sha256: bb486a882b7591c71bed6ca3d3bfc0f7cb5c72b18c8d5f00d0b3acdd3340fe78
+      request_sha256s:
+      - bb486a882b7591c71bed6ca3d3bfc0f7cb5c72b18c8d5f00d0b3acdd3340fe78

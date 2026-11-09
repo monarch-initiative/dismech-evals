@@ -5108,6 +5108,221 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/0/evidence/0
       reference: PMID:26209646
+  0b5000997e650b96be42ea2aeb65ce2e3b653d15afed3954f937a6354d64d002:
+    claim:
+      about:
+        disease:
+          name: Uveal Coloboma-Cleft Lip and Palate-Intellectual Disability Syndrome
+          disease_term:
+            preferred_term: uveal coloboma-cleft lip and palate-intellectual disability
+            term:
+              id: MONDO:0007355
+              label: uveal coloboma-cleft lip and palate-intellectual disability
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: YAP1 Haploinsufficiency
+            role: trigger
+            biological_scale: MOLECULAR
+            description: A heterozygous nonsense variant in YAP1 (c.1066G>T, p.Glu356* in the index syndromic
+              family) introduces a premature termination codon in transcripts from both the canonical
+              and the intron-1 alternative transcription start site, so the mutant transcript is expected
+              to be cleared by nonsense-mediated decay and the affected individual is left with roughly
+              half the normal dose of YAP1 protein. YAP1 is not a structural protein of the eye or palate
+              — it is a transcriptional co-activator — so the lesion is a dosage lesion in a developmental
+              transcriptional program rather than loss of a tissue-specific product. The mechanism is
+              loss of function, not gain of function or dominant-negative action. Note that NMD of this
+              specific allele is predicted rather than measured — no patient-tissue transcript assay has
+              been reported for c.1066G>T — which is why the node is PROVISIONAL rather than ESTABLISHED,
+              and why the NMD-escaping YAP1 frameshift reported by Holt et al. is treated as a genuine
+              complication of the model.
+            gene:
+              preferred_term: YAP1
+              term:
+                id: hgnc:16262
+                label: YAP1
+            biological_processes:
+            - preferred_term: nonsense-mediated decay of the mutant YAP1 transcript
+              term:
+                id: GO:0000184
+                label: nuclear-transcribed mRNA catabolic process, nonsense-mediated decay
+              modifier: INCREASED
+            molecular_functions:
+            - preferred_term: YAP1 transcriptional co-activator activity
+              term:
+                id: GO:0003713
+                label: transcription coactivator activity
+              modifier: DECREASED
+            mechanism_confidence: PROVISIONAL
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Intellectual Disability
+        description: Intellectual disability is part of the multisystem phenotype attributed to the heterozygous
+          YAP1 loss-of-function allele, but the intervening neurodevelopmental mechanism is unknown. This
+          edge therefore starts at the upstream dosage lesion rather than at the tissue-expression node;
+          it does not assert that embryonic brain expression explains cognition.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: such correlations must still be approached with caution
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/2
+      evidence_path: /pathophysiology/0/downstream/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:28801591
+      reference_title: New variant and expression studies provide further insight into the genotype-phenotype
+        correlation in YAP1-related developmental eye disorders.
+      evidence_source: OTHER
+      explanation: A Discussion caveat rather than an experimental result. Its immediate clinical referent
+        is Asperger syndrome in Holt et al.'s Case 1, set beside intellectual disability in other YAP1
+        families and embryonic brain expression. It does not independently support this edge; it is retained
+        as a PARTIAL qualification on inferring a neurodevelopmental mechanism from the expression pattern.
+    first_seen_at: '2026-11-09T20:28:18.516112+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:28:18.516112+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:28:18.516112+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/2
+      evidence_path: /pathophysiology/0/downstream/2/evidence/1
+      reference: PMID:28801591
+  65db70968d64ddcc978c3cf7a1465d9aa318bdee96a75037b645c44d37be6aaa:
+    claim:
+      about:
+        disease:
+          name: Uveal Coloboma-Cleft Lip and Palate-Intellectual Disability Syndrome
+          disease_term:
+            preferred_term: uveal coloboma-cleft lip and palate-intellectual disability
+            term:
+              id: MONDO:0007355
+              label: uveal coloboma-cleft lip and palate-intellectual disability
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Alternative Transcription Start Site Modulation of Phenotype Severity
+        role: modifier
+        biological_scale: MOLECULAR
+        description: A candidate explanation for why one YAP1 nonsense family is syndromic and the other
+          is eye-only. YAP1 has an alternative transcription start site in intron 1, widely used in human
+          and mouse development, whose transcripts initiate at codon Met179. The isolated-coloboma allele
+          c.370C>T (p.Arg124*) falls in the 5' UTR of those alternative transcripts and so cannot trigger
+          nonsense-mediated decay in them, leaving a partially rescuing pool of protein; the syndromic
+          allele c.1066G>T (p.Glu356*) lies downstream of both start sites and is predicted to cause NMD
+          of transcripts from either. On this model the syndromic multisystem phenotype of this entity
+          reflects the absence of that alternative-transcript rescue. The model is proposed rather than
+          experimentally demonstrated in patient tissue, and other alleles complicate it — the c.1160delA
+          frameshift escapes NMD altogether yet was inherited from an asymptomatic father.
+        gene:
+          preferred_term: YAP1
+          term:
+            id: hgnc:16262
+            label: YAP1
+        mechanism_confidence: HYPOTHETICAL
+      selected_evidence:
+        snippet: the c.370C>T mutation in family 1305 is within the 5' UTR and cannot result in nonsense-mediated
+          decay
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24462371
+      reference_title: Heterozygous loss-of-function mutations in YAP1 cause both isolated and syndromic
+        optic fissure closure defects.
+      evidence_source: COMPUTATIONAL
+      explanation: States that the non-syndromic family's allele lies in the 5' UTR of the alternative
+        transcripts and therefore escapes NMD in them — the positional basis of the proposed rescue. This
+        is a positional inference rather than a transcript measurement, hence COMPUTATIONAL.
+    first_seen_at: '2026-11-09T20:28:19.978745+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:28:19.978745+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:28:19.978745+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/6
+      evidence_path: /pathophysiology/6/evidence/0
+      reference: PMID:24462371
+  bb37aa84d0b82c0ca86c35e4906d906110e4ddd00cc677295aec57c0e65b518c:
+    claim:
+      about:
+        disease:
+          name: Uveal Coloboma-Cleft Lip and Palate-Intellectual Disability Syndrome
+          disease_term:
+            preferred_term: uveal coloboma-cleft lip and palate-intellectual disability
+            term:
+              id: MONDO:0007355
+              label: uveal coloboma-cleft lip and palate-intellectual disability
+        context:
+        - path: /animal_models/0
+          value:
+            name: Zebrafish yap1 mutant, alone and with wwtr1 (taz)
+            species: Danio rerio
+            genotype: yap1 (yap) loss-of-function mutant, alone and combined with wwtr1 (taz)
+            publication: PMID:26209646
+            description: Zebrafish yap1 mutants lack a subset of retinal pigment epithelium and/or develop
+              coloboma, and combined loss of yap and taz abolishes the ability of optic vesicle progenitors
+              to form RPE at all. This is the closest available model of the ocular arm of the syndrome
+              and the source of the instructive (not merely permissive) role of Yap/Taz-Tead in RPE fate.
+              It does not model the clefting, hearing loss, or intellectual disability arms.
+            associated_phenotypes:
+            - Coloboma
+            - Loss of retinal pigment epithelium
+          role: ancestor
+        - path: /animal_models/0/modeled_mechanisms/1
+          value:
+            target: Failure of Optic Fissure Closure
+            relationship: RECAPITULATES
+            fidelity: MODERATE
+            description: yap1 mutants develop coloboma — the optic fissure closure defect itself — alongside
+              the RPE deficiency proposed to underlie it.
+            limitations: 'The zygosity mismatch bites hardest here, on the stronger claim: the coloboma
+              is scored in homozygous yap1 nulls, whereas the human disorder is caused by a heterozygous
+              nonsense allele, so the model recapitulates the lesion''s direction and not its dose. Zebrafish
+              ocular morphogenesis is also not identical to the human weeks-5-to-7 fissure closure window,
+              and the model does not reproduce the clefting, hearing loss, haematuria, or intellectual
+              disability arms of the syndrome.'
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Retinal pigment epithelium cell number in yap1 mutants
+        target: Failure of Optic Fissure Closure
+        direction: DECREASED
+        interpretation: The RPE deficiency that accompanies the coloboma, recorded separately because
+          it moves in the opposite direction from coloboma incidence and cannot share a single direction
+          value with it.
+      selected_evidence:
+        snippet: yap (yap1) mutants lack a subset of RPE cells and/or exhibit coloboma.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+      - /animal_models/0/modeled_mechanisms/1
+    evidence_metadata:
+      reference: PMID:26209646
+      reference_title: Yap and Taz regulate retinal pigment epithelial cell fate.
+      evidence_source: MODEL_ORGANISM
+      explanation: Reports the RPE cell deficiency scored in the mutants.
+    first_seen_at: '2026-11-09T20:28:20.008151+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:28:20.008151+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:28:20.008151+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/1/evidence/0
+      reference: PMID:26209646
 assessments:
   45d285e7c4b2329adead17df95ce6b1b945223196f4911291006e90e5107afe9:
     input_sha256: ce3b0595e256103fa0d7077facca532ec2a0dfca282331726a1fa2f148dbc44e
@@ -11949,3 +12164,215 @@ assessments:
       request_sha256: 871651630d355595bf41fdc37f73efe9db7812b3cde6a508d2fc33227313639b
       request_sha256s:
       - 871651630d355595bf41fdc37f73efe9db7812b3cde6a508d2fc33227313639b
+  5e8744b1229cacc7b52f8c746b0f89f99a31a86f9131f18c3aa940ddb8e59de3:
+    input_sha256: 0b5000997e650b96be42ea2aeb65ce2e3b653d15afed3954f937a6354d64d002
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:28:18.516112+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.52
+            PARTIAL: 0.43
+          confidence: 0.28
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.46
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.58
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.47
+            PARTIAL: 0.39
+          confidence: 0.2
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.41
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6879
+        output_tokens: 284
+      elapsed_seconds: 0.235
+      request_sha256: 7f88652afed1cc711630b67eaf1f2ccf0e3171babd9b98a1838155670ff96bd1
+      request_sha256s:
+      - 7f88652afed1cc711630b67eaf1f2ccf0e3171babd9b98a1838155670ff96bd1
+  54ad34e93bdcf54bbc61a032a2368118d790ec29601f6251a1050f3a98a2155c:
+    input_sha256: 65db70968d64ddcc978c3cf7a1465d9aa318bdee96a75037b645c44d37be6aaa
+    configuration_sha256: c6b17050463816e9ca618060561f3287a633a26fc9150426f7e75fd50a586189
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:28:19.978745+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.06
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.17
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.18
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.03
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.15
+            PARTIAL: 0.22
+          confidence: 0.44
+        /assertion/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.24
+            PARTIAL: 0.27
+          confidence: 0.24
+        /assertion/mechanism_confidence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.14
+            PARTIAL: 0.4
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9860
+        output_tokens: 413
+      elapsed_seconds: 0.1678
+      request_sha256: 35c58270989f867da39390556a8d893163d5cb7238b543ac27a6e325c1969560
+      request_sha256s:
+      - 35c58270989f867da39390556a8d893163d5cb7238b543ac27a6e325c1969560
+  56b8ffc67e65c7d9329c02ad8cc8d9d3ec95c4147ea03cc28b52196d7b559654:
+    input_sha256: bb37aa84d0b82c0ca86c35e4906d906110e4ddd00cc677295aec57c0e65b518c
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:28:20.008151+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.28
+            PARTIAL: 0.35
+          confidence: 0.06
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.48
+            PARTIAL: 0.37
+          confidence: 0.22
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.12
+            PARTIAL: 0.11
+          confidence: 0.66
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.19
+            PARTIAL: 0.25
+          confidence: 0.34
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.27
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.11
+            PARTIAL: 0.35
+          confidence: 0.31
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.15
+            PARTIAL: 0.29
+          confidence: 0.34
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.19
+            PARTIAL: 0.33
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8732
+        output_tokens: 359
+      elapsed_seconds: 0.2043
+      request_sha256: 7a4b50b55da086d27ca2f020d7e29dc5a564773afdf3ea0ac4927fcd028aac26
+      request_sha256s:
+      - 7a4b50b55da086d27ca2f020d7e29dc5a564773afdf3ea0ac4927fcd028aac26

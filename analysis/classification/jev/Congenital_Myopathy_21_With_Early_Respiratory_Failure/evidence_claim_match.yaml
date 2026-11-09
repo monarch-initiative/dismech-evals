@@ -5350,6 +5350,65 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:40696134
+  c61d0484c61c6bf16ed4eda91fbcbe0cb0b231a135adba3346b6d64073df63d6:
+    claim:
+      about:
+        disease:
+          name: Congenital Myopathy 21 With Early Respiratory Failure
+          disease_term:
+            preferred_term: congenital myopathy 21 with early respiratory failure
+            term:
+              id: MONDO:0957224
+              label: congenital myopathy 21 with early respiratory failure
+        context:
+        - path: /pathophysiology/5
+          value:
+            name: Skeletal Muscle Fiber Atrophy and Degeneration
+            biological_scale: TISSUE
+            description: Fiber size variation, angular and atrophic fibers, endomysial fibrosis and adipose
+              replacement in patient muscle, with prominent diaphragm involvement in the knockout mouse.
+            cell_types:
+            - preferred_term: skeletal muscle fiber
+              term:
+                id: CL:0008002
+                label: skeletal muscle fiber
+            biological_processes:
+            - preferred_term: skeletal muscle atrophy
+              term:
+                id: GO:0014732
+                label: skeletal muscle atrophy
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: EMG myopathic abnormalities
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: Electromyography was performed on two patients (P4 and P5), and the results indicated
+          myopathic changes, characterized by short-duration, low-amplitude, polyphasic motor unit potentials
+          and early recruitment patterns.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5/downstream/5
+      evidence_path: /pathophysiology/5/downstream/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/5
+    evidence_metadata:
+      reference: PMID:39468638
+      reference_title: Genotype‒phenotype correlation in recessive DNAJB4 myopathy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Myopathic motor units reflect the fiber-level myopathy.
+    first_seen_at: '2026-11-09T20:02:24.457893+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:02:24.457893+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:02:24.457893+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5/downstream/5
+      evidence_path: /pathophysiology/5/downstream/5/evidence/0
+      reference: PMID:39468638
 assessments:
   36b17cf965d2fc9de74f45603d8864d51f55b112bed81a4f090cdfc19d7a0c93:
     input_sha256: e41e2c924ddef05fe6e1dc18f9f6b30138873ec4805b9ce62ba103ff3cc23280
@@ -12297,3 +12356,55 @@ assessments:
       request_sha256: ca6d8d14372b1fb10917c8ebe1a56d77da4e84d1527632cdad83b06523f95c94
       request_sha256s:
       - ca6d8d14372b1fb10917c8ebe1a56d77da4e84d1527632cdad83b06523f95c94
+  2bddea8c2da0246ca06d446e43e274817ae32544240977724c64037297aa2651:
+    input_sha256: c61d0484c61c6bf16ed4eda91fbcbe0cb0b231a135adba3346b6d64073df63d6
+    configuration_sha256: e16ae0eb91cb7a047448384bc2e4d65fa7a25457eb28490cdf26275cd97f499c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:02:24.457893+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.14
+            PARTIAL: 0.44
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.08
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+          confidence: 0.77
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.27
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.43
+            PARTIAL: 0.33
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5572
+        output_tokens: 229
+      elapsed_seconds: 0.1487
+      request_sha256: 6ab764dc862cb9a88f53224b38891005cab5656e8406e8b8d22a2eb013899354
+      request_sha256s:
+      - 6ab764dc862cb9a88f53224b38891005cab5656e8406e8b8d22a2eb013899354

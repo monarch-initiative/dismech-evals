@@ -1216,6 +1216,71 @@ inputs:
     - assertion_path: /clinical_trials/2
       evidence_path: /clinical_trials/2/evidence/1
       reference: clinicaltrials:NCT00097474
+  1a5066ee5da5713321c33659ee54085be5c7125d6405409a667fb8195f6610cf:
+    claim:
+      about:
+        disease:
+          name: Jet Lag
+          disease_term:
+            preferred_term: jet lag
+            term:
+              id: MONDO:0024381
+              label: circadian rhythm sleep disorder, jet lag type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Armodafinil for Jet-Lag-Associated Excessive Sleepiness
+        action_category: THERAPEUTIC
+        therapeutic_modality: SMALL_MOLECULE
+        description: Armodafinil, the R-enantiomer of modafinil, is a wake-promoting symptomatic treatment
+          studied for excessive sleepiness after eastward transmeridian travel. It should be distinguished
+          from racemic modafinil, which contains both R- and S-modafinil.
+        mechanism:
+        - name: Wake promotion without circadian re-entrainment
+          description: Wake promotion is represented here as symptomatic treatment of sleepiness, not
+            correction of the upstream circadian desynchronization. ChEBI separates armodafinil (CHEBI:77590)
+            from racemic modafinil (CHEBI:31859), preserving the R-enantiomer versus racemate distinction.
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: armodafinil
+            term:
+              id: CHEBI:77590
+              label: armodafinil
+        target_phenotypes:
+        - preferred_term: Excessive daytime somnolence
+          term:
+            id: HP:0001262
+            label: Excessive daytime somnolence
+      selected_evidence:
+        snippet: 'Armodafinil at 150 mg/d provided a significant benefit in sleep latency on the MSLT
+          (days 1-2: mean, 11.7 minutes vs 4.8 minutes for placebo; P<.001)'
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20530317
+      reference_title: A phase 3, double-blind, randomized, placebo-controlled study of armodafinil for
+        excessive sleepiness associated with jet lag disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Phase 3 trial evidence supports armodafinil improving objective wakefulness in jet-lag-associated
+        excessive sleepiness.
+    first_seen_at: '2026-11-09T20:40:33.354573+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:40:33.354573+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:40:33.354573+00:00'
+    occurrences:
+    - assertion_path: /treatments/4
+      evidence_path: /treatments/4/evidence/0
+      reference: PMID:20530317
 assessments:
   ba07f730e045a5df0b306a979c30ab27053371425161c98e4aa8e7716e780930:
     input_sha256: 4bbac9c3129c3aa75c5550129e69bd4799b0c5743b1d4c26219a11b092a5c46b
@@ -3074,3 +3139,118 @@ assessments:
       request_sha256: ad130ed66f517c76db5f755812807171dedeb3ae28e6b4fd66857139f1fc8cc5
       request_sha256s:
       - ad130ed66f517c76db5f755812807171dedeb3ae28e6b4fd66857139f1fc8cc5
+  65e0e34812538907a4b1d12f8c1c8d94a161ff4d2eac113f1dc16bce6d624fcc:
+    input_sha256: 1a5066ee5da5713321c33659ee54085be5c7125d6405409a667fb8195f6610cf
+    configuration_sha256: 778d311f07be7fc55fcb64581f35092a2f33c4a9a215332cf2fe3d7aa961168c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:40:33.354573+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.05
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.1
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.08
+            PARTIAL: 0.44
+          confidence: 0.22
+        /assertion/action_category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.17
+            PARTIAL: 0.25
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.22
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/mechanism/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.15
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/mechanism/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.31
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.15
+            PARTIAL: 0.29
+          confidence: 0.34
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.18
+            PARTIAL: 0.37
+          confidence: 0.18
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/target_phenotypes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.08
+            PARTIAL: 0.34
+          confidence: 0.37
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.07
+            PARTIAL: 0.33
+          confidence: 0.4
+      model: jev-1.13.0
+      usage:
+        input_tokens: 14962
+        output_tokens: 689
+      elapsed_seconds: 0.3151
+      request_sha256: 7ceb2a723a75bd5b6e5e0901fa6ebf778f404f8e50ad9cbd015af31ab3b8a30d
+      request_sha256s:
+      - 7ceb2a723a75bd5b6e5e0901fa6ebf778f404f8e50ad9cbd015af31ab3b8a30d

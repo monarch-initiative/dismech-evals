@@ -2694,6 +2694,63 @@ inputs:
     - assertion_path: /progression/1
       evidence_path: /progression/1/evidence/1
       reference: PMID:36699472
+  10a3d3e4bbc28aa1b13e3b6bf0920006f81ec5f21e8e2c896831992d6367c577:
+    claim:
+      about:
+        disease:
+          name: Osteootohepatoenteric Syndrome
+          disease_term:
+            preferred_term: osteootohepatoenteric syndrome
+            term:
+              id: MONDO:0859164
+              label: osteootohepatoenteric syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: Biallelic UNC45A Loss of Function
+            biological_scale: MOLECULAR
+            description: 'Two mechanistic classes of allele converge on the same endpoint. Nonsense and
+              frameshift alleles abolish the protein outright. Missense alleles are subtler and more informative:
+              several are expressed at normal levels in transfected cells yet still fail to rescue, and
+              for the p.Val423Asp allele the defect was shown to be protein instability rather than loss
+              of a specific function. Thr230 and Leu237 both map to the third armadillo repeat of the
+              central domain, the segment that connects the Hsp90-binding and myosin-binding ends.'
+            genetic_context:
+              variant_origin: GERMLINE
+              functional_impact_category: LOSS_OF_FUNCTION
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Loss of UNC45A Myosin Co-Chaperone Function
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: In keeping with impaired myosin VB function, UNC45AKO Caco-2 cells showed abnormal epithelial
+          morphogenesis that was restored by full-length UNC45A, but not by mutant alleles.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:35575086
+      reference_title: UNC45A deficiency causes microvillus inclusion disease-like phenotype by impairing
+        myosin VB-dependent apical trafficking.
+      evidence_source: IN_VITRO
+      explanation: Rescue by wild-type and failure of rescue by the patient alleles is what licenses treating
+        the variants as acting through loss of the chaperone function rather than through some neomorphic
+        effect.
+    first_seen_at: '2026-11-09T20:43:36.275637+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:36.275637+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:36.275637+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/0
+      evidence_path: /pathophysiology/0/downstream/0/evidence/0
+      reference: PMID:35575086
 assessments:
   dda1e439b62d9065623b6f5c67dd3443c4c0c58b1e28cec8bae6cbdfbb65b9e7:
     input_sha256: 0230f6bbd6de5f43b3c787a7295ea0819847c6ec52c58bebf7a46a1d4892aab3
@@ -6254,3 +6311,55 @@ assessments:
       request_sha256: 1cc96846a291c5e40b06c5ab427a5df714aa28edf35fb36a752fddf9f4514277
       request_sha256s:
       - 1cc96846a291c5e40b06c5ab427a5df714aa28edf35fb36a752fddf9f4514277
+  3f0b5fe5c5ac3baf3f04457ac98508da93b780f26680761da1fb33f462f9d749:
+    input_sha256: 10a3d3e4bbc28aa1b13e3b6bf0920006f81ec5f21e8e2c896831992d6367c577
+    configuration_sha256: e16ae0eb91cb7a047448384bc2e4d65fa7a25457eb28490cdf26275cd97f499c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:36.275637+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.17
+            PARTIAL: 0.36
+          confidence: 0.2
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.41
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.03
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.07
+            PARTIAL: 0.36
+          confidence: 0.35
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.19
+            PARTIAL: 0.36
+          confidence: 0.18
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5559
+        output_tokens: 224
+      elapsed_seconds: 0.2169
+      request_sha256: c7778e3837e72b50232c6b39e507e8a7729bd6ae59c7678397f2bc2229f1ec11
+      request_sha256s:
+      - c7778e3837e72b50232c6b39e507e8a7729bd6ae59c7678397f2bc2229f1ec11

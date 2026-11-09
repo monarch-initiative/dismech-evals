@@ -3320,6 +3320,69 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/4
       reference: PMID:39804912
+  8e13f62a5533fd9d7c0b938634f6b3f3ad057e3403e03c0f68c6643479bf0b6f:
+    claim:
+      about:
+        disease:
+          name: Marinesco-Sjogren Syndrome
+          disease_term:
+            preferred_term: Marinesco-Sjogren syndrome
+            term:
+              id: MONDO:0009567
+              label: Marinesco-Sjogren syndrome
+        context:
+        - path: /animal_models/0
+          value:
+            name: woozy mouse (spontaneous Sil1 mutation)
+            species: Mouse
+            genotype: Sil1 woozy (wz) homozygous
+            publication: PMID:16116427
+            description: The spontaneous woozy mutation disrupts Sil1 and produces adult-onset ataxia
+              with Purkinje cell loss, ER and nuclear protein inclusions, UPR upregulation, and a progressive
+              vacuolar myopathy that reproduces the human ultrastructural hallmark.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Cerebellar Purkinje Neuron Degeneration
+        relationship: RECAPITULATES
+        fidelity: HIGH
+        description: woozy reproduces Purkinje cell degeneration and the resulting ataxia.
+        limitations: Degeneration in woozy is adult-onset, whereas human MSS is an early childhood disease,
+          so the model compresses a different developmental window. Cataract, the third element of the
+          human triad, is not reported among woozy phenotypes in the cited studies, which is why no lens
+          node is modelled here at all.
+        readouts:
+        - name: Purkinje cell loss
+          target: Cerebellar Purkinje Neuron Degeneration
+          direction: DECREASED
+          interpretation: Cerebellar Purkinje cell number falls, producing the ataxic phenotype.
+      selected_evidence:
+        snippet: Mice homozygous with respect to the woozy (wz) mutation develop adult-onset ataxia with
+          cerebellar Purkinje cell loss.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+    evidence_metadata:
+      reference: PMID:16116427
+      reference_title: Protein accumulation and neurodegeneration in the woozy mutant mouse is caused
+        by disruption of SIL1, a cochaperone of BiP.
+      evidence_source: MODEL_ORGANISM
+      explanation: Establishes that the model reproduces Purkinje cell loss, which is what makes it informative
+        for this node specifically.
+    first_seen_at: '2026-11-09T20:51:51.299952+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:51:51.299952+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:51:51.299952+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/1
+      evidence_path: /animal_models/0/modeled_mechanisms/1/evidence/0
+      reference: PMID:16116427
 assessments:
   0b4e4e677154bb94b8995c8759726da8f5b1651ca7648fcb30396aa72e732db0:
     input_sha256: fe5f8cf9bc741f89ac6db3681c937372ac1af5daa5905077233f4014693fce56
@@ -7538,3 +7601,104 @@ assessments:
       request_sha256: 9158e9fd03bf10253c8705bc1c226af2296e9bb5d56d9939d3ec3c0e7bacd643
       request_sha256s:
       - 9158e9fd03bf10253c8705bc1c226af2296e9bb5d56d9939d3ec3c0e7bacd643
+  ca0f2c2d4c4c81919316b6769a56063c2b818f6a6e92e51900f18ab8b1238e63:
+    input_sha256: 8e13f62a5533fd9d7c0b938634f6b3f3ad057e3403e03c0f68c6643479bf0b6f
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:51:51.299952+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.17
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.33
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.04
+            PARTIAL: 0.04
+          confidence: 0.88
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.44
+            PARTIAL: 0.14
+          confidence: 0.16
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.06
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.07
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.5
+            PARTIAL: 0.37
+          confidence: 0.25
+        /assertion/readouts/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.04
+            PARTIAL: 0.03
+          confidence: 0.89
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.03
+            PARTIAL: 0.04
+          confidence: 0.89
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.16
+            PARTIAL: 0.08
+          confidence: 0.64
+        /assertion/readouts/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.03
+            PARTIAL: 0.1
+          confidence: 0.8
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.15
+            PARTIAL: 0.24
+          confidence: 0.42
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12534
+        output_tokens: 567
+      elapsed_seconds: 0.2784
+      request_sha256: 8c167eb67c8e8e003d44df4ce39c5db2b16e566ebf4047e14287514955220d5f
+      request_sha256s:
+      - 8c167eb67c8e8e003d44df4ce39c5db2b16e566ebf4047e14287514955220d5f

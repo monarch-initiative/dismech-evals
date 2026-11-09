@@ -2608,6 +2608,55 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/1
       reference: PMID:11966763
+  563b444479b1557dc8cc71a7f627969b3ebb8c227f26a55fcd90b83ce2f6ed6b:
+    claim:
+      about:
+        disease:
+          name: Incontinentia Pigmenti
+          disease_term:
+            preferred_term: incontinentia pigmenti
+            term:
+              id: MONDO:0010631
+              label: incontinentia pigmenti
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Clinical Diagnosis and IKBKG Molecular Testing
+        description: Diagnosis is established by a characteristic skin lesion (major criterion), supported
+          by identification of a heterozygous IKBKG pathogenic variant in a female (or hemizygous in a
+          male). Molecular testing targets the recurrent exon 4-10 deletion first (long-range PCR / MLPA)
+          followed by sequencing. A truncated IKBKG pseudogene copy (IKBKGP/deltaNEMO) at the same locus
+          complicates sequence analysis and necessitates deletion-specific assays.
+        diagnosis_term:
+          preferred_term: genetic testing
+          term:
+            id: NCIT:C15709
+            label: Genetic Testing
+      selected_evidence:
+        snippet: its truncated pseudogene copy, IKBKGP/deltaNEMO
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19603533
+      reference_title: Microdeletion/duplication at the Xq28 IP locus causes a de novo IKBKG/NEMO/IKKgamma
+        exon4_10 deletion in families with Incontinentia Pigmenti.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The IKBKG pseudogene at the IP locus complicates molecular diagnosis and requires deletion-specific
+        testing.
+    first_seen_at: '2026-11-09T20:39:58.372637+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:39:58.372637+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:39:58.372637+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:19603533
 assessments:
   131f3a10619239be2718426118c8895fd28307ecd73f0e807a062949ad4edec3:
     input_sha256: 4026cc3348e3c18f02d89c8ca7bc6b8452448f8689eb9f7e565d952c3050b2b1
@@ -6208,3 +6257,62 @@ assessments:
       request_sha256: bce741095d55e51afbc8540164cf3226d44c66ea822405fb662a642543f43936
       request_sha256s:
       - bce741095d55e51afbc8540164cf3226d44c66ea822405fb662a642543f43936
+  dee80ffe11b5fef62f1e8a2e829f23d136f0ba5b3373517a83e78cd0d44be740:
+    input_sha256: 563b444479b1557dc8cc71a7f627969b3ebb8c227f26a55fcd90b83ce2f6ed6b
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:39:58.372637+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.09
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.08
+            PARTIAL: 0.29
+          confidence: 0.44
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.34
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.05
+            PARTIAL: 0.46
+          confidence: 0.24
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.29
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.27
+            PARTIAL: 0.43
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6321
+        output_tokens: 279
+      elapsed_seconds: 0.3291
+      request_sha256: 26af26b7df00fa50ee790e54d34d413eac7348b51e032eaf0a77b6130de5ef24
+      request_sha256s:
+      - 26af26b7df00fa50ee790e54d34d413eac7348b51e032eaf0a77b6130de5ef24

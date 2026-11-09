@@ -3943,6 +3943,67 @@ inputs:
     - assertion_path: /differential_diagnoses/1
       evidence_path: /differential_diagnoses/1/evidence/0
       reference: PMID:36925460
+  51058f17823b21eb781da90eaadeaf5a0c4b25e7d64c383709c58554e98562b3:
+    claim:
+      about:
+        disease:
+          name: Peutz-Jeghers syndrome
+          disease_term:
+            preferred_term: Peutz-Jeghers syndrome
+            term:
+              id: MONDO:0008280
+              label: Peutz-Jeghers syndrome
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: mTORC1 pathway hyperactivation
+        conforms_to: mtorc1_hyperactivation#Constitutive mTORC1 Hyperactivation
+        description: 'LKB1-deficient PJS tissues show increased mTORC1 signaling with elevated HIF-1alpha
+          and GLUT1, supporting proliferative polyp growth and providing a mechanism-directed rationale
+          for investigational mTOR inhibition.
+
+          '
+        biological_processes:
+        - preferred_term: mTORC1 signaling
+          term:
+            id: GO:0031929
+            label: TOR signaling
+          modifier: INCREASED
+        - preferred_term: cell proliferation
+          term:
+            id: GO:0008283
+            label: cell population proliferation
+          modifier: INCREASED
+        cell_types:
+        - preferred_term: intestinal epithelial cell
+          term:
+            id: CL:0002563
+            label: intestinal epithelial cell
+      selected_evidence:
+        snippet: polyps from human Peutz-Jeghers patients similarly exhibit up-regulated mTORC1 signaling,
+          HIF-1alpha, and GLUT1 levels.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19541609
+      reference_title: mTOR and HIF-1alpha-mediated tumor metabolism in an LKB1 mouse model of Peutz-Jeghers
+        syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Human PJS polyps show upregulated mTORC1 signaling and metabolic targets.
+    first_seen_at: '2026-11-09T20:24:55.035705+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:24:55.035705+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:24:55.035705+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:19541609
 assessments:
   88b239ba91ca8d95ff1124e20e6003183ea9b6b93bd247303da25373370e2667:
     input_sha256: fd482c63701bfc9feb77cdf7ba96ca61a38ed5aa345d552b8cf22c223a2e3d78
@@ -9570,3 +9631,111 @@ assessments:
       request_sha256: 419ce7de3e629d935aca0a7e22a4c827bd6c839a43c7bd6c8d68ef1e8a1a03dd
       request_sha256s:
       - 419ce7de3e629d935aca0a7e22a4c827bd6c839a43c7bd6c8d68ef1e8a1a03dd
+  b8f8e18d89fc0b187bdadac2803f77479db3411621e0346cbe5afbcf5a7ee300:
+    input_sha256: 51058f17823b21eb781da90eaadeaf5a0c4b25e7d64c383709c58554e98562b3
+    configuration_sha256: 487dfc22288fc824dac76f77955454852aa73c680e8e6711a646f0d1d97cb710
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:24:55.035705+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.02
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.23
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.03
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/biological_processes/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.32
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/biological_processes/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.37
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/biological_processes/1/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.25
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.1
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.1
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13809
+        output_tokens: 651
+      elapsed_seconds: 0.2227
+      request_sha256: 69ffa2d0587e42bc90601e1d009fa777fd3c1874373d4c6917c0a110c055cf97
+      request_sha256s:
+      - 69ffa2d0587e42bc90601e1d009fa777fd3c1874373d4c6917c0a110c055cf97

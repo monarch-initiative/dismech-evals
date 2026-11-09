@@ -2834,6 +2834,83 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT04123626
+  d6e3c633f7e9486d3cc4f8e92ba1e86a8822b4206ecde816ba0b2e876cbf47f7:
+    claim:
+      about:
+        disease:
+          name: RHO-Related Retinopathy
+          disease_term:
+            preferred_term: RHO-related retinopathy
+            term:
+              id: MONDO:0700380
+              label: RHO-related retinopathy
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Rhodopsin Misfolding and ER Stress
+        description: 'The majority of pathogenic RHO variants, most prominently P23H, produce misfolded
+          rhodopsin that is retained in the endoplasmic reticulum rather than delivered to photoreceptor
+          outer segments. Accumulation of misfolded rhodopsin triggers the unfolded protein response and
+          proteotoxic stress. A second group of variants (e.g., P347L) produce correctly folded but mistrafficked
+          rhodopsin that fails to reach the outer segment due to disrupted C-terminal sorting signals.
+          Both mechanisms impair rod photoreceptor homeostasis and converge on rod apoptosis.
+
+          '
+        gene:
+          preferred_term: RHO
+          modifier: DECREASED
+          term:
+            id: hgnc:10012
+            label: RHO
+        cell_types:
+        - preferred_term: retinal rod cell
+          term:
+            id: CL:0000604
+            label: retinal rod cell
+        biological_processes:
+        - preferred_term: protein folding
+          modifier: DECREASED
+          term:
+            id: GO:0006457
+            label: protein folding
+        - preferred_term: response to endoplasmic reticulum stress
+          modifier: INCREASED
+          term:
+            id: GO:0034976
+            label: response to endoplasmic reticulum stress
+        - preferred_term: photoreceptor cell maintenance
+          modifier: DECREASED
+          term:
+            id: GO:0045494
+            label: photoreceptor cell maintenance
+      selected_evidence:
+        snippet: Over 150 different mutations in rhodopsin have been identified and, collectively, they
+          are the most common cause of autosomal dominant RP (adRP).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29042326
+      reference_title: The molecular and cellular basis of rhodopsin retinitis pigmentosa reveals potential
+        strategies for therapy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'This review supports the breadth of RHO missense variation underlying the RP4 pathophysiology
+        trunk.
+
+        '
+    first_seen_at: '2026-11-09T20:37:38.916715+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:37:38.916715+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:37:38.916715+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/0
+      reference: PMID:29042326
 assessments:
   844075262d3a70e494fbd270eb57107d99a09ed3d820973a6d025bb9f6dda8cb:
     input_sha256: e486dd1b75c11f883edbed544637f4c601770c33f0692de884e4df1f32fe14a4
@@ -6192,3 +6269,146 @@ assessments:
       request_sha256: de22f2a9ad0622f8e01bd479ce9d0494fd27a0b7c47aa435ce58abf3fff794dc
       request_sha256s:
       - de22f2a9ad0622f8e01bd479ce9d0494fd27a0b7c47aa435ce58abf3fff794dc
+  d4ab492623b1cc493fdb6d1fb405641321063d9b818168e8a6f4b50b714d4376:
+    input_sha256: d6e3c633f7e9486d3cc4f8e92ba1e86a8822b4206ecde816ba0b2e876cbf47f7
+    configuration_sha256: 5445642a675fab73a5a803eb0f724cb667aa0468923724786fd1d0cadfd4372b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:37:38.916715+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.32
+            PARTIAL: 0.64
+          confidence: 0.46
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.03
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.47
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.55
+            PARTIAL: 0.44
+          confidence: 0.33
+        /assertion/gene/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.36
+            PARTIAL: 0.35
+          confidence: 0.04
+        /assertion/gene/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.64
+            PARTIAL: 0.34
+          confidence: 0.46
+        /assertion/gene/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.6
+            PARTIAL: 0.3
+          confidence: 0.4
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.32
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.39
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.56
+            PARTIAL: 0.41
+          confidence: 0.34
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.5
+            PARTIAL: 0.47
+          confidence: 0.25
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.58
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.66
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.67
+            PARTIAL: 0.29
+          confidence: 0.5
+        /assertion/biological_processes/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.66
+            PARTIAL: 0.31
+          confidence: 0.49
+        /assertion/biological_processes/2/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.66
+            PARTIAL: 0.32
+          confidence: 0.49
+        /assertion/biological_processes/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.53
+      model: jev-1.13.0
+      usage:
+        input_tokens: 19267
+        output_tokens: 945
+      elapsed_seconds: 0.1868
+      request_sha256: 8190b4e016d5cac5b2090ceb52031e779d481811c52bb7b8087a24b60d9c27ea
+      request_sha256s:
+      - 8190b4e016d5cac5b2090ceb52031e779d481811c52bb7b8087a24b60d9c27ea

@@ -3082,6 +3082,77 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:33743732
+  9372cee4f113af5d91c224b18b25173c71d1b3bf78f122415fc623421dd22427:
+    claim:
+      about:
+        disease:
+          name: IFAP Syndrome 1
+          disease_term:
+            preferred_term: IFAP syndrome
+            term:
+              id: MONDO:0100213
+              label: IFAP syndrome 1, with or without BRESHECK syndrome
+        context:
+        - path: /experimental_models/0
+          value:
+            name: CHO M19 site-2-protease-deficient complementation assay
+            experimental_model_type: CELL_LINE
+            description: 'Chinese hamster ovary M19 cells lack endogenous S2P and therefore cannot grow
+              without exogenous cholesterol and lipid. Transfecting human MBTPS2 rescues them, and patient
+              variants rescue them only partially - read out both by an SRE-regulated reporter and by
+              growth in lipid-free medium.
+
+              This is the assay the entire pathogenicity classification of MBTPS2 variants rests on, and
+              it is the reason the severity relationship in this disease is quantitative rather than categorical.'
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Impaired SREBP-Driven Lipid Synthesis
+        relationship: MEASURES
+        fidelity: MODERATE
+        description: 'Quantifies residual S2P activity through its SREBP output, which is what makes the
+          activity-severity correlation measurable.
+
+          Curated as MEASURES rather than RECAPITULATES on purpose: the cell line does not model IFAP,
+          it assays one function of the mutant protein. Nothing about a hamster ovary cell reproduces
+          a hair follicle or a corneal limbus.'
+        limitations: Two limits worth stating. The readout is the SREBP arm; the assay in its original
+          form says nothing about ATF6, which is why the ER-stress node is graded lower. And a rodent
+          ovary-derived line carries none of the tissue-specific context that determines why the phenotype
+          falls on skin, hair and cornea rather than on the many other tissues that need SREBP.
+        readouts:
+        - name: SRE-regulated reporter induction and growth in lipid-free medium
+          target: Impaired SREBP-Driven Lipid Synthesis
+          direction: DECREASED
+          interpretation: Patient variants complement the M19 deficiency less well than wild-type MBTPS2,
+            and the shortfall is graded rather than all-or-none.
+      selected_evidence:
+        snippet: The degree of diminished activity correlated with clinical severity as noted in male
+          patients.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/0/modeled_mechanisms/0
+      evidence_path: /experimental_models/0/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/0
+    evidence_metadata:
+      reference: PMID:19361614
+      reference_title: IFAP syndrome is caused by deficiency in MBTPS2, an intramembrane zinc metalloprotease
+        essential for cholesterol homeostasis and ER stress response.
+      evidence_source: IN_VITRO
+      explanation: 'Supports treating this assay as informative for the disease: its output tracks the
+        clinical phenotype.'
+    first_seen_at: '2026-11-09T20:16:46.925517+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:16:46.925517+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:16:46.925517+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/0/modeled_mechanisms/0
+      evidence_path: /experimental_models/0/modeled_mechanisms/0/evidence/0
+      reference: PMID:19361614
 assessments:
   955c11b8ed037e3ec60588f07ef7d6c0857768681e69656e9b5088c6cfb47449:
     input_sha256: 784446445bfef12f74ee031f631c8cbdbc6585de4d517e311d122c4092337921
@@ -7149,3 +7220,104 @@ assessments:
       request_sha256: 49268beb83fa63a618400dc9695edd8a4802d62348bfb0ce1acc3d7ae130e477
       request_sha256s:
       - 49268beb83fa63a618400dc9695edd8a4802d62348bfb0ce1acc3d7ae130e477
+  e4e207e1cf99602cff1483d0a283ddd02fb25567b3fcd325d821ced65b0ce30a:
+    input_sha256: 9372cee4f113af5d91c224b18b25173c71d1b3bf78f122415fc623421dd22427
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:16:46.925517+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.06
+            PARTIAL: 0.38
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.07
+            PARTIAL: 0.39
+          confidence: 0.31
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.12
+            PARTIAL: 0.42
+          confidence: 0.19
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.06
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.27
+            PARTIAL: 0.28
+          confidence: 0.18
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.4
+            PARTIAL: 0.37
+          confidence: 0.1
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.42
+            PARTIAL: 0.38
+          confidence: 0.13
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.14
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.14
+            PARTIAL: 0.27
+          confidence: 0.38
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.18
+            PARTIAL: 0.43
+          confidence: 0.14
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.15
+            PARTIAL: 0.33
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12629
+        output_tokens: 569
+      elapsed_seconds: 0.3493
+      request_sha256: fef6ef13f477dacc0520d68105653a3de8a2dd97b673dfe0a9ea4e09105c2516
+      request_sha256s:
+      - fef6ef13f477dacc0520d68105653a3de8a2dd97b673dfe0a9ea4e09105c2516

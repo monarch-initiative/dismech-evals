@@ -3212,6 +3212,61 @@ inputs:
     - assertion_path: /treatments/2
       evidence_path: /treatments/2/evidence/0
       reference: PMID:39172763
+  7f4c8b95c63d57f6e3ec379dec5f79369974fb4e05866b2a07fe23527c603828:
+    claim:
+      about:
+        disease:
+          name: Brucella Melitensis Brucellosis
+          disease_term:
+            preferred_term: Brucella melitensis brucellosis
+            term:
+              id: MONDO:0001972
+              label: Brucella melitensis brucellosis
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Brucella serology by agglutination or ELISA
+        description: Human brucellosis is commonly diagnosed by detecting anti-Brucella antibody responses
+          with Rose Bengal, standard agglutination, or ELISA-style assays. The bound LOINC code, 35739-2,
+          identifies the ELISA-style IgG/IgM arm; Rose Bengal and standard agglutination are not themselves
+          coded here.
+        diagnosis_term:
+          preferred_term: serology testing
+          term:
+            id: NCIT:C217458
+            label: Diagnostic Serology Testing
+        measurements:
+        - preferred_term: Brucella IgG/IgM antibody panel
+          term:
+            id: LOINC:35739-2
+            label: Brucella sp IgG and IgM panel - Serum
+      selected_evidence:
+        snippet: Serodiagnosis of brucellosis is carried out by detection of antibodies generated against
+          LPS or whole-cell bacterial extracts by ELISA or agglutination tests using colorimetry.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20075115
+      reference_title: Cloning and expression of the immunoreactive Brucella melitensis 28 kDa outer-membrane
+        protein (Omp28) encoding gene and evaluation of the potential of Omp28 for clinical diagnosis
+        of brucellosis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The B. melitensis Omp28 diagnostic study describes standard serodiagnosis by ELISA
+        or agglutination testing.
+    first_seen_at: '2026-11-09T20:43:37.317550+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:37.317550+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:37.317550+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:20075115
 assessments:
   83f1dd66558b62010149574248d9d100e953715d4ad566d531a92f965b08683c:
     input_sha256: d7ef6502c3b8a059c11230cbccf48082a3318a33a462990276415c411301b656
@@ -7282,3 +7337,76 @@ assessments:
       request_sha256: 09d1dbd87307bd92d499610057088c13caaa681bdb4941f131cbf5effab6b306
       request_sha256s:
       - 09d1dbd87307bd92d499610057088c13caaa681bdb4941f131cbf5effab6b306
+  b66104eabe7d88f8e36b53870002e40823ee8ad8ee636b41681bb39724aca3f1:
+    input_sha256: 7f4c8b95c63d57f6e3ec379dec5f79369974fb4e05866b2a07fe23527c603828
+    configuration_sha256: e67d1393a11ed48587f040e619362e339d9da6b300f2029a72072cbb1798833e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:37.317550+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.03
+            PARTIAL: 0.37
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.02
+            PARTIAL: 0.38
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.01
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.1
+            PARTIAL: 0.34
+          confidence: 0.34
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.03
+            PARTIAL: 0.32
+          confidence: 0.48
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8340
+        output_tokens: 377
+      elapsed_seconds: 0.2262
+      request_sha256: c7321da99fbe152a54cb1cf173fe160cbcb5de14fc436a427a0bf3b2a081989e
+      request_sha256s:
+      - c7321da99fbe152a54cb1cf173fe160cbcb5de14fc436a427a0bf3b2a081989e

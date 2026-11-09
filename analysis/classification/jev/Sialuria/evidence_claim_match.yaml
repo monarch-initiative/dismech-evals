@@ -3010,6 +3010,62 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/0/evidence/0
       reference: PMID:27966821
+  e540c2b25e95a53ff4c68770a68d90ab01e05b2633010e8417ffc8c2c862d8d5:
+    claim:
+      about:
+        disease:
+          name: Sialuria
+          disease_term:
+            preferred_term: Sialuria
+            term:
+              id: MONDO:0010028
+              label: sialuria
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cytoplasmic Free Sialic Acid Accumulation
+        biological_scale: CELLULAR
+        description: The overproduced free Neu5Ac accumulates in the cytoplasm of cells, not in the lysosome.
+          In patient fibroblasts about 59% of recovered free NeuAc is in the soluble cytoplasmic fraction.
+          This cytoplasmic (as opposed to intralysosomal) localization is the cell-biological feature
+          that distinguishes sialuria from the recessive lysosomal free sialic acid storage disorders
+          (ISSD and Salla disease), which are caused by defective lysosomal egress via SLC17A5, a different
+          gene and mechanism.
+        cell_types:
+        - preferred_term: hepatocyte
+          term:
+            id: CL:0000182
+            label: hepatocyte
+        locations:
+        - preferred_term: liver
+          term:
+            id: UBERON:0002107
+            label: liver
+      selected_evidence:
+        snippet: the intracellular distribution of NeuAc primarily in the cytoplasm, as opposed to its
+          intralysosomal accumulation in ISSD cells
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11326336
+      reference_title: Dominant inheritance of sialuria, an inborn error of feedback inhibition.
+      evidence_source: IN_VITRO
+      explanation: Establishes the cytoplasmic localization as the feature distinguishing sialuria from
+        the lysosomal free sialic acid storage disorders.
+    first_seen_at: '2026-11-09T20:36:53.642522+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:53.642522+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:53.642522+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/1
+      reference: PMID:11326336
 assessments:
   a71f0f2e72b64d2e55ecaa91ed2dab66b7d35886f0353bc2f76078df212482af:
     input_sha256: fc684cc3966958e69889a67618df22910a99d1f0a2b1114426c3d13ad2e938e1
@@ -7245,3 +7301,83 @@ assessments:
       request_sha256: bbfcc68411559e47b0952d4a458889c2811f716bac9462114301381ac7fd5c1c
       request_sha256s:
       - bbfcc68411559e47b0952d4a458889c2811f716bac9462114301381ac7fd5c1c
+  e7a58a7843e627f1857a9c8bd29ded48ec1c5ae96ec92f3b13abf15203f4993e:
+    input_sha256: e540c2b25e95a53ff4c68770a68d90ab01e05b2633010e8417ffc8c2c862d8d5
+    configuration_sha256: 9933df1edc75aa7f57c554eaef08a2535cc96a16e04799c81abc018883f39e5e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:53.642522+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.05
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.02
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.03
+            PARTIAL: 0.42
+          confidence: 0.33
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.51
+            PARTIAL: 0.44
+          confidence: 0.26
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.57
+            PARTIAL: 0.41
+          confidence: 0.35
+        /assertion/locations/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.5
+            PARTIAL: 0.45
+          confidence: 0.25
+        /assertion/locations/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.48
+            PARTIAL: 0.45
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9648
+        output_tokens: 435
+      elapsed_seconds: 0.2835
+      request_sha256: ef42a0feca6619b238b8b88ea60bb4465cafa0b267cdf1468eb009367d918456
+      request_sha256s:
+      - ef42a0feca6619b238b8b88ea60bb4465cafa0b267cdf1468eb009367d918456

@@ -2459,6 +2459,50 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/4
       reference: PMID:32779420
+  4e110ce6974aee1d2d78229a8e13d02f4afaddb8388479e9d580076f084ff9d0:
+    claim:
+      about:
+        disease:
+          name: Glutaric Acidemia Type 3
+          disease_term:
+            preferred_term: glutaric acidemia type 3
+            term:
+              id: MONDO:0009283
+              label: glutaric acidemia type 3
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Gut Bacterial Glutarate Production
+        description: Intestinal bacteria produce glutaric acid, and this contributes to the glutarate
+          load in SUGCT deficiency. In SUGCT-knockout mice, antibiotic depletion of the gut flora returned
+          metabolite levels to wild-type, and in one patient an antibiotic trial aimed at reducing bacterial
+          glutarate production was followed by clinical improvement.
+        biological_scale: ORGANISM
+      selected_evidence:
+        snippet: After SugctKO mice were treated with antibiotics, metabolites were comparable to WT,
+          indicating that the microbiome affects metabolism in SugctKO mice.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31722069
+      reference_title: Knockout of the non-essential gene SUGCT creates diet-linked, age-related microbiome
+        disbalance with a diabetes-like metabolic syndrome phenotype.
+      evidence_source: MODEL_ORGANISM
+      explanation: Microbiome depletion normalised metabolites in the knockout mouse.
+    first_seen_at: '2026-11-09T20:02:39.173439+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:02:39.173439+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:02:39.173439+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3
+      evidence_path: /pathophysiology/3/evidence/0
+      reference: PMID:31722069
 assessments:
   40d942c23bd68607abe0666f7cfa4b186238d0df62b882047b5d656994113e44:
     input_sha256: e13acf06ee873a9cba3e14d6621f16a4bbdaea65f7a210a9a8a6a7e454561788
@@ -5786,3 +5830,55 @@ assessments:
       request_sha256: f0a3f2b71e7ebbefeca4d1be6bdb5ffbbf301debea32fc98b51ed9ac81bffac3
       request_sha256s:
       - f0a3f2b71e7ebbefeca4d1be6bdb5ffbbf301debea32fc98b51ed9ac81bffac3
+  d33bccdb9c111b90e66c1007bf4426219ce7e8df431dc4163fd730fe2f6b428c:
+    input_sha256: 4e110ce6974aee1d2d78229a8e13d02f4afaddb8388479e9d580076f084ff9d0
+    configuration_sha256: d7b0922dcb99bb810c1ff89ac83313556ae64cf9e0cec2b4339ce8be6ac608db
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:02:39.173439+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.39
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.36
+            PARTIAL: 0.33
+          confidence: 0.04
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.18
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.17
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5625
+        output_tokens: 228
+      elapsed_seconds: 0.1752
+      request_sha256: f289f777ee781c28e88647315145e4598d0db5333811b3b0858d4eb3a7673674
+      request_sha256s:
+      - f289f777ee781c28e88647315145e4598d0db5333811b3b0858d4eb3a7673674

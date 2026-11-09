@@ -566,6 +566,72 @@ inputs:
     - assertion_path: /definitions/0
       evidence_path: /definitions/0/evidence/0
       reference: PMID:29995202
+  de40b8a69850d1f92f1f346eb8ec0caf0cce5ae13afc0f596c547beaa93dd7d8:
+    claim:
+      about:
+        disease:
+          name: Krabbe Disease Due To Saposin A Deficiency
+          disease_term:
+            preferred_term: Krabbe disease due to saposin A deficiency
+            term:
+              id: MONDO:0012720
+              label: Krabbe disease due to saposin A deficiency
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Galactosylceramidase assay pattern with PSAP sequencing
+        diagnosis_term:
+          preferred_term: clinical laboratory procedure
+          term:
+            id: NCIT:C25294
+            label: Laboratory Procedure
+        description: A Krabbe-like phenotype with deficient galactocerebrosidase activity in leukocytes
+          but normal activity in cultured fibroblasts implicates an activator (saposin A) defect; diagnosis
+          is confirmed by PSAP sequencing.
+        markers: Discordant leukocyte vs fibroblast galactocerebrosidase activity; abnormal galactosylceramide
+          storage.
+        measurements:
+        - preferred_term: Galactosylceramidase activity (leukocyte)
+          term:
+            id: LOINC:24084-6
+            label: Galactosylceramidase [Enzymatic activity/mass] in Leukocytes
+        - preferred_term: Galactosylceramidase activity (fibroblast)
+          term:
+            id: LOINC:24083-8
+            label: Galactosylceramidase [Enzymatic activity/mass] in Fibroblast
+        notes: 'Bound both specimen-specific codes rather than the specimen-generic Part code (LOINC:LP14027-4,
+          already cached from the merged newborn-screening tranche and bound on the separate classic Krabbe_Disease.yaml
+          entry): the diagnostic claim this row makes is specifically the leukocyte-versus-fibroblast
+          discordance (deficient in leukocytes, normal in fibroblasts), which is what distinguishes this
+          activator-deficiency variant from classic GALC-deficient Krabbe disease. A single generic code
+          would erase the distinguishing fact. No reference_ranges band is recorded: the source states
+          "did not show a similar enzyme deficiency" qualitatively, with no numeric cut-off for either
+          specimen.'
+      selected_evidence:
+        snippet: When cultured skin fibroblasts did not show a similar enzyme deficiency
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15773042
+      reference_title: 'A mutation in the saposin A coding region of the prosaposin gene in an infant
+        presenting as Krabbe disease: first report of saposin A deficiency in humans.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Normal fibroblast enzyme activity despite a Krabbe-like phenotype points to an activator
+        (saposin A) deficiency.
+    first_seen_at: '2026-11-09T20:18:53.299295+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:18:53.299295+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:18:53.299295+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:15773042
 assessments:
   a7535c842d2bba9095585eec7730676f7c2480df6f53ee3a37792db5ec4fafba:
     input_sha256: b9b26b1d4d44fecafcac8315672ac8c7841e9471f9f44394c9dd83c80c66f491
@@ -1398,3 +1464,104 @@ assessments:
       request_sha256: 23b60c1f3a67ab1f14aed157b9f851821866f434356ad7558672dd57602d9d46
       request_sha256s:
       - 23b60c1f3a67ab1f14aed157b9f851821866f434356ad7558672dd57602d9d46
+  bd6795520804df5b552e4667cf306bf42a9d68f752760550e83d778f1675eb34:
+    input_sha256: de40b8a69850d1f92f1f346eb8ec0caf0cce5ae13afc0f596c547beaa93dd7d8
+    configuration_sha256: 07f0b49ddf2f75939f9b45e6502965522d7b394b1ebfbdd28d58a3e935f5dda1
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:18:53.299295+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.07
+            PARTIAL: 0.73
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.12
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.36
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.5
+            PARTIAL: 0.35
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.04
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/markers:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.03
+            PARTIAL: 0.7
+          confidence: 0.55
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.43
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.52
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/measurements/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.09
+            PARTIAL: 0.41
+          confidence: 0.25
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.16
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.18
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12383
+        output_tokens: 583
+      elapsed_seconds: 0.2491
+      request_sha256: f9c4cc5b25f630d637a49a3f8e19d6fd28e244afea28556b6c80302c6ce55035
+      request_sha256s:
+      - f9c4cc5b25f630d637a49a3f8e19d6fd28e244afea28556b6c80302c6ce55035

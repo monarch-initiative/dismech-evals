@@ -2200,6 +2200,75 @@ inputs:
     - assertion_path: /pathophysiology/0
       evidence_path: /pathophysiology/0/evidence/1
       reference: PMID:34347505
+  9d8a7588f29f38d4efdbf4636349dac30ddfbc3d9b6cc5f23c34de38221add45:
+    claim:
+      about:
+        disease:
+          name: Encephalopathy Due To Defective Mitochondrial And Peroxisomal Fission 2
+          disease_term:
+            preferred_term: encephalopathy due to defective mitochondrial and peroxisomal fission 2
+            term:
+              id: MONDO:0014905
+              label: encephalopathy due to defective mitochondrial and peroxisomal fission 2
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: MFF Loss of Function
+        biological_scale: MOLECULAR
+        description: 'MFF is an outer-membrane protein that recruits DRP1 to the sites where mitochondria
+          and peroxisomes will divide. It does not do this as a monomer: MFF is a dynamic oligomer, most
+          likely a trimer, associating and dissociating through its C-terminal coiled coil, and that oligomerization
+          is required for DRP1 activation. Actin filaments do not bind MFF but lower the effective MFF
+          concentration roughly tenfold, so the same machinery is assembled more efficiently at the cytoskeleton.
+          Disease alleles are truncating - the canine variant removes 55% of the open reading frame -
+          so the receptor is absent rather than misregulated.'
+        genetic_context:
+          gene:
+            preferred_term: MFF
+            term:
+              id: hgnc:24858
+              label: MFF
+          variant_origin: GERMLINE
+          zygosity: HOMOZYGOUS
+          functional_impact_category: LOSS_OF_FUNCTION
+        molecular_functions:
+        - preferred_term: DRP1 receptor (recruits cytosolic DRP1 to the outer membrane)
+          modifier: LOSS_OF_FUNCTION
+          term:
+            id: GO:0043495
+            label: protein-membrane adaptor activity
+        - preferred_term: DRP1 recruitment and activation at the organelle membrane
+          modifier: LOSS_OF_FUNCTION
+          term:
+            id: GO:0005096
+            label: GTPase activator activity
+      selected_evidence:
+        snippet: mitochondrial fission factor (Mff) knockdown released the Drp1 foci from the MOM accompanied
+          by network extension, whereas Mff overexpression stimulated mitochondrial recruitment of Drp1
+          accompanied by mitochondrial fission
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/3
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21149567
+      reference_title: Mff is an essential factor for mitochondrial recruitment of Drp1 during mitochondrial
+        fission in mammalian cells.
+      evidence_source: IN_VITRO
+      explanation: Establishes MFF as the outer-membrane receptor that recruits cytosolic DRP1, the basis
+        for the protein-membrane adaptor binding.
+    first_seen_at: '2026-11-09T20:15:35.255883+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:15:35.255883+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:15:35.255883+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/3
+      reference: PMID:21149567
 assessments:
   cb29f64562db341f3c2f502e32b0145ef7f8e04b6098a4500655126f6084a939:
     input_sha256: 85f704ce3430c3e865698ad99b2b6362c768936f2703f53ebc31e94548c403d6
@@ -5468,3 +5537,132 @@ assessments:
       request_sha256: 9bcbd51a281266c1c3c0a477534e295044f698220f4cf301a1dc69ad52d3d1a8
       request_sha256s:
       - 9bcbd51a281266c1c3c0a477534e295044f698220f4cf301a1dc69ad52d3d1a8
+  b4eed907daf85d832a4de505248b9ae4117b63c14838ce305b053a8c9ffd8c9b:
+    input_sha256: 9d8a7588f29f38d4efdbf4636349dac30ddfbc3d9b6cc5f23c34de38221add45
+    configuration_sha256: 9b11130820dbd8c78d90bf89ee7956a42f9327f4e68da32a4726d5a769343182
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:15:35.255883+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.15
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.23
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.08
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.05
+            PARTIAL: 0.09
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.13
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/genetic_context/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.07
+            PARTIAL: 0.19
+          confidence: 0.61
+        /assertion/genetic_context/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.11
+            PARTIAL: 0.18
+          confidence: 0.56
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.71
+            PARTIAL: 0.28
+          confidence: 0.56
+        /assertion/genetic_context/zygosity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.74
+            PARTIAL: 0.25
+          confidence: 0.61
+        /assertion/genetic_context/functional_impact_category:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.08
+            PARTIAL: 0.24
+          confidence: 0.52
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.03
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.06
+            PARTIAL: 0.23
+          confidence: 0.56
+        /assertion/molecular_functions/1/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.1
+            PARTIAL: 0.42
+          confidence: 0.22
+        /assertion/molecular_functions/1/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.07
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/molecular_functions/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.18
+            PARTIAL: 0.44
+          confidence: 0.16
+      model: jev-1.13.0
+      usage:
+        input_tokens: 17336
+        output_tokens: 788
+      elapsed_seconds: 0.168
+      request_sha256: fa90bee4cfdbfe4e7b181b9f538ae0f14eb91b2e250913035743a28183691954
+      request_sha256s:
+      - fa90bee4cfdbfe4e7b181b9f538ae0f14eb91b2e250913035743a28183691954

@@ -10397,6 +10397,69 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/2
       reference: url:https://clinicaltrials.gov/api/v2/studies/NCT07660614
+  8ffdf401b90ce79edf6cf8a8b1c437c8dbf929d78e23e5e2506fe65e349bfc66:
+    claim:
+      about:
+        disease:
+          name: Amyotrophic Lateral Sclerosis 27, Juvenile
+          disease_term:
+            preferred_term: amyotrophic lateral sclerosis 27, juvenile
+            term:
+              id: MONDO:0859529
+              label: amyotrophic lateral sclerosis 27, juvenile
+        context:
+        - path: /pathophysiology/4
+          value:
+            name: Reduced SPT Feedback Inhibition
+            description: SPT normally undergoes homeostatic regulation by ORMDL proteins and ceramide.
+              Several ALS-associated variants blunt that inhibition while retaining catalytic activity.
+              The degree and route of escape depend on the allele and experimental system.
+            biological_scale: MOLECULAR
+            biological_processes:
+            - preferred_term: negative regulation of sphingolipid biosynthetic process
+              term:
+                id: GO:0090155
+                label: negative regulation of sphingolipid biosynthetic process
+              modifier: DECREASED
+            cellular_components:
+            - preferred_term: endoplasmic reticulum
+              term:
+                id: GO:0005783
+                label: endoplasmic reticulum
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Increased De Novo Sphingolipid Synthesis
+        description: Reduced feedback permits excess flux through the pathway in tested cells.
+        causal_link_type: DIRECT
+      selected_evidence:
+        snippet: These variants disrupt the normal homeostatic regulation of serine palmitoyltransferase
+          (SPT) by ORMDL proteins, resulting in unregulated SPT activity and elevated levels of canonical
+          SPT products.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/4
+    evidence_metadata:
+      reference: PMID:34059824
+      reference_title: Childhood amyotrophic lateral sclerosis caused by excess sphingolipid synthesis.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Direct cellular perturbation supports increased synthesis.
+    first_seen_at: '2026-11-09T21:13:50.503116+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:13:50.503116+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:13:50.503116+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4/downstream/0
+      evidence_path: /pathophysiology/4/downstream/0/evidence/0
+      reference: PMID:34059824
 assessments:
   e33ea8231140d6d6eef79417e67775160a0e1859b194f2f7615840108797fe95:
     input_sha256: 058cf1bfacf9bd0ad1959caa59f56b78715198f3b4c89d3ced216bc507c2dd52
@@ -23633,3 +23696,62 @@ assessments:
       request_sha256: 0f5de6222f4149fb3f065097c1ee47393aa1e84f15bbb7515245be97136b9525
       request_sha256s:
       - 0f5de6222f4149fb3f065097c1ee47393aa1e84f15bbb7515245be97136b9525
+  43f5af71dc3d1fd13490bfffdb436781fae21aa536c8f1eabb39f55f0f10a004:
+    input_sha256: 8ffdf401b90ce79edf6cf8a8b1c437c8dbf929d78e23e5e2506fe65e349bfc66
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T21:13:50.503116+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.13
+            PARTIAL: 0.44
+          confidence: 0.16
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.15
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.02
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.02
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.79
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.09
+            PARTIAL: 0.43
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6566
+        output_tokens: 270
+      elapsed_seconds: 0.1787
+      request_sha256: 7cc6a5112c20dc8b1aed48d02e80922d11d08d097b59bd9c852e14c035f02f38
+      request_sha256s:
+      - 7cc6a5112c20dc8b1aed48d02e80922d11d08d097b59bd9c852e14c035f02f38

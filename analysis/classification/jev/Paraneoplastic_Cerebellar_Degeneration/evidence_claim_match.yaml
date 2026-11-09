@@ -3664,6 +3664,49 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:39153058
+  5d579239054a7eab5618c16a8b3907ce34777c914014ccb4bada7c411fb1da94:
+    claim:
+      about:
+        disease:
+          name: Paraneoplastic Cerebellar Degeneration
+          disease_term:
+            preferred_term: paraneoplastic cerebellar degeneration
+            term:
+              id: MONDO:0044877
+              label: paraneoplastic cerebellar degeneration
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: FDG-PET/CT when no well-characterised antibody is found
+        description: Whole-body FDG-PET/CT in clinically suspected paraneoplastic disease, including patients
+          whose antibody testing is negative. This is the case where antibody-guided screening has nothing
+          to guide it, and it is also where the yield data are weakest.
+      selected_evidence:
+        snippet: Of the 27 patients, 6 (22%) had an abnormal FDG uptake. Of these 6 patients, 5 (19%)
+          were histologically confirmed as having a malignancy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/3
+      evidence_path: /diagnosis/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22157026
+      reference_title: Utility of F-18 FDG PET/CT in screening for paraneoplastic neurological syndromes.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The actual yield, from a 27-patient retrospective single-centre series. A five-cancer
+        denominator is small, and the record is written so the reader sees that rather than inheriting
+        the recommendation without its evidence base.
+    first_seen_at: '2026-11-09T20:24:34.895967+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:24:34.895967+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:24:34.895967+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/3
+      evidence_path: /diagnosis/3/evidence/0
+      reference: PMID:22157026
 assessments:
   cf4e42da444d68994a92ddf71a0921c27e42020eaba71fd4eaf0779d29bc03c9:
     input_sha256: 6c002eac78fa1a902e36b02ac5b8ce9ab5bd6d50e7110d1656ba84b254824864
@@ -8480,3 +8523,48 @@ assessments:
       request_sha256: 4fb47e57bdf2f60dfa3961c44c635ec9fbbc03e3330fd57f498e2fbe7738122e
       request_sha256s:
       - 4fb47e57bdf2f60dfa3961c44c635ec9fbbc03e3330fd57f498e2fbe7738122e
+  673e425ef4d16c3713966be58be807e3ed6dde72cb40c5eca9c7e1de96c0dca9:
+    input_sha256: 5d579239054a7eab5618c16a8b3907ce34777c914014ccb4bada7c411fb1da94
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:24:34.895967+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.1
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.2
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.11
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.13
+            PARTIAL: 0.68
+          confidence: 0.52
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4328
+        output_tokens: 179
+      elapsed_seconds: 0.3422
+      request_sha256: ffed0bca1e00577bcd355dd08bee21125819fdbdfb1ad7c94e6feb161e10c783
+      request_sha256s:
+      - ffed0bca1e00577bcd355dd08bee21125819fdbdfb1ad7c94e6feb161e10c783

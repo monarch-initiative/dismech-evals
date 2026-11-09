@@ -10595,6 +10595,85 @@ inputs:
     - assertion_path: /discussions/7
       evidence_path: /discussions/7/evidence/0
       reference: PMID:31921117
+  4838a08056011b86fd5585e04604541d0a165b85267cb6a629e008bd44fd8c3c:
+    claim:
+      about:
+        disease:
+          name: Combined immunodeficiency due to CD3gamma deficiency
+          disease_term:
+            preferred_term: combined immunodeficiency due to CD3gamma deficiency
+            term:
+              id: MONDO:0014276
+              label: combined immunodeficiency due to CD3gamma deficiency
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Distorted Thymic Selection and Self-Reactive Repertoire
+            biological_scale: CELLULAR
+            description: Reduced TCR signaling is proposed to alter thymic selection and the fate of self-reactive
+              CD4 cells. Peripheral repertoire sequencing in six patients with autoimmunity found reduced
+              Treg repertoire diversity and a hydrophobic CDR3 signature associated with self-reactivity
+              in conventional CD4 cells. This is a molecular surrogate and a mechanistic interpretation,
+              not direct observation of failed negative selection or demonstration of each clone's autoantigen
+              specificity. The same self-reactivity signature was not found in CD8 cells.
+            biological_processes:
+            - preferred_term: thymic T cell selection
+              modifier: DECREASED
+              term:
+                id: GO:0045061
+                label: thymic T cell selection
+            cell_types:
+            - preferred_term: thymocyte
+              term:
+                id: CL:0000893
+                label: thymocyte
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Multisystem Autoimmunity
+        description: The inferred escape of self-reactive conventional CD4 cells can contribute to loss
+          of tolerance; repertoire hydrophobicity is a surrogate, not direct antigen-specific proof.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: 'Ultimately, this results in
+
+          enrichment for self-reactive speciﬁ cities within CD4
+
+          1 Tconv cells,
+
+          which may undergo peripheral activation and expansion because
+
+          of the reduced number and impaired function of T
+
+          reg cells. Alto-
+
+          gether, these abnormalities create an environment that promotes
+
+          the development of autoimmunity in this condition.'
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: url:https://www.ucm.es/data/cont/docs/1572-2019-04-22-Blood%202018.pdf
+      reference_title: https://www.ucm.es/data/cont/docs/1572-2019-04-22-Blood%202018.pdf
+      evidence_source: OTHER
+      explanation: The authors' integrated model links altered selection and Treg control to autoimmunity;
+        organ-specific effectors and penetrance remain incompletely resolved.
+    first_seen_at: '2026-11-09T20:46:03.499975+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:03.499975+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:03.499975+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: url:https://www.ucm.es/data/cont/docs/1572-2019-04-22-Blood%202018.pdf
 assessments:
   e242b23823aafc188b880ceea18817b670893a908c2130cf5a695c77cb820e26:
     input_sha256: bf4ca03526bead4bb66a2d0d6469a166ef8d5d387fae1bfab1b5fc5e0d175eb0
@@ -23450,3 +23529,62 @@ assessments:
       request_sha256: 6d58c659a2c0fb425390c2a5dfb7633ffe243eda9f433e0156e96d822ff20cd9
       request_sha256s:
       - 6d58c659a2c0fb425390c2a5dfb7633ffe243eda9f433e0156e96d822ff20cd9
+  3e19f1c65176696fc24dd3c9fb3b58f613721b8f59393bccfa06788aacc46108:
+    input_sha256: 4838a08056011b86fd5585e04604541d0a165b85267cb6a629e008bd44fd8c3c
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:03.499975+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.07
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.01
+            PARTIAL: 0.23
+          confidence: 0.64
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.01
+            PARTIAL: 0.3
+          confidence: 0.53
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.1
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.08
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6668
+        output_tokens: 271
+      elapsed_seconds: 0.1656
+      request_sha256: 042fa72b2d3830bd3a04491c022343e6f49bdfb5d0bdbadf7dc9fe9647b8a74f
+      request_sha256s:
+      - 042fa72b2d3830bd3a04491c022343e6f49bdfb5d0bdbadf7dc9fe9647b8a74f

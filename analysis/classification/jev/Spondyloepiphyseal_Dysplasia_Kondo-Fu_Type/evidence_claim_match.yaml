@@ -3095,6 +3095,76 @@ inputs:
     - assertion_path: /diagnosis/1
       evidence_path: /diagnosis/1/evidence/1
       reference: PMID:36330313
+  9c11c9d511b4cf4c7622c279c360da041fbed3584345b84d2fec83471a1597c2:
+    claim:
+      about:
+        disease:
+          name: Spondyloepiphyseal Dysplasia, Kondo-Fu Type
+          disease_term:
+            preferred_term: spondyloepiphyseal dysplasia, Kondo-Fu type
+            term:
+              id: MONDO:0032721
+              label: spondyloepiphyseal dysplasia, kondo-fu type
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Recombinant Human Growth Hormone Therapy
+        description: Growth hormone given for the growth failure. The evidence is one three-year course
+          in a single patient with a partial growth-hormone-secretion deficit and a normal IGF-1, whose
+          height moved from -4.86 SD to -3.96 SD - a real gain that still leaves the child profoundly
+          short. The founding patient received growth hormone and stopped it for limited response, so
+          the two reported courses point in opposite directions.
+        treatment_term:
+          preferred_term: recombinant human growth hormone therapy
+          term:
+            id: NCIT:C15445
+            label: Hormone Therapy
+          therapeutic_agent:
+          - preferred_term: recombinant human growth hormone
+            term:
+              id: CHEBI:749556
+              label: somatropin
+        target_phenotypes:
+        - preferred_term: Short stature
+          term:
+            id: HP:0004322
+            label: Short stature
+        notes: 'therapeutic_modality is left unset. Somatropin is a recombinant protein, but PROTEIN_REPLACEMENT
+          would assert that this is replacement of a missing protein, and SEDKF short stature is a growth-plate
+          disease rather than a growth-hormone deficiency - the one patient''s stimulation test showed
+          only a partial secretion deficit and a normal IGF-1. No value in the enum states "recombinant
+          protein hormone given pharmacologically", so none is recorded.
+
+          Both reported courses are quoted above and they disagree. dismech has no way to record that
+          two evidence items are in conflict with each other rather than each independently graded against
+          the claim, so the disagreement lives in this note and in the description (issue #11142).'
+      selected_evidence:
+        snippet: The patient with SEDKF, reported by Kondo et al. in 2018, received growth hormone replacement
+          therapy for 1 year but discontinued it as a result of limited response.
+        supports: REFUTE
+    origin:
+      assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:36816387
+      reference_title: 'Case Report: Recombinant human growth hormone therapy in a patient with spondyloepiphyseal
+        dysplasia, Kondo-Fu type.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The other reported course, which was stopped for lack of effect. Recorded as a REFUTE
+        item against the same claim rather than as a caveat in prose, because a reader deciding whether
+        to try this needs both outcomes and there are only two.
+    first_seen_at: '2026-11-09T20:26:52.010894+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:26:52.010894+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:26:52.010894+00:00'
+    occurrences:
+    - assertion_path: /treatments/7
+      evidence_path: /treatments/7/evidence/1
+      reference: PMID:36816387
 assessments:
   fd5b579224f5cd979cb7d49c4ad367c8b39126e75a9596afd3b54a3dadef11b7:
     input_sha256: 6b10c77628209d642370148761dde1666064a53e04a2e35fe29433fa3d4eaa97
@@ -7496,3 +7566,97 @@ assessments:
       request_sha256: 8b4b1b1f77997887f5e036d5ef8b5c797a1484cea89cab4c83a59c3a9c2bae23
       request_sha256s:
       - 8b4b1b1f77997887f5e036d5ef8b5c797a1484cea89cab4c83a59c3a9c2bae23
+  41caad33915655b5b0e1af38278d25df1338378932415c9ce7c9ad28e153542b:
+    input_sha256: 9c11c9d511b4cf4c7622c279c360da041fbed3584345b84d2fec83471a1597c2
+    configuration_sha256: fd9428f1ebc3039b38037d04a891bd44a0b2052b4276a75f17b7d967fc60ad62
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:26:52.010894+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.2
+            PARTIAL: 0.37
+          confidence: 0.14
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.26
+            PARTIAL: 0.27
+          confidence: 0.2
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.37
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.21
+            PARTIAL: 0.28
+          confidence: 0.26
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.24
+            PARTIAL: 0.24
+          confidence: 0.28
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.14
+            PARTIAL: 0.24
+          confidence: 0.43
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.16
+            PARTIAL: 0.23
+          confidence: 0.42
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.22
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/target_phenotypes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.3
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.3
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11467
+        output_tokens: 541
+      elapsed_seconds: 0.2324
+      request_sha256: 33fe5cfce49fbcb49b2dfc93a4897189ab28ab0457e716c8342115c64f89e6ba
+      request_sha256s:
+      - 33fe5cfce49fbcb49b2dfc93a4897189ab28ab0457e716c8342115c64f89e6ba

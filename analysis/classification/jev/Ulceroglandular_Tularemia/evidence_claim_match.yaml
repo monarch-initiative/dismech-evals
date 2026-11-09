@@ -896,6 +896,58 @@ inputs:
     - assertion_path: /diagnosis/1
       evidence_path: /diagnosis/1/evidence/0
       reference: PMID:16936340
+  076e4ed5a207d810322315a80873546580e96e72437eb288c15fe79a5c2f1167:
+    claim:
+      about:
+        disease:
+          name: Ulceroglandular Tularemia
+          disease_term:
+            preferred_term: ulceroglandular tularemia
+            term:
+              id: MONDO:0001413
+              label: ulceroglandular tularemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Francisella Microagglutination Serology
+        description: Microagglutination serology confirms clinically compatible tularemia when the titer
+          is at least 1/160.
+        diagnosis_term:
+          preferred_term: Diagnostic Serology Testing
+          term:
+            id: NCIT:C217458
+            label: Diagnostic Serology Testing
+        measurements:
+        - preferred_term: Francisella tularensis antibody titer
+          term:
+            id: LOINC:16875-7
+            label: Francisella tularensis Ab [Titer] in Serum
+      selected_evidence:
+        snippet: Francisella tularensis microagglutination test (MAT) was performed for all patients whose
+          clinical symptoms were consistent with tularemia and MAT titers >= 1/160 were considered positive.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29642835
+      reference_title: '[Evaluation of epidemiologic and clinical features of oropharyngeal tularemia
+        patients in the Eastern Anatolia Region of Turkey].'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents the microagglutination titer threshold used to confirm clinically compatible
+        tularemia.
+    first_seen_at: '2026-11-09T20:46:43.021351+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:43.021351+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:43.021351+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:29642835
 assessments:
   222607868b9715615d423d0b3cb61808ca7d51a96e360a4f0591ee64bd4b4a23:
     input_sha256: fc8afbe84f6fc0449a41f4b0dca0327db94ed1131b935ad5a01e3f3d59305a9e
@@ -2141,3 +2193,76 @@ assessments:
       request_sha256: 165b92314d496b697d721afe7a798bd8d5c1647225c9626083f6758136b4f82f
       request_sha256s:
       - 165b92314d496b697d721afe7a798bd8d5c1647225c9626083f6758136b4f82f
+  e2338f4ef31cbbc3e45c479850ddb13f2affd0d345cbd986fd960e37bb5c9d23:
+    input_sha256: 076e4ed5a207d810322315a80873546580e96e72437eb288c15fe79a5c2f1167
+    configuration_sha256: e67d1393a11ed48587f040e619362e339d9da6b300f2029a72072cbb1798833e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:43.021351+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.06
+            PARTIAL: 0.35
+          confidence: 0.38
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.03
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.08
+            PARTIAL: 0.2
+          confidence: 0.58
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.07
+            PARTIAL: 0.17
+          confidence: 0.64
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8293
+        output_tokens: 378
+      elapsed_seconds: 0.2726
+      request_sha256: e6623e3f4b704dcbe7600909bc9201c65a7aef63a9820b5ec54a3d25e32ba8cd
+      request_sha256s:
+      - e6623e3f4b704dcbe7600909bc9201c65a7aef63a9820b5ec54a3d25e32ba8cd

@@ -4594,6 +4594,58 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/0
       reference: PMID:39475954
+  b26e56dfd8cc5c5dc36d5e084361530ac06c199444bdaa462f8210c2fa094897:
+    claim:
+      about:
+        disease:
+          name: SAMD9L-Related Spectrum and Myeloid Neoplasm Risk
+          disease_term:
+            preferred_term: SAMD9L-related spectrum and myeloid neoplasm risk
+            term:
+              id: MONDO:1060111
+              label: SAMD9L-related spectrum and myeloid neoplasm risk
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Interferon-Driven SAMD9L Induction
+        biological_scale: CELLULAR
+        description: SAMD9L is an interferon-stimulated gene. Interferon signalling during infection raises
+          expression of the mutant protein in hematopoietic progenitors and lymphocytes, which is proposed
+          to explain why cytopenic and myelodysplastic episodes follow infections.
+        biological_processes:
+        - preferred_term: response to type I interferon
+          term:
+            id: GO:0034340
+            label: response to type I interferon
+        - preferred_term: cellular response to type II interferon
+          term:
+            id: GO:0071346
+            label: cellular response to type II interferon
+      selected_evidence:
+        snippet: 3 developed MDS upon loss of the mutated SAMD9L allele following intracellular infections
+          associated with myeloid, B-, and natural killer (NK)-cell deficiency.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:28202457
+      reference_title: Gain-of-function SAMD9L mutations cause a syndrome of cytopenia, immunodeficiency,
+        MDS, and neurological symptoms.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Clinical observation that MDS followed infections in carriers.
+    first_seen_at: '2026-11-09T20:21:38.345086+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:21:38.345086+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:21:38.345086+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/1
+      reference: PMID:28202457
 assessments:
   984566ab66fe726030a6bbe7c7f7674f83b22d22eefc1458187df9db1b7e3d74:
     input_sha256: aae3b23a883dfdcf90a1a1f34091a23991bab0288d1de534d5a8ba95da04bf76
@@ -10655,3 +10707,83 @@ assessments:
       request_sha256: 948c47520fe276f8b39858ce0292df112871dab0d10ed97f8b4c52d0fbb21b72
       request_sha256s:
       - 948c47520fe276f8b39858ce0292df112871dab0d10ed97f8b4c52d0fbb21b72
+  e6aa1f5e8feea3e41a1145fc652d38cfb5b7b992876005b1847d03b157dee66d:
+    input_sha256: b26e56dfd8cc5c5dc36d5e084361530ac06c199444bdaa462f8210c2fa094897
+    configuration_sha256: 3a08a54f94624e07ee564698ec667b2da88ac0385b861151071f914498bd4c0b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:21:38.345086+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.24
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.37
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.16
+            PARTIAL: 0.32
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.31
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.35
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.38
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.52
+            PARTIAL: 0.45
+          confidence: 0.28
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.51
+            PARTIAL: 0.46
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9653
+        output_tokens: 449
+      elapsed_seconds: 0.2783
+      request_sha256: a67e1c6383fff74b0e7aec78e8dd0db3d00c772f544787208b6f8238c449a2fc
+      request_sha256s:
+      - a67e1c6383fff74b0e7aec78e8dd0db3d00c772f544787208b6f8238c449a2fc

@@ -9597,6 +9597,57 @@ inputs:
     - assertion_path: /treatments/3
       evidence_path: /treatments/3/evidence/1
       reference: PMID:24418350
+  b1a41f2953a50d3465c453aebd2f3c7c3f5fa2216da2ec51569bc4968ede1196:
+    claim:
+      about:
+        disease:
+          name: Familial Isolated Vitamin E Deficiency
+          disease_term:
+            preferred_term: familial isolated deficiency of vitamin E
+            term:
+              id: MONDO:0010188
+              label: familial isolated deficiency of vitamin E
+        context:
+        - path: /phenotypes/22
+          value:
+            category: Ophthalmologic
+            name: Retinitis pigmentosa
+            frequency: VERY_RARE
+            phenotype_term:
+              preferred_term: Pigmentary retinopathy
+              term:
+                id: HP:0000580
+                label: Pigmentary retinopathy
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Nyctalopia
+        causal_link_type: DIRECT
+        description: Rod photoreceptor loss in pigmentary retinopathy causes night blindness (nyctalopia).
+      selected_evidence:
+        snippet: HP:0000662 | Nyctalopia | Frequent (79-30%)
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/22/sequelae/1
+      evidence_path: /phenotypes/22/sequelae/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /phenotypes/22
+    evidence_metadata:
+      reference: ORPHA:96
+      reference_title: Ataxia with vitamin E deficiency
+      evidence_source: OTHER
+      explanation: Pigmentary retinal involvement leads to nyctalopia.
+    first_seen_at: '2026-11-09T20:16:54.881589+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:16:54.881589+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:16:54.881589+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/22/sequelae/1
+      evidence_path: /phenotypes/22/sequelae/1/evidence/0
+      reference: ORPHA:96
 assessments:
   b784dbc3aa1764ed94cc17c4866f06ba8ea5847fde998afc27524c22880659fd:
     input_sha256: f80e7ab431d0a62dd1f1e640660a96441aee0f28a8f7866afe4372938b8eec65
@@ -21574,3 +21625,62 @@ assessments:
       request_sha256: 40f6d60fbc782008ef8eb328e57c04eb7c296b95ad41398d56c008389bfe1531
       request_sha256s:
       - 40f6d60fbc782008ef8eb328e57c04eb7c296b95ad41398d56c008389bfe1531
+  b9e3e2622680aa39e6d0ed0e48d5bcb279bdf3918913f02c16e8548960eed67d:
+    input_sha256: b1a41f2953a50d3465c453aebd2f3c7c3f5fa2216da2ec51569bc4968ede1196
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:16:54.881589+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.39
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.54
+            PARTIAL: 0.39
+          confidence: 0.31
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.08
+            PARTIAL: 0.18
+          confidence: 0.61
+        /assertion/causal_link_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.53
+            PARTIAL: 0.37
+          confidence: 0.3
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.63
+            PARTIAL: 0.3
+          confidence: 0.44
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.3
+            PARTIAL: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6384
+        output_tokens: 279
+      elapsed_seconds: 0.1363
+      request_sha256: cecd95e422aa371a82d30ac64d7f41f29246359153644a0e849973ec2fabbace
+      request_sha256s:
+      - cecd95e422aa371a82d30ac64d7f41f29246359153644a0e849973ec2fabbace

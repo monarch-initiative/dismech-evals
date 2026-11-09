@@ -2008,6 +2008,50 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:34696359
+  5b8f7959d683e5e50432a922333c55ab36abacde43e95a3db2fe1d474839e979:
+    claim:
+      about:
+        disease:
+          name: Congenital Herpes Simplex Virus Infection
+          disease_term:
+            preferred_term: congenital herpes simplex virus infection
+            term:
+              id: MONDO:0017381
+              label: congenital herpes simplex virus infection
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Haematogenous Multi-Organ Dissemination
+        biological_scale: ORGANISM
+        description: Bloodborne spread to multiple organs produces the disseminated form, the presentation
+          with the highest mortality. Which of the three forms develops is the principal determinant of
+          outcome and sets the duration of aciclovir therapy.
+      selected_evidence:
+        snippet: Among patients with disseminated HSV disease treated with acyclovir at 30 mg/kg/d, mortality
+          was associated with aspartate transaminase elevations of >/=10 times the upper limit of normal
+          at the time of initiation of acyclovir therapy.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:11483781
+      reference_title: Natural history of neonatal herpes simplex virus infections in the acyclovir era.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Ties hepatic involvement in disseminated disease to mortality in a 186-patient natural-history
+        series, which is the organ involvement this node asserts.
+    first_seen_at: '2026-11-09T20:00:49.870071+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:00:49.870071+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:00:49.870071+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/5
+      evidence_path: /pathophysiology/5/evidence/0
+      reference: PMID:11483781
 assessments:
   f6d45bd40df0ebcdce1895139157da2c21f8de625440e390177d663ef71d16ef:
     input_sha256: 403129cb1cf575e391002f2f2604bcbe3851742d31ad989b2bc13f271349ff94
@@ -4597,3 +4641,55 @@ assessments:
       request_sha256: abf8cdc10533ef228fd7e82a76164a76a1947fc03e9807c285d14c8faaf4a581
       request_sha256s:
       - abf8cdc10533ef228fd7e82a76164a76a1947fc03e9807c285d14c8faaf4a581
+  3e3fc3a3266600fc640ee1711478d1d35d6ff76f4252c2c2e66f5a1f9db912a2:
+    input_sha256: 5b8f7959d683e5e50432a922333c55ab36abacde43e95a3db2fe1d474839e979
+    configuration_sha256: 037d552e2f1126fba818ecec14cd4b4e6efaf7b49b604f19e9a697deafc3f7de
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:00:49.870071+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.4
+            PARTIAL: 0.54
+          confidence: 0.31
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.26
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.43
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.1
+            PARTIAL: 0.24
+          confidence: 0.49
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.43
+            PARTIAL: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5625
+        output_tokens: 228
+      elapsed_seconds: 0.1965
+      request_sha256: 89372b1df347ed7b97031ef190c85b496824364ab0978f42c4049c841feb7462
+      request_sha256s:
+      - 89372b1df347ed7b97031ef190c85b496824364ab0978f42c4049c841feb7462

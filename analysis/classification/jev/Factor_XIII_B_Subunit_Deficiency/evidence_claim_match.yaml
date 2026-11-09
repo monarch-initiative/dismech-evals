@@ -2857,6 +2857,62 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/2/readouts/0
       evidence_path: /animal_models/0/modeled_mechanisms/2/readouts/0/evidence/0
       reference: PMID:18278192
+  50f0f4505c398120eaae75b2b65029707abd63cd29a88837e5ca2673526e8036:
+    claim:
+      about:
+        disease:
+          name: Factor XIII B Subunit Deficiency
+          disease_term:
+            preferred_term: Factor XIII B subunit deficiency
+            term:
+              id: MONDO:0013190
+              label: factor XIII, b subunit, deficiency of
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Plasma-Derived Factor XIII Concentrate
+        description: Plasma-derived FXIII concentrate contains both subunits and is the replacement product
+          for B-subunit deficiency. Because the phenotype is mild, patients may need it only on demand
+          for bleeding or before surgery rather than as routine prophylaxis. Recombinant FXIII-A2 (catridecacog),
+          the prophylactic product used for A-subunit deficiency, is not appropriate here, because it
+          supplies no FXIII-B. Repeated concentrate infusion led to anti-FXIII-B alloantibodies in one
+          patient with complete absence of FXIII-B, after which replacement became less effective.
+        therapeutic_modality: PROTEIN_REPLACEMENT
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: human factor XIII concentrate
+            term:
+              id: NCIT:C200601
+              label: Human Factor XIII Concentrate
+      selected_evidence:
+        snippet: Repeated infusions of exogenous FXIII for hemostasis increased anti-FXIII-B alloantibodies
+          that resisted FXIII substitution.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:23407795
+      reference_title: Alloantibodies against the B subunit of plasma factor XIII developed in its congenital
+        deficiency.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Alloantibody complication of replacement in complete deficiency.
+    first_seen_at: '2026-11-09T20:16:25.613102+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:16:25.613102+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:16:25.613102+00:00'
+    occurrences:
+    - assertion_path: /treatments/0
+      evidence_path: /treatments/0/evidence/2
+      reference: PMID:23407795
 assessments:
   1137eab8124500aa105c9657c5850862dcaa1515e059983c7c0a1350c718a693:
     input_sha256: af46d89e6bc3a75e868af797f1cdea38e0f3b3e611825170c52c538e014565d0
@@ -6706,3 +6762,83 @@ assessments:
       request_sha256: 2ba94b8b0eb80e1862164e36fa07cc9d1aba9703cbc6fb2c2711a2b5bd89db8a
       request_sha256s:
       - 2ba94b8b0eb80e1862164e36fa07cc9d1aba9703cbc6fb2c2711a2b5bd89db8a
+  831b742a1813d999c36a4bab71303ebe5622dc7424929a8d548b64c64fb3a0df:
+    input_sha256: 50f0f4505c398120eaae75b2b65029707abd63cd29a88837e5ca2673526e8036
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:16:25.613102+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.06
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.03
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.41
+            PARTIAL: 0.39
+          confidence: 0.11
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.07
+            PARTIAL: 0.45
+          confidence: 0.22
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.21
+            PARTIAL: 0.36
+          confidence: 0.14
+        /assertion/treatment_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/treatment_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.54
+            PARTIAL: 0.31
+          confidence: 0.31
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.18
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.18
+            PARTIAL: 0.52
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9792
+        output_tokens: 448
+      elapsed_seconds: 0.1928
+      request_sha256: ce88c21cc62c9f8db8c030fd1eeed768a10b1cf090b43f2d077117e333e2e8f2
+      request_sha256s:
+      - ce88c21cc62c9f8db8c030fd1eeed768a10b1cf090b43f2d077117e333e2e8f2

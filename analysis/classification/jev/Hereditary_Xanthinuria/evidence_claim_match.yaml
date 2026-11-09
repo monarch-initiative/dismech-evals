@@ -3215,6 +3215,84 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT06092346
+  86c9e10e8858ae3cbdb6c4ff2336eea4450f34ee2fd34b0b27da23dd89c03602:
+    claim:
+      about:
+        disease:
+          name: Hereditary Xanthinuria
+          disease_term:
+            preferred_term: hereditary xanthinuria
+            term:
+              id: MONDO:0018106
+              label: hereditary xanthinuria
+        context:
+        - path: /has_subtypes/1
+          value:
+            name: Type II
+            display_name: Type II (MOCOS deficiency)
+            subtype_term:
+              preferred_term: xanthinuria type II
+              term:
+                id: MONDO:0011346
+                label: xanthinuria type II
+            description: Combined loss of xanthine oxidoreductase and aldehyde oxidase, because the molybdenum
+              cofactor sulfurase that both enzymes depend on is defective. The renal disease is the same.
+              What differs is drug handling, since aldehyde oxidase metabolises several xenobiotics. OMIM
+              603592.
+            genes:
+            - preferred_term: MOCOS
+              term:
+                id: hgnc:18234
+                label: MOCOS
+          role: subtype
+      assertion_type: Genetic
+      assertion:
+        name: MOCOS
+        gene_term:
+          preferred_term: MOCOS
+          term:
+            id: hgnc:18234
+            label: MOCOS
+        subtype: Type II
+        relationship_type: CAUSATIVE
+        notes: Biallelic MOCOS variants cause type II. Because the sulfurase activates the molybdenum
+          cofactor for both xanthine oxidoreductase and aldehyde oxidase, the loss is of two enzymes rather
+          than one. c.1046C>T is a Yemenite-Jewish founder variant.
+        variants:
+        - name: MOCOS c.1046C>T p.(Thr349Ileu)
+          description: Missense variant in the NifS-like domain. Expression studies show it destabilises
+            the protein and reduces cysteine desulfurase activity. Yemenite-Jewish founder allele.
+          clinical_significance: PATHOGENIC
+        - name: MOCOS c.1771C>T p.(Pro591Ser)
+          description: Missense variant in the C-terminal domain that impairs molybdenum cofactor binding.
+          clinical_significance: PATHOGENIC
+      selected_evidence:
+        snippet: For the MOCOS c.1046C>T variant found in the Yemenite-Jewish families F1, F3 and F8,
+          a founder effect was demonstrated by haplotype analyses
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/1
+    evidence_metadata:
+      reference: PMID:34356852
+      reference_title: 'Classical Xanthinuria in Nine Israeli Families and Two Isolated Cases from Germany:
+        Molecular, Biochemical and Population Genetics Aspects.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes MOCOS as the type II gene in these families and the founder status of the
+        recurring allele.
+    first_seen_at: '2026-11-09T20:16:19.990158+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:16:19.990158+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:16:19.990158+00:00'
+    occurrences:
+    - assertion_path: /genetic/1
+      evidence_path: /genetic/1/evidence/0
+      reference: PMID:34356852
 assessments:
   3c71688101f53fd32d9726215a7e028bf8ce5ddd73e55ff68d1144ecfcbb52f8:
     input_sha256: a5bf6c880a4ea7a0825e0ad40368402ec91bcd532c7b88ef9e6ef25e142f28d2
@@ -7353,3 +7431,125 @@ assessments:
       request_sha256: f133d39545c1216c484bb34b1051f19fa454cbad37ef9ebedc201f1a01a2c433
       request_sha256s:
       - f133d39545c1216c484bb34b1051f19fa454cbad37ef9ebedc201f1a01a2c433
+  a96ca8fc7f5396f66d5f60999534c895009237771358fd764bfb6b8071928aeb:
+    input_sha256: 86c9e10e8858ae3cbdb6c4ff2336eea4450f34ee2fd34b0b27da23dd89c03602
+    configuration_sha256: 998cfa757d8932dff615b2c8537b9592d8987ea40457a7eca555daf5597d28f4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:16:19.990158+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.23
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.15
+            PARTIAL: 0.39
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.2
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.15
+            PARTIAL: 0.32
+          confidence: 0.3
+        /assertion/gene_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.18
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/subtype:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.21
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/relationship_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.26
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.16
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/variants/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.12
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/variants/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.72
+            PARTIAL: 0.25
+          confidence: 0.58
+        /assertion/variants/0/clinical_significance:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.51
+            PARTIAL: 0.47
+          confidence: 0.26
+        /assertion/variants/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.85
+            PARTIAL: 0.13
+          confidence: 0.77
+        /assertion/variants/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.9
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/variants/1/clinical_significance:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.74
+            PARTIAL: 0.25
+          confidence: 0.61
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.19
+            PARTIAL: 0.38
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 15734
+        output_tokens: 730
+      elapsed_seconds: 0.3702
+      request_sha256: 2316572226a57f4d47f096661a8132ad00dcb61a2daf5e89b748a9cf35272efa
+      request_sha256s:
+      - 2316572226a57f4d47f096661a8132ad00dcb61a2daf5e89b748a9cf35272efa

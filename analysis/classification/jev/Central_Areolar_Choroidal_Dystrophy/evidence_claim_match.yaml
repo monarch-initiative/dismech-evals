@@ -2149,6 +2149,56 @@ inputs:
     - assertion_path: /differential_diagnoses/2
       evidence_path: /differential_diagnoses/2/evidence/0
       reference: PMID:38743414
+  95f815484de5332e7bc8c8f7a5a075e2d5ffc1589c172a21724b4e5e62ee2964:
+    claim:
+      about:
+        disease:
+          name: Central Areolar Choroidal Dystrophy
+          disease_term:
+            preferred_term: central areolar choroidal dystrophy
+            term:
+              id: MONDO:0008982
+              label: central areolar choroidal dystrophy
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Electroretinography and Multifocal ERG
+        description: Full-field and multifocal electroretinography (mfERG) assess macular cone versus
+          generalized retinal photoreceptor function and help differentiate CACD from generalized cone-rod
+          dystrophies and other macular degenerations.
+        diagnosis_term:
+          preferred_term: Eye Examination
+          term:
+            id: NCIT:C38060
+            label: Eye Examination
+      selected_evidence:
+        snippet: In CACD, in the areas of scotoma detected by HVF, mfERG values were depressed. However,
+          both mfERG and HVF abnormalities were found outside the areas of ophthalmoscopically normal
+          retinal areas.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20306439
+      reference_title: Multifocal electroretinogram and central visual field testing in central areolar
+        choroidal dystrophy.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Directly supports multifocal ERG (mfERG) in CACD, showing depressed macular responses
+        within central scotomas and subclinical dysfunction extending beyond ophthalmoscopically visible
+        lesions.
+    first_seen_at: '2026-11-09T19:59:26.511750+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:26.511750+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:26.511750+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/1
+      reference: PMID:20306439
 assessments:
   34dc42ef048fcd68ea3d1ed0cc8d4031df4ee791a008e8d3999839235ff50275:
     input_sha256: 49b0574dfa34de6034af4301ded4444228c12ebcc75f90bed6be08a17c479bc5
@@ -5021,3 +5071,62 @@ assessments:
       request_sha256: f2fed0ee45e268aaa59478332a1ad1dfe702dd5b6bad0d54a934a93315310c75
       request_sha256s:
       - f2fed0ee45e268aaa59478332a1ad1dfe702dd5b6bad0d54a934a93315310c75
+  d6dda9cd0f1d31f5b4894ccca09ba262105d247d8a6c20a475dc0802a055de17:
+    input_sha256: 95f815484de5332e7bc8c8f7a5a075e2d5ffc1589c172a21724b4e5e62ee2964
+    configuration_sha256: 1137599728b894317a6c97cd90599831542bf6c4d38cad108a353560e3d573c8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:26.511750+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.09
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.05
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.11
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.29
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.21
+            PARTIAL: 0.41
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6310
+        output_tokens: 279
+      elapsed_seconds: 0.2173
+      request_sha256: 094a24fe1eed9f2f54d187419d572f9d38786e710a37986163ae164dfba45f0d
+      request_sha256s:
+      - 094a24fe1eed9f2f54d187419d572f9d38786e710a37986163ae164dfba45f0d

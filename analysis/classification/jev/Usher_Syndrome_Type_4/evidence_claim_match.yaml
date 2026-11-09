@@ -2187,6 +2187,138 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/1
       evidence_path: /animal_models/1/modeled_mechanisms/1/evidence/1
       reference: PMID:41295716
+  db4865b156513416899594efcff9a79c7515cca6e1ed74b05671a4db22471fd5:
+    claim:
+      about:
+        disease:
+          name: Usher Syndrome Type 4
+          disease_term:
+            preferred_term: Usher syndrome, type 4
+            term:
+              id: MONDO:0029141
+              label: Usher syndrome, type 4
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Pure-Tone Audiometry
+        description: Audiometric assessment documents the late-onset, progressive sensorineural hearing
+          loss that is the auditory component of USH4, distinguishing it from the congenital loss of types
+          1 and 2 and the first-decade-onset loss of type 3.
+        diagnosis_term:
+          preferred_term: audiometric test
+          term:
+            id: NCIT:C38036
+            label: Audiometric Test
+        measurements:
+        - preferred_term: pure-tone threshold audiometry
+          term:
+            id: LOINC:89015-2
+            label: Pure tone threshold audiometry panel
+        - preferred_term: hearing threshold, left ear, 500 Hz
+          term:
+            id: LOINC:89024-4
+            label: Hearing threshold Ear - left --500 Hz
+        - preferred_term: hearing threshold, right ear, 500 Hz
+          term:
+            id: LOINC:89025-1
+            label: Hearing threshold Ear - right --500 Hz
+        - preferred_term: hearing threshold, left ear, 1000 Hz
+          term:
+            id: LOINC:89016-0
+            label: Hearing threshold Ear - left --1000 Hz
+        - preferred_term: hearing threshold, right ear, 1000 Hz
+          term:
+            id: LOINC:89017-8
+            label: Hearing threshold Ear - right --1000 Hz
+        - preferred_term: hearing threshold, left ear, 2000 Hz
+          term:
+            id: LOINC:89018-6
+            label: Hearing threshold Ear - left --2000 Hz
+        - preferred_term: hearing threshold, right ear, 2000 Hz
+          term:
+            id: LOINC:89019-4
+            label: Hearing threshold Ear - right --2000 Hz
+        - preferred_term: hearing threshold, left ear, 4000 Hz
+          term:
+            id: LOINC:89022-8
+            label: Hearing threshold Ear - left --4000 Hz
+        - preferred_term: hearing threshold, right ear, 4000 Hz
+          term:
+            id: LOINC:89023-6
+            label: Hearing threshold Ear - right --4000 Hz
+        reference_ranges:
+        - unit: dB
+          population: Earlier WHO grades of hearing impairment (based on the 1991 version), better-ear
+            average of 500, 1000, 2000 and 4000 Hz, as tabulated by Olusanya, Davis and Hoffman (WHO Bulletin)
+          interpretation_bands:
+          - name: 'Grade 0: no impairment'
+            upper_bound: 26
+            unit: dB
+            abnormal_flag: NORMAL
+          - name: 'Grade 1: slight impairment'
+            lower_bound: 26
+            upper_bound: 41
+            unit: dB
+            abnormal_flag: HIGH
+          - name: 'Grade 2: moderate impairment'
+            lower_bound: 41
+            upper_bound: 61
+            unit: dB
+            abnormal_flag: HIGH
+            severity: MODERATE
+          - name: 'Grade 3: severe impairment'
+            lower_bound: 61
+            upper_bound: 81
+            unit: dB
+            abnormal_flag: HIGH
+            severity: SEVERE
+          - name: 'Grade 4: profound impairment including deafness'
+            lower_bound: 81
+            unit: dB
+            abnormal_flag: HIGH
+          notes: 'This is the one scheme a USH4-specific source actually invokes: the ARSG cohort study
+            (PMID:35226187) uses the WHO 1991 abnormal-hearing threshold of 25 dB HL to explain why self-reported
+            symptom onset lags the calculated audiometric onset of hearing loss (age 17 years by interpolation
+            of pure-tone-average data) -- patients do not notice a loss until it exceeds that threshold.
+            That 25 dB cut-off is the same boundary this scheme''s Grade 0/Grade 1 transition sits at
+            (values below 26 dB fall in Grade 0). The source states whole-decibel ranges (25 dB or better,
+            26-40 dB, 41-60 dB, 61-80 dB, 81 dB or greater); an average falling between two stated ranges
+            is not assigned by the source and falls in the upper grade under the half-open convention
+            used here. Severity is set only where the grade name is moderate or severe. No single USH4-owned
+            cut-off is bound: the cohort reports individual PTAs from 46 to 90 dB HL across three subjects
+            at different ages, and describes the hearing loss overall as moderate to severe rather than
+            stating a threshold. The grading itself is generic to hearing loss of any cause, not specific
+            to Usher syndrome.'
+        notes: 'The panel and per-frequency codes identify the test; no measurement-level reference range
+          on LOINC:89015-2 or the frequency codes is recorded, only the computed better-ear-average bands
+          above, for the same reason the sibling Usher entries record none: no LOINC code was found in
+          the Monarch KG for the pure-tone average itself (searches for "pure tone average", "PTA", "hearing
+          level average", "average hearing" returned none).'
+      selected_evidence:
+        snippet: This distinct type of USH is characterized by late-onset RP with predominantly pericentral
+          and macular changes, and late onset SNHL without vestibular dysfunction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:35226187
+      reference_title: 'Usher syndrome type IV: clinically and molecularly confirmed by novel ARSG variants.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes late-onset, rather than congenital, SNHL as the auditory component audiometry
+        documents in USH4.
+    first_seen_at: '2026-11-09T20:46:43.551698+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:46:43.551698+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:46:43.551698+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/2
+      evidence_path: /diagnosis/2/evidence/0
+      reference: PMID:35226187
 assessments:
   9028d0582b5318cfc472a93fdbd000173f024f315c5942fe8652ec6d9c0615ec:
     input_sha256: 68bcce561d97b5d60dc590995b6e95f8964a1ee62553fed15bcc22704a5d38bf
@@ -4995,3 +5127,391 @@ assessments:
       request_sha256: 38192d7ff6a5c47d33f559e17815aef3548f4a1e05c964b37e9f713a41c6d695
       request_sha256s:
       - 38192d7ff6a5c47d33f559e17815aef3548f4a1e05c964b37e9f713a41c6d695
+  0b99920f76ad64d23343be48e8e17756314bb8e9c3b062ee7aa5ca2e6c0d4783:
+    input_sha256: db4865b156513416899594efcff9a79c7515cca6e1ed74b05671a4db22471fd5
+    configuration_sha256: a3879b767ebd2b6a35d4fddf42d0bf6cffb47fd47037e425896a73d5c23daae2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:46:43.551698+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.21
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.06
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.52
+            PARTIAL: 0.3
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.33
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/diagnosis_term/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.45
+            PARTIAL: 0.33
+          confidence: 0.18
+        /assertion/diagnosis_term/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.42
+            PARTIAL: 0.36
+          confidence: 0.13
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.62
+            PARTIAL: 0.26
+          confidence: 0.43
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.6
+            PARTIAL: 0.28
+          confidence: 0.4
+        /assertion/measurements/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.63
+            PARTIAL: 0.25
+          confidence: 0.44
+        /assertion/measurements/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/measurements/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.67
+            PARTIAL: 0.22
+          confidence: 0.5
+        /assertion/measurements/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/measurements/3/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.66
+            PARTIAL: 0.21
+          confidence: 0.49
+        /assertion/measurements/3/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.66
+            PARTIAL: 0.24
+          confidence: 0.49
+        /assertion/measurements/4/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.63
+            PARTIAL: 0.23
+          confidence: 0.44
+        /assertion/measurements/4/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.62
+            PARTIAL: 0.27
+          confidence: 0.43
+        /assertion/measurements/5/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.64
+            PARTIAL: 0.23
+          confidence: 0.46
+        /assertion/measurements/5/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.65
+            PARTIAL: 0.25
+          confidence: 0.48
+        /assertion/measurements/6/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.67
+            PARTIAL: 0.21
+          confidence: 0.5
+        /assertion/measurements/6/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.65
+            PARTIAL: 0.26
+          confidence: 0.48
+        /assertion/measurements/7/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.65
+            PARTIAL: 0.22
+          confidence: 0.48
+        /assertion/measurements/7/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.66
+            PARTIAL: 0.25
+          confidence: 0.49
+        /assertion/measurements/8/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.66
+            PARTIAL: 0.21
+          confidence: 0.49
+        /assertion/measurements/8/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.66
+            PARTIAL: 0.25
+          confidence: 0.49
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.77
+            PARTIAL: 0.13
+          confidence: 0.66
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.87
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.93
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.88
+            PARTIAL: 0.09
+          confidence: 0.82
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.83
+            PARTIAL: 0.09
+          confidence: 0.74
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.87
+            PARTIAL: 0.09
+          confidence: 0.8
+        /assertion/reference_ranges/0/interpretation_bands/1/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.9
+            PARTIAL: 0.07
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.8
+            PARTIAL: 0.12
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.73
+            PARTIAL: 0.23
+          confidence: 0.6
+        /assertion/reference_ranges/0/interpretation_bands/2/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/2/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/reference_ranges/0/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.87
+            PARTIAL: 0.09
+          confidence: 0.8
+        /assertion/reference_ranges/0/interpretation_bands/2/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.83
+            PARTIAL: 0.11
+          confidence: 0.74
+        /assertion/reference_ranges/0/interpretation_bands/2/severity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.59
+            PARTIAL: 0.29
+          confidence: 0.38
+        /assertion/reference_ranges/0/interpretation_bands/3/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/3/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/3/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.91
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/reference_ranges/0/interpretation_bands/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.89
+            PARTIAL: 0.07
+          confidence: 0.83
+        /assertion/reference_ranges/0/interpretation_bands/3/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.84
+            PARTIAL: 0.1
+          confidence: 0.76
+        /assertion/reference_ranges/0/interpretation_bands/3/severity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.7
+            PARTIAL: 0.24
+          confidence: 0.55
+        /assertion/reference_ranges/0/interpretation_bands/4/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/4/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.9
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/reference_ranges/0/interpretation_bands/4/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.89
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/reference_ranges/0/interpretation_bands/4/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.83
+            PARTIAL: 0.1
+          confidence: 0.74
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.73
+            PARTIAL: 0.22
+          confidence: 0.6
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.66
+            PARTIAL: 0.24
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 53124
+        output_tokens: 2949
+      elapsed_seconds: 0.468
+      request_sha256: 2ab5fad264dc9b80502ac42f06c93409143b406a27d007836cc0118d9cd1bcb7
+      request_sha256s:
+      - 2ab5fad264dc9b80502ac42f06c93409143b406a27d007836cc0118d9cd1bcb7

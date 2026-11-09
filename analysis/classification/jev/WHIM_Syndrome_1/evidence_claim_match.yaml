@@ -4781,6 +4781,84 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/0
       reference: PMID:36149943
+  2f4478fbc825bb76fb69b84fe6030a4312689e0359a671427f27905a288f791a:
+    claim:
+      about:
+        disease:
+          name: WHIM Syndrome 1
+          disease_term:
+            preferred_term: WHIM syndrome 1
+            term:
+              id: MONDO:8000006
+              label: WHIM syndrome 1
+        context:
+        - path: /treatments/0
+          value:
+            name: Mavorixafor
+            description: Oral, once-daily selective CXCR4 antagonist. In April 2024 it became the first
+              therapy approved for WHIM syndrome (FDA), for patients aged 12 years and older, to increase
+              circulating mature neutrophils and lymphocytes. In a phase 3 placebo-controlled trial it
+              increased time above the neutrophil and lymphocyte thresholds and reduced annualized infection
+              rate by about 60%.
+            therapeutic_modality: SMALL_MOLECULE
+            treatment_term:
+              preferred_term: Pharmacotherapy
+              term:
+                id: NCIT:C15986
+                label: Pharmacotherapy
+              therapeutic_agent:
+              - preferred_term: mavorixafor
+                term:
+                  id: CHEBI:138865
+                  label: AMD 070
+            dosing_interval: once daily
+            dosing_interval_days: 1
+            target_phenotypes:
+            - preferred_term: Chronic severe neutropenia
+              term:
+                id: HP:0410252
+                label: Persistently decreased total neutrophil count
+            - preferred_term: Lymphopenia
+              term:
+                id: HP:0001888
+                label: Decreased total lymphocyte count
+            - preferred_term: Cutaneous warts
+              term:
+                id: HP:0200043
+                label: Verrucae
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: Enhanced CXCL12-CXCR4 Signaling
+        treatment_effect: INHIBITS
+        description: Mavorixafor blocks CXCL12 binding to CXCR4, antagonizing the hyperactive signaling
+          and releasing sequestered leukocytes into the blood.
+      selected_evidence:
+        snippet: In 31 participants (mavorixafor, n = 14; placebo, n = 17), mavorixafor least squares
+          (LS) mean TATANC was 15.0 hours and 2.8 hours for placebo (P < .001).
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:38643510
+      reference_title: A phase 3 randomized trial of mavorixafor, a CXCR4 antagonist, for WHIM syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: The CXCR4 antagonist increased time above the neutrophil threshold versus placebo,
+        showing mechanism-based mobilization.
+    first_seen_at: '2026-11-09T20:37:26.497853+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:37:26.497853+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:37:26.497853+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:38643510
 assessments:
   aade5cafaa977331569e1690e4d262125e9af3e5b206abedb4ee64391aed07e3:
     input_sha256: c100d6bd90826ceba01b9b73d9f749da04198880f467b753dbbe0c6c1adf7866
@@ -11785,3 +11863,62 @@ assessments:
       request_sha256: 81beebcda7f59648161214cf55aef94857e790c71cac4668638aed05ecb6a060
       request_sha256s:
       - 81beebcda7f59648161214cf55aef94857e790c71cac4668638aed05ecb6a060
+  9ed396d5947fab3135beb168b48164bad5186093374e6407db0ceba22bcaa645:
+    input_sha256: 2f4478fbc825bb76fb69b84fe6030a4312689e0359a671427f27905a288f791a
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:37:26.497853+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.26
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.09
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.58
+        /assertion/treatment_effect:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.39
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.52
+            PARTIAL: 0.44
+          confidence: 0.28
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.18
+            PARTIAL: 0.4
+          confidence: 0.13
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6783
+        output_tokens: 276
+      elapsed_seconds: 0.315
+      request_sha256: 0f3788b5d445e889b29bc9f2d231c561333d151ff14df63364b9a68f02211519
+      request_sha256s:
+      - 0f3788b5d445e889b29bc9f2d231c561333d151ff14df63364b9a68f02211519

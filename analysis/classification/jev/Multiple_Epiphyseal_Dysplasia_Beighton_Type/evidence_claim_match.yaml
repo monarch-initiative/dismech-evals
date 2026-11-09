@@ -2938,6 +2938,79 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:30696995
+  9581630a595882dd190aae5e155fcb32c8b03e3353edbe496aa0d959736d568e:
+    claim:
+      about:
+        disease:
+          name: Multiple Epiphyseal Dysplasia, Beighton Type
+          disease_term:
+            preferred_term: multiple epiphyseal dysplasia, Beighton type
+            term:
+              id: MONDO:0007562
+              label: multiple epiphyseal dysplasia, Beighton type
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Extracellular Interference with the Type II Collagen Network
+            biological_scale: TISSUE
+            description: 'The proposed proximate lesion of this disorder: a mutant alpha-1(II) chain incorporated
+              into the secreted fibrillar network degrades the mechanical and optical properties of the
+              matrices that network builds. The tissue distribution of the clinical syndrome follows the
+              tissues in which type II collagen is the principal fibrillar constituent — epiphyseal and
+              growth-plate hyaline cartilage, the vitreous body, and the cartilaginous structures of the
+              ear.'
+            mechanism_confidence: HYPOTHETICAL
+            biological_processes:
+            - preferred_term: collagen fibril organization
+              term:
+                id: GO:0030199
+                label: collagen fibril organization
+              modifier: ABNORMAL
+            - preferred_term: extracellular matrix organization
+              term:
+                id: GO:0030198
+                label: extracellular matrix organization
+              modifier: ABNORMAL
+            notes: Curated `HYPOTHETICAL` because no cited source reports the state of the collagen fibril
+              or the matrix in tissue from an R704C carrier. What is measured is upstream (the recombinant
+              protein behaves normally intracellularly) and downstream (the clinical phenotype); the extracellular
+              step between them is the authors' inference.
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Conductive hearing impairment
+        description: Conductive deafness is one of the three defining components of the syndrome, and
+          is curated as an outcome of the same collagen-network lesion. The middle-ear substrate is not
+          established by any cited source, so the edge is typed as having unknown intermediates.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: Progressive myopia, retinal thinning and crenated cataracts led to visual disturbance,
+          while conductive deafness represented the third component of the triad.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/2
+      evidence_path: /pathophysiology/3/downstream/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:699354
+      reference_title: Dominant inheritance of multiple epiphyseal dysplasia, myopia and deafness.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes conductive deafness as a constant component of the syndrome caused by this
+        allele. INDIRECT because it does not identify the middle-ear structure through which the collagen
+        defect acts.
+    first_seen_at: '2026-11-09T20:35:41.806256+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:41.806256+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:41.806256+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/2
+      evidence_path: /pathophysiology/3/downstream/2/evidence/0
+      reference: PMID:699354
 assessments:
   5d54984e4b7f15e8f5ad704543de2c4f0982d1eea45cd6c413b573bac593dff1:
     input_sha256: ef2364f5a11690a4b5e3ef7d83a8ef28eba55b45a6ad1d5c675143bfad1b0f2e
@@ -6529,3 +6602,62 @@ assessments:
       request_sha256: a973519e5e701487de7f7f475d206a3636040c88fc8dc8c52f9ba98091d626d7
       request_sha256s:
       - a973519e5e701487de7f7f475d206a3636040c88fc8dc8c52f9ba98091d626d7
+  5569559113d449dd962d3e98d34f4f9f2a73385a3785ca8b426058de0c127b06:
+    input_sha256: 9581630a595882dd190aae5e155fcb32c8b03e3353edbe496aa0d959736d568e
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:41.806256+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.09
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.13
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.03
+            PARTIAL: 0.24
+          confidence: 0.6
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.1
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.15
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.49
+            PARTIAL: 0.36
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6740
+        output_tokens: 275
+      elapsed_seconds: 0.1698
+      request_sha256: f438b60a2160680404c3337e45ff69ca970904be00d611a031da6b0970581238
+      request_sha256s:
+      - f438b60a2160680404c3337e45ff69ca970904be00d611a031da6b0970581238

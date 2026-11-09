@@ -3158,6 +3158,88 @@ inputs:
     - assertion_path: /animal_models/2/modeled_mechanisms/0/readouts/1
       evidence_path: /animal_models/2/modeled_mechanisms/0/readouts/1/evidence/0
       reference: PMID:26251307
+  7d62aac4e2ac68b9d45d1b05eaa001ffd5c3f2711908c6a7f0da97c617827976:
+    claim:
+      about:
+        disease:
+          name: Protein S Deficiency
+          disease_term:
+            preferred_term: hereditary protein S deficiency
+            term:
+              id: MONDO:0012868
+              label: thrombophilia due to protein S deficiency, autosomal dominant
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Reduced Protein S Cofactor Activity
+        role: trigger
+        biological_scale: MOLECULAR
+        description: Loss-of-function PROS1 variants reduce the level or function of protein S, a hepatocyte-synthesized
+          vitamin K-dependent glycoprotein that is a non-enzymatic cofactor for activated protein C (APC)
+          in the inactivation of factors Va and VIIIa and, independently, for tissue factor pathway inhibitor
+          (TFPI). Reduced free/functional protein S diminishes this anticoagulant cofactor activity.
+        genes:
+        - preferred_term: PROS1
+          term:
+            id: hgnc:9456
+            label: PROS1
+        genetic_context:
+          gene:
+            preferred_term: PROS1
+            term:
+              id: hgnc:9456
+              label: PROS1
+          variant_origin: GERMLINE
+          functional_impact_category: LOSS_OF_FUNCTION
+          description: 'Loss-of-function PROS1 variants. Zygosity is deliberately not recorded on this
+            node because it is what separates the two clinical forms this entry models: heterozygous variants
+            give the common, incompletely penetrant autosomal dominant deficiency, and biallelic variants
+            give the severe neonatal recessive form (Severe AR subtype).'
+        cell_types:
+        - preferred_term: hepatocyte
+          term:
+            id: CL:0000182
+            label: hepatocyte
+        biological_processes:
+        - preferred_term: negative regulation of blood coagulation
+          term:
+            id: GO:0030195
+            label: negative regulation of blood coagulation
+          modifier: DECREASED
+        molecular_functions:
+        - preferred_term: APC anticoagulant cofactor (enzyme activator) activity
+          term:
+            id: GO:0008047
+            label: enzyme activator activity
+          modifier: DECREASED
+      selected_evidence:
+        snippet: At a low shear rate, PSplt functions as a cofactor for both activated protein C and tissue
+          factor pathway inhibitor, thereby limiting factor X activation and thrombin generation within
+          the growing thrombus
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1182/blood.2019003630
+      reference_title: Platelet protein S limits venous but not arterial thrombosis propensity by controlling
+        coagulation in the thrombus
+      evidence_source: MODEL_ORGANISM
+      explanation: Mouse-model evidence for the dual APC/TFPI cofactor mechanism of protein S in limiting
+        thrombin generation.
+    first_seen_at: '2026-11-09T20:37:29.150297+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:37:29.150297+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:37:29.150297+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: DOI:10.1182/blood.2019003630
 assessments:
   414d69da4847d82b5734b6cf5ba882263bbe4b351c2d42b99ceef7be9dfde543:
     input_sha256: 8d460d50431052c89cc4c3c0f34b4a01de0595399401e13d7ba1045629fc4e09
@@ -7759,3 +7841,167 @@ assessments:
       request_sha256: 52e9b0f6a368891c5c8b5f7f22f2449200952e6f2cd58ed9846a38da827e4c5a
       request_sha256s:
       - 52e9b0f6a368891c5c8b5f7f22f2449200952e6f2cd58ed9846a38da827e4c5a
+  e5febfc96ea3fae0f83abbd188304cb9e4ccb87f983990e0b0dd32fb38a2e299:
+    input_sha256: 7d62aac4e2ac68b9d45d1b05eaa001ffd5c3f2711908c6a7f0da97c617827976
+    configuration_sha256: aa22dc1a116ea9f88e61abe8d8dcdc1fcd908884fae89370d8a5ad274ed41eac
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:37:29.150297+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.12
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.1
+            PARTIAL: 0.37
+          confidence: 0.3
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.07
+            PARTIAL: 0.35
+          confidence: 0.37
+        /assertion/role:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.06
+            PARTIAL: 0.38
+          confidence: 0.34
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.04
+            PARTIAL: 0.06
+          confidence: 0.85
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.08
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/genes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.36
+            PARTIAL: 0.33
+          confidence: 0.04
+        /assertion/genes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.37
+            PARTIAL: 0.35
+          confidence: 0.06
+        /assertion/genetic_context/gene/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.39
+            PARTIAL: 0.31
+          confidence: 0.09
+        /assertion/genetic_context/gene/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.48
+            PARTIAL: 0.3
+          confidence: 0.22
+        /assertion/genetic_context/variant_origin:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.77
+            PARTIAL: 0.21
+          confidence: 0.66
+        /assertion/genetic_context/functional_impact_category:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.42
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/genetic_context/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.71
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/cell_types/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.62
+            PARTIAL: 0.33
+          confidence: 0.43
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.61
+            PARTIAL: 0.32
+          confidence: 0.42
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.06
+            PARTIAL: 0.28
+          confidence: 0.49
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.06
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.16
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.13
+            PARTIAL: 0.36
+          confidence: 0.26
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.21
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 22276
+        output_tokens: 1058
+      elapsed_seconds: 0.2141
+      request_sha256: 773a3e496e9835da76dd8e1a610cb6ddf86642e995ea3fb621b5f5e3b0b5025a
+      request_sha256s:
+      - 773a3e496e9835da76dd8e1a610cb6ddf86642e995ea3fb621b5f5e3b0b5025a

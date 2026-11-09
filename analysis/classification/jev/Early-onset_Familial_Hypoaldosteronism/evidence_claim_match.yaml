@@ -2705,6 +2705,57 @@ inputs:
     - assertion_path: /treatments/1
       evidence_path: /treatments/1/evidence/0
       reference: PMID:38262861
+  0a01ed36910d9e26e95278afb5c0fb7befeec763339da0c73db3eb3341cd7862:
+    claim:
+      about:
+        disease:
+          name: Early-onset Familial Hypoaldosteronism
+          disease_term:
+            preferred_term: Early-onset familial hypoaldosteronism
+            term:
+              id: MONDO:0035320
+              label: early-onset familial hypoaldosteronism
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Clinical and laboratory diagnostic criteria
+        description: Japanese national diagnostic criteria for aldosterone synthase deficiency require
+          salt-wasting symptoms without skin pigmentation, together with hyponatremia and hyperkalemia,
+          low to normal plasma aldosterone with high renin, and no low cortisol. PHA1, 21-hydroxylase
+          deficiency, congenital lipoid adrenal hyperplasia and congenital adrenal hypoplasia must be
+          excluded.
+        diagnosis_term:
+          preferred_term: clinical and biochemical diagnostic criteria
+          term:
+            id: NCIT:C124351
+            label: Clinical Evaluation
+        notes: Because 18-hydroxycorticosterone cannot be measured in routine practice in Japan, these
+          criteria do not separate CMO I from CMO II.
+      selected_evidence:
+        snippet: 1) Presents with salt-wasting symptoms (poor feeding, vomiting, dehydration, poor weight
+          gain). 2) No skin pigmentation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41905953
+      reference_title: Congenital aldosterone deficiency and its resistance.
+      quote_role: REVIEW_SYNTHESIS
+      evidence_source: OTHER
+      explanation: Clinical arm of the published diagnostic criteria.
+    first_seen_at: '2026-11-09T20:15:17.531775+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:15:17.531775+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:15:17.531775+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:41905953
 assessments:
   9b5ee737f70d57c07c90ea3c23ef4031c5abf6f0f9d76cc9c15fffdc49ccf4c4:
     input_sha256: 992361a7f50e156128ca864f0ded1faff09f08c043392e874ea7df86afb6cd8f
@@ -6418,3 +6469,69 @@ assessments:
       request_sha256: 7e2b08dc09e7fcb81b0cc770a098582f120a7429dbd5d21b4997c7b79974e089
       request_sha256s:
       - 7e2b08dc09e7fcb81b0cc770a098582f120a7429dbd5d21b4997c7b79974e089
+  9f704ef83f55be72952c5e06325d5f9674935e992cf092233fdf7b7862348329:
+    input_sha256: 0a01ed36910d9e26e95278afb5c0fb7befeec763339da0c73db3eb3341cd7862
+    configuration_sha256: 2840a0204a217a29c91765869338fffe92f7125042b4b2cce902af65e64a2f5c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:15:17.531775+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.07
+            PARTIAL: 0.88
+          confidence: 0.82
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.06
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.33
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.08
+            PARTIAL: 0.88
+          confidence: 0.82
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.3
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.37
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.84
+            PARTIAL: 0.15
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7304
+        output_tokens: 328
+      elapsed_seconds: 0.1851
+      request_sha256: d2e13a17276b8a5108eb8da491709404f80b40feefa04083ed3d6c08735a6d27
+      request_sha256s:
+      - d2e13a17276b8a5108eb8da491709404f80b40feefa04083ed3d6c08735a6d27

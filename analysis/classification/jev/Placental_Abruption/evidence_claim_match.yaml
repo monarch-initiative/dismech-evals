@@ -6262,6 +6262,132 @@ inputs:
     - assertion_path: /differential_diagnoses/1
       evidence_path: /differential_diagnoses/1/evidence/0
       reference: PMID:16582134
+  04526869cb084c3bfa24a01879c99ea94ef965533a0ef04c7bbc324f2ff5530d:
+    claim:
+      about:
+        disease:
+          name: Placental Abruption
+          disease_term:
+            preferred_term: placental abruption
+            term:
+              id: MONDO:0004846
+              label: placental abruption
+        context:
+        - path: /pathophysiology/3
+          value:
+            name: Decidual Tissue Factor Exposure and Thrombin Generation
+            role: amplifier
+            biological_scale: MOLECULAR
+            description: 'Decidual cells express the highest levels of tissue factor of any cell type
+              at the maternal-fetal interface, a constitutive hemostatic envelope that normally protects
+              against bleeding during trophoblast invasion and delivery. When hemorrhage occurs, that
+              same tissue factor binds plasma factor VII and generates thrombin in large excess. Thrombin
+              then acts through protease-activated receptors as a signaling molecule rather than only
+              as a clotting enzyme, which is what converts a local bleed into preterm labor, membrane
+              rupture, and systemic coagulopathy.
+
+              '
+            cell_types:
+            - preferred_term: decidual cell
+              term:
+                id: CL:2000002
+                label: decidual cell
+            biological_processes:
+            - preferred_term: blood coagulation, extrinsic pathway
+              term:
+                id: GO:0007598
+                label: blood coagulation, extrinsic pathway
+              modifier: INCREASED
+            - preferred_term: thrombin-activated receptor signaling pathway
+              term:
+                id: GO:0070493
+                label: thrombin-activated receptor signaling pathway
+              modifier: INCREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Thrombin-Driven Myometrial Contraction and Membrane Weakening
+        description: 'Thrombin signals through protease-activated receptors on myometrium and decidua
+          to drive contraction and matrix degradation.
+
+          '
+      selected_evidence:
+        snippet: Such hemorrhage induces thrombin from decidual tissue factor, which plays a pivotal role
+          in the development of preterm premature rupture of membranes and preterm delivery by acting
+          through protease-activated receptors to promote the production of pro-inflammatory cytokines,
+          and matrix-degrading metalloproteinases.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/3
+    evidence_metadata:
+      reference: PMID:21890016
+      reference_title: Abruption-associated prematurity.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Specifies the PAR-mediated route from decidual thrombin to membrane rupture and preterm
+        delivery.
+    first_seen_at: '2026-11-09T20:36:18.022779+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:18.022779+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:18.022779+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/3/downstream/0
+      evidence_path: /pathophysiology/3/downstream/0/evidence/0
+      reference: PMID:21890016
+  69a47f3e9d068ce02741f5d259e0e5dcdfcb4e8c6fb7eb334e89a6e8b9c6e7f9:
+    claim:
+      about:
+        disease:
+          name: Placental Abruption
+          disease_term:
+            preferred_term: placental abruption
+            term:
+              id: MONDO:0004846
+              label: placental abruption
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Blood Product Resuscitation and Coagulopathy Management
+        description: 'Aggressive management of disseminated intravascular coagulopathy with transfusion
+          of red cells, plasma, platelets and fibrinogen replacement, targeting the consumptive coagulopathy
+          driven by decidual thrombin generation.
+
+          '
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Blood Transfusion
+          term:
+            id: NCIT:C15192
+            label: Blood Transfusion
+      selected_evidence:
+        snippet: Maternal risks include obstetric hemorrhage, need for blood transfusions, emergency hysterectomy,
+          disseminated intravascular coagulopathy and renal failure.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21241259
+      reference_title: 'Placental abruption: epidemiology, risk factors and consequences.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Documents transfusion requirement as a recognised element of abruption management.
+    first_seen_at: '2026-11-09T20:36:19.568129+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:19.568129+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:19.568129+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/1
+      reference: PMID:21241259
 assessments:
   577522e5e1c682e53396b68988b2ec3cc1417d5d4361ae83bc3247948cb8b0cb:
     input_sha256: 44171dfa5427e916adcc1032059b00f464f81b91f2ff443dbc4fd745039d4223
@@ -14413,3 +14539,121 @@ assessments:
       request_sha256: 7c200117b2b95dfb6085450d6372306028d2dbb7270c9a6354b6b2f15919ac97
       request_sha256s:
       - 7c200117b2b95dfb6085450d6372306028d2dbb7270c9a6354b6b2f15919ac97
+  234891b893535e17aebbdca8b9a0d670cdf9c24388b32bd9ec9faa517ee68504:
+    input_sha256: 04526869cb084c3bfa24a01879c99ea94ef965533a0ef04c7bbc324f2ff5530d
+    configuration_sha256: 2537bb7760bc8f384c71ad0e684478feb959dae3fb31b31fc0f7d8361ff89702
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:18.022779+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.03
+            PARTIAL: 0.38
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.05
+            PARTIAL: 0.38
+          confidence: 0.35
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.03
+            PARTIAL: 0.44
+          confidence: 0.3
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.02
+            PARTIAL: 0.43
+          confidence: 0.33
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.07
+            PARTIAL: 0.19
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5672
+        output_tokens: 221
+      elapsed_seconds: 0.3231
+      request_sha256: f9bd16ee9c1d173f9011b16170a2651d7dde94e57a524caeb5dafeae12ec1c23
+      request_sha256s:
+      - f9bd16ee9c1d173f9011b16170a2651d7dde94e57a524caeb5dafeae12ec1c23
+  80384e4b395fd0de1a5a52083774979bfd87ada5e3032f5909e85b9d77cb7e4f:
+    input_sha256: 69a47f3e9d068ce02741f5d259e0e5dcdfcb4e8c6fb7eb334e89a6e8b9c6e7f9
+    configuration_sha256: 1c9c3199145386fd487fbc7db26e423b906e2ca28f8711ab046d2e6b9c168b1c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:19.568129+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.11
+            PARTIAL: 0.84
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.03
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.06
+            PARTIAL: 0.81
+          confidence: 0.72
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.26
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/therapeutic_modality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.36
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.03
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.03
+            PARTIAL: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7712
+        output_tokens: 328
+      elapsed_seconds: 0.2358
+      request_sha256: 8d7e266187a21a3bb74c778e3a2b7478c1ad03413109a1dd7b0a817fe57a9f6e
+      request_sha256s:
+      - 8d7e266187a21a3bb74c778e3a2b7478c1ad03413109a1dd7b0a817fe57a9f6e

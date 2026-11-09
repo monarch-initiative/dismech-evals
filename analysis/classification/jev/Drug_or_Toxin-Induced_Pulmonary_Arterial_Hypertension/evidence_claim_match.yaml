@@ -1118,6 +1118,167 @@ inputs:
     - assertion_path: /progression/0
       evidence_path: /progression/0/evidence/0
       reference: DOI:10.1183/13993003.01325-2024
+  0f9e6abada4b7ef13d01b69f4e3b9a029ac706ae6626a8e7989d6e1d9f71aa33:
+    claim:
+      about:
+        disease:
+          name: Drug- or Toxin-Induced Pulmonary Arterial Hypertension
+          disease_term:
+            preferred_term: drug- or toxin-induced pulmonary arterial hypertension
+            term:
+              id: MONDO:0017149
+              label: drug- or toxin-induced pulmonary arterial hypertension
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Exposure history and exclusion of alternate PH causes
+        description: Diagnosis also requires assessing exposure history to a causal drug or toxin and
+          excluding other causes of pulmonary hypertension, distinct from the invasive hemodynamic confirmation
+          above.
+      selected_evidence:
+        snippet: it is often difficult to identify patients early and demonstrate causality between drugs
+          and PAH.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.21542/gcsp.2019.19
+      reference_title: 'Drug- and toxin-induced pulmonary arterial hypertension: Current state of the
+        literature'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports careful exposure attribution and differential diagnosis.
+    first_seen_at: '2026-11-09T20:43:00.601625+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:00.601625+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:00.601625+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: DOI:10.21542/gcsp.2019.19
+  892d6b1fff11da1728885a4445ec36b6c467a4af4fa0cb1b57c157538be18ef6:
+    claim:
+      about:
+        disease:
+          name: Drug- or Toxin-Induced Pulmonary Arterial Hypertension
+          disease_term:
+            preferred_term: drug- or toxin-induced pulmonary arterial hypertension
+            term:
+              id: MONDO:0017149
+              label: drug- or toxin-induced pulmonary arterial hypertension
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Right heart catheterization
+        description: Diagnosis requires invasive confirmation of pre-capillary PAH physiology, the same
+          group-1 (PAH) hemodynamic triad used across the other PAH entries.
+        diagnosis_term:
+          preferred_term: right heart catheterization
+          term:
+            id: NCIT:C80411
+            label: Right Heart Catheterization
+        measurements:
+        - preferred_term: mean pulmonary artery pressure
+          term:
+            id: LOINC:8414-5
+            label: Pulmonary artery Mean blood pressure
+        - preferred_term: pulmonary artery wedge pressure
+          term:
+            id: LOINC:8587-8
+            label: Pulmonary artery wedge Mean blood pressure
+        - preferred_term: pulmonary vascular resistance
+          term:
+            id: LOINC:8828-6
+            label: Pulmonary vascular Resistance
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:8414-5
+            label: Pulmonary artery Mean blood pressure
+          unit: mmHg
+          population: Pre-capillary (group 1, PAH) hemodynamic definition (2022 ESC/ERS PH guidelines,
+            as retained by the 7th WSPH (2024) task force)
+          notes: 'The same PMID:39209475 triad bound on the Idiopathic_Pulmonary_Arterial_Hypertension
+            and Heritable_Pulmonary_Arterial_Hypertension entries; see the IPAH entry''s PVR-band notes
+            for the PVR-threshold history.
+
+            Boundary: the criterion is mPAP >20 mmHg (strict); lower_bound is 21, the whole-number half-open
+            convention used across this entry family, so a value of exactly 20 mmHg is not misclassified
+            as meeting the criterion.'
+          interpretation_bands:
+          - name: Pre-capillary PH criterion met (mPAP)
+            lower_bound: 21
+            unit: mmHg
+            abnormal_flag: HIGH
+            interpretation: Meets the mPAP (>20 mmHg) component of the pre-capillary PAH triad.
+        - loinc_term:
+            id: LOINC:8587-8
+            label: Pulmonary artery wedge Mean blood pressure
+          unit: mmHg
+          population: Pre-capillary (group 1, PAH) hemodynamic definition (2022 ESC/ERS PH guidelines,
+            as retained by the 7th WSPH (2024) task force)
+          notes: The source states the criterion inclusively ("PAWP <=15 mmHg"). Because PAWP is reported
+            clinically in whole mmHg, the band below places its upper_bound at 16 so a measured value
+            of exactly 15 still falls inside the "normal" band, the same whole-number half-open placement
+            the Heart_Failure entry's HFrEF/HFmrEF split uses (41, not 40).
+          interpretation_bands:
+          - name: Pre-capillary PH criterion met (PAWP normal)
+            upper_bound: 16
+            unit: mmHg
+            abnormal_flag: NORMAL
+            interpretation: PAWP 15 mmHg or below (whole-mmHg resolution), the normal-left-filling-pressure
+              component of the pre-capillary PAH triad.
+        - loinc_term:
+            id: LOINC:8828-6
+            label: Pulmonary vascular Resistance
+          unit: Wood unit
+          population: Pre-capillary (group 1, PAH) hemodynamic definition (2022 ESC/ERS PH guidelines,
+            as retained by the 7th WSPH (2024) task force)
+          notes: 'This threshold moved from PVR >=3 Wood units (3rd WSPH, 2003, carried unchanged through
+            the 2019 mPAP revision; PMID:30545968''s own "best defined by" sentence still pairs the new
+            mPAP with this older PVR figure) to PVR >2 Wood units in the 2022 ESC/ERS guideline. See the
+            Idiopathic_Pulmonary_Arterial_Hypertension entry''s matching band for the quoted sentence
+            flagging the lower cut-off as the eventual direction of travel, and the fuller history.
+
+            Boundary: the criterion is PVR >2 WU (strict), but the band''s lower_bound: 2 technically
+            includes a measured value of exactly 2.0 WU under the half-open convention. Unlike mPAP and
+            PAWP this is not fixed by bumping to the next whole number: PVR is reported with decimal precision
+            in the literature (e.g. "PVR 2-3 WU" as a real continuous zone), so lower_bound: 3 would wrongly
+            exclude a genuinely elevated value such as PVR 2.5 WU. See the IPAH entry''s matching band
+            for the fuller reasoning.'
+          interpretation_bands:
+          - name: Pre-capillary PH criterion met (PVR)
+            lower_bound: 2
+            unit: Wood unit
+            abnormal_flag: HIGH
+            interpretation: Meets the current PVR component of the pre-capillary PAH triad.
+      selected_evidence:
+        snippet: The gold standard for diagnosis remains invasive right heart catheterization.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.3390/biomedicines13071773
+      reference_title: 'State of the Art in Pulmonary Arterial Hypertension: Molecular Basis, Imaging
+        Modalities, and Right Heart Failure Treatment'
+      evidence_source: HUMAN_CLINICAL
+      explanation: This supports invasive hemodynamic confirmation.
+    first_seen_at: '2026-11-09T20:43:00.601010+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:43:00.601010+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:43:00.601010+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: DOI:10.3390/biomedicines13071773
 assessments:
   8b623a458b716f00262cfc84931b98cde803da31c6c1a3a2be8fa4407fc8a181:
     input_sha256: 615b9bd94e99aeabd2c34802c73113034c7b143b4f0a41247f8473b4ae9686d3
@@ -2690,3 +2851,359 @@ assessments:
       request_sha256: c3648a2f5393b366ea5fab7e784d82d6eb01967921c74519c430f6360c854676
       request_sha256s:
       - c3648a2f5393b366ea5fab7e784d82d6eb01967921c74519c430f6360c854676
+  aa21e1c5cb8c0fd2037728505f9937fac9342796ce78aba31b9d9092f01b2aa5:
+    input_sha256: 0f9e6abada4b7ef13d01b69f4e3b9a029ac706ae6626a8e7989d6e1d9f71aa33
+    configuration_sha256: 48ab5aed60d0443f75d87e86f662448c781c96f389bcd4638ca76c8403a67016
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:00.601625+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.35
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.01
+            PARTIAL: 0.16
+          confidence: 0.74
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.41
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.41
+            PARTIAL: 0.55
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4281
+        output_tokens: 178
+      elapsed_seconds: 0.2525
+      request_sha256: 496b323d9910ce4386b0840842f9ab80d8cb9419538700f3044d8106ba01981c
+      request_sha256s:
+      - 496b323d9910ce4386b0840842f9ab80d8cb9419538700f3044d8106ba01981c
+  d444406bc6e7c8b20572770305003e2e3ab8c4ce59cc576e995e051ca69fe5e3:
+    input_sha256: 892d6b1fff11da1728885a4445ec36b6c467a4af4fa0cb1b57c157538be18ef6
+    configuration_sha256: e8fa8cf16879c3ac21205b12cd64d5b41ffd67866fe31e061f074ed0c953093b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:43:00.601010+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.13
+            PARTIAL: 0.49
+          confidence: 0.24
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.38
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.27
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.08
+            PARTIAL: 0.15
+          confidence: 0.66
+        /assertion/diagnosis_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.05
+            PARTIAL: 0.12
+          confidence: 0.74
+        /assertion/measurements/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.47
+            PARTIAL: 0.38
+          confidence: 0.2
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.36
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.49
+            PARTIAL: 0.32
+          confidence: 0.24
+        /assertion/measurements/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.48
+            PARTIAL: 0.35
+          confidence: 0.22
+        /assertion/measurements/2/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.57
+            PARTIAL: 0.28
+          confidence: 0.35
+        /assertion/measurements/2/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.56
+            PARTIAL: 0.33
+          confidence: 0.34
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.74
+            PARTIAL: 0.17
+          confidence: 0.61
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.73
+            PARTIAL: 0.13
+          confidence: 0.6
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.71
+            PARTIAL: 0.21
+          confidence: 0.56
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.73
+            PARTIAL: 0.25
+          confidence: 0.6
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.77
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.88
+            PARTIAL: 0.11
+          confidence: 0.82
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.75
+            PARTIAL: 0.15
+          confidence: 0.62
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.82
+            PARTIAL: 0.15
+          confidence: 0.73
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.74
+            PARTIAL: 0.14
+          confidence: 0.61
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.63
+            PARTIAL: 0.14
+          confidence: 0.44
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.73
+            PARTIAL: 0.21
+          confidence: 0.6
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.87
+            PARTIAL: 0.12
+          confidence: 0.8
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.78
+            PARTIAL: 0.18
+          confidence: 0.67
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.74
+            PARTIAL: 0.17
+          confidence: 0.61
+        /assertion/reference_ranges/1/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.82
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.7
+            PARTIAL: 0.18
+          confidence: 0.55
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.73
+            PARTIAL: 0.12
+          confidence: 0.6
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.77
+            PARTIAL: 0.17
+          confidence: 0.66
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.75
+            PARTIAL: 0.22
+          confidence: 0.62
+        /assertion/reference_ranges/2/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.79
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.62
+            PARTIAL: 0.29
+          confidence: 0.43
+        /assertion/reference_ranges/2/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.86
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.79
+            PARTIAL: 0.17
+          confidence: 0.68
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.74
+            PARTIAL: 0.18
+          confidence: 0.61
+        /assertion/reference_ranges/2/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.81
+            PARTIAL: 0.15
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 42052
+        output_tokens: 2286
+      elapsed_seconds: 0.4787
+      request_sha256: 02264ccf9ab16a61ddd1988690269e6c1b629ea2d8c2bbe62ae93fbefb4df5ae
+      request_sha256s:
+      - 02264ccf9ab16a61ddd1988690269e6c1b629ea2d8c2bbe62ae93fbefb4df5ae

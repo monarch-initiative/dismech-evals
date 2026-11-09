@@ -3992,6 +3992,74 @@ inputs:
     - assertion_path: /datasets/0
       evidence_path: /datasets/0/evidence/1
       reference: GEO:GSE343646
+  6f26e03ef5e81bf6d38b461555c95e40fd5eb04be6a307a641c8ca81e5a9cbcb:
+    claim:
+      about:
+        disease:
+          name: Dermatosparaxis Ehlers-Danlos Syndrome
+          disease_term:
+            preferred_term: Ehlers-Danlos syndrome, dermatosparaxis type
+            term:
+              id: MONDO:0009161
+              label: Ehlers-Danlos syndrome, dermatosparaxis type
+        context:
+        - path: /animal_models/2
+          value:
+            name: Ovine ADAMTS2 catalytic-domain missense model (V15M)
+            species: Sheep
+            genotype: ADAMTS2 p.Val15Met (catalytic-domain missense)
+            publication: PMID:25354687
+            description: A naturally occurring missense allele identified in a commercial sheep flock
+              with clinical dermatosparaxis. Unlike the bovine and mouse models already in this entry,
+              both of which are null alleles, this substitution falls within the catalytic domain itself,
+              and its damaging effect is predicted computationally rather than shown by a direct enzymatic
+              assay.
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Biallelic ADAMTS2 Loss of Function
+        relationship: RECAPITULATES
+        fidelity: MODERATE
+        description: A catalytic-domain missense allele, complementing the null alleles carried by the
+          bovine and mouse models. The source does not claim priority for it, so none is asserted here.
+        limitations: Pathogenicity rests on SIFT/PolyPhen-2 prediction and three-dimensional structural
+          modelling rather than a measured enzymatic or fibril-ultrastructure readout, making this a weaker
+          evidentiary class than the bovine and mouse models, both of which have direct biochemical or
+          histological confirmation.
+        readouts:
+        - name: In silico structural impact of the V15M substitution
+          target: Biallelic ADAMTS2 Loss of Function
+          direction: ALTERED
+          interpretation: A computational prediction that the substitution destabilises protein folding
+            or distorts structure, rather than a measured functional consequence.
+      selected_evidence:
+        snippet: A missense mutation was identified in the catalytic domain of ADAMTS2. The mutation is
+          predicted to cause the substitution in the mature ADAMTS2 of a valine molecule by a methionine
+          molecule (V15M) affecting the catalytic domain of the enzyme.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/2/modeled_mechanisms/0
+      evidence_path: /animal_models/2/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/2
+    evidence_metadata:
+      reference: PMID:25354687
+      reference_title: In silico identification and three-dimensional modelling of the missense mutation
+        in ADAMTS2 in a sheep flock with dermatosparaxis.
+      evidence_source: MODEL_ORGANISM
+      explanation: Identifies the naturally occurring catalytic-domain missense allele in the affected
+        sheep flock.
+    first_seen_at: '2026-11-09T20:48:15.464210+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:15.464210+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:15.464210+00:00'
+    occurrences:
+    - assertion_path: /animal_models/2/modeled_mechanisms/0
+      evidence_path: /animal_models/2/modeled_mechanisms/0/evidence/0
+      reference: PMID:25354687
 assessments:
   f1421d663f69fcaf3d50c2b42faeb829fdc15a568479c3b288376015c4b8eb59:
     input_sha256: 917a64e83af33554e647b26d83ef94a396b2cc4bf265e0b5cc364363ae843495
@@ -9838,3 +9906,104 @@ assessments:
       request_sha256: 5d4de418eaa312038eac5daae9aed7725630551e2f5f513bfcc6b52099290bba
       request_sha256s:
       - 5d4de418eaa312038eac5daae9aed7725630551e2f5f513bfcc6b52099290bba
+  6e0f481221957f18db267f82923aca884e9a1f73b973c3d619f8f872cba0a03b:
+    input_sha256: 6f26e03ef5e81bf6d38b461555c95e40fd5eb04be6a307a641c8ca81e5a9cbcb
+    configuration_sha256: 7e52d64a4e9f5dca5ae619fad3b5aeaba884a2586d11ffd6a4c8e605d71ae25a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:15.464210+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.07
+            PARTIAL: 0.79
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.08
+            PARTIAL: 0.43
+          confidence: 0.24
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.08
+            PARTIAL: 0.73
+          confidence: 0.6
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.48
+            PARTIAL: 0.42
+          confidence: 0.22
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.07
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.07
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.64
+            PARTIAL: 0.33
+          confidence: 0.46
+        /assertion/readouts/0/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.18
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.24
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.41
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.19
+            PARTIAL: 0.51
+          confidence: 0.26
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.06
+            PARTIAL: 0.39
+          confidence: 0.33
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12627
+        output_tokens: 572
+      elapsed_seconds: 0.2402
+      request_sha256: 1fbea66328a802eb290b8a3386ba60ee382a0fb16112ccda6017fd6185f6a226
+      request_sha256s:
+      - 1fbea66328a802eb290b8a3386ba60ee382a0fb16112ccda6017fd6185f6a226

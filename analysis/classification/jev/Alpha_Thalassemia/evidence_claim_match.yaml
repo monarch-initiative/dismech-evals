@@ -1900,6 +1900,65 @@ inputs:
     - assertion_path: /clinical_trials/1
       evidence_path: /clinical_trials/1/evidence/0
       reference: clinicaltrials:NCT04770779
+  759bec5d30a93fd64363be341d6ddefcb2c1847d333a5b56079c25aa2a4bd2a1:
+    claim:
+      about:
+        disease:
+          name: Alpha Thalassemia
+          disease_term:
+            preferred_term: alpha thalassemia
+            term:
+              id: MONDO:0011399
+              label: alpha thalassemia spectrum
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Iron Overload
+        conforms_to: hepcidin_deficiency_iron_overload#Parenchymal Iron Deposition and Oxidative Injury
+        description: 'Iron accumulation from chronic transfusions and increased intestinal absorption
+          (due to hepcidin suppression from ineffective erythropoiesis and hemolysis). Particularly significant
+          in transfusion-dependent non-deletional HbH disease and surviving Hb Bart patients.
+
+          '
+        biological_processes:
+        - preferred_term: intracellular iron ion homeostasis
+          modifier: ABNORMAL
+          term:
+            id: GO:0006879
+            label: intracellular iron ion homeostasis
+        - preferred_term: iron ion transport
+          modifier: INCREASED
+          term:
+            id: GO:0006826
+            label: iron ion transport
+        cell_types:
+        - preferred_term: hepatocyte
+          term:
+            id: CL:0000182
+            label: hepatocyte
+      selected_evidence:
+        snippet: chelation therapy for iron overload
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:38182489
+      reference_title: 'Αlpha-thalassemia: A practical overview.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms iron overload as a recognized complication requiring chelation therapy.
+    first_seen_at: '2026-11-09T19:59:06.680520+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T19:59:06.680520+00:00'
+    active: true
+    active_as_of: '2026-11-09T19:59:06.680520+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/4
+      evidence_path: /pathophysiology/4/evidence/0
+      reference: PMID:38182489
 assessments:
   058e25349b4210c72a08962388489f1530ab9e483900003ec91c9dead1f1c78f:
     input_sha256: c627322d4d619094b4b5d3d6542f699aab2d2059490906690adb5210e3513f7c
@@ -4578,3 +4637,111 @@ assessments:
       request_sha256: ed250efa1f4202dbe7933fd6daa130a9efaa56041c4dc6a1f6c3f7dc403fd056
       request_sha256s:
       - ed250efa1f4202dbe7933fd6daa130a9efaa56041c4dc6a1f6c3f7dc403fd056
+  93e177a9ead11198c383e9e6b943cf0be8bb5d1af5e5f185f0319310abd0fd73:
+    input_sha256: 759bec5d30a93fd64363be341d6ddefcb2c1847d333a5b56079c25aa2a4bd2a1
+    configuration_sha256: 840f9fb109e949ecc70dbf98e8726bc9818b776338eedd83f249095de2af5984
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T19:59:06.680520+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.3
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.13
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.13
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.64
+            PARTIAL: 0.33
+          confidence: 0.46
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.48
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.33
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/biological_processes/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.49
+            PARTIAL: 0.44
+          confidence: 0.24
+        /assertion/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.46
+            PARTIAL: 0.44
+          confidence: 0.19
+        /assertion/biological_processes/1/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.57
+            PARTIAL: 0.39
+          confidence: 0.35
+        /assertion/biological_processes/1/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.67
+            PARTIAL: 0.32
+          confidence: 0.5
+        /assertion/biological_processes/1/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.56
+            PARTIAL: 0.41
+          confidence: 0.34
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.44
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.56
+            PARTIAL: 0.41
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13786
+        output_tokens: 671
+      elapsed_seconds: 0.3202
+      request_sha256: 3d79017d8e2e09573de6ec446b7e97b41c34e708646afbf2b626f5115fef5446
+      request_sha256s:
+      - 3d79017d8e2e09573de6ec446b7e97b41c34e708646afbf2b626f5115fef5446

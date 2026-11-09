@@ -2118,6 +2118,63 @@ inputs:
     - assertion_path: /treatments/3/target_mechanisms/0
       evidence_path: /treatments/3/target_mechanisms/0/evidence/0
       reference: PMID:35114169
+  a9da37eead79ea0d546b81de94ef7791cc25ec03d6e7a102def9d928acfa36db:
+    claim:
+      about:
+        disease:
+          name: Anal Canal Carcinoma
+          disease_term:
+            preferred_term: anal canal carcinoma
+            term:
+              id: MONDO:0007108
+              label: anal canal carcinoma
+        context:
+        - path: /treatments/0
+          value:
+            name: HPV Vaccination
+            description: Prophylactic vaccination against high-risk HPV types prevents anogenital HPV
+              infection and reduces the incidence of anal high-grade squamous intraepithelial lesions
+              and anal cancer. Most effective when given before HPV exposure.
+            therapeutic_modality: VACCINE
+            treatment_term:
+              preferred_term: vaccination
+              term:
+                id: NCIT:C15346
+                label: Vaccination
+          role: ancestor
+      assertion_type: TreatmentMechanismTarget
+      assertion:
+        target: HPV Infection of Anal Squamous Epithelium
+        treatment_effect: INHIBITS
+        description: Prophylactic HPV vaccination induces neutralizing anti-L1 capsid antibodies that
+          prevent high-risk HPV infection of the anal canal squamous and transformation-zone epithelium.
+      selected_evidence:
+        snippet: All cases in this sample could potentially have been prevented by nonavalent prophylactic
+          vaccination, and 97% by the quadrivalent vaccine.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /treatments/0
+    evidence_metadata:
+      reference: PMID:42101137
+      reference_title: Causative Human Papillomavirus (HPV) Genotypes of Anal Cancers in Australian Cisgender
+        Women.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports prophylactic HPV vaccination preventing causative high-risk HPV infection
+        of the anal squamous epithelium.
+    first_seen_at: '2026-11-09T20:09:45.159652+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:09:45.159652+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:09:45.159652+00:00'
+    occurrences:
+    - assertion_path: /treatments/0/target_mechanisms/0
+      evidence_path: /treatments/0/target_mechanisms/0/evidence/0
+      reference: PMID:42101137
 assessments:
   78938830497cba27332cb10c5d12beeabb06ae3a8f0cd404edf7c1be4276c7c9:
     input_sha256: 1874ccbfa40cc6a66812c98c8ec1d4aabb967698695ddb326735f7756f8837aa
@@ -4962,3 +5019,62 @@ assessments:
       request_sha256: 3d3428609f90989bd649c76c10f61ec7a4be985826970aa64cc1751c64c384a1
       request_sha256s:
       - 3d3428609f90989bd649c76c10f61ec7a4be985826970aa64cc1751c64c384a1
+  52957589c7827aeab6fc607bcb2560c02a07154eb7548e3da21675fcc80056b7:
+    input_sha256: a9da37eead79ea0d546b81de94ef7791cc25ec03d6e7a102def9d928acfa36db
+    configuration_sha256: 1395d58c609cc71395e1123e52d4bbcf4c79aa3de0bd6d913d7948ab9e53f41f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:09:45.159652+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.11
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.15
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/treatment_effect:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.08
+            PARTIAL: 0.4
+          confidence: 0.28
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.39
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.09
+            PARTIAL: 0.26
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6458
+        output_tokens: 270
+      elapsed_seconds: 0.2723
+      request_sha256: 35f308038ccc073c2565068dcd0a1f5fdc0362ef75f6166a1b32e6513ca1d780
+      request_sha256s:
+      - 35f308038ccc073c2565068dcd0a1f5fdc0362ef75f6166a1b32e6513ca1d780

@@ -5668,6 +5668,110 @@ inputs:
     - assertion_path: /experimental_models/0/modeled_mechanisms/0/readouts/0
       evidence_path: /experimental_models/0/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:30998089
+  748da43f90588019ac9caf971080adde23952db89da6a627c8de312be660aaeb:
+    claim:
+      about:
+        disease:
+          name: Renal Coloboma Syndrome
+          disease_term:
+            preferred_term: PAX2-related disorder
+            term:
+              id: MONDO:0007352
+              label: renal coloboma syndrome
+        context: []
+      assertion_type: AnimalModel
+      assertion:
+        name: Pax2 null mouse (homozygous)
+        species: Mouse
+        genotype: Pax2 homozygous null
+        description: The germline knockout is anephric and shows the ocular counterpart of the human lesion,
+          which is what established PAX2 as required for both organ programmes. Homozygous loss is more
+          severe than any human genotype, so the model demonstrates the requirement rather than reproducing
+          the disease.
+        publication: PMID:8575306
+        modeled_mechanisms:
+        - target: Increased Ureteric Bud Apoptosis and Reduced Branching
+          relationship: PARTIALLY_RECAPITULATES
+          fidelity: MODERATE
+          description: In the homozygous null the ureteric bud is absent altogether, so kidney development
+            never begins - the extreme of the branching defect rather than the graded reduction seen in
+            patients.
+          limitations: Human disease is heterozygous and produces a small maldeveloped kidney, not agenesis;
+            the homozygous model overshoots the human lesion.
+        - target: Failure of Optic Fissure Closure
+          relationship: RECAPITULATES
+          fidelity: HIGH
+          description: The null mouse fails to close the optic fissure and develops coloboma, which is
+            the same developmental step that fails in patients.
+      selected_evidence:
+        snippet: Mesenchyme of the nephrogenic cord fails to undergo epithelial transformation and is
+          not able to form tubules in the mesonephros.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:8575306
+      reference_title: Pax-2 controls multiple steps of urogenital development.
+      evidence_source: MODEL_ORGANISM
+      explanation: Supports treating the null mouse as informative for PAX2-dependent nephric development,
+        the process disrupted in the human disorder.
+    first_seen_at: '2026-11-09T20:36:39.123261+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:39.123261+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:39.123261+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0
+      evidence_path: /animal_models/0/evidence/0
+      reference: PMID:8575306
+  40ff196806c0009f74cb6f646ffa43f77a5dff34d4e700ec122f2b1dcb5d8b8e:
+    claim:
+      about:
+        disease:
+          name: Renal Coloboma Syndrome
+          disease_term:
+            preferred_term: PAX2-related disorder
+            term:
+              id: MONDO:0007352
+              label: renal coloboma syndrome
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: PAX2 molecular genetic testing
+        presence: Positive
+        description: The diagnosis is established by finding a heterozygous pathogenic PAX2 variant in
+          a proband with characteristic renal and/or eye findings. Sequencing of the coding exons is the
+          primary test; copy-number analysis adds the roughly 3% of cases caused by whole-gene deletion.
+      selected_evidence:
+        snippet: Among individuals with apparently nonsyndromic renal hypodysplasia and in families with
+          autosomal dominant isolated focal segmental glomerulosclerosis, pathogenic variants in PAX2
+          have been identified in approximately 8% and 4%, respectively.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301624
+      reference_title: PAX2-Related Disorder.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the diagnostic yield in the two non-syndromic presentations where PAX2 testing
+        is worth doing.
+    first_seen_at: '2026-11-09T20:36:39.115322+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:39.115322+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:39.115322+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/1
+      reference: PMID:20301624
 assessments:
   8a7a94e04bd6c94e860d926fe16ff4cf172816720ca8f63e4b64aa65a9ff3505:
     input_sha256: 71f3026d128ce05e51fedc2dc16af57d02fe479bd5446d8a956f1c2dd214187b
@@ -13411,3 +13515,184 @@ assessments:
       request_sha256: ad6a0a13282c1e7b379d3bb9460f9973b1c5229a32609c4f81ff570e8ea4b93d
       request_sha256s:
       - ad6a0a13282c1e7b379d3bb9460f9973b1c5229a32609c4f81ff570e8ea4b93d
+  b31114c3f6fedadbf4f0fe5444cd28b1d185a5d1eccb015c154de8d63a139109:
+    input_sha256: 748da43f90588019ac9caf971080adde23952db89da6a627c8de312be660aaeb
+    configuration_sha256: 4f41609856eda243afe7616ca90e048f20931b2f9de46b4dee615f13e34c15db
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:39.123261+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.25
+            PARTIAL: 0.44
+          confidence: 0.16
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.16
+            PARTIAL: 0.37
+          confidence: 0.2
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/species:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.67
+            PARTIAL: 0.26
+          confidence: 0.5
+        /assertion/genotype:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.65
+            PARTIAL: 0.28
+          confidence: 0.48
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.48
+            PARTIAL: 0.39
+          confidence: 0.22
+        /assertion/publication:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/modeled_mechanisms/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.4
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/modeled_mechanisms/0/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.79
+            PARTIAL: 0.15
+          confidence: 0.68
+        /assertion/modeled_mechanisms/0/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.32
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/modeled_mechanisms/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.44
+            PARTIAL: 0.39
+          confidence: 0.16
+        /assertion/modeled_mechanisms/0/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.74
+            PARTIAL: 0.21
+          confidence: 0.61
+        /assertion/modeled_mechanisms/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.91
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/modeled_mechanisms/1/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.84
+            PARTIAL: 0.11
+          confidence: 0.76
+        /assertion/modeled_mechanisms/1/fidelity:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.8
+            PARTIAL: 0.16
+          confidence: 0.7
+        /assertion/modeled_mechanisms/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.84
+            PARTIAL: 0.12
+          confidence: 0.76
+      model: jev-1.13.0
+      usage:
+        input_tokens: 16362
+        output_tokens: 829
+      elapsed_seconds: 0.3292
+      request_sha256: cd5bd01a4cbd82402f0bc03e93bcd7b794e69fde0f73e1cc69d04dedbdee1434
+      request_sha256s:
+      - cd5bd01a4cbd82402f0bc03e93bcd7b794e69fde0f73e1cc69d04dedbdee1434
+  3f47b3e7844fbf04cf22da97a936389a213a24e9f030cdc2ebe585ec711ebc9f:
+    input_sha256: 40ff196806c0009f74cb6f646ffa43f77a5dff34d4e700ec122f2b1dcb5d8b8e
+    configuration_sha256: bf309af0f7b63e568d60d38eb15d02213fbff55c2cd506d83042224350f54b4e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:39.115322+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.28
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.21
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.37
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/presence:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.48
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.47
+            PARTIAL: 0.48
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5262
+        output_tokens: 227
+      elapsed_seconds: 0.2828
+      request_sha256: 19586636d6033d3b83c943ec06a868827a9cdb52b895863c9610497cca47864f
+      request_sha256s:
+      - 19586636d6033d3b83c943ec06a868827a9cdb52b895863c9610497cca47864f

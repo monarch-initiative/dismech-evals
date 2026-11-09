@@ -3621,6 +3621,53 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT00999609
+  aa6ce93de1dc2dee9ab679c35024351b6cc5d173d6e95d3e50c0688c4a51674a:
+    claim:
+      about:
+        disease:
+          name: RPE65-Related Retinopathy
+          disease_term:
+            preferred_term: RPE65-related recessive retinopathy
+            term:
+              id: MONDO:0100368
+              label: RPE65-related recessive retinopathy
+        context: []
+      assertion_type: ProgressionInfo
+      assertion:
+        phase: Accelerating decline leading to legal blindness in second and third decade
+        age_range: Age 10–40
+        notes: Vision loss accelerates from the teenage years onward. By age 20, 50% of LCA2 individuals
+          meet legal blindness criteria. After age 20, progressive loss leads to complete blindness by
+          the fourth decade in virtually all cases. Gene therapy can interrupt this trajectory when viable
+          retina remains.
+      selected_evidence:
+        snippet: 'with 50% of individuals being legally blind (visual acuity of 20/200 and/or visual fields
+          extending <20 degrees from fixation) by age 20 years. After age 20 years, vision loss is more
+          rapidly progressive: all affected individuals are legally blind by the fourth decade and many
+          have complete loss of vision (i.e., no light perception).'
+        supports: SUPPORT
+    origin:
+      assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31725251
+      reference_title: Autosomal Recessive RPE65-Related Retinal Degeneration.
+      evidence_source: OTHER
+      explanation: The GeneReview natural history data establish the biphasic decline pattern with the
+        critical therapeutic window — the decades before complete photoreceptor loss — in which gene therapy
+        can restore function.
+    first_seen_at: '2026-11-09T20:25:14.982537+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:25:14.982537+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:25:14.982537+00:00'
+    occurrences:
+    - assertion_path: /progression/1
+      evidence_path: /progression/1/evidence/0
+      reference: PMID:31725251
 assessments:
   d277a22ab708f8083ee19a9020527e36c2675c8a9a86fcdf55ebcf8b306d89d1:
     input_sha256: 699815bd37b5949893ab00cc19aec97f0cd7aa1eb85407fd274163d9858f0df9
@@ -8127,3 +8174,55 @@ assessments:
       request_sha256: dafc90c74dfd918e72ca13f288a8f319adab6d261b87536b7683da9c624a5cc9
       request_sha256s:
       - dafc90c74dfd918e72ca13f288a8f319adab6d261b87536b7683da9c624a5cc9
+  39c7bd29c4f6f4a759cb2774bb7195028cfa566e4854c93c38983707a14927b4:
+    input_sha256: aa6ce93de1dc2dee9ab679c35024351b6cc5d173d6e95d3e50c0688c4a51674a
+    configuration_sha256: 9d58a32199d8ec9edc223b8ae74001cb1564183aa58644112faa2718a571d647
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:25:14.982537+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.03
+            PARTIAL: 0.44
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.01
+            PARTIAL: 0.13
+          confidence: 0.79
+        /assertion/phase:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.01
+            PARTIAL: 0.09
+          confidence: 0.85
+        /assertion/age_range:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.31
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5329
+        output_tokens: 221
+      elapsed_seconds: 0.1862
+      request_sha256: c73a8cb4b4386798d5eec7fb31dc537f724e83b95a9daecbd840a907390d1047
+      request_sha256s:
+      - c73a8cb4b4386798d5eec7fb31dc537f724e83b95a9daecbd840a907390d1047

@@ -7759,6 +7759,55 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/1
       reference: PMID:26628744
+  77a63f5dfc67faa12e0e3dc625b6b7fe47de9d16ffd9fa7de0664c58f6922964:
+    claim:
+      about:
+        disease:
+          name: SRD5A3-Congenital Disorder of Glycosylation
+          disease_term:
+            preferred_term: SRD5A3-congenital disorder of glycosylation
+            term:
+              id: MONDO:0012885
+              label: SRD5A3-congenital disorder of glycosylation
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Dolichol-Linked Oligosaccharide Assembly
+        biological_scale: MOLECULAR
+        description: Assembly of the lipid-linked oligosaccharide precursor on dolichol is compromised.
+          Because dolichol also serves O-mannosylation, C-mannosylation and GPI anchor synthesis, the
+          defect is not confined to the N-linked pathway, which is part of why the phenotype spans so
+          many organ systems.
+        biological_processes:
+        - preferred_term: dolichol-linked oligosaccharide biosynthetic process
+          term:
+            id: GO:0006488
+            label: dolichol-linked oligosaccharide biosynthetic process
+          modifier: DECREASED
+      selected_evidence:
+        snippet: an enzyme catalyzing the final step of the biosynthesis of dolichol, which is required
+          for the assembly of the glycans needed for N-glycosylation
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22304929
+      reference_title: 'Life with too much polyprenol: polyprenol reductase deficiency.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Places the enzymatic block immediately upstream of glycan assembly.
+    first_seen_at: '2026-11-09T20:36:44.098940+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:36:44.098940+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:36:44.098940+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:22304929
 assessments:
   068300e27b0edea8cb2994bdbd944376033d8eb38b4c923400af36dbfa9c5431:
     input_sha256: c7c092b3df4bc135e68508b37d1cd0602e3dfa7f4c9ddbd6156d547a4b82da36
@@ -18403,3 +18452,76 @@ assessments:
       request_sha256: b4771b056d293cca82527657646c678a1602f5cc699300982ea375d475c9340b
       request_sha256s:
       - b4771b056d293cca82527657646c678a1602f5cc699300982ea375d475c9340b
+  14b2151e63b34a136d3cd60fb128e92546efe7a3cd78268f8d850bb2fe70f306:
+    input_sha256: 77a63f5dfc67faa12e0e3dc625b6b7fe47de9d16ffd9fa7de0664c58f6922964
+    configuration_sha256: f7cdd958b8571aaa8789e8bae4e39743a663352585b8f39747ab85ca0872dbbc
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:36:44.098940+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.04
+            PARTIAL: 0.58
+          confidence: 0.37
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.09
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.02
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.11
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.03
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.02
+            PARTIAL: 0.16
+          confidence: 0.73
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8904
+        output_tokens: 387
+      elapsed_seconds: 0.3389
+      request_sha256: d73954029b5453fb0ed00b12085c1c37ce8de260b3790082d4f4ac4c500f1fc6
+      request_sha256s:
+      - d73954029b5453fb0ed00b12085c1c37ce8de260b3790082d4f4ac4c500f1fc6

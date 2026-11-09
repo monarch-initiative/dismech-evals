@@ -1827,6 +1827,63 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/1
       reference: PMID:40279376
+  09d2597d5785ae68b9acee6f979e929ba661e6c82495cc0f3bc02f47a293612e:
+    claim:
+      about:
+        disease:
+          name: Primary Erythermalgia
+          disease_term:
+            preferred_term: primary erythermalgia
+            term:
+              id: MONDO:0007571
+              label: primary erythermalgia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: SCN9A Gain-of-Function Variant (Nav1.7)
+        biological_scale: MOLECULAR
+        conforms_to: nociceptor_sodium_channel_excitability#Enhanced or Persistent Nociceptor Sodium Current
+        description: Heterozygous missense gain-of-function variants in SCN9A alter the biophysical properties
+          of the Nav1.7 voltage-gated sodium channel. Characteristic changes include a hyperpolarizing
+          shift in the voltage-dependence of activation, slowed deactivation, and enhanced ramp currents,
+          which lower the threshold for channel opening and increase the channel's response to small,
+          slow depolarizations.
+        molecular_functions:
+        - preferred_term: voltage-gated sodium channel activity
+          term:
+            id: GO:0005248
+            label: voltage-gated sodium channel activity
+          modifier: INCREASED
+        genes:
+        - preferred_term: SCN9A
+          term:
+            id: hgnc:10597
+            label: SCN9A
+      selected_evidence:
+        snippet: The F216S mutation hyperpolarizes the voltage dependence of activation by 11 mV, accelerates
+          activation, slows deactivation, and enhances the response to slow, small depolarizations.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:16988069
+      reference_title: 'Inherited erythermalgia: limb pain from an S4 charge-neutral Na channelopathy.'
+      evidence_source: IN_VITRO
+      explanation: A second erythermalgia mutation (in the S4 segment) reproduces the same gain-of-function
+        gating changes.
+    first_seen_at: '2026-11-09T20:24:59.209898+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:24:59.209898+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:24:59.209898+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0
+      evidence_path: /pathophysiology/0/evidence/2
+      reference: PMID:16988069
 assessments:
   bc4df0d8bfdd9c271fc4e2dff0e4dfb935491f102e432242ac6849e712b6a3d5:
     input_sha256: a8fea8f75dd0edc87014a7a12ebd865dab017610f13399bbb842b80f4b24b4fb
@@ -4390,3 +4447,97 @@ assessments:
       request_sha256: 99bde06e587a1b86a79d60d03c28e5303763bfda15fc6ea2499b8067a9f08866
       request_sha256s:
       - 99bde06e587a1b86a79d60d03c28e5303763bfda15fc6ea2499b8067a9f08866
+  ef61e7bc53472d09959ab95d956fe0b641a07b034f08d35ef964570aefa6331d:
+    input_sha256: 09d2597d5785ae68b9acee6f979e929ba661e6c82495cc0f3bc02f47a293612e
+    configuration_sha256: 64659b33027c77f155b8ed23affff24aa004487e6c229fc5da6cbc4bc91b672a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:24:59.209898+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.17
+            PARTIAL: 0.43
+          confidence: 0.14
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.26
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.09
+            PARTIAL: 0.3
+          confidence: 0.42
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.01
+            PARTIAL: 0.01
+          confidence: 0.97
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.16
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.02
+            PARTIAL: 0.27
+          confidence: 0.56
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.82
+            MISMATCH: 0.04
+            PARTIAL: 0.14
+          confidence: 0.73
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.04
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/molecular_functions/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.11
+            PARTIAL: 0.28
+          confidence: 0.42
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.16
+            PARTIAL: 0.37
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11940
+        output_tokens: 521
+      elapsed_seconds: 0.2411
+      request_sha256: 7e976838553d72e1e737c3958fc2728759185a860c73715f79dc77747e74f8c0
+      request_sha256s:
+      - 7e976838553d72e1e737c3958fc2728759185a860c73715f79dc77747e74f8c0

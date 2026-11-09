@@ -1657,6 +1657,53 @@ inputs:
     - assertion_path: /clinical_trials/0
       evidence_path: /clinical_trials/0/evidence/0
       reference: clinicaltrials:NCT06540937
+  b55f3a0ad32019135415b14ea16d0d2597c65ababcbf2976bb0a2d083b3aac4a:
+    claim:
+      about:
+        disease:
+          name: Multiple Endocrine Neoplasia Type 1
+          disease_term:
+            preferred_term: multiple endocrine neoplasia type 1
+            term:
+              id: MONDO:0007540
+              label: multiple endocrine neoplasia type 1
+        context: []
+      assertion_type: Phenotype
+      assertion:
+        category: Endocrine
+        name: Primary Hyperparathyroidism
+        description: Usually the earliest manifestation of MEN1 and the most penetrant, arising from asynchronous
+          multigland parathyroid involvement rather than a single adenoma.
+        phenotype_term:
+          preferred_term: Primary hyperparathyroidism
+          term:
+            id: HP:0008200
+            label: Primary hyperparathyroidism
+      selected_evidence:
+        snippet: MEN1 is characterized by the occurrence of parathyroid, pancreatic islet, and anterior
+          pituitary tumors.
+        supports: SUPPORT
+    origin:
+      assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22723327
+      reference_title: Clinical practice guidelines for multiple endocrine neoplasia type 1 (MEN1).
+      evidence_source: HUMAN_CLINICAL
+      explanation: Parathyroid tumors are named as a defining feature of the syndrome by the clinical
+        practice guideline.
+    first_seen_at: '2026-11-09T20:35:41.286083+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:41.286083+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:41.286083+00:00'
+    occurrences:
+    - assertion_path: /phenotypes/0
+      evidence_path: /phenotypes/0/evidence/0
+      reference: PMID:22723327
 assessments:
   f2731c669cd9b8b7f7b425af8ceb166450a2feb3d4ca777cea0d3e29da2a8187:
     input_sha256: 7f28e259b33050cb7435872e3913cf8048baa56b0ad26300fafd91959cad2633
@@ -4078,3 +4125,69 @@ assessments:
       request_sha256: 88809c77d6a83124715929d39c6d5302347722728d780e12391a8806f224131d
       request_sha256s:
       - 88809c77d6a83124715929d39c6d5302347722728d780e12391a8806f224131d
+  a4889608c3813e2470f03dfb096e41ebe485e22ac0fc51ff0a944e8642967c03:
+    input_sha256: b55f3a0ad32019135415b14ea16d0d2597c65ababcbf2976bb0a2d083b3aac4a
+    configuration_sha256: 4bc6958c25be24741bfe0b70a3dc0365fce57d5d9cbefd1ede2b6b4daa7ecfa4
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:41.286083+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.03
+            PARTIAL: 0.87
+          confidence: 0.8
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/category:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.07
+            PARTIAL: 0.24
+          confidence: 0.53
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.07
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.51
+            PARTIAL: 0.48
+          confidence: 0.26
+        /assertion/phenotype_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.05
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/phenotype_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.06
+            PARTIAL: 0.59
+          confidence: 0.38
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7209
+        output_tokens: 323
+      elapsed_seconds: 0.2055
+      request_sha256: a8988cf0fd7ba66ebe529840441cb1a8ab02c15263608f215c4960dfd650d38e
+      request_sha256s:
+      - a8988cf0fd7ba66ebe529840441cb1a8ab02c15263608f215c4960dfd650d38e

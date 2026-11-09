@@ -10794,6 +10794,575 @@ inputs:
     - assertion_path: /treatments/15/target_mechanisms/0
       evidence_path: /treatments/15/target_mechanisms/0/evidence/0
       reference: PMID:24404629
+  8799296a2131427a5d3607efe6bb4d4e709157286be2cc091b43b1fdafb48d16:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: LDL Cholesterol (LDL-C)
+        loinc_term:
+          id: LOINC:LP15491-1
+          label: Cholesterol.in LDL
+        biomarker_term:
+          preferred_term: LDL cholesterol
+          term:
+            id: CHEBI:47774
+            label: low-density lipoprotein cholesterol
+        presence: Elevated
+        frequency: OBLIGATE
+        specificity: 'Diagnostic biochemical marker for FH when interpreted with age, family history,
+          and genotype; levels are typically markedly elevated from birth.
+
+          '
+        context: 'LDL-C is the primary diagnostic and treatment-response biomarker in FH. GeneReviews
+          lists measurement of LDL-C concentration as a way to clarify diagnosis in at-risk relatives,
+          and therapeutic guidance centers on reducing LDL-C levels.
+
+          '
+        readouts:
+        - target: Elevated Circulating LDL Cholesterol
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'Elevated measured LDL-C directly reports the central biochemical abnormality
+            caused by reduced hepatic LDL clearance.
+
+            '
+        - target: Reduced Hepatic LDL Clearance
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'High LDL-C is the observable plasma consequence of impaired hepatic LDL uptake
+            by the LDL receptor pathway.
+
+            '
+      selected_evidence:
+        snippet: Familial hypercholesterolaemia is a common inherited disorder characterized by abnormally
+          elevated serum levels of low-density lipoprotein (LDL) cholesterol from birth, which in time
+          can lead to cardiovascular disease (CVD).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29219151
+      reference_title: Familial hypercholesterolaemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'Confirms LDL cholesterol elevation from birth as the defining biochemical abnormality
+        in FH.
+
+        '
+    first_seen_at: '2026-11-09T20:48:19.986566+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:19.986566+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:19.986566+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:29219151
+  38194fcf8d9416c68bddaed66e52a3e9d4681550a838bb6bdd7ea6332be42bc1:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context: []
+      assertion_type: Definition
+      assertion:
+        name: FIND FH (machine-learning case detection)
+        definition_type: PHENOTYPE_ALGORITHM
+        derivation_basis: ESTABLISHED_CRITERIA
+        description: Machine-learning (random forest) classifier developed by the FH Foundation's FIND
+          FH initiative with Stanford to surface undiagnosed ("missed") FH patients from EHR data, rather
+          than replicate a criteria checklist. Trained on known FH cases versus matched non-cases and
+          used to flag high-probability candidates for confirmatory FH screening, addressing the >95%
+          false-positive rate of simple LDL-C threshold screening.
+        scope: EHR data (developed at Stanford Health Care; externally validated at the Geisinger Health
+          System)
+        validation_status:
+          status: VALIDATED_AGAINST_GOLD_STANDARD
+          rationale: The random forest achieved PPV 0.88 and sensitivity 0.75 on a held-out test set;
+            external validation at Geisinger (466 FH patients, 236 genetically proven) achieved PPV 0.85,
+            and chart review confirmed 84% of the highest-probability flags.
+        notes: Unlike the DLCN/Simon Broome operationalizations, FIND FH is a predictive classifier optimized
+          to find undiagnosed cases for downstream screening, not to render a diagnosis on its own.
+      selected_evidence:
+        snippet: We trained a random forest classifier using data from known patients (n = 197) and matched
+          non-cases (n = 6590). Our classifier obtained a positive predictive value (PPV) of 0.88 and
+          sensitivity of 0.75 on a held-out test-set.
+        supports: SUPPORT
+    origin:
+      assertion_path: /definitions/2
+      evidence_path: /definitions/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: DOI:10.1038/s41746-019-0101-5
+      evidence_source: COMPUTATIONAL
+      reference_title: Finding missed cases of familial hypercholesterolemia in health systems using machine
+        learning
+      explanation: Describes the ML classifier design and internal (held-out test-set) performance.
+    first_seen_at: '2026-11-09T20:48:19.920115+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:19.920115+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:19.920115+00:00'
+    occurrences:
+    - assertion_path: /definitions/2
+      evidence_path: /definitions/2/evidence/0
+      reference: DOI:10.1038/s41746-019-0101-5
+  7afc2a150245f695c964c70d4ff63bd450b5ab96165c61e6fcf580b1aca7554e:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: LDL Cholesterol (LDL-C)
+        loinc_term:
+          id: LOINC:LP15491-1
+          label: Cholesterol.in LDL
+        biomarker_term:
+          preferred_term: LDL cholesterol
+          term:
+            id: CHEBI:47774
+            label: low-density lipoprotein cholesterol
+        presence: Elevated
+        frequency: OBLIGATE
+        specificity: 'Diagnostic biochemical marker for FH when interpreted with age, family history,
+          and genotype; levels are typically markedly elevated from birth.
+
+          '
+        context: 'LDL-C is the primary diagnostic and treatment-response biomarker in FH. GeneReviews
+          lists measurement of LDL-C concentration as a way to clarify diagnosis in at-risk relatives,
+          and therapeutic guidance centers on reducing LDL-C levels.
+
+          '
+        readouts:
+        - target: Elevated Circulating LDL Cholesterol
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'Elevated measured LDL-C directly reports the central biochemical abnormality
+            caused by reduced hepatic LDL clearance.
+
+            '
+        - target: Reduced Hepatic LDL Clearance
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'High LDL-C is the observable plasma consequence of impaired hepatic LDL uptake
+            by the LDL receptor pathway.
+
+            '
+      selected_evidence:
+        snippet: measurement of LDL-C concentration
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24404629
+      reference_title: Familial Hypercholesterolemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'GeneReviews identifies LDL-C concentration measurement as a diagnostic approach for
+        at-risk family members.
+
+        '
+    first_seen_at: '2026-11-09T20:48:20.757284+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:20.757284+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:20.757284+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:24404629
+  ad93ce4549f71cb486fc137653229d63af93136abd61cb2af98c09dbd5782ff2:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context:
+        - path: /biochemical/0
+          value:
+            name: LDL Cholesterol (LDL-C)
+            loinc_term:
+              id: LOINC:LP15491-1
+              label: Cholesterol.in LDL
+            biomarker_term:
+              preferred_term: LDL cholesterol
+              term:
+                id: CHEBI:47774
+                label: low-density lipoprotein cholesterol
+            presence: Elevated
+            frequency: OBLIGATE
+            specificity: 'Diagnostic biochemical marker for FH when interpreted with age, family history,
+              and genotype; levels are typically markedly elevated from birth.
+
+              '
+            context: 'LDL-C is the primary diagnostic and treatment-response biomarker in FH. GeneReviews
+              lists measurement of LDL-C concentration as a way to clarify diagnosis in at-risk relatives,
+              and therapeutic guidance centers on reducing LDL-C levels.
+
+              '
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Elevated Circulating LDL Cholesterol
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: 'Elevated measured LDL-C directly reports the central biochemical abnormality
+          caused by reduced hepatic LDL clearance.
+
+          '
+      selected_evidence:
+        snippet: A clinical diagnosis of FH can be established in a proband with characteristic clinical
+          features and significantly elevated LDL-C levels
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: PMID:24404629
+      reference_title: Familial Hypercholesterolemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'GeneReviews identifies significantly elevated LDL-C levels as central to clinical
+        diagnosis.
+
+        '
+    first_seen_at: '2026-11-09T20:48:20.758763+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:20.758763+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:20.758763+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      reference: PMID:24404629
+  3258bb54dc090556e189107b2f9effd056270893a0263d1990315ca49a036cfb:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: LDL-cholesterol measurement scored against clinical FH criteria
+        description: 'The phenotypic diagnosis rests on the LDL-cholesterol concentration read against
+          the LDL-C categories of a clinical criteria set: the Dutch Lipid Clinic Network score in adults,
+          and in children the European Atherosclerosis Society consensus thresholds or the Simon Broome
+          paediatric cut-off, since the DLCN criteria are not valid in children. Family history, premature
+          coronary disease, physical stigmata and genotype complete each criteria set.'
+        diagnosis_term:
+          preferred_term: LDL cholesterol measurement
+          term:
+            id: NCIT:C105588
+            label: Low Density Lipoprotein Cholesterol Measurement
+        measurements:
+        - preferred_term: LDL cholesterol
+          term:
+            id: LOINC:LP15491-1
+            label: Cholesterol.in LDL
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:22748-8
+            label: Cholesterol in LDL [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: Dutch Lipid Clinic Network criteria, LDL-C component, adults (as applied by a 2015
+            cohort of 4930 healthy adults)
+          notes: The DLCN score gives points for each LDL-C category; the cited abstract states the category
+            boundaries (with mg/dL equivalents 155, 190, 250 and 330 mg/dL) but not the points each category
+            earns, so the bands are named by concentration and carry no point value. The source writes
+            the categories as half-open intervals ("between 4 and <5 mmol/L", "≥ 8.5 mmol/L"), which the
+            bands reproduce exactly. Searched 2026-10-07 for a PubMed-indexed DLCN source carrying the
+            point table in quotable text ("Dutch Lipid Clinic" with "8.5 mmol"); only this cohort and
+            a Swiss prevalence study (PMID:30270060) were returned.
+          interpretation_bands:
+          - name: DLCN LDL-C category 4.0-4.9 mmol/L
+            lower_bound: 4.0
+            upper_bound: 5.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Lowest LDL-C category scored by the DLCN criteria.
+          - name: DLCN LDL-C category 5.0-6.4 mmol/L
+            lower_bound: 5.0
+            upper_bound: 6.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Second DLCN LDL-C category.
+          - name: DLCN LDL-C category 6.5-8.4 mmol/L
+            lower_bound: 6.5
+            upper_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Third DLCN LDL-C category.
+          - name: DLCN LDL-C category 8.5 mmol/L and above
+            lower_bound: 8.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Highest DLCN LDL-C category.
+        - loinc_term:
+            id: LOINC:22748-8
+            label: Cholesterol in LDL [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: European Atherosclerosis Society Consensus Panel 2015, children and adolescents
+          notes: The consensus states the thresholds with mg/dL equivalents (5 mmol/L = 190 mg/dL, 4 mmol/L
+            = 160 mg/dL) and asks for the diagnostic LDL-C on two successive occasions after 3 months
+            of diet. The 4.0-4.9 mmol/L band is diagnostic only together with a family history of premature
+            CHD and/or high baseline cholesterol in one parent; the qualifier is in the band interpretation
+            because a reference range cannot carry it as a boundary.
+          interpretation_bands:
+          - name: Phenotypic FH with family history (EAS paediatric)
+            lower_bound: 4.0
+            upper_bound: 5.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Makes the phenotypic diagnosis only with a family history of premature CHD
+              and/or high baseline cholesterol in one parent.
+          - name: Phenotypic FH (EAS paediatric)
+            lower_bound: 5.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+            interpretation: Makes the phenotypic diagnosis on its own when found on two successive occasions
+              after 3 months of diet; high probability of FH.
+        - loinc_term:
+            id: LOINC:22748-8
+            label: Cholesterol in LDL [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: European Atherosclerosis Society Consensus Panel 2015, child of a parent with a
+            known FH genetic defect
+          interpretation_bands:
+          - name: Phenotypic FH in a child of a genetically diagnosed parent (EAS)
+            lower_bound: 3.5
+            unit: mmol/L
+            abnormal_flag: HIGH
+        - loinc_term:
+            id: LOINC:22748-8
+            label: Cholesterol in LDL [Moles/volume] in Serum or Plasma
+          unit: mmol/L
+          population: Simon Broome criteria, children with FH aged under 10 years (as restated by the
+            European Atherosclerosis Society Consensus Panel 2015)
+          notes: 'The consensus gives this Simon Broome threshold as "4 mmol/L (160 mg/dL)" without an
+            inequality sign; the band treats 4.0 as the lower, included boundary. The adult Simon Broome
+            LDL-C criterion is not recorded: none of the records read carries it in quotable text (PMID:1933004
+            and PMID:9920511, the Simon Broome Register Group cohort reports; a PubMed search for "Simon
+            Broome" with "4.9 mmol" returned two abstracts, read, neither stating the criterion; with
+            "7.5 mmol", five records whose titles name no criteria document; searched 2026-10-07). The
+            US National Lipid Association Expert Panel screening thresholds are likewise not recorded:
+            the panel''s clinical guidance (PMID:21600525) is abstract-only and its abstract gives no
+            LDL-C number, and the companion diagnosis-and-screening paper (PMID:21600530) returned no
+            text.'
+          interpretation_bands:
+          - name: At or above the Simon Broome paediatric LDL-C threshold
+            lower_bound: 4.0
+            unit: mmol/L
+            abnormal_flag: HIGH
+        notes: Identity is bound at the LOINC Part for LDL cholesterol, as on the LDL-C biochemical marker;
+          the reference ranges are keyed on the method-less molar serum/plasma code (LOINC:22748-8) because
+          every cited threshold is stated in mmol/L. The calculated and direct-assay LDL-C codes are deliberately
+          not bound.
+      selected_evidence:
+        snippet: A clinical diagnosis of FH can be established in a proband with characteristic clinical
+          features and significantly elevated LDL-C levels
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:24404629
+      reference_title: Familial Hypercholesterolemia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Grounds LDL-C as the measurement on which the clinical diagnosis rests.
+    first_seen_at: '2026-11-09T20:48:21.875167+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:21.875167+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:21.875167+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:24404629
+  79bd882cddc66d60470f46941f740d01a741a19c42f5dc7829d509d0604d5749:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context:
+        - path: /biochemical/0
+          value:
+            name: LDL Cholesterol (LDL-C)
+            loinc_term:
+              id: LOINC:LP15491-1
+              label: Cholesterol.in LDL
+            biomarker_term:
+              preferred_term: LDL cholesterol
+              term:
+                id: CHEBI:47774
+                label: low-density lipoprotein cholesterol
+            presence: Elevated
+            frequency: OBLIGATE
+            specificity: 'Diagnostic biochemical marker for FH when interpreted with age, family history,
+              and genotype; levels are typically markedly elevated from birth.
+
+              '
+            context: 'LDL-C is the primary diagnostic and treatment-response biomarker in FH. GeneReviews
+              lists measurement of LDL-C concentration as a way to clarify diagnosis in at-risk relatives,
+              and therapeutic guidance centers on reducing LDL-C levels.
+
+              '
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Reduced Hepatic LDL Clearance
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: 'High LDL-C is the observable plasma consequence of impaired hepatic LDL uptake
+          by the LDL receptor pathway.
+
+          '
+      selected_evidence:
+        snippet: Genetics of Familial Hypercholesterolemia (FH) is ascribable to pathogenic variants in
+          genes encoding proteins leading to an impaired LDL uptake by the LDL receptor (LDLR).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/1
+      evidence_path: /biochemical/0/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: DOI:10.3390/ijms24043224
+      reference_title: 'Genetic Heterogeneity of Familial Hypercholesterolemia: Repercussions for Molecular
+        Diagnosis'
+      evidence_source: HUMAN_CLINICAL
+      explanation: 'FH gene defects converge on impaired LDL uptake, making elevated LDL-C a diagnostic
+        readout of reduced clearance.
+
+        '
+    first_seen_at: '2026-11-09T20:48:21.863401+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:21.863401+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:21.863401+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/1
+      evidence_path: /biochemical/0/readouts/1/evidence/0
+      reference: DOI:10.3390/ijms24043224
+  206c2a42aea5f5a47225b212b01a3446748211921941e7c29b1c1968e80bc7db:
+    claim:
+      about:
+        disease:
+          name: Familial Hypercholesterolemia
+          disease_term:
+            preferred_term: Familial Hypercholesterolemia
+            term:
+              id: MONDO:0005439
+              label: familial hypercholesterolemia
+        context: []
+      assertion_type: Genetic
+      assertion:
+        name: IL34 Stop-Gain Variant and Cardiovascular Resilience
+        gene_term:
+          preferred_term: IL34
+          term:
+            id: hgnc:28529
+            label: IL34
+        relationship_type: MODIFIER
+        association: Phenocopy or Modifier
+        presence: Positive
+        variants:
+        - name: Tyr213* (c.639C>A; rs4985556)
+          description: IL34 stop-gain variant reported in the LDLR p.Trp87Gly founder cohort, where it
+            was the strongest association with cardiovascular event-free survival among 12 candidate variants.
+            Single-cohort preprint finding.
+          type: nonsense
+        notes: 'Single-cohort preprint finding, not yet peer reviewed or replicated. In 243 French-Canadian
+          individuals carrying the LDLR c.259T>G (p.Trp87Gly) variant, an IL34 stop-gain variant (c.639C>A,
+          p.Tyr213*; rs4985556) was associated with cardiovascular event-free survival in 20 individuals
+          aged 70 or older who had no event, compared with 35 with premature events. The association is
+          based on a small comparison group and an unvalidated mechanism, so it should be read as a candidate
+          protective modifier and not as an established genotype-phenotype relationship.
+
+          '
+      selected_evidence:
+        snippet: The IL34 stop-gain variant (c.639C>A ... was associated with a markedly increased likelihood
+          of cardiovascular event-free survival
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/6
+      evidence_path: /genetic/6/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PPR:PPR1278234
+      reference_title: 'Cardiovascular Resilience in Familial Hypercholesterolemia: Genomic Signatures
+        from a Founder Population Highlight  <i>IL34</i>  as a Candidate Gene Associated with Event-Free
+        Survival'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Reports the association of the IL34 stop-gain variant with event-free survival in the
+        LDLR-variant founder cohort; a preprint, so it should not be the sole support for any claim.
+    first_seen_at: '2026-11-09T20:48:22.945484+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:48:22.945484+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:48:22.945484+00:00'
+    occurrences:
+    - assertion_path: /genetic/6
+      evidence_path: /genetic/6/evidence/0
+      reference: PPR:PPR1278234
 assessments:
   acd9bb8692795dcc49961afb9d3d5ef40de62ca07cb7381006b8e97de6091da7:
     input_sha256: 4d878b57b75298b8e8f2b3675f860f454010988b639bdf48169c330f5039074f
@@ -24508,3 +25077,1173 @@ assessments:
       request_sha256: b54154090269db8c7b32a1466485c010a615b3b5b47e086fc8fd119b4eb19fbb
       request_sha256s:
       - b54154090269db8c7b32a1466485c010a615b3b5b47e086fc8fd119b4eb19fbb
+  d479dd6eb543af06b600eac7d4aa48de2d03ffda3b764daf7944dc79a5a02861:
+    input_sha256: 8799296a2131427a5d3607efe6bb4d4e709157286be2cc091b43b1fdafb48d16
+    configuration_sha256: 2b8fd6811172b82085d0964657e821609191d8e0e19e167f705d99fa599b0e2f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:19.986566+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.01
+            PARTIAL: 0.53
+          confidence: 0.3
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.62
+            PARTIAL: 0.3
+          confidence: 0.43
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.2
+            PARTIAL: 0.21
+          confidence: 0.38
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.02
+            PARTIAL: 0.03
+          confidence: 0.92
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.01
+            PARTIAL: 0.1
+          confidence: 0.83
+        /assertion/frequency:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.03
+            PARTIAL: 0.44
+          confidence: 0.3
+        /assertion/specificity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.08
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.36
+            PARTIAL: 0.32
+          confidence: 0.04
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.05
+            PARTIAL: 0.24
+          confidence: 0.56
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.02
+            PARTIAL: 0.12
+          confidence: 0.79
+        /assertion/readouts/0/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.09
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.17
+            PARTIAL: 0.59
+          confidence: 0.38
+        /assertion/readouts/1/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.38
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/1/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.05
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/readouts/1/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.1
+            PARTIAL: 0.43
+          confidence: 0.2
+        /assertion/readouts/1/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.18
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.23
+            PARTIAL: 0.67
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 21377
+        output_tokens: 1028
+      elapsed_seconds: 0.2505
+      request_sha256: 51f40f28ad1ffe1258a9cd69f29b5fc08a3dcda2830ebf72b321212b9b39dc22
+      request_sha256s:
+      - 51f40f28ad1ffe1258a9cd69f29b5fc08a3dcda2830ebf72b321212b9b39dc22
+  7cf2ef38b1a189c0d66261e28e843cb240c195d865db7ad66c82edb684f88516:
+    input_sha256: 38194fcf8d9416c68bddaed66e52a3e9d4681550a838bb6bdd7ea6332be42bc1
+    configuration_sha256: afce029ccb3b6608f3c382b51d45cbebb4bbd69ef1e5ddfc4b63425255b868f5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:19.920115+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.04
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.04
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.41
+            PARTIAL: 0.37
+          confidence: 0.11
+        /assertion/definition_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.08
+            PARTIAL: 0.17
+          confidence: 0.62
+        /assertion/derivation_basis:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.31
+            PARTIAL: 0.28
+          confidence: 0.11
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.05
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/scope:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.3
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/validation_status/status:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.04
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/validation_status/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.05
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.56
+            PARTIAL: 0.38
+          confidence: 0.34
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10474
+        output_tokens: 466
+      elapsed_seconds: 0.1693
+      request_sha256: e5cc27cd4cfa4d183d98e57042ece8ad23305b67cebc03288056fc061cde3d41
+      request_sha256s:
+      - e5cc27cd4cfa4d183d98e57042ece8ad23305b67cebc03288056fc061cde3d41
+  9dc02e9558dc847226bae1ae6833f75e6edf0f570ba2c3d0a543973e56bff2ba:
+    input_sha256: 7afc2a150245f695c964c70d4ff63bd450b5ab96165c61e6fcf580b1aca7554e
+    configuration_sha256: 2b8fd6811172b82085d0964657e821609191d8e0e19e167f705d99fa599b0e2f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:20.757284+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.07
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.09
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.05
+            PARTIAL: 0.15
+          confidence: 0.7
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.48
+            PARTIAL: 0.33
+          confidence: 0.22
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.21
+            PARTIAL: 0.34
+          confidence: 0.18
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.06
+            PARTIAL: 0.18
+          confidence: 0.64
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.09
+            PARTIAL: 0.25
+          confidence: 0.49
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.18
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/frequency:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.3
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/specificity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.15
+            PARTIAL: 0.78
+          confidence: 0.67
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.18
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/readouts/0/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.05
+            PARTIAL: 0.4
+          confidence: 0.33
+        /assertion/readouts/0/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.08
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/0/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.14
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.03
+            PARTIAL: 0.35
+          confidence: 0.43
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.46
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.54
+            PARTIAL: 0.43
+          confidence: 0.31
+        /assertion/readouts/1/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.15
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/readouts/1/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.21
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/readouts/1/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.05
+            PARTIAL: 0.36
+          confidence: 0.38
+        /assertion/readouts/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.46
+            PARTIAL: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 21333
+        output_tokens: 1032
+      elapsed_seconds: 0.2772
+      request_sha256: 7f8a1f29e65f15ff9cba29074143efd4b930220107c2581e8135c6b2757260a4
+      request_sha256s:
+      - 7f8a1f29e65f15ff9cba29074143efd4b930220107c2581e8135c6b2757260a4
+  598086aae9ea4a19ade15f9b0eba6b258c71cafd7e3908a64a3b8d6d9db4de88:
+    input_sha256: ad93ce4549f71cb486fc137653229d63af93136abd61cb2af98c09dbd5782ff2
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:20.758763+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.04
+            PARTIAL: 0.19
+          confidence: 0.66
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.04
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.28
+            PARTIAL: 0.55
+          confidence: 0.33
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.07
+            PARTIAL: 0.2
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8638
+        output_tokens: 361
+      elapsed_seconds: 0.2056
+      request_sha256: 0076a16108b4879e33ad55b938dd384f724f11f8aaf0c35019aa7f9830ee945a
+      request_sha256s:
+      - 0076a16108b4879e33ad55b938dd384f724f11f8aaf0c35019aa7f9830ee945a
+  33b31f954c43ff49b5e6deaed51d2c81fad05deffb3a3eac42de2a875658843c:
+    input_sha256: 3258bb54dc090556e189107b2f9effd056270893a0263d1990315ca49a036cfb
+    configuration_sha256: bb87e8cdb57132743d9499a294629891f7306ec2eaa07760d97b2aab421301ea
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:21.875167+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.07
+            PARTIAL: 0.76
+          confidence: 0.64
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.12
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.16
+            PARTIAL: 0.75
+          confidence: 0.62
+        /assertion/diagnosis_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+          confidence: 0.2
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.18
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.05
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.08
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.66
+            PARTIAL: 0.27
+          confidence: 0.49
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.6
+            PARTIAL: 0.27
+          confidence: 0.4
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.71
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.63
+            PARTIAL: 0.34
+          confidence: 0.44
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.54
+            PARTIAL: 0.4
+          confidence: 0.31
+        /assertion/reference_ranges/0/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.69
+            PARTIAL: 0.28
+          confidence: 0.53
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.68
+            PARTIAL: 0.28
+          confidence: 0.52
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.33
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.44
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.55
+            PARTIAL: 0.39
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.67
+            PARTIAL: 0.28
+          confidence: 0.5
+        /assertion/reference_ranges/0/interpretation_bands/1/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.8
+            PARTIAL: 0.18
+          confidence: 0.7
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.69
+            PARTIAL: 0.25
+          confidence: 0.53
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.18
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.52
+            PARTIAL: 0.42
+          confidence: 0.28
+        /assertion/reference_ranges/0/interpretation_bands/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.53
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/reference_ranges/0/interpretation_bands/2/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/2/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.81
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/reference_ranges/0/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.64
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/2/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.17
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/reference_ranges/0/interpretation_bands/2/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.43
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/reference_ranges/0/interpretation_bands/3/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.53
+            PARTIAL: 0.4
+          confidence: 0.3
+        /assertion/reference_ranges/0/interpretation_bands/3/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.44
+        /assertion/reference_ranges/0/interpretation_bands/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.61
+            PARTIAL: 0.29
+          confidence: 0.42
+        /assertion/reference_ranges/0/interpretation_bands/3/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/3/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.36
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/reference_ranges/1/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.65
+            PARTIAL: 0.28
+          confidence: 0.48
+        /assertion/reference_ranges/1/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.5
+            PARTIAL: 0.3
+          confidence: 0.25
+        /assertion/reference_ranges/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.63
+            PARTIAL: 0.31
+          confidence: 0.44
+        /assertion/reference_ranges/1/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.54
+            PARTIAL: 0.38
+          confidence: 0.31
+        /assertion/reference_ranges/1/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.5
+            PARTIAL: 0.42
+          confidence: 0.25
+        /assertion/reference_ranges/1/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.48
+            PARTIAL: 0.42
+          confidence: 0.22
+        /assertion/reference_ranges/1/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.58
+            PARTIAL: 0.37
+          confidence: 0.37
+        /assertion/reference_ranges/1/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/reference_ranges/1/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.6
+            PARTIAL: 0.31
+          confidence: 0.4
+        /assertion/reference_ranges/1/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.14
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/reference_ranges/1/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.5
+            PARTIAL: 0.42
+          confidence: 0.25
+        /assertion/reference_ranges/1/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.5
+            PARTIAL: 0.39
+          confidence: 0.25
+        /assertion/reference_ranges/1/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/reference_ranges/1/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.55
+            PARTIAL: 0.36
+          confidence: 0.33
+        /assertion/reference_ranges/1/interpretation_bands/1/abnormal_flag:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.18
+            PARTIAL: 0.37
+          confidence: 0.18
+        /assertion/reference_ranges/1/interpretation_bands/1/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.44
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/2/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.64
+            PARTIAL: 0.27
+          confidence: 0.46
+        /assertion/reference_ranges/2/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.54
+            PARTIAL: 0.29
+          confidence: 0.31
+        /assertion/reference_ranges/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.61
+            PARTIAL: 0.3
+          confidence: 0.42
+        /assertion/reference_ranges/2/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.5
+            PARTIAL: 0.4
+          confidence: 0.25
+        /assertion/reference_ranges/2/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.5
+            PARTIAL: 0.4
+          confidence: 0.25
+        /assertion/reference_ranges/2/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.64
+            PARTIAL: 0.31
+          confidence: 0.46
+        /assertion/reference_ranges/2/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.54
+            PARTIAL: 0.32
+          confidence: 0.31
+        /assertion/reference_ranges/2/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.18
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/reference_ranges/3/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.67
+            PARTIAL: 0.27
+          confidence: 0.5
+        /assertion/reference_ranges/3/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.6
+            PARTIAL: 0.26
+          confidence: 0.4
+        /assertion/reference_ranges/3/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.58
+            PARTIAL: 0.31
+          confidence: 0.37
+        /assertion/reference_ranges/3/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/reference_ranges/3/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.69
+            PARTIAL: 0.27
+          confidence: 0.53
+        /assertion/reference_ranges/3/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.44
+            PARTIAL: 0.43
+          confidence: 0.16
+        /assertion/reference_ranges/3/interpretation_bands/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.6
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/reference_ranges/3/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.67
+            PARTIAL: 0.25
+          confidence: 0.5
+        /assertion/reference_ranges/3/interpretation_bands/0/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.23
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.53
+            PARTIAL: 0.39
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        output_tokens: 3918
+        input_tokens: 71942
+      elapsed_seconds: 0.6121
+      request_sha256: 29d2f6338e2200f0eae931c2d4da3ca7983b1b184f892e3b1ca86c907b4f3d76
+      request_sha256s:
+      - c8b16be3b77658f2da8e7cb60ca2aaf6883cb4de9e9f0661978f72069f102d01
+      - 9a8856206d593fb13624addf712bac4fc2ee500d0528261c9ae8bb9914a3a448
+  46b4137c60485819e65b1e35a959f35c12ee2152a0dba25a63f563f0ca8067fb:
+    input_sha256: 79bd882cddc66d60470f46941f740d01a741a19c42f5dc7829d509d0604d5749
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:21.863401+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.04
+            PARTIAL: 0.33
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.5
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.5
+        /assertion/endpoint_context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.27
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.04
+            PARTIAL: 0.37
+          confidence: 0.38
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.22
+            PARTIAL: 0.37
+          confidence: 0.11
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8654
+        output_tokens: 361
+      elapsed_seconds: 0.2668
+      request_sha256: ecae9cc1813b56d286318fea7286465525f18266c99be43e1faa7c8fb85b0444
+      request_sha256s:
+      - ecae9cc1813b56d286318fea7286465525f18266c99be43e1faa7c8fb85b0444
+  dbc5865c3478052da9d4db938786a34f1e1be0b87a72c7ed06348f66f299bf6a:
+    input_sha256: 206c2a42aea5f5a47225b212b01a3446748211921941e7c29b1c1968e80bc7db
+    configuration_sha256: 35b1f2797e3ffae8f8cd5d76058fd3b7e7c00f0fd80c80b45f8029e38c5a335a
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:48:22.945484+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.08
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.24
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.16
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/gene_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.06
+            PARTIAL: 0.2
+          confidence: 0.61
+        /assertion/gene_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.05
+            PARTIAL: 0.2
+          confidence: 0.62
+        /assertion/relationship_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.02
+            PARTIAL: 0.35
+          confidence: 0.44
+        /assertion/association:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.02
+            PARTIAL: 0.41
+          confidence: 0.35
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.02
+            PARTIAL: 0.31
+          confidence: 0.5
+        /assertion/variants/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.14
+            PARTIAL: 0.32
+          confidence: 0.31
+        /assertion/variants/0/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.11
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/variants/0/type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.28
+            PARTIAL: 0.33
+          confidence: 0.09
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.41
+            PARTIAL: 0.47
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12509
+        output_tokens: 558
+      elapsed_seconds: 0.1513
+      request_sha256: 95860d8230897e3067e3fea96e1f9996f7c86f20e7e90151ca08989947890787
+      request_sha256s:
+      - 95860d8230897e3067e3fea96e1f9996f7c86f20e7e90151ca08989947890787

@@ -7134,6 +7134,57 @@ inputs:
     - assertion_path: /computational_models/0/findings/2
       evidence_path: /computational_models/0/findings/2/evidence/0
       reference: PMID:35604575
+  d51616e3391087cc2418d5ce9655371afd06ef5882e2272f5a6cba202f054330:
+    claim:
+      about:
+        disease:
+          name: Epilepsy
+          disease_term:
+            preferred_term: epilepsy
+            term:
+              id: MONDO:0005027
+              label: epilepsy
+        context: []
+      assertion_type: Discussion
+      assertion:
+        discussion_id: ncc_related_epilepsy_mechanism
+        kind: KNOWLEDGE_GAP
+        attaches_to:
+        - pathophysiology#Network Hyperexcitability
+        - disease#Epilepsy
+        prompt: Beyond hippocampal injury in mesial temporal lobe epilepsy, what mechanism links neurocysticercosis
+          to epileptogenesis, and does that mechanism account for the share of epilepsy attributed to
+          NCC?
+        rationale: Hippocampal injury with hippocampal sclerosis is the proposed route from NCC to epilepsy,
+          but a recent review concludes it alone cannot explain the large proportion of epilepsy cases
+          attributed to NCC. Part of that attribution rests on cohorts that did not separate epilepsy
+          from acute symptomatic seizures, so the causal share itself is uncertain.
+      selected_evidence:
+        snippet: Nevertheless, this mechanism alone cannot explain the large proportion of epilepsy cases
+          attributed to NCC in the literature
+        supports: SUPPORT
+    origin:
+      assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42809503
+      reference_title: 'The Relationship Between Epilepsy and Neurocysticercosis: Evidence and Myths.'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Review statement that hippocampal injury alone does not account for the epilepsy attributed
+        to NCC, leaving the mechanism open.
+    first_seen_at: '2026-11-09T20:03:52.271912+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:03:52.271912+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:03:52.271912+00:00'
+    occurrences:
+    - assertion_path: /discussions/0
+      evidence_path: /discussions/0/evidence/0
+      reference: PMID:42809503
 assessments:
   cc2d4607514455fabe272b29510432a172c9d2c65b89695ac9d802eb3fa611c9:
     input_sha256: 564f26f096900701a224b41fcb1f8869ff5d59fd84fe610c3117d0e4d9b0713b
@@ -16654,3 +16705,69 @@ assessments:
       request_sha256: 85057bcc33fa4c1be4d2a6998eef8173bc85ea647059f7bed72c7f0603a873cc
       request_sha256s:
       - 85057bcc33fa4c1be4d2a6998eef8173bc85ea647059f7bed72c7f0603a873cc
+  ec0c864d6502baebd9b1ec03e080de265c7a06b2c5cf041de70d157bdd2ef91a:
+    input_sha256: d51616e3391087cc2418d5ce9655371afd06ef5882e2272f5a6cba202f054330
+    configuration_sha256: 5631c918e0c9becdd254213a320aafef4005f3dfd950d70043fe7396c073eb74
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:03:52.271912+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.03
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.02
+            PARTIAL: 0.1
+          confidence: 0.82
+        /assertion/discussion_id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.53
+            PARTIAL: 0.29
+          confidence: 0.3
+        /assertion/kind:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.33
+            PARTIAL: 0.34
+          confidence: 0.01
+        /assertion/attaches_to:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.11
+            PARTIAL: 0.35
+          confidence: 0.31
+        /assertion/prompt:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.02
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/rationale:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.09
+            PARTIAL: 0.51
+          confidence: 0.26
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7405
+        output_tokens: 320
+      elapsed_seconds: 0.2576
+      request_sha256: 1fd9e1a4335e15217250ad20ca64d98dbfa5f24bf68a0773cf58f58466e9a527
+      request_sha256s:
+      - 1fd9e1a4335e15217250ad20ca64d98dbfa5f24bf68a0773cf58f58466e9a527

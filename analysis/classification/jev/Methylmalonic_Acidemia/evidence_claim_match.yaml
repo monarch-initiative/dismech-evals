@@ -12035,6 +12035,208 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/4
       reference: PMID:32615850
+  0b05339902ebdfda4ed6ddee4bab1b7a3f313f0275ece6631e72979061ffcd99:
+    claim:
+      about:
+        disease:
+          name: Methylmalonic Acidemia
+          disease_term:
+            preferred_term: methylmalonic acidemia
+            term:
+              id: MONDO:0002012
+              label: methylmalonic acidemia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired cellular cobalamin uptake
+        genes:
+        - preferred_term: CD320
+          term:
+            id: hgnc:16692
+            label: CD320
+        description: The most upstream step modeled here, and the mildest. CD320 encodes the transcobalamin
+          receptor, which takes cobalamin-loaded transcobalamin into the cell; biallelic loss of function
+          therefore limits the cobalamin available for both coenzymes, and the mitochondrial arm shows
+          up as elevated propionylcarnitine on the newborn screen and elevated methylmalonic acid on its
+          workup. Unlike the mutase and cofactor defects the biochemical abnormality is correctable with
+          oral cobalamin and the reported homozygotes have typically had no major health or developmental
+          concerns, so this node is modeled as a cobalamin-availability constraint on the mutase step
+          rather than as a route to the decompensation and organ injury nodes.
+        biological_processes:
+        - preferred_term: cobalamin transport
+          modifier: DECREASED
+          term:
+            id: GO:0015889
+            label: cobalamin transport
+        molecular_functions:
+        - preferred_term: cargo receptor activity
+          term:
+            id: GO:0038024
+            label: cargo receptor activity
+          modifier: DECREASED
+      selected_evidence:
+        snippet: CD320 encodes the transcobalamin receptor, which mediates the cellular uptake of vitamin
+          B12 (cobalamin, Cbl).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: CGGV:assertion_d98515f5-4296-4d41-95a9-adac90c00349-2022-09-23T160000.000Z
+      reference_title: CD320 / methylmalonic acidemia due to transcobalamin receptor defect (Definitive)
+      evidence_source: OTHER
+      explanation: States the transport function whose loss this node models.
+    first_seen_at: '2026-11-09T20:06:00.413863+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:06:00.413863+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:06:00.413863+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: CGGV:assertion_d98515f5-4296-4d41-95a9-adac90c00349-2022-09-23T160000.000Z
+  e333b08a65777afedd9e5448574694da3b724ae0daf3a4fefc19d801227ec7cb:
+    claim:
+      about:
+        disease:
+          name: Methylmalonic Acidemia
+          disease_term:
+            preferred_term: methylmalonic acidemia
+            term:
+              id: MONDO:0002012
+              label: methylmalonic acidemia
+        context:
+        - path: /pathophysiology/2
+          value:
+            name: Impaired cellular cobalamin uptake
+            genes:
+            - preferred_term: CD320
+              term:
+                id: hgnc:16692
+                label: CD320
+            description: The most upstream step modeled here, and the mildest. CD320 encodes the transcobalamin
+              receptor, which takes cobalamin-loaded transcobalamin into the cell; biallelic loss of function
+              therefore limits the cobalamin available for both coenzymes, and the mitochondrial arm shows
+              up as elevated propionylcarnitine on the newborn screen and elevated methylmalonic acid
+              on its workup. Unlike the mutase and cofactor defects the biochemical abnormality is correctable
+              with oral cobalamin and the reported homozygotes have typically had no major health or developmental
+              concerns, so this node is modeled as a cobalamin-availability constraint on the mutase step
+              rather than as a route to the decompensation and organ injury nodes.
+            biological_processes:
+            - preferred_term: cobalamin transport
+              modifier: DECREASED
+              term:
+                id: GO:0015889
+                label: cobalamin transport
+            molecular_functions:
+            - preferred_term: cargo receptor activity
+              term:
+                id: GO:0038024
+                label: cargo receptor activity
+              modifier: DECREASED
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: MMUT/AdoCbl pathway molecular function deficiency
+        causal_link_type: DIRECT
+        description: Restricted cobalamin entry reduces the adenosylcobalamin available to methylmalonyl-CoA
+          mutase, inhibiting the mutase step.
+      selected_evidence:
+        snippet: Cbl deficiency, due to various defects in Cbl transport and metabolism, can result in
+          homocysteinemia due to inhibition of the methionine synthase pathway, and methylmalonic acidemia
+          (MMA) due to inhibition of the mutase pathway.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/2
+    evidence_metadata:
+      reference: CGGV:assertion_d98515f5-4296-4d41-95a9-adac90c00349-2022-09-23T160000.000Z
+      reference_title: CD320 / methylmalonic acidemia due to transcobalamin receptor defect (Definitive)
+      evidence_source: OTHER
+      explanation: ClinGen states that a cobalamin transport defect produces methylmalonic acidemia by
+        inhibiting the mutase pathway, which is the edge drawn here.
+    first_seen_at: '2026-11-09T20:06:01.335242+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:06:01.335242+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:06:01.335242+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2/downstream/0
+      evidence_path: /pathophysiology/2/downstream/0/evidence/0
+      reference: CGGV:assertion_d98515f5-4296-4d41-95a9-adac90c00349-2022-09-23T160000.000Z
+  cf05c4664b993802f53cab8873d861602c5ed5a96e39d2c656c3fcec9a9679ef:
+    claim:
+      about:
+        disease:
+          name: Methylmalonic Acidemia
+          disease_term:
+            preferred_term: methylmalonic acidemia
+            term:
+              id: MONDO:0002012
+              label: methylmalonic acidemia
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired cellular cobalamin uptake
+        genes:
+        - preferred_term: CD320
+          term:
+            id: hgnc:16692
+            label: CD320
+        description: The most upstream step modeled here, and the mildest. CD320 encodes the transcobalamin
+          receptor, which takes cobalamin-loaded transcobalamin into the cell; biallelic loss of function
+          therefore limits the cobalamin available for both coenzymes, and the mitochondrial arm shows
+          up as elevated propionylcarnitine on the newborn screen and elevated methylmalonic acid on its
+          workup. Unlike the mutase and cofactor defects the biochemical abnormality is correctable with
+          oral cobalamin and the reported homozygotes have typically had no major health or developmental
+          concerns, so this node is modeled as a cobalamin-availability constraint on the mutase step
+          rather than as a route to the decompensation and organ injury nodes.
+        biological_processes:
+        - preferred_term: cobalamin transport
+          modifier: DECREASED
+          term:
+            id: GO:0015889
+            label: cobalamin transport
+        molecular_functions:
+        - preferred_term: cargo receptor activity
+          term:
+            id: GO:0038024
+            label: cargo receptor activity
+          modifier: DECREASED
+      selected_evidence:
+        snippet: Cellular uptake of vitamin B12 (cobalamin, Cbl) is mediated by a cell surface receptor
+          (TCblR/CD320) that binds transcobalamin (TC) saturated with Cbl.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32898552
+      reference_title: 'Cellular uptake of vitamin B(12): Role and fate of TCblR/CD320, the transcobalamin
+        receptor.'
+      evidence_source: OTHER
+      quote_role: BACKGROUND
+      explanation: Independent statement that CD320 is the receptor for cellular uptake of transcobalamin-bound
+        cobalamin.
+    first_seen_at: '2026-11-09T20:06:00.414994+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:06:00.414994+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:06:00.414994+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/1
+      reference: PMID:32898552
 assessments:
   730366c4b2a1a260a3b9bd9faa34c6706c5ade1a09c421da44eb7f905fff8740:
     input_sha256: 18e519e9b9f3c36b1afd16df88b5ec08eec52d45f9bbe5c7424567b487fc790e
@@ -29077,3 +29279,264 @@ assessments:
       request_sha256s:
       - 13ace09784df9f21abbc9c02f403268c9c262455f18a341736c6e649e0cfce60
       - 6b4bee5414992f588ae1e078e19ef9b9d0c651de34304faee15867b5613df904
+  ed78d73628fb89a12b16f96f29951f55c6c9c090b0faa4c3651b0f7a9f8e46bd:
+    input_sha256: 0b05339902ebdfda4ed6ddee4bab1b7a3f313f0275ece6631e72979061ffcd99
+    configuration_sha256: 119e4434ec6f63491b872075095a187d4fd25b2fd7f94e6340f46c7228b1d1b9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:06:00.413863+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.15
+            PARTIAL: 0.61
+          confidence: 0.42
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.31
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.07
+            PARTIAL: 0.44
+          confidence: 0.24
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.05
+            PARTIAL: 0.09
+          confidence: 0.79
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.08
+            PARTIAL: 0.16
+          confidence: 0.64
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.15
+            PARTIAL: 0.67
+          confidence: 0.5
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.21
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.13
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.07
+            PARTIAL: 0.29
+          confidence: 0.46
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.12
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.35
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12847
+        output_tokens: 595
+      elapsed_seconds: 0.2902
+      request_sha256: a2db1566a8bc14478e49a773d0b33b7b2a657dc9f5e843601b3a5a4babfab7de
+      request_sha256s:
+      - a2db1566a8bc14478e49a773d0b33b7b2a657dc9f5e843601b3a5a4babfab7de
+  be27e00d31aadef189712762083b70165e25bba2421ec98d54105c4d842abe33:
+    input_sha256: e333b08a65777afedd9e5448574694da3b724ae0daf3a4fefc19d801227ec7cb
+    configuration_sha256: 766b2a0652bd89b3515aaf77faa1b2e3e3e771ace8855af0cd93f69921a4375f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:06:01.335242+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.03
+            PARTIAL: 0.39
+          confidence: 0.37
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.04
+            PARTIAL: 0.31
+          confidence: 0.48
+        /assertion/causal_link_type:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.09
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.02
+            PARTIAL: 0.44
+          confidence: 0.31
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.11
+            PARTIAL: 0.39
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6708
+        output_tokens: 269
+      elapsed_seconds: 0.1526
+      request_sha256: c99b2ecc3b9e586f534bce8c65e685d4e2ebb0be618b7998fcad81a7cd3a3f84
+      request_sha256s:
+      - c99b2ecc3b9e586f534bce8c65e685d4e2ebb0be618b7998fcad81a7cd3a3f84
+  1ec9532f26e657ccba842f0609e5872588fa1b08b1e261e8158053558f08f95c:
+    input_sha256: cf05c4664b993802f53cab8873d861602c5ed5a96e39d2c656c3fcec9a9679ef
+    configuration_sha256: 119e4434ec6f63491b872075095a187d4fd25b2fd7f94e6340f46c7228b1d1b9
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:06:00.414994+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.15
+            PARTIAL: 0.57
+          confidence: 0.35
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.28
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.07
+            PARTIAL: 0.36
+          confidence: 0.35
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.04
+            PARTIAL: 0.08
+          confidence: 0.82
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.08
+            PARTIAL: 0.14
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.19
+            PARTIAL: 0.65
+          confidence: 0.48
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.17
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/biological_processes/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.23
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.14
+            PARTIAL: 0.35
+          confidence: 0.26
+        /assertion/molecular_functions/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.08
+            PARTIAL: 0.28
+          confidence: 0.46
+        /assertion/molecular_functions/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.31
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12861
+        output_tokens: 594
+      elapsed_seconds: 0.257
+      request_sha256: a9f9f0e48394efde892b78192be249a878356b72c3bd39cbb013a6efa17f66a1
+      request_sha256s:
+      - a9f9f0e48394efde892b78192be249a878356b72c3bd39cbb013a6efa17f66a1

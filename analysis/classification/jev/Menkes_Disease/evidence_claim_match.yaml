@@ -5878,6 +5878,85 @@ inputs:
     - assertion_path: /animal_models/1/modeled_mechanisms/0/readouts/0
       evidence_path: /animal_models/1/modeled_mechanisms/0/readouts/0/evidence/0
       reference: PMID:9342151
+  c4c7aee8b3e0103fb50479af654476b3bcd343ce8bbf4851bc4287d4110bbf5d:
+    claim:
+      about:
+        disease:
+          name: Menkes Disease
+          disease_term:
+            preferred_term: Menkes disease
+            term:
+              id: MONDO:0010651
+              label: Menkes disease
+        context:
+        - path: /animal_models/0
+          value:
+            name: Brindled mouse (Atp7a Mo-br)
+            species: Mouse
+            genotype: Atp7a<Mo-br>/Y (hemizygous male)
+            background: C57BL/6-Atp7a<Mo-br>/J
+            alleles:
+            - Atp7a<Mo-br>
+            genes:
+            - preferred_term: ATP7A
+              term:
+                id: hgnc:869
+                label: ATP7A
+            publication: PMID:16371425
+            description: 'The brindled allele of the mouse mottled series, the long-standing Menkes model.
+              The study cited here uses it to show that ATP7A is required to load copper onto a secretory
+              cuproenzyme in the trans-Golgi network: aortic and fibroblast SOD3 loses specific activity
+              while cytosolic SOD1 does not, and copper supplementation partially restores it. That rescue
+              is the point of curating this model against an amount-versus-activity node - the enzyme
+              protein is present, and what is missing is its metal cofactor.'
+          role: ancestor
+        - path: /animal_models/0/modeled_mechanisms/1
+          value:
+            target: Cuproenzyme deficiency and neurodevelopmental injury
+            relationship: PARTIALLY_RECAPITULATES
+            fidelity: LOW
+            description: Demonstrates cuproenzyme inactivation downstream of ATP7A loss, with the expected
+              oxidative consequence when the cuproenzyme is an antioxidant.
+            limitations: The cuproenzyme measured is vascular SOD3, not the neuronal cuproenzymes (cytochrome
+              c oxidase, dopamine beta-hydroxylase, peptidylglycine alpha-amidating monooxygenase) through
+              which Menkes disease produces its neurodevelopmental phenotype. No neurologic or developmental
+              outcome is assessed in this study, so the model supports the cuproenzyme half of this node
+              and says nothing about the injury half.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Vascular superoxide anion level
+        target: Cuproenzyme deficiency and neurodevelopmental injury
+        direction: INCREASED
+        interpretation: The oxidative consequence of losing an extracellular cuproenzyme's activity in
+          aortic tissue.
+      selected_evidence:
+        snippet: Aortas of MNK(mut) mice revealed a decrease in activity of SOD3, but not SOD1, in association
+          with a robust increase in O2*- levels.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/0
+      - /animal_models/0/modeled_mechanisms/1
+    evidence_metadata:
+      reference: PMID:16371425
+      reference_title: 'Essential role for the Menkes ATPase in activation of extracellular superoxide
+        dismutase: implication for vascular oxidative stress.'
+      evidence_source: MODEL_ORGANISM
+      explanation: Links the cuproenzyme activity loss to a measured rise in superoxide.
+    first_seen_at: '2026-11-09T20:51:58.545931+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:51:58.545931+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:51:58.545931+00:00'
+    occurrences:
+    - assertion_path: /animal_models/0/modeled_mechanisms/1/readouts/0
+      evidence_path: /animal_models/0/modeled_mechanisms/1/readouts/0/evidence/0
+      reference: PMID:16371425
 assessments:
   4ef2aab447607a3b44c1e0c242b640709b7d7246cd95955cad201568bc140ea2:
     input_sha256: 1e7c532ffd9055856c5d293d2943d66a956c9efb757580a91f217310bc3df8e4
@@ -13627,3 +13706,76 @@ assessments:
       request_sha256: 566385902fc8caf4565b948d0330ff315882a8d4dbdc5a3bb435584172e835a9
       request_sha256s:
       - 566385902fc8caf4565b948d0330ff315882a8d4dbdc5a3bb435584172e835a9
+  7b38a353e25ebb74af650126df08399284096500a734afc77d9c55c8a173c000:
+    input_sha256: c4c7aee8b3e0103fb50479af654476b3bcd343ce8bbf4851bc4287d4110bbf5d
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:51:58.545931+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.09
+            PARTIAL: 0.32
+          confidence: 0.38
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.03
+            PARTIAL: 0.08
+          confidence: 0.83
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.02
+            PARTIAL: 0.04
+          confidence: 0.91
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.12
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.04
+            PARTIAL: 0.25
+          confidence: 0.56
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.02
+            PARTIAL: 0.13
+          confidence: 0.77
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.09
+            PARTIAL: 0.15
+          confidence: 0.64
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.19
+            PARTIAL: 0.34
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8746
+        output_tokens: 356
+      elapsed_seconds: 0.2747
+      request_sha256: c0ce43b567151e12730b2086bffd3f032439adbd94e264e1c28e45611bb600b9
+      request_sha256s:
+      - c0ce43b567151e12730b2086bffd3f032439adbd94e264e1c28e45611bb600b9

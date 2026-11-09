@@ -1445,6 +1445,66 @@ inputs:
     - assertion_path: /treatments/0
       evidence_path: /treatments/0/evidence/1
       reference: PMID:23602630
+  139637395fa2754d0a54ddf5c1654207732fcdf30cd5c63c53fbf9c3c6f40515:
+    claim:
+      about:
+        disease:
+          name: Trench Fever
+          disease_term:
+            preferred_term: trench fever
+            term:
+              id: MONDO:0005991
+              label: trench fever
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Serology and PCR for blood-culture-negative endocarditis
+        description: Because B. quintana is fastidious and blood-culture-negative, diagnosis relies on
+          serology and molecular detection (nested PCR of target genes) rather than routine culture.
+        diagnosis_term:
+          preferred_term: serology and nested PCR for Bartonella
+          term:
+            id: NCIT:C17003
+            label: Polymerase Chain Reaction
+        measurements:
+        - preferred_term: Bartonella quintana antibody
+          term:
+            id: LOINC:26677-5
+            label: Bartonella quintana Ab [Presence] in Serum
+        - preferred_term: Bartonella species DNA
+          term:
+            id: LOINC:16275-0
+            label: Bartonella sp DNA [Presence] in Blood by NAA with probe detection
+        notes: The serology code is species-specific. For the molecular arm, no B. quintana-specific DNA
+          code exists for blood or an unspecified specimen -- only genus-level Bartonella sp DNA codes
+          do, and the only species-specific B. quintana DNA codes are for tissue or an implanted device;
+          the nested PCR this row describes (rnpB and fur genes on sera) is narrower than the bound genus-level
+          code.
+      selected_evidence:
+        snippet: These sera were also positive by LightCycler nested PCR amplification for the rnpb (7
+          of 13) and fur (11 of 13) genes.
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15891120
+      reference_title: High prevalence of Bartonella quintana endocarditis in Sfax, Tunisia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Nested PCR of the rnpB and fur genes on sera confirmed B. quintana in culture-negative
+        endocarditis.
+    first_seen_at: '2026-11-09T20:27:59.157844+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:27:59.157844+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:27:59.157844+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:15891120
 assessments:
   cf85d54d13fdd87f423b79f074c176055b03376c2eb08e33af82361e65d483e2:
     input_sha256: 492c0748ba9a2ccac356696ea80e7c0c58081ea834e3c7f20fe83c06e6470d53
@@ -3342,3 +3402,97 @@ assessments:
       request_sha256: 9e5d64cb19beae62607ae8a5915791a4ea0b3db3eef631204df1eb5464ae7068
       request_sha256s:
       - 9e5d64cb19beae62607ae8a5915791a4ea0b3db3eef631204df1eb5464ae7068
+  40c387f8b869e4deadf630d26581f19e871e2e512536a0deac1c3375a6dffdc6:
+    input_sha256: 139637395fa2754d0a54ddf5c1654207732fcdf30cd5c63c53fbf9c3c6f40515
+    configuration_sha256: 6f84a5a60dadd3531b6d387f58afa868d71c5e7b694cb614f4c7e01b783e7f82
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:27:59.157844+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.08
+            PARTIAL: 0.71
+          confidence: 0.56
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.06
+            PARTIAL: 0.46
+          confidence: 0.22
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.15
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.09
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.1
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.2
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.36
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/measurements/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.42
+            PARTIAL: 0.39
+          confidence: 0.13
+        /assertion/measurements/1/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.19
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/measurements/1/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.19
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.16
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11300
+        output_tokens: 535
+      elapsed_seconds: 0.2014
+      request_sha256: abf36eeda85b44e29883e83ff3ac7ccdbcfb4f437eff3a4f39af7e506eae99b3
+      request_sha256s:
+      - abf36eeda85b44e29883e83ff3ac7ccdbcfb4f437eff3a4f39af7e506eae99b3

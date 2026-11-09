@@ -2378,6 +2378,80 @@ inputs:
     - assertion_path: /discussions/0
       evidence_path: /discussions/0/evidence/0
       reference: PMID:31603991
+  265dbff672e85ab8fcc05caed3e120739baf53391e3d289d408d561cf795b73b:
+    claim:
+      about:
+        disease:
+          name: Infantile Cataract, Skin Abnormalities, Glutamate Excess, and Impaired Intellectual Development
+          disease_term:
+            preferred_term: infantile cataract, skin abnormalities, glutamate excess, and impaired intellectual
+              development
+            term:
+              id: MONDO:0032685
+              label: infantile cataract, skin abnormalities, glutamate excess, and impaired intellectual
+                development
+        context:
+        - path: /genetic/0
+          value:
+            name: GLS
+            gene_term:
+              preferred_term: GLS
+              term:
+                id: hgnc:4331
+                label: GLS
+            relationship_type: CAUSATIVE
+            variant_origin: DE_NOVO
+            notes: 'A heterozygous de novo missense variant p.Ser482Cys in GLS causes this disorder by
+              a hypermorphic (gain-of-function) mechanism — the enzyme is intrinsically hyperactive. This
+              is the opposite direction of effect from the biallelic loss-of-function alleles that cause
+              Neonatal Epileptic Encephalopathy Due to Glutaminase Deficiency, and from the noncoding
+              5'' untranslated region GCA-repeat expansion that causes Global Developmental Delay, Progressive
+              Ataxia, and Elevated Glutamine. Inheritance is correspondingly different: this entity is
+              mono-allelic and dominant, arising de novo, whereas both loss-of-function entities are bi-allelic
+              and autosomal recessive.
+
+              '
+          role: ancestor
+      assertion_type: Variant
+      assertion:
+        name: GLS p.Ser482Cys
+        description: De novo heterozygous missense variant substituting cysteine for the highly conserved
+          serine at position 482 of glutaminase. Not a catalytic residue, but conserved to the same degree
+          as the catalytic residues; the substitution is proposed to improve the electrostatic environment
+          of the catalytic site and thereby raise activity.
+        gene:
+          preferred_term: GLS
+          term:
+            id: hgnc:4331
+            label: GLS
+      selected_evidence:
+        snippet: Ser482Cys-GLS likely improves the electrostatic environment of the GLS catalytic site,
+          thereby intrinsically inducing hyperactivity.
+        supports: SUPPORT
+    origin:
+      assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /genetic/0
+    evidence_metadata:
+      reference: PMID:30239721
+      reference_title: GLS hyperactivity causes glutamate excess, infantile cataract and profound developmental
+        delay.
+      evidence_source: IN_VITRO
+      explanation: 'Describes the structural mechanism by which the variant raises glutaminase activity.
+
+        '
+    first_seen_at: '2026-11-09T20:34:33.473047+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:34:33.473047+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:34:33.473047+00:00'
+    occurrences:
+    - assertion_path: /genetic/0/variants/0
+      evidence_path: /genetic/0/variants/0/evidence/0
+      reference: PMID:30239721
 assessments:
   bfb003ad8f32b2dcfae43db7ce9b5adc0bcc158c3d54207be008bb358c266216:
     input_sha256: 411387182cf1eef962130507994937eaf808ef67b56dcc34efb777798ab84983
@@ -5291,3 +5365,69 @@ assessments:
       request_sha256: 403f57854e2b324462511ddf22bf3df75cc9edc1e19442953cf9b1b5760d26b1
       request_sha256s:
       - 403f57854e2b324462511ddf22bf3df75cc9edc1e19442953cf9b1b5760d26b1
+  a109951464510e274e98bb722e632c787f56331c885f5339532fa1e0f3b3fad4:
+    input_sha256: 265dbff672e85ab8fcc05caed3e120739baf53391e3d289d408d561cf795b73b
+    configuration_sha256: 9afd31eeb5aa82db6c34f54348d155cb0327db196ae6939cc2f9fc1b6f55edb6
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:34:33.473047+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.19
+            PARTIAL: 0.41
+          confidence: 0.11
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.34
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.24
+            PARTIAL: 0.28
+          confidence: 0.22
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.11
+            PARTIAL: 0.4
+          confidence: 0.24
+        /assertion/gene/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.2
+            PARTIAL: 0.2
+          confidence: 0.4
+        /assertion/gene/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.17
+            PARTIAL: 0.2
+          confidence: 0.44
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.22
+            PARTIAL: 0.28
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7571
+        output_tokens: 315
+      elapsed_seconds: 0.2296
+      request_sha256: 945d201ad2f50475622ac38ffab311013f66b13a6d7164dbdb362ccb080d39c8
+      request_sha256s:
+      - 945d201ad2f50475622ac38ffab311013f66b13a6d7164dbdb362ccb080d39c8

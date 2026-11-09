@@ -4355,6 +4355,79 @@ inputs:
     - assertion_path: /discussions/1
       evidence_path: /discussions/1/evidence/3
       reference: PMID:42281740
+  8d9b7aae1bcc4bd90870861bf36838bd30bb2ac7e5c2ef3bfef709b62a4573a5:
+    claim:
+      about:
+        disease:
+          name: Growth Restriction Hypoplastic Kidneys Alopecia And Distinctive Facies
+          disease_term:
+            preferred_term: growth restriction, hypoplastic kidneys, alopecia, and distinctive facies
+            term:
+              id: MONDO:0859146
+              label: growth restriction, hypoplastic kidneys, alopecia, and distinctive facies
+        context:
+        - path: /animal_models/1
+          value:
+            name: Zpr1 heterozygous null mouse
+            species: Mouse
+            genotype: Zpr1 +/- (ZPR1-deficient, viable)
+            publication: PMID:16648254
+            description: 'The viable ZPR1-deficient mouse, and the one that produces a postnatal phenotype.
+              It develops axonal pathology and neurodegeneration, and it was made and studied to test
+              ZPR1 as a modifier of spinal muscular atrophy rather than as a model of any human ZPR1 syndrome.
+
+              It is included here precisely because its phenotype does not match the human disease. A
+              curator reaching for "the ZPR1 mouse" will find a neurodegeneration model, and no reported
+              patient with this syndrome - confirmed genotype or not - has a motor neuron disease.'
+            genes:
+            - preferred_term: ZPR1
+              term:
+                id: hgnc:13051
+                label: ZPR1
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Global Developmental Delay
+        relationship: FAILS_TO_RECAPITULATE
+        fidelity: LOW
+        description: The only neurological phenotype reported in patients with a confirmed genotype is
+          global developmental delay, characterised over a few months to a few years of life. The mouse's
+          phenotype is axonal pathology and neurodegeneration - a different kind of neurological disease,
+          and one that no report of this syndrome describes.
+        limitations: 'The mismatch may be about dose rather than about biology: the mouse is heterozygous
+          and retains one working allele, while the patients have no detectable protein in the tissue
+          examined, so the two are not the same lesion and the comparison is not controlled. It may equally
+          be that early death from renal failure precludes a neurodegenerative phenotype ever being observed
+          in patients, or that nobody has looked - no neuropathology, nerve conduction study or electromyogram
+          is reported for any affected child. The one further reported child, whose ZPR1 genotype is unconfirmed
+          (see the ZPR1 genetic record), had generalized hypotonia and brainstem and internal-capsule
+          T2 signal change; neither is motor neuron disease, and the genotype is not established, so the
+          mismatch stands. Recorded as FAILS_TO_RECAPITULATE because the published phenotypes do not correspond,
+          not because degeneration has been excluded in patients.'
+      selected_evidence:
+        snippet: We report that ZPR1-deficient mice exhibit axonal pathology and neurodegeneration.
+        supports: SUPPORT
+    origin:
+      assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /animal_models/1
+    evidence_metadata:
+      reference: PMID:16648254
+      reference_title: Deficiency of the zinc finger protein ZPR1 causes neurodegeneration.
+      evidence_source: MODEL_ORGANISM
+      explanation: The mouse phenotype, which is what does not correspond to the human one.
+    first_seen_at: '2026-11-09T20:44:32.362264+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:44:32.362264+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:44:32.362264+00:00'
+    occurrences:
+    - assertion_path: /animal_models/1/modeled_mechanisms/0
+      evidence_path: /animal_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:16648254
 assessments:
   fed116e36800b729428479f2a92278170417677110b8cbbda32afd5281e9e5a2:
     input_sha256: 7d49c69491623310edda12dcaf5bc4de09a07b6e4f54d53c02d5f862fdf08902
@@ -9735,3 +9808,76 @@ assessments:
       request_sha256: 933360085c45796d4b9872b1c6c5227920587b8f1f41159734e666be07d338da
       request_sha256s:
       - 933360085c45796d4b9872b1c6c5227920587b8f1f41159734e666be07d338da
+  54edeedebcb4e9ffb6f7b9bfdf06981a653f3a4921525a708ac25a5eb6e6ba07:
+    input_sha256: 8d9b7aae1bcc4bd90870861bf36838bd30bb2ac7e5c2ef3bfef709b62a4573a5
+    configuration_sha256: 124666a81af60561f39c0b8d56dce7b4fc3b94dbbc6223d928754479e4250e1b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:44:32.362264+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.45
+            PARTIAL: 0.27
+          confidence: 0.18
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.57
+            PARTIAL: 0.18
+          confidence: 0.35
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.65
+            PARTIAL: 0.19
+          confidence: 0.48
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.95
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/fidelity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.32
+            PARTIAL: 0.19
+          confidence: 0.24
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.44
+            PARTIAL: 0.38
+          confidence: 0.16
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.75
+            PARTIAL: 0.23
+          confidence: 0.62
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.47
+            PARTIAL: 0.16
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8860
+        output_tokens: 379
+      elapsed_seconds: 0.3147
+      request_sha256: 3f5ae785b042ee7935abfd59e9dfef80ff56ddc65d651a41d647272f16a561a9
+      request_sha256s:
+      - 3f5ae785b042ee7935abfd59e9dfef80ff56ddc65d651a41d647272f16a561a9

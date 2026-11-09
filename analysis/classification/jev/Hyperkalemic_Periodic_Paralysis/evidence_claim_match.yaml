@@ -6245,6 +6245,117 @@ inputs:
     - assertion_path: /differential_diagnoses/3
       evidence_path: /differential_diagnoses/3/evidence/1
       reference: PMID:29125635
+  62831bdd62658d7bbbcaa8ea2bb4e9668426a92dffb885ff5146a69448a92493:
+    claim:
+      about:
+        disease:
+          name: Hyperkalemic Periodic Paralysis
+          disease_term:
+            preferred_term: hyperkalemic periodic paralysis
+            term:
+              id: MONDO:0008224
+              label: hyperkalemic periodic paralysis
+        context: []
+      assertion_type: Environmental
+      assertion:
+        name: Cold exposure
+        description: A cold environment both triggers attacks of weakness and aggravates the stiffness
+          of paramyotonia, and avoiding it is part of standard preventive advice.
+        exposure_term:
+          preferred_term: cold exposure
+          term:
+            id: XCO:0000306
+            label: cold exposure
+      selected_evidence:
+        snippet: Paramyotonia (muscle stiffness aggravated by cold and exercise) is present in about 45%
+          of affected individuals.
+        supports: SUPPORT
+    origin:
+      assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301669
+      reference_title: Hyperkalemic Periodic Paralysis.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Supports cold as an aggravator of the myotonic arm of the phenotype in nearly half
+        of patients.
+    first_seen_at: '2026-11-09T20:39:03.797895+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:39:03.797895+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:39:03.797895+00:00'
+    occurrences:
+    - assertion_path: /environmental/2
+      evidence_path: /environmental/2/evidence/1
+      reference: PMID:20301669
+  9fd287f1ab4c85e3b58586bac80e21b34717df75e5ae99dd42b7b4a07240edaf:
+    claim:
+      about:
+        disease:
+          name: Hyperkalemic Periodic Paralysis
+          disease_term:
+            preferred_term: hyperkalemic periodic paralysis
+            term:
+              id: MONDO:0008224
+              label: hyperkalemic periodic paralysis
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Mild Exercise at Attack Onset
+        description: Gentle voluntary activity at the first sign of weakness can prevent or abort an attack,
+          and works locally in the muscles that are exercised. This is the intervention that most directly
+          exploits the mechanism.
+        therapeutic_modality: BEHAVIORAL
+        treatment_term:
+          preferred_term: mild voluntary exercise at attack onset
+          term:
+            id: NCIT:C62739
+            label: Exercise Intervention
+        target_phenotypes:
+        - preferred_term: Episodic flaccid weakness
+          term:
+            id: HP:0003752
+            label: Episodic flaccid weakness
+        notes: Bound to Exercise Intervention, which NCIT defines as "A program of managed physical activity
+          to improve an individual's health and wellbeing" and which is reachable from NCIT:C25218 through
+          NCIT:C63474 Behavioral, Psychological or Informational Intervention. NCIT:C15302 Physical Therapy,
+          bound here earlier, names a professionally delivered rehabilitation service, which self-directed
+          abortive exercise is not. `runoak -i ols:ncit search "l~exercise"` returns NCIT:C16567 Exercise
+          and NCIT:C39777 Very Light Exercise, whose only is_a ancestors are NCIT:C17708 Physical Activity
+          and NCIT:C43431 Activity, so neither reaches the TreatmentTerm root NCIT:C25218 and neither
+          is admissible in this slot. The query cited here earlier, `"l~exercise test"`, returns cardiac
+          and cardiopulmonary stress tests and was the wrong search for an intervention term.
+      selected_evidence:
+        snippet: These observations may explain how mild exercise helps locally to prevent severe weakness
+          during an attack of HyperKPP.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:21708955
+      reference_title: Na+,K+-pump stimulation improves contractility in isolated muscles of mice with
+        hyperkalemic periodic paralysis.
+      evidence_source: MODEL_ORGANISM
+      explanation: The authors' own reading of their mouse results as the explanation for the abortive
+        effect of mild exercise in patients. It supports the treatment through that inference rather than
+        by measuring it in humans.
+    first_seen_at: '2026-11-09T20:39:04.275041+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:39:04.275041+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:39:04.275041+00:00'
+    occurrences:
+    - assertion_path: /treatments/1
+      evidence_path: /treatments/1/evidence/2
+      reference: PMID:21708955
 assessments:
   08705185ee7601b0ca9da00e4c492e5fc632fd8db99d256f39ef243ba4656c47:
     input_sha256: f811c80de2034571b161d08399482b8ed867a125909f133dfb06736791e23a3e
@@ -15440,3 +15551,149 @@ assessments:
       request_sha256: 00df30f442cf476fe7a6fdbbc80c95993a8caf33641cb93673b2f257a7dd63ad
       request_sha256s:
       - 00df30f442cf476fe7a6fdbbc80c95993a8caf33641cb93673b2f257a7dd63ad
+  0ea1c1a841a39766acf564b396628a3ffd8ac2fbc479353343ebffb3f705cfb6:
+    input_sha256: 62831bdd62658d7bbbcaa8ea2bb4e9668426a92dffb885ff5146a69448a92493
+    configuration_sha256: 3e8723c847dcdccc399b4fd98ef5ec59588f9bc2b0798c31b8baba30e1140991
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:39:03.797895+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.29
+            PARTIAL: 0.66
+          confidence: 0.49
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.25
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.13
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.19
+            PARTIAL: 0.74
+          confidence: 0.61
+        /assertion/exposure_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.12
+            PARTIAL: 0.38
+          confidence: 0.25
+        /assertion/exposure_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.12
+            PARTIAL: 0.4
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6246
+        output_tokens: 276
+      elapsed_seconds: 0.2303
+      request_sha256: 9c9a196896b5571db4952d99c8a18751c40191063cedcb1ac382187526a57b51
+      request_sha256s:
+      - 9c9a196896b5571db4952d99c8a18751c40191063cedcb1ac382187526a57b51
+  c24c5f79e0c5dc1e95a6e697dd67d281cdeda96381e677fefe800da548508920:
+    input_sha256: 9fd287f1ab4c85e3b58586bac80e21b34717df75e5ae99dd42b7b4a07240edaf
+    configuration_sha256: 70a9ca988519cf701a02d463814e870a49bbe6c2b3881ff8a670bae2e70f97fb
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:39:04.275041+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.03
+            PARTIAL: 0.67
+          confidence: 0.5
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.03
+            PARTIAL: 0.35
+          confidence: 0.43
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.03
+            PARTIAL: 0.71
+          confidence: 0.56
+        /assertion/therapeutic_modality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.26
+            PARTIAL: 0.3
+          confidence: 0.16
+        /assertion/treatment_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.1
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/treatment_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.19
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/target_phenotypes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.04
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/target_phenotypes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.03
+            PARTIAL: 0.46
+          confidence: 0.26
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.74
+            PARTIAL: 0.19
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10857
+        output_tokens: 480
+      elapsed_seconds: 0.2717
+      request_sha256: 1656427f3869d93fb5b15da61da9b750535b49313e290e618186fbfcb37cb1a4
+      request_sha256s:
+      - 1656427f3869d93fb5b15da61da9b750535b49313e290e618186fbfcb37cb1a4

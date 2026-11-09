@@ -2302,6 +2302,77 @@ inputs:
     - assertion_path: /differential_diagnoses/1
       evidence_path: /differential_diagnoses/1/evidence/0
       reference: PMID:10369870
+  e5fca4b91483cd6adea9d97bbf3a719e2783863670a2f22ad57f73f86a0eb403:
+    claim:
+      about:
+        disease:
+          name: Congenital Hypomyelinating Neuropathy
+          disease_term:
+            preferred_term: neuropathy, congenital hypomyelinating
+            term:
+              id: MONDO:0033352
+              label: neuropathy, congenital hypomelinating
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Failure of Peripheral Nerve Myelination
+        description: 'Peripheral nerve fibers remain non-myelinated or only thinly myelinated. The histological
+          signature on sural nerve biopsy is diagnostic and distinguishes CHN from acquired and later-onset
+          inherited demyelinating neuropathy: poorly myelinated and unmyelinated axons surrounded by basal-lamina
+          onion bulbs, with an absence of myelin breakdown products, because the myelin was never made
+          rather than destroyed. The onion bulbs here reflect abortive Schwann cell ensheathment attempts
+          rather than the repeated demyelination-remyelination cycles that produce them in CMT1.'
+        role: central_effector
+        biological_scale: TISSUE
+        conforms_to: schwann_cell_myelin_maintenance#Dysmyelination and Segmental Demyelination of Peripheral
+          Nerve
+        cell_types:
+        - preferred_term: myelinating Schwann cell
+          term:
+            id: CL:0000218
+            label: myelinating Schwann cell
+        biological_processes:
+        - preferred_term: myelin assembly
+          term:
+            id: GO:0032288
+            label: myelin assembly
+          modifier: DECREASED
+        cellular_components:
+        - preferred_term: myelin sheath
+          term:
+            id: GO:0043209
+            label: myelin sheath
+          modifier: ABNORMAL
+        locations:
+        - preferred_term: sural nerve
+          term:
+            id: UBERON:0015488
+            label: sural nerve
+      selected_evidence:
+        snippet: Sural nerve biopsy shows a characteristic picture of nonmyelinated and poorly myelinated
+          axons with basal lamina onion bulbs and lack of myelin breakdown products.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:15184631
+      reference_title: A novel MPZ gene mutation in congenital neuropathy with hypomyelination.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes the defining histopathology of this node, including the absence of breakdown
+        products that marks hypomyelination rather than demyelination.
+    first_seen_at: '2026-11-09T21:11:21.636963+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:11:21.636963+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:11:21.636963+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/2
+      evidence_path: /pathophysiology/2/evidence/0
+      reference: PMID:15184631
 assessments:
   f74414e7bd48da958cdb22e7701583273d319ec62977d56995d58a501f7cdb86:
     input_sha256: 1cbd864bc656a6442928b2ee152bb66925f12394c3470de3d27cc86cb08acb39
@@ -5647,3 +5718,139 @@ assessments:
       request_sha256: 04940eb86d1922c9e1baba11c06e8c0fab21ebb8f8fc7f4c840f7aa8fcea05f0
       request_sha256s:
       - 04940eb86d1922c9e1baba11c06e8c0fab21ebb8f8fc7f4c840f7aa8fcea05f0
+  c5564f0274a810f14aa9ed3380c8e591593b6473aeb476ac619593f461bbb9ae:
+    input_sha256: e5fca4b91483cd6adea9d97bbf3a719e2783863670a2f22ad57f73f86a0eb403
+    configuration_sha256: 24a2b27baf1a908d5abcaa65dba3295fe044add87b3e297b1018c741089dc599
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T21:11:21.636963+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.02
+            PARTIAL: 0.43
+          confidence: 0.33
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.04
+            PARTIAL: 0.27
+          confidence: 0.53
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.02
+            PARTIAL: 0.48
+          confidence: 0.25
+        /assertion/role:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.14
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/conforms_to:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.4
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.1
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/cell_types/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.09
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.04
+            PARTIAL: 0.17
+          confidence: 0.68
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.02
+            PARTIAL: 0.17
+          confidence: 0.72
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/cellular_components/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.08
+            PARTIAL: 0.16
+          confidence: 0.64
+        /assertion/cellular_components/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.77
+            MISMATCH: 0.03
+            PARTIAL: 0.2
+          confidence: 0.66
+        /assertion/cellular_components/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/locations/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.98
+            MISMATCH: 0.0
+            PARTIAL: 0.02
+          confidence: 0.97
+      model: jev-1.13.0
+      usage:
+        input_tokens: 18238
+        output_tokens: 830
+      elapsed_seconds: 0.2311
+      request_sha256: 02406b691cfcaea96d711209df78fc958443e59a82b20426aca8c3cb90c18b83
+      request_sha256s:
+      - 02406b691cfcaea96d711209df78fc958443e59a82b20426aca8c3cb90c18b83

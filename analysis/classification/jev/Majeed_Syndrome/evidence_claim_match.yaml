@@ -5255,6 +5255,121 @@ inputs:
     - assertion_path: /biochemical/4
       evidence_path: /biochemical/4/evidence/0
       reference: PMID:41113563
+  824dc3d7152088386226f6294a8b3de1a0a714bb11cf5cb15c6b6711c84c8d40:
+    claim:
+      about:
+        disease:
+          name: Majeed Syndrome
+          disease_term:
+            preferred_term: Majeed syndrome
+            term:
+              id: MONDO:0012316
+              label: Majeed syndrome
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Erythrocyte sedimentation rate
+        presence: INCREASED
+        biomarker_term:
+          preferred_term: erythrocyte sedimentation rate
+          term:
+            id: NCIT:C74611
+            label: Erythrocyte Sedimentation Rate Measurement
+        notes: Raised in flares. 51 mm/h during an attack and 23 mm/h in remission in one patient.
+        reference_ranges:
+        - loinc_term:
+            id: LOINC:30341-2
+            label: Erythrocyte sedimentation rate [Velocity] in Red Blood Cells
+          lower_bound: 0.0
+          upper_bound: 20.0
+          unit: mm/h
+          population: the reporting hospital's reference interval, one pediatric case report
+          notes: Single-laboratory interval; the method was not stated, so the method-unspecified LOINC
+            code is used. Checked against the NLM clinical-tables LOINC service.
+      selected_evidence:
+        snippet: Laboratory findings consistently demonstrated anemia, elevated ESR and CRP, and variable
+          microcytic indices.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:41113563
+      reference_title: Clinical and genetic analysis of Majeed syndrome caused by LPIN2 complex heterozygous
+        mutation and literature review.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Raised ESR across the reviewed cases.
+    first_seen_at: '2026-11-09T20:35:26.452559+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:26.452559+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:26.452559+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1
+      evidence_path: /biochemical/1/evidence/0
+      reference: PMID:41113563
+  a8be1a13ac1e7e900605396d3bffdbbe4dd0f824ecc1e72a5877c1b2d6523c11:
+    claim:
+      about:
+        disease:
+          name: Majeed Syndrome
+          disease_term:
+            preferred_term: Majeed syndrome
+            term:
+              id: MONDO:0012316
+              label: Majeed syndrome
+        context:
+        - path: /biochemical/1
+          value:
+            name: Erythrocyte sedimentation rate
+            presence: INCREASED
+            biomarker_term:
+              preferred_term: erythrocyte sedimentation rate
+              term:
+                id: NCIT:C74611
+                label: Erythrocyte Sedimentation Rate Measurement
+            notes: Raised in flares. 51 mm/h during an attack and 23 mm/h in remission in one patient.
+          role: ancestor
+      assertion_type: ReferenceRange
+      assertion:
+        loinc_term:
+          id: LOINC:30341-2
+          label: Erythrocyte sedimentation rate [Velocity] in Red Blood Cells
+        lower_bound: 0.0
+        upper_bound: 20.0
+        unit: mm/h
+        population: the reporting hospital's reference interval, one pediatric case report
+        notes: Single-laboratory interval; the method was not stated, so the method-unspecified LOINC
+          code is used. Checked against the NLM clinical-tables LOINC service.
+      selected_evidence:
+        snippet: Inflammatory markers were significantly elevated, with hypersensitive CRP at 79.1 mg/L
+          (reference 0-3 mg/L) and ESR at 51 mm/h (reference 0-20 mm/h).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/1/reference_ranges/0
+      evidence_path: /biochemical/1/reference_ranges/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/1
+    evidence_metadata:
+      reference: PMID:41113563
+      reference_title: Clinical and genetic analysis of Majeed syndrome caused by LPIN2 complex heterozygous
+        mutation and literature review.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the patient's value and the laboratory reference interval.
+    first_seen_at: '2026-11-09T20:35:28.223354+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:28.223354+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:28.223354+00:00'
+    occurrences:
+    - assertion_path: /biochemical/1/reference_ranges/0
+      evidence_path: /biochemical/1/reference_ranges/0/evidence/0
+      reference: PMID:41113563
 assessments:
   2ce48c73e82f2a31130a3f513e9d9845250b193d74f4ec5464c812ba9424bb9f:
     input_sha256: 9283be05f3ad05901c6b0ccea3e180563644bfaeb470eef5e782585d43582074
@@ -12656,3 +12771,205 @@ assessments:
       request_sha256: 0ab66491d00f09bda197da678b76ed17861bf3adfac86d52ccca1a32dbd9bdaf
       request_sha256s:
       - 0ab66491d00f09bda197da678b76ed17861bf3adfac86d52ccca1a32dbd9bdaf
+  3f834e5de68d95b817c322133a0217de892660104c6e399fbdfde667a125b4d0:
+    input_sha256: 824dc3d7152088386226f6294a8b3de1a0a714bb11cf5cb15c6b6711c84c8d40
+    configuration_sha256: 9eb01d04227d0f676da71cdb30a007b78cb5a67a2e7e4312c64968f31b6b0336
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:26.452559+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.04
+            PARTIAL: 0.4
+          confidence: 0.34
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.07
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.02
+            PARTIAL: 0.05
+          confidence: 0.89
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.0
+            PARTIAL: 0.06
+          confidence: 0.91
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.55
+            PARTIAL: 0.4
+          confidence: 0.33
+        /assertion/reference_ranges/0/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.58
+            PARTIAL: 0.32
+          confidence: 0.37
+        /assertion/reference_ranges/0/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.54
+            PARTIAL: 0.21
+          confidence: 0.31
+        /assertion/reference_ranges/0/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.83
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/reference_ranges/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.52
+            PARTIAL: 0.41
+          confidence: 0.28
+        /assertion/reference_ranges/0/population:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.7
+            PARTIAL: 0.28
+          confidence: 0.55
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.66
+            PARTIAL: 0.3
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13960
+        output_tokens: 692
+      elapsed_seconds: 0.3233
+      request_sha256: dc4563bf983474fb19a7f104f571411171b45ba9b62ca315d703eebab6e6f61a
+      request_sha256s:
+      - dc4563bf983474fb19a7f104f571411171b45ba9b62ca315d703eebab6e6f61a
+  44729f6f6e82c23b7e57dea6c6140c60bca7ef171912bdf892f2cd3827c2d2c0:
+    input_sha256: a8be1a13ac1e7e900605396d3bffdbbe4dd0f824ecc1e72a5877c1b2d6523c11
+    configuration_sha256: 5138a93a808753fd4f1b0305701098e5baa0de63f8f636453f80751cba8ed60d
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:28.223354+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.13
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.16
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/loinc_term/id:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.32
+            PARTIAL: 0.31
+          confidence: 0.06
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.11
+            PARTIAL: 0.13
+          confidence: 0.64
+        /assertion/lower_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.03
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/upper_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.03
+            PARTIAL: 0.12
+          confidence: 0.77
+        /assertion/unit:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+          confidence: 0.8
+        /assertion/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.27
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.28
+            PARTIAL: 0.41
+          confidence: 0.11
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.09
+            PARTIAL: 0.34
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10203
+        output_tokens: 453
+      elapsed_seconds: 0.2035
+      request_sha256: d9ee7abfc2ef65dbf9354008a5a11a533827b0189590b4fa42f40dc87e5c1d8e
+      request_sha256s:
+      - d9ee7abfc2ef65dbf9354008a5a11a533827b0189590b4fa42f40dc87e5c1d8e

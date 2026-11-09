@@ -3288,6 +3288,352 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:17054261
+  cfa197827e77fefa1f608c008cba680b9409d2d43a897abb38e0a843804c35e7:
+    claim:
+      about:
+        disease:
+          name: Digitalis Poisoning
+          disease_term:
+            preferred_term: digitalis poisoning
+            term:
+              id: MONDO:0017863
+              label: digitalis poisoning
+        context:
+        - path: /has_subtypes/0
+          value:
+            name: Acute
+            display_name: Acute poisoning
+            description: A single large ingestion by someone not already taking the drug - usually deliberate
+              self-poisoning, or a plant or animal cardenolide exposure. Gastrointestinal and cardiac
+              features dominate. Potassium leaves cells faster than the kidney can redistribute it, so
+              hyperkalemia and the potassium-based prognostic thresholds are features of this presentation
+              rather than of digitalis toxicity in general, which is why the hyperkalemia phenotype and
+              the serum potassium entries below are scoped to it.
+          role: subtype
+      assertion_type: Biochemical
+      assertion:
+        name: Serum potassium
+        subtype: Acute
+        presence: Increased
+        context: Prognostic stratification in acute poisoning, and the threshold on which the antidote
+          decision is usually made.
+        biomarker_term:
+          preferred_term: Potassium
+          term:
+            id: NCIT:C765
+            label: Potassium
+        loinc_term:
+          id: LOINC:2823-3
+          label: Potassium [Moles/volume] in Serum or Plasma
+        reference_ranges:
+        - unit: mEq/L
+          population: acute digitalis or cardiac glycoside poisoning, before antidote
+          notes: No normal interval is recorded here because no cached source in this entry states one;
+            only the prognostic bands, which are what the cited sentence carries. LOINC:2823-3, the method-less
+            Serum-or-Plasma identity code, is bound at the marker level above. The bands are recorded
+            in mEq/L, the unit serum potassium is reported in; note that the quoted sentence prints "meq/dl",
+            which is not a serum potassium unit, and the snippet preserves that as the source wrote it.
+          interpretation_bands:
+          - name: Below the antidote threshold
+            upper_bound: 5.0
+            unit: mEq/L
+            abnormal_flag: NORMAL
+            interpretation: No deaths in the cited pre-Fab series. This is the band in which the potassium
+              is not itself an indication for antidote.
+          - name: Intermediate
+            lower_bound: 5.0
+            upper_bound: 5.5
+            unit: mEq/L
+            abnormal_flag: HIGH
+            severity: MODERATE
+            phenotype_term:
+              preferred_term: Hyperkalemia
+              term:
+                id: HP:0002153
+                label: Hyperkalemia
+            interpretation: Roughly 50% mortality without digoxin-specific Fab in the cited series.
+          - name: Above the antidote threshold
+            lower_bound: 5.5
+            unit: mEq/L
+            abnormal_flag: CRITICAL_HIGH
+            severity: SEVERE
+            phenotype_term:
+              preferred_term: Hyperkalemia
+              term:
+                id: HP:0002153
+                label: Hyperkalemia
+            interpretation: 100% mortality in the cited pre-Fab series, but read this band together with
+              the `potassium_threshold_as_absolute_rule` discussion, where the same publication reports
+              its own patient surviving above the threshold without Fab. The band describes an untreated
+              historical cohort, not a rule.
+        notes: Added in review. The bands were already quoted on the Hyperkalemia phenotype; this block
+          is what makes them queryable. Review attributed them to PMID:7267327, which does not carry them
+          - that abstract reports a 17% overall mortality and a 2-74% range across four clinical factors,
+          and never names a potassium threshold. The bands come from PMID:22737544, which this entry already
+          cited for exactly this sentence.
+      selected_evidence:
+        snippet: 'Previous assessment of outcome has shown that mortality increases in patients exhibiting
+          five prognostic factors: 1) advanced age; 2) heart disease; 3) male sex; 4) high-degree atrioventricular
+          block; 5) hyperkalemia.'
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:8492338
+      reference_title: Clinical features and management of digitalis poisoning--rationale for immunotherapy.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Places potassium among five prognostic factors rather than above them, which is why
+        the bands above are recorded as a stratification and not as a score.
+    first_seen_at: '2026-11-09T20:47:11.439033+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:47:11.439033+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:47:11.439033+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:8492338
+  942cf28858d63827117d8b04b1ecf3a354bf99d2c9cdbe1e7c7191ad566f100b:
+    claim:
+      about:
+        disease:
+          name: Digitalis Poisoning
+          disease_term:
+            preferred_term: digitalis poisoning
+            term:
+              id: MONDO:0017863
+              label: digitalis poisoning
+        context:
+        - path: /biochemical/0
+          value:
+            name: Serum potassium
+            subtype: Acute
+            presence: Increased
+            context: Prognostic stratification in acute poisoning, and the threshold on which the antidote
+              decision is usually made.
+            biomarker_term:
+              preferred_term: Potassium
+              term:
+                id: NCIT:C765
+                label: Potassium
+            loinc_term:
+              id: LOINC:2823-3
+              label: Potassium [Moles/volume] in Serum or Plasma
+            notes: Added in review. The bands were already quoted on the Hyperkalemia phenotype; this
+              block is what makes them queryable. Review attributed them to PMID:7267327, which does not
+              carry them - that abstract reports a 17% overall mortality and a 2-74% range across four
+              clinical factors, and never names a potassium threshold. The bands come from PMID:22737544,
+              which this entry already cited for exactly this sentence.
+          role: ancestor
+        - path: /has_subtypes/0
+          value:
+            name: Acute
+            display_name: Acute poisoning
+            description: A single large ingestion by someone not already taking the drug - usually deliberate
+              self-poisoning, or a plant or animal cardenolide exposure. Gastrointestinal and cardiac
+              features dominate. Potassium leaves cells faster than the kidney can redistribute it, so
+              hyperkalemia and the potassium-based prognostic thresholds are features of this presentation
+              rather than of digitalis toxicity in general, which is why the hyperkalemia phenotype and
+              the serum potassium entries below are scoped to it.
+          role: subtype
+      assertion_type: ReferenceRange
+      assertion:
+        unit: mEq/L
+        population: acute digitalis or cardiac glycoside poisoning, before antidote
+        notes: No normal interval is recorded here because no cached source in this entry states one;
+          only the prognostic bands, which are what the cited sentence carries. LOINC:2823-3, the method-less
+          Serum-or-Plasma identity code, is bound at the marker level above. The bands are recorded in
+          mEq/L, the unit serum potassium is reported in; note that the quoted sentence prints "meq/dl",
+          which is not a serum potassium unit, and the snippet preserves that as the source wrote it.
+        interpretation_bands:
+        - name: Below the antidote threshold
+          upper_bound: 5.0
+          unit: mEq/L
+          abnormal_flag: NORMAL
+          interpretation: No deaths in the cited pre-Fab series. This is the band in which the potassium
+            is not itself an indication for antidote.
+        - name: Intermediate
+          lower_bound: 5.0
+          upper_bound: 5.5
+          unit: mEq/L
+          abnormal_flag: HIGH
+          severity: MODERATE
+          phenotype_term:
+            preferred_term: Hyperkalemia
+            term:
+              id: HP:0002153
+              label: Hyperkalemia
+          interpretation: Roughly 50% mortality without digoxin-specific Fab in the cited series.
+        - name: Above the antidote threshold
+          lower_bound: 5.5
+          unit: mEq/L
+          abnormal_flag: CRITICAL_HIGH
+          severity: SEVERE
+          phenotype_term:
+            preferred_term: Hyperkalemia
+            term:
+              id: HP:0002153
+              label: Hyperkalemia
+          interpretation: 100% mortality in the cited pre-Fab series, but read this band together with
+            the `potassium_threshold_as_absolute_rule` discussion, where the same publication reports
+            its own patient surviving above the threshold without Fab. The band describes an untreated
+            historical cohort, not a rule.
+      selected_evidence:
+        snippet: mortality after digoxin toxicity have been reported to be zero in patients with acute
+          digoxin toxicity and potassium levels less than 5.0 meq/dl, 50% in potassium levels between
+          5.0 and 5.5, and 100 percent in those with potassium levels above 5.5 meq/dl
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/reference_ranges/0
+      evidence_path: /biochemical/0/reference_ranges/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+      - /has_subtypes/0
+    evidence_metadata:
+      reference: PMID:22737544
+      reference_title: Good outcome after digoxin toxicity despite very high serum potassium level.
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The source of all three bands. Graded exactly as the same sentence is graded on the
+        Hyperkalemia phenotype, since evidence_source classifies the publication and cannot change because
+        the quote moved.
+    first_seen_at: '2026-11-09T20:47:13.259213+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:47:13.259213+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:47:13.259213+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/reference_ranges/0
+      evidence_path: /biochemical/0/reference_ranges/0/evidence/0
+      reference: PMID:22737544
+  bcddc3275501d9168fd92af7dfbd6f3a56bfc8907f6c10bbb660488b88503a57:
+    claim:
+      about:
+        disease:
+          name: Digitalis Poisoning
+          disease_term:
+            preferred_term: digitalis poisoning
+            term:
+              id: MONDO:0017863
+              label: digitalis poisoning
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Serum potassium in acute poisoning
+        description: 'Not a diagnostic test for the poisoning but a prognostic measurement in it, and
+          an indication for antidote. It is informative because it reports on the mechanism: potassium
+          leaves cells in proportion to how much of the body''s pump capacity has been switched off. The
+          cited series ranks it alongside age, sex, atrioventricular block and prior heart disease rather
+          than above them, and does not compare it with the serum drug level.'
+        diagnosis_term:
+          preferred_term: serum potassium measurement for risk stratification
+          term:
+            id: NCIT:C61030
+            label: Serum Potassium Measurement
+        measurements:
+        - preferred_term: Serum potassium
+          term:
+            id: LOINC:2823-3
+            label: Potassium [Moles/volume] in Serum or Plasma
+      selected_evidence:
+        snippet: It increased with age, with digitoxin and potassium serum levels and even more with persistent
+          hyperkalemia.
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:7267327
+      reference_title: '[Prognostic factors in acute digitalis poisoning (author''s transl)].'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The prognostic association, in 179 patients. Persistent hyperkalemia carried more weight
+        than the single value.
+    first_seen_at: '2026-11-09T20:47:13.272803+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:47:13.272803+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:47:13.272803+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/0
+      evidence_path: /diagnosis/0/evidence/0
+      reference: PMID:7267327
+  48098d396fc5da7101b366c838619f228bff3b72bb80bfb1d7ec65df147033f6:
+    claim:
+      about:
+        disease:
+          name: Digitalis Poisoning
+          disease_term:
+            preferred_term: digitalis poisoning
+            term:
+              id: MONDO:0017863
+              label: digitalis poisoning
+        context: []
+      assertion_type: Diagnosis
+      assertion:
+        name: Serum digoxin concentration
+        description: Confirms exposure but is a poor guide to severity, and becomes uninterpretable once
+          the antidote has been given because the assay cannot distinguish bound from free drug.
+        diagnosis_term:
+          preferred_term: serum digoxin concentration measurement
+          term:
+            id: NCIT:C217390
+            label: Diagnostic Blood Testing
+        measurements:
+        - preferred_term: Serum digoxin
+          term:
+            id: LOINC:10535-3
+            label: Digoxin [Mass/volume] in Serum or Plasma
+        notes: 'NCIT has no digoxin measurement term. Searched the local build with `uv run runoak -i
+          sqlite:obo:ncit search ''l~Digoxin''` and `''l~digoxin''` on 2026-09-19; the hits are digoxin
+          the substance, digoxin immune Fab and the gene/transporter terms, with no measurement or assay
+          among them, where the sibling potassium entry binds the specific NCIT:C61030 Serum Potassium
+          Measurement. This was bound to the branch root NCIT:C18020 Diagnostic Procedure until review
+          pointed out that NCIT:C217390 Diagnostic Blood Testing is strictly narrower and still correct
+          for a serum assay; `ancestors -p i` confirms C217390 is a child of C18020 and reaches NCIT:C25218,
+          the TreatmentActionTerm root.
+
+          LOINC:10535-3 is the generic Serum-or-Plasma total-digoxin code, bound rather than the Digoxin
+          Free variant (LOINC:3562-6): the description above is specifically about the total assay''s
+          inability to distinguish bound from free drug after Fab, which is a different measurement.'
+      selected_evidence:
+        snippet: The current recommendations for monitoring digoxin, a narrow therapeutic index drug,
+          are limited to confirming medication use or investigating suspicion of toxicity
+        supports: SUPPORT
+    origin:
+      assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:37465455
+      reference_title: 'Review: Failure of current digoxin monitoring for toxicity: new monitoring recommendations
+        to maintain therapeutic levels for efficacy.'
+      evidence_source: HUMAN_CLINICAL
+      quote_role: REVIEW_SYNTHESIS
+      explanation: Describes what the level is actually used for, which is narrower than its reputation.
+    first_seen_at: '2026-11-09T20:47:13.275547+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:47:13.275547+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:47:13.275547+00:00'
+    occurrences:
+    - assertion_path: /diagnosis/1
+      evidence_path: /diagnosis/1/evidence/0
+      reference: PMID:37465455
 assessments:
   e767a5f026a45f71efb1e8a671b58d33065bf3e523801926cd1d88dfb2a3b54b:
     input_sha256: ebb7c88d4bea4152e5d2aea8a2391c3208c80e0038b6b6bca485b7abbfd0af7e
@@ -7583,3 +7929,652 @@ assessments:
       request_sha256: fdd32af53ae9af019953de5dff2c373926a1d16e81bac047b4bccc1b206b439f
       request_sha256s:
       - fdd32af53ae9af019953de5dff2c373926a1d16e81bac047b4bccc1b206b439f
+  6c5ba911dbd866b602d3763fc6b0aaf4adc499bc7dfadc98f1b5c4bc1f8e76f9:
+    input_sha256: cfa197827e77fefa1f608c008cba680b9409d2d43a897abb38e0a843804c35e7
+    configuration_sha256: fffb3881ddd41bcdaeb88fceb85cdf1aacd3bdb09428e6f9a7736cc9107f8f52
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:47:11.439033+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.14
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.08
+            PARTIAL: 0.43
+          confidence: 0.24
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.09
+            PARTIAL: 0.28
+          confidence: 0.44
+        /assertion/subtype:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.24
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/presence:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.1
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/context:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.21
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.69
+            MISMATCH: 0.08
+            PARTIAL: 0.23
+          confidence: 0.53
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.08
+            PARTIAL: 0.27
+          confidence: 0.48
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.72
+            PARTIAL: 0.2
+          confidence: 0.58
+        /assertion/loinc_term/label:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.5
+            PARTIAL: 0.2
+          confidence: 0.25
+        /assertion/reference_ranges/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.72
+            PARTIAL: 0.23
+          confidence: 0.58
+        /assertion/reference_ranges/0/population:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.29
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/reference_ranges/0/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.75
+            PARTIAL: 0.2
+          confidence: 0.62
+        /assertion/reference_ranges/0/interpretation_bands/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.44
+        /assertion/reference_ranges/0/interpretation_bands/0/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.81
+            PARTIAL: 0.18
+          confidence: 0.72
+        /assertion/reference_ranges/0/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.76
+            PARTIAL: 0.21
+          confidence: 0.64
+        /assertion/reference_ranges/0/interpretation_bands/0/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+          confidence: 0.4
+        /assertion/reference_ranges/0/interpretation_bands/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.64
+            PARTIAL: 0.32
+          confidence: 0.46
+        /assertion/reference_ranges/0/interpretation_bands/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.55
+            PARTIAL: 0.39
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/1/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/reference_ranges/0/interpretation_bands/1/upper_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.79
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/reference_ranges/0/interpretation_bands/1/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.74
+            PARTIAL: 0.22
+          confidence: 0.61
+        /assertion/reference_ranges/0/interpretation_bands/1/abnormal_flag:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.32
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/reference_ranges/0/interpretation_bands/1/severity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.31
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/reference_ranges/0/interpretation_bands/1/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.14
+            PARTIAL: 0.31
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/1/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.15
+            PARTIAL: 0.32
+          confidence: 0.3
+        /assertion/reference_ranges/0/interpretation_bands/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.68
+            PARTIAL: 0.3
+          confidence: 0.52
+        /assertion/reference_ranges/0/interpretation_bands/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.61
+            PARTIAL: 0.33
+          confidence: 0.42
+        /assertion/reference_ranges/0/interpretation_bands/2/lower_bound:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.78
+            PARTIAL: 0.2
+          confidence: 0.67
+        /assertion/reference_ranges/0/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.75
+            PARTIAL: 0.21
+          confidence: 0.62
+        /assertion/reference_ranges/0/interpretation_bands/2/abnormal_flag:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/reference_ranges/0/interpretation_bands/2/severity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.26
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/reference_ranges/0/interpretation_bands/2/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.16
+            PARTIAL: 0.27
+          confidence: 0.35
+        /assertion/reference_ranges/0/interpretation_bands/2/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.17
+            PARTIAL: 0.38
+          confidence: 0.18
+        /assertion/reference_ranges/0/interpretation_bands/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.65
+            PARTIAL: 0.33
+          confidence: 0.48
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.53
+            PARTIAL: 0.34
+          confidence: 0.3
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.21
+            PARTIAL: 0.58
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 37007
+        output_tokens: 2029
+      elapsed_seconds: 0.3584
+      request_sha256: 854a80fcc21d672735a7a8bdedc4a217e058a571ec928679e7d3328705d79a21
+      request_sha256s:
+      - 854a80fcc21d672735a7a8bdedc4a217e058a571ec928679e7d3328705d79a21
+  c6a324872a3ee8cb2c909b463034b46d70c11c97ccb043d5fba7831173391d7a:
+    input_sha256: 942cf28858d63827117d8b04b1ecf3a354bf99d2c9cdbe1e7c7191ad566f100b
+    configuration_sha256: 78451be9ea57525cd507c5246e782eaaf24b1d25336f947fdfbfe98e4834a4da
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:47:13.259213+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.15
+            PARTIAL: 0.33
+          confidence: 0.28
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.51
+            PARTIAL: 0.22
+          confidence: 0.26
+        /assertion/population:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.02
+            PARTIAL: 0.11
+          confidence: 0.8
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.34
+            PARTIAL: 0.33
+          confidence: 0.01
+        /assertion/interpretation_bands/0/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.03
+            PARTIAL: 0.12
+          confidence: 0.77
+        /assertion/interpretation_bands/0/upper_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+          confidence: 0.77
+        /assertion/interpretation_bands/0/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.48
+            PARTIAL: 0.17
+          confidence: 0.22
+        /assertion/interpretation_bands/0/abnormal_flag:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.27
+            PARTIAL: 0.36
+          confidence: 0.06
+        /assertion/interpretation_bands/0/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/interpretation_bands/1/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.27
+            PARTIAL: 0.31
+          confidence: 0.13
+        /assertion/interpretation_bands/1/lower_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/interpretation_bands/1/upper_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/interpretation_bands/1/unit:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.39
+            PARTIAL: 0.2
+          confidence: 0.11
+        /assertion/interpretation_bands/1/abnormal_flag:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.22
+            PARTIAL: 0.31
+          confidence: 0.2
+        /assertion/interpretation_bands/1/severity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.14
+            PARTIAL: 0.3
+          confidence: 0.34
+        /assertion/interpretation_bands/1/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.14
+            PARTIAL: 0.23
+          confidence: 0.44
+        /assertion/interpretation_bands/1/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.23
+            PARTIAL: 0.3
+          confidence: 0.2
+        /assertion/interpretation_bands/1/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.02
+            PARTIAL: 0.07
+          confidence: 0.86
+        /assertion/interpretation_bands/2/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.84
+            MISMATCH: 0.04
+            PARTIAL: 0.12
+          confidence: 0.76
+        /assertion/interpretation_bands/2/lower_bound:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.01
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/interpretation_bands/2/unit:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.46
+            PARTIAL: 0.23
+          confidence: 0.19
+        /assertion/interpretation_bands/2/abnormal_flag:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.25
+            PARTIAL: 0.34
+          confidence: 0.11
+        /assertion/interpretation_bands/2/severity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/interpretation_bands/2/phenotype_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.14
+            PARTIAL: 0.15
+          confidence: 0.56
+        /assertion/interpretation_bands/2/phenotype_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.25
+            PARTIAL: 0.26
+          confidence: 0.24
+        /assertion/interpretation_bands/2/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.2
+            PARTIAL: 0.45
+          confidence: 0.18
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.12
+            PARTIAL: 0.21
+          confidence: 0.5
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.13
+            PARTIAL: 0.23
+          confidence: 0.46
+      model: jev-1.13.0
+      usage:
+        input_tokens: 29415
+        output_tokens: 1500
+      elapsed_seconds: 0.2584
+      request_sha256: 53e090ec328baaaa7ea86d23bcfdcb0a97ad32c3999691c28a97eb512a32e282
+      request_sha256s:
+      - 53e090ec328baaaa7ea86d23bcfdcb0a97ad32c3999691c28a97eb512a32e282
+  4db61caef1302a37ce5fea49f5f9bd8113cbd711f71b4896ffb8c5279310d585:
+    input_sha256: bcddc3275501d9168fd92af7dfbd6f3a56bfc8907f6c10bbb660488b88503a57
+    configuration_sha256: e67d1393a11ed48587f040e619362e339d9da6b300f2029a72072cbb1798833e
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:47:13.272803+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.23
+            PARTIAL: 0.56
+          confidence: 0.34
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.02
+            PARTIAL: 0.19
+          confidence: 0.68
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.24
+            PARTIAL: 0.42
+          confidence: 0.13
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.46
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.28
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.24
+            PARTIAL: 0.47
+          confidence: 0.2
+        /assertion/measurements/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.08
+            PARTIAL: 0.25
+          confidence: 0.5
+        /assertion/measurements/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.13
+            PARTIAL: 0.33
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8324
+        output_tokens: 382
+      elapsed_seconds: 0.1805
+      request_sha256: f01ec8e1bed5806028cf5dfca0ea9390a6b09b380f06fd3a7d32cb97a304326c
+      request_sha256s:
+      - f01ec8e1bed5806028cf5dfca0ea9390a6b09b380f06fd3a7d32cb97a304326c
+  a8c120d29ba71245b1bfdaecb2a6739b2e23a389f9a151eeac52e40c40056d57:
+    input_sha256: 48098d396fc5da7101b366c838619f228bff3b72bb80bfb1d7ec65df147033f6
+    configuration_sha256: 93067e5591e114c720ebe81b2ae82ab145284eafe827ba3bf0c242bf2e91ed29
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:47:13.275547+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.19
+            PARTIAL: 0.68
+          confidence: 0.52
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.03
+            PARTIAL: 0.18
+          confidence: 0.68
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.21
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.55
+            PARTIAL: 0.41
+          confidence: 0.33
+        /assertion/diagnosis_term/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.19
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/diagnosis_term/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.34
+            PARTIAL: 0.4
+          confidence: 0.1
+        /assertion/measurements/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.17
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/measurements/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.22
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/notes:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.7
+            PARTIAL: 0.25
+          confidence: 0.55
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9473
+        output_tokens: 433
+      elapsed_seconds: 0.188
+      request_sha256: be7b7050054ad100107de6feab39c6e3d49237e9f025199e0658af4ebfc75cd4
+      request_sha256s:
+      - be7b7050054ad100107de6feab39c6e3d49237e9f025199e0658af4ebfc75cd4

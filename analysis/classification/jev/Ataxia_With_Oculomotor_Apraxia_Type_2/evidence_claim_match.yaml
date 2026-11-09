@@ -6603,6 +6603,69 @@ inputs:
     - assertion_path: /discussions/2
       evidence_path: /discussions/2/evidence/1
       reference: PMID:19696032
+  732b2191269c8134f7636c1262b30a7c2d09f2ff2212e6714c8fcdede02f7914:
+    claim:
+      about:
+        disease:
+          name: Ataxia With Oculomotor Apraxia Type 2
+          disease_term:
+            preferred_term: ataxia with oculomotor apraxia type 2
+            term:
+              id: MONDO:0018996
+              label: spinocerebellar ataxia, autosomal recessive, with axonal neuropathy 2
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Serum alpha-fetoprotein
+        notes: 'The diagnostic biomarker of AOA2 and the reason most patients reach a SETX test. It is
+          elevated in 92-100% of patients, is established at or before symptom onset, and stays flat thereafter,
+          so it discriminates but does not monitor. Threshold work matters here: selecting non-Friedreich,
+          non-ataxia-telangiectasia ataxic patients with AFP at or above 7 microg/l for sequencing gives
+          a 46% yield of AOA2 while missing about 0.2% of cases, and video-oculography adds nothing to
+          the discrimination that AFP does not already provide. Why senataxin loss raises AFP is not known;
+          it is not explained by liver disease, which is absent in AOA2 patients even where present in
+          ataxia-telangiectasia.'
+        biomarker_term:
+          preferred_term: alpha-fetoprotein
+          term:
+            id: NCIT:C16278
+            label: Alpha-Fetoprotein
+        specificity: Shared with ataxia-telangiectasia and, at lower levels, AOA1; the concentration bands
+          differ between the three.
+        readouts:
+        - target: Biallelic SETX Loss-of-Function Variant
+          relationship: CORRELATES_WITH
+          direction: THRESHOLD_DEPENDENT
+          endpoint_context: DIAGNOSTIC
+          interpretation: 'An AFP above the 7 microg/l threshold in an ataxic patient is what selects
+            SETX for sequencing. The link is empirical: no mechanism connecting senataxin loss to AFP
+            production has been established, so this is recorded as a correlation with the genetic lesion
+            rather than as a readout of any modelled mechanism node.'
+      selected_evidence:
+        snippet: Specific distinctive alpha-fetoprotein thresholds were determined for AOA1 (7-15 µg/L),
+          AOA2 (15-65 µg/L) and AT (>65 µg/L).
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:29127364
+      reference_title: 'Comparing ataxias with oculomotor apraxia: a multimodal study of AOA1, AOA2 and
+        AT focusing on video-oculography and alpha-fetoprotein.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: Gives the concentration bands that separate the three oculomotor-apraxia ataxias.
+    first_seen_at: '2026-11-09T21:13:51.418031+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T21:13:51.418031+00:00'
+    active: true
+    active_as_of: '2026-11-09T21:13:51.418031+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/1
+      reference: PMID:29127364
 assessments:
   481cb5b6703499398d2f2a6b45300b3cab88d16857d6acf4f3106652353a74bb:
     input_sha256: 90b22cac5634493d5dc202cc64ff8dbbb1be5e62fc7b5b13f27484cfa9040836
@@ -15417,3 +15480,104 @@ assessments:
       request_sha256: 774b0923e39c77c8f8bf0a80537edc49184ed2e480d59206d5aa227a985db725
       request_sha256s:
       - 774b0923e39c77c8f8bf0a80537edc49184ed2e480d59206d5aa227a985db725
+  696346a480aa074440828406842f11f076ad6aece5f8c5b0a37d0bf0f31e9797:
+    input_sha256: 732b2191269c8134f7636c1262b30a7c2d09f2ff2212e6714c8fcdede02f7914
+    configuration_sha256: 6f7db67b57a1a12f35a6960a5a66b66f21f090d86693f01f827ef4b8e60b42d5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T21:13:51.418031+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.13
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.95
+            MISMATCH: 0.01
+            PARTIAL: 0.04
+          confidence: 0.92
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.06
+            PARTIAL: 0.14
+          confidence: 0.7
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.32
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/biomarker_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.06
+            PARTIAL: 0.13
+          confidence: 0.72
+        /assertion/biomarker_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.75
+            MISMATCH: 0.06
+            PARTIAL: 0.19
+          confidence: 0.62
+        /assertion/specificity:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.07
+            PARTIAL: 0.26
+          confidence: 0.5
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.38
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.12
+            PARTIAL: 0.37
+          confidence: 0.26
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.02
+            PARTIAL: 0.15
+          confidence: 0.74
+        /assertion/readouts/0/endpoint_context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.04
+            PARTIAL: 0.15
+          confidence: 0.72
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.23
+            PARTIAL: 0.57
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12587
+        output_tokens: 580
+      elapsed_seconds: 0.2339
+      request_sha256: 594c7f757f8bbb8e88361cf125e5b0a26b9c4ddcbdaca5e8f0c24ae6b90878e3
+      request_sha256s:
+      - 594c7f757f8bbb8e88361cf125e5b0a26b9c4ddcbdaca5e8f0c24ae6b90878e3

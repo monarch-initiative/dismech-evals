@@ -1276,6 +1276,63 @@ inputs:
     - assertion_path: /diagnosis/0
       evidence_path: /diagnosis/0/evidence/1
       reference: PMID:31407851
+  37fffb1de45244e6f96ab971c3917b0adf4701218eb74a60e1c2bab68c825b43:
+    claim:
+      about:
+        disease:
+          name: DONSON-Related Microcephalic Primordial Dwarfism
+          disease_term:
+            preferred_term: DONSON-related microcephaly-short stature-limb abnormalities spectrum
+            term:
+              id: MONDO:0035534
+              label: DONSON-related microcephaly-short stature-limb abnormalities spectrum
+        context: []
+      assertion_type: Subtype
+      assertion:
+        name: MGS-like
+        display_name: DONSON-related Meier-Gorlin syndrome
+        description: Neither an OMIM entry nor an ISDS row - a presentation, not a separate entity. Two
+          apparently unrelated families homozygous for c.631C>T p.(Arg211Cys) had clinically typical Meier-Gorlin
+          syndrome, and DONSON's later-established role in CMG helicase assembly explains why. MONDO:0981050
+          "Meier-Gorlin syndrome 10" is the class for this form, a child of MONDO:0016817 with DONSON
+          (hgnc:2993) as its asserted causal gene; it is bound as the MGORS10 subtype row of kb/disorders/Meier-Gorlin_Syndrome.yaml,
+          which is also where dismech carries DONSON as a Meier-Gorlin gene. This row stays unbound so
+          the same class is not asserted from two entries; it records the allele-to-presentation correspondence
+          within the DONSON spectrum.
+        genes:
+        - preferred_term: DONSON
+          term:
+            id: hgnc:2993
+            label: DONSON
+      selected_evidence:
+        snippet: Two apparently unrelated families with identical homozygous c.631C > T p.(Arg211Cys)
+          variant had clinical features typical of Meier-Gorlin syndrome (MGS), while two siblings with
+          compound heterozygous c.346delG p.(Asp116Ile*62) and c.1349A > G p.(Lys450Arg) variants presented
+          with Seckel-like phenotype.
+        supports: SUPPORT
+    origin:
+      assertion_path: /has_subtypes/2
+      evidence_path: /has_subtypes/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:31407851
+      reference_title: Biallelic and De Novo Variants in DONSON Reveal a Clinical Spectrum of Cell Cycle-opathies
+        with Microcephaly, Dwarfism and Skeletal Abnormalities.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes that a specific recurrent DONSON genotype produces a clinically typical
+        Meier-Gorlin presentation, distinct from the Seckel-like presentation carried by other alleles
+        in the same series.
+    first_seen_at: '2026-11-09T20:00:10.031428+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:00:10.031428+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:00:10.031428+00:00'
+    occurrences:
+    - assertion_path: /has_subtypes/2
+      evidence_path: /has_subtypes/2/evidence/0
+      reference: PMID:31407851
 assessments:
   f3793403a5cc4b6c71fe5db123ae3189af0cdd1f8a2cd98dc119b0c6677ec365:
     input_sha256: 4172328b8378c024644e5fb5554f64d54854feea581a3df48f790fe9b8518d22
@@ -3109,3 +3166,69 @@ assessments:
       request_sha256: 9cf70aaf26a682fcacfc3e68d8e5e4edde791b57ab8e84a7cfbc089b124fe975
       request_sha256s:
       - 9cf70aaf26a682fcacfc3e68d8e5e4edde791b57ab8e84a7cfbc089b124fe975
+  52f83fe1e2775672ea0743dbb054faad6bad397c4bcf2dcb78ba2c44c9ef8d2f:
+    input_sha256: 37fffb1de45244e6f96ab971c3917b0adf4701218eb74a60e1c2bab68c825b43
+    configuration_sha256: 3624bda0eec8468c3170fbe0d2adf9bf18a167b6424fa0de3818479045cf5814
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:00:10.031428+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.05
+            PARTIAL: 0.32
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.07
+            PARTIAL: 0.25
+          confidence: 0.52
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/display_name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.13
+            PARTIAL: 0.23
+          confidence: 0.46
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.12
+            PARTIAL: 0.41
+          confidence: 0.2
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.07
+            PARTIAL: 0.19
+          confidence: 0.61
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7506
+        output_tokens: 317
+      elapsed_seconds: 0.2549
+      request_sha256: 3221d57d29cec103950774f018f3902466c9acb5f1aa43e63410f47b522ac8f4
+      request_sha256s:
+      - 3221d57d29cec103950774f018f3902466c9acb5f1aa43e63410f47b522ac8f4

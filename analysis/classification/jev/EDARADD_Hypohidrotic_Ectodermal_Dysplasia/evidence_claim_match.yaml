@@ -7444,6 +7444,62 @@ inputs:
     - assertion_path: /animal_models/0/modeled_mechanisms/0
       evidence_path: /animal_models/0/modeled_mechanisms/0/evidence/0
       reference: PMID:11780064
+  7ae90f5a34506e4bc72fff4ffd4a49a4d20c0aa83fd85f3a17cc7a0d6715404d:
+    claim:
+      about:
+        disease:
+          name: EDARADD-Related Hypohidrotic Ectodermal Dysplasia
+          disease_term:
+            preferred_term: ectodermal dysplasia 11B, hypohidrotic/hair/tooth type, autosomal recessive
+            term:
+              id: MONDO:0013983
+              label: ectodermal dysplasia 11B, hypohidrotic/hair/tooth type, autosomal recessive
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Impaired Sweat Gland Development
+        conforms_to: eda_edar_nfkb_ectodermal_appendage#Ectodermal Appendage Morphogenesis Failure
+        description: Defective EDA-EDAR-EDARADD signaling impairs the embryonic morphogenesis of eccrine
+          sweat glands, leading to their aplasia or hypoplasia. This results in a severely reduced or
+          absent ability to sweat (hypohidrosis or anhidrosis) and consequent inability to regulate body
+          temperature through evaporative cooling.
+        biological_processes:
+        - preferred_term: Sweat Gland Development
+          modifier: DECREASED
+          term:
+            id: GO:0060792
+            label: sweat gland development
+        locations:
+        - preferred_term: Eccrine Sweat Gland
+          term:
+            id: UBERON:0000423
+            label: eccrine sweat gland
+      selected_evidence:
+        snippet: Hypohidrotic ectodermal dysplasia (HED) is characterized by hypotrichosis (sparseness
+          of scalp and body hair), hypohidrosis (reduced ability to sweat), and hypodontia (congenital
+          absence of teeth).
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301291
+      reference_title: Hypohidrotic Ectodermal Dysplasia.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Confirms that hypohidrosis due to impaired sweat gland development is a cardinal feature
+        of HED.
+    first_seen_at: '2026-11-09T20:00:44.649455+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:00:44.649455+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:00:44.649455+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:20301291
 assessments:
   55e05eb4052664ddf956b611bc9ecbd0af80eca1dba7cb5cca1c99a278559923:
     input_sha256: 9ca2fd1ca8116c2cffff6d6367001de768040c98a0b348f6a8312b54ca758972
@@ -16490,3 +16546,90 @@ assessments:
       request_sha256: 219798f40b00e86a108679024db355fd568920570d4134e3c7dfbb57712f6564
       request_sha256s:
       - 219798f40b00e86a108679024db355fd568920570d4134e3c7dfbb57712f6564
+  4857801289a53aa466b913ee10f52334e0aea7f66aff02f93e867f164254c63c:
+    input_sha256: 7ae90f5a34506e4bc72fff4ffd4a49a4d20c0aa83fd85f3a17cc7a0d6715404d
+    configuration_sha256: fab406176fe743d83726608c927c72c92998c6ab5f3120046c996616c22bc68f
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:00:44.649455+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.06
+            PARTIAL: 0.84
+          confidence: 0.76
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.03
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.03
+            PARTIAL: 0.39
+          confidence: 0.37
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.5
+            PARTIAL: 0.44
+          confidence: 0.25
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.1
+            PARTIAL: 0.84
+          confidence: 0.76
+        /assertion/biological_processes/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.05
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/modifier:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.02
+            PARTIAL: 0.24
+          confidence: 0.61
+        /assertion/biological_processes/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.08
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/locations/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.06
+            PARTIAL: 0.49
+          confidence: 0.24
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.11
+            PARTIAL: 0.57
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 10699
+        output_tokens: 491
+      elapsed_seconds: 0.1511
+      request_sha256: 03b20793339a5a5b2fedf513662d1bab7fdd45d66aa68b54779532c314d95b3f
+      request_sha256s:
+      - 03b20793339a5a5b2fedf513662d1bab7fdd45d66aa68b54779532c314d95b3f

@@ -8150,6 +8150,96 @@ inputs:
     - assertion_path: /treatments/8/target_mechanisms/1
       evidence_path: /treatments/8/target_mechanisms/1/evidence/0
       reference: PMID:34286667
+  77060a65f8561868e742f2a6348202c25e12a2598e8a79bd2a19629420172025:
+    claim:
+      about:
+        disease:
+          name: Koolen-de Vries syndrome
+          disease_term:
+            preferred_term: Koolen-de Vries syndrome
+            term:
+              id: MONDO:0012496
+              label: Koolen-de Vries syndrome
+        context:
+        - path: /pathophysiology/0
+          value:
+            name: KANSL1 haploinsufficiency
+            description: 'Heterozygous loss of KANSL1 is the core molecular lesion in KdVS. KANSL1 is
+              a chromatin-associated regulator of the histone acetyltransferase KAT8 within the NSL complex,
+              linking reduced dosage to altered histone H4K16 acetylation, chromatin organization, and
+              transcriptional control during neurodevelopment and organogenesis.
+
+              '
+            genes:
+            - preferred_term: KANSL1
+              term:
+                id: hgnc:24565
+                label: KANSL1
+            molecular_functions:
+            - preferred_term: histone acetyltransferase regulator activity
+              term:
+                id: GO:0035034
+                label: histone acetyltransferase regulator activity
+              modifier: DECREASED
+            - preferred_term: chromatin binding
+              term:
+                id: GO:0003682
+                label: chromatin binding
+              modifier: LOSS_OF_FUNCTION
+            cell_types:
+            - preferred_term: neuron
+              term:
+                id: CL:0000540
+                label: neuron
+            biological_processes:
+            - preferred_term: chromatin organization
+              term:
+                id: GO:0006325
+                label: chromatin organization
+            - preferred_term: regulation of gene expression
+              term:
+                id: GO:0010468
+                label: regulation of gene expression
+              modifier: DECREASED
+            locations:
+            - preferred_term: brain
+              term:
+                id: UBERON:0000955
+                label: brain
+          role: ancestor
+      assertion_type: CausalEdge
+      assertion:
+        target: Vesicoureteral reflux
+        description: KANSL1 haploinsufficiency predisposes to vesicoureteral reflux via uncharacterized
+          urinary tract developmental intermediates.
+        causal_link_type: INDIRECT_UNKNOWN_INTERMEDIATES
+      selected_evidence:
+        snippet: Kidney and urologic anomalies were found in seven cases (32%). The latter included vesicoureteric
+          reflux, hydronephrosis, right sided pyelectasis, and a duplex renal system.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /pathophysiology/0/downstream/15
+      evidence_path: /pathophysiology/0/downstream/15/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /pathophysiology/0
+    evidence_metadata:
+      reference: PMID:18628315
+      reference_title: Clinical and molecular delineation of the 17q21.31 microdeletion syndrome.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Identifies vesicoureteral reflux among the recurrent renal and urologic anomalies in
+        KdVS.
+    first_seen_at: '2026-11-09T20:03:20.427824+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:03:20.427824+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:03:20.427824+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/0/downstream/15
+      evidence_path: /pathophysiology/0/downstream/15/evidence/0
+      reference: PMID:18628315
 assessments:
   30e77f510f52158e2aae0968c07936aeace0adbc1633497b7cdb3fa52d5d37bd:
     input_sha256: c24db2ac8dc9ae0748ad722c9660bdd154444d95d5b88955f9fde3892cc70460
@@ -17735,3 +17825,62 @@ assessments:
       request_sha256: c935215d4277cbd869e2e5144cba0b26eb8d069d45dff5a0d8109113ba5c62ba
       request_sha256s:
       - c935215d4277cbd869e2e5144cba0b26eb8d069d45dff5a0d8109113ba5c62ba
+  a222c8d5ca388b15d52e3c93d3d19c4334c885d46610994967e19b9d6f4f154d:
+    input_sha256: 77060a65f8561868e742f2a6348202c25e12a2598e8a79bd2a19629420172025
+    configuration_sha256: 2ea8b4e53ab22f45281fe984f84b65b6a73b42c1243cb0d092b35352cc05b436
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:03:20.427824+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.03
+            PARTIAL: 0.73
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.1
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.74
+            MISMATCH: 0.01
+            PARTIAL: 0.25
+          confidence: 0.61
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.05
+            PARTIAL: 0.77
+          confidence: 0.66
+        /assertion/causal_link_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.48
+            MISMATCH: 0.04
+            PARTIAL: 0.48
+          confidence: 0.22
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.27
+            PARTIAL: 0.37
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 6860
+        output_tokens: 272
+      elapsed_seconds: 0.2138
+      request_sha256: 05474bc65caf7941de825b8753ef8e310c3be9213d117b1ea369d0064df7eb90
+      request_sha256s:
+      - 05474bc65caf7941de825b8753ef8e310c3be9213d117b1ea369d0064df7eb90

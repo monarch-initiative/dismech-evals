@@ -7477,6 +7477,53 @@ inputs:
     - assertion_path: /clinical_trials/3
       evidence_path: /clinical_trials/3/evidence/0
       reference: clinicaltrials:NCT04551170
+  8b6e495308d5463f8491d3e4648f5d4f0e5c7ef66a1c801df47b189e9c2b83fc:
+    claim:
+      about:
+        disease:
+          name: Pseudopseudohypoparathyroidism
+          disease_term:
+            preferred_term: pseudopseudohypoparathyroidism
+            term:
+              id: MONDO:0012912
+              label: pseudopseudohypoparathyroidism
+        context: []
+      assertion_type: DifferentialDiagnosis
+      assertion:
+        name: Isolated brachydactyly type E
+        description: HOXD13 or PTHLH variants can produce shortened metacarpals and metatarsals.
+        distinguishing_features:
+        - Ectopic ossification and intellectual disability are generally absent in the isolated phenotype;
+          molecular testing distinguishes these pathway-related conditions.
+      selected_evidence:
+        snippet: Unfortunately, we could not find distinctive phenotypic features that might have led
+          to an earlier clinical diagnosis, further highlighting the high degree of overlap among skeletal
+          syndromes associated with brachydactyly and AHO-like features
+        supports: SUPPORT
+    origin:
+      assertion_path: /differential_diagnoses/4
+      evidence_path: /differential_diagnoses/4/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:34897794
+      reference_title: Novel Pathogenetic Variants in PTHLH and TRPS1 Genes Causing Syndromic Brachydactyly.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Five patients with an AHO-like skeletal phenotype turned out to carry PTHLH or TRPS1
+        variants, and the authors found no clinical feature that would have separated them beforehand.
+        This is the reason molecular testing, not the skeletal pattern, is recorded as the discriminator.
+        TRPS1 disease is not curated as a separate differential here; it adds sparse hair, a pear-shaped
+        nose, and cone-shaped epiphyses.
+    first_seen_at: '2026-11-09T20:25:13.284715+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:25:13.284715+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:25:13.284715+00:00'
+    occurrences:
+    - assertion_path: /differential_diagnoses/4
+      evidence_path: /differential_diagnoses/4/evidence/1
+      reference: PMID:34897794
 assessments:
   42e7119ebf4f38b429923a5d6640b25bcc0c9f4268c9eabcaeaf76677847a5cc:
     input_sha256: 49bf9c8dc70752ae08d4eedfc2def4dd5a1faea9650b8f4618c918d923a1b005
@@ -17280,3 +17327,55 @@ assessments:
       request_sha256: 54e8a9289c9447420adb36f473aea2e4c20077d370230a70d215f599279b8f4f
       request_sha256s:
       - 54e8a9289c9447420adb36f473aea2e4c20077d370230a70d215f599279b8f4f
+  0cc40f5b1ee24ddba767cef395c7520cacd4c748c5666560e13d2c37e1038ed2:
+    input_sha256: 8b6e495308d5463f8491d3e4648f5d4f0e5c7ef66a1c801df47b189e9c2b83fc
+    configuration_sha256: 01e9af62b71cde6c0944f2071d2d886f0670da9f49850aca9b583b7b6367f9b5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:25:13.284715+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.45
+            PARTIAL: 0.46
+          confidence: 0.19
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.39
+            PARTIAL: 0.53
+          confidence: 0.3
+        /assertion/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.49
+            PARTIAL: 0.44
+          confidence: 0.24
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.73
+            PARTIAL: 0.26
+          confidence: 0.6
+        /assertion/distinguishing_features:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.63
+            PARTIAL: 0.35
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 5297
+        output_tokens: 234
+      elapsed_seconds: 0.1826
+      request_sha256: fa65dbf2b1c4148b6312dfa26b158402b5c8a6e62b27aeb2ae49d7706e8357e5
+      request_sha256s:
+      - fa65dbf2b1c4148b6312dfa26b158402b5c8a6e62b27aeb2ae49d7706e8357e5

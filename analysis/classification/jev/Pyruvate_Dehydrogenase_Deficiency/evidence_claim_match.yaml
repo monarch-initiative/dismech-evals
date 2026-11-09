@@ -11803,6 +11803,219 @@ inputs:
     - assertion_path: /has_subtypes/2
       evidence_path: /has_subtypes/2/evidence/0
       reference: ORPHA:79244
+  44dda0311fe47a5a7bbcc02a47fbaf78c0781275d8a570133b05069691892cd7:
+    claim:
+      about:
+        disease:
+          name: Pyruvate Dehydrogenase Deficiency
+          disease_term:
+            preferred_term: pyruvate dehydrogenase deficiency
+            term:
+              id: MONDO:0019169
+              label: pyruvate dehydrogenase deficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Lactate
+        presence: INCREASED
+        context: Blood and CSF lactate are often elevated in PDH deficiency.
+        loinc_term:
+          id: LOINC:32693-4
+          label: Lactate [Moles/volume] in Blood
+        notes: 'Bound to the blood-specimen code: the cited cohort evidence reports a disease-specific
+          blood lactate finding, with no separately quoted CSF-specific value in this entry.'
+        readouts:
+        - target: Lactate and pyruvate accumulation
+          relationship: READOUT_OF
+          direction: POSITIVE
+          endpoint_context: DIAGNOSTIC
+          interpretation: Elevated blood or CSF lactate reports the lactate arm of pyruvate-to-lactate
+            accumulation downstream of impaired PDH flux.
+      selected_evidence:
+        snippet: Patients who died were younger, presented clinically earlier and had higher blood lactate
+          levels and lower residual enzyme activities than subjects who were still alive at the time of
+          reporting.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22896851
+      reference_title: 'The spectrum of pyruvate dehydrogenase complex deficiency: clinical, biochemical
+        and genetic features in 371 patients.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The clinical review supports elevated lactate as a disease-severity and mortality-associated
+        biochemical abnormality.
+    first_seen_at: '2026-11-09T20:21:22.661475+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:21:22.661475+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:21:22.661475+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:22896851
+  08a66c0d0be921b0ac98740436496abba737083845022af44c42935fc1a4cd09:
+    claim:
+      about:
+        disease:
+          name: Pyruvate Dehydrogenase Deficiency
+          disease_term:
+            preferred_term: pyruvate dehydrogenase deficiency
+            term:
+              id: MONDO:0019169
+              label: pyruvate dehydrogenase deficiency
+        context:
+        - path: /biochemical/0
+          value:
+            name: Lactate
+            presence: INCREASED
+            context: Blood and CSF lactate are often elevated in PDH deficiency.
+            loinc_term:
+              id: LOINC:32693-4
+              label: Lactate [Moles/volume] in Blood
+            notes: 'Bound to the blood-specimen code: the cited cohort evidence reports a disease-specific
+              blood lactate finding, with no separately quoted CSF-specific value in this entry.'
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Lactate and pyruvate accumulation
+        relationship: READOUT_OF
+        direction: POSITIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: Elevated blood or CSF lactate reports the lactate arm of pyruvate-to-lactate accumulation
+          downstream of impaired PDH flux.
+      selected_evidence:
+        snippet: Patients who died were younger, presented clinically earlier and had higher blood lactate
+          levels and lower residual enzyme activities than subjects who were still alive at the time of
+          reporting.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/0
+    evidence_metadata:
+      reference: PMID:22896851
+      reference_title: 'The spectrum of pyruvate dehydrogenase complex deficiency: clinical, biochemical
+        and genetic features in 371 patients.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The cohort review supports blood lactate as a measurable biochemical abnormality associated
+        with PDH deficiency severity.
+    first_seen_at: '2026-11-09T20:21:22.662887+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:21:22.662887+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:21:22.662887+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0/readouts/0
+      evidence_path: /biochemical/0/readouts/0/evidence/0
+      reference: PMID:22896851
+  08919bb6a1df9a1eb3102c85dce91c08ff42eca4a136070ac1ed51de1563020b:
+    claim:
+      about:
+        disease:
+          name: Pyruvate Dehydrogenase Deficiency
+          disease_term:
+            preferred_term: pyruvate dehydrogenase deficiency
+            term:
+              id: MONDO:0019169
+              label: pyruvate dehydrogenase deficiency
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Blood Lactate:Pyruvate Ratio
+        presence: Normal or low
+        context: A blood lactate:pyruvate ratio at or below approximately 20 is the classic discriminating
+          finding in PDH deficiency, distinguishing it from respiratory-chain disorders, which typically
+          raise the ratio instead. HPO's only lactate:pyruvate ratio term, HP:0032653 (Elevated lactate:pyruvate
+          ratio), names the opposite direction and is not bound here for that reason.
+        loinc_term:
+          id: LOINC:2550-2
+          label: Lactate/Pyruvate [Molar ratio] in Blood
+      selected_evidence:
+        snippet: lactic acidosis and a blood lactate:pyruvate ratio ≤ 20
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /biochemical/2
+      evidence_path: /biochemical/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:22896851
+      reference_title: 'The spectrum of pyruvate dehydrogenase complex deficiency: clinical, biochemical
+        and genetic features in 371 patients.'
+      evidence_source: HUMAN_CLINICAL
+      quote_role: PRIMARY_RESULT
+      explanation: This 371-patient cohort reports the blood lactate:pyruvate ratio cutoff as part of
+        the dominant PDH-deficiency clinical phenotype.
+    first_seen_at: '2026-11-09T20:21:25.103208+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:21:25.103208+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:21:25.103208+00:00'
+    occurrences:
+    - assertion_path: /biochemical/2
+      evidence_path: /biochemical/2/evidence/0
+      reference: PMID:22896851
+  89f10aaafa52f0fefb63b61491388e27d1737f5cf729561c9367cbf35e19b959:
+    claim:
+      about:
+        disease:
+          name: Pyruvate Dehydrogenase Deficiency
+          disease_term:
+            preferred_term: pyruvate dehydrogenase deficiency
+            term:
+              id: MONDO:0019169
+              label: pyruvate dehydrogenase deficiency
+        context:
+        - path: /biochemical/3
+          value:
+            name: PDH complex enzyme activity
+            presence: DECREASED
+            context: Residual enzyme activity is reduced and correlates with severity in severe presentations.
+          role: ancestor
+      assertion_type: BiomarkerReadout
+      assertion:
+        target: Reduced pyruvate decarboxylation to acetyl-CoA
+        relationship: READOUT_OF
+        direction: NEGATIVE
+        endpoint_context: DIAGNOSTIC
+        interpretation: Lower residual PDH complex activity directly reports the impaired pyruvate-to-acetyl-CoA
+          catalytic step.
+      selected_evidence:
+        snippet: lower residual enzyme activities than subjects who were still alive at the time of reporting.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/3/readouts/0
+      evidence_path: /biochemical/3/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /biochemical/3
+    evidence_metadata:
+      reference: PMID:22896851
+      reference_title: 'The spectrum of pyruvate dehydrogenase complex deficiency: clinical, biochemical
+        and genetic features in 371 patients.'
+      evidence_source: HUMAN_CLINICAL
+      explanation: The clinical review supports reduced residual enzyme activity as a measurable biochemical
+        readout of the PDH catalytic defect.
+    first_seen_at: '2026-11-09T20:21:25.105162+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:21:25.105162+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:21:25.105162+00:00'
+    occurrences:
+    - assertion_path: /biochemical/3/readouts/0
+      evidence_path: /biochemical/3/readouts/0/evidence/0
+      reference: PMID:22896851
 assessments:
   7f8af39138fe4c17ebc1af0c92df382db776c002538e260af3f786248e33b864:
     input_sha256: 3f9c24460149376bf62d6b5f599c317d92d4c325fc32d19e477c30a307872b57
@@ -26414,3 +26627,323 @@ assessments:
       request_sha256: e1d6227cfd206e55ca9456bd75cf03cb7e4d8d9d248ca790450b31726ed796ae
       request_sha256s:
       - e1d6227cfd206e55ca9456bd75cf03cb7e4d8d9d248ca790450b31726ed796ae
+  ca98a18987f1990950e3ce8e8be57b05815e74d25b005266d755a8cabbb41a25:
+    input_sha256: 44dda0311fe47a5a7bbcc02a47fbaf78c0781275d8a570133b05069691892cd7
+    configuration_sha256: 78e682e0c35da5daad3c07b5ca7bf4b1989af273795700325607829fbd368665
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:21:22.661475+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.03
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.03
+            PARTIAL: 0.58
+          confidence: 0.37
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.02
+            PARTIAL: 0.09
+          confidence: 0.83
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.7
+            MISMATCH: 0.01
+            PARTIAL: 0.29
+          confidence: 0.55
+        /assertion/context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.44
+            PARTIAL: 0.28
+          confidence: 0.16
+        /assertion/loinc_term/id:
+          label: MATCH
+          probabilities:
+            MATCH: 0.35
+            MISMATCH: 0.34
+            PARTIAL: 0.31
+          confidence: 0.02
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.06
+            PARTIAL: 0.18
+          confidence: 0.64
+        /assertion/notes:
+          label: MATCH
+          probabilities:
+            MATCH: 0.53
+            MISMATCH: 0.15
+            PARTIAL: 0.32
+          confidence: 0.3
+        /assertion/readouts/0/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.04
+            PARTIAL: 0.62
+          confidence: 0.43
+        /assertion/readouts/0/relationship:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.11
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/readouts/0/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.03
+            PARTIAL: 0.26
+          confidence: 0.56
+        /assertion/readouts/0/endpoint_context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.6
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/readouts/0/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.2
+            PARTIAL: 0.53
+          confidence: 0.3
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13221
+        output_tokens: 621
+      elapsed_seconds: 0.2805
+      request_sha256: 470e5d5cf9207b2dfef817b6049ce2c090e83a3069ba8602a5f8a44581ddabef
+      request_sha256s:
+      - 470e5d5cf9207b2dfef817b6049ce2c090e83a3069ba8602a5f8a44581ddabef
+  94a17086635c3c498bfa1e8d61e05b73a23fae47e3e6f325bfe30c14581ac277:
+    input_sha256: 08a66c0d0be921b0ac98740436496abba737083845022af44c42935fc1a4cd09
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:21:22.662887+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.04
+            PARTIAL: 0.73
+          confidence: 0.6
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.04
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.05
+            PARTIAL: 0.72
+          confidence: 0.58
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.08
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.67
+            MISMATCH: 0.04
+            PARTIAL: 0.29
+          confidence: 0.5
+        /assertion/endpoint_context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.6
+            PARTIAL: 0.37
+          confidence: 0.4
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.17
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.65
+            MISMATCH: 0.04
+            PARTIAL: 0.31
+          confidence: 0.48
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8566
+        output_tokens: 368
+      elapsed_seconds: 0.2529
+      request_sha256: 71db1005daf8ed6a5035f5b111666f574b13d55ffca8096f625ff3f4f4f8f7c5
+      request_sha256s:
+      - 71db1005daf8ed6a5035f5b111666f574b13d55ffca8096f625ff3f4f4f8f7c5
+  717e8d2f3e7b7a8474e202ac0abc7523d38bda7f38c7c559fa776266bfadcf12:
+    input_sha256: 08919bb6a1df9a1eb3102c85dce91c08ff42eca4a136070ac1ed51de1563020b
+    configuration_sha256: 333dda436353979b66b4afa81448c2dffec74908c70b570ea33e67b238c922c5
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:21:25.103208+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.05
+            PARTIAL: 0.51
+          confidence: 0.26
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.01
+            PARTIAL: 0.03
+          confidence: 0.94
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.99
+            MISMATCH: 0.0
+            PARTIAL: 0.01
+          confidence: 0.98
+        /assertion/context:
+          label: MATCH
+          probabilities:
+            MATCH: 0.61
+            MISMATCH: 0.19
+            PARTIAL: 0.2
+          confidence: 0.42
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.39
+            PARTIAL: 0.29
+          confidence: 0.09
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.57
+            MISMATCH: 0.24
+            PARTIAL: 0.19
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7209
+        output_tokens: 317
+      elapsed_seconds: 0.2406
+      request_sha256: bf653620fae81d8c9655593ffb542b28530c4106040ed0556f6d70a8a7e4157c
+      request_sha256s:
+      - bf653620fae81d8c9655593ffb542b28530c4106040ed0556f6d70a8a7e4157c
+  aadb82debc5e803367a14bf85b9191501725e5e9bed95329af5224db2dd56ed7:
+    input_sha256: 89f10aaafa52f0fefb63b61491388e27d1737f5cf729561c9367cbf35e19b959
+    configuration_sha256: 08b98cf1ffcacdf6d074f8c85fa71e16f12bcc30b5a61b9c7068bd90c69e08ee
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:21:25.105162+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.17
+            PARTIAL: 0.69
+          confidence: 0.53
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.07
+            PARTIAL: 0.63
+          confidence: 0.44
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.21
+            PARTIAL: 0.64
+          confidence: 0.46
+        /assertion/relationship:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.13
+            PARTIAL: 0.56
+          confidence: 0.34
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.13
+            PARTIAL: 0.4
+          confidence: 0.2
+        /assertion/endpoint_context:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.56
+            PARTIAL: 0.4
+          confidence: 0.34
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.29
+            PARTIAL: 0.59
+          confidence: 0.38
+        /about/context/0/value:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.07
+            PARTIAL: 0.54
+          confidence: 0.31
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8471
+        output_tokens: 369
+      elapsed_seconds: 0.2604
+      request_sha256: 9aaa066c41ea70c9fecb84aeede9a4bb3e063dca85da31cae67a876969a2112a
+      request_sha256s:
+      - 9aaa066c41ea70c9fecb84aeede9a4bb3e063dca85da31cae67a876969a2112a

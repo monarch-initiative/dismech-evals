@@ -3228,6 +3228,60 @@ inputs:
     - assertion_path: /treatments/4
       evidence_path: /treatments/4/evidence/0
       reference: PMID:11687797
+  fb655ed71a9d7a7cef96b081448ecab8eea01d3002ded198a7dde9278fccacb6:
+    claim:
+      about:
+        disease:
+          name: Familial Cold Autoinflammatory Syndrome
+          disease_term:
+            preferred_term: familial cold autoinflammatory syndrome
+            term:
+              id: MONDO:0018768
+              label: familial cold autoinflammatory syndrome
+        context: []
+      assertion_type: Treatment
+      assertion:
+        name: Rilonacept
+        description: 'IL-1 trap (soluble decoy receptor) administered weekly; reduces flares in FCAS/MWS
+          with sustained response.
+
+          '
+        therapeutic_modality: OTHER
+        treatment_term:
+          preferred_term: Pharmacotherapy
+          term:
+            id: NCIT:C15986
+            label: Pharmacotherapy
+          therapeutic_agent:
+          - preferred_term: rilonacept
+            term:
+              id: NCIT:C84137
+              label: Rilonacept
+      selected_evidence:
+        snippet: IL-1 blockade with anakinra, canakinumab, and rilonacept is standard of care in CAPS
+          with a well-established safety profile.
+        supports: SUPPORT
+    origin:
+      assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:32983099
+      reference_title: Human Autoinflammatory Diseases Mediated by NLRP3-, Pyrin-, NLRP1-, and NLRC4-Inflammasome
+        Dysregulation Updates on Diagnosis, Treatment, and the Respective Roles of IL-1 and IL-18.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Establishes rilonacept (IL-1 trap) as a standard-of-care IL-1 blockade agent for CAPS.
+    first_seen_at: '2026-11-09T20:32:24.682396+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:32:24.682396+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:32:24.682396+00:00'
+    occurrences:
+    - assertion_path: /treatments/2
+      evidence_path: /treatments/2/evidence/1
+      reference: PMID:32983099
 assessments:
   d5ce20f6f34736aadd049ee32da82dc2c2671d3513b6cb023a860507c1c67502:
     input_sha256: f8dcc5d97b69ed1647b74a0df27d39653b1d3eec725cfaf16e46f78de55f6095
@@ -7187,3 +7241,83 @@ assessments:
       request_sha256: 50f5ebf87b6f2c4c6a4fbc160a84025e119aaa6e7348a938fff7285003dbe85b
       request_sha256s:
       - 50f5ebf87b6f2c4c6a4fbc160a84025e119aaa6e7348a938fff7285003dbe85b
+  df3807e69f2f0c17b725755cf9e15fb2421b0a2ed1a32e15f8d834bf99620330:
+    input_sha256: fb655ed71a9d7a7cef96b081448ecab8eea01d3002ded198a7dde9278fccacb6
+    configuration_sha256: 61cac6a55012e4628e70c85f601334ed90ba3b50b880b45c91527af800d1732b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:32:24.682396+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.12
+            PARTIAL: 0.5
+          confidence: 0.25
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.62
+            MISMATCH: 0.12
+            PARTIAL: 0.26
+          confidence: 0.43
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.03
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.29
+            PARTIAL: 0.66
+          confidence: 0.49
+        /assertion/therapeutic_modality:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.53
+            PARTIAL: 0.33
+          confidence: 0.3
+        /assertion/treatment_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.11
+            PARTIAL: 0.23
+          confidence: 0.49
+        /assertion/treatment_term/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.17
+            PARTIAL: 0.31
+          confidence: 0.28
+        /assertion/treatment_term/therapeutic_agent/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.03
+            PARTIAL: 0.14
+          confidence: 0.74
+        /assertion/treatment_term/therapeutic_agent/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.05
+            PARTIAL: 0.15
+          confidence: 0.7
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9688
+        output_tokens: 441
+      elapsed_seconds: 0.2456
+      request_sha256: 0b86fc909fc4858fead475fb7a42c5219c8450bfb5889b13eea219ddea1d47a6
+      request_sha256s:
+      - 0b86fc909fc4858fead475fb7a42c5219c8450bfb5889b13eea219ddea1d47a6

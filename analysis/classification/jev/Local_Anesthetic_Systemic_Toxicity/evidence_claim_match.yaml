@@ -3110,6 +3110,131 @@ inputs:
     - assertion_path: /clinical_burden
       evidence_path: /clinical_burden/evidence/0
       reference: PMID:22705953
+  a23419f548f1a0989affbd8a6ce20fe5217380aa1c3d3e29b6eb1c46cd9fb2b4:
+    claim:
+      about:
+        disease:
+          name: Local Anesthetic Systemic Toxicity
+          disease_term:
+            preferred_term: local anesthetic poisoning
+            term:
+              id: MONDO:0100335
+              label: local anesthetic poisoning
+        context: []
+      assertion_type: Biochemical
+      assertion:
+        name: Plasma bupivacaine concentration
+        presence: INCREASED
+        loinc_term:
+          id: LOINC:3412-4
+          label: Bupivacaine [Mass/volume] in Serum or Plasma
+        notes: 'LOINC:3412-4 is the method-less, Serum-or-Plasma identity code. Bound to bupivacaine specifically
+          rather than to the local-anesthetic class or to the other named drugs: the root pathophysiology
+          node (Systemic Local Anesthetic Exposure) structurally names bupivacaine as its `chemical_entities`
+          trigger, and this entry''s cardiotoxicity mechanism (Cardiac Sodium Channel Blockade, Mitochondrial
+          Carnitine-Acylcarnitine Translocase Inhibition) is detailed for bupivacaine specifically. Lidocaine
+          and ropivacaine are each named only in comparative or mitigating prose (lidocaine as the leading
+          reported cause of death in mortality surveillance; ropivacaine as a lower-potency comparator
+          in an in-vitro mitochondrial assay), not as this entry''s own structural trigger, so their codes
+          (LOINC:3714-3, LOINC:51203-8 respectively) are not bound here. No reference_ranges band is recorded:
+          the entry''s own text states the toxicity is "excessive" and "concentration-dependent" without
+          citing a numeric plasma threshold.'
+      selected_evidence:
+        snippet: The classic description of local anesthetic systemic toxicity (LAST) generally described
+          in textbooks includes a series of progressively worsening neurologic symptoms and signs occurring
+          shortly after the injection of local anesthetic and paralleling progressive increases in blood
+          local anesthetic concentration, culminating in seizures and coma.
+        supports: SUPPORT
+    origin:
+      assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:20301824
+      reference_title: 'Clinical presentation of local anesthetic systemic toxicity: a review of published
+        cases, 1979 to 2009.'
+      evidence_source: HUMAN_CLINICAL
+      quote_role: BACKGROUND
+      explanation: 'A class-level statement: it supports a rising blood local anesthetic concentration
+        as the defining measurable in this toxidrome, without naming any one drug. Bupivacaine is the
+        analyte bound here because the root Systemic Local Anesthetic Exposure pathophysiology node names
+        it specifically in `chemical_entities`, not because this quote does.'
+    first_seen_at: '2026-11-09T20:35:12.186393+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:12.186393+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:12.186393+00:00'
+    occurrences:
+    - assertion_path: /biochemical/0
+      evidence_path: /biochemical/0/evidence/0
+      reference: PMID:20301824
+  946224ed2781d9bfd70462ca8931ea34dcc5434626a4c0735ced460d5d4e6ebb:
+    claim:
+      about:
+        disease:
+          name: Local Anesthetic Systemic Toxicity
+          disease_term:
+            preferred_term: local anesthetic poisoning
+            term:
+              id: MONDO:0100335
+              label: local anesthetic poisoning
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: Cortical GABAergic Interneuron Blockade
+        biological_scale: CELLULAR
+        description: 'Inhibitory tone is lost before excitatory transmission, which is why the first manifestation
+          of a central nervous system overdose is excitation rather than sedation. The route is not purely
+          sodium channel blockade of interneurons: cited experimental work attributes it to suppressed
+          presynaptic GABA release and reduced GABA-A receptor currents as well. The sodium channel binding
+          on this node is the shared class action, not the whole account.'
+        cell_types:
+        - preferred_term: cortical GABAergic interneuron
+          term:
+            id: CL:0000617
+            label: GABAergic neuron
+        molecular_functions:
+        - preferred_term: voltage-gated sodium channel activity
+          term:
+            id: GO:0005248
+            label: voltage-gated sodium channel activity
+          modifier: DECREASED
+        locations:
+        - preferred_term: brain
+          term:
+            id: UBERON:0000955
+            label: brain
+      selected_evidence:
+        snippet: Experimental studies show that local anesthetics can suppress presynaptic γ-aminobutyric
+          acid (GABA) release, reduce γ-aminobutyric acid type A (GABA-A) receptor-mediated currents in
+          a subunit-dependent manner, and, particularly with lidocaine, shift the GABA-induced reversal
+          potential in a depolarizing direction.
+        supports: SUPPORT
+    origin:
+      assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:42589553
+      reference_title: 'Molecular Mechanisms of Local Anesthetic Toxicity: From Ion Channel Dysregulation
+        to Mitochondrial Dysfunction and Tissue-Specific Injury.'
+      evidence_source: OTHER
+      quote_role: REVIEW_SYNTHESIS
+      explanation: The mechanisms behind the loss of inhibitory tone this node names, and the reason its
+        description does not attribute the effect to sodium channel blockade alone.
+    first_seen_at: '2026-11-09T20:35:11.598785+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:35:11.598785+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:35:11.598785+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/1
+      evidence_path: /pathophysiology/1/evidence/0
+      reference: PMID:42589553
 assessments:
   2715cde60163e7ed6b6f0de05e482439fe415839f934c0f44fc2ab21cabf5fb2:
     input_sha256: 5327de365e1b58a7ed195ade8ad5009957d847eb57f4d4b9d65cb3585098cd90
@@ -7034,3 +7159,170 @@ assessments:
       request_sha256: 52f828c19919518729f2591c703f80981f4475cab690928f7fbfcc6a2b3aace2
       request_sha256s:
       - 52f828c19919518729f2591c703f80981f4475cab690928f7fbfcc6a2b3aace2
+  18355a3775208f58e0c7a94963eb1bd0d0ab113bc965a4fef1c569ecc8f887c2:
+    input_sha256: a23419f548f1a0989affbd8a6ce20fe5217380aa1c3d3e29b6eb1c46cd9fb2b4
+    configuration_sha256: 43baa55368f2e60e76c4765452ab9cd98d75640841c7677fbebde8be53d3cff8
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:12.186393+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.08
+            PARTIAL: 0.7
+          confidence: 0.55
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 1.0
+            MISMATCH: 0.0
+            PARTIAL: 0.0
+          confidence: 1.0
+        /assertion/name:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.15
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/presence:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.02
+            PARTIAL: 0.26
+          confidence: 0.58
+        /assertion/loinc_term/id:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.52
+            PARTIAL: 0.37
+          confidence: 0.28
+        /assertion/loinc_term/label:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.27
+            PARTIAL: 0.32
+          confidence: 0.11
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.37
+            PARTIAL: 0.49
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7408
+        output_tokens: 320
+      elapsed_seconds: 0.1875
+      request_sha256: da3306b894efd0988f2a35096cdcdafe03864ced34841b35624ebceb5cabd0de
+      request_sha256s:
+      - da3306b894efd0988f2a35096cdcdafe03864ced34841b35624ebceb5cabd0de
+  170c72fb55e43801854d442111858bce312c762bc556dd5d242c1595793a5259:
+    input_sha256: 946224ed2781d9bfd70462ca8931ea34dcc5434626a4c0735ced460d5d4e6ebb
+    configuration_sha256: f92d6c54e47a9730921f5ef097e76068db3ec6b409bf37508017f40e19f7411b
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:35:11.598785+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.02
+            PARTIAL: 0.6
+          confidence: 0.4
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.01
+            PARTIAL: 0.06
+          confidence: 0.89
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.64
+            MISMATCH: 0.06
+            PARTIAL: 0.3
+          confidence: 0.46
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.05
+            PARTIAL: 0.08
+          confidence: 0.8
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.04
+            PARTIAL: 0.57
+          confidence: 0.35
+        /assertion/cell_types/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.08
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/cell_types/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.1
+            PARTIAL: 0.44
+          confidence: 0.19
+        /assertion/molecular_functions/0/preferred_term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.44
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/molecular_functions/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.4
+            PARTIAL: 0.45
+          confidence: 0.18
+        /assertion/molecular_functions/0/modifier:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.42
+            PARTIAL: 0.48
+          confidence: 0.22
+        /assertion/locations/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.08
+            PARTIAL: 0.41
+          confidence: 0.26
+        /assertion/locations/0/term:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.25
+      model: jev-1.13.0
+      usage:
+        input_tokens: 12892
+        output_tokens: 582
+      elapsed_seconds: 0.2507
+      request_sha256: 06a48e9f050ceadbe676a55f0a631ef363771ab3ab7b9f9785c989e23b09f410
+      request_sha256s:
+      - 06a48e9f050ceadbe676a55f0a631ef363771ab3ab7b9f9785c989e23b09f410

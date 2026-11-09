@@ -4067,6 +4067,56 @@ inputs:
     - assertion_path: /pathophysiology/2
       evidence_path: /pathophysiology/2/evidence/1
       reference: PMID:7513736
+  e46013cd040a557ab13cefdbe5a08946cfe2bcd4d3b1503ef05dc7df334a72ce:
+    claim:
+      about:
+        disease:
+          name: Epidermolytic Hyperkeratosis 2
+          disease_term:
+            preferred_term: epidermolytic hyperkeratosis 2
+            term:
+              id: MONDO:0958184
+              label: epidermolytic hyperkeratosis 2
+        context: []
+      assertion_type: HistopathologyFinding
+      assertion:
+        name: Keratin Filament Network Collapse and Aggregation
+        finding_term:
+          preferred_term: perinuclear tonofilament clumping on electron microscopy
+        description: Electron microscopy shows abnormal keratin filament networks and coarse tonofilament
+          clumps with a perinuclear distribution in suprabasal keratinocytes.
+        diagnostic: true
+        notes: Left unbound. HP:0034067 Tonofilament clumping is the matching concept but lies outside
+          the HistopathologyFindingTerm enum (it is not under HP:0025461 Abnormal cell morphology). The
+          nearest NCIT ultrastructural term found by OLS search for "intermediate filament aggregate",
+          NCIT:C45956 Concentric Aggregates of Intermediate Filaments Present, names a concentric arrangement
+          that the sources do not describe.
+      selected_evidence:
+        snippet: Histologic examination showed the typical pathology of epidermolytic hyperkeratosis,
+          and ultrastructural analysis revealed abnormal keratin filament networks and tonofilament clumping
+          with a perinuclear distribution.
+        supports: SUPPORT
+    origin:
+      assertion_path: /histopathology/1
+      evidence_path: /histopathology/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:9036939
+      reference_title: A novel dinucleotide mutation in keratin 10 in the annular epidermolytic ichthyosis
+        variant of bullous congenital ichthyosiform erythroderma.
+      evidence_source: HUMAN_CLINICAL
+      explanation: Ultrastructure of skin from a KRT10 family shows perinuclear tonofilament clumping.
+    first_seen_at: '2026-11-09T20:02:34.200469+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:02:34.200469+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:02:34.200469+00:00'
+    occurrences:
+    - assertion_path: /histopathology/1
+      evidence_path: /histopathology/1/evidence/0
+      reference: PMID:9036939
 assessments:
   7b190ced3d6fe51b19cce3c83de630ced3af4bac4674881d2a238785e0b61bd5:
     input_sha256: bfa6631512b0c9e81427d417d7fd0f581e52cae76708a33220ef725ad485ddc6
@@ -10137,3 +10187,69 @@ assessments:
       request_sha256: f15f4c984c709820b11c0f5305ab6d620c0f485a76c4a1ce2b456fcdb4e1d65b
       request_sha256s:
       - f15f4c984c709820b11c0f5305ab6d620c0f485a76c4a1ce2b456fcdb4e1d65b
+  7c7562b5f626ae4b984fb163b948df5f7efb115dcfcf190d5994c61b9baa0e32:
+    input_sha256: e46013cd040a557ab13cefdbe5a08946cfe2bcd4d3b1503ef05dc7df334a72ce
+    configuration_sha256: 3627c6fd0dbf1a2adae228a19f0037bc858fe3f7a80bda32cbc8f6316c91e18c
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:02:34.200469+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.79
+            MISMATCH: 0.03
+            PARTIAL: 0.18
+          confidence: 0.68
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.04
+            PARTIAL: 0.24
+          confidence: 0.58
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.03
+            PARTIAL: 0.16
+          confidence: 0.72
+        /assertion/finding_term/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.0
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.0
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/diagnostic:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.03
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/notes:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.39
+            PARTIAL: 0.43
+          confidence: 0.14
+      model: jev-1.13.0
+      usage:
+        input_tokens: 7323
+        output_tokens: 316
+      elapsed_seconds: 0.2024
+      request_sha256: 4cb06fd110d45eda93e1dbfde03cd53d68b28e49c649d6e0586f2b2652ffdc15
+      request_sha256s:
+      - 4cb06fd110d45eda93e1dbfde03cd53d68b28e49c649d6e0586f2b2652ffdc15

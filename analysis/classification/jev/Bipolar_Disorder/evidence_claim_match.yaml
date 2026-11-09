@@ -6372,6 +6372,1966 @@ inputs:
     - assertion_path: /discussions/4
       evidence_path: /discussions/4/evidence/0
       reference: PMID:22363263
+  32c147ebf74e2823134f2961435e3547af97e1d076d4d356158bd685090eda03:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context: []
+      assertion_type: Pathophysiology
+      assertion:
+        name: D2/3 Receptor Blockade (Antipsychotic Target)
+        description: 'The atypical antipsychotics used in acute mania and for maintenance occupy striatal
+          D2 and D3 receptors. Recorded as its own node because this entry had no mechanism node for the
+          receptor those drugs act on, so the treatment reached no part of the pathograph. The node covers
+          the D2 half of their pharmacology only; the 5-HT2A, histaminergic and other actions that distinguish
+          the atypicals are not modelled here. The node carries no causal edge on purpose: its relation
+          to the mechanisms above is inhibitory, and a downstream edge would assert that receptor blockade
+          causes them. The treatments that act here name it in their target_mechanisms instead.'
+        role: therapeutic_vulnerability
+        biological_scale: MOLECULAR
+        conforms_to: d2_receptor_antagonism#D2/3 Receptor Antagonist Occupancy
+        molecular_functions:
+        - preferred_term: dopamine neurotransmitter receptor activity, coupled via Gi/Go
+          term:
+            id: GO:0001591
+            label: dopamine neurotransmitter receptor activity, coupled via Gi/Go
+          modifier: DECREASED
+        genes:
+        - preferred_term: DRD2
+          term:
+            id: hgnc:3023
+            label: DRD2
+      selected_evidence:
+        snippet: These studies show that all currently licensed antipsychotic drugs block striatal D2/3
+          receptors in vivo- a site downstream of the likely principal dopaminergic pathophysiology in
+          schizophrenia
+        supports: SUPPORT
+        directness: DIRECT
+    origin:
+      assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+    evidence_metadata:
+      reference: PMID:19689327
+      reference_title: 'Mechanisms underlying psychosis and antipsychotic treatment response in schizophrenia:
+        insights from PET and SPECT imaging.'
+      quote_role: REVIEW_SYNTHESIS
+      evidence_source: OTHER
+      explanation: Establishes the receptor action shared by every drug in the class this entry prescribes.
+    first_seen_at: '2026-11-09T20:10:54.909500+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:54.909500+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:54.909500+00:00'
+    occurrences:
+    - assertion_path: /pathophysiology/9
+      evidence_path: /pathophysiology/9/evidence/0
+      reference: PMID:19689327
+  53348931d8f86e203e3534910ae47a42dbd64cdd928d8b6e17827bd2b3035909:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Neuroplasticity Alterations
+        relationship: PERTURBS
+        fidelity: UNKNOWN
+        model_scale: CELLULAR
+        description: Lithium at concentrations near the therapeutic serum range increases proliferation
+          of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+          state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+          disorder, and BDNF is among the genes associated with bipolar disorder when expression is modeled
+          under lithium. The link is to this node because the entry has no node for neurogenesis or progenitor
+          proliferation, and this node is where the entry records that lithium enhances neuroplasticity.
+        limitations: The model does not measure BDNF protein or synaptic plasticity, which are what this
+          node describes. It measures progenitor proliferation and gene regulation after two days of lithium
+          in cells from unaffected fetal donors. The authors state that lithium-induced proliferation
+          in culture may not model the clinical lithium response. The enrichment results are statistical
+          overlaps with human genetic studies. They show that the model is relevant to bipolar disorder;
+          they are not evidence for a phenotype in patients.
+        divergences:
+        - divergence_type: PROXY_QUANTITY
+          materiality: INVALIDATING
+          description: The model's quantities are the fraction of progenitors in S-phase, chromatin accessibility
+            and transcript levels. The node's quantities are BDNF level and synaptic plasticity in mood
+            circuits. Whether progenitor proliferation tracks either one in patients has not been tested.
+        - divergence_type: POPULATION_MISMATCH
+          materiality: QUALIFYING
+          description: The donors are fetal and described as neurotypical. None has bipolar disorder.
+            The result describes lithium acting on typical fetal cortical progenitors, and adult hippocampal
+            progenitors in patients may respond differently.
+        - divergence_type: BOUNDARY_OMISSION
+          materiality: QUALIFYING
+          description: The culture holds one cell type. Neurons, synapses, glia and circuits are absent,
+            so the synaptic part of this node is outside the model.
+        - divergence_type: TEMPORAL_SCOPE
+          materiality: QUALIFYING
+          description: Exposure lasts 48 hours. Lithium is given to patients as maintenance treatment
+            over months to years, and its benefit builds with sustained use.
+        readouts:
+        - name: Fraction of progenitors in S-phase (EdU incorporation)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          biological_processes:
+          - preferred_term: Neural Progenitor Proliferation
+            term:
+              id: GO:0061351
+              label: neural precursor cell proliferation
+          interpretation: Proliferation rose with concentration at 0.75 and 1.5 mM, which approximate
+            the therapeutic serum range, in every donor line. At 3 mM it fell in some lines. The 2026
+            paper restates this result and attributes it to the 2023 study.
+        - name: Chromatin accessibility (ATAC-seq)
+          target: Neuroplasticity Alterations
+          direction: ALTERED
+          interpretation: Lithium at 1.5 mM changed accessibility at 18% of measured regions, and 54%
+            of the changed regions opened.
+        - name: Expression of cell-cycle and DNA-replication genes (RNA-seq)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          interpretation: The expression change agrees with the proliferation assay.
+      selected_evidence:
+        snippet: Li DARs contributed significantly to bipolar disorder risk heritability.
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Regions whose accessibility lithium changes carry a significant share of the common-variant
+        heritability of bipolar disorder. This is a statistical enrichment that supports the model's relevance
+        to the disorder.
+    first_seen_at: '2026-11-09T20:10:54.950824+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:54.950824+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:54.950824+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/0
+      reference: PMID:41935183
+  c53398555a6d2c35de629c0a9629cd65d2f471dc23c6d955409e4909fb42604e:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Neuroplasticity Alterations
+        relationship: PERTURBS
+        fidelity: UNKNOWN
+        model_scale: CELLULAR
+        description: Lithium at concentrations near the therapeutic serum range increases proliferation
+          of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+          state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+          disorder, and BDNF is among the genes associated with bipolar disorder when expression is modeled
+          under lithium. The link is to this node because the entry has no node for neurogenesis or progenitor
+          proliferation, and this node is where the entry records that lithium enhances neuroplasticity.
+        limitations: The model does not measure BDNF protein or synaptic plasticity, which are what this
+          node describes. It measures progenitor proliferation and gene regulation after two days of lithium
+          in cells from unaffected fetal donors. The authors state that lithium-induced proliferation
+          in culture may not model the clinical lithium response. The enrichment results are statistical
+          overlaps with human genetic studies. They show that the model is relevant to bipolar disorder;
+          they are not evidence for a phenotype in patients.
+        divergences:
+        - divergence_type: PROXY_QUANTITY
+          materiality: INVALIDATING
+          description: The model's quantities are the fraction of progenitors in S-phase, chromatin accessibility
+            and transcript levels. The node's quantities are BDNF level and synaptic plasticity in mood
+            circuits. Whether progenitor proliferation tracks either one in patients has not been tested.
+        - divergence_type: POPULATION_MISMATCH
+          materiality: QUALIFYING
+          description: The donors are fetal and described as neurotypical. None has bipolar disorder.
+            The result describes lithium acting on typical fetal cortical progenitors, and adult hippocampal
+            progenitors in patients may respond differently.
+        - divergence_type: BOUNDARY_OMISSION
+          materiality: QUALIFYING
+          description: The culture holds one cell type. Neurons, synapses, glia and circuits are absent,
+            so the synaptic part of this node is outside the model.
+        - divergence_type: TEMPORAL_SCOPE
+          materiality: QUALIFYING
+          description: Exposure lasts 48 hours. Lithium is given to patients as maintenance treatment
+            over months to years, and its benefit builds with sustained use.
+        readouts:
+        - name: Fraction of progenitors in S-phase (EdU incorporation)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          biological_processes:
+          - preferred_term: Neural Progenitor Proliferation
+            term:
+              id: GO:0061351
+              label: neural precursor cell proliferation
+          interpretation: Proliferation rose with concentration at 0.75 and 1.5 mM, which approximate
+            the therapeutic serum range, in every donor line. At 3 mM it fell in some lines. The 2026
+            paper restates this result and attributes it to the 2023 study.
+        - name: Chromatin accessibility (ATAC-seq)
+          target: Neuroplasticity Alterations
+          direction: ALTERED
+          interpretation: Lithium at 1.5 mM changed accessibility at 18% of measured regions, and 54%
+            of the changed regions opened.
+        - name: Expression of cell-cycle and DNA-replication genes (RNA-seq)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          interpretation: The expression change agrees with the proliferation assay.
+      selected_evidence:
+        snippet: DEGs due to Li exposure were enriched in rare variants associated with bipolar disorder
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Genes whose expression lithium changes overlap genes carrying rare variants associated
+        with bipolar disorder in exome studies.
+    first_seen_at: '2026-11-09T20:10:58.480154+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:58.480154+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:58.480154+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/1
+      reference: PMID:41935183
+  54d94419b9ffe8ea4a4fcfd006d869743c69172f804d8321f116fd8999e7e439:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: Neuroplasticity Alterations
+        relationship: PERTURBS
+        fidelity: UNKNOWN
+        model_scale: CELLULAR
+        description: Lithium at concentrations near the therapeutic serum range increases proliferation
+          of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+          state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+          disorder, and BDNF is among the genes associated with bipolar disorder when expression is modeled
+          under lithium. The link is to this node because the entry has no node for neurogenesis or progenitor
+          proliferation, and this node is where the entry records that lithium enhances neuroplasticity.
+        limitations: The model does not measure BDNF protein or synaptic plasticity, which are what this
+          node describes. It measures progenitor proliferation and gene regulation after two days of lithium
+          in cells from unaffected fetal donors. The authors state that lithium-induced proliferation
+          in culture may not model the clinical lithium response. The enrichment results are statistical
+          overlaps with human genetic studies. They show that the model is relevant to bipolar disorder;
+          they are not evidence for a phenotype in patients.
+        divergences:
+        - divergence_type: PROXY_QUANTITY
+          materiality: INVALIDATING
+          description: The model's quantities are the fraction of progenitors in S-phase, chromatin accessibility
+            and transcript levels. The node's quantities are BDNF level and synaptic plasticity in mood
+            circuits. Whether progenitor proliferation tracks either one in patients has not been tested.
+        - divergence_type: POPULATION_MISMATCH
+          materiality: QUALIFYING
+          description: The donors are fetal and described as neurotypical. None has bipolar disorder.
+            The result describes lithium acting on typical fetal cortical progenitors, and adult hippocampal
+            progenitors in patients may respond differently.
+        - divergence_type: BOUNDARY_OMISSION
+          materiality: QUALIFYING
+          description: The culture holds one cell type. Neurons, synapses, glia and circuits are absent,
+            so the synaptic part of this node is outside the model.
+        - divergence_type: TEMPORAL_SCOPE
+          materiality: QUALIFYING
+          description: Exposure lasts 48 hours. Lithium is given to patients as maintenance treatment
+            over months to years, and its benefit builds with sustained use.
+        readouts:
+        - name: Fraction of progenitors in S-phase (EdU incorporation)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          biological_processes:
+          - preferred_term: Neural Progenitor Proliferation
+            term:
+              id: GO:0061351
+              label: neural precursor cell proliferation
+          interpretation: Proliferation rose with concentration at 0.75 and 1.5 mM, which approximate
+            the therapeutic serum range, in every donor line. At 3 mM it fell in some lines. The 2026
+            paper restates this result and attributes it to the 2023 study.
+        - name: Chromatin accessibility (ATAC-seq)
+          target: Neuroplasticity Alterations
+          direction: ALTERED
+          interpretation: Lithium at 1.5 mM changed accessibility at 18% of measured regions, and 54%
+            of the changed regions opened.
+        - name: Expression of cell-cycle and DNA-replication genes (RNA-seq)
+          target: Neuroplasticity Alterations
+          direction: INCREASED
+          interpretation: The expression change agrees with the proliferation assay.
+      selected_evidence:
+        snippet: We also found 105 genes significantly associated with bipolar disorder GWAS under Li
+          treatment including the previously reported genes such as FADS1, TRANK1, BDNF
+        supports: SUPPORT
+        directness: INDIRECT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/2
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: A transcriptome-wide association analysis with expression models trained in lithium-exposed
+        progenitors. BDNF, the gene this node names, is among the associated genes. The association is
+        with genetically predicted expression; the study did not measure BDNF in patients.
+    first_seen_at: '2026-11-09T20:10:58.482065+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:58.482065+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:58.482065+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/evidence/2
+      reference: PMID:41935183
+  b8ac300935befbdeaf9653882ee7f22912e40290d39ec652d7c763c2210ec653:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ModelDivergence
+      assertion:
+        divergence_type: PROXY_QUANTITY
+        materiality: INVALIDATING
+        description: The model's quantities are the fraction of progenitors in S-phase, chromatin accessibility
+          and transcript levels. The node's quantities are BDNF level and synaptic plasticity in mood
+          circuits. Whether progenitor proliferation tracks either one in patients has not been tested.
+      selected_evidence:
+        snippet: Another potential limitation of our study is that lithium-induced proliferation in cultured
+          NPCs may not accurately model the clinical lithium response.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The authors' own statement that the proliferation readout has not been connected to
+        the clinical effect of lithium.
+    first_seen_at: '2026-11-09T20:10:59.462792+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:59.462792+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:59.462792+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/0/evidence/0
+      reference: PMID:36307327
+  e661bf19e5c946fd8731a012f169b8552b7f34d0f286b7a428f6a78470724a3c:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ModelDivergence
+      assertion:
+        divergence_type: POPULATION_MISMATCH
+        materiality: QUALIFYING
+        description: The donors are fetal and described as neurotypical. None has bipolar disorder. The
+          result describes lithium acting on typical fetal cortical progenitors, and adult hippocampal
+          progenitors in patients may respond differently.
+      selected_evidence:
+        snippet: Human neural progenitor cell (hNPC) lines were derived from neurotypical fetal dorsal
+          telencephalon tissue (14–21 gestational weeks) as previously described
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: States the donor tissue and that the donors are neurotypical.
+    first_seen_at: '2026-11-09T20:10:59.466988+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:10:59.466988+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:10:59.466988+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/1/evidence/0
+      reference: PMID:41935183
+  615986422b6a1c203b24b922459a21dba454647768255d4081c1e46944ccfa06:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ModelDivergence
+      assertion:
+        divergence_type: BOUNDARY_OMISSION
+        materiality: QUALIFYING
+        description: The culture holds one cell type. Neurons, synapses, glia and circuits are absent,
+          so the synaptic part of this node is outside the model.
+      selected_evidence:
+        snippet: The full pharmacodynamic profile of these drugs in the developing and mature brain involves
+          interactions across additional cell types that were not modeled here.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/2
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The authors name the single cell type as a limit of the model.
+    first_seen_at: '2026-11-09T20:11:00.477450+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:00.477450+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:00.477450+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/2
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/2/evidence/0
+      reference: PMID:41935183
+  9c772ee8385eaa0761e9113e9817eb1786441f22e865f432fd5b67e835243374:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ModelDivergence
+      assertion:
+        divergence_type: TEMPORAL_SCOPE
+        materiality: QUALIFYING
+        description: Exposure lasts 48 hours. Lithium is given to patients as maintenance treatment over
+          months to years, and its benefit builds with sustained use.
+      selected_evidence:
+        snippet: our 48-hour exposure captures acute molecular responses but may not reflect chronic effects
+          of long-term clinical administration
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/3
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The authors name the short exposure as a limit of the model.
+    first_seen_at: '2026-11-09T20:11:00.479215+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:00.479215+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:00.479215+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/3
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/3/evidence/0
+      reference: PMID:41935183
+  783e672a96a6e5142c01fea64bbf63305027abd5595b87cfb9a20c65d9b200c8:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ModelDivergence
+      assertion:
+        divergence_type: TEMPORAL_SCOPE
+        materiality: QUALIFYING
+        description: Exposure lasts 48 hours. Lithium is given to patients as maintenance treatment over
+          months to years, and its benefit builds with sustained use.
+      selected_evidence:
+        snippet: the beneficial effects of lithium typically occur through sustained maintenance treatment
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/3
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/3/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The earlier study states the same limit for the proliferation assay.
+    first_seen_at: '2026-11-09T20:11:01.555900+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:01.555900+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:01.555900+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/divergences/3
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/divergences/3/evidence/1
+      reference: PMID:36307327
+  ba741727425d5b533e48cb17dd137e2657383b84f0beb13a2b6b4e9000ac4e16:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Fraction of progenitors in S-phase (EdU incorporation)
+        target: Neuroplasticity Alterations
+        direction: INCREASED
+        biological_processes:
+        - preferred_term: Neural Progenitor Proliferation
+          term:
+            id: GO:0061351
+            label: neural precursor cell proliferation
+        interpretation: Proliferation rose with concentration at 0.75 and 1.5 mM, which approximate the
+          therapeutic serum range, in every donor line. At 3 mM it fell in some lines. The 2026 paper
+          restates this result and attributes it to the 2023 study.
+      selected_evidence:
+        snippet: NPCs from all donor lines increased proliferation in a concentration-dependent manner
+          at 0.75 and 1.5 mM LiCl, while some NPC donor lines decreased proliferation at 3 mM
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The primary measurement of the dose-dependent effect, in 80 donor lines.
+    first_seen_at: '2026-11-09T20:11:01.557087+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:01.557087+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:01.557087+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/0/evidence/0
+      reference: PMID:36307327
+  527166468959108dbf8137adf3280e8b6fc9c6e8810b25d06a23600048a89a78:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Chromatin accessibility (ATAC-seq)
+        target: Neuroplasticity Alterations
+        direction: ALTERED
+        interpretation: Lithium at 1.5 mM changed accessibility at 18% of measured regions, and 54% of
+          the changed regions opened.
+      selected_evidence:
+        snippet: Li DARs tended to open rather than close
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Gives the direction of the chromatin change under lithium.
+    first_seen_at: '2026-11-09T20:11:02.620889+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:02.620889+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:02.620889+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/1/evidence/0
+      reference: PMID:41935183
+  ab1b0c89abffe885b10ff22e6ab80299ae4484ea1872c1e21188155dda1d905f:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/0
+          value:
+            target: Neuroplasticity Alterations
+            relationship: PERTURBS
+            fidelity: UNKNOWN
+            model_scale: CELLULAR
+            description: Lithium at concentrations near the therapeutic serum range increases proliferation
+              of human neural progenitors and shifts their chromatin and gene expression toward a proliferative
+              state. The regions and genes that lithium changes are enriched for genetic risk for bipolar
+              disorder, and BDNF is among the genes associated with bipolar disorder when expression is
+              modeled under lithium. The link is to this node because the entry has no node for neurogenesis
+              or progenitor proliferation, and this node is where the entry records that lithium enhances
+              neuroplasticity.
+            limitations: The model does not measure BDNF protein or synaptic plasticity, which are what
+              this node describes. It measures progenitor proliferation and gene regulation after two
+              days of lithium in cells from unaffected fetal donors. The authors state that lithium-induced
+              proliferation in culture may not model the clinical lithium response. The enrichment results
+              are statistical overlaps with human genetic studies. They show that the model is relevant
+              to bipolar disorder; they are not evidence for a phenotype in patients.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Expression of cell-cycle and DNA-replication genes (RNA-seq)
+        target: Neuroplasticity Alterations
+        direction: INCREASED
+        interpretation: The expression change agrees with the proliferation assay.
+      selected_evidence:
+        snippet: genes associated with cellular proliferation, such as cell cycle and DNA replication
+          pathways, were upregulated by Li and downregulated by VPA
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/2
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/0
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Reports the direction of expression change for proliferation genes under lithium.
+    first_seen_at: '2026-11-09T20:11:02.621963+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:02.621963+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:02.621963+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/0/readouts/2
+      evidence_path: /experimental_models/1/modeled_mechanisms/0/readouts/2/evidence/0
+      reference: PMID:41935183
+  33070c58211faa6670af38b6da0e7eac6794180c224b2554e393a455bfad75ec:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: ModelMechanismLink
+      assertion:
+        target: GSK-3β Signaling Dysregulation
+        relationship: MEASURES
+        fidelity: UNKNOWN
+        model_scale: MOLECULAR
+        description: The 2023 study tested whether lithium's effect on progenitor proliferation runs through
+          canonical Wnt signaling, the route this node describes downstream of GSK-3β inhibition. At concentrations
+          that increased proliferation it found no Wnt activation. This is a negative result for the Wnt
+          route in these cells.
+        limitations: GSK-3β kinase activity was not assayed. The study read out Wnt signaling with a β-catenin
+          reporter and Wnt target-gene expression. Lithium did activate NFAT target genes, and the authors
+          note that GSK-3β also regulates NFAT, so the result does not rule out GSK-3β inhibition acting
+          through other substrates. The 2026 chromatin and expression study did not measure GSK-3β or
+          Wnt activity.
+        divergences:
+        - divergence_type: PROXY_QUANTITY
+          materiality: QUALIFYING
+          description: The model's quantities are a β-catenin-driven luciferase reporter and Wnt target-gene
+            transcripts. The node's quantity is GSK-3β kinase activity. An unchanged reporter shows that
+            the Wnt route was not engaged. It does not show that the kinase was not inhibited.
+        readouts:
+        - name: Canonical Wnt signaling activity (β-catenin reporter and Wnt target-gene expression)
+          target: GSK-3β Signaling Dysregulation
+          direction: UNCHANGED
+          biological_processes:
+          - preferred_term: Canonical Wnt Signaling
+            term:
+              id: GO:0060070
+              label: canonical Wnt signaling pathway
+          interpretation: A measured negative result at the lithium concentrations that increased proliferation.
+      selected_evidence:
+        snippet: We found that lithium activated the expression of target genes of the NFAT signaling
+          pathway at proliferation-inducing concentrations in NPCs
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: BACKGROUND
+      explanation: Shows that the cells responded to lithium through a signaling pathway the authors place
+        downstream of GSK-3β, so the unchanged Wnt readout is a result about the Wnt route and not a failed
+        assay. Graded BACKGROUND because the sentence carries the citation (47) and sits in the paper's
+        framing paragraph, so it restates the group's earlier NFAT result rather than a measurement made
+        in this study.
+    first_seen_at: '2026-11-09T20:11:03.692583+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:03.692583+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:03.692583+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/1
+      evidence_path: /experimental_models/1/modeled_mechanisms/1/evidence/0
+      reference: PMID:36307327
+  34c36cbaf3d6234b79a32d79fb79caa2641ec83956f0d685ac5192836c9f9c4e:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+        - path: /experimental_models/1/modeled_mechanisms/1
+          value:
+            target: GSK-3β Signaling Dysregulation
+            relationship: MEASURES
+            fidelity: UNKNOWN
+            model_scale: MOLECULAR
+            description: The 2023 study tested whether lithium's effect on progenitor proliferation runs
+              through canonical Wnt signaling, the route this node describes downstream of GSK-3β inhibition.
+              At concentrations that increased proliferation it found no Wnt activation. This is a negative
+              result for the Wnt route in these cells.
+            limitations: GSK-3β kinase activity was not assayed. The study read out Wnt signaling with
+              a β-catenin reporter and Wnt target-gene expression. Lithium did activate NFAT target genes,
+              and the authors note that GSK-3β also regulates NFAT, so the result does not rule out GSK-3β
+              inhibition acting through other substrates. The 2026 chromatin and expression study did
+              not measure GSK-3β or Wnt activity.
+          role: ancestor
+      assertion_type: ExperimentalReadout
+      assertion:
+        name: Canonical Wnt signaling activity (β-catenin reporter and Wnt target-gene expression)
+        target: GSK-3β Signaling Dysregulation
+        direction: UNCHANGED
+        biological_processes:
+        - preferred_term: Canonical Wnt Signaling
+          term:
+            id: GO:0060070
+            label: canonical Wnt signaling pathway
+        interpretation: A measured negative result at the lithium concentrations that increased proliferation.
+      selected_evidence:
+        snippet: we did not observe activated Wnt signaling at proliferation-inducing concentrations using
+          either a beta catenin–activated luciferase reporter assay or a qPCR measuring endogenous Wnt
+          target gene expression
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/modeled_mechanisms/1/readouts/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/1/readouts/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+      - /experimental_models/1/modeled_mechanisms/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Reports both assays and the null result.
+    first_seen_at: '2026-11-09T20:11:03.693935+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:03.693935+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:03.693935+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/modeled_mechanisms/1/readouts/0
+      evidence_path: /experimental_models/1/modeled_mechanisms/1/readouts/0/evidence/0
+      reference: PMID:36307327
+  8d9bf8f1d07798df6dd1f20b515167198b6552ef8b9e8de8ade18d5e135382cd:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: A common-variant locus on chromosome 3p21.1 changes how much lithium increases progenitor
+          proliferation. The same locus is associated with risk for bipolar disorder. The allele that
+          increases lithium-induced proliferation is the risk allele for bipolar disorder.
+      selected_evidence:
+        snippet: The lithium-induced proliferation-increasing allele is a risk allele for BD and schizophrenia
+          and an intelligence-decreasing allele.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/findings/0
+      evidence_path: /experimental_models/1/findings/0/evidence/1
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Gives the direction of the allele's effect on each trait.
+    first_seen_at: '2026-11-09T20:11:04.804334+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:04.804334+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:04.804334+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/findings/0
+      evidence_path: /experimental_models/1/findings/0/evidence/1
+      reference: PMID:36307327
+  5ebfcb75d4df6354e9ae136568f7235a15c631ef322a6d289a41bf3569f52e71:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: A common-variant locus on chromosome 3p21.1 changes how much lithium increases progenitor
+          proliferation. The same locus is associated with risk for bipolar disorder. The allele that
+          increases lithium-induced proliferation is the risk allele for bipolar disorder.
+      selected_evidence:
+        snippet: We identified a locus on chr3p21.1 associated with lithium-induced proliferation. This
+          locus is also associated with bipolar disorder risk, schizophrenia risk, and interindividual
+          differences in intelligence.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/findings/0
+      evidence_path: /experimental_models/1/findings/0/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Reports the locus and its overlap with bipolar disorder risk.
+    first_seen_at: '2026-11-09T20:11:04.802287+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:04.802287+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:04.802287+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/findings/0
+      evidence_path: /experimental_models/1/findings/0/evidence/0
+      reference: PMID:36307327
+  28315ab8ce77c1b7abd4cdf975aaa0bde68a91d73ec8f9b3286bede4a490c0a9:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: The 3p21.1 locus was not associated with clinical lithium response in a genome-wide
+          study of patients with bipolar disorder.
+      selected_evidence:
+        snippet: The lithium-induced proliferation locus was not associated with lithium response in individuals
+          with BD
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/findings/2
+      evidence_path: /experimental_models/1/findings/2/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The authors' comparison of their cellular locus with a published patient study of lithium
+        response. It limits how far the cellular result can be read as a predictor of treatment response.
+    first_seen_at: '2026-11-09T20:11:05.929115+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:05.929115+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:05.929115+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/findings/2
+      evidence_path: /experimental_models/1/findings/2/evidence/0
+      reference: PMID:36307327
+  f732168b08fc1197939a696275329b586aa75590933bd7b2d0e686222eb85f06:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: Under lithium, 15 variants changed chromatin accessibility and 15 changed gene expression
+          in a way that differed significantly from vehicle (genotype-by-treatment interactions).
+      selected_evidence:
+        snippet: We detected 779 and 15 r-caQTLs and 214 and 15 r-eQTLs in VPA and Li, respectively
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/findings/3
+      evidence_path: /experimental_models/1/findings/3/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:41935183
+      reference_title: Assessing molecular gene by treatment interactions using a population of neural
+        progenitors exposed to valproic acid and lithium.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: Counts of response QTLs for valproic acid and for lithium.
+    first_seen_at: '2026-11-09T20:11:07.097955+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:07.097955+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:07.097955+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/findings/3
+      evidence_path: /experimental_models/1/findings/3/evidence/0
+      reference: PMID:41935183
+  543550701266da67797ca1287cb6cd4d462d1cdb412d4a8a4f64cd56ef394c46:
+    claim:
+      about:
+        disease:
+          name: Bipolar Disorder
+          disease_term:
+            preferred_term: bipolar disorder
+            term:
+              id: MONDO:0004985
+              label: bipolar disorder
+        context:
+        - path: /experimental_models/1
+          value:
+            name: Lithium-exposed primary human neural progenitor cells from a genotyped donor panel
+            experimental_model_type: PRIMARY_CELL_CULTURE
+            description: Primary human neural progenitor cells cultured from fetal dorsal telencephalon
+              (14 to 21 gestational weeks) of about 80 genotyped donors and exposed to lithium chloride
+              for 48 hours. The donors have no psychiatric diagnosis, so this is a model of how lithium
+              acts on typical human progenitors. It is not a model of bipolar disorder, and it says nothing
+              about how cells from patients respond. Two studies by one group use it. The first measured
+              proliferation by EdU incorporation at 0.75, 1.5 and 3 mM in 80 donors and ran a genome-wide
+              association study on the response (PMID:36307327). The second profiled chromatin accessibility
+              (ATAC-seq) and gene expression (RNA-seq) at 1.5 mM in 83 donors (PMID:41935183). Both studies
+              also report common genetic variants that change the cellular response to lithium. The schema
+              has no structured field for a genotype-by-treatment effect, so those results are recorded
+              under `findings`.
+            organism:
+              preferred_term: human
+              term:
+                id: NCBITaxon:9606
+                label: Homo sapiens
+            tissue_term:
+              preferred_term: fetal dorsal telencephalon
+              term:
+                id: UBERON:0000203
+                label: pallium
+            cell_types:
+            - preferred_term: neural progenitor cell
+              term:
+                id: CL:0011020
+                label: neural progenitor cell
+            conditions:
+            - Lithium chloride at 0.75, 1.5 or 3 mM for 48 hours, compared with a water vehicle (proliferation
+              assay)
+            - Lithium chloride at 1.5 mM for 48 hours, compared with vehicle (ATAC-seq and RNA-seq)
+            cell_source: Primary progenitor lines from fetal brain tissue of 80 to 83 genotyped, multi-ancestry
+              donors described as neurotypical. Not patient-derived.
+            culture_system: Two-dimensional adherent culture, kept as proliferating progenitors and not
+              differentiated into neurons.
+            publication: PMID:36307327
+          role: ancestor
+      assertion_type: Finding
+      assertion:
+        statement: GNL3 is the gene at the 3p21.1 locus that responds to lithium. Lowering GNL3 expression
+          reduced lithium-induced proliferation, and raising it increased proliferation without lithium.
+      selected_evidence:
+        snippet: Experimentally increasing the expression of GNL3 led to increased proliferation under
+          baseline conditions, while experimentally decreasing GNL3 expression suppressed lithium-induced
+          proliferation.
+        supports: SUPPORT
+    origin:
+      assertion_path: /experimental_models/1/findings/1
+      evidence_path: /experimental_models/1/findings/1/evidence/0
+      context_paths:
+      - /name
+      - /disease_term
+      - /experimental_models/1
+    evidence_metadata:
+      reference: PMID:36307327
+      reference_title: Cellular Genome-wide Association Study Identifies Common Genetic Variation Influencing
+        Lithium-Induced Neural Progenitor Proliferation.
+      evidence_source: IN_VITRO
+      quote_role: PRIMARY_RESULT
+      explanation: The CRISPR activation and interference experiments on GNL3.
+    first_seen_at: '2026-11-09T20:11:05.928375+00:00'
+    first_seen_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    last_seen_at: '2026-11-09T20:11:05.928375+00:00'
+    active: true
+    active_as_of: '2026-11-09T20:11:05.928375+00:00'
+    occurrences:
+    - assertion_path: /experimental_models/1/findings/1
+      evidence_path: /experimental_models/1/findings/1/evidence/0
+      reference: PMID:36307327
 assessments:
   f649263e65f107cbace5196b944e22094aed160dab29c14b68265123ebe91f22:
     input_sha256: 6ae96ef394a3a6f8ecdda01e1fa5964a901620735f506ebeb071636b9b15656d
@@ -14115,3 +16075,1908 @@ assessments:
       request_sha256: 5ed0c47d7b352523d285b3cebc642ea1f8370cfa0cc1a3216bcb09710ff67a08
       request_sha256s:
       - 5ed0c47d7b352523d285b3cebc642ea1f8370cfa0cc1a3216bcb09710ff67a08
+  9304e56bb3ae89fdd2e0135865531d4515a522250e1c5dcbf7e863d8347fcb6e:
+    input_sha256: 32c147ebf74e2823134f2961435e3547af97e1d076d4d356158bd685090eda03
+    configuration_sha256: 5f53db500c604aab98995d746c0aaf3afce65964f1aa6d36677e5c51e5e06c15
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:54.909500+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.89
+            PARTIAL: 0.09
+          confidence: 0.83
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.96
+            PARTIAL: 0.04
+          confidence: 0.94
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.38
+            PARTIAL: 0.18
+          confidence: 0.16
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.59
+            PARTIAL: 0.26
+          confidence: 0.38
+        /assertion/role:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.52
+            PARTIAL: 0.36
+          confidence: 0.28
+        /assertion/biological_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.81
+            MISMATCH: 0.09
+            PARTIAL: 0.1
+          confidence: 0.72
+        /assertion/conforms_to:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/molecular_functions/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.51
+            PARTIAL: 0.25
+          confidence: 0.26
+        /assertion/molecular_functions/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.39
+            PARTIAL: 0.31
+          confidence: 0.09
+        /assertion/molecular_functions/0/modifier:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.54
+            PARTIAL: 0.17
+          confidence: 0.31
+        /assertion/genes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.35
+            PARTIAL: 0.21
+          confidence: 0.16
+        /assertion/genes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.35
+            PARTIAL: 0.28
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 13056
+        output_tokens: 586
+      elapsed_seconds: 0.2998
+      request_sha256: bdc223ad248bb158273bbba92289a24f35aef35b95593b123e993b7e87b0fece
+      request_sha256s:
+      - bdc223ad248bb158273bbba92289a24f35aef35b95593b123e993b7e87b0fece
+  b268cc02f6627a0ca6475659fa4348a9f0b9b9131df247b1df3f4752b8d05c0b:
+    input_sha256: 53348931d8f86e203e3534910ae47a42dbd64cdd928d8b6e17827bd2b3035909
+    configuration_sha256: 3ae5d9e2e626b635ea4780a33feb20f4c1e2691724062ddd797f398f6ab261a2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:54.950824+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.22
+            PARTIAL: 0.63
+          confidence: 0.44
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.01
+            PARTIAL: 0.07
+          confidence: 0.88
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.68
+            PARTIAL: 0.27
+          confidence: 0.52
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.7
+            PARTIAL: 0.27
+          confidence: 0.55
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.43
+            PARTIAL: 0.46
+          confidence: 0.19
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.41
+            PARTIAL: 0.14
+          confidence: 0.18
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.28
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.79
+            PARTIAL: 0.15
+          confidence: 0.68
+        /assertion/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.64
+            PARTIAL: 0.08
+          confidence: 0.46
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.35
+            PARTIAL: 0.14
+          confidence: 0.26
+        /assertion/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.72
+            PARTIAL: 0.15
+          confidence: 0.58
+        /assertion/divergences/1/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.43
+            MISMATCH: 0.45
+            PARTIAL: 0.12
+          confidence: 0.18
+        /assertion/divergences/1/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.3
+            PARTIAL: 0.37
+          confidence: 0.06
+        /assertion/divergences/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.7
+            PARTIAL: 0.17
+          confidence: 0.55
+        /assertion/divergences/2/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.37
+            MISMATCH: 0.52
+            PARTIAL: 0.11
+          confidence: 0.28
+        /assertion/divergences/2/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.28
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/divergences/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.64
+            PARTIAL: 0.2
+          confidence: 0.46
+        /assertion/divergences/3/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.56
+            PARTIAL: 0.14
+          confidence: 0.34
+        /assertion/divergences/3/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.32
+            PARTIAL: 0.39
+          confidence: 0.09
+        /assertion/divergences/3/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.76
+            PARTIAL: 0.17
+          confidence: 0.64
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.89
+            PARTIAL: 0.07
+          confidence: 0.83
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.66
+            PARTIAL: 0.26
+          confidence: 0.49
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.57
+            PARTIAL: 0.26
+          confidence: 0.35
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.72
+            PARTIAL: 0.14
+          confidence: 0.58
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.16
+            MISMATCH: 0.7
+            PARTIAL: 0.14
+          confidence: 0.55
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.02
+            MISMATCH: 0.84
+            PARTIAL: 0.14
+          confidence: 0.76
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.77
+            PARTIAL: 0.15
+          confidence: 0.66
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.54
+            PARTIAL: 0.31
+          confidence: 0.31
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.45
+            PARTIAL: 0.27
+          confidence: 0.18
+        /assertion/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.8
+            PARTIAL: 0.17
+          confidence: 0.7
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.79
+            PARTIAL: 0.16
+          confidence: 0.68
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.61
+            PARTIAL: 0.26
+          confidence: 0.42
+        /assertion/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.53
+            PARTIAL: 0.34
+          confidence: 0.3
+        /assertion/readouts/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.83
+            PARTIAL: 0.14
+          confidence: 0.74
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.3
+            MISMATCH: 0.37
+            PARTIAL: 0.33
+          confidence: 0.06
+      model: jev-1.13.0
+      usage:
+        input_tokens: 39127
+        output_tokens: 1828
+      elapsed_seconds: 0.5856
+      request_sha256: b7f4f42ea19404b0144f2f2423474cf75852ce70e299ba881e211cd8a1704ce5
+      request_sha256s:
+      - b7f4f42ea19404b0144f2f2423474cf75852ce70e299ba881e211cd8a1704ce5
+  e0d83e30a6759095bdd46accb9de8e04c7cd7ca69ad5b868dddcbd8c40939e0e:
+    input_sha256: c53398555a6d2c35de629c0a9629cd65d2f471dc23c6d955409e4909fb42604e
+    configuration_sha256: 3ae5d9e2e626b635ea4780a33feb20f4c1e2691724062ddd797f398f6ab261a2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:58.480154+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.13
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.03
+            PARTIAL: 0.11
+          confidence: 0.79
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.59
+            PARTIAL: 0.33
+          confidence: 0.38
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.62
+            PARTIAL: 0.34
+          confidence: 0.43
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.26
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.25
+            PARTIAL: 0.17
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.16
+            PARTIAL: 0.6
+          confidence: 0.4
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.69
+            PARTIAL: 0.22
+          confidence: 0.53
+        /assertion/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.28
+            MISMATCH: 0.61
+            PARTIAL: 0.11
+          confidence: 0.42
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.56
+            MISMATCH: 0.26
+            PARTIAL: 0.18
+          confidence: 0.34
+        /assertion/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.64
+            PARTIAL: 0.22
+          confidence: 0.46
+        /assertion/divergences/1/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.43
+            PARTIAL: 0.15
+          confidence: 0.14
+        /assertion/divergences/1/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.25
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/divergences/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.57
+            PARTIAL: 0.26
+          confidence: 0.35
+        /assertion/divergences/2/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.52
+            PARTIAL: 0.14
+          confidence: 0.28
+        /assertion/divergences/2/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.23
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/divergences/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.56
+            PARTIAL: 0.27
+          confidence: 0.34
+        /assertion/divergences/3/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.32
+            MISMATCH: 0.51
+            PARTIAL: 0.17
+          confidence: 0.26
+        /assertion/divergences/3/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.26
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/divergences/3/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.66
+            PARTIAL: 0.24
+          confidence: 0.49
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.78
+            PARTIAL: 0.17
+          confidence: 0.67
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.6
+            PARTIAL: 0.33
+          confidence: 0.4
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.49
+            PARTIAL: 0.31
+          confidence: 0.24
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.61
+            PARTIAL: 0.19
+          confidence: 0.42
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.57
+            PARTIAL: 0.23
+          confidence: 0.35
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.63
+            PARTIAL: 0.24
+          confidence: 0.44
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.52
+            PARTIAL: 0.35
+          confidence: 0.28
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.42
+            PARTIAL: 0.35
+          confidence: 0.13
+        /assertion/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.73
+            PARTIAL: 0.21
+          confidence: 0.6
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.57
+            PARTIAL: 0.3
+          confidence: 0.35
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.57
+            PARTIAL: 0.31
+          confidence: 0.35
+        /assertion/readouts/2/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.34
+            PARTIAL: 0.54
+          confidence: 0.31
+        /assertion/readouts/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.71
+            PARTIAL: 0.22
+          confidence: 0.56
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.35
+            PARTIAL: 0.34
+          confidence: 0.02
+      model: jev-1.13.0
+      usage:
+        input_tokens: 39129
+        output_tokens: 1826
+      elapsed_seconds: 0.493
+      request_sha256: f2b80013cba9f06a0c95d318a0424ede012628afd26ca7aac59694115f77fe66
+      request_sha256s:
+      - f2b80013cba9f06a0c95d318a0424ede012628afd26ca7aac59694115f77fe66
+  4b5446d8f0cc5bca49247f4afbb28cc58cb8386e929e58086badb4e1b0d5f6cf:
+    input_sha256: 54d94419b9ffe8ea4a4fcfd006d869743c69172f804d8321f116fd8999e7e439
+    configuration_sha256: 3ae5d9e2e626b635ea4780a33feb20f4c1e2691724062ddd797f398f6ab261a2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:58.482065+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.14
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.9
+            MISMATCH: 0.02
+            PARTIAL: 0.08
+          confidence: 0.85
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.56
+            PARTIAL: 0.37
+          confidence: 0.34
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.6
+            PARTIAL: 0.35
+          confidence: 0.4
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.26
+            PARTIAL: 0.69
+          confidence: 0.53
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.58
+            MISMATCH: 0.24
+            PARTIAL: 0.18
+          confidence: 0.37
+        /assertion/description:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.22
+            PARTIAL: 0.55
+          confidence: 0.33
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.66
+            PARTIAL: 0.25
+          confidence: 0.49
+        /assertion/divergences/0/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.64
+            PARTIAL: 0.11
+          confidence: 0.46
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.31
+            PARTIAL: 0.24
+          confidence: 0.18
+        /assertion/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.68
+            PARTIAL: 0.19
+          confidence: 0.52
+        /assertion/divergences/1/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.42
+            PARTIAL: 0.14
+          confidence: 0.16
+        /assertion/divergences/1/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.29
+            MISMATCH: 0.27
+            PARTIAL: 0.44
+          confidence: 0.16
+        /assertion/divergences/1/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.59
+            PARTIAL: 0.24
+          confidence: 0.38
+        /assertion/divergences/2/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.48
+            PARTIAL: 0.16
+          confidence: 0.22
+        /assertion/divergences/2/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.26
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/divergences/2/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.55
+            PARTIAL: 0.24
+          confidence: 0.33
+        /assertion/divergences/3/divergence_type:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.51
+            PARTIAL: 0.15
+          confidence: 0.26
+        /assertion/divergences/3/materiality:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.37
+            PARTIAL: 0.38
+          confidence: 0.07
+        /assertion/divergences/3/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.7
+            PARTIAL: 0.21
+          confidence: 0.55
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.73
+            PARTIAL: 0.17
+          confidence: 0.6
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.6
+            PARTIAL: 0.32
+          confidence: 0.4
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.21
+            MISMATCH: 0.45
+            PARTIAL: 0.34
+          confidence: 0.18
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.66
+            PARTIAL: 0.16
+          confidence: 0.49
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.59
+            PARTIAL: 0.21
+          confidence: 0.38
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.78
+            PARTIAL: 0.19
+          confidence: 0.67
+        /assertion/readouts/1/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.63
+            PARTIAL: 0.2
+          confidence: 0.44
+        /assertion/readouts/1/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.53
+            PARTIAL: 0.33
+          confidence: 0.3
+        /assertion/readouts/1/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.42
+            PARTIAL: 0.31
+          confidence: 0.13
+        /assertion/readouts/1/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.73
+            PARTIAL: 0.21
+          confidence: 0.6
+        /assertion/readouts/2/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.54
+            PARTIAL: 0.26
+          confidence: 0.31
+        /assertion/readouts/2/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.58
+            PARTIAL: 0.3
+          confidence: 0.37
+        /assertion/readouts/2/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.26
+            MISMATCH: 0.44
+            PARTIAL: 0.3
+          confidence: 0.16
+        /assertion/readouts/2/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.74
+            PARTIAL: 0.2
+          confidence: 0.61
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.32
+            PARTIAL: 0.32
+          confidence: 0.04
+      model: jev-1.13.0
+      usage:
+        input_tokens: 39150
+        output_tokens: 1822
+      elapsed_seconds: 0.4897
+      request_sha256: 7a19a1689f58c52130e23a06c72b33e66128e9d673db8d0e0c9e4531f3714a7f
+      request_sha256s:
+      - 7a19a1689f58c52130e23a06c72b33e66128e9d673db8d0e0c9e4531f3714a7f
+  7d4d20b7acd585ccee57be95699e35a2508f739cf0b1684670099eea9c3976cf:
+    input_sha256: b8ac300935befbdeaf9653882ee7f22912e40290d39ec652d7c763c2210ec653
+    configuration_sha256: 531f8433d7cf78de3d93fc36193f9a8493bb3d9ff03566196c0dbef80e431833
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:59.462792+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.55
+            MISMATCH: 0.18
+            PARTIAL: 0.27
+          confidence: 0.33
+        /about/disease:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.3
+            PARTIAL: 0.43
+          confidence: 0.14
+        /assertion/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.54
+            MISMATCH: 0.2
+            PARTIAL: 0.26
+          confidence: 0.31
+        /assertion/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.83
+            MISMATCH: 0.04
+            PARTIAL: 0.13
+          confidence: 0.74
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.5
+            MISMATCH: 0.13
+            PARTIAL: 0.37
+          confidence: 0.25
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.38
+            MISMATCH: 0.33
+            PARTIAL: 0.29
+          confidence: 0.07
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.36
+            MISMATCH: 0.29
+            PARTIAL: 0.35
+          confidence: 0.04
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8860
+        output_tokens: 314
+      elapsed_seconds: 0.2986
+      request_sha256: 2d70dbaf1a958a68522f9d3cb6cbbd9184bc3d9977a48cca939c282c46584051
+      request_sha256s:
+      - 2d70dbaf1a958a68522f9d3cb6cbbd9184bc3d9977a48cca939c282c46584051
+  6a1391da3f5a53588bf6ef4f8b7db5188d82376db5d2b079991e93ebca73d011:
+    input_sha256: e661bf19e5c946fd8731a012f169b8552b7f34d0f286b7a428f6a78470724a3c
+    configuration_sha256: 531f8433d7cf78de3d93fc36193f9a8493bb3d9ff03566196c0dbef80e431833
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:10:59.466988+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.51
+            MISMATCH: 0.39
+            PARTIAL: 0.1
+          confidence: 0.26
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.75
+            PARTIAL: 0.19
+          confidence: 0.62
+        /assertion/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.96
+            MISMATCH: 0.02
+            PARTIAL: 0.02
+          confidence: 0.94
+        /assertion/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.86
+            MISMATCH: 0.04
+            PARTIAL: 0.1
+          confidence: 0.79
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.05
+            PARTIAL: 0.08
+          confidence: 0.8
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.46
+            PARTIAL: 0.15
+          confidence: 0.19
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.49
+            PARTIAL: 0.18
+          confidence: 0.24
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8862
+        output_tokens: 322
+      elapsed_seconds: 0.3317
+      request_sha256: 59d554f3e0673880037f43b4ecbb1d4d9f4d16af2b4b2b0fec1c57c6c2bb8540
+      request_sha256s:
+      - 59d554f3e0673880037f43b4ecbb1d4d9f4d16af2b4b2b0fec1c57c6c2bb8540
+  49e912c6b6189180d1a22a0e8a6be211a290a7757ec6119156c0fb217fba5016:
+    input_sha256: 615986422b6a1c203b24b922459a21dba454647768255d4081c1e46944ccfa06
+    configuration_sha256: 531f8433d7cf78de3d93fc36193f9a8493bb3d9ff03566196c0dbef80e431833
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:00.477450+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.19
+            PARTIAL: 0.21
+          confidence: 0.4
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.66
+            PARTIAL: 0.29
+          confidence: 0.49
+        /assertion/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.04
+            PARTIAL: 0.09
+          confidence: 0.8
+        /assertion/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.73
+            MISMATCH: 0.09
+            PARTIAL: 0.18
+          confidence: 0.6
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.68
+            MISMATCH: 0.11
+            PARTIAL: 0.21
+          confidence: 0.52
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.33
+            PARTIAL: 0.28
+          confidence: 0.09
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.25
+            PARTIAL: 0.23
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8844
+        output_tokens: 316
+      elapsed_seconds: 0.3106
+      request_sha256: a8596d1e1ded1bb5e63a052566e49d580cba8a2dff9f26e761cfe92b2d06503f
+      request_sha256s:
+      - a8596d1e1ded1bb5e63a052566e49d580cba8a2dff9f26e761cfe92b2d06503f
+  4fa9a70b4c3bbebc775b10162c1e76a1810ba5cc94fef95ae5dd827d01047461:
+    input_sha256: 9c772ee8385eaa0761e9113e9817eb1786441f22e865f432fd5b67e835243374
+    configuration_sha256: 531f8433d7cf78de3d93fc36193f9a8493bb3d9ff03566196c0dbef80e431833
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:00.479215+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.12
+            PARTIAL: 0.12
+          confidence: 0.64
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.49
+            PARTIAL: 0.34
+          confidence: 0.24
+        /assertion/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.01
+            PARTIAL: 0.02
+          confidence: 0.96
+        /assertion/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.03
+            PARTIAL: 0.06
+          confidence: 0.86
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.04
+            PARTIAL: 0.11
+          confidence: 0.77
+        /about/context/0/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.32
+            PARTIAL: 0.19
+          confidence: 0.24
+        /about/context/1/value:
+          label: MATCH
+          probabilities:
+            MATCH: 0.52
+            MISMATCH: 0.31
+            PARTIAL: 0.17
+          confidence: 0.28
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8828
+        output_tokens: 316
+      elapsed_seconds: 0.3364
+      request_sha256: eac37337f00a7fa5d084d4c85bcd0d02b9feba2cba00d73b3aea24dee38af5cf
+      request_sha256s:
+      - eac37337f00a7fa5d084d4c85bcd0d02b9feba2cba00d73b3aea24dee38af5cf
+  e7af4a1ed802aca386e6c790617da69b688cc5c2d32b59b724fdb1c446c9582a:
+    input_sha256: 783e672a96a6e5142c01fea64bbf63305027abd5595b87cfb9a20c65d9b200c8
+    configuration_sha256: 531f8433d7cf78de3d93fc36193f9a8493bb3d9ff03566196c0dbef80e431833
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:01.555900+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.66
+            MISMATCH: 0.16
+            PARTIAL: 0.18
+          confidence: 0.49
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.6
+            MISMATCH: 0.16
+            PARTIAL: 0.24
+          confidence: 0.4
+        /assertion/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.85
+            MISMATCH: 0.06
+            PARTIAL: 0.09
+          confidence: 0.77
+        /assertion/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.72
+            MISMATCH: 0.07
+            PARTIAL: 0.21
+          confidence: 0.58
+        /assertion/description:
+          label: MATCH
+          probabilities:
+            MATCH: 0.76
+            MISMATCH: 0.08
+            PARTIAL: 0.16
+          confidence: 0.64
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.31
+            MISMATCH: 0.5
+            PARTIAL: 0.19
+          confidence: 0.25
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.33
+            MISMATCH: 0.46
+            PARTIAL: 0.21
+          confidence: 0.19
+      model: jev-1.13.0
+      usage:
+        input_tokens: 8818
+        output_tokens: 319
+      elapsed_seconds: 0.3535
+      request_sha256: 502e9ba9a5e131cf8ef4bd7626910e3f98cfbbb0c7a27ff3c040f842d6bae91c
+      request_sha256s:
+      - 502e9ba9a5e131cf8ef4bd7626910e3f98cfbbb0c7a27ff3c040f842d6bae91c
+  11a4782ceff9d6d880a25bf51348587511844ffbb9b2dc3e357558a78a8b5a4e:
+    input_sha256: ba741727425d5b533e48cb17dd137e2657383b84f0beb13a2b6b4e9000ac4e16
+    configuration_sha256: dfa6b29b78bf3b6954ac317d5ffb99f1d009297bc06abef5f80459452248ef49
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:01.557087+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.67
+            PARTIAL: 0.23
+          confidence: 0.5
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.81
+            PARTIAL: 0.18
+          confidence: 0.72
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.8
+            MISMATCH: 0.05
+            PARTIAL: 0.15
+          confidence: 0.7
+        /assertion/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.53
+            PARTIAL: 0.35
+          confidence: 0.3
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.06
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.94
+            MISMATCH: 0.03
+            PARTIAL: 0.03
+          confidence: 0.91
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.92
+            MISMATCH: 0.03
+            PARTIAL: 0.05
+          confidence: 0.88
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.26
+            PARTIAL: 0.34
+          confidence: 0.1
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.67
+            PARTIAL: 0.14
+          confidence: 0.5
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.17
+            MISMATCH: 0.66
+            PARTIAL: 0.17
+          confidence: 0.49
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11209
+        output_tokens: 479
+      elapsed_seconds: 0.3313
+      request_sha256: 93549fe8ca4c19ebd1851887900b3d71d788a2473d5b4556009bbedf2506d5d2
+      request_sha256s:
+      - 93549fe8ca4c19ebd1851887900b3d71d788a2473d5b4556009bbedf2506d5d2
+  aaaf08eea82af93c4be7e3bcc906f7b64634c7ae802e6703e689b4bd2d99a72b:
+    input_sha256: 527166468959108dbf8137adf3280e8b6fc9c6e8810b25d06a23600048a89a78
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:02.620889+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.18
+            MISMATCH: 0.5
+            PARTIAL: 0.32
+          confidence: 0.25
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.04
+            MISMATCH: 0.63
+            PARTIAL: 0.33
+          confidence: 0.44
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.35
+            PARTIAL: 0.26
+          confidence: 0.09
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.35
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/direction:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.23
+            PARTIAL: 0.52
+          confidence: 0.28
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.39
+            MISMATCH: 0.2
+            PARTIAL: 0.41
+          confidence: 0.11
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.49
+            PARTIAL: 0.26
+          confidence: 0.24
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.47
+            PARTIAL: 0.28
+          confidence: 0.2
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9130
+        output_tokens: 370
+      elapsed_seconds: 0.3384
+      request_sha256: 089c7b1e904918319e5cc9aad38aa73d6f561e359f32bd993a5a0f59f8d54837
+      request_sha256s:
+      - 089c7b1e904918319e5cc9aad38aa73d6f561e359f32bd993a5a0f59f8d54837
+  e03f1035e0e974d66158b904ca7d7f1d497abbd6192afdd05e5e931e948c02fe:
+    input_sha256: ab1b0c89abffe885b10ff22e6ab80299ae4484ea1872c1e21188155dda1d905f
+    configuration_sha256: a2cd57c942e1457625d1cc63e10f27a875184caaa97405cf8904101f1a86a8d2
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:02.621963+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.15
+            MISMATCH: 0.54
+            PARTIAL: 0.31
+          confidence: 0.31
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.74
+            PARTIAL: 0.23
+          confidence: 0.61
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.71
+            MISMATCH: 0.08
+            PARTIAL: 0.21
+          confidence: 0.56
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.34
+            PARTIAL: 0.41
+          confidence: 0.11
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.59
+            MISMATCH: 0.12
+            PARTIAL: 0.29
+          confidence: 0.38
+        /assertion/interpretation:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.42
+            MISMATCH: 0.15
+            PARTIAL: 0.43
+          confidence: 0.14
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.25
+            MISMATCH: 0.51
+            PARTIAL: 0.24
+          confidence: 0.26
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.48
+            PARTIAL: 0.28
+          confidence: 0.22
+      model: jev-1.13.0
+      usage:
+        input_tokens: 9134
+        output_tokens: 369
+      elapsed_seconds: 0.3475
+      request_sha256: cb77fc3652de63d021ad1de7b77a8e57a2181aad49493e83dceea13fb4439841
+      request_sha256s:
+      - cb77fc3652de63d021ad1de7b77a8e57a2181aad49493e83dceea13fb4439841
+  c42a54537724f38319b5a0f4157977a7cb9b7597b56841d5339a50d7d342b6e3:
+    input_sha256: 33070c58211faa6670af38b6da0e7eac6794180c224b2554e393a455bfad75ec
+    configuration_sha256: 48efe8a679539b3d8f50770b17550b3c47c0f176608836bcbb7bb10f39aeb6ce
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:03.692583+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.03
+            MISMATCH: 0.81
+            PARTIAL: 0.16
+          confidence: 0.72
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.95
+            PARTIAL: 0.05
+          confidence: 0.92
+        /assertion/target:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.42
+            PARTIAL: 0.5
+          confidence: 0.25
+        /assertion/relationship:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.55
+            PARTIAL: 0.32
+          confidence: 0.33
+        /assertion/fidelity:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.25
+            PARTIAL: 0.61
+          confidence: 0.42
+        /assertion/model_scale:
+          label: MATCH
+          probabilities:
+            MATCH: 0.78
+            MISMATCH: 0.11
+            PARTIAL: 0.11
+          confidence: 0.67
+        /assertion/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.09
+            MISMATCH: 0.67
+            PARTIAL: 0.24
+          confidence: 0.5
+        /assertion/limitations:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.72
+            PARTIAL: 0.22
+          confidence: 0.58
+        /assertion/divergences/0/divergence_type:
+          label: MATCH
+          probabilities:
+            MATCH: 0.47
+            MISMATCH: 0.43
+            PARTIAL: 0.1
+          confidence: 0.2
+        /assertion/divergences/0/materiality:
+          label: MATCH
+          probabilities:
+            MATCH: 0.41
+            MISMATCH: 0.28
+            PARTIAL: 0.31
+          confidence: 0.11
+        /assertion/divergences/0/description:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.22
+            MISMATCH: 0.57
+            PARTIAL: 0.21
+          confidence: 0.35
+        /assertion/readouts/0/name:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.83
+            PARTIAL: 0.1
+          confidence: 0.74
+        /assertion/readouts/0/target:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.11
+            MISMATCH: 0.45
+            PARTIAL: 0.44
+          confidence: 0.18
+        /assertion/readouts/0/direction:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.68
+            PARTIAL: 0.25
+          confidence: 0.52
+        /assertion/readouts/0/biological_processes/0/preferred_term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.08
+            MISMATCH: 0.83
+            PARTIAL: 0.09
+          confidence: 0.74
+        /assertion/readouts/0/biological_processes/0/term:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.81
+            PARTIAL: 0.09
+          confidence: 0.72
+        /assertion/readouts/0/interpretation:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.71
+            PARTIAL: 0.22
+          confidence: 0.56
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.07
+            MISMATCH: 0.77
+            PARTIAL: 0.16
+          confidence: 0.66
+      model: jev-1.13.0
+      usage:
+        input_tokens: 20134
+        output_tokens: 917
+      elapsed_seconds: 0.3867
+      request_sha256: 06b4889ac7fce2f2f4924622fd2831d6ffe6138dbf454694a41f9349f0cd298a
+      request_sha256s:
+      - 06b4889ac7fce2f2f4924622fd2831d6ffe6138dbf454694a41f9349f0cd298a
+  3cfdd0e1252abc017195a2cc3406d43c40bae4217a5c03151ceb5690402a2f08:
+    input_sha256: 34c36cbaf3d6234b79a32d79fb79caa2641ec83956f0d685ac5192836c9f9c4e
+    configuration_sha256: dfa6b29b78bf3b6954ac317d5ffb99f1d009297bc06abef5f80459452248ef49
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:03.693935+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.12
+            MISMATCH: 0.83
+            PARTIAL: 0.05
+          confidence: 0.74
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.0
+            MISMATCH: 0.97
+            PARTIAL: 0.03
+          confidence: 0.96
+        /assertion/name:
+          label: MATCH
+          probabilities:
+            MATCH: 0.89
+            MISMATCH: 0.09
+            PARTIAL: 0.02
+          confidence: 0.83
+        /assertion/target:
+          label: MATCH
+          probabilities:
+            MATCH: 0.63
+            MISMATCH: 0.19
+            PARTIAL: 0.18
+          confidence: 0.44
+        /assertion/direction:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.41
+            PARTIAL: 0.15
+          confidence: 0.16
+        /assertion/biological_processes/0/preferred_term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.88
+            MISMATCH: 0.08
+            PARTIAL: 0.04
+          confidence: 0.82
+        /assertion/biological_processes/0/term:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.05
+            PARTIAL: 0.02
+          confidence: 0.89
+        /assertion/interpretation:
+          label: MATCH
+          probabilities:
+            MATCH: 0.87
+            MISMATCH: 0.05
+            PARTIAL: 0.08
+          confidence: 0.8
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.14
+            MISMATCH: 0.78
+            PARTIAL: 0.08
+          confidence: 0.67
+        /about/context/1/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.19
+            MISMATCH: 0.73
+            PARTIAL: 0.08
+          confidence: 0.6
+      model: jev-1.13.0
+      usage:
+        input_tokens: 11133
+        output_tokens: 475
+      elapsed_seconds: 0.3328
+      request_sha256: 06c269f02fc6aac0cdb699bb4314f0cd712dfd817ca3f76769a0de1e43b4e3ab
+      request_sha256s:
+      - 06c269f02fc6aac0cdb699bb4314f0cd712dfd817ca3f76769a0de1e43b4e3ab
+  7afc5b55c475af1ee23fd560db385bbc5c88947328fd006d91d53bb1d2ab21b2:
+    input_sha256: 8d9bf8f1d07798df6dd1f20b515167198b6552ef8b9e8de8ade18d5e135382cd
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:04.804334+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.34
+            MISMATCH: 0.24
+            PARTIAL: 0.42
+          confidence: 0.13
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.97
+            MISMATCH: 0.02
+            PARTIAL: 0.01
+          confidence: 0.96
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.49
+            MISMATCH: 0.13
+            PARTIAL: 0.38
+          confidence: 0.24
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.27
+            MISMATCH: 0.58
+            PARTIAL: 0.15
+          confidence: 0.37
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4939
+        output_tokens: 180
+      elapsed_seconds: 0.2878
+      request_sha256: f4d55bb9c70a225e79b7d373cc7fc05aab88d091770c366f882a469cc109bda6
+      request_sha256s:
+      - f4d55bb9c70a225e79b7d373cc7fc05aab88d091770c366f882a469cc109bda6
+  bf5ca678869137d6bb20907dd4eaf36c5f51cdba33afc0b7286c3d551208834e:
+    input_sha256: 5ebfcb75d4df6354e9ae136568f7235a15c631ef322a6d289a41bf3569f52e71
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:04.802287+00:00'
+    result:
+      answers:
+        /:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.05
+            MISMATCH: 0.33
+            PARTIAL: 0.62
+          confidence: 0.43
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.93
+            MISMATCH: 0.04
+            PARTIAL: 0.03
+          confidence: 0.89
+        /assertion/statement:
+          label: PARTIAL
+          probabilities:
+            MATCH: 0.13
+            MISMATCH: 0.12
+            PARTIAL: 0.75
+          confidence: 0.62
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.24
+            MISMATCH: 0.57
+            PARTIAL: 0.19
+          confidence: 0.35
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4955
+        output_tokens: 181
+      elapsed_seconds: 0.2687
+      request_sha256: 7e0c9a01e59ae8b4319a48c0bcf283a393139bfd414945d64179a3233d786fbf
+      request_sha256s:
+      - 7e0c9a01e59ae8b4319a48c0bcf283a393139bfd414945d64179a3233d786fbf
+  ccfbbedcb3a2d01269c4e6339190fdd52e0103f7b4c153c2a62e5694b0b3b286:
+    input_sha256: 28315ab8ce77c1b7abd4cdf975aaa0bde68a91d73ec8f9b3286bede4a490c0a9
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:05.929115+00:00'
+    result:
+      answers:
+        /:
+          label: MATCH
+          probabilities:
+            MATCH: 0.4
+            MISMATCH: 0.37
+            PARTIAL: 0.23
+          confidence: 0.1
+        /about/disease:
+          label: MATCH
+          probabilities:
+            MATCH: 0.91
+            MISMATCH: 0.07
+            PARTIAL: 0.02
+          confidence: 0.86
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.45
+            MISMATCH: 0.28
+            PARTIAL: 0.27
+          confidence: 0.18
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.2
+            MISMATCH: 0.67
+            PARTIAL: 0.13
+          confidence: 0.5
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4906
+        output_tokens: 179
+      elapsed_seconds: 0.261
+      request_sha256: adeecfef9488fa18c45171de3e83d9761165c5a9b8749a471dba77dff1654630
+      request_sha256s:
+      - adeecfef9488fa18c45171de3e83d9761165c5a9b8749a471dba77dff1654630
+  656c077453c451f8e4de118f376cecd05edf7a6e55d07c72f70a7efe021c2f09:
+    input_sha256: f732168b08fc1197939a696275329b586aa75590933bd7b2d0e686222eb85f06
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:07.097955+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.81
+            PARTIAL: 0.09
+          confidence: 0.72
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.91
+            PARTIAL: 0.08
+          confidence: 0.86
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.46
+            MISMATCH: 0.27
+            PARTIAL: 0.27
+          confidence: 0.19
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.23
+            MISMATCH: 0.63
+            PARTIAL: 0.14
+          confidence: 0.44
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4936
+        output_tokens: 185
+      elapsed_seconds: 0.2451
+      request_sha256: c2a04f46c20bcb4fba5748574792a790aa69dcfb3ae6ab9e2e28ce2fdfe32b8c
+      request_sha256s:
+      - c2a04f46c20bcb4fba5748574792a790aa69dcfb3ae6ab9e2e28ce2fdfe32b8c
+  f2086a1ebac33c6e414e0aefdab6c9d89c5d2f4a3734040db15bec581dc3ee0d:
+    input_sha256: 543550701266da67797ca1287cb6cd4d462d1cdb412d4a8a4f64cd56ef394c46
+    configuration_sha256: b6f0fe9aba21c5f19d752e5976f8eff560678c6ff22c0a07d75c6e9cc8cad063
+    model: jev-1.13.0
+    assessment_source_revision: 59bf8a61bb2cca248540cbfe62d32ae8994ec07a
+    status: assessed
+    assessed_at: '2026-11-09T20:11:05.928375+00:00'
+    result:
+      answers:
+        /:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.06
+            MISMATCH: 0.85
+            PARTIAL: 0.09
+          confidence: 0.77
+        /about/disease:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.01
+            MISMATCH: 0.94
+            PARTIAL: 0.05
+          confidence: 0.91
+        /assertion/statement:
+          label: MATCH
+          probabilities:
+            MATCH: 0.44
+            MISMATCH: 0.37
+            PARTIAL: 0.19
+          confidence: 0.16
+        /about/context/0/value:
+          label: MISMATCH
+          probabilities:
+            MATCH: 0.1
+            MISMATCH: 0.81
+            PARTIAL: 0.09
+          confidence: 0.72
+      model: jev-1.13.0
+      usage:
+        input_tokens: 4939
+        output_tokens: 185
+      elapsed_seconds: 0.2932
+      request_sha256: 19c0c8829e72db508e20ec7406e498fe53795c8bbe32fa84017b98dab55f0234
+      request_sha256s:
+      - 19c0c8829e72db508e20ec7406e498fe53795c8bbe32fa84017b98dab55f0234

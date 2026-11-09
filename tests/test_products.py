@@ -183,3 +183,41 @@ def test_handoff_does_not_present_citation_explanation_as_model_context(tmp_path
         item["claim"]["selected_evidence"]["explanation"]
         == "Curator's own interpretation"
     )
+
+
+def test_canonical_edges_preserve_snapshot_and_filtered_scope(tmp_path):
+    record = row("Synthetic", "pathophysiology", 0, ("PARTIAL",))
+    record["claim"] = {
+        "scope": {
+            "disease": {"name": "Synthetic"},
+            "subtypes": [],
+            "hypotheses": [],
+            "additional_context": [],
+        },
+        "subject": {
+            "name": "Source",
+            "document_path": "/pathophysiology/0",
+            "qualifiers": {},
+        },
+        "relationship": {"kind": "causal influence"},
+        "object": {
+            "name": "Target",
+            "document_path": "/pathophysiology/1",
+            "qualifiers": {},
+        },
+        "definitions": {"subject": {}, "object": {}},
+        "selected_evidence": {
+            "snippet": "Synthetic edge excerpt.",
+            "supports": "SUPPORT",
+        },
+    }
+    before = deepcopy(record)
+    provenance = meta(assertion_types=["CausalEdge"])
+    data, queues = build_products(lambda: iter([record]), provenance, tmp_path)
+    assert not data["provenance"]["corpus_complete"]
+    assert data["provenance"]["scope"]["assertion_types"] == ["CausalEdge"]
+    packet = queues["overall"][0]
+    assert packet["findings"][0]["claim"] == record["claim"]
+    assert record == before
+    schema = json.loads((ROOT / "schemas/recuration.schema.json").read_text())
+    jsonschema.validate(packet, schema)

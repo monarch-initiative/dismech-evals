@@ -40,8 +40,14 @@
           "assertion_path": {"type": "string", "pattern": "^/"},
           "evidence_path": {"type": "string", "pattern": "^/"},
           "claim": {
-            "type": "object", "required": ["about", "assertion_type", "assertion", "selected_evidence"],
+            "type": "object", "required": ["selected_evidence"],
+            "oneOf": [
+              {"required": ["about", "assertion_type", "assertion"]},
+              {"required": ["scope", "subject", "relationship", "object", "definitions"]}
+            ],
             "properties": {
+              "scope": {"type": "object"}, "subject": {"type": "object"},
+              "relationship": {"type": "object"}, "object": {"type": "object"}, "definitions": {"type": "object"},
               "about": {"type": "object"}, "assertion_type": {"type": "string"}, "assertion": {"type": "object"},
               "selected_evidence": {"type": "object", "required": ["snippet"], "properties": {"snippet": {"type": "string"}}}
             }

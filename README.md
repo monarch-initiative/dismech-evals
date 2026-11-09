@@ -37,6 +37,7 @@ uv sync --frozen
 just setup                       # prepares sparse source and classifier checkouts
 just inventory --limit 20        # no model calls; no API key needed
 just audit --section phenotypes --limit 20
+just audit --assertion-type CausalEdge --assertion-type TreatmentMechanismTarget --limit 20
 just cache                       # update activity without inference
 just report --shards build/shards
 just products --report build/combined  # top N overall and by category, without inference
@@ -54,7 +55,12 @@ dismech source checkout (for example `kb/disorders/Asthma.yaml`). Reports defaul
 [Configuration](config/evidence_claim_match.yaml) pins a full classifier commit,
 a versioned model and execution limits. `source_ref` is resolved to a full source
 commit once per run. The source and classifier use separate checkouts, so the
-corpus can advance while the method stays fixed. The run's manifests record both
+corpus can advance while the method stays fixed. Causal and treatment edges use the canonical v2 subject/relationship/object
+contract from dismech; node questions keep their existing contract. Edge-only
+selections are explicitly limited runs. Saved edge snapshots and their literal
+aspect paths are preserved in the dashboard and agent queues.
+
+The run's manifests record both
 revisions and the evaluation repository revision. Run `just setup` to resolve a
 fresh source snapshot; it refuses to overwrite dirty checkouts. Changing the
 classifier pin is an explicit methodology update. The initial pin contains the

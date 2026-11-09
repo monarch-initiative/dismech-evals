@@ -53,6 +53,35 @@ def site(tmp_path_factory):
                 },
             }
         )
+    edge = records[1]
+    edge["claim"] = {
+        "scope": {
+            "disease": {"name": "Example B"},
+            "subtypes": [],
+            "hypotheses": [],
+            "additional_context": [],
+        },
+        "subject": {
+            "name": "Synthetic source",
+            "document_path": "/pathophysiology/0",
+            "qualifiers": {},
+        },
+        "relationship": {"kind": "causal influence"},
+        "object": {
+            "name": "Synthetic endpoint",
+            "document_path": "/phenotypes/0",
+            "qualifiers": {},
+        },
+        "definitions": {"subject": {}, "object": {}},
+        "selected_evidence": {
+            "snippet": "Synthetic edge excerpt.",
+            "supports": "SUPPORT",
+        },
+    }
+    edge["result"]["answers"] = {
+        "/": deepcopy(answer),
+        "/object/name": deepcopy(answer),
+    }
     build_products(
         lambda: iter(records),
         metadata({"model": "fixture"}, mode="saved_history"),
@@ -175,3 +204,17 @@ def test_ties_use_the_same_filename_order_as_exported_queues(page, site):
         return result;
     }""")
     assert order == sorted(order)
+
+
+def test_canonical_edge_snapshot_is_readable_and_downloadable(page, site):
+    url, _ = site
+    page.goto(url + "entries.html")
+    page.locator("#search").fill("Example B")
+    page.locator("tbody a").first.click()
+    page.wait_for_selector("#findings section")
+    page.get_by_text("Complete evaluated claim", exact=True).first.click()
+    snapshot = json.loads(page.locator("#findings pre").first.inner_text())
+    assert snapshot["subject"]["name"] == "Synthetic source"
+    assert snapshot["object"]["name"] == "Synthetic endpoint"
+    assert "about" not in snapshot
+    assert "/object/name" in page.locator("#findings table").inner_text()

@@ -108,7 +108,10 @@ def metadata(manifest, *, run_id=None, mode="run"):
     )
     complete = bool(manifest.get("complete"))
     limited = bool(
-        manifest.get("limit") or manifest.get("sections") or manifest.get("inputs")
+        manifest.get("limit")
+        or manifest.get("sections")
+        or manifest.get("inputs")
+        or manifest.get("assertion_types")
     )
     return {
         "mode": mode,
@@ -129,7 +132,13 @@ def metadata(manifest, *, run_id=None, mode="run"):
         "dry_run": bool(manifest.get("dry_run")),
         "scope": {
             k: manifest.get(k)
-            for k in ("limit", "sections", "inputs", "missing_shards")
+            for k in (
+                "limit",
+                "sections",
+                "assertion_types",
+                "inputs",
+                "missing_shards",
+            )
         },
         "started_at": manifest.get("started_at")
         or min((s["started_at"] for s in shards if s.get("started_at")), default=None),
@@ -143,7 +152,7 @@ def metadata(manifest, *, run_id=None, mode="run"):
 def group_for(path):
     if path == "/":
         return "Whole claim"
-    if path.startswith("/about/"):
+    if path.startswith(("/about/", "/scope/")):
         return "About / disease & subtype"
     parts = path.split("/")
     if any(
@@ -231,7 +240,18 @@ def finding(row, meta):
     claim = row["claim"]
     state = {
         k: claim[k]
-        for k in ("about", "assertion_type", "assertion", "selected_evidence")
+        for k in (
+            (
+                "scope",
+                "subject",
+                "relationship",
+                "object",
+                "definitions",
+                "selected_evidence",
+            )
+            if "relationship" in claim
+            else ("about", "assertion_type", "assertion", "selected_evidence")
+        )
     }
     # Audit rows retain citation annotations alongside the extracted assertion;
     # the classifier's state includes only these evidence fields. Do not present
